@@ -1,0 +1,118 @@
+/* General styles */
+.dropdown-menu {
+  /* Main category dropdown */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none; /* Initially hide */
+  background-color: #f3f7fb; /* Grey background color */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Optional: Add box shadow */
+  z-index: 1; /* Ensure it appears above other content */
+  min-width: 160px; /* Optional: Adjust minimum width as needed */
+  border: 1px solid #ced4da;
+  height: 240px; /* Adjust height as needed */
+}
+
+.dropdown-menu-sub {
+  /* Subcategory dropdown */
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: none; /* Initially hide */
+  background-color: white; /* White background color */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Optional: Add box shadow */
+  z-index: 1; /* Ensure it appears above other content */
+  min-width: 160px; /* Optional: Adjust minimum width as needed */
+  border: 1px solid #ced4da;
+  height: 240px; /* Match the height of the main category dropdown */
+}
+
+.dropdown-item:hover .dropdown-menu-sub {
+  display: block; /* Show submenus on hover */
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.btn-custom-text {
+  background-color: wheat; /* Wheat background color */
+  color: black; /* Black text color */
+}
+
+.btn-custom-text:hover,
+.btn-custom-text:focus {
+  background-color: wheat; /* Wheat background color on hover/focus */
+  color: black; /* Black text color on hover/focus */
+}
+
+.dropdown-item:hover .dropdown-menu-sub {
+  display: block; /* Show submenus on hover */
+}
+
+/* Media queries for small devices */
+@media (max-width: 576px) {
+  .dropdown-menu,
+  .dropdown-menu-sub {
+    position: static;
+    display: block; /* Always display dropdowns on small screens */
+    background-color: white;
+    box-shadow: none; /* Remove box shadow */
+    width: 100%;
+    border: none;
+    height: auto; /* Adjust height */
+    max-height: 50vh; /* Limit the maximum height to half the viewport */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+
+  .btn-group {
+    width: 100%;
+  }
+
+  .btn-group .dropdown-toggle {
+    width: 100%;
+    background-color: wheat; /* Set wheat background color */
+  }
+
+  .subcategories-container {
+    display: block;
+    width: 100%;
+  }
+
+  .subcategories-container button {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .subcategories-container button:hover {
+    background-color: #0056b3;
+  }
+
+  .back-to-categories {
+    background-color: #28a745; /* Green background color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    width: 100%; /* Full width */
+    margin-bottom: 15px; /* Bottom margin */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+  }
+  
+  .back-to-categories:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+}
+
+
+.view-download-instructions{
+  text-align: center;
+  padding-bottom: 3%;
+}

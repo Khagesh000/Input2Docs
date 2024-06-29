@@ -1,0 +1,187 @@
+:root{
+  background-color: rgb(33, 33, 33);
+  color: white;
+}
+
+
+.carousel-item img {
+    width: 100%;
+    height: 80vh; /* Set a fixed height */
+    object-fit: cover; /* This will maintain the aspect ratio and cover the container */
+  }
+
+  .carousel-caption {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    align-items: center;
+    color: black; /* Change text color as needed */
+ /* Add a semi-transparent background */
+    padding-left: 50%;
+  }
+
+  .carousel-caption h1{
+    text-shadow: 4cm;
+    color: crimson;
+    font-weight: 700;
+    font-family: sans-serif;
+    font-style: oblique;
+    
+  }
+
+  .carousel-caption p{
+    color: rgb(53, 53, 53);
+    font-weight: 600;
+    font-size: larger;
+    font-family: cursive;
+    font-style: italic;
+  }
+
+ /* styles.css */
+
+/* Style for the anchor tag */
+a.btn-primary {
+  background-color: #333334; /* Primary color */
+  border-color: #f4f5f7; /* Border color */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border-radius: 7px; /* Border radius */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease;
+  box-shadow: #333334; /* Transition effect for background color */
+}
+
+/* Hover effect for the anchor tag */
+a.btn-primary:hover {
+  background-color: #0056b3; /* Darker shade of primary color on hover */
+}
+
+
+
+.cardHeading h1{
+  color: wheat;
+  text-align: center;
+  padding-bottom: 4%;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+
+.gradient-letter {
+  background: linear-gradient(to bottom, white, wheat);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback for browsers that do not support -webkit-text-fill-color */
+}
+
+/* Style for the anchor tag */
+a.btn-primary {
+  background-color: #007bff; /* Primary color */
+  border-color: gray; /* Border color */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border-radius: 5px; /* Border radius */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden; /* Transition effect for background color */
+}
+
+/* Hover effect for the anchor tag */
+a.btn-primary:hover {
+  background-color: #fb0c0c; /* 007bff Darker shade of primary color on hover */
+}
+
+a.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: all 0.3s;
+  transform: rotate(30deg);
+  animation: shine-btn 1s infinite;
+}
+@keyframes shine-btn {
+  0% {
+    top: -100%;
+    left: -100%;
+  }
+  50% {
+    top: 100%;
+    left: 100%;
+  }
+  100% {
+    top: -100%;
+    left: -100%;
+  }
+}
+
+.CardSection{
+   background-color: black;
+   padding-left: 5%;
+   padding-right: 5%;
+   padding-top: 15%;
+}
+
+.ProcessSection{
+  background-color: rgb(8, 8, 8);
+}
+
+.FormatLettersSection{
+  color: #000;
+  padding-top: 10%;
+ 
+ 
+}
+
+@media (max-width: 575px) {
+ 
+  .CardSection{
+   
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 15%;
+  
+ }
+
+ 
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  /* Small devices (landscape phones) */
+  .card-arrange, .process, .format-letters {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Medium devices (tablets) */
+  .card-arrange, .process, .format-letters {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Large devices (desktops) */
+  .card-arrange, .process, .format-letters {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ProcessSection{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+  }
+}
