@@ -109,7 +109,7 @@ const EmailMaker = ({ selectedTemplate }) => {
   
     console.log('Sending email data:', emailData);
   
-    axios.post('http://localhost:8000/api/send-email/', emailData)
+    axios.post('https://input2docs.onrender.com/api/send-email/', emailData)
       .then((response) => {
         console.log('Email sent successfully!', response);
         alert('Email sent successfully!');
