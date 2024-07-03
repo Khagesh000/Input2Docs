@@ -21,10 +21,10 @@ const emailTemplates = {
     fields: [
       { id: 'YourName', label: 'Your Name', type: 'text' },
       { id: 'YourEmail', label: 'Your Email', type: 'email' },
-      { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
-      { id: 'RecipientEmail', label: 'Recipient Email', type: 'email' },
-      { id: 'Subject', label: 'Subject', type: 'text' },
-      { id: 'EmailBody', label: 'Email Body', type: 'quill' },
+      { id: 'RecipientName', label: 'Recipient Name', type: 'text', required: true },
+      { id: 'RecipientEmail', label: 'Recipient Email', type: 'email', required: true },
+      { id: 'Subject', label: 'Subject', type: 'text', required: true },
+      { id: 'EmailBody', label: 'Email Body', type: 'quill', required: true },
     ]
   },
   "Job Application Emails": {
@@ -42,14 +42,15 @@ const emailTemplates = {
       {YourName}
     `,
     fields: [
-      { id: 'YourName', label: 'Your Name', type: 'text' },
-      { id: 'YourEmail', label: 'Your Email', type: 'email' },
-      { id: 'Company', label: 'Company Name', type: 'text' },
-      { id: 'CompanyEmail', label: 'Company Email', type: 'email' },
-      { id: 'Position', label: 'Position', type: 'text' },
-      { id: 'CoverLetterBody', label: 'Cover Letter Body', type: 'quill' },
+      { id: 'YourName', label: 'Your Name', type: 'text', required: true },
+      { id: 'YourEmail', label: 'Your Email', type: 'email', required: true },
+      { id: 'Company', label: 'Company Name', type: 'text', required: true },
+      { id: 'CompanyEmail', label: 'Company Email', type: 'email', required: true },
+      { id: 'Position', label: 'Position', type: 'text', required: true },
+      { id: 'CoverLetterBody', label: 'Cover Letter Body', type: 'quill', required: true },
     ]
   },
+  // Add more templates as needed
 };
 
 const EmailMaker = ({ selectedTemplate }) => {
@@ -74,7 +75,7 @@ const EmailMaker = ({ selectedTemplate }) => {
     const templateDetails = emailTemplates[selectedTemplate];
 
     // Validate that all required fields are filled
-    const emptyFields = templateDetails.fields.filter(field => !formData[field.id]);
+    const emptyFields = templateDetails.fields.filter(field => field.required && !formData[field.id]);
     if (emptyFields.length > 0) {
       const fieldNames = emptyFields.map(field => field.label).join(', ');
       alert(`Please fill in the following fields: ${fieldNames}`);
@@ -98,28 +99,28 @@ const EmailMaker = ({ selectedTemplate }) => {
   };
 
   const sendEmail = () => {
+    const templateDetails = emailTemplates[selectedTemplate];
+
     const emailData = {
-      YourName: formData.YourName,
-      YourEmail: formData.YourEmail,
-      RecipientName: formData.RecipientName,
-      RecipientEmail: formData.RecipientEmail,
-      Subject: formData.Subject,
-      EmailBody: formData.EmailBody,
+      ...formData,
+      template_name: selectedTemplate, // Add selected template name to the data
+      // Dynamically add fields based on the selected template
+      ...templateDetails.fields.reduce((acc, field) => {
+        acc[field.id] = formData[field.id];
+        return acc;
+      }, {})
     };
-  
-    console.log('Sending email data:', emailData);
-  
+
     axios.post('https://input2docs.onrender.com/api/send-email/', emailData)
       .then((response) => {
         console.log('Email sent successfully!', response);
         alert('Email sent successfully!');
       })
       .catch((error) => {
-        console.error('Failed to send email:', error.response.data);
+        console.error('Failed to send email:', error);
         alert('Failed to send email. Please try again later.');
       });
   };
-  
 
   if (!selectedTemplate || !emailTemplates[selectedTemplate]) {
     return null;
@@ -156,7 +157,7 @@ const EmailMaker = ({ selectedTemplate }) => {
                           name={field.id}
                           value={formData[field.id] || ''}
                           onChange={handleChange}
-                          required
+                          required={field.required} // Set required attribute dynamically
                         />
                       )}
                     </div>
@@ -167,7 +168,7 @@ const EmailMaker = ({ selectedTemplate }) => {
                 <div className='GenLetterSection'>
                   <h5>Generated Email</h5>
                   <div id="generated-email" ref={generatedEmailRef}>
-                    <pre>{generatedEmail}</pre>
+                    <pre style={{ whiteSpace: 'pre-wrap' }}>{generatedEmail}</pre>
                   </div>
                   <button className="btn btn-success mt-3" onClick={sendEmail}>Send Email</button>
                   <button className="btn btn-secondary mt-3" onClick={() => setFormSubmitted(false)}>Edit</button>
