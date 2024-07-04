@@ -21,10 +21,10 @@ const emailTemplates = {
     fields: [
       { id: 'YourName', label: 'Your Name', type: 'text' },
       { id: 'YourEmail', label: 'Your Email', type: 'email' },
-      { id: 'RecipientName', label: 'Recipient Name', type: 'text', required: true },
-      { id: 'RecipientEmail', label: 'Recipient Email', type: 'email', required: true },
-      { id: 'Subject', label: 'Subject', type: 'text', required: true },
-      { id: 'EmailBody', label: 'Email Body', type: 'quill', required: true },
+      { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+      { id: 'RecipientEmail', label: 'Recipient Email', type: 'email' },
+      { id: 'Subject', label: 'Subject', type: 'text' },
+      { id: 'EmailBody', label: 'Email Body', type: 'quill' },
     ]
   },
   "Job Application Emails": {
@@ -42,21 +42,22 @@ const emailTemplates = {
       {YourName}
     `,
     fields: [
-      { id: 'YourName', label: 'Your Name', type: 'text', required: true },
-      { id: 'YourEmail', label: 'Your Email', type: 'email', required: true },
-      { id: 'Company', label: 'Company Name', type: 'text', required: true },
-      { id: 'CompanyEmail', label: 'Company Email', type: 'email', required: true },
-      { id: 'Position', label: 'Position', type: 'text', required: true },
-      { id: 'CoverLetterBody', label: 'Cover Letter Body', type: 'quill', required: true },
+      { id: 'YourName', label: 'Your Name', type: 'text' },
+      { id: 'YourEmail', label: 'Your Email', type: 'email' },
+      { id: 'Company', label: 'Company Name', type: 'text' },
+      { id: 'CompanyEmail', label: 'Company Email', type: 'email' },
+      { id: 'Position', label: 'Position', type: 'text' },
+      { id: 'CoverLetterBody', label: 'Cover Letter Body', type: 'quill' },
     ]
   },
-  // Add more templates as needed
 };
 
 const EmailMaker = ({ selectedTemplate }) => {
   const [formData, setFormData] = useState({});
   const [generatedEmail, setGeneratedEmail] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const quillRefs = useRef({});
 
   const generatedEmailRef = useRef(null);
 
@@ -75,7 +76,7 @@ const EmailMaker = ({ selectedTemplate }) => {
     const templateDetails = emailTemplates[selectedTemplate];
 
     // Validate that all required fields are filled
-    const emptyFields = templateDetails.fields.filter(field => field.required && !formData[field.id]);
+    const emptyFields = templateDetails.fields.filter(field => !formData[field.id]);
     if (emptyFields.length > 0) {
       const fieldNames = emptyFields.map(field => field.label).join(', ');
       alert(`Please fill in the following fields: ${fieldNames}`);
@@ -99,28 +100,50 @@ const EmailMaker = ({ selectedTemplate }) => {
   };
 
   const sendEmail = () => {
-    const templateDetails = emailTemplates[selectedTemplate];
-
+    setIsSending(true);
+  
+    // Prepare email data for sending
     const emailData = {
-      ...formData,
-      template_name: selectedTemplate, // Add selected template name to the data
-      // Dynamically add fields based on the selected template
-      ...templateDetails.fields.reduce((acc, field) => {
-        acc[field.id] = formData[field.id];
-        return acc;
-      }, {})
+      From: `${formData.YourName} <${formData.YourEmail}>`,
+      To: `${formData.RecipientName} <${formData.RecipientEmail}>`,
+      Subject: formData.Subject,
+      Body: formData.EmailBody,
     };
-
-    axios.post('https://input2docs.onrender.com/api/send-email/', emailData)
-      .then((response) => {
+  
+    // Log email data for debugging purposes
+    console.log('Sending email data:', emailData);
+  
+    // Send POST request to server
+    axios.post('https://input2docs.onrender.com/api/send-email/', emailData, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(response => {
         console.log('Email sent successfully!', response);
         alert('Email sent successfully!');
       })
-      .catch((error) => {
-        console.error('Failed to send email:', error);
-        alert('Failed to send email. Please try again later.');
+      .catch(error => {
+        console.error('Error sending email:', error);
+  
+        if (error.response) {
+          console.error('Error response data:', error.response.data);
+          alert('Failed to send email: ' + JSON.stringify(error.response.data));
+        } else if (error.request) {
+          console.error('Request made but no response received:', error.request);
+          alert('Failed to send email. No response received from server.');
+        } else {
+          console.error('Error:', error.message);
+          alert('Failed to send email. Please try again later.');
+        }
+      })
+      .finally(() => {
+        setIsSending(false);
       });
   };
+  
+  
+  
 
   if (!selectedTemplate || !emailTemplates[selectedTemplate]) {
     return null;
@@ -132,7 +155,6 @@ const EmailMaker = ({ selectedTemplate }) => {
     <div className="container mt-4">
       <div className="row">
         <div className="col-md-8">
-          <h3>Selected Template: {selectedTemplate}</h3>
           <div className="card">
             <div className="card-body">
               {!formSubmitted ? (
@@ -144,6 +166,7 @@ const EmailMaker = ({ selectedTemplate }) => {
                         <ReactQuill
                           value={formData[field.id] || ''}
                           onChange={(content) => handleQuillChange(field.id, content)}
+                          ref={(el) => (quillRefs.current[field.id] = el)}
                           id={field.id}
                           modules={EmailMaker.modules}
                           formats={EmailMaker.formats}
@@ -157,7 +180,7 @@ const EmailMaker = ({ selectedTemplate }) => {
                           name={field.id}
                           value={formData[field.id] || ''}
                           onChange={handleChange}
-                          required={field.required} // Set required attribute dynamically
+                          required
                         />
                       )}
                     </div>
@@ -170,7 +193,13 @@ const EmailMaker = ({ selectedTemplate }) => {
                   <div id="generated-email" ref={generatedEmailRef}>
                     <pre style={{ whiteSpace: 'pre-wrap' }}>{generatedEmail}</pre>
                   </div>
-                  <button className="btn btn-success mt-3" onClick={sendEmail}>Send Email</button>
+                  <button
+                    className="btn btn-success mt-3"
+                    onClick={sendEmail}
+                    disabled={isSending}
+                  >
+                    {isSending ? 'Please wait...' : 'Send Email'}
+                  </button>
                   <button className="btn btn-secondary mt-3" onClick={() => setFormSubmitted(false)}>Edit</button>
                 </div>
               )}
