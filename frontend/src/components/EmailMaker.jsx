@@ -56,8 +56,6 @@ const EmailMaker = ({ selectedTemplate }) => {
   const [formData, setFormData] = useState({});
   const [generatedEmail, setGeneratedEmail] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [isSending, setIsSending] = useState(false);
-  const quillRefs = useRef({});
 
   const generatedEmailRef = useRef(null);
 
@@ -100,50 +98,18 @@ const EmailMaker = ({ selectedTemplate }) => {
   };
 
   const sendEmail = () => {
-    setIsSending(true);
-  
-    // Prepare email data for sending
     const emailData = {
-      From: `${formData.YourName} <${formData.YourEmail}>`,
-      To: `${formData.RecipientName} <${formData.RecipientEmail}>`,
-      Subject: formData.Subject,
-      Body: formData.EmailBody,
+      ...formData,
     };
   
-    // Log email data for debugging purposes
-    console.log('Sending email data:', emailData);
-  
-    // Send POST request to server
-    axios.post('https://input2docs.onrender.com/api/send-email/', emailData, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(response => {
-        console.log('Email sent successfully!', response);
+    axios.post('https://input2docs.onrender.com/api/send-email/', emailData)
+      .then((response) => {
         alert('Email sent successfully!');
       })
-      .catch(error => {
-        console.error('Error sending email:', error);
-  
-        if (error.response) {
-          console.error('Error response data:', error.response.data);
-          alert('Failed to send email: ' + JSON.stringify(error.response.data));
-        } else if (error.request) {
-          console.error('Request made but no response received:', error.request);
-          alert('Failed to send email. No response received from server.');
-        } else {
-          console.error('Error:', error.message);
-          alert('Failed to send email. Please try again later.');
-        }
-      })
-      .finally(() => {
-        setIsSending(false);
+      .catch((error) => {
+        alert('Failed to send email. Please try again later.');
       });
   };
-  
-  
-  
 
   if (!selectedTemplate || !emailTemplates[selectedTemplate]) {
     return null;
@@ -155,6 +121,7 @@ const EmailMaker = ({ selectedTemplate }) => {
     <div className="container mt-4">
       <div className="row">
         <div className="col-md-8">
+          <h3>Selected Template: {selectedTemplate}</h3>
           <div className="card">
             <div className="card-body">
               {!formSubmitted ? (
@@ -166,7 +133,6 @@ const EmailMaker = ({ selectedTemplate }) => {
                         <ReactQuill
                           value={formData[field.id] || ''}
                           onChange={(content) => handleQuillChange(field.id, content)}
-                          ref={(el) => (quillRefs.current[field.id] = el)}
                           id={field.id}
                           modules={EmailMaker.modules}
                           formats={EmailMaker.formats}
@@ -193,13 +159,7 @@ const EmailMaker = ({ selectedTemplate }) => {
                   <div id="generated-email" ref={generatedEmailRef}>
                     <pre style={{ whiteSpace: 'pre-wrap' }}>{generatedEmail}</pre>
                   </div>
-                  <button
-                    className="btn btn-success mt-3"
-                    onClick={sendEmail}
-                    disabled={isSending}
-                  >
-                    {isSending ? 'Please wait...' : 'Send Email'}
-                  </button>
+                  <button className="btn btn-success mt-3" onClick={sendEmail}>Send Email</button>
                   <button className="btn btn-secondary mt-3" onClick={() => setFormSubmitted(false)}>Edit</button>
                 </div>
               )}
