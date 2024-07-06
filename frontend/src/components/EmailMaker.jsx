@@ -56,6 +56,7 @@ const EmailMaker = ({ selectedTemplate }) => {
   const [formData, setFormData] = useState({});
   const [generatedEmail, setGeneratedEmail] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const generatedEmailRef = useRef(null);
 
@@ -70,9 +71,9 @@ const EmailMaker = ({ selectedTemplate }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     const templateDetails = emailTemplates[selectedTemplate];
-
+  
     // Validate that all required fields are filled
     const emptyFields = templateDetails.fields.filter(field => !formData[field.id]);
     if (emptyFields.length > 0) {
@@ -80,36 +81,65 @@ const EmailMaker = ({ selectedTemplate }) => {
       alert(`Please fill in the following fields: ${fieldNames}`);
       return;
     }
-
+  
     let filledTemplate = templateDetails.template;
     templateDetails.fields.forEach(field => {
       const placeholder = `{${field.id}}`;
       filledTemplate = filledTemplate.replace(new RegExp(placeholder, 'g'), formData[field.id] || '');
     });
-
+  
     setGeneratedEmail(filledTemplate);
     setFormSubmitted(true);
-
+  
     setTimeout(() => {
       if (generatedEmailRef.current) {
         generatedEmailRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     }, 100);
   };
-
+  
   const sendEmail = () => {
+    setIsSending(true);
+
+    // Prepare email data for sending
     const emailData = {
       ...formData,
+      selectedTemplate,
+      generatedEmail: stripHtmlTags(generatedEmail) // Ensure HTML tags are stripped
     };
-  
-    axios.post('https://input2docs.onrender.com/api/send-email/', emailData)
+
+    axios.post('http://127.0.0.1:8000/api/send-email/', emailData)
       .then((response) => {
+        console.log("Logged data", response);
         alert('Email sent successfully!');
       })
       .catch((error) => {
         alert('Failed to send email. Please try again later.');
+      }).finally(() => {
+        setIsSending(false);
       });
   };
+
+  const stripHtmlTags = (html) => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const body = doc.body;
+    
+    // Remove <p> tags and adjust other formatting
+    const textContent = Array.from(body.childNodes)
+      .map(node => {
+        if (node.nodeName === 'P') {
+          return node.textContent.trim(); // Trim spaces for paragraphs
+        } else if (node.nodeName === 'BR') {
+          return ' '; // Replace <br> tags with space
+        } else {
+          return node.textContent || ''; // Handle other nodes normally
+        }
+      })
+      .join(''); // Join all text content into a single string
+    
+    return textContent;
+  };
+  
 
   if (!selectedTemplate || !emailTemplates[selectedTemplate]) {
     return null;
@@ -157,10 +187,12 @@ const EmailMaker = ({ selectedTemplate }) => {
                 <div className='GenLetterSection'>
                   <h5>Generated Email</h5>
                   <div id="generated-email" ref={generatedEmailRef}>
-                    <pre style={{ whiteSpace: 'pre-wrap' }}>{generatedEmail}</pre>
+                    <pre>{stripHtmlTags(generatedEmail)}</pre>
                   </div>
-                  <button className="btn btn-success mt-3" onClick={sendEmail}>Send Email</button>
-                  <button className="btn btn-secondary mt-3" onClick={() => setFormSubmitted(false)}>Edit</button>
+                  <button onClick={() => setFormSubmitted(false)} className="btn btn-secondary mt-3">Edit Email</button>
+                  <button onClick={sendEmail} className="btn btn-success mt-3 ms-3" disabled={isSending}>
+                    {isSending ? 'Sending...' : 'Send Email'}
+                  </button>
                 </div>
               )}
             </div>
@@ -176,20 +208,16 @@ EmailMaker.modules = {
     [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
     [{ size: [] }],
     ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-    [{ 'list': 'ordered' }, { 'list': 'bullet' },
-    { 'indent': '-1' }, { 'indent': '+1' }],
+    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
     ['link', 'image', 'video'],
     ['clean']
   ],
-  clipboard: {
-    matchVisual: false,
-  }
 };
 
 EmailMaker.formats = [
   'header', 'font', 'size',
   'bold', 'italic', 'underline', 'strike', 'blockquote',
-  'list', 'bullet', 'indent',
+  'list', 'bullet',
   'link', 'image', 'video'
 ];
 

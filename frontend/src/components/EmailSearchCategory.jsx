@@ -102,3 +102,4 @@ const EmailSearchCategory = ({ handleSubcategoryClick, selectedSubcategory }) =>
 };
 
 export default EmailSearchCategory;
+//clear

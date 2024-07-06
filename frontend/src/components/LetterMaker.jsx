@@ -137,6 +137,27 @@ const LetterMaker = ({ selectedTemplate }) => {
     setFormData({ ...formData, letterBody: content });
   };
 
+  const stripHtmlTags = (html) => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const body = doc.body;
+    
+    // Remove <p> tags and adjust other formatting
+    const textContent = Array.from(body.childNodes)
+      .map(node => {
+        if (node.nodeName === 'P') {
+          return node.textContent.trim(); // Trim spaces for paragraphs
+        } else if (node.nodeName === 'BR') {
+          return ' '; // Replace <br> tags with space
+        } else {
+          return node.textContent || ''; // Handle other nodes normally
+        }
+      })
+      .join(''); // Join all text content into a single string
+    
+    return textContent;
+  };
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -227,7 +248,7 @@ const LetterMaker = ({ selectedTemplate }) => {
                 <div className='GenLetterSection'>
                   <h5>Generated Letter</h5>
                   <div id="generated-letter" ref={generatedLetterRef}>
-                    <pre>{generatedLetter}</pre>
+                    <pre>{stripHtmlTags(generatedLetter)}</pre>
                   </div>
                   <button className="btn btn-success mt-3" onClick={downloadAsPDF}>Download as PDF</button>
                   <button className="btn btn-secondary mt-3" onClick={() => setFormSubmitted(false)}>Edit</button>
