@@ -108,7 +108,7 @@ const EmailMaker = ({ selectedTemplate }) => {
       generatedEmail: stripHtmlTags(generatedEmail) // Ensure HTML tags are stripped
     };
 
-    axios.post('http://127.0.0.1:8000/api/send-email/', emailData)
+    axios.post('https://input2docs.onrender.com/api/send-email/', emailData)
       .then((response) => {
         console.log("Logged data", response);
         alert('Email sent successfully!');
