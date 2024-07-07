@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Endbar() {
   return (
-    <footer className="bg-light py-4">
+    <footer className="bg-dark text-white py-4">
       <div className="container">
         <div className="row">
           {/* First Column */}

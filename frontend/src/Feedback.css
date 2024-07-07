@@ -1,0 +1,61 @@
+/* Feedback.css */
+
+.bg-black {
+  background-color: wheat;
+}
+.text-center{
+  color: #ff6600;
+}
+
+.feedback-content {
+  background-color: wheat;
+  padding: 20px;
+  color: wheat; /* Text color for all content */
+}
+
+.feedback-form {
+  background-color: wheat;
+  border: 1px solid gray;
+  padding: 20px;
+}
+
+.feedback-form form {
+  margin-top: 20px;
+}
+
+.feedback-form label {
+  font-weight: bold;
+  color: crimson; /* Label text color */
+}
+
+.feedback-form .form-control {
+  margin-bottom: 10px;
+  color: maroon; /* Input and textarea text color */
+}
+
+.btn-custom {
+  background-color: #ff6600; /* Button background color */
+  border-color: #ff6600; /* Button border color */
+  position: relative;
+  transition: background-color 0.3s, border-color 0.3s;
+  /* Button text color */
+}
+
+.btn-custom:hover {
+  background-color: #e65c00; /* Button background color on hover */
+  border-color: #e65c00; 
+ 
+}
+
+.btn-custom:focus, .btn-custom.focus {
+  box-shadow: 0 0 0 0.2rem rgba(230, 92, 0, 0.5);
+}
+
+.arrow-right {
+  margin-left: 10px;
+  transition: margin-left 0.3s;
+}
+
+.btn-custom:hover .arrow-right {
+  margin-left: 20px; /* Arrow moves further to the right on hover */
+}

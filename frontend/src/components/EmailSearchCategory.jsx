@@ -38,7 +38,16 @@ const EmailSearchCategory = ({ handleSubcategoryClick, selectedSubcategory }) =>
 
   return (
     <div className="container p-4">
-      <h1>View And Download Emails</h1>
+      <div>
+        <h1 style={{ 
+          paddingTop: '15%',
+          color: 'wheat', 
+          fontWeight: 'bold', 
+          textAlign: 'center'
+        }}>
+          View And Download <span  style={{ fontFamily: 'cursive', color:'red' }}>Emails</span>
+        </h1>
+      </div>
       <p className="view-download-instructions">
         You can view and download emails for various purposes below.
       </p>

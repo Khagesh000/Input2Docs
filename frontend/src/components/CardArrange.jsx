@@ -32,7 +32,9 @@ const CardArrange = () => {
                 <li>Fundraising Letters</li>
                 <li>Safety and Emergency Letters</li>
               </ul>
-              <Link to="/letter" className="btn btn-primary">EXPLORE</Link>
+              <Link to="/letter" className="btn btn-primary">
+                EXPLORE <span className="arrow-right">→</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -48,7 +50,9 @@ const CardArrange = () => {
                 <li>Client Relations</li>
                 <li>Meeting and appointment</li>
               </ul>
-              <Link to="/letter" className="btn btn-primary">EXPLORE</Link>
+              <Link to="/letter" className="btn btn-primary">
+                EXPLORE <span className="arrow-right">→</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -64,7 +68,9 @@ const CardArrange = () => {
                 <li>Traffic Violation</li>
                 <li>Victim Assistance</li>
               </ul>
-              <Link to="/letter" className="btn btn-primary">EXPLORE</Link>
+              <Link to="/letter" className="btn btn-primary">
+                EXPLORE <span className="arrow-right">→</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -83,7 +89,9 @@ const CardArrange = () => {
                 <li>Financial Assistance</li>
                 <li>Security Letters</li>
               </ul>
-              <Link to="/letter" className="btn btn-primary">EXPLORE</Link>
+              <Link to="/letter" className="btn btn-primary">
+                EXPLORE <span className="arrow-right">→</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -99,7 +107,9 @@ const CardArrange = () => {
                 <li>Contract Letters</li>
                 <li>Dispute Resolution</li>
               </ul>
-              <Link to="/letter" className="btn btn-primary">EXPLORE</Link>
+              <Link to="/letter" className="btn btn-primary">
+                EXPLORE <span className="arrow-right">→</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -115,7 +125,9 @@ const CardArrange = () => {
                 <li>Public Announcement</li>
                 <li>Government Grant</li>
               </ul>
-              <Link to="/letter" className="btn btn-primary">EXPLORE</Link>
+              <Link to="/letter" className="btn btn-primary">
+                EXPLORE <span className="arrow-right">→</span>
+              </Link>
             </div>
           </div>
         </div>
