@@ -78,7 +78,7 @@ export default function Feedback() {
                   <label className="font-weight-bold">Message</label>
                   <textarea className="form-control" name="message" rows="5" required></textarea>
                 </div>
-                <button type="submit" className="btn btn-custom btn-block"  style={{ backgroundColor: '#ff6600' }}>
+                <button type="submit" className="btn btn-custom btn-block" style={{ backgroundColor: '#ff6600' }}>
                   Send Enquiry <span className="arrow-right">→</span>
                 </button>
               </form>

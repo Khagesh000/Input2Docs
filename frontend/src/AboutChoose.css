@@ -1,0 +1,55 @@
+.project-steps {
+    margin-bottom: 30px;
+  }
+  
+  .project-steps h3 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .project-steps ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .project-steps li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #666;
+  }
+  
+  .project-description {
+    padding: 20px;
+  }
+  
+  .bullet {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ec0e0e;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: -20px; /* Adjust to align bullets with text */
+  }
+  
+  .bullet-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: #000;
+    z-index: -1;
+  }
+  
+  .choose {
+    margin-right: 20%;
+  }
+  
+  @media (max-width: 768px) {
+    .project-steps {
+      margin-top: 20px;
+    }
+  }
+  

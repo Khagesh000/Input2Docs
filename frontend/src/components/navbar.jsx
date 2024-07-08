@@ -18,11 +18,14 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top p-3">
         <div className="container-fluid">
+          {/* Navbar Brand on the Left */}
           <a className="navbar-brand" href="/">
             Input2Docs
           </a>
+          
+          {/* Navbar Toggler */}
           <button
             className="navbar-toggler"
             type="button"
@@ -35,16 +38,14 @@ export default class Navbar extends Component {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+          
+          {/* Navbar Links */}
           <div
             className={`collapse navbar-collapse ${this.state.isOpen ? 'show' : ''}`}
             id="navbarSupportedContent"
           >
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
-                  Home
-                </a>
-              </li>
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              {/* Regular Navbar Items */}
               <li className="nav-item">
                 <a className="nav-link" href="/letter">
                   LETTER MAKER
@@ -55,6 +56,13 @@ export default class Navbar extends Component {
                   EMAIL MAKER
                 </a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/about">
+                  ABOUT US
+                </a>
+              </li>
+              
+              {/* Dropdown Menu */}
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -66,7 +74,7 @@ export default class Navbar extends Component {
                 >
                   Dropdown
                 </a>
-                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                   <li>
                     <a className="dropdown-item" href="/letter">
                       Letter
@@ -79,7 +87,7 @@ export default class Navbar extends Component {
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
-                    Resume Maker
+                    <span className="dropdown-item-text">Resume Maker</span>
                   </li>
                 </ul>
               </li>

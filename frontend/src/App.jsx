@@ -9,7 +9,7 @@ import Feedback from './components/Feedback';
 import Endbar from './components/Endbar'; // Assuming this is correctly imported
 import Letter from './Letter'; // Make sure this is correctly imported
 import Email from './Email'; // Make sure this is correctly imported
-
+import About from './About';
 
 function MainContent() {
   return (
@@ -35,13 +35,15 @@ function App() {
   const location = useLocation();
   const isLetterPage = location.pathname === '/letter';
   const isEmailPage = location.pathname === '/email';
+  const isAboutPage = location.pathname === '/about';
 
   return (
     <div>
-      {!isLetterPage && !isEmailPage && <MainContent />} {/* Hide MainContent on both /letter and /email pages */}
+      {!isLetterPage && !isEmailPage && !isAboutPage && <MainContent />} {/* Hide MainContent on both /letter and /email pages */}
       <Routes>
         <Route path="/letter" element={<Letter />} />
         <Route path="/email" element={<Email />} />
+        <Route path="/about" element={<About />}/>
       </Routes>
     </div>
   );

@@ -6,6 +6,7 @@ import EmailProcess from './components/EmailProcess';
 import EmailImageCaurosel from './components/EmailImageCaurosel';
 import EmailSearchCategory from './components/EmailSearchCategory';
 import EmailMaker from './components/EmailMaker';
+import Feedback from './components/Feedback';
 
 const Email = () => {
   const [selectedSubcategory, setSelectedSubcategory] = useState('');
@@ -37,6 +38,7 @@ const Email = () => {
       </div>
 
       <ImportanceEmail />
+      <Feedback/>
       <Endbar />
     </div>
   );

@@ -1,16 +1,20 @@
 /* Navbar fixed at the top */
 .navbar {
-    position: fixed;
-    width: 100%;
-    z-index: 1030;
-  }
-  
-  /* Ensure the page content moves with the navbar */
-  .content {
-    transition: margin-top 0.5s ease-out;
-  }
-  
-  .content-expanded {
-    margin-top: 200px; /* Adjust based on the navbar height */
-  }
-  
+  position: fixed;
+  width: 100%;
+  z-index: 1030;
+}
+
+/* Ensure the page content moves with the navbar */
+.content {
+  transition: margin-top 0.5s ease-out;
+}
+
+.content-expanded {
+  margin-top: 60px; /* Adjust based on the navbar height */
+}
+
+/* Custom styling for Input2Docs on the left */
+.navbar-brand {
+  margin-right: auto; /* Pushes the brand to the left */
+}

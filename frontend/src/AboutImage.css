@@ -1,0 +1,93 @@
+.about-image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .about-image-text {
+    position: absolute;
+    text-align: center;
+    color: white;
+    /* Optional: Add a semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .about-image-text h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: crimson;
+  }
+  
+  .about-image-text p {
+    margin: 10px 0 0;
+    font-size: 1.2rem;
+    font-family: cursive;
+  }
+
+  .project-details {
+    background-color: #f8f9fa; /* Light background color */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .project-details h2 {
+    margin-bottom: 20px;
+  }
+  
+  .project-details p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+
+
+  .core-values {
+    margin-top: 40px;
+  }
+  
+  .core-values h2 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon-container {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-container svg {
+    width: 32px;
+    height: 32px;
+  }
+  
+  @media (max-width: 767px) {
+    .card-body {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .icon-container {
+      margin-bottom: 10px;
+    }
+  }

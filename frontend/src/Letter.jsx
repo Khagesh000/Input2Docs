@@ -6,6 +6,7 @@ import ImageCarousel from './components/ImageCaurosel';
 import Endbar from './components/Endbar';
 import LetterMaker from './components/LetterMaker';
 import Process from './components/Process';
+import Feedback from './components/Feedback';
 import ImportanceLetter from './components/ImportanceLetter';
 
 export default function Letter() {
@@ -31,6 +32,7 @@ export default function Letter() {
       </div>
 
       <ImportanceLetter />
+      <Feedback />
       <Endbar />
     </div>
   );
