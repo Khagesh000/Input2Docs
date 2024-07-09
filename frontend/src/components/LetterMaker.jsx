@@ -7,39 +7,84 @@ import '../Letter.css';
 // Define your letter templates for each subcategory
 const letterTemplates = {
   "Permission Letters": {
-    template: `
-       {YourName}
-       {YourAddress}
-       {City}, {State} , {ZIP Code}
-       {Date}
+    "Field Trip Permission Letter": {
+      template: `
+         {YourName}
+         {YourAddress}
+         {City}, {State} , {ZIP Code}
+         {Date}
+   
+         {RecipientsName}
+         {SchoolsName}
+         {SchoolsAddress}
+         {City}, {State} , {ZIP Code}
+   
+         Dear {RecipientsName},
+   
+                I am writing to request permission for my child, {ChildsName},
+                 to attend the upcoming field trip to {letterBody} on {Date}. 
+                 This trip is an excellent educational opportunity, 
+                 and I believe it will greatly benefit my child.
+   
+                Thank you for considering this request.
+   
+                                               Sincerely,
+                                               {YourName}
+      `,
+      fields: [
+        { id: 'YourName', label: 'Your Name', type: 'text' },
+        { id: 'YourAddress', label: "Your Address", type: 'text' },
+        { id: 'City', label: 'City', type: 'text' },
+        { id: 'State', label: 'State', type: 'text' },
+        { id: 'ZIP Code', label: "Zip Code", type: 'text' },
+        { id: 'Date', label: "Date", type: 'text' },
+        { id: 'RecipientsName', label: "Recipients Name", type: 'text' },
+        { id: 'SchoolsName', label: "School Name", type: 'text' },
+        { id: 'SchoolsAddress', label: "School Address", type: 'text' },
+        { id: 'ChildsName', label: "Childs Name", type: 'text' },
+        { id: 'letterBody', label: 'Destination', type: 'quill' },
+      ]
+    },
 
-       {RecipientsName}
-       {SchoolsName}
-       {SchoolsAddress}
-       {City}, {State} , {ZIP Code}
+    "Medical Treatment Permission": {
+      template: `
+        {YourName}
+        {YourAddress}
+        {City}, {State} , {ZIP Code}
+        {Date}
 
-       Dear {RecipientsName},
+        {RecipientsName}
+        {SchoolsName}
+        {SchoolsAddress}
+        {City}, {State} , {ZIP Code}
 
-              I am writing to request permission for my child, {ChildsName}, to attend the upcoming field trip to {letterBody} on {Date}. This trip is an excellent educational opportunity, and I believe it will greatly benefit my child.
+        Dear {RecipientsName},
 
-              Thank you for considering this request.
+        I am writing to grant permission for {ChildsName} to receive {Treatment}
+        at {TreatmentLocation} on {Date}. This treatment is necessary for {Reason}.
 
-                                           Sincerely,
-                                           {YourName}
-    `,
-    fields: [
-      { id: 'YourName', label: 'Your Name', type: 'text' },
-      { id: 'YourAddress', label: "Your Address", type: 'text' },
-      { id: 'City', label: 'City', type: 'text' },
-      { id: 'State', label: 'State', type: 'text' },
-      { id: 'ZIP Code', label: "Zip Code", type: 'text' },
-      { id: 'Date', label: "Date", type: 'text' },
-      { id: 'RecipientsName', label: "Recipients Name", type: 'text' },
-      { id: 'SchoolsName', label: "School Name", type: 'text' },
-      { id: 'SchoolsAddress', label: "School Address", type: 'text' },
-      { id: 'ChildsName', label: "Childs Name", type: 'text' },
-      { id: 'letterBody', label: 'Destination', type: 'quill' },
-    ]
+        Thank you for your understanding.
+
+        Sincerely,
+        {YourName}
+      `,
+      fields: [
+        { id: 'YourName', label: 'Your Name', type: 'text' },
+        { id: 'YourAddress', label: 'Your Address', type: 'text' },
+        { id: 'City', label: 'City', type: 'text' },
+        { id: 'State', label: 'State', type: 'text' },
+        { id: 'ZIP Code', label: 'ZIP Code', type: 'text' },
+        { id: 'Date', label: 'Date', type: 'text' },
+        { id: 'RecipientsName', label: 'Recipient\'s Name', type: 'text' },
+        { id: 'SchoolsName', label: 'School\'s Name', type: 'text' },
+        { id: 'SchoolsAddress', label: 'School\'s Address', type: 'text' },
+        { id: 'ChildsName', label: 'Child\'s Name', type: 'text' },
+        { id: 'Treatment', label: 'Treatment', type: 'text' },
+        { id: 'TreatmentLocation', label: 'Treatment Location', type: 'text' },
+        { id: 'Reason', label: 'Reason for Treatment', type: 'text' },
+      ]
+    },
+
   },
   // Excuse Letter Format
   "Excuse Letters": {
@@ -58,7 +103,8 @@ const letterTemplates = {
 
     Dear {RecipientsName},
 
-    Please excuse my child, {ChildsName}, from school on {Date} due to {letterBody}.
+    Please excuse my child, {ChildsName}, 
+    from school on {Date} due to {letterBody}.
                 I appreciate your understanding.
 
                                                   Sincerely,
@@ -97,7 +143,9 @@ const letterTemplates = {
 
     Dear {RecipientsName},
 
-       I am writing to inform you about [specific matter, e.g., parent-teacher meeting, changes in school policy]. We believe this will [explain the impact].
+       I am writing to inform you about [specific matter,
+        e.g., parent-teacher meeting, changes in school policy]. 
+        We believe this will [explain the impact].
 
                 Thank you for your attention to this matter.
 
@@ -118,9 +166,12 @@ const letterTemplates = {
       { id: 'SchoolsAddress', label: "School Address", type: 'text' },
       { id: 'letterBody', label: 'Reason, e.g., illness, family emergency', type: 'quill' },
     ]
-  }
-};
+  },
 
+  
+
+  
+};
 const LetterMaker = ({ selectedTemplate }) => {
   const [formData, setFormData] = useState({});
   const [generatedLetter, setGeneratedLetter] = useState('');
@@ -156,13 +207,12 @@ const LetterMaker = ({ selectedTemplate }) => {
     
     return textContent;
   };
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Retrieve the selected template details
-    const templateDetails = letterTemplates[selectedTemplate];
+    const templateDetails = letterTemplates["Permission Letters"][selectedTemplate];
 
     // Replace placeholders in the template with form data
     let filledTemplate = templateDetails.template;
@@ -201,13 +251,13 @@ const LetterMaker = ({ selectedTemplate }) => {
     html2pdf().from(element).set(opt).save();
   };
 
-  // Render nothing if no subcategory is selected
-  if (!selectedTemplate || !letterTemplates[selectedTemplate]) {
+  // Render nothing if no subcategory is selected or template does not exist
+  if (!selectedTemplate || !letterTemplates["Permission Letters"][selectedTemplate]) {
     return null;
   }
 
-  // Render the form based on selected subcategory
-  const fields = letterTemplates[selectedTemplate].fields;
+  // Render the form based on selected subcategory and template
+  const fields = letterTemplates["Permission Letters"][selectedTemplate].fields;
 
   return (
     <div className="container mt-4">

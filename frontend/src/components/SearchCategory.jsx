@@ -1,62 +1,67 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../SearchCategory.css'; // Import custom CSS for styling
-
+import LetterMaker from './LetterMaker'; // Assuming this is where your LetterMaker component resides
 
 const categories = {
-  "School Letters": [
-    "Permission Letters",
-    "Excuse Letters",
-    "Communication Letters",
-    "Enrollment Letters",
-    "Fundraising Letters",
-    "Safety and Emergency Letters",
-  ],
-  "Office Letters": [
-    "Business Correspondence",
-    "Internal Communication",
-    "Employee Letters",
-    "Client Relations",
-    "Meeting and Appointment",
-  ],
-  "Police Station Letters": [
-    "Complaint Letters",
-    "Request Letters",
-    "Witness Statements",
-    "Traffic Violation",
-    "Victim Assistance",
-  ],
-  "Bank Letters": [
-    "Account Management",
-    "Transaction Letters",
-    "Loan and Mortgage",
-    "Financial Assistance",
-    "Security Letters",
-  ],
-  "Legal Letters": [
-    "Legal Notices",
-    "Demand Letters",
-    "Legal Correspondence",
-    "Contract Letters",
-    "Dispute Resolution",
-  ],
-  "Government Letters": [
-    "Public Services",
-    "Permit and Licensing",
-    "Regulatory Compliance",
-    "Public Announcement",
-    "Government Grant",
-  ],
-  "Entertainment Letters": [
-    "Love Letters",
-  ],
+  "School Letters": {
+    "Permission Letters": [
+      "Field Trip Permission Letter",
+      "Medical Treatment Permission",
+    ],
+    "Excuse Letters": [],
+    "Communication Letters": [],
+    "Enrollment Letters": [],
+    "Fundraising Letters": [],
+    "Safety and Emergency Letters": [],
+  },
+  "Office Letters": {
+    "Business Correspondence": [],
+    "Internal Communication": [],
+    "Employee Letters": [],
+    "Client Relations": [],
+    "Meeting and Appointment": [],
+  },
+  "Police Station Letters": {
+    "Complaint Letters": [],
+    "Request Letters": [],
+    "Witness Statements": [],
+    "Traffic Violation": [],
+    "Victim Assistance": [],
+  },
+  "Bank Letters": {
+    "Account Management": [],
+    "Transaction Letters": [],
+    "Loan and Mortgage": [],
+    "Financial Assistance": [],
+    "Security Letters": [],
+  },
+  "Legal Letters": {
+    "Legal Notices": [],
+    "Demand Letters": [],
+    "Legal Correspondence": [],
+    "Contract Letters": [],
+    "Dispute Resolution": [],
+  },
+  "Government Letters": {
+    "Public Services": [],
+    "Permit and Licensing": [],
+    "Regulatory Compliance": [],
+    "Public Announcement": [],
+    "Government Grant": [],
+  },
+  "Entertainment Letters": {
+    "Love Letters": [],
+  },
 };
 
 export default function SearchCategory({ handleSubcategoryClick, selectedSubcategory }) {
   const letterGenerationSectionRef = useRef(null);
+  const [selectedTemplate, setSelectedTemplate] = useState(null);
 
   const handleSubcategorySelection = (subcategory) => {
     handleSubcategoryClick(subcategory);
+    setSelectedTemplate(null); // Reset selected template when subcategory changes
     setTimeout(() => {
       letterGenerationSectionRef.current.scrollIntoView({ behavior: 'smooth' });
     }, 100);
@@ -68,16 +73,15 @@ export default function SearchCategory({ handleSubcategoryClick, selectedSubcate
     }
   }, [selectedSubcategory]);
 
+  const handleTemplateSelection = (templateName) => {
+    setSelectedTemplate(templateName);
+  };
+
   return (
     <div className="container p-4">
       <div>
-        <h1 style={{ 
-          paddingTop: '15%',
-          color: 'wheat', 
-          fontWeight: 'bold', 
-          textAlign: 'center'
-        }}>
-          View And Download <span  style={{ fontFamily: 'cursive', color:'red' }}>Letters</span>
+        <h1 style={{ paddingTop: '15%', color: 'wheat', fontWeight: 'bold', textAlign: 'center' }}>
+          View And Download <span style={{ fontFamily: 'cursive', color: 'red' }}>Letters</span>
         </h1>
       </div>
       <p className="view-download-instructions">
@@ -106,7 +110,7 @@ export default function SearchCategory({ handleSubcategoryClick, selectedSubcate
                 </button>
                 {/* Subcategory Dropdown */}
                 <ul className="dropdown-menu-sub">
-                  {categories[mainCategory].map((subcategory) => (
+                  {Object.keys(categories[mainCategory]).map((subcategory) => (
                     <li key={subcategory}>
                       <button
                         className="dropdown-item"
@@ -114,6 +118,21 @@ export default function SearchCategory({ handleSubcategoryClick, selectedSubcate
                       >
                         {subcategory}
                       </button>
+                      {/* Template Dropdown */}
+                      {categories[mainCategory][subcategory].length > 0 && (
+                        <ul className="dropdown-menu-sub">
+                          {categories[mainCategory][subcategory].map((template) => (
+                            <li key={template}>
+                              <button
+                                className="dropdown-item"
+                                onClick={() => handleTemplateSelection(template)}
+                              >
+                                {template}
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -121,22 +140,25 @@ export default function SearchCategory({ handleSubcategoryClick, selectedSubcate
             ))}
           </ul>
         </div>
-        
-        {/* Input box to display selected subcategory */}
+
+        {/* Input box to display selected subcategory and template */}
         <input
           type="text"
           className="form-control"
           aria-label="Text input with dropdown buttons"
-          value={selectedSubcategory}
+          value={selectedTemplate ? selectedTemplate : selectedSubcategory}
           readOnly
         />
       </div>
 
       {/* Letter Generation Section */}
       <div ref={letterGenerationSectionRef} className="letter-generation-section mt-5">
-        <h2>Generate Your Letter</h2>
-        
-        {/* This is where you include your LetterMaker component */}
+        {selectedTemplate && (
+          <div>
+            <h2>Generate Your Letter</h2>
+            <LetterMaker selectedTemplate={selectedTemplate} />
+          </div>
+        )}
       </div>
     </div>
   );

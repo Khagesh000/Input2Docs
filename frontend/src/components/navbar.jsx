@@ -18,7 +18,7 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top p-3">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top p-2">
         <div className="container-fluid">
           {/* Navbar Brand on the Left */}
           <a className="navbar-brand" href="/">
