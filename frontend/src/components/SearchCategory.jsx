@@ -58,7 +58,7 @@ const categories = {
 export default function SearchCategory({ handleSubcategoryClick, selectedSubcategory }) {
   const letterGenerationSectionRef = useRef(null);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
-
+  
   const handleSubcategorySelection = (subcategory) => {
     handleSubcategoryClick(subcategory);
     setSelectedTemplate(null); // Reset selected template when subcategory changes
@@ -67,18 +67,21 @@ export default function SearchCategory({ handleSubcategoryClick, selectedSubcate
     }, 100);
   };
 
+
+
   useEffect(() => {
-    if (selectedSubcategory) {
+    if (selectedTemplate) {
       letterGenerationSectionRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [selectedSubcategory]);
+  }, [selectedTemplate]);
+
 
   const handleTemplateSelection = (templateName) => {
     setSelectedTemplate(templateName);
   };
 
   return (
-    <div className="container p-4">
+    <div className="container">
       <div>
         <h1 style={{ paddingTop: '15%', color: 'wheat', fontWeight: 'bold', textAlign: 'center' }}>
           View And Download <span style={{ fontFamily: 'cursive', color: 'red' }}>Letters</span>
@@ -152,10 +155,10 @@ export default function SearchCategory({ handleSubcategoryClick, selectedSubcate
       </div>
 
       {/* Letter Generation Section */}
-      <div ref={letterGenerationSectionRef} className="letter-generation-section mt-5">
+      <div ref={letterGenerationSectionRef} className="letter-generation-section  p-5">
         {selectedTemplate && (
           <div>
-            <h2>Generate Your Letter</h2>
+            <h2 className='Generate-your'>Generate Your Letter</h2>
             <LetterMaker selectedTemplate={selectedTemplate} />
           </div>
         )}

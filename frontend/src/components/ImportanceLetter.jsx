@@ -15,8 +15,8 @@ export default function ImportanceLetter() {
                 <div className="rotating-image-inner">
                   <img src={img2} alt="Enhance Communication" className="img-fluid" />
                   <div className="rotating-image-content">
-                    <h3 className="text-white">Enhance Your Communication</h3>
-                    <p className="text-white">
+                    <h3 className="text-dark">Enhance Your Communication</h3>
+                    <p className="text-gray">
                       Creating effective letters requires clarity in purpose and audience understanding.
                       Structure your content with a clear introduction, informative body, and concise
                       conclusion. Maintain a professional tone, use simple language, and personalize where
@@ -30,13 +30,13 @@ export default function ImportanceLetter() {
           {/* Right Side: Text Content */}
           <div className="col-lg-6 ">
             <div className="content-wrapper">
-              <h2 className="text-white">Importance and Benefits of Letters</h2>
-              <p className="text-white">
+              <h2 className="text-dark">Importance and Benefits of Letters</h2>
+              <p className="text-grey">
                 Letters play a crucial role in communication, whether in personal or professional settings.
                 They provide a formal way to convey messages, requests, or information. Letters can establish
                 credibility, document important details, and serve as a record of communication.
               </p>
-              <p className="text-white">
+              <p className="text-grey">
                 Some benefits of letters include their ability to reach a specific recipient directly, their
                 formal nature which is suitable for official communications, and their potential to be archived
                 for future reference.

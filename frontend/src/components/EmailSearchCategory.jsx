@@ -1,55 +1,61 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../SearchCategory.css'; // Import custom CSS for styling
+import EmailMaker from './EmailMaker'; // Assuming this is where your EmailMaker component resides
 
 const categories = {
-  "Business Emails": [
-    "Sales Emails",
-    "Marketing Emails",
-    "Customer Service Emails",
-    "Networking Emails",
-    "Introduction Emails",
-    "Follow-Up Emails",
-  ],
-  "Professional Emails": [
-    "Job Application Emails",
-    "Resume Emails",
-    "Meeting Request Emails",
-    "Recommendation Request Emails",
-    "Feedback Emails",
-  ],
+  "Business Emails": {
+    "Sales Emails": [
+      "Introduction Email",
+      "Follow-Up Email",
+    ],
+    "Marketing Emails": [],
+    "Customer Service Emails": [],
+    "Networking Emails": [],
+    "Introduction Emails": [],
+    "Follow-Up Emails": [],
+  },
+  "Professional Emails": {
+    "Job Application Emails": [],
+    "Resume Emails": [],
+    "Meeting Request Emails": [],
+    "Recommendation Request Emails": [],
+    "Feedback Emails": [],
+  },
   // Add more categories as needed
 };
 
 const EmailSearchCategory = ({ handleSubcategoryClick, selectedSubcategory }) => {
-  const letterGenerationSectionRef = useRef(null);
-
+  const emailGenerationSectionRef = useRef(null);
+  const [selectedTemplate, setSelectedTemplate] = useState(null);
+  
   const handleSubcategorySelection = (subcategory) => {
     handleSubcategoryClick(subcategory);
+    setSelectedTemplate(null); // Reset selected template when subcategory changes
     setTimeout(() => {
-      letterGenerationSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+      emailGenerationSectionRef.current.scrollIntoView({ behavior: 'smooth' });
     }, 100);
   };
 
   useEffect(() => {
-    if (selectedSubcategory) {
-      letterGenerationSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (selectedTemplate) {
+      emailGenerationSectionRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [selectedSubcategory]);
+  }, [selectedTemplate]);
+
+  const handleTemplateSelection = (templateName) => {
+    setSelectedTemplate(templateName);
+  };
 
   return (
-    <div className="container p-4">
+    <div className="container">
       <div>
-        <h1 style={{ 
-          paddingTop: '15%',
-          color: 'wheat', 
-          fontWeight: 'bold', 
-          textAlign: 'center'
-        }}>
-          View And Download <span  style={{ fontFamily: 'cursive', color:'red' }}>Emails</span>
+        <h1 style={{ paddingTop: '15%', color: 'wheat', fontWeight: 'bold', textAlign: 'center' }}>
+          View And Generate <span style={{ fontFamily: 'cursive', color: 'red' }}>Emails</span>
         </h1>
       </div>
       <p className="view-download-instructions">
-        You can view and download emails for various purposes below.
+        You can view and generate emails for various purposes below.
       </p>
 
       <div className="input-group mb-3">
@@ -59,7 +65,7 @@ const EmailSearchCategory = ({ handleSubcategoryClick, selectedSubcategory }) =>
             className="btn btn-outline-secondary dropdown-toggle"
             type="button"
             data-bs-toggle="dropdown"
-            aria-expanded={false}
+            aria-expanded="false"
           >
             {selectedSubcategory ? selectedSubcategory : 'Select Category'}
           </button>
@@ -74,7 +80,7 @@ const EmailSearchCategory = ({ handleSubcategoryClick, selectedSubcategory }) =>
                 </button>
                 {/* Subcategory Dropdown */}
                 <ul className="dropdown-menu-sub">
-                  {categories[mainCategory].map((subcategory) => (
+                  {Object.keys(categories[mainCategory]).map((subcategory) => (
                     <li key={subcategory}>
                       <button
                         className="dropdown-item"
@@ -82,6 +88,21 @@ const EmailSearchCategory = ({ handleSubcategoryClick, selectedSubcategory }) =>
                       >
                         {subcategory}
                       </button>
+                      {/* Template Dropdown */}
+                      {categories[mainCategory][subcategory].length > 0 && (
+                        <ul className="dropdown-menu-sub">
+                          {categories[mainCategory][subcategory].map((template) => (
+                            <li key={template}>
+                              <button
+                                className="dropdown-item"
+                                onClick={() => handleTemplateSelection(template)}
+                              >
+                                {template}
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -89,26 +110,28 @@ const EmailSearchCategory = ({ handleSubcategoryClick, selectedSubcategory }) =>
             ))}
           </ul>
         </div>
-        
-        {/* Input box to display selected subcategory */}
+
+        {/* Input box to display selected subcategory and template */}
         <input
           type="text"
           className="form-control"
           aria-label="Text input with dropdown buttons"
-          value={selectedSubcategory}
+          value={selectedTemplate ? selectedTemplate : selectedSubcategory}
           readOnly
         />
       </div>
 
       {/* Email Generation Section */}
-      <div ref={letterGenerationSectionRef} className="letter-generation-section mt-5">
-        <h2>Generate Your Email</h2>
-        
-        {/* This is where you include your EmailMaker component */}
+      <div ref={emailGenerationSectionRef} className="email-generation-section pt-5">
+        {selectedTemplate && (
+          <div>
+            <h2 className='Generate-your'>Generate Your Email</h2>
+            <EmailMaker selectedTemplate={selectedTemplate} />
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
 export default EmailSearchCategory;
-//clear

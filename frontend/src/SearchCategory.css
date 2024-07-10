@@ -50,6 +50,9 @@
   display: block; /* Show submenus on hover */
 }
 
+.Generate-your{
+  margin-left: 20%;
+}
 /* Media queries for small devices */
 @media (max-width: 576px) {
   .dropdown-menu,

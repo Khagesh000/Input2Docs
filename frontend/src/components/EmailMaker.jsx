@@ -1,63 +1,58 @@
 import React, { useState, useRef } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import axios from 'axios';
+import html2pdf from 'html2pdf.js';
+import '../Letter.css';
 
 const emailTemplates = {
-  "Sales Emails": {
-    template: `
-      From: {YourName} <{YourEmail}>
-      To: {RecipientName} <{RecipientEmail}>
+  "Business Emails": {
+    "Introduction Email": {
+      template: `
+        Subject: Introduction
 
-      Subject: {Subject}
+        Dear {RecipientName},
 
-      Dear {RecipientName},
+        I hope this email finds you well. My name is {YourName}, and I am reaching out to introduce {YourCompany}. We specialize in {Product/Service}, and I believe there could be a beneficial partnership between our companies.
 
-      {EmailBody}
+        Please let me know if you would be interested in scheduling a brief call or meeting to discuss this further.
 
-      Sincerely,
-      {YourName}
-    `,
-    fields: [
-      { id: 'YourName', label: 'Your Name', type: 'text' },
-      { id: 'YourEmail', label: 'Your Email', type: 'email' },
-      { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
-      { id: 'RecipientEmail', label: 'Recipient Email', type: 'email' },
-      { id: 'Subject', label: 'Subject', type: 'text' },
-      { id: 'EmailBody', label: 'Email Body', type: 'quill' },
-    ]
+        Best regards,
+        {YourName}
+      `,
+      fields: [
+        { id: 'YourName', label: 'Your Name', type: 'text' },
+        { id: 'YourCompany', label: 'Your Company', type: 'text' },
+        { id: 'Product/Service', label: 'Product/Service', type: 'text' },
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' }
+      ]
+    },
+    "Follow-Up Email": {
+      template: `
+        Subject: Follow-Up
+
+        Dear {RecipientName},
+
+        I hope this message finds you well. I wanted to follow up on our recent conversation regarding {Product/Service}. Do you have any further questions or thoughts on how we can move forward?
+
+        Looking forward to your response.
+
+        Best regards,
+        {YourName}
+      `,
+      fields: [
+        { id: 'YourName', label: 'Your Name', type: 'text' },
+        { id: 'Product/Service', label: 'Product/Service', type: 'text' },
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' }
+      ]
+    }
   },
-  "Job Application Emails": {
-    template: `
-      From: {YourName} <{YourEmail}>
-      To: {Company} <{CompanyEmail}>
-
-      Subject: Application for {Position}
-
-      Dear {Company},
-
-      {CoverLetterBody}
-
-      Sincerely,
-      {YourName}
-    `,
-    fields: [
-      { id: 'YourName', label: 'Your Name', type: 'text' },
-      { id: 'YourEmail', label: 'Your Email', type: 'email' },
-      { id: 'Company', label: 'Company Name', type: 'text' },
-      { id: 'CompanyEmail', label: 'Company Email', type: 'email' },
-      { id: 'Position', label: 'Position', type: 'text' },
-      { id: 'CoverLetterBody', label: 'Cover Letter Body', type: 'quill' },
-    ]
-  },
+  // Add more categories and templates as needed
 };
 
 const EmailMaker = ({ selectedTemplate }) => {
   const [formData, setFormData] = useState({});
   const [generatedEmail, setGeneratedEmail] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [isSending, setIsSending] = useState(false);
-
   const generatedEmailRef = useRef(null);
 
   const handleChange = (e) => {
@@ -65,95 +60,52 @@ const EmailMaker = ({ selectedTemplate }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleQuillChange = (id, content) => {
-    setFormData({ ...formData, [id]: content });
+  const handleQuillChange = (content, delta, source, editor) => {
+    setFormData({ ...formData, emailBody: content });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
-    const templateDetails = emailTemplates[selectedTemplate];
-  
-    // Validate that all required fields are filled
-    const emptyFields = templateDetails.fields.filter(field => !formData[field.id]);
-    if (emptyFields.length > 0) {
-      const fieldNames = emptyFields.map(field => field.label).join(', ');
-      alert(`Please fill in the following fields: ${fieldNames}`);
-      return;
-    }
-  
+    const templateDetails = emailTemplates["Business Emails"][selectedTemplate];
     let filledTemplate = templateDetails.template;
     templateDetails.fields.forEach(field => {
       const placeholder = `{${field.id}}`;
       filledTemplate = filledTemplate.replace(new RegExp(placeholder, 'g'), formData[field.id] || '');
     });
-  
     setGeneratedEmail(filledTemplate);
     setFormSubmitted(true);
-  
     setTimeout(() => {
       if (generatedEmailRef.current) {
         generatedEmailRef.current.scrollIntoView({ behavior: 'smooth' });
       }
     }, 100);
   };
-  
-  const sendEmail = () => {
-    setIsSending(true);
 
-    // Prepare email data for sending
-    const emailData = {
-      ...formData,
-      selectedTemplate,
-      generatedEmail: stripHtmlTags(generatedEmail) // Ensure HTML tags are stripped
+  const downloadAsPDF = () => {
+    const element = document.getElementById('generated-email');
+    const opt = {
+      margin: 0.5,
+      filename: `${selectedTemplate}.pdf`,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
     };
-
-    axios.post('https://input2docs.onrender.com/api/send-email/', emailData)
-      .then((response) => {
-        console.log("Logged data", response);
-        alert('Email sent successfully!');
-      })
-      .catch((error) => {
-        alert('Failed to send email. Please try again later.');
-      }).finally(() => {
-        setIsSending(false);
-      });
+    html2pdf().from(element).set(opt).save();
   };
 
-  const stripHtmlTags = (html) => {
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-    const body = doc.body;
-    
-    // Remove <p> tags and adjust other formatting
-    const textContent = Array.from(body.childNodes)
-      .map(node => {
-        if (node.nodeName === 'P') {
-          return node.textContent.trim(); // Trim spaces for paragraphs
-        } else if (node.nodeName === 'BR') {
-          return ' '; // Replace <br> tags with space
-        } else {
-          return node.textContent || ''; // Handle other nodes normally
-        }
-      })
-      .join(''); // Join all text content into a single string
-    
-    return textContent;
-  };
-  
-
-  if (!selectedTemplate || !emailTemplates[selectedTemplate]) {
+  if (!selectedTemplate || !emailTemplates["Business Emails"][selectedTemplate]) {
     return null;
   }
 
-  const fields = emailTemplates[selectedTemplate].fields;
+  const fields = emailTemplates["Business Emails"][selectedTemplate].fields;
 
   return (
     <div className="container mt-4">
       <div className="row">
         <div className="col-md-8">
-          <h3>Selected Template: {selectedTemplate}</h3>
+          <h3 className='selected-template'>Selected Template: {selectedTemplate}</h3>
           <div className="card">
-            <div className="card-body">
+            <div className="card-body generate">
               {!formSubmitted ? (
                 <form onSubmit={handleSubmit}>
                   {fields.map(field => (
@@ -161,9 +113,8 @@ const EmailMaker = ({ selectedTemplate }) => {
                       <label htmlFor={field.id} className="form-label">{field.label}</label>
                       {field.type === 'quill' ? (
                         <ReactQuill
-                          value={formData[field.id] || ''}
-                          onChange={(content) => handleQuillChange(field.id, content)}
-                          id={field.id}
+                          value={formData.emailBody || ''}
+                          onChange={handleQuillChange}
                           modules={EmailMaker.modules}
                           formats={EmailMaker.formats}
                           className="quill-editor"
@@ -181,18 +132,16 @@ const EmailMaker = ({ selectedTemplate }) => {
                       )}
                     </div>
                   ))}
-                  <button type="submit" className="btn btn-primary">Generate Email</button>
+                  <button type="submit" className="btn btn-primary generate-button">Generate Email</button>
                 </form>
               ) : (
-                <div className='GenLetterSection'>
+                <div className='GenEmailSection'>
                   <h5>Generated Email</h5>
                   <div id="generated-email" ref={generatedEmailRef}>
-                    <pre>{stripHtmlTags(generatedEmail)}</pre>
+                    <pre>{generatedEmail}</pre>
                   </div>
-                  <button onClick={() => setFormSubmitted(false)} className="btn btn-secondary mt-3">Edit Email</button>
-                  <button onClick={sendEmail} className="btn btn-success mt-3 ms-3" disabled={isSending}>
-                    {isSending ? 'Sending...' : 'Send Email'}
-                  </button>
+                  <button className="btn btn-success mt-3" onClick={downloadAsPDF}>Download as PDF</button>
+                  <button className="btn btn-secondary mt-3" onClick={() => setFormSubmitted(false)}>Edit</button>
                 </div>
               )}
             </div>
@@ -208,16 +157,20 @@ EmailMaker.modules = {
     [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
     [{ size: [] }],
     ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+    [{ 'list': 'ordered' }, { 'list': 'bullet' },
+    { 'indent': '-1' }, { 'indent': '+1' }],
     ['link', 'image', 'video'],
     ['clean']
   ],
+  clipboard: {
+    matchVisual: false,
+  }
 };
 
 EmailMaker.formats = [
   'header', 'font', 'size',
   'bold', 'italic', 'underline', 'strike', 'blockquote',
-  'list', 'bullet',
+  'list', 'bullet', 'indent',
   'link', 'image', 'video'
 ];
 

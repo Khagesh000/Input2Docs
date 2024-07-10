@@ -1,9 +1,10 @@
 /* ImportanceLetter.css */
 .importance-letter-container {
-    background-color: #007bff; /* Blue background color */
+    background-color: wheat; /* Blue background color */
     padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    color: #000;
   }
   
   .content-wrapper {
@@ -44,7 +45,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #fff;
+    color: #0c0c0c;
     z-index: 1; /* Ensure content is above the overlay */
   }
   
