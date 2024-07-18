@@ -9,7 +9,10 @@ const categories = {
       "Field Trip Permission Letter",
       "Medical Treatment Permission",
     ],
-    "Excuse Letters": [],
+    "Excuse Letters": [
+      "Absentee Excuse Letter",
+      "Late Arrival Excuse Letter",
+    ],
     "Communication Letters": [],
     "Enrollment Letters": [],
     "Fundraising Letters": [],
@@ -55,26 +58,30 @@ const categories = {
   },
 };
 
-export default function SearchCategory({ handleSubcategoryClick, selectedSubcategory }) {
+const SearchCategory = ({ handleSubcategoryClick }) => {
   const letterGenerationSectionRef = useRef(null);
-  const [selectedTemplate, setSelectedTemplate] = useState(null);
-  
-  const handleSubcategorySelection = (subcategory) => {
-    handleSubcategoryClick(subcategory);
-    setSelectedTemplate(null); // Reset selected template when subcategory changes
-    setTimeout(() => {
-      letterGenerationSectionRef.current.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  };
-
-
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedSubcategory, setSelectedSubcategory] = useState('');
+  const [selectedTemplate, setSelectedTemplate] = useState('');
 
   useEffect(() => {
     if (selectedTemplate) {
-      letterGenerationSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+      letterGenerationSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }, [selectedTemplate]);
 
+  const handleCategorySelection = (category) => {
+    setSelectedCategory(category);
+    setSelectedSubcategory('');
+    setSelectedTemplate('');
+  };
+
+  const handleSubcategorySelection = (subcategory) => {
+    setSelectedSubcategory(subcategory);
+    setSelectedTemplate(categories[subcategory]?.[Object.keys(categories[subcategory])[0]]); // Select the first template automatically
+   
+    handleSubcategoryClick(subcategory);
+  };
 
   const handleTemplateSelection = (templateName) => {
     setSelectedTemplate(templateName);
@@ -100,62 +107,63 @@ export default function SearchCategory({ handleSubcategoryClick, selectedSubcate
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            {selectedSubcategory ? selectedSubcategory : 'Select Category'}
+            {selectedTemplate || selectedSubcategory || selectedCategory || 'Select Category'}
           </button>
           <ul className="dropdown-menu">
             {Object.keys(categories).map((mainCategory) => (
               <li key={mainCategory} className="dropdown-item">
                 <button
                   className="dropdown-item"
-                  onClick={() => handleSubcategorySelection(mainCategory)}
+                  onMouseEnter={() => handleCategorySelection(mainCategory)}
                 >
                   {mainCategory}
                 </button>
-                {/* Subcategory Dropdown */}
-                <ul className="dropdown-menu-sub">
-                  {Object.keys(categories[mainCategory]).map((subcategory) => (
-                    <li key={subcategory}>
-                      <button
-                        className="dropdown-item"
-                        onClick={() => handleSubcategorySelection(subcategory)}
-                      >
-                        {subcategory}
-                      </button>
-                      {/* Template Dropdown */}
-                      {categories[mainCategory][subcategory].length > 0 && (
-                        <ul className="dropdown-menu-sub">
-                          {categories[mainCategory][subcategory].map((template) => (
-                            <li key={template}>
-                              <button
-                                className="dropdown-item"
-                                onClick={() => handleTemplateSelection(template)}
-                              >
-                                {template}
-                              </button>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  ))}
-                </ul>
+                {selectedCategory === mainCategory && (
+                  <ul className="dropdown-menu-sub">
+                    {Object.keys(categories[mainCategory]).map((subcategory) => (
+                      <li key={subcategory}>
+                        <button
+                          className="dropdown-item"
+                          onMouseEnter={() => handleSubcategorySelection(subcategory)}
+                        >
+                          {subcategory}
+                        </button>
+                        {/* Template Dropdown */}
+                        {selectedSubcategory === subcategory && (
+                          <ul className="dropdown-menu-sub">
+                            {categories[mainCategory][subcategory]?.map((template) => (
+                              <li key={template}>
+                                <button
+                                  className={`dropdown-item ${selectedTemplate === template ? 'active' : ''}`}
+                                  onClick={() => handleTemplateSelection(template)}
+                                >
+                                  {template}
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Input box to display selected subcategory and template */}
+        {/* Input box to display selected category, subcategory, and template */}
         <input
           type="text"
           className="form-control"
           aria-label="Text input with dropdown buttons"
-          value={selectedTemplate ? selectedTemplate : selectedSubcategory}
+          value={`${selectedCategory} ${selectedSubcategory} ${selectedTemplate}`.trim()}
           readOnly
         />
       </div>
 
       {/* Letter Generation Section */}
-      <div ref={letterGenerationSectionRef} className="letter-generation-section  p-5">
+      <div ref={letterGenerationSectionRef} className="letter-generation-section p-5">
         {selectedTemplate && (
           <div>
             <h2 className='Generate-your'>Generate Your Letter</h2>
@@ -165,4 +173,6 @@ export default function SearchCategory({ handleSubcategoryClick, selectedSubcate
       </div>
     </div>
   );
-}
+};
+
+export default SearchCategory;

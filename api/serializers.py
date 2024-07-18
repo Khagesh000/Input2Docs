@@ -1,14 +1,24 @@
 from rest_framework import serializers
 
 class EmailSerializer(serializers.Serializer):
-    YourName = serializers.CharField(max_length=100)
-    YourEmail = serializers.EmailField()
+    category = serializers.CharField(max_length=100)
+    email_type = serializers.CharField(max_length=100)
     RecipientName = serializers.CharField(max_length=100, required=False)
     RecipientEmail = serializers.EmailField(required=False)
     Company = serializers.CharField(max_length=100, required=False)
     CompanyEmail = serializers.EmailField(required=False)
-    Subject = serializers.CharField(max_length=100)
-    EmailBody = serializers.CharField(required=False)
+    EmailBody = serializers.CharField()
     CoverLetterBody = serializers.CharField(required=False)
     Position = serializers.CharField(max_length=100, required=False)
-    selectedTemplate = serializers.CharField(max_length=100)
+    SenderCompany = serializers.CharField(max_length=100, required=False)
+    SenderEmail = serializers.EmailField()
+    SenderName = serializers.CharField(max_length=100, required=False)
+    SenderPosition = serializers.CharField(max_length=100, required=False)
+    ProductName = serializers.CharField(max_length=100, required=False)
+    CompanyName = serializers.CharField(max_length=100, required=False)  # Make optional
+
+    def validate(self, attrs):
+        email_type = attrs.get('email_type')
+        if email_type == 'Newsletter Email' and not attrs.get('CompanyName'):
+            raise serializers.ValidationError({'CompanyName': 'This field is required for Newsletter Email'})
+        return attrs

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../SearchCategory.css'; // Import custom CSS for styling
-import EmailMaker from './EmailMaker'; // Assuming this is where your EmailMaker component resides
+import '../SearchCategory.css';
+import EmailMaker from './EmailMaker';
 
 const categories = {
   "Business Emails": {
@@ -9,11 +9,11 @@ const categories = {
       "Introduction Email",
       "Follow-Up Email",
     ],
-    "Marketing Emails": [],
-    "Customer Service Emails": [],
-    "Networking Emails": [],
-    "Introduction Emails": [],
-    "Follow-Up Emails": [],
+    "Marketing Emails": [
+      "Product Launch Email",
+      "Newsletter Email",
+    ],
+    // Add more subcategories as needed
   },
   "Professional Emails": {
     "Job Application Emails": [],
@@ -25,23 +25,28 @@ const categories = {
   // Add more categories as needed
 };
 
-const EmailSearchCategory = ({ handleSubcategoryClick, selectedSubcategory }) => {
+const EmailSearchCategory = () => {
   const emailGenerationSectionRef = useRef(null);
-  const [selectedTemplate, setSelectedTemplate] = useState(null);
-  
-  const handleSubcategorySelection = (subcategory) => {
-    handleSubcategoryClick(subcategory);
-    setSelectedTemplate(null); // Reset selected template when subcategory changes
-    setTimeout(() => {
-      emailGenerationSectionRef.current.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-  };
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedSubcategory, setSelectedSubcategory] = useState('');
+  const [selectedTemplate, setSelectedTemplate] = useState('');
 
   useEffect(() => {
-    if (selectedTemplate) {
+    if (selectedTemplate && emailGenerationSectionRef.current) {
       emailGenerationSectionRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [selectedTemplate]);
+
+  const handleCategorySelection = (category) => {
+    setSelectedCategory(category);
+    setSelectedSubcategory('');
+    setSelectedTemplate('');
+  };
+
+  const handleSubcategorySelection = (subcategory) => {
+    setSelectedSubcategory(subcategory);
+    setSelectedTemplate('');
+  };
 
   const handleTemplateSelection = (templateName) => {
     setSelectedTemplate(templateName);
@@ -67,56 +72,57 @@ const EmailSearchCategory = ({ handleSubcategoryClick, selectedSubcategory }) =>
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            {selectedSubcategory ? selectedSubcategory : 'Select Category'}
+            {selectedTemplate || selectedSubcategory || selectedCategory || 'Select Category'}
           </button>
           <ul className="dropdown-menu">
             {Object.keys(categories).map((mainCategory) => (
               <li key={mainCategory} className="dropdown-item">
                 <button
                   className="dropdown-item"
-                  onClick={() => handleSubcategorySelection(mainCategory)}
+                  onMouseEnter={() => handleCategorySelection(mainCategory)}
                 >
                   {mainCategory}
                 </button>
-                {/* Subcategory Dropdown */}
-                <ul className="dropdown-menu-sub">
-                  {Object.keys(categories[mainCategory]).map((subcategory) => (
-                    <li key={subcategory}>
-                      <button
-                        className="dropdown-item"
-                        onClick={() => handleSubcategorySelection(subcategory)}
-                      >
-                        {subcategory}
-                      </button>
-                      {/* Template Dropdown */}
-                      {categories[mainCategory][subcategory].length > 0 && (
-                        <ul className="dropdown-menu-sub">
-                          {categories[mainCategory][subcategory].map((template) => (
-                            <li key={template}>
-                              <button
-                                className="dropdown-item"
-                                onClick={() => handleTemplateSelection(template)}
-                              >
-                                {template}
-                              </button>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  ))}
-                </ul>
+                {selectedCategory === mainCategory && (
+                  <ul className="dropdown-menu-sub">
+                    {Object.keys(categories[mainCategory]).map((subcategory) => (
+                      <li key={subcategory}>
+                        <button
+                          className="dropdown-item"
+                          onMouseEnter={() => handleSubcategorySelection(subcategory)}
+                          onClick={() => handleSubcategorySelection(subcategory)}
+                        >
+                          {subcategory}
+                        </button>
+                        {selectedSubcategory === subcategory && categories[mainCategory][subcategory].length > 0 && (
+                          <ul className="dropdown-menu-sub">
+                            {categories[mainCategory][subcategory].map((template) => (
+                              <li key={template}>
+                                <button
+                                  className={`dropdown-item ${selectedTemplate === template ? 'active' : ''}`}
+                                  onClick={() => handleTemplateSelection(template)}
+                                >
+                                  {template}
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Input box to display selected subcategory and template */}
+        {/* Input box to display selected category, subcategory, and template */}
         <input
           type="text"
           className="form-control"
           aria-label="Text input with dropdown buttons"
-          value={selectedTemplate ? selectedTemplate : selectedSubcategory}
+          value={`${selectedCategory} ${selectedSubcategory} ${selectedTemplate}`.trim()}
           readOnly
         />
       </div>
@@ -125,8 +131,8 @@ const EmailSearchCategory = ({ handleSubcategoryClick, selectedSubcategory }) =>
       <div ref={emailGenerationSectionRef} className="email-generation-section pt-5">
         {selectedTemplate && (
           <div>
-            <h2 className='Generate-your'>Generate Your Email</h2>
-            <EmailMaker selectedTemplate={selectedTemplate} />
+            <h2 className='text-center Generate-your'>Generate Your Email</h2>
+            <EmailMaker selectedCategory={selectedCategory} selectedSubcategory={selectedSubcategory} selectedTemplate={selectedTemplate} />
           </div>
         )}
       </div>

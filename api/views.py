@@ -4,109 +4,143 @@ from rest_framework.views import APIView
 from .serializers import EmailSerializer
 from django.core.mail import send_mail
 from django.utils.html import strip_tags
+import logging
 
-# Define email templates (you can store these in a separate module or database)
+logger = logging.getLogger(__name__)
+
 emailTemplates = {
     "Sales Emails": {
-        "template": """
-            Subject: {Subject}
+        "Introduction Email": {
+            "template": """
+                Hi {RecipientName},
 
-            Dear {RecipientName},
+                My name is {SenderName}, and I am the {SenderPosition} at {SenderCompany}.
+                I am writing to introduce our company and the services we offer.
 
-            {EmailBody}
+                {EmailBody}
 
-            Sincerely,
-            {YourName}
-        """,
-        "fields": [
-            { "id": 'YourName', "label": 'Your Name', "type": 'text' },
-            { "id": 'YourEmail', "label": 'Your Email', "type": 'email' },
-            { "id": 'RecipientName', "label": 'Recipient Name', "type": 'text' },
-            { "id": 'RecipientEmail', "label": 'Recipient Email', "type": 'email' },
-            { "id": 'Subject', "label": 'Subject', "type": 'text' },
-            { "id": 'EmailBody', "label": 'Email Body', "type": 'quill' },
-        ]
+                Looking forward to hearing from you.
+
+                Best regards,
+                {SenderName}
+            """,
+            "fields": [
+                {"id": 'RecipientName', "label": 'Recipient Name', "type": 'text'},
+                {"id": 'SenderName', "label": 'Sender Name', "type": 'text'},
+                {"id": 'SenderPosition', "label": 'Sender Position', "type": 'text'},
+                {"id": 'SenderCompany', "label": 'Sender Company', "type": 'text'},
+                {"id": 'SenderEmail', "label": 'Your Email', "type": 'email'},
+                {"id": 'RecipientEmail', "label": 'Recipient Email', "type": 'email'},
+                {"id": 'EmailBody', "label": 'EmailBody', "type": 'quill'},
+            ]
+        },
+        "Follow-Up Email": {
+            "template": """
+                Hi {RecipientName},
+
+                I hope this email finds you well. I wanted to follow up on our previous conversation regarding.
+
+                {EmailBody}
+
+                Looking forward to your response.
+
+                Best regards,
+                {SenderName}
+            """,
+            "fields": [
+                {"id": 'RecipientName', "label": 'Recipient Name', "type": 'text'},
+                {"id": 'SenderName', "label": 'Sender Name', "type": 'text'},
+                {"id": 'SenderEmail', "label": 'Your Email', "type": 'email'},
+                {"id": 'RecipientEmail', "label": 'Recipient Email', "type": 'email'},
+                {"id": 'EmailBody', "label": 'EmailBody', "type": 'quill'},
+            ]
+        }
     },
-    "Job Application Emails": {
-        "template": """
-            Subject: Application for {Position}
+    "Marketing Emails": {
+        "Product Launch Email": {
+            "template": """
+                Hi {RecipientName},
 
-            Dear {Company},
+                We are excited to announce the launch of our new product, {ProductName}!
 
-            {CoverLetterBody}
+                {EmailBody}
 
-            Sincerely,
-            {YourName}
-        """,
-        "fields": [
-            { "id": 'YourName', "label": 'Your Name', "type": 'text' },
-            { "id": 'YourEmail', "label": 'Your Email', "type": 'email' },
-            { "id": 'Company', "label": 'Company Name', "type": 'text' },
-            { "id": 'CompanyEmail', "label": 'Company Email', "type": 'email' },
-            { "id": 'Position', "label": 'Position', "type": 'text' },
-            { "id": 'CoverLetterBody', "label": 'Cover Letter Body', "type": 'quill' },
-        ]
-    },
-    # Add new templates here as needed
-    "New Template Name": {
-        "template": """
-            Subject: {Subject}
+                Please visit our website to learn more about {ProductName}.
 
-            Dear {RecipientName},
+                Best regards,
+                {SenderName}
+            """,
+            "fields": [
+                {"id": 'RecipientName', "label": 'Recipient Name', "type": 'text'},
+                {"id": 'ProductName', "label": 'Product Name', "type": 'text'},
+                {"id": 'SenderName', "label": 'Sender Name', "type": 'text'},
+                {"id": 'SenderEmail', "label": 'Sender Email', "type": 'email'},
+                {"id": 'RecipientEmail', "label": 'Recipient Email', "type": 'email'},
+                {"id": 'EmailBody', "label": 'EmailBody', "type": 'quill'},
+            ]
+        },
+        "Newsletter Email": {
+            "template": """
+                Hi {RecipientName},
 
-            {EmailBody}
+                Welcome to our latest newsletter! Here are some updates and news from {CompanyName}:
 
-            Sincerely,
-            {YourName}
-        """,
-        "fields": [
-            { "id": 'YourName', "label": 'Your Name', "type": 'text' },
-            { "id": 'YourEmail', "label": 'Your Email', "type": 'email' },
-            { "id": 'RecipientName', "label": 'Recipient Name', "type": 'text' },
-            { "id": 'RecipientEmail', "label": 'Recipient Email', "type": 'email' },
-            { "id": 'Subject', "label": 'Subject', "type": 'text' },
-            { "id": 'EmailBody', "label": 'Email Body', "type": 'quill' },
-        ]
-    },
+                {EmailBody}
+
+                Stay tuned for more updates in our upcoming newsletters.
+
+                Best regards,
+                {SenderName}
+            """,
+            "fields": [
+                {"id": 'RecipientName', "label": 'Recipient Name', "type": 'text'},
+                {"id": 'CompanyName', "label": 'Company Name', "type": 'text'},
+                {"id": 'SenderName', "label": 'Sender Name', "type": 'text'},
+                {"id": 'SenderEmail', "label": 'Sender Email', "type": 'email'},
+                {"id": 'RecipientEmail', "label": 'Recipient Email', "type": 'email'},
+                {"id": 'EmailBody', "label": 'EmailBody', "type": 'quill'},
+            ]
+        }
+    }
 }
 
 class SendEmailView(APIView):
     def post(self, request, *args, **kwargs):
         serializer = EmailSerializer(data=request.data)
         
-        if serializer.is_valid():
-            email_data = serializer.validated_data
-            selected_template = email_data.get('selectedTemplate')
-            
-            # Check if selected template exists in emailTemplates
-            if selected_template in emailTemplates:
-                template_details = emailTemplates[selected_template]
-                email_body_field = 'CoverLetterBody' if selected_template == 'Job Application Emails' else 'EmailBody'
-                email_body = strip_tags(email_data[email_body_field])
-
-                # Substitute placeholders in the template with actual values
-                filled_template = template_details['template'].format(
-                    Subject=email_data.get('Subject', ''),
-                    RecipientName=email_data.get('RecipientName', ''),
-                    EmailBody=email_body,
-                    YourName=email_data.get('YourName', ''),
-                    Company=email_data.get('Company', ''),
-                    Position=email_data.get('Position', ''),
-                    CoverLetterBody=email_data.get('CoverLetterBody', ''),
-                )
-
-                try:
-                    send_mail(
-                        subject=filled_template.split('\n', 1)[0],  # Extract subject from filled template
-                        message=filled_template,
-                        from_email=email_data['YourEmail'],
-                        recipient_list=[email_data['RecipientEmail'] if 'RecipientEmail' in email_data else email_data['CompanyEmail']],
-                        fail_silently=False,
-                    )
-                    return Response({'message': 'Email sent successfully'}, status=status.HTTP_200_OK)
-                except Exception as e:
-                    return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-            else:
-                return Response({'error': 'Selected template does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+        if not serializer.is_valid():
+            logging.error(f'Serializer errors: {serializer.errors}')
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        email_data = serializer.validated_data
+
+        try:
+            email_type = email_data.get("email_type")
+            category = email_data.get("category")
+            
+            if category not in emailTemplates or email_type not in emailTemplates[category]:
+                logging.error('Invalid email type or category')
+                return Response({"error": "Invalid email type or category"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            template = emailTemplates[category][email_type]["template"]
+            email_body = template.format(**email_data)
+
+            subject = f'Introduction from {email_data.get("SenderCompany", "Unknown Company")}'
+
+            plain_email_body = strip_tags(email_body)
+
+            send_mail(
+                subject=subject,
+                message=plain_email_body,
+                from_email=email_data["SenderEmail"],
+                recipient_list=[email_data["RecipientEmail"]],
+                fail_silently=False,
+                html_message=email_body,
+            )
+            return Response({'message': 'Email sent successfully'}, status=status.HTTP_200_OK)
+        except KeyError as e:
+            logger.error(f"Missing placeholder in email data: {str(e)}")
+            return Response({'error': f'Missing placeholder: {str(e)}'}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            logger.error(f"Error sending email: {str(e)}")
+            return Response({'error': 'Failed to send email'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

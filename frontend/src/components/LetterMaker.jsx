@@ -4,7 +4,6 @@ import 'react-quill/dist/quill.snow.css';
 import html2pdf from 'html2pdf.js';
 import '../Letter.css';
 
-
 const letterTemplates = {
   "Permission Letters": {
     "Field Trip Permission Letter": {
@@ -45,6 +44,83 @@ const letterTemplates = {
         { id: 'letterBody', label: 'Destination', type: 'quill' },
       ]
     },
+  },
+  "Excuse Letters": {
+    "Absentee Excuse Letter": {
+      template: `
+        {YourName}
+        {YourAddress}
+        {City}, {State}, {ZIP Code}
+        {Date}
+
+        {RecipientsName}
+        {CompanyName}
+        {CompanyAddress}
+        {City}, {State}, {ZIP Code}
+
+        Dear {RecipientsName},
+
+        I am writing to inform you that I was unable to attend work on {AbsenceDate}
+        due to {Reason}. I understand the importance of my role and have taken
+        the necessary steps to ensure that my absence did not disrupt the workflow.
+
+        I appreciate your understanding and will ensure that my duties are fulfilled
+        promptly upon my return.
+
+        Sincerely,
+        {YourName}
+      `,
+      fields: [
+        { id: 'YourName', label: 'Your Name', type: 'text' },
+        { id: 'YourAddress', label: 'Your Address', type: 'text' },
+        { id: 'City', label: 'City', type: 'text' },
+        { id: 'State', label: 'State', type: 'text' },
+        { id: 'ZIP Code', label: 'ZIP Code', type: 'text' },
+        { id: 'Date', label: 'Date', type: 'text' },
+        { id: 'RecipientsName', label: "Recipient's Name", type: 'text' },
+        { id: 'CompanyName', label: "Company's Name", type: 'text' },
+        { id: 'CompanyAddress', label: "Company's Address", type: 'text' },
+        { id: 'AbsenceDate', label: 'Absence Date', type: 'text' },
+        { id: 'Reason', label: 'Reason for Absence', type: 'text' },
+      ]
+    },
+    "Late Arrival Excuse Letter": {
+      template: `
+        {YourName}
+        {YourAddress}
+        {City}, {State}, {ZIP Code}
+        {Date}
+
+        {RecipientsName}
+        {CompanyName}
+        {CompanyAddress}
+        {City}, {State}, {ZIP Code}
+
+        Dear {RecipientsName},
+
+        I am writing to apologize for my late arrival on {LateDate}. The delay
+        was caused by {Reason}. I understand the importance of punctuality and
+        will take necessary steps to prevent such occurrences in the future.
+
+        Thank you for your understanding.
+
+        Sincerely,
+        {YourName}
+      `,
+      fields: [
+        { id: 'YourName', label: 'Your Name', type: 'text' },
+        { id: 'YourAddress', label: 'Your Address', type: 'text' },
+        { id: 'City', label: 'City', type: 'text' },
+        { id: 'State', label: 'State', type: 'text' },
+        { id: 'ZIP Code', label: 'ZIP Code', type: 'text' },
+        { id: 'Date', label: 'Date', type: 'text' },
+        { id: 'RecipientsName', label: "Recipient's Name", type: 'text' },
+        { id: 'CompanyName', label: "Company's Name", type: 'text' },
+        { id: 'CompanyAddress', label: "Company's Address", type: 'text' },
+        { id: 'LateDate', label: 'Late Arrival Date', type: 'text' },
+        { id: 'Reason', label: 'Reason for Late Arrival', type: 'text' },
+      ]
+    },
   }
 };
 
@@ -70,7 +146,8 @@ const LetterMaker = ({ selectedTemplate }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const templateDetails = letterTemplates["Permission Letters"][selectedTemplate];
+    const category = Object.keys(letterTemplates).find(category => letterTemplates[category][selectedTemplate]);
+    const templateDetails = letterTemplates[category][selectedTemplate];
     let filledTemplate = templateDetails.template;
     templateDetails.fields.forEach(field => {
       const placeholder = `{${field.id}}`;
@@ -97,11 +174,16 @@ const LetterMaker = ({ selectedTemplate }) => {
     html2pdf().from(element).set(opt).save();
   };
 
-  if (!selectedTemplate || !letterTemplates["Permission Letters"][selectedTemplate]) {
+  if (!selectedTemplate) {
     return null;
   }
 
-  const fields = letterTemplates["Permission Letters"][selectedTemplate].fields;
+  const category = Object.keys(letterTemplates).find(category => letterTemplates[category][selectedTemplate]);
+  if (!category) {
+    return null;
+  }
+
+  const fields = letterTemplates[category][selectedTemplate].fields;
 
   return (
     <div className="container mt-4">
@@ -136,7 +218,7 @@ const LetterMaker = ({ selectedTemplate }) => {
                       )}
                     </div>
                   ))}
-                  <button type="submit" className="btn btn-primary generate-button" >Generate Letter </button>
+                  <button type="submit" className="btn btn-primary generate-button" >Generate Letter</button>
                 </form>
               ) : (
                 <div className='GenLetterSection'>
