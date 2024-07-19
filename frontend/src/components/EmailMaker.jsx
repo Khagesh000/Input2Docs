@@ -99,38 +99,28 @@ const emailTemplates = {
 };
 
 const EmailMaker = ({ selectedTemplate }) => {
-  const [formData, setFormData] = useState({
-    category: 'Sales Emails', // Default category
-    email_type: selectedTemplate,
-  });
+  const [formData, setFormData] = useState({});
   const [generatedEmail, setGeneratedEmail] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [isSendingEmail, setIsSendingEmail] = useState(false);
   const generatedEmailRef = useRef(null);
 
   useEffect(() => {
-    // Show success message if email was sent
-    if (localStorage.getItem('emailSent') === 'true') {
-      setShowSuccessMessage(true);
-      localStorage.removeItem('emailSent');
-      setTimeout(() => {
-        setShowSuccessMessage(false);
-      }, 30000); // Hide success message after 30 seconds
-    }
-  }, []);
+    if (selectedTemplate) {
+      const category = Object.keys(emailTemplates).find(cat =>
+        Object.keys(emailTemplates[cat]).includes(selectedTemplate)
+      );
 
-  useEffect(() => {
-    // Update formData when selectedTemplate changes
-    const category = Object.keys(emailTemplates).find(cat =>
-      Object.keys(emailTemplates[cat]).includes(selectedTemplate)
-    );
-
-    if (category) {
-      setFormData(prevState => ({
-        ...prevState,
-        category: category,
-        email_type: selectedTemplate,
-      }));
+      if (category) {
+        setFormData({
+          category: category,
+          email_type: selectedTemplate,
+        });
+        setFormSubmitted(false);
+      } else {
+        setFormData({});
+      }
     }
   }, [selectedTemplate]);
 
@@ -139,24 +129,27 @@ const EmailMaker = ({ selectedTemplate }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleQuillChange = (content, delta, source, editor) => {
+  const handleQuillChange = (content) => {
     setFormData({ ...formData, EmailBody: content });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const templateDetails = emailTemplates[formData.category][formData.email_type];
+    const templateDetails = emailTemplates[formData.category]?.[formData.email_type];
     if (!templateDetails || !templateDetails.fields) {
       console.error(`Template details or fields not found for category '${formData.category}' and template '${formData.email_type}'`);
       return;
     }
 
     let filledTemplate = templateDetails.template;
-    // Replace placeholders with form data
     templateDetails.fields.forEach(field => {
       const placeholder = `{${field.id}}`;
       filledTemplate = filledTemplate.replace(new RegExp(placeholder, 'g'), formData[field.id] || '');
     });
+
+    // Remove unwanted <p> tags
+    filledTemplate = filledTemplate.replace(/<p>/g, '').replace(/<\/p>/g, '');
+
     setGeneratedEmail(filledTemplate);
     setFormSubmitted(true);
     setShowSuccessMessage(false);
@@ -169,30 +162,57 @@ const EmailMaker = ({ selectedTemplate }) => {
 
   const sendEmail = async () => {
     try {
+      setIsSendingEmail(true);
+      const controller = new AbortController();
+      const timeout = setTimeout(() => {
+        controller.abort();
+      }, 30000);
+
       const response = await fetch('https://input2docs.onrender.com/api/send-email/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeout);
 
       if (!response.ok) {
         throw new Error('Failed to send email');
       }
 
+      alert("Email Sent Successfully!!!");
       setShowSuccessMessage(true);
       localStorage.setItem('emailSent', 'true');
+
+      // Reset the form and states
+      setFormData({});
+      setGeneratedEmail('');
+      setFormSubmitted(false);
+      setIsSendingEmail(false);
+      setTimeout(() => {
+        setShowSuccessMessage(false);
+      }, 100); // Message visible for 10 seconds
+
     } catch (error) {
       console.error('Error sending email:', error);
+      setIsSendingEmail(false);
     }
+  };
+
+  const handleEdit = () => {
+    setFormSubmitted(false);
+    setGeneratedEmail('');
+    setShowSuccessMessage(false);
   };
 
   if (!selectedTemplate) {
     return null;
   }
 
-  const fields = emailTemplates[formData.category][formData.email_type]?.fields;
+  const fields = emailTemplates[formData.category]?.[formData.email_type]?.fields;
   if (!fields) {
     console.error(`Fields not found for template '${formData.email_type}' in category '${formData.category}'`);
     return null;
@@ -236,45 +256,45 @@ const EmailMaker = ({ selectedTemplate }) => {
               ) : (
                 <div className='GenEmailSection'>
                   <h5>Generated Email</h5>
-                  <div id="generated-email" ref={generatedEmailRef}>
+                  <div id="generatedEmail" ref={generatedEmailRef}>
                     <pre>{generatedEmail}</pre>
                   </div>
-                  <button className="btn btn-success mt-3" onClick={sendEmail}>Send Email</button>
-                  <button className="btn btn-secondary mt-3" onClick={() => setFormSubmitted(false)}>Edit</button>
+                  <div className="button-container">
+                    <button className="btn btn-primary edit-button" onClick={handleEdit}>Edit</button>
+                    <button className="btn btn-success send-button" onClick={sendEmail} disabled={isSendingEmail}>
+                      {isSendingEmail ? 'Sending...' : 'Send Email'}
+                    </button>
+                  </div>
+                </div>
+              )}
+              {showSuccessMessage && (
+                <div className="alert alert-success mt-3" role="alert">
+                  Email sent successfully!
                 </div>
               )}
             </div>
           </div>
         </div>
       </div>
-      {showSuccessMessage && (
-        <div className="alert alert-success mt-4" role="alert">
-          Email sent successfully!
-        </div>
-      )}
     </div>
   );
 };
 
 EmailMaker.modules = {
   toolbar: [
-    [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
-    [{ 'size': [] }],
+    [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
+    [{size: []}],
     ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-    [{ 'indent': '-1' }, { 'indent': '+1' }],
+    [{'list': 'ordered'}, {'list': 'bullet'}],
     ['link', 'image', 'video'],
     ['clean']
   ],
-  clipboard: {
-    matchVisual: false,
-  }
 };
 
 EmailMaker.formats = [
   'header', 'font', 'size',
   'bold', 'italic', 'underline', 'strike', 'blockquote',
-  'list', 'bullet', 'indent',
+  'list', 'bullet',
   'link', 'image', 'video'
 ];
 

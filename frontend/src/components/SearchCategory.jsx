@@ -163,7 +163,7 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
       </div>
 
       {/* Letter Generation Section */}
-      <div ref={letterGenerationSectionRef} className="letter-generation-section p-5">
+      <div ref={letterGenerationSectionRef} className="letter-generation-section">
         {selectedTemplate && (
           <div>
             <h2 className='Generate-your'>Generate Your Letter</h2>
