@@ -11,7 +11,7 @@ export default function AboutImage() {
       <div className="about-image-container" style={{ backgroundImage: `url(${img2})` }}>
         <div className="about-image-text">
           <h1>About Us</h1>
-          <p>We are committed to delivering the best services...</p>
+          <p className='abouti-p'>We are committed to delivering the best services...</p>
         </div>
       </div>
 
@@ -23,22 +23,22 @@ export default function AboutImage() {
             <h2>Project Features</h2>
           </div>
           <div className="col-md-8">
-            <p>
+            <p className='abouti-p'>
               Our project utilizes various programming languages including JavaScript, Python, and SQL.
               We focus on creating robust web applications using modern frameworks and libraries such as React, Django, and Bootstrap.
             </p>
-            <p>
+            <p className='abouti-p'>
               The project involves full-stack web development, encompassing front-end design, back-end logic, and database management.
               Our aim is to deliver seamless user experiences with responsive and interactive interfaces.
             </p>
-            <p>
+            <p className='abouti-p'>
               Some of the key features of our project include real-time data processing, user authentication and authorization,
               API integration, and a comprehensive admin panel for managing content and user interactions.
             </p>
             
           </div>
         </div>
-        <p>
+        <p className='abouti-p'>
               Additionally, our platform supports multi-language options, ensuring accessibility for a global audience.
               We have integrated advanced security measures to protect user data and prevent unauthorized access.
               The user interface is designed to be intuitive and user-friendly, allowing users to navigate the system effortlessly.
@@ -58,7 +58,7 @@ export default function AboutImage() {
                 </div>
                 <div>
                   <h5 className="card-title">Integrity</h5>
-                  <p className="card-text">
+                  <p className="card-text abouti-p">
                     We adhere to the highest standards of ethics and honesty in all that we do.
                     Our actions are guided by strong moral principles, and we are committed to transparency.
                   </p>
@@ -74,7 +74,7 @@ export default function AboutImage() {
                 </div>
                 <div>
                   <h5 className="card-title">Responsibility</h5>
-                  <p className="card-text">
+                  <p className="card-text abouti-p">
                     We take ownership of our actions and their impact on our stakeholders.
                     Our team is dedicated to meeting our commitments and being accountable for our performance.
                   </p>
@@ -90,7 +90,7 @@ export default function AboutImage() {
                 </div>
                 <div>
                   <h5 className="card-title">Customer First</h5>
-                  <p className="card-text">
+                  <p className="card-text abouti-p">
                     Our customers are at the heart of everything we do.
                     We strive to exceed their expectations and deliver exceptional service and value.
                     Our goal is to build long-term relationships based on trust and satisfaction.
@@ -107,7 +107,7 @@ export default function AboutImage() {
                 </div>
                 <div>
                   <h5 className="card-title">Accountability</h5>
-                  <p className="card-text">
+                  <p className="card-text abouti-p">
                     We hold ourselves accountable to deliver on our commitments.
                     Accountability drives us to achieve our goals and fulfill our promises to customers and stakeholders.
                   </p>
@@ -123,7 +123,7 @@ export default function AboutImage() {
                 </div>
                 <div>
                   <h5 className="card-title">Excellence</h5>
-                  <p className="card-text">
+                  <p className="card-text abouti-p">
                     We strive for excellence in everything we do.
                     Our team is dedicated to continuous improvement and delivering the highest quality of work.
                   </p>
@@ -139,7 +139,7 @@ export default function AboutImage() {
                 </div>
                 <div>
                   <h5 className="card-title">Continuous Improvement</h5>
-                  <p className="card-text">
+                  <p className="card-text abouti-p">
                     We constantly seek to improve and innovate.
                     Our focus is on finding better ways to serve our customers and enhance our services.
                     We embrace change and are committed to growth.

@@ -79,6 +79,9 @@
     width: 32px;
     height: 32px;
   }
+  .abouti-p{
+    color: #000;
+  }
   
   @media (max-width: 767px) {
     .card-body {

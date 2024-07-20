@@ -98,7 +98,7 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
         You can view and download letters for various purposes below.
       </p>
 
-      <div className="input-group mb-3">
+      <div className="input-group">
         {/* Main Category Dropdown */}
         <div className="btn-group">
           <button

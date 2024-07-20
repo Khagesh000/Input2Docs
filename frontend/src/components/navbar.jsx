@@ -76,8 +76,8 @@ export default class Navbar extends Component {
                 </a>
                 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                   <li>
-                    <a className="dropdown-item" href="/letter">
-                      Letter
+                    <a className="dropdown-item" href="/cover">
+                      CoverLetter
                     </a>
                   </li>
                   <li>
