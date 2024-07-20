@@ -127,6 +127,73 @@
   border-radius: 8px;
 }
 
+
+
+
+.ql-container.ql-snow {
+  border: 1px solid #1d1b1b;
+  margin-bottom: 10px;
+  
+}
+
+.ql-toolbar.ql-snow {
+  border: 1px solid #090909;
+ 
+}
+
+.ql-editor p {
+  margin: 0 0 10px;
+  color: black;
+}
+
+.editor-container {
+  width: 100%;
+  max-width: 210mm; /* A4 width */
+  height: 297mm; /* A4 height */
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid rgb(11, 11, 11);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure content doesn't overflow */
+  box-sizing: border-box;
+}
+
+.quill-editor {
+  height: 100%;
+  color: #000;
+  background-color: #fff;
+}
+
+.bg-black {
+  background-color: #000;
+  color: #fff;
+}
+
+.editor-container h2 {
+  color: #000;
+  text-align: center;
+}
+
+.ql-editor {
+  max-height: calc(297mm - 40px); /* Adjust max height to fit within the container, considering padding */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
+  padding: 10px; /* Padding inside the editor */
+}
+
+.ql-editor p {
+  margin: 0 0 10px; /* Adjust margins as needed */
+}
+
+.ql-editor h1,
+.ql-editor h2,
+.ql-editor h3 {
+  color: #000; /* Header text color */
+}
+
+
+
 /* Mobile responsiveness */
 @media(max-width: 768px) {
   .template-card {
@@ -145,6 +212,11 @@
   .template-overlay {
    /* Always visible on small screens */
     opacity: 1; /* Always visible */
+  }
+  .selected-image-wrapper {
+    /* Semi-transparent background for better visibility */
+    padding: 30px;
+     /* Lower z-index to ensure it's below the arrows */
   }
 }
 
@@ -169,4 +241,9 @@
   .template-overlay {
     padding: 10px;
   }
+  .selected-image-wrapper {
+     /* Semi-transparent background for better visibility */
+     padding: 30px;
+      /* Lower z-index to ensure it's below the arrows */
+   }
 }
