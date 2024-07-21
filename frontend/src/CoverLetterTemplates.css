@@ -1,7 +1,9 @@
 .template-container {
   position: relative; /* Position relative for positioning arrows */
   overflow: hidden;
-  padding-bottom: 20px; /* Add space at the bottom for arrows and selected image */
+  padding-bottom: 20px; 
+  
+  /* Add space at the bottom for arrows and selected image */
 }
 
 .template-row {
@@ -21,6 +23,7 @@
   transition: transform 0.3s, box-shadow 0.3s;
   margin-right: 15px;
   flex: 0 0 auto;
+  
 }
 
 .template-image-wrapper {
@@ -147,24 +150,14 @@
 }
 
 .editor-container {
-  width: 100%;
-  max-width: 210mm; /* A4 width */
-  height: 297mm; /* A4 height */
-  margin: 0 auto;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid rgb(11, 11, 11);
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Ensure content doesn't overflow */
-  box-sizing: border-box;
+  
+  margin-top: 20px;
+  overflow: hidden;
+  /* Ensure container fits the editor size */
 }
 
-.quill-editor {
-  height: 100%;
-  color: #000;
-  background-color: #fff;
-}
+
+
 
 .bg-black {
   background-color: #000;
@@ -176,23 +169,33 @@
   text-align: center;
 }
 
-.ql-editor {
-  max-height: calc(297mm - 40px); /* Adjust max height to fit within the container, considering padding */
-  overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
-  padding: 10px; /* Padding inside the editor */
+.tinymce-editor {
+  height: 100%; /* Ensure editor height is 100% of its container */
+  width: 100%; /* Ensure editor width is 100% of its container */
 }
 
-.ql-editor p {
-  margin: 0 0 10px; /* Adjust margins as needed */
-}
-
-.ql-editor h1,
-.ql-editor h2,
-.ql-editor h3 {
-  color: #000; /* Header text color */
+/* Ensure A4 page styling */
+@media print {
+  .editor-container {
+    width: 826px; /* A4 width in pixels */
+    height: 1120px; /* A4 height in pixels */
+  }
 }
 
 
+@media(min-width: 1100px){
+  .editor-container {
+    width: 60%; 
+   
+  }
+}
+
+@media(min-width: 900px){
+  .editor-container {
+    width: 60%; 
+    margin-left: 10%;
+  }
+}
 
 /* Mobile responsiveness */
 @media(max-width: 768px) {
@@ -215,8 +218,13 @@
   }
   .selected-image-wrapper {
     /* Semi-transparent background for better visibility */
-    padding: 30px;
+    padding: 10px;
      /* Lower z-index to ensure it's below the arrows */
+  }
+  .editor-container {
+    width: 90%;
+    
+    margin-right: 5%;
   }
 }
 
@@ -243,7 +251,10 @@
   }
   .selected-image-wrapper {
      /* Semi-transparent background for better visibility */
-     padding: 30px;
+     padding: 6px;
       /* Lower z-index to ensure it's below the arrows */
    }
+   .editor-container {
+    width: 100%;
+  }
 }
