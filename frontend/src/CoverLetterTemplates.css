@@ -1,3 +1,10 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: #000; /* Ensure the background color for the overall page */
+}
+
+
 .template-container {
   position: relative; /* Position relative for positioning arrows */
   overflow: hidden;
@@ -182,12 +189,33 @@
   }
 }
 
+.mce-content-body {
+  padding: 20px;
+}
+
+
+
+.down-temp{
+  background-color: #4a8cc6;
+  border-color: #6c757d;
+  border: 1px solid grey;
+  margin-right: 2%;
+  border-radius: 20px;
+}
+
+.down-temp:hover{
+  background-color: #5a6268;
+  border-color: #545b62;
+}
 
 @media(min-width: 1100px){
   .editor-container {
     width: 60%; 
    
   }
+  .mce-content-body {
+    padding: 20px;
+}
 }
 
 @media(min-width: 900px){
@@ -195,6 +223,10 @@
     width: 60%; 
     margin-left: 10%;
   }
+  .mce-content-body {
+    padding: 20px;
+}
+
 }
 
 /* Mobile responsiveness */
@@ -226,9 +258,14 @@
     
     margin-right: 5%;
   }
+  .mce-content-body {
+    padding: 20px;
+}
 }
 
 @media (max-width: 576px) {
+
+  
   .template-card {
     width: 75vw; /* Further adjust width for very small screens */
   }
@@ -256,5 +293,11 @@
    }
    .editor-container {
     width: 100%;
+    font-size: 10px;
   }
+  .mce-content-body {
+    padding: 2px;
+}
+
+
 }

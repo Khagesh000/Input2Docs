@@ -166,7 +166,7 @@ const EmailMaker = ({ selectedTemplate }) => {
       const controller = new AbortController();
       const timeout = setTimeout(() => {
         controller.abort();
-      }, 30000);
+      }, 60000);
 
       const response = await fetch('https://input2docs.onrender.com/api/send-email/', {
         method: 'POST',

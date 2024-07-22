@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 import '../CoverLetterTemplates.css'; // Ensure this path is correct
 
 // Import images for templates
@@ -14,10 +16,10 @@ import img7 from '../assets/images/cover_letter1.png';
 
 // Template contents for TinyMCE
 const templateContents = [
-  `<div style="display: flex;">
+  `<div style="display: flex; height: 100%;">
     <!-- Left Side -->
-    <div style="flex: 1; padding: 20px; background-color: lightblue;">
-      <h1>Claire Schmidt</h1>
+    <div style="flex: 1; padding-left: 4px; background-color: lightblue; min-height: 1120px;">
+      <h1>Yeragana Mani</h1>
       <h2>High School Teacher</h2>
       <h3>Personal Info</h3>
       <p>Jennifer Sanchez<br>Principal<br>Franklin High School<br>35th Ave<br>Seattle, WA 98115</p>
@@ -29,7 +31,7 @@ const templateContents = [
       <p>Date<br>October 16th, 2020</p>
     </div>
     <!-- Right Side -->
-    <div style="flex: 2; padding: 20px;">
+    <div style="flex: 2; padding: 10px;">
       <p>Dear Principal Sanchez,</p>
       <p>As an experienced high school teacher and accomplished private tutor, I was excited to see the opening for a twelfth-grade Math teacher at Franklin High School...</p>
       <p>Obtaining the Math teaching position at Franklin High School would be a dream come true...</p>
@@ -126,6 +128,52 @@ export default function CoverLetterTemplates() {
     });
   };
 
+  const handleDownloadPNG = () => {
+    if (editorRef.current) {
+      // Use the content and styles to generate PNG
+      const contentDiv = editorRef.current.querySelector('.tox-edit-area iframe').contentWindow.document.body;
+      html2canvas(contentDiv).then(canvas => {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = 'template_content.png';
+        link.click();
+      }).catch(error => {
+        console.error('Error capturing the editor content:', error);
+      });
+    }
+  };
+
+  const handleDownloadPDF = () => {
+    if (editorRef.current) {
+      const contentDiv = editorRef.current.querySelector('.tox-edit-area iframe').contentWindow.document.body;
+      html2canvas(contentDiv).then(canvas => {
+        const pdf = new jsPDF('p', 'pt', 'a4');
+        const imgData = canvas.toDataURL('image/png');
+        const imgWidth = 210; // A4 width in mm
+        const pageHeight = 295; // A4 height in mm
+        const imgHeight = canvas.height * imgWidth / canvas.width;
+        let heightLeft = imgHeight;
+
+        let position = 0;
+
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+
+        while (heightLeft >= 0) {
+          position -= pageHeight;
+          pdf.addPage();
+          pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+          heightLeft -= pageHeight;
+        }
+
+        pdf.save('template_content.pdf');
+      }).catch(error => {
+        console.error('Error generating the PDF:', error);
+      });
+    }
+  };
+
+
   return (
     <div className="bg-black">
       <div className="container cov-temp template-container bg-black mb-xxl-5">
@@ -162,42 +210,30 @@ export default function CoverLetterTemplates() {
         {selectedImage && (
           <div className="selected-image-wrapper" ref={editorRef}>
             <div className="editor-container">
+              <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPNG}>
+                Download Template as PNG
+              </button>
+              <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPDF}>
+                Download Template as PDF
+              </button>
               <Editor
-                key={editorKey} // Use the key prop to force re-render
-                apiKey="xvogh7180w9n8hd8zc53e6dwo44kau08xngyoqlr623byta9" // Replace with your TinyMCE API key
-                value={content}
+                apiKey="xvogh7180w9n8hd8zc53e6dwo44kau08xngyoqlr623byta9"
+                initialValue={content}
                 init={{
-                  height: 1120, // Adjust this height to fit the A4 page height
-                  // Adjust this width to fit the A4 page width
+                  height: 600,
                   menubar: false,
                   plugins: [
                     'advlist autolink lists link image charmap preview anchor',
                     'searchreplace visualblocks code fullscreen',
                     'insertdatetime media table paste code help wordcount'
                   ],
-                  toolbar: 'undo redo | formatselect | bold italic backcolor | \
-                            alignleft aligncenter alignright alignjustify | \
-                            bullist numlist outdent indent | removeformat | help',
-                  content_style: `
-                    body {
-                      font-family: Arial, sans-serif;
-                      font-size: 14px;
-                    }
-                    .mce-content-body {
-                      background-color: white;
-                      padding: 20px;
-                      margin: 0;
-                      height: 100%;
-                    }
-                  `,
-                  setup: (editor) => {
-                    editor.on('init', () => {
-                      editor.getBody().style.height = '100%';
-                    });
-                  }
+                  toolbar:
+                    'undo redo | formatselect | bold italic backcolor | \
+                    alignleft aligncenter alignright alignjustify | \
+                    bullist numlist outdent indent | removeformat | help',
+                  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
                 }}
-                onEditorChange={(value) => setContent(value)}
-                className="tinymce-editor"
+                key={editorKey}
               />
             </div>
           </div>
@@ -206,4 +242,3 @@ export default function CoverLetterTemplates() {
     </div>
   );
 }
-``
