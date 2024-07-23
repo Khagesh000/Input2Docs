@@ -209,18 +209,20 @@ export default function CoverLetterTemplates() {
       <section className="m-0">
         {selectedImage && (
           <div className="selected-image-wrapper" ref={editorRef}>
-            <div className="editor-container">
-              <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPNG}>
+             <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPNG}>
                 Download Template as PNG
               </button>
               <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPDF}>
                 Download Template as PDF
               </button>
+            <div className="editor-container">
+             
               <Editor
                 apiKey="xvogh7180w9n8hd8zc53e6dwo44kau08xngyoqlr623byta9"
                 initialValue={content}
                 init={{
-                  height: 600,
+                  height: '296mm',
+                  width: '210mm',
                   menubar: false,
                   plugins: [
                     'advlist autolink lists link image charmap preview anchor',

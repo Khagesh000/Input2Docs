@@ -4,13 +4,10 @@ body {
   background-color: #000; /* Ensure the background color for the overall page */
 }
 
-
 .template-container {
   position: relative; /* Position relative for positioning arrows */
   overflow: hidden;
-  padding-bottom: 20px; 
-  
-  /* Add space at the bottom for arrows and selected image */
+  padding-bottom: 20px; /* Add space at the bottom for arrows and selected image */
 }
 
 .template-row {
@@ -30,7 +27,6 @@ body {
   transition: transform 0.3s, box-shadow 0.3s;
   margin-right: 15px;
   flex: 0 0 auto;
-  
 }
 
 .template-image-wrapper {
@@ -121,7 +117,7 @@ body {
 
 /* Style for the selected image at the bottom */
 .selected-image-wrapper {
- /* Absolute positioning within the container */
+  /* Absolute positioning within the container */
   bottom: 0; /* Stick to the bottom of the container */
   left: 0;
   width: 100%;
@@ -137,18 +133,13 @@ body {
   border-radius: 8px;
 }
 
-
-
-
 .ql-container.ql-snow {
   border: 1px solid #1d1b1b;
   margin-bottom: 10px;
-  
 }
 
 .ql-toolbar.ql-snow {
   border: 1px solid #090909;
- 
 }
 
 .ql-editor p {
@@ -157,14 +148,13 @@ body {
 }
 
 .editor-container {
-  
   margin-top: 20px;
   overflow: hidden;
-  /* Ensure container fits the editor size */
+  width: 210mm;
+  height: 297mm; /* Make sure the container takes full width */
+  box-sizing: border-box; 
+ /* Include padding and border in the element’s total width and height */
 }
-
-
-
 
 .bg-black {
   background-color: #000;
@@ -193,9 +183,7 @@ body {
   padding: 20px;
 }
 
-
-
-.down-temp{
+.down-temp {
   background-color: #4a8cc6;
   border-color: #6c757d;
   border: 1px solid grey;
@@ -203,37 +191,52 @@ body {
   border-radius: 20px;
 }
 
-.down-temp:hover{
+.down-temp:hover {
   background-color: #5a6268;
   border-color: #545b62;
 }
 
-@media(min-width: 1100px){
+
+element.style {
+  visibility: hidden;
+  height: 297mm;
+  width: 210mm;
+}
+
+
+@media(min-width: 1100px) {
   .editor-container {
-    width: 60%; 
-   
+    width: 60%;
+   padding-left: 20%;
   }
   .mce-content-body {
     padding: 20px;
-}
-}
-
-@media(min-width: 900px){
-  .editor-container {
-    width: 60%; 
-    margin-left: 10%;
   }
-  .mce-content-body {
-    padding: 20px;
 }
 
+@media(min-width: 900px) {
+  .editor-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 297mm; /* Set the container height to match A4 size */
+    overflow: auto; /* Enable scrolling if content overflows */
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+    position: relative; /* Ensure correct positioning of child elements */
+  }
+  
+  /* Ensure the content inside the editor container can scroll horizontally */
+  .editor-content {
+    width: 100%;
+    min-width: 100%;
+    height: auto; /* Allow the content to expand in height */
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+  }
 }
 
 /* Mobile responsiveness */
 @media(max-width: 768px) {
   .template-card {
-    width: 60vw; /* Set width to 90% of the viewport width */
-     /* Adjust margin between cards */
+    width: 60vw; /* Set width to 60% of the viewport width */
   }
 
   .heading-title {
@@ -245,27 +248,44 @@ body {
   }
   
   .template-overlay {
-   /* Always visible on small screens */
+    /* Always visible on small screens */
     opacity: 1; /* Always visible */
   }
+
   .selected-image-wrapper {
     /* Semi-transparent background for better visibility */
     padding: 10px;
-     /* Lower z-index to ensure it's below the arrows */
+    /* Lower z-index to ensure it's below the arrows */
   }
+
   .editor-container {
-    width: 90%;
-    
-    margin-right: 5%;
+    margin-top: 20px;
+    width: 100%;
+    height: 297mm; /* Set the container height to match A4 size */
+    overflow: auto; /* Enable scrolling if content overflows */
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+    position: relative; /* Ensure correct positioning of child elements */
   }
+  
+  /* Ensure the content inside the editor container can scroll horizontally */
+  .editor-content {
+    width: 100%;
+    min-width: 100%;
+    height: auto; /* Allow the content to expand in height */
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+  }
+
   .mce-content-body {
     padding: 20px;
+  }
+  element.style {
+    visibility: hidden;
+    height: 297mm;
+    width: 210mm;
 }
 }
 
 @media (max-width: 576px) {
-
-  
   .template-card {
     width: 75vw; /* Further adjust width for very small screens */
   }
@@ -286,18 +306,37 @@ body {
   .template-overlay {
     padding: 10px;
   }
+
   .selected-image-wrapper {
-     /* Semi-transparent background for better visibility */
-     padding: 6px;
-      /* Lower z-index to ensure it's below the arrows */
-   }
-   .editor-container {
-    width: 100%;
-    font-size: 10px;
+    /* Semi-transparent background for better visibility */
+    padding: 6px;
+    /* Lower z-index to ensure it's below the arrows */
   }
+
+  .editor-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 297mm; /* Set the container height to match A4 size */
+    overflow: auto; /* Enable scrolling if content overflows */
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+    position: relative; /* Ensure correct positioning of child elements */
+  }
+  
+  /* Ensure the content inside the editor container can scroll horizontally */
+  .editor-content {
+    width: 100%;
+    min-width: 100%;
+    height: auto; /* Allow the content to expand in height */
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+  }
+  
   .mce-content-body {
     padding: 2px;
+  }
+
+  element.style {
+    visibility: hidden;
+    height: 297mm;
+    width: 210mm;
 }
-
-
 }
