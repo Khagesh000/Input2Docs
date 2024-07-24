@@ -122,11 +122,10 @@ export default function CoverLetterTemplates() {
     const selectedImageElement = containerRef.current.querySelector(`.template-card:nth-child(${index + 1})`);
     selectedImageRef.current = selectedImageElement;
 
-    setTimeout(() => {
-      if (editorRef.current) {
-        editorRef.current.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 500); // Adjust the timeout duration if needed
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
   };
 
   const handleDownloadPNG = () => {
@@ -218,6 +217,7 @@ export default function CoverLetterTemplates() {
             <div className="editor-container">
               <Editor
                 apiKey="xvogh7180w9n8hd8zc53e6dwo44kau08xngyoqlr623byta9"
+                key={editorKey} // Ensures editor is re-rendered
                 initialValue={content}
                 init={{
                   height: '296mm',
@@ -233,8 +233,7 @@ export default function CoverLetterTemplates() {
                             bullist numlist outdent indent | removeformat | help',
                   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
                 }}
-                value={content}
-                key={editorKey} // Use the key to force re-render
+                onInit={(evt, editor) => (editorRef.current = editor)}
               />
             </div>
           </div>

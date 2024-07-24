@@ -1,0 +1,41 @@
+.accordion-button {
+    background-color: wheat; /* Primary color */
+    color: rgb(17, 17, 17);
+    border: none;
+    font-weight: bold;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #0056b3; /* Darker shade when expanded */
+  }
+  
+  .accordion-button:hover {
+    background-color: #0056b3; /* Hover color */
+  }
+  
+  .accordion-body {
+    background-color: #f8f9fa; /* Light background for content */
+    color: #495057; /* Darker text color */
+  }
+  
+  .accordion-item {
+    border: 1px solid #ddd; /* Light border */
+    border-radius: .25rem; /* Rounded corners */
+    margin-bottom: 1rem; /* Space between items */
+  }
+  
+  .accordion-header {
+    background-color: #007bff; /* Header background color */
+    color: white; /* Header text color */
+    border-bottom: 1px solid #ddd; /* Border between header and body */
+  }
+  
+  .accordion-body {
+    padding: 1rem; /* Padding inside the body */
+    font-size: 1rem; /* Font size for body text */
+  }
+  
+  .accordion-item:last-of-type {
+    margin-bottom: 0; /* Remove bottom margin for the last item */
+  }
+  

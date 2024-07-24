@@ -9,7 +9,7 @@ import Endbar from './components/Endbar'
 
 import CoverLetterIntro from './components/CoverLetterIntro'
 import CoverLetterTemplates from './components/CoverLetterTemplates'
-
+import CoverLetterImportance from './components/CoverLetterImportance'
 
 
 export default function CoverLetter() {
@@ -18,6 +18,7 @@ export default function CoverLetter() {
       <Navbar />
       <CoverLetterIntro />
       <CoverLetterTemplates />
+      <CoverLetterImportance />
       <div>
       <Feedback />
       </div>

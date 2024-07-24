@@ -265,6 +265,8 @@ element.style {
     overflow: auto; /* Enable scrolling if content overflows */
     box-sizing: border-box; /* Include padding and border in the element’s total width and height */
     position: relative; /* Ensure correct positioning of child elements */
+    touch-action: manipulation;
+  
   }
   
   /* Ensure the content inside the editor container can scroll horizontally */
@@ -274,7 +276,11 @@ element.style {
     height: auto; /* Allow the content to expand in height */
     box-sizing: border-box; /* Include padding and border in the element’s total width and height */
   }
-
+   
+  .editor-container .tox-edit-area iframe {
+    transform-origin: 0 0; /* Set the transform origin to the top left */
+  }
+  
   .mce-content-body {
     padding: 20px;
   }
