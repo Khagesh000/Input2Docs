@@ -122,10 +122,11 @@ export default function CoverLetterTemplates() {
     const selectedImageElement = containerRef.current.querySelector(`.template-card:nth-child(${index + 1})`);
     selectedImageRef.current = selectedImageElement;
 
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: 'smooth',
-    });
+    setTimeout(() => {
+      if (editorRef.current) {
+        editorRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 500); // Adjust the timeout duration if needed
   };
 
   const handleDownloadPNG = () => {
@@ -173,7 +174,6 @@ export default function CoverLetterTemplates() {
     }
   };
 
-
   return (
     <div className="bg-black">
       <div className="container cov-temp template-container bg-black mb-xxl-5">
@@ -209,14 +209,13 @@ export default function CoverLetterTemplates() {
       <section className="m-0">
         {selectedImage && (
           <div className="selected-image-wrapper" ref={editorRef}>
-             <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPNG}>
-                Download Template as PNG
-              </button>
-              <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPDF}>
-                Download Template as PDF
-              </button>
+            <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPNG}>
+              Download Template as PNG
+            </button>
+            <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPDF}>
+              Download Template as PDF
+            </button>
             <div className="editor-container">
-             
               <Editor
                 apiKey="xvogh7180w9n8hd8zc53e6dwo44kau08xngyoqlr623byta9"
                 initialValue={content}
@@ -225,17 +224,17 @@ export default function CoverLetterTemplates() {
                   width: '210mm',
                   menubar: false,
                   plugins: [
-                    'advlist autolink lists link image charmap preview anchor',
+                    'advlist autolink lists link image charmap print preview anchor',
                     'searchreplace visualblocks code fullscreen',
                     'insertdatetime media table paste code help wordcount'
                   ],
-                  toolbar:
-                    'undo redo | formatselect | bold italic backcolor | \
-                    alignleft aligncenter alignright alignjustify | \
-                    bullist numlist outdent indent | removeformat | help',
+                  toolbar: 'undo redo | formatselect | bold italic backcolor | \
+                            alignleft aligncenter alignright alignjustify | \
+                            bullist numlist outdent indent | removeformat | help',
                   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
                 }}
-                key={editorKey}
+                value={content}
+                key={editorKey} // Use the key to force re-render
               />
             </div>
           </div>

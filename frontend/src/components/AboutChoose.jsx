@@ -13,7 +13,7 @@ export default function AboutChoose() {
       <div className="row position-relative">
         <div className="col-md-5 choose">
           <div className="project-item">
-            <h3><span className="bullet"></span>Innovative Solutions</h3>
+            <h3 className='text-light'><span className="bullet"></span>Innovative Solutions</h3>
             <p className='about-p'>
               We deliver cutting-edge solutions that stay ahead of the curve. 
               Our team uses the latest technologies to drive success. 
@@ -21,7 +21,7 @@ export default function AboutChoose() {
             </p>
           </div>
           <div className="project-item">
-            <h3><span className="bullet"></span>Collaborative Approach</h3>
+            <h3 className='text-light'><span className="bullet"></span>Collaborative Approach</h3>
             <p className='about-p'>
               We work closely with you to understand your goals. 
               Our approach ensures solutions tailored to your needs. 
@@ -29,7 +29,7 @@ export default function AboutChoose() {
             </p>
           </div>
           <div className="project-item">
-            <h3><span className="bullet"></span>Uncompromising Quality</h3>
+            <h3 className='text-light'><span className="bullet"></span>Uncompromising Quality</h3>
             <p className='about-p'>
               Quality is our priority, with a focus on high standards. 
               We ensure exceptional results with flawless execution. 
@@ -37,7 +37,7 @@ export default function AboutChoose() {
             </p>
           </div>
           <div className="project-item">
-            <h3><span className="bullet"></span>Agile Development</h3>
+            <h3 className='text-light'><span className="bullet"></span>Agile Development</h3>
             <p className='about-p'>
               Our agile approach allows for quick adaptations and iterative improvements. 
               Your project evolves effectively with us. 
@@ -45,7 +45,7 @@ export default function AboutChoose() {
             </p>
           </div>
           <div className="project-item">
-            <h3><span className="bullet"></span>User-Centric Design</h3>
+            <h3 className='text-light'><span className="bullet"></span>User-Centric Design</h3>
             <p className='about-p'>
               We focus on designs that enhance user experience. 
               Our user-centric approach ensures intuitive and engaging interactions. 
