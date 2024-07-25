@@ -90,7 +90,7 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
   return (
     <div className="container">
       <div>
-        <h1 style={{ paddingTop: '15%', color: 'wheat', fontWeight: 'bold', textAlign: 'center' }}>
+        <h1 style={{ paddingTop: '8%', color: 'wheat', fontWeight: 'bold', textAlign: 'center' }}>
           View And Download <span style={{ fontFamily: 'cursive', color: 'red' }}>Letters</span>
         </h1>
       </div>

@@ -55,7 +55,7 @@ const EmailSearchCategory = () => {
   return (
     <div className="container">
       <div>
-        <h1 style={{ paddingTop: '15%', color: 'wheat', fontWeight: 'bold', textAlign: 'center' }}>
+        <h1 style={{ paddingTop: '8%', color: 'wheat', fontWeight: 'bold', textAlign: 'center' }}>
           View And Generate <span style={{ fontFamily: 'cursive', color: 'red' }}>Emails</span>
         </h1>
       </div>
