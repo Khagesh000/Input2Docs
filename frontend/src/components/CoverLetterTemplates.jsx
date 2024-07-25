@@ -14,34 +14,6 @@ import img5 from '../assets/images/cover_letter1.png';
 import img6 from '../assets/images/cover_letter.png';
 import img7 from '../assets/images/cover_letter1.png';
 
-// Template contents for TinyMCE
-const templateContents = [
-  `<div style="display: flex; height: 100%;">
-    <!-- Left Side -->
-    <div style="flex: 1; padding-left: 4px; background-color: lightblue; min-height: 1120px;">
-      <h1>Yeragana Mani</h1>
-      <h2>High School Teacher</h2>
-      <h3>Personal Info</h3>
-      <p>Jennifer Sanchez<br>Principal<br>Franklin High School<br>35th Ave<br>Seattle, WA 98115</p>
-      <h3>Address</h3>
-      <p>108 Pine St<br>Seattle, WA 98101</p>
-      <p>Phone<br>345-765-0000</p>
-      <p>E-mail<br>claireschmidt@gmail.com</p>
-      <p>LinkedIn<br>linkedin.com/in/claireschmidt</p>
-      <p>Date<br>October 16th, 2020</p>
-    </div>
-    <!-- Right Side -->
-    <div style="flex: 2; padding: 10px;">
-      <p>Dear Principal Sanchez,</p>
-      <p>As an experienced high school teacher and accomplished private tutor, I was excited to see the opening for a twelfth-grade Math teacher at Franklin High School...</p>
-      <p>Obtaining the Math teaching position at Franklin High School would be a dream come true...</p>
-      <p>Sincerely,<br>Claire Schmidt</p>
-      <p>P.S. I'd love the opportunity to sit down with you...</p>
-    </div>
-  </div>`,
-  // Add other template contents here similarly
-];
-
 export default function CoverLetterTemplates() {
   const containerRef = useRef(null);
   const selectedImageRef = useRef(null);
@@ -50,6 +22,19 @@ export default function CoverLetterTemplates() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [content, setContent] = useState('');
   const [editorKey, setEditorKey] = useState(0); // Add a key for editor
+  const [formData, setFormData] = useState({
+    name: '',
+    jobTitle: '',
+    principal: '',
+    school: '',
+    address: '',
+    phone: '',
+    email: '',
+    linkedin: '',
+    date: '',
+    letterContent: '',
+  });
+  const [currentInputIndex, setCurrentInputIndex] = useState(0); // State for managing input index
 
   const images = [img, img1, img2, img3, img4, img5, img6, img7];
 
@@ -114,7 +99,8 @@ export default function CoverLetterTemplates() {
 
   const handleUseTemplate = (index) => {
     setSelectedImage(images[index]);
-    setContent(templateContents[index]);
+    // Set initial content with placeholder values
+    setContent(generateTemplateContent(formData));
 
     // Force re-render of the editor
     setEditorKey(prevKey => prevKey + 1);
@@ -173,6 +159,58 @@ export default function CoverLetterTemplates() {
     }
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handlePrev = () => {
+    setCurrentInputIndex(prevIndex => Math.max(prevIndex - 1, 0));
+  };
+
+  const handleNext = () => {
+    setCurrentInputIndex(prevIndex => Math.min(prevIndex + 1, inputFields.length - 1));
+  };
+
+  const inputFields = [
+    { name: 'name', label: 'Name', type: 'text' },
+    { name: 'jobTitle', label: 'Job Title', type: 'text' },
+    { name: 'principal', label: 'Principal', type: 'text' },
+    { name: 'school', label: 'School', type: 'text' },
+    { name: 'address', label: 'Address', type: 'text' },
+    { name: 'phone', label: 'Phone', type: 'text' },
+    { name: 'email', label: 'Email', type: 'email' },
+    { name: 'linkedin', label: 'LinkedIn', type: 'text' },
+    { name: 'date', label: 'Date', type: 'text' },
+    { name: 'letterContent', label: 'Letter Content', type: 'textarea' },
+  ];
+
+  const generateTemplateContent = (data) => {
+    return `
+      <div style="display: flex; height: 100%;">
+        <div style="flex: 1; padding-left: 4px; background-color: lightblue; min-height: 1120px;">
+          <h2>${data.name}</h2>
+          <h3>${data.jobTitle}</h3>
+          <h3>Personal Info</h3>
+          <p>${data.principal}<br>${data.school}<br>${data.address}</p>
+          <h3>Address</h3>
+          <p>${data.address}</p>
+          <p>Phone<br>${data.phone}</p>
+          <p>E-mail<br>${data.email}</p>
+          <p>LinkedIn<br>${data.linkedin}</p>
+          <p>Date<br>${data.date}</p>
+        </div>
+        <div style="flex: 2; padding: 10px;">
+          <p>Dear Principal Sanchez,</p>
+          <p>${data.letterContent}</p>
+          <p>Sincerely,<br>${data.name}</p>
+        </div>
+      </div>`;
+  };
+
   return (
     <div className="bg-black">
       <div className="container cov-temp template-container bg-black mb-xxl-5">
@@ -205,40 +243,78 @@ export default function CoverLetterTemplates() {
         </div>
       </div>
 
-      <section className="m-0">
-        {selectedImage && (
-          <div className="selected-image-wrapper" ref={editorRef}>
-            <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPNG}>
-              Download Template as PNG
-            </button>
-            <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPDF}>
-              Download Template as PDF
-            </button>
-            <div className="editor-container">
-              <Editor
-                apiKey="xvogh7180w9n8hd8zc53e6dwo44kau08xngyoqlr623byta9"
-                key={editorKey} // Ensures editor is re-rendered
-                initialValue={content}
-                init={{
-                  height: '296mm',
-                  width: '210mm',
-                  menubar: false,
-                  plugins: [
-                    'advlist autolink lists link image charmap print preview anchor',
-                    'searchreplace visualblocks code fullscreen',
-                    'insertdatetime media table paste code help wordcount'
-                  ],
-                  toolbar: 'undo redo | formatselect | bold italic backcolor | \
-                            alignleft aligncenter alignright alignjustify | \
-                            bullist numlist outdent indent | removeformat | help',
-                  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
-                }}
-                onInit={(evt, editor) => (editorRef.current = editor)}
-              />
+      {selectedImage && (
+        <div className="selected-image-wrapper" ref={editorRef}>
+          
+          <div className="editor-container">
+            <div className="form-group template-input">
+              <label>{inputFields[currentInputIndex].label}</label>
+              {inputFields[currentInputIndex].type === 'textarea' ? (
+                <textarea
+                  className="form-control template-textarea"
+                  name={inputFields[currentInputIndex].name}
+                  rows="6"
+                  value={formData[inputFields[currentInputIndex].name]}
+                  onChange={handleInputChange}
+                ></textarea>
+              ) : (
+                <input
+                  type={inputFields[currentInputIndex].type}
+                  className="form-control"
+                  name={inputFields[currentInputIndex].name}
+                  value={formData[inputFields[currentInputIndex].name]}
+                  onChange={handleInputChange}
+                />
+              )}
             </div>
+            <div className="form-navigation mb-5">
+  <button
+    type="button"
+    className="btn btn-nav btn-prev"
+    onClick={handlePrev}
+    disabled={currentInputIndex === 0}
+  >
+    <i className="fa fa-arrow-left"></i> Previous
+  </button>
+  <button
+    type="button"
+    className="btn btn-nav btn-next"
+    onClick={handleNext}
+    disabled={currentInputIndex === inputFields.length - 1}
+  >
+    Next <i className="fa fa-arrow-right"></i>
+  </button>
+</div>
+
+            <Editor
+              key={editorKey} // Re-render editor on key change
+              apiKey="xvogh7180w9n8hd8zc53e6dwo44kau08xngyoqlr623byta9"
+              init={{
+                height: '296mm',
+                width: '210mm',
+                menubar: false,
+                plugins: [
+                  'advlist autolink lists link image charmap print preview anchor',
+                  'searchreplace visualblocks code fullscreen',
+                  'insertdatetime media table paste code help wordcount',
+                ],
+                toolbar:
+                  'undo redo | formatselect | bold italic backcolor | \
+                   alignleft aligncenter alignright alignjustify | \
+                   bullist numlist outdent indent | removeformat | help',
+              }}
+              value={generateTemplateContent(formData)} // Dynamically update content
+              onEditorChange={(content) => setContent(content)}
+            />
           </div>
-        )}
-      </section>
+          <button className="btn btn-secondary m-2 mb-2 down-temp" onClick={handleDownloadPNG}>
+            Download Template as PNG
+          </button>
+          <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPDF}>
+            Download Template as PDF
+          </button>
+        </div>
+      )}
     </div>
   );
 }

@@ -202,6 +202,100 @@ element.style {
   height: 297mm;
   width: 210mm;
 }
+  
+.template-input{
+  
+  margin-right: 30%;
+  margin-bottom: 5%;
+}
+
+
+.template-textarea{
+  margin-bottom: 5%;
+  margin-top: 2%;
+
+}
+/*Form part    */
+.form-group label {
+  font-weight: bold;
+  color: rgb(239, 191, 103);
+  font-size: 25px;
+}
+
+.form-group input,
+.form-group textarea {
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+.selected-image-wrapper .btn {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+.selected-image-wrapper .btn:hover {
+  background-color: #0056b3;
+}
+
+.form-navigation{
+  justify-content: center;
+  margin-right: 25%;
+}
+
+/* Base button styles */
+.btn-nav {
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #ff6600;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.btn-prev {
+  background-color: #007bff; /* Primary blue color */
+  color: #fff;
+  border-radius: 30px;
+}
+
+.btn-next {
+  background-color: #28a745; /* Success green color */
+  color: #fff;
+}
+
+.btn-prev:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.btn-next:hover {
+  background-color: #218838; /* Darker green on hover */
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.btn-nav:disabled {
+  background-color: #e0e0e0; /* Disabled background */
+  color: #a0a0a0; /* Disabled text color */
+  cursor: not-allowed;
+  transform: none;
+}
+
 
 
 @media(min-width: 1100px) {
@@ -230,6 +324,9 @@ element.style {
     min-width: 100%;
     height: auto; /* Allow the content to expand in height */
     box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+  }
+  .template-input{
+    margin-bottom: 3%;
   }
 }
 
@@ -288,6 +385,25 @@ element.style {
     visibility: hidden;
     height: 297mm;
     width: 210mm;
+}
+
+.form-group label {
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+  font-size: 14px;
+  padding: 8px;
+}
+.selected-image-wrapper .btn {
+  padding: 8px 16px;
+  margin-bottom: 10px;
+}
+.template-input{
+  margin-left: 5%;
+  margin-right: 10%;
+  margin-bottom: 5%;
 }
 }
 
