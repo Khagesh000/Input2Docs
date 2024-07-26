@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
@@ -13,6 +13,71 @@ import img4 from '../assets/images/cover_letter.png';
 import img5 from '../assets/images/cover_letter1.png';
 import img6 from '../assets/images/cover_letter.png';
 import img7 from '../assets/images/cover_letter1.png';
+
+const templateInputFields = {
+  1: [
+    { label: 'Name', name: 'name', type: 'text' },
+    { label: 'Job Title', name: 'jobTitle', type: 'text' },
+    { label: 'Principal', name: 'principal', type: 'text' },
+    { label: 'School', name: 'school', type: 'text' },
+    { label: 'Address', name: 'address', type: 'text' },
+    { label: 'Phone', name: 'phone', type: 'text' },
+    { label: 'Email', name: 'email', type: 'email' },
+    { label: 'LinkedIn', name: 'linkedin', type: 'text' },
+    { label: 'Date', name: 'date', type: 'date' },
+    { label: 'Letter Content', name: 'letterContent', type: 'textarea' },
+  ],
+  2: [
+    { label: 'Name', name: 'name', type: 'text' },
+    { label: 'Job Title', name: 'jobTitle', type: 'text' },
+    { label: 'Address', name: 'address', type: 'text' },
+    { label: 'Phone', name: 'phone', type: 'text' },
+    { label: 'Email', name: 'email', type: 'email' },
+    { label: 'LinkedIn', name: 'linkedin', type: 'text' },
+    { label: 'Date', name: 'date', type: 'date' },
+    { label: 'Letter Content', name: 'letterContent', type: 'textarea' },
+  ],
+};
+
+const generateTemplateContent = (formData, templateType) => {
+  if (templateType === 1) {
+    return `
+      <div style="display: flex; height: 100%;">
+        <div style="flex: 1; padding-left: 4px; background-color: lightblue; min-height: 1120px;">
+          <h1>${formData.name}</h1>
+          <h2>${formData.jobTitle}</h2>
+          <h3>Personal Info</h3>
+          <p>${formData.principal}<br>${formData.school}<br>${formData.address}</p>
+          <h3>Address</h3>
+          <p>${formData.address}</p>
+          <p>Phone<br>${formData.phone}</p>
+          <p>E-mail<br>${formData.email}</p>
+          <p>LinkedIn<br>${formData.linkedin}</p>
+          <p>Date<br>${formData.date}</p>
+        </div>
+        <div style="flex: 2; padding: 10px;">
+          <p>${formData.letterContent}</p>
+        </div>
+      </div>`;
+  } else if (templateType === 2) {
+    return `
+      <div style="display: flex; height: 100%;">
+        <div style="flex: 1; padding: 20px; background-color: #ea0909; min-height: 1120px;">
+          <h1>${formData.name}</h1>
+          <h2>${formData.jobTitle}</h2>
+          <p><strong>Address:</strong><br>${formData.address}</p>
+          <p><strong>Phone:</strong> ${formData.phone}</p>
+          <p><strong>Email:</strong> ${formData.email}</p>
+          <p><strong>LinkedIn:</strong> ${formData.linkedin}</p>
+          <p><strong>Date:</strong> ${formData.date}</p>
+        </div>
+        <div style="flex: 2; padding: 20px;">
+          <p>${formData.letterContent}</p>
+        </div>
+      </div>`;
+  }
+  return '';
+};
 
 export default function CoverLetterTemplates() {
   const containerRef = useRef(null);
@@ -35,6 +100,7 @@ export default function CoverLetterTemplates() {
     letterContent: '',
   });
   const [currentInputIndex, setCurrentInputIndex] = useState(0); // State for managing input index
+  const [selectedTemplateType, setSelectedTemplateType] = useState(1); // Add state for template type
 
   const images = [img, img1, img2, img3, img4, img5, img6, img7];
 
@@ -99,8 +165,8 @@ export default function CoverLetterTemplates() {
 
   const handleUseTemplate = (index) => {
     setSelectedImage(images[index]);
-    // Set initial content with placeholder values
-    setContent(generateTemplateContent(formData));
+    setSelectedTemplateType(index % 2 === 0 ? 1 : 2); // Toggle between template types
+    setContent(generateTemplateContent(formData, index % 2 === 0 ? 1 : 2));
 
     // Force re-render of the editor
     setEditorKey(prevKey => prevKey + 1);
@@ -116,100 +182,90 @@ export default function CoverLetterTemplates() {
 
   const handleDownloadPNG = () => {
     if (editorRef.current) {
-      // Use the content and styles to generate PNG
-      const contentDiv = editorRef.current.querySelector('.tox-edit-area iframe').contentWindow.document.body;
-      html2canvas(contentDiv).then(canvas => {
+      const content = editorRef.current.getContent({ format: 'html' });
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = content;
+      document.body.appendChild(tempDiv);
+  
+      html2canvas(tempDiv).then(canvas => {
         const link = document.createElement('a');
         link.href = canvas.toDataURL('image/png');
         link.download = 'template_content.png';
         link.click();
       }).catch(error => {
         console.error('Error capturing the editor content:', error);
+      }).finally(() => {
+        document.body.removeChild(tempDiv);
+      });
+    }
+  };
+  
+  const handleDownloadPDF = () => {
+    if (editorRef.current) {
+      const content = editorRef.current.getContent({ format: 'html' });
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = content;
+      document.body.appendChild(tempDiv);
+  
+      html2canvas(tempDiv).then(canvas => {
+        const pdf = new jsPDF('p', 'pt', 'a4');
+        const imgData = canvas.toDataURL('image/png');
+        pdf.addImage(imgData, 'PNG', 0, 0);
+        pdf.save('template_content.pdf');
+      }).catch(error => {
+        console.error('Error generating PDF:', error);
+      }).finally(() => {
+        document.body.removeChild(tempDiv);
       });
     }
   };
 
-  const handleDownloadPDF = () => {
-    if (editorRef.current) {
-      const contentDiv = editorRef.current.querySelector('.tox-edit-area iframe').contentWindow.document.body;
-      html2canvas(contentDiv).then(canvas => {
-        const pdf = new jsPDF('p', 'pt', 'a4');
-        const imgData = canvas.toDataURL('image/png');
-        const imgWidth = 210; // A4 width in mm
-        const pageHeight = 295; // A4 height in mm
-        const imgHeight = canvas.height * imgWidth / canvas.width;
-        let heightLeft = imgHeight;
+  const handlePrev = () => {
+    if (currentInputIndex > 0) {
+      setCurrentInputIndex(prevIndex => prevIndex - 1);
+    }
+  };
 
-        let position = 0;
-
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
-
-        while (heightLeft >= 0) {
-          position -= pageHeight;
-          pdf.addPage();
-          pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-          heightLeft -= pageHeight;
-        }
-
-        pdf.save('template_content.pdf');
-      }).catch(error => {
-        console.error('Error generating the PDF:', error);
-      });
+  const handleNext = () => {
+    if (currentInputIndex < templateInputFields[selectedTemplateType].length - 1) {
+      setCurrentInputIndex(prevIndex => prevIndex + 1);
     }
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+    setContent(generateTemplateContent({
       ...formData,
-      [name]: value,
-    });
+      [name]: value
+    }, selectedTemplateType));
   };
 
-  const handlePrev = () => {
-    setCurrentInputIndex(prevIndex => Math.max(prevIndex - 1, 0));
-  };
-
-  const handleNext = () => {
-    setCurrentInputIndex(prevIndex => Math.min(prevIndex + 1, inputFields.length - 1));
-  };
-
-  const inputFields = [
-    { name: 'name', label: 'Name', type: 'text' },
-    { name: 'jobTitle', label: 'Job Title', type: 'text' },
-    { name: 'principal', label: 'Principal', type: 'text' },
-    { name: 'school', label: 'School', type: 'text' },
-    { name: 'address', label: 'Address', type: 'text' },
-    { name: 'phone', label: 'Phone', type: 'text' },
-    { name: 'email', label: 'Email', type: 'email' },
-    { name: 'linkedin', label: 'LinkedIn', type: 'text' },
-    { name: 'date', label: 'Date', type: 'text' },
-    { name: 'letterContent', label: 'Letter Content', type: 'textarea' },
-  ];
-
-  const generateTemplateContent = (data) => {
-    return `
-      <div style="display: flex; height: 100%;">
-        <div style="flex: 1; padding-left: 4px; background-color: lightblue; min-height: 1120px;">
-          <h2>${data.name}</h2>
-          <h3>${data.jobTitle}</h3>
-          <h3>Personal Info</h3>
-          <p>${data.principal}<br>${data.school}<br>${data.address}</p>
-          <h3>Address</h3>
-          <p>${data.address}</p>
-          <p>Phone<br>${data.phone}</p>
-          <p>E-mail<br>${data.email}</p>
-          <p>LinkedIn<br>${data.linkedin}</p>
-          <p>Date<br>${data.date}</p>
-        </div>
-        <div style="flex: 2; padding: 10px;">
-          <p>Dear Principal Sanchez,</p>
-          <p>${data.letterContent}</p>
-          <p>Sincerely,<br>${data.name}</p>
-        </div>
-      </div>`;
-  };
+  const inputFields = templateInputFields[selectedTemplateType].map((field, index) => (
+    <div key={index} className="form-group template-input">
+      <label>{field.label}</label>
+      {field.type === 'textarea' ? (
+        <textarea
+          className="form-control template-textarea"
+          name={field.name}
+          rows="6"
+          value={formData[field.name] || ''}
+          onChange={handleInputChange}
+        ></textarea>
+      ) : (
+        <input
+          type={field.type}
+          className="form-control"
+          name={field.name}
+          value={formData[field.name] || ''}
+          onChange={handleInputChange}
+        />
+      )}
+    </div>
+  ));
 
   return (
     <div className="bg-black">
@@ -245,49 +301,48 @@ export default function CoverLetterTemplates() {
 
       {selectedImage && (
         <div className="selected-image-wrapper" ref={editorRef}>
-          
           <div className="editor-container">
             <div className="form-group template-input">
-              <label>{inputFields[currentInputIndex].label}</label>
-              {inputFields[currentInputIndex].type === 'textarea' ? (
+              <label>{templateInputFields[selectedTemplateType][currentInputIndex].label}</label>
+              {templateInputFields[selectedTemplateType][currentInputIndex].type === 'textarea' ? (
                 <textarea
                   className="form-control template-textarea"
-                  name={inputFields[currentInputIndex].name}
+                  name={templateInputFields[selectedTemplateType][currentInputIndex].name}
                   rows="6"
-                  value={formData[inputFields[currentInputIndex].name]}
+                  value={formData[templateInputFields[selectedTemplateType][currentInputIndex].name]}
                   onChange={handleInputChange}
                 ></textarea>
               ) : (
                 <input
-                  type={inputFields[currentInputIndex].type}
+                  type={templateInputFields[selectedTemplateType][currentInputIndex].type}
                   className="form-control"
-                  name={inputFields[currentInputIndex].name}
-                  value={formData[inputFields[currentInputIndex].name]}
+                  name={templateInputFields[selectedTemplateType][currentInputIndex].name}
+                  value={formData[templateInputFields[selectedTemplateType][currentInputIndex].name]}
                   onChange={handleInputChange}
                 />
               )}
             </div>
             <div className="form-navigation mb-5">
-  <button
-    type="button"
-    className="btn btn-nav btn-prev"
-    onClick={handlePrev}
-    disabled={currentInputIndex === 0}
-  >
-    <i className="fa fa-arrow-left"></i> Previous
-  </button>
-  <button
-    type="button"
-    className="btn btn-nav btn-next"
-    onClick={handleNext}
-    disabled={currentInputIndex === inputFields.length - 1}
-  >
-    Next <i className="fa fa-arrow-right"></i>
-  </button>
-</div>
+              <button
+                type="button"
+                className="btn btn-nav btn-prev"
+                onClick={handlePrev}
+                disabled={currentInputIndex === 0}
+              >
+                <i className="fa fa-arrow-left"></i> Previous
+              </button>
+              <button
+                type="button"
+                className="btn btn-nav btn-next"
+                onClick={handleNext}
+                disabled={currentInputIndex === templateInputFields[selectedTemplateType].length - 1}
+              >
+                Next <i className="fa fa-arrow-right"></i>
+              </button>
+            </div>
 
             <Editor
-              key={editorKey} // Re-render editor on key change
+              key={editorKey}
               apiKey="xvogh7180w9n8hd8zc53e6dwo44kau08xngyoqlr623byta9"
               init={{
                 height: '296mm',
@@ -299,11 +354,9 @@ export default function CoverLetterTemplates() {
                   'insertdatetime media table paste code help wordcount',
                 ],
                 toolbar:
-                  'undo redo | formatselect | bold italic backcolor | \
-                   alignleft aligncenter alignright alignjustify | \
-                   bullist numlist outdent indent | removeformat | help',
+                  'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
               }}
-              value={generateTemplateContent(formData)} // Dynamically update content
+              value={generateTemplateContent(formData, selectedTemplateType)}
               onEditorChange={(content) => setContent(content)}
             />
           </div>

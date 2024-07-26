@@ -23,7 +23,7 @@
   margin-top: 20px;
 }
 
-.feedback-form label {
+.feedback-label {
   font-weight: bold;
   color: crimson; /* Label text color */
 }

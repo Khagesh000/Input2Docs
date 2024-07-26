@@ -52,7 +52,7 @@ export default function Feedback() {
               </div>
               <div className="text-center">
                 <h3>Send Us Your Feedback</h3>
-                <p className="mb-4">
+                <p className="mb-4 text-black-50">
                   We’re here to help and answer any questions you might have. Please use the form below to contact us,
                   and we'll respond promptly.
                 </p>
@@ -63,19 +63,19 @@ export default function Feedback() {
             <div className="feedback-form p-4 shadow bg-wheat text-white rounded d-flex flex-column justify-content-between w-100">
               <form onSubmit={sendEmail} className="w-100">
                 <div className="form-group">
-                  <label className="font-weight-bold">Name</label>
+                  <label className="font-weight-bold text-danger">Name</label>
                   <input type="text" className="form-control" name="name" required />
                 </div>
                 <div className="form-group">
-                  <label className="font-weight-bold">Email</label>
+                  <label className="font-weight-bold text-danger">Email</label>
                   <input type="email" className="form-control" name="email" required />
                 </div>
                 <div className="form-group">
-                  <label className="font-weight-bold">WhatsApp Number</label>
+                  <label className="font-weight-bold text-danger">WhatsApp Number</label>
                   <input type="text" className="form-control" name="whatsapp_number" />
                 </div>
                 <div className="form-group">
-                  <label className="font-weight-bold">Message</label>
+                  <label className="font-weight-bold text-danger">Message</label>
                   <textarea className="form-control" name="message" rows="5" required></textarea>
                 </div>
                 <button type="submit" className="btn btn-custom btn-block" style={{ backgroundColor: '#ff6600' }}>

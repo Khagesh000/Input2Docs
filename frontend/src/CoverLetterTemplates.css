@@ -219,7 +219,7 @@ element.style {
 .form-group label {
   font-weight: bold;
   color: rgb(239, 191, 103);
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .form-group input,
@@ -308,7 +308,7 @@ element.style {
   }
 }
 
-@media(min-width: 900px) {
+@media(min-width: 960px) {
   .editor-container {
     margin-top: 20px;
     width: 100%;
@@ -328,6 +328,7 @@ element.style {
   .template-input{
     margin-bottom: 3%;
   }
+  
 }
 
 /* Mobile responsiveness */
