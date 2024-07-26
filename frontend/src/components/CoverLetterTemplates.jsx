@@ -222,6 +222,9 @@ const handleDownloadPNG = () => {
   tempDiv.style.fontFamily = 'Arial, sans-serif';
   tempDiv.style.color = '#000'; // Text color
   // Background color
+  tempDiv.style.width = '210mm';
+  tempDiv.style.height = '296mm';
+
 
   // Apply specific styles to all child elements
   tempDiv.querySelectorAll('*').forEach(element => {
@@ -232,7 +235,11 @@ const handleDownloadPNG = () => {
 
   document.body.appendChild(tempDiv);
 
-  html2canvas(tempDiv, { scale: 2 }).then((canvas) => {
+  html2canvas(tempDiv, 
+  { scale: 2,
+    width: tempDiv.clientWidth,
+    height: tempDiv.clientHeight,
+   }).then((canvas) => {
     const link = document.createElement('a');
     link.href = canvas.toDataURL('image/png');
     link.download = 'cover-letter-template.png';

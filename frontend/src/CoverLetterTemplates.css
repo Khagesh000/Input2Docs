@@ -1,7 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   font-size: 14px;
-  background-color: #000; /* Ensure the background color for the overall page */
+  background-color: #000;
+  scroll-behavior: smooth; /* Ensure the background color for the overall page */
 }
 
 .template-container {
@@ -124,7 +125,8 @@ body {
   text-align: center;
   background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for better visibility */
   padding: 10px;
-  z-index: 5; /* Lower z-index to ensure it's below the arrows */
+  z-index: 5; 
+  scroll-behavior: smooth;/* Lower z-index to ensure it's below the arrows */
 }
 
 .selected-image {
@@ -153,7 +155,7 @@ body {
   width: 210mm;
   height: 297mm; /* Make sure the container takes full width */
   box-sizing: border-box; 
- /* Include padding and border in the element’s total width and height */
+   scroll-behavior: smooth;/* Include padding and border in the element’s total width and height */
 }
 
 .bg-black {
@@ -302,6 +304,7 @@ element.style {
   .editor-container {
     width: 60%;
    padding-left: 20%;
+   scroll-behavior: smooth;
   }
   .mce-content-body {
     padding: 20px;
@@ -315,7 +318,8 @@ element.style {
     height: 297mm; /* Set the container height to match A4 size */
     overflow: auto; /* Enable scrolling if content overflows */
     box-sizing: border-box; /* Include padding and border in the element’s total width and height */
-    position: relative; /* Ensure correct positioning of child elements */
+    position: relative;
+    scroll-behavior: smooth; /* Ensure correct positioning of child elements */
   }
   
   /* Ensure the content inside the editor container can scroll horizontally */
@@ -323,7 +327,8 @@ element.style {
     width: 100%;
     min-width: 100%;
     height: auto; /* Allow the content to expand in height */
-    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Include padding and border in the element’s total width and height */
   }
   .template-input{
     margin-bottom: 3%;
@@ -353,7 +358,7 @@ element.style {
   .selected-image-wrapper {
     /* Semi-transparent background for better visibility */
     padding: 10px;
-    /* Lower z-index to ensure it's below the arrows */
+    scroll-behavior: smooth;/* Lower z-index to ensure it's below the arrows */
   }
 
   .editor-container {
@@ -364,7 +369,7 @@ element.style {
     box-sizing: border-box; /* Include padding and border in the element’s total width and height */
     position: relative; /* Ensure correct positioning of child elements */
     touch-action: manipulation;
-  
+    scroll-behavior: smooth;
   }
   
   /* Ensure the content inside the editor container can scroll horizontally */
@@ -372,7 +377,8 @@ element.style {
     width: 100%;
     min-width: 100%;
     height: auto; /* Allow the content to expand in height */
-    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Include padding and border in the element’s total width and height */
   }
    
   .editor-container .tox-edit-area iframe {
@@ -433,7 +439,7 @@ element.style {
   .selected-image-wrapper {
     /* Semi-transparent background for better visibility */
     padding: 6px;
-    /* Lower z-index to ensure it's below the arrows */
+    scroll-behavior: smooth;/* Lower z-index to ensure it's below the arrows */
   }
 
   .editor-container {
@@ -442,7 +448,8 @@ element.style {
     height: 297mm; /* Set the container height to match A4 size */
     overflow: auto; /* Enable scrolling if content overflows */
     box-sizing: border-box; /* Include padding and border in the element’s total width and height */
-    position: relative; /* Ensure correct positioning of child elements */
+    position: relative;
+    scroll-behavior: smooth; /* Ensure correct positioning of child elements */
   }
   
   /* Ensure the content inside the editor container can scroll horizontally */
@@ -450,7 +457,8 @@ element.style {
     width: 100%;
     min-width: 100%;
     height: auto; /* Allow the content to expand in height */
-    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Include padding and border in the element’s total width and height */
   }
   
   .mce-content-body {
