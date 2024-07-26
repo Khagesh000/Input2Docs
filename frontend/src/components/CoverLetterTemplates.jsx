@@ -103,6 +103,7 @@ export default function CoverLetterTemplates() {
   });
   const [currentInputIndex, setCurrentInputIndex] = useState(0); // State for managing input index
   const [selectedTemplateType, setSelectedTemplateType] = useState(1); // Add state for template type
+  const [networkError, setNetworkError] = useState(false); // State to manage network error
 
   const images = [img, img1, img2, img3, img4, img5, img6, img7];
 
@@ -151,6 +152,27 @@ export default function CoverLetterTemplates() {
   useEffect(() => {
     setContent(generateTemplateContent(formData, selectedTemplateType));
   }, [formData, selectedTemplateType]);
+
+
+
+  useEffect(() => {
+    const handleOnline = () => setNetworkError(false);
+    const handleOffline = () => setNetworkError(true);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    // Check initial status
+    if (!navigator.onLine) {
+      setNetworkError(true);
+    }
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
 
   const scrollLeft = () => {
     if (containerRef.current) {
@@ -358,6 +380,11 @@ const handleDownloadPDF = () => {
               >
                 Next <i className="fa fa-arrow-right"></i>
               </button>
+              {networkError && (
+        <div className="network-error">
+          Network issue detected. Some features may not work properly.
+        </div>
+      )}
             </div>
 
             <Editor
@@ -379,6 +406,12 @@ const handleDownloadPDF = () => {
               onEditorChange={(newContent) => setContent(newContent)}
             />
           </div>
+          {networkError && (
+        <div className="network-error">
+          Network issue detected. Some features may not work properly.
+        </div>
+      )}
+
           <button className="btn btn-secondary m-2 mb-2 down-temp" onClick={handleDownloadPNG}>
             Download Template as PNG
           </button>

@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import '../Feedback.css'; // Ensure this path is correct
 
 export default function Feedback() {
   const [feedbackStatus, setFeedbackStatus] = useState(null); // State for feedback status
+  const [networkError, setNetworkError] = useState(false);
 
   const sendEmail = (e) => {
+    if (networkError) {
+      alert('Cannot send email due to network issues.');
+      return;
+    }
+
     e.preventDefault();
 
     emailjs.sendForm('service_ehxnoe9', 'template_6t00rzh', e.target, 'T8nts_zoFTnKltu_k')
@@ -23,6 +29,26 @@ export default function Feedback() {
       setFeedbackStatus(null);
     }, 30000);
   }
+
+
+  useEffect(() => {
+    const handleOnline = () => setNetworkError(false);
+    const handleOffline = () => setNetworkError(true);
+  
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+  
+    // Check initial status
+    if (!navigator.onLine) {
+      setNetworkError(true);
+    }
+  
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+  
 
   return (
     <div className='bg-wheat'>
@@ -82,6 +108,11 @@ export default function Feedback() {
                   Send Enquiry <span className="arrow-right">→</span>
                 </button>
               </form>
+              {networkError && (
+              <div className="network-error mt-3">
+                Network issue detected. Some features may not work properly.
+              </div>
+            )}
               {feedbackStatus && (
                 <div className={`mt-3 alert ${feedbackStatus.type === 'success' ? 'alert-success' : 'alert-danger'}`}>
                   {feedbackStatus.message}

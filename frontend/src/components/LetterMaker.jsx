@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import html2pdf from 'html2pdf.js';
@@ -129,6 +129,7 @@ const LetterMaker = ({ selectedTemplate }) => {
   const [generatedLetter, setGeneratedLetter] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const generatedLetterRef = useRef(null);
+  const [networkError, setNetworkError] = useState(false); // State to manage network error
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -143,6 +144,27 @@ const LetterMaker = ({ selectedTemplate }) => {
     const doc = new DOMParser().parseFromString(html, 'text/html');
     return doc.body.textContent || "";
   };
+
+
+  useEffect(() => {
+    const handleOnline = () => setNetworkError(false);
+    const handleOffline = () => setNetworkError(true);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    // Check initial status
+    if (!navigator.onLine) {
+      setNetworkError(true);
+    }
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -226,6 +248,11 @@ const LetterMaker = ({ selectedTemplate }) => {
                   <div id="generated-letter" ref={generatedLetterRef}>
                     <pre>{stripHtmlTags(generatedLetter)}</pre>
                   </div>
+                  {networkError && (
+        <div className="network-error">
+          Network issue detected. Some features may not work properly.
+        </div>
+      )}
                   <button className="btn btn-success mt-3" onClick={downloadAsPDF}>Download as PDF</button>
                   <button className="btn btn-secondary mt-3" onClick={() => setFormSubmitted(false)}>Edit</button>
                 </div>

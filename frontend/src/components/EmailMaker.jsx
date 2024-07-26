@@ -105,7 +105,27 @@ const EmailMaker = ({ selectedTemplate }) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [isSendingEmail, setIsSendingEmail] = useState(false);
   const generatedEmailRef = useRef(null);
+  const [networkError, setNetworkError] = useState(false);
 
+  useEffect(() => {
+    const handleOnline = () => setNetworkError(false);
+    const handleOffline = () => setNetworkError(true);
+  
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+  
+    // Check initial status
+    if (!navigator.onLine) {
+      setNetworkError(true);
+    }
+  
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+  
   useEffect(() => {
     if (selectedTemplate) {
       const category = Object.keys(emailTemplates).find(cat =>
@@ -161,6 +181,11 @@ const EmailMaker = ({ selectedTemplate }) => {
   };
 
   const sendEmail = async () => {
+    if (networkError) {
+      alert('Cannot send email due to network issues.');
+      return;
+    }
+
     try {
       setIsSendingEmail(true);
       const controller = new AbortController();
@@ -272,6 +297,11 @@ const EmailMaker = ({ selectedTemplate }) => {
                   Email sent successfully!
                 </div>
               )}
+              {networkError && (
+              <div className="network-error mt-3">
+                Network issue detected. Some features may not work properly.
+              </div>
+            )}
             </div>
           </div>
         </div>
