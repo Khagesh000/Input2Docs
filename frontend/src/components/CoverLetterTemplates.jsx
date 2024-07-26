@@ -2,6 +2,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import html2pdf from 'html2pdf.js';
+
 import '../CoverLetterTemplates.css'; // Ensure this path is correct
 
 // Import images for templates
@@ -82,7 +84,7 @@ const generateTemplateContent = (formData, templateType) => {
 export default function CoverLetterTemplates() {
   const containerRef = useRef(null);
   const selectedImageRef = useRef(null);
-  const editorRef = useRef(null);
+  const editorRef = useRef(null); // Define the editorRef
   const [cardWidth, setCardWidth] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
   const [content, setContent] = useState('');
@@ -140,10 +142,15 @@ export default function CoverLetterTemplates() {
   }, [selectedImage]);
 
   useEffect(() => {
-    if (editorRef.current) {
-      editorRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (content) {
+      console.log('Editor Content:', content);
     }
   }, [content]);
+
+  // Effect to update content when formData changes
+  useEffect(() => {
+    setContent(generateTemplateContent(formData, selectedTemplateType));
+  }, [formData, selectedTemplateType]);
 
   const scrollLeft = () => {
     if (containerRef.current) {
@@ -174,50 +181,23 @@ export default function CoverLetterTemplates() {
     const selectedImageElement = containerRef.current.querySelector(`.template-card:nth-child(${index + 1})`);
     selectedImageRef.current = selectedImageElement;
 
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: 'smooth',
-    });
+    setTimeout(() => {
+      if (selectedImageElement) {
+        selectedImageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      window.scrollTo({
+        top: document.querySelector('.selected-image-wrapper').offsetTop,
+        behavior: 'smooth'
+      });
+    }, 300); // Delay to ensure content is updated
   };
 
-  const handleDownloadPNG = () => {
-    if (editorRef.current) {
-      const content = editorRef.current.getContent({ format: 'html' });
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = content;
-      document.body.appendChild(tempDiv);
-  
-      html2canvas(tempDiv).then(canvas => {
-        const link = document.createElement('a');
-        link.href = canvas.toDataURL('image/png');
-        link.download = 'template_content.png';
-        link.click();
-      }).catch(error => {
-        console.error('Error capturing the editor content:', error);
-      }).finally(() => {
-        document.body.removeChild(tempDiv);
-      });
-    }
-  };
-  
-  const handleDownloadPDF = () => {
-    if (editorRef.current) {
-      const content = editorRef.current.getContent({ format: 'html' });
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = content;
-      document.body.appendChild(tempDiv);
-  
-      html2canvas(tempDiv).then(canvas => {
-        const pdf = new jsPDF('p', 'pt', 'a4');
-        const imgData = canvas.toDataURL('image/png');
-        pdf.addImage(imgData, 'PNG', 0, 0);
-        pdf.save('template_content.pdf');
-      }).catch(error => {
-        console.error('Error generating PDF:', error);
-      }).finally(() => {
-        document.body.removeChild(tempDiv);
-      });
-    }
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value
+    }));
   };
 
   const handlePrev = () => {
@@ -232,71 +212,103 @@ export default function CoverLetterTemplates() {
     }
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevData => ({
-      ...prevData,
-      [name]: value
-    }));
-    setContent(generateTemplateContent({
-      ...formData,
-      [name]: value
-    }, selectedTemplateType));
+
+
+const handleDownloadPNG = () => {
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = content;
+
+  // Apply global styles to ensure consistent appearance
+  tempDiv.style.fontFamily = 'Arial, sans-serif';
+  tempDiv.style.color = '#000'; // Text color
+  // Background color
+
+  // Apply specific styles to all child elements
+  tempDiv.querySelectorAll('*').forEach(element => {
+    element.style.color = '#000'; // Text color
+    // Background color
+   // Ensure consistent font size
+  });
+
+  document.body.appendChild(tempDiv);
+
+  html2canvas(tempDiv, { scale: 2 }).then((canvas) => {
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/png');
+    link.download = 'cover-letter-template.png';
+    link.click();
+    document.body.removeChild(tempDiv);
+  });
+};
+
+
+const handleDownloadPDF = () => {
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = content;
+  tempDiv.style.fontFamily = 'Arial, sans-serif';
+  tempDiv.style.color = '#000'; // Ensure all text is black
+ // Background color
+
+  // Apply specific styles to all child elements
+  tempDiv.querySelectorAll('*').forEach(element => {
+    element.style.color = '#000'; // Text color
+    // Background color
+    // Ensure consistent font size
+  });
+
+  document.body.appendChild(tempDiv);
+
+  // Add TinyMCE styles if necessary
+  const styleSheet = document.createElement('link');
+  styleSheet.rel = 'stylesheet';
+  styleSheet.href = 'path/to/tinymce-custom-styles.css';
+  document.head.appendChild(styleSheet);
+
+  // Set up options for html2pdf
+  const options = {
+    margin: [10, 10, 10, 10], // Margins in mm
+    filename: 'cover-letter-template.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
   };
 
-  const inputFields = templateInputFields[selectedTemplateType].map((field, index) => (
-    <div key={index} className="form-group template-input">
-      <label>{field.label}</label>
-      {field.type === 'textarea' ? (
-        <textarea
-          className="form-control template-textarea"
-          name={field.name}
-          rows="6"
-          value={formData[field.name] || ''}
-          onChange={handleInputChange}
-        ></textarea>
-      ) : (
-        <input
-          type={field.type}
-          className="form-control"
-          name={field.name}
-          value={formData[field.name] || ''}
-          onChange={handleInputChange}
-        />
-      )}
-    </div>
-  ));
+  html2pdf().from(tempDiv).set(options).toPdf().get('pdf').then((pdf) => {
+    pdf.save('cover-letter-template.pdf');
+  }).finally(() => {
+    document.body.removeChild(tempDiv);
+  });
+};
+
 
   return (
-    <div className="bg-black">
-      <div className="container cov-temp template-container bg-black mb-xxl-5">
-        <h2 className="text-center heading-title text-white">Choose a Cover Letter Template</h2>
-        <div className="template-row" ref={containerRef}>
-          {images.map((image, index) => (
-            <div className="col-md-3 mb-4" key={index}>
-              <div className="template-card">
-                <div className="template-image-wrapper">
-                  <img
-                    src={image}
-                    alt={`Cover Letter Template ${index + 1}`}
-                    className={`img-fluid sliding-image ${selectedImage === image ? 'selected' : ''}`}
-                    ref={selectedImage === image ? selectedImageRef : null}
-                  />
-                  <div className="template-overlay">
-                    <button 
-                      className="btn btn-primary" 
-                      onClick={() => handleUseTemplate(index)}
-                    >
-                      Use Template
-                    </button>
-                  </div>
+    <div className="container mt-5">
+      <h2 className="text-center heading-title text-white">Choose a Cover Letter Template</h2>
+      <div className="template-row" ref={containerRef}>
+        {images.map((image, index) => (
+          <div className="col-md-3 mb-4" key={index}>
+            <div className="template-card">
+              <div className="template-image-wrapper">
+                <img
+                  src={image}
+                  alt={`Cover Letter Template ${index + 1}`}
+                  className={`img-fluid sliding-image ${selectedImage === image ? 'selected' : ''}`}
+                  ref={selectedImage === image ? selectedImageRef : null}
+                />
+                <div className="template-overlay">
+                  <button 
+                    className="btn btn-primary" 
+                    onClick={() => handleUseTemplate(index)}
+                  >
+                    Use Template
+                  </button>
                 </div>
               </div>
             </div>
-          ))}
-          <button className="arrow-button left-arrow" onClick={scrollLeft}>&lt;</button>
-          <button className="arrow-button right-arrow" onClick={scrollRight}>&gt;</button>
-        </div>
+          </div>
+        ))}
+        <button className="arrow-button left-arrow" onClick={scrollLeft}>&lt;</button>
+        <button className="arrow-button right-arrow" onClick={scrollRight}>&gt;</button>
       </div>
 
       {selectedImage && (
@@ -356,8 +368,8 @@ export default function CoverLetterTemplates() {
                 toolbar:
                   'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
               }}
-              value={generateTemplateContent(formData, selectedTemplateType)}
-              onEditorChange={(content) => setContent(content)}
+              value={content}
+              onEditorChange={(newContent) => setContent(newContent)}
             />
           </div>
           <button className="btn btn-secondary m-2 mb-2 down-temp" onClick={handleDownloadPNG}>
