@@ -10,7 +10,7 @@ import Endbar from './components/Endbar'
 import CoverLetterIntro from './components/CoverLetterIntro'
 import CoverLetterTemplates from './components/CoverLetterTemplates'
 import CoverLetterImportance from './components/CoverLetterImportance'
-
+import CoverLetterAbout from './components/CoverLetterAbout'
 
 export default function CoverLetter() {
   return (
@@ -19,6 +19,7 @@ export default function CoverLetter() {
       <CoverLetterIntro />
       <CoverLetterTemplates />
       <CoverLetterImportance />
+      <CoverLetterAbout />
       <div>
       <Feedback />
       </div>

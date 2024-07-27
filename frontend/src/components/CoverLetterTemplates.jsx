@@ -311,8 +311,12 @@ const handleDownloadPDF = () => {
 
 
   return (
-    <div className="container mt-5">
+    
+    <div className="bg-black">
+    <div className="container cov-temp template-container bg-black mb-xxl-5">
       <h2 className="text-center heading-title text-white">Choose a Cover Letter Template</h2>
+      <div className="template-row-wrapper">
+      <button className="arrow-button left-arrow" onClick={scrollLeft}>&lt;</button>
       <div className="template-row" ref={containerRef}>
         {images.map((image, index) => (
           <div className="col-md-3 mb-4" key={index}>
@@ -332,15 +336,22 @@ const handleDownloadPDF = () => {
                     Use Template
                   </button>
                 </div>
+                
               </div>
             </div>
+           
           </div>
+          
         ))}
-        <button className="arrow-button left-arrow" onClick={scrollLeft}>&lt;</button>
+        </div>
         <button className="arrow-button right-arrow" onClick={scrollRight}>&gt;</button>
+        
       </div>
-
+    </div>
+     
+      <section className="m-0">
       {selectedImage && (
+        
         <div className="selected-image-wrapper" ref={editorRef}>
           <div className="editor-container">
             <div className="form-group template-input">
@@ -420,6 +431,8 @@ const handleDownloadPDF = () => {
           </button>
         </div>
       )}
+      </section>
     </div>
+    
   );
 }

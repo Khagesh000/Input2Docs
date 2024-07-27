@@ -15,7 +15,8 @@ body {
   display: flex; /* Flexbox to align items in a row */
   flex-wrap: nowrap; /* Prevent wrapping to the next line */
   overflow-x: auto; /* Enable horizontal scrolling */
-  scroll-behavior: smooth; /* Smooth scrolling */
+  scroll-behavior: smooth;
+  position: relative; /* Smooth scrolling */
 }
 
 .template-card {
@@ -104,7 +105,7 @@ body {
   border: none;
   font-size: 2rem; /* Arrow size */
   cursor: pointer; /* Pointer cursor */
-  z-index: 10; /* Ensure arrows are above other elements */
+  z-index: 1; /* Ensure arrows are above other elements */
   /* Round shape for better appearance */
 }
 
