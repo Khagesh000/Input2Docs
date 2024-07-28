@@ -50,6 +50,15 @@
   .about-p{
     color: wheat;
   }
+
+  .cover-imp{
+    color: wheat;
+    
+  }
+
+  .cover-imp span{
+    color: red;
+  }
   
   @media (max-width: 768px) {
     .project-steps {

@@ -57,6 +57,11 @@ export default class Navbar extends Component {
                 </a>
               </li>
               <li className="nav-item">
+                <a className="nav-link" href="/resume">
+                  RESUME MAKER
+                </a>
+              </li>
+              <li className="nav-item">
                 <a className="nav-link" href="/about">
                   ABOUT US
                 </a>

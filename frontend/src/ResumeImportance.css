@@ -1,0 +1,50 @@
+/* ResumeImportance.css */
+
+.importance-section {
+    margin-bottom: 2rem;
+   /* Add space between sections */
+  }
+  
+  .importance-image img {
+    width: 100%;
+    height: 250px;
+    display: block;
+  }
+  
+  .section-left .importance-image {
+    order: 1;
+  }
+  
+  .section-left .importance-content {
+    order: 2;
+  }
+  
+  .section-right .importance-image {
+    order: 2;
+  }
+  
+  .section-right .importance-content {
+    order: 1;
+  }
+  
+  .importance-content h2 {
+    font-size: 1.75rem;
+    color: wheat; /* Title color */
+    margin-bottom: 1rem;
+  }
+  
+  .importance-content ul {
+    padding-left: 1.5rem;
+  }
+  
+  .importance-content ul li {
+    margin-bottom: 0.5rem;
+    color: white; /* List item color */
+  }
+  
+  @media (max-width: 767px) {
+    .importance-image, .importance-content {
+      order: initial !important;
+    }
+  }
+  

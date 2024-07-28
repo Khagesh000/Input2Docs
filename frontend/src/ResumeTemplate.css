@@ -1,0 +1,499 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #000;
+    scroll-behavior: smooth; /* Ensure the background color for the overall page */
+  }
+
+  .resume-template{
+    padding-top: 8%;
+    
+  }
+
+  .resume-title{
+    padding-bottom: 2%;
+    color: wheat;
+  }
+  .resume-title span{
+    color: red;
+  }
+
+  
+  
+  .template-container {
+    position: relative; /* Position relative for positioning arrows */
+    overflow: hidden;
+    padding-bottom: 20px; /* Add space at the bottom for arrows and selected image */
+  }
+  
+  .template-row {
+    display: flex; /* Flexbox to align items in a row */
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth;
+    position: relative; /* Smooth scrolling */
+  }
+  
+  .template-card {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-right: 15px;
+    flex: 0 0 auto;
+  }
+  
+  .template-image-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .sliding-image {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    animation: slideUpDown 5s infinite alternate;
+  }
+  
+  @keyframes slideUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10%);
+    }
+  }
+  
+  .template-card:hover .sliding-image {
+    transform: translateY(-10%);
+  }
+  
+  .template-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    opacity: 0; /* Hidden by default on large screens */
+    transition: opacity 0.3s;
+    padding: 10px; 
+  }
+  
+  .template-overlay button {
+    font-size: 0.875rem; /* Slightly larger button text for better visibility */
+    padding: 10px 20px; /* Ensure button has enough padding */
+    border-radius: 30px;
+  }
+  
+  .template-card:hover .template-overlay {
+    opacity: 1; /* Show overlay on hover */
+  }
+  
+  .btn-primary {
+    background-color: #ff6600; /* Match button color with heading */
+    border-color: #ff6600; /* Border color for button */
+    cursor: pointer;
+    border-radius: 30px;
+    width: 60%;
+    font-size: 0.9rem;
+  }
+  
+  .btn-primary:hover {
+    background-color: #e55b00; /* Darker shade on hover */
+    border-color: #e55b00; /* Border color on hover */
+  }
+  
+  /* Arrow buttons for navigation */
+  .arrow-button {
+    position: absolute; /* Absolute positioning */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff; /* White arrow color */
+    border: none;
+    font-size: 2rem; /* Arrow size */
+    cursor: pointer; /* Pointer cursor */
+    z-index: 1; /* Ensure arrows are above other elements */
+    /* Round shape for better appearance */
+  }
+  
+  .left-arrow {
+    left: 10px; /* Position on the left side */
+  }
+  
+  .right-arrow {
+    right: 10px; /* Position on the right side */
+  }
+  
+  /* Style for the selected image at the bottom */
+  .selected-image-wrapper {
+    /* Absolute positioning within the container */
+    bottom: 0; /* Stick to the bottom of the container */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for better visibility */
+    padding: 10px;
+    z-index: 5; 
+    scroll-behavior: smooth;/* Lower z-index to ensure it's below the arrows */
+  }
+  
+  .selected-image {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .ql-container.ql-snow {
+    border: 1px solid #1d1b1b;
+    margin-bottom: 10px;
+  }
+  
+  .ql-toolbar.ql-snow {
+    border: 1px solid #090909;
+  }
+  
+  .ql-editor p {
+    margin: 0 0 10px;
+    color: black;
+  }
+  
+  .editor-container {
+    margin-top: 20px;
+    overflow: hidden;
+    width: 210mm;
+    height: 297mm; /* Make sure the container takes full width */
+    box-sizing: border-box; 
+     scroll-behavior: smooth;/* Include padding and border in the element’s total width and height */
+  }
+  
+  .bg-black {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .editor-container h2 {
+    color: #000;
+    text-align: center;
+  }
+  
+  .tinymce-editor {
+    height: 100%; /* Ensure editor height is 100% of its container */
+    width: 100%; /* Ensure editor width is 100% of its container */
+  }
+  
+  /* Ensure A4 page styling */
+  @media print {
+    .editor-container {
+      width: 826px; /* A4 width in pixels */
+      height: 1120px; /* A4 height in pixels */
+    }
+  }
+  
+  .mce-content-body {
+    padding: 20px;
+  }
+  
+  .down-temp {
+    background-color: #4a8cc6;
+    border-color: #6c757d;
+    border: 1px solid grey;
+    margin-right: 2%;
+    border-radius: 20px;
+  }
+  
+  .down-temp:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+  }
+  
+  
+  element.style {
+    visibility: hidden;
+    height: 297mm;
+    width: 210mm;
+  }
+    
+  .template-input{
+    
+    margin-right: 30%;
+    margin-bottom: 5%;
+  }
+  
+  
+  .template-textarea{
+    margin-bottom: 5%;
+    margin-top: 2%;
+  
+  }
+  /*Form part    */
+  .form-group label {
+    font-weight: bold;
+    color: rgb(239, 191, 103);
+    font-size: 20px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  
+  .selected-image-wrapper .btn {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    
+    padding: 10px 20px;
+    margin-right: 10px;
+  }
+  
+  .selected-image-wrapper .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-navigation{
+    justify-content: center;
+    margin-right: 25%;
+  }
+  
+  /* Base button styles */
+  .btn-nav {
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #ff6600;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  }
+  
+  .btn-prev {
+    background-color: #007bff; /* Primary blue color */
+    color: #fff;
+    border-radius: 30px;
+  }
+  
+  .btn-next {
+    background-color: #28a745; /* Success green color */
+    color: #fff;
+  }
+  
+  .btn-prev:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #fff;
+    transform: scale(1.05);
+  }
+  
+  .btn-next:hover {
+    background-color: #218838; /* Darker green on hover */
+    color: #fff;
+    transform: scale(1.05);
+  }
+  
+  .btn-nav:disabled {
+    background-color: #e0e0e0; /* Disabled background */
+    color: #a0a0a0; /* Disabled text color */
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /*  Network issues   */
+  .network-error {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  
+  
+  @media(min-width: 1100px) {
+    .editor-container {
+      width: 60%;
+     padding-left: 20%;
+     scroll-behavior: smooth;
+    }
+    .mce-content-body {
+      padding: 20px;
+    }
+  }
+  
+  @media(min-width: 960px) {
+    .editor-container {
+      margin-top: 20px;
+      width: 100%;
+      height: 297mm; /* Set the container height to match A4 size */
+      overflow: auto; /* Enable scrolling if content overflows */
+      box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+      position: relative;
+      scroll-behavior: smooth; /* Ensure correct positioning of child elements */
+    }
+    
+    /* Ensure the content inside the editor container can scroll horizontally */
+    .editor-content {
+      width: 100%;
+      min-width: 100%;
+      height: auto; /* Allow the content to expand in height */
+      box-sizing: border-box;
+      scroll-behavior: smooth; /* Include padding and border in the element’s total width and height */
+    }
+    .template-input{
+      margin-bottom: 3%;
+    }
+    
+  }
+  
+  /* Mobile responsiveness */
+  @media(max-width: 768px) {
+    .template-card {
+      width: 60vw; /* Set width to 60% of the viewport width */
+    }
+  
+    .heading-title {
+      font-size: 1.75rem; /* Smaller heading size for mobile */
+    }
+  
+    .arrow-button {
+      font-size: 1.5rem; /* Smaller arrows for mobile */
+    }
+    
+    .template-overlay {
+      /* Always visible on small screens */
+      opacity: 1; /* Always visible */
+    }
+  
+    .selected-image-wrapper {
+      /* Semi-transparent background for better visibility */
+      padding: 10px;
+      scroll-behavior: smooth;/* Lower z-index to ensure it's below the arrows */
+    }
+  
+    .editor-container {
+      margin-top: 20px;
+      width: 100%;
+      height: 297mm; /* Set the container height to match A4 size */
+      overflow: auto; /* Enable scrolling if content overflows */
+      box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+      position: relative; /* Ensure correct positioning of child elements */
+      touch-action: manipulation;
+      scroll-behavior: smooth;
+    }
+    
+    /* Ensure the content inside the editor container can scroll horizontally */
+    .editor-content {
+      width: 100%;
+      min-width: 100%;
+      height: auto; /* Allow the content to expand in height */
+      box-sizing: border-box;
+      scroll-behavior: smooth; /* Include padding and border in the element’s total width and height */
+    }
+     
+    .editor-container .tox-edit-area iframe {
+      transform-origin: 0 0; /* Set the transform origin to the top left */
+    }
+    
+    .mce-content-body {
+      padding: 20px;
+    }
+    element.style {
+      visibility: hidden;
+      height: 297mm;
+      width: 210mm;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .selected-image-wrapper .btn {
+    padding: 8px 16px;
+    margin-bottom: 10px;
+  }
+  .template-input{
+    margin-left: 5%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+  }
+  }
+  
+  @media (max-width: 576px) {
+    .template-card {
+      width: 75vw; /* Further adjust width for very small screens */
+    }
+  
+    .heading-title {
+      font-size: 1.5rem; /* Further reduce heading size */
+    }
+  
+    .arrow-button {
+      font-size: 1.25rem; /* Smaller arrows for very small screens */
+    }
+  
+    .template-overlay button {
+      font-size: 0.65rem; /* Further reduce font size */
+      padding: 6px; /* Further adjust padding */
+    }
+  
+    .template-overlay {
+      padding: 10px;
+    }
+  
+    .selected-image-wrapper {
+      /* Semi-transparent background for better visibility */
+      padding: 6px;
+      scroll-behavior: smooth;/* Lower z-index to ensure it's below the arrows */
+    }
+  
+    .editor-container {
+      margin-top: 20px;
+      width: 100%;
+      height: 297mm; /* Set the container height to match A4 size */
+      overflow: auto; /* Enable scrolling if content overflows */
+      box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+      position: relative;
+      scroll-behavior: smooth; /* Ensure correct positioning of child elements */
+    }
+    
+    /* Ensure the content inside the editor container can scroll horizontally */
+    .editor-content {
+      width: 100%;
+      min-width: 100%;
+      height: auto; /* Allow the content to expand in height */
+      box-sizing: border-box;
+      scroll-behavior: smooth; /* Include padding and border in the element’s total width and height */
+    }
+    
+    .mce-content-body {
+      padding: 2px;
+    }
+  
+    element.style {
+      visibility: hidden;
+      height: 297mm;
+      width: 210mm;
+  }
+  }
+  

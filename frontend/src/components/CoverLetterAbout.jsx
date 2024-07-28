@@ -8,7 +8,7 @@ export default function CoverLetterAbout() {
       <div className="container mt-5">
         <div className="row">
           <div className="col-md-12 mb-4">
-            <h2 className="text-center">Importance of Cover Letters</h2>
+            <h2 className="text-center cover-imp">Importance of <span>Cover Letters</span> </h2>
           </div>
         </div>
         <div className="row position-relative">

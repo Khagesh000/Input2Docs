@@ -4,7 +4,7 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import html2pdf from 'html2pdf.js';
 
-import '../CoverLetterTemplates.css'; // Ensure this path is correct
+import '../ResumeTemplate.css'; // Ensure this path is correct
 
 // Import images for templates
 import img from '../assets/images/cover_letter.png';
@@ -45,7 +45,7 @@ const generateTemplateContent = (formData, templateType) => {
   if (templateType === 1) {
     return `
       <div style="display: flex; height: 100%;">
-        <div style="flex: 1; padding-left: 4px; background-color: lightblue; min-height: 1120px;">
+        <div style="flex: 1; padding-left: 4px; background-color: wheat; min-height: 1120px;">
           <h1>${formData.name}</h1>
           <h2>${formData.jobTitle}</h2>
           <h3>Personal Info</h3>
@@ -312,9 +312,9 @@ const handleDownloadPDF = () => {
 
   return (
     
-    <div className="bg-black">
+    <div className="resume-template">
     <div className="container cov-temp template-container bg-black mb-xxl-5">
-      <h2 className="text-center heading-title resume-title">Choose a <span>Cover Letter Template</span></h2>
+      <h2 className="text-center heading-title resume-title">Choose a <span>Resume Template</span></h2>
       <div className="template-row-wrapper">
       <button className="arrow-button left-arrow" onClick={scrollLeft}>&lt;</button>
       <div className="template-row" ref={containerRef}>

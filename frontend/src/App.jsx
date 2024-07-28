@@ -11,7 +11,7 @@ import Letter from './Letter'; // Make sure this is correctly imported
 import Email from './Email'; // Make sure this is correctly imported
 import About from './About';
 import CoverLetter from './CoverLetter';
-
+import Resume from './Resume'
 
 
 
@@ -41,17 +41,19 @@ function App() {
   const isEmailPage = location.pathname === '/email';
   const isAboutPage = location.pathname === '/about';
   const isCoverLetterPage = location.pathname === '/cover';
+  const isResumePage = location.pathname === '/resume';
 
 
 
   return (
     <div>
-      {!isLetterPage && !isEmailPage && !isAboutPage && !isCoverLetterPage && <MainContent />} {/* Hide MainContent on both /letter and /email pages */}
+      {!isLetterPage && !isEmailPage && !isAboutPage && !isCoverLetterPage && !isResumePage && <MainContent />} {/* Hide MainContent on both /letter and /email pages */}
       <Routes>
         <Route path="/letter" element={<Letter />} />
         <Route path="/email" element={<Email />} />
         <Route path="/about" element={<About />}/>
         <Route path="/cover" element={<CoverLetter />}/>
+        <Route path='resume' element={<Resume/>}/>
       </Routes>
     </div>
   );
