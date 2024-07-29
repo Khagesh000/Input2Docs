@@ -2747,7 +2747,375 @@ const letterTemplates = {
       ]
     }
   },
+  
+  "Internal Communication": {
+        "Meeting Invitation": {
+            template: `
+                Subject: Meeting Invitation - {MeetingTopic}
 
+                Hi {RecipientName},
+
+                You are cordially invited to attend a meeting scheduled on {MeetingDate} at {MeetingTime}. 
+                The primary agenda of the meeting will be {MeetingAgenda}. 
+
+                Please let us know if you will be able to attend. If you have any questions or need further information, 
+                feel free to contact me.
+
+                Looking forward to your confirmation.
+
+                Best regards,
+                {SenderName}
+                {SenderPosition}
+                {SenderDepartment}
+            `,
+            fields: [
+                { "id": 'RecipientName', "label": 'Recipient Name', "type": 'text' },
+                { "id": 'MeetingTopic', "label": 'Meeting Topic', "type": 'text' },
+                { "id": 'MeetingDate', "label": 'Meeting Date', "type": 'date' },
+                { "id": 'MeetingTime', "label": 'Meeting Time', "type": 'time' },
+                { "id": 'MeetingAgenda', "label": 'Meeting Agenda', "type": 'textarea' },
+                { "id": 'SenderName', "label": 'Sender Name', "type": 'text' },
+                { "id": 'SenderPosition', "label": 'Sender Position', "type": 'text' },
+                { "id": 'SenderDepartment', "label": 'Sender Department', "type": 'text' }
+            ]
+        },
+        "Project Update": {
+            template: `
+                Subject: Project Update - {ProjectName}
+
+                Hi {RecipientName},
+
+                I wanted to share the latest updates regarding the {ProjectName} project. {ProjectUpdateDetails}
+
+                We have made significant progress and are on track to meet our deadlines. If you have any questions or need 
+                further information, please do not hesitate to reach out.
+
+                Best regards,
+                {SenderName}
+                {SenderPosition}
+                {SenderDepartment}
+            `,
+            fields: [
+                { "id": 'RecipientName', "label": 'Recipient Name', "type": 'text' },
+                { "id": 'ProjectName', "label": 'Project Name', "type": 'text' },
+                { "id": 'ProjectUpdateDetails', "label": 'Project Update Details', "type": 'textarea' },
+                { "id": 'SenderName', "label": 'Sender Name', "type": 'text' },
+                { "id": 'SenderPosition', "label": 'Sender Position', "type": 'text' },
+                { "id": 'SenderDepartment', "label": 'Sender Department', "type": 'text' }
+            ]
+        },
+        "Company Announcement": {
+            template: `
+                Subject: Important Company Announcement
+
+                Hi {RecipientName},
+
+                We are excited to announce {AnnouncementDetails}.
+
+                This development marks a significant milestone for our company, and we look forward to your 
+                continued support and collaboration.
+
+                Thank you for your attention.
+
+                Best regards,
+                {SenderName}
+                {SenderPosition}
+                {SenderDepartment}
+            `,
+            fields: [
+                { "id": 'RecipientName', "label": 'Recipient Name', "type": 'text' },
+                { "id": 'AnnouncementDetails', "label": 'Announcement Details', "type": 'textarea' },
+                { "id": 'SenderName', "label": 'Sender Name', "type": 'text' },
+                { "id": 'SenderPosition', "label": 'Sender Position', "type": 'text' },
+                { "id": 'SenderDepartment', "label": 'Sender Department', "type": 'text' }
+            ]
+        },
+        "HR Communication": {
+            template: `
+                Subject: HR Communication
+
+                Hi {RecipientName},
+
+                We would like to inform you about {HRDetails}.
+
+                For any questions or further information, please feel free to contact the HR department.
+
+                Best regards,
+                {SenderName}
+                {SenderPosition}
+                {SenderDepartment}
+            `,
+            fields: [
+                { "id": 'RecipientName', "label": 'Recipient Name', "type": 'text' },
+                { "id": 'HRDetails', "label": 'HR Details', "type": 'textarea' },
+                { "id": 'SenderName', "label": 'Sender Name', "type": 'text' },
+                { "id": 'SenderPosition', "label": 'Sender Position', "type": 'text' },
+                { "id": 'SenderDepartment', "label": 'Sender Department', "type": 'text' }
+            ]
+        },
+        "Policy Update": {
+            template: `
+                Subject: Policy Update
+
+                Hi {RecipientName},
+
+                Please be informed of the following policy update: {PolicyDetails}.
+
+                Kindly acknowledge receipt of this update and feel free to reach out if you have any questions.
+
+                Best regards,
+                {SenderName}
+                {SenderPosition}
+                {SenderDepartment}
+            `,
+            fields: [
+                { "id": 'RecipientName', "label": 'Recipient Name', "type": 'text' },
+                { "id": 'PolicyDetails', "label": 'Policy Details', "type": 'textarea' },
+                { "id": 'SenderName', "label": 'Sender Name', "type": 'text' },
+                { "id": 'SenderPosition', "label": 'Sender Position', "type": 'text' },
+                { "id": 'SenderDepartment', "label": 'Sender Department', "type": 'text' }
+            ]
+        },
+        "Event Announcement": {
+            template: `
+                Subject: Upcoming Event: {EventName}
+
+                Hi {RecipientName},
+
+                We are thrilled to announce our upcoming event: {EventName}. 
+                The event is scheduled to take place on {EventDate} at {EventVenue}.
+
+                We look forward to your participation. Please confirm your attendance at your earliest convenience.
+
+                Best regards,
+                {SenderName}
+                {SenderPosition}
+                {SenderDepartment}
+            `,
+            fields: [
+                { "id": 'RecipientName', "label": 'Recipient Name', "type": 'text' },
+                { "id": 'EventName', "label": 'Event Name', "type": 'text' },
+                { "id": 'EventDate', "label": 'Event Date', "type": 'date' },
+                { "id": 'EventVenue', "label": 'Event Venue', "type": 'text' },
+                { "id": 'SenderName', "label": 'Sender Name', "type": 'text' },
+                { "id": 'SenderPosition', "label": 'Sender Position', "type": 'text' },
+                { "id": 'SenderDepartment', "label": 'Sender Department', "type": 'text' }
+            ]
+        },
+        "Team Appreciation": {
+            template: `
+                Subject: Appreciation for Your Hard Work
+
+                Hi {RecipientName},
+
+                I wanted to take a moment to express my appreciation for your hard work and dedication on {ProjectName}. 
+                Your contributions have been invaluable, and your efforts have not gone unnoticed.
+
+                Thank you for being an essential part of our team.
+
+                Best regards,
+                {SenderName}
+                {SenderPosition}
+                {SenderDepartment}
+            `,
+            fields: [
+                { "id": 'RecipientName', "label": 'Recipient Name', "type": 'text' },
+                { "id": 'ProjectName', "label": 'Project Name', "type": 'text' },
+                { "id": 'SenderName', "label": 'Sender Name', "type": 'text' },
+                { "id": 'SenderPosition', "label": 'Sender Position', "type": 'text' },
+                { "id": 'SenderDepartment', "label": 'Sender Department', "type": 'text' }
+            ]
+        }
+    },
+
+
+    "Employee Letters": {
+        "Offer Letter": {
+            template: `
+                Subject: Job Offer for {JobTitle} Position
+
+                Dear {CandidateName},
+
+                We are pleased to offer you the position of {JobTitle} at {CompanyName}. Your starting date will 
+                be {StartDate}, and your salary will be {Salary} per annum.
+
+                Please review the attached offer letter and let us know if you have any questions. We are excited to 
+                have you join our team!
+
+                Best regards,
+                {SenderName}
+                {SenderPosition}
+                {SenderDepartment}
+            `,
+            fields: [
+                { "id": 'CandidateName', "label": 'Candidate Name', "type": 'text' },
+                { "id": 'JobTitle', "label": 'Job Title', "type": 'text' },
+                { "id": 'CompanyName', "label": 'Company Name', "type": 'text' },
+                { "id": 'StartDate', "label": 'Start Date', "type": 'date' },
+                { "id": 'Salary', "label": 'Salary', "type": 'text' },
+                { "id": 'SenderName', "label": 'Sender Name', "type": 'text' },
+                { "id": 'SenderPosition', "label": 'Sender Position', "type": 'text' },
+                { "id": 'SenderDepartment', "label": 'Sender Department', "type": 'text' }
+            ]
+        },
+        "Appointment Letter": {
+            template: `
+                Subject: Appointment Letter for {JobTitle}
+
+                Dear {EmployeeName},
+
+                We are delighted to confirm your appointment as {JobTitle} at {CompanyName}. 
+                Your employment will commence on {StartDate}. You will be reporting to {ReportingManager}.
+
+                Please find attached the terms and conditions of your employment. 
+                We look forward to a fruitful collaboration.
+
+                Sincerely,
+                {SenderName}
+                {SenderPosition}
+                {SenderDepartment}
+            `,
+            fields: [
+                { "id": 'EmployeeName', "label": 'Employee Name', "type": 'text' },
+                { "id": 'JobTitle', "label": 'Job Title', "type": 'text' },
+                { "id": 'CompanyName', "label": 'Company Name', "type": 'text' },
+                { "id": 'StartDate', "label": 'Start Date', "type": 'date' },
+                { "id": 'ReportingManager', "label": 'Reporting Manager', "type": 'text' },
+                { "id": 'SenderName', "label": 'Sender Name', "type": 'text' },
+                { "id": 'SenderPosition', "label": 'Sender Position', "type": 'text' },
+                { "id": 'SenderDepartment', "label": 'Sender Department', "type": 'text' }
+            ]
+        },
+        "Promotion Letter": {
+            template: `
+                Subject: Promotion to {NewJobTitle}
+
+                Dear {EmployeeName},
+
+                Congratulations! We are pleased to inform you of your promotion to {NewJobTitle} effective 
+                from {EffectiveDate}. Your new salary will be {NewSalary} per annum.
+
+                We appreciate your hard work and dedication. Please contact HR for any questions regarding your new role.
+
+                Best regards,
+                {SenderName}
+                {SenderPosition}
+                {SenderDepartment}
+            `,
+            fields: [
+                { "id": 'EmployeeName', "label": 'Employee Name', "type": 'text' },
+                { "id": 'NewJobTitle', "label": 'New Job Title', "type": 'text' },
+                { "id": 'EffectiveDate', "label": 'Effective Date', "type": 'date' },
+                { "id": 'NewSalary', "label": 'New Salary', "type": 'text' },
+                { "id": 'SenderName', "label": 'Sender Name', "type": 'text' },
+                { "id": 'SenderPosition', "label": 'Sender Position', "type": 'text' },
+                { "id": 'SenderDepartment', "label": 'Sender Department', "type": 'text' }
+            ]
+        },
+        "Termination Letter": {
+            template: `
+                Subject: Termination of Employment
+
+                Dear {EmployeeName},
+
+                We regret to inform you that your employment with {CompanyName} will be terminated effective from {TerminationDate}. 
+                The reason for this decision is {TerminationReason}.
+
+                Please arrange to return all company property and settle any outstanding matters. For further details, 
+                refer to the attached document or contact HR.
+
+                Sincerely,
+                {SenderName}
+                {SenderPosition}
+                {SenderDepartment}
+            `,
+            fields: [
+                { "id": 'EmployeeName', "label": 'Employee Name', "type": 'text' },
+                { "id": 'CompanyName', "label": 'Company Name', "type": 'text' },
+                { "id": 'TerminationDate', "label": 'Termination Date', "type": 'date' },
+                { "id": 'TerminationReason', "label": 'Termination Reason', "type": 'textarea' },
+                { "id": 'SenderName', "label": 'Sender Name', "type": 'text' },
+                { "id": 'SenderPosition', "label": 'Sender Position', "type": 'text' },
+                { "id": 'SenderDepartment', "label": 'Sender Department', "type": 'text' }
+            ]
+        },
+        "Appreciation Letter": {
+            template: `
+                Subject: Appreciation for Outstanding Performance
+
+                Dear {EmployeeName},
+
+                We would like to express our sincere appreciation for your exceptional performance 
+                on {ProjectName}. Your dedication and hard work have been exemplary.
+
+                Keep up the great work!
+
+                Best regards,
+                {SenderName}
+                {SenderPosition}
+                {SenderDepartment}
+            `,
+            fields: [
+                { "id": 'EmployeeName', "label": 'Employee Name', "type": 'text' },
+                { "id": 'ProjectName', "label": 'Project Name', "type": 'text' },
+                { "id": 'SenderName', "label": 'Sender Name', "type": 'text' },
+                { "id": 'SenderPosition', "label": 'Sender Position', "type": 'text' },
+                { "id": 'SenderDepartment', "label": 'Sender Department', "type": 'text' }
+            ]
+        },
+        "Warning Letter": {
+            template: `
+                Subject: Warning Letter for {Reason}
+
+                Dear {EmployeeName},
+
+                This letter serves as a formal warning regarding {IssueDescription}. 
+                This behavior is unacceptable and violates company policies.
+
+                We expect immediate improvement in this regard. Failure to comply may result in further disciplinary action.
+
+                Sincerely,
+                {SenderName}
+                {SenderPosition}
+                {SenderDepartment}
+            `,
+            fields: [
+                { "id": 'EmployeeName', "label": 'Employee Name', "type": 'text' },
+                { "id": 'Reason', "label": 'Reason for Warning', "type": 'text' },
+                { "id": 'IssueDescription', "label": 'Issue Description', "type": 'textarea' },
+                { "id": 'SenderName', "label": 'Sender Name', "type": 'text' },
+                { "id": 'SenderPosition', "label": 'Sender Position', "type": 'text' },
+                { "id": 'SenderDepartment', "label": 'Sender Department', "type": 'text' }
+            ]
+        },
+        "Resignation Acceptance Letter": {
+            template: `
+                Subject: Acceptance of Resignation
+
+                Dear {EmployeeName},
+
+                We have received your resignation letter dated {ResignationDate}. 
+                This letter is to confirm that your resignation has been accepted, and 
+                your last working day will be {LastWorkingDay}.
+
+                We thank you for your contributions and wish you all the best 
+                in your future endeavors.
+
+                Sincerely,
+                {SenderName}
+                {SenderPosition}
+                {SenderDepartment}
+            `,
+            fields: [
+                { "id": 'EmployeeName', "label": 'Employee Name', "type": 'text' },
+                { "id": 'ResignationDate', "label": 'Resignation Date', "type": 'date' },
+                { "id": 'LastWorkingDay', "label": 'Last Working Day', "type": 'date' },
+                { "id": 'SenderName', "label": 'Sender Name', "type": 'text' },
+                { "id": 'SenderPosition', "label": 'Sender Position', "type": 'text' },
+                { "id": 'SenderDepartment', "label": 'Sender Department', "type": 'text' }
+            ]
+        }
+    }
 
 
 };

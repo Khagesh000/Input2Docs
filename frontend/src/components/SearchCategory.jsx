@@ -83,8 +83,25 @@ const categories = {
       "Acknowledgment Letter",
       
     ],
-    "Internal Communication": [],
-    "Employee Letters": [],
+    "Internal Communication": [
+      "Meeting Invitation",
+      "Project Update",
+      "Company Announcement",
+      "HR Communication",
+      "Policy Update",
+      "Event Announcement",
+      "Team Appreciation"
+
+    ],
+    "Employee Letters": [
+       "Offer Letter",
+       "Appointment Letter",
+       "Promotion Letter",
+       "Termination Letter",
+       "Appreciation Letter",
+       "Warning Letter",
+       "Resignation Acceptance Letter"
+    ],
     "Client Relations": [],
     "Meeting and Appointment": [],
   },
