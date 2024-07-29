@@ -8,18 +8,81 @@ const categories = {
     "Permission Letters": [
       "Field Trip Permission Letter",
       "Medical Treatment Permission",
+      "Overnight Stay Permission",
+      "Travel Permission Letter",
+      "Parental Consent for Minor's",
+      "Permission to Use Property",
+      "Parental Permission for School"
     ],
     "Excuse Letters": [
       "Absentee Excuse Letter",
       "Late Arrival Excuse Letter",
+      "Sick Leave Excuse Letter",
+      "Personal Emergency Excuse Letter",
+      "Family Emergency Excuse Letter",
+      "Jury Duty Excuse Letter",
+      "Medical Appointment Excuse Letter"
     ],
-    "Communication Letters": [],
-    "Enrollment Letters": [],
-    "Fundraising Letters": [],
-    "Safety and Emergency Letters": [],
+    
+    "Communication Letters": [
+      "Job Application",
+      "Follow-Up After Meeting",
+      "Complaint About Service",
+      "Request for Meeting",
+      "Apology for Mistake",
+      "Notification of Change of Address",
+      "Resignation Letter"
+    ],
+    "Enrollment Letters": [
+      "Application for Admission",
+      "Confirmation of Enrollment",
+      "Request for Enrollment Deferral",
+      "Request for Transcript",
+      "Request for Enrollment Verification",
+      "Notification of Withdrawal",
+      "Request for Enrollment Confirmation"
+    ],
+    "Fundraising Letters": [
+      "Charity Event Invitation",
+      "Donation Request",
+      "Thank You for Your Donation",
+      "Campaign Update",
+      "Grant Proposal Request",
+      "Sponsorship Request",
+      "Thank You for Sponsorship"
+    ],
+    "Safety and Emergency Letters": [
+      "Emergency Contact Information Update",
+      "Safety Incident Report",
+      "Workplace Safety Alert",
+      "Emergency Evacuation Plan",
+      "Safety Equipment Inspection Report",
+      "Incident Follow-Up Report",
+      "Safety Training Confirmation"
+    ],
+    "Educational Updates Letters":[
+      "Academic Progress Report",
+      "Parent-Teacher Conference Invitation",
+      "Behavioral Improvement Plan",
+      "Student Achievement Recognition",
+      "Course Enrollment Confirmation",
+      "Scholarship Award Notification",
+      "Graduation Ceremony Invitation",
+
+
+    ]
   },
   "Office Letters": {
-    "Business Correspondence": [],
+    "Business Correspondence": [
+      "Business Proposal",
+      "Complaint Letter",
+      "Job Offer Letter",
+      "Invoice",
+      "Purchase Order",
+      "Meeting Request",
+      "Acknowledgment Letter",
+      
+    ],
     "Internal Communication": [],
     "Employee Letters": [],
     "Client Relations": [],
@@ -53,9 +116,7 @@ const categories = {
     "Public Announcement": [],
     "Government Grant": [],
   },
-  "Entertainment Letters": {
-    "Love Letters": [],
-  },
+  
 };
 
 const SearchCategory = ({ handleSubcategoryClick }) => {

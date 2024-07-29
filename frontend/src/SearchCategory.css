@@ -51,6 +51,12 @@
 }
 
 
+.Generate-your{
+  text-align: center;
+  margin-top: 3%;
+  color: wheat;
+}
+
 /* Media queries for small devices */
 @media (max-width: 576px) {
   .dropdown-menu,
