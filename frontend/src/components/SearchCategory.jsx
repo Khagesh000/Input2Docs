@@ -187,20 +187,138 @@ const categories = {
       "Support Group Referral",
       "Medical Assistance Request",
     ],
+    "Crime Reporting":[
+      "Incident Report",
+      "Theft Report",
+      "Burglary Report",
+      "Vandalism Report",
+      "Fraud Report",
+      "Assault Report",
+      "Robbery Report"
+    ],
+    "Personal Safety and Protection":[
+      "Restraining Order Request",
+      "Protective Custody Request",
+      "Safety Plan Request",
+      "Emergency Contact Information Update",
+      "Witness Protection Request",
+      "Security Assessment Request",
+      "Victim Support Services Request"
+    ]
   },
   "Bank Letters": {
-    "Account Management": [],
-    "Transaction Letters": [],
-    "Loan and Mortgage": [],
-    "Financial Assistance": [],
-    "Security Letters": [],
+    "Account Management": [
+      "Account Creation Request",
+      "Account Deletion Request",
+      "Account Information Update Request",
+      "Password Reset Request",
+      "Account Reactivation Request",
+      "Account Suspension Request",
+      "Permission Change Request"
+    ],
+    "Transaction Letters": [
+      "Acknowledgment of Receipt of Payment",
+      "Confirmation of Transaction",
+      "Notification of Payment Due",
+      "Payment Overdue Notice",
+      "Refund Request Confirmation",
+      "Dispute Resolution Acknowledgment",
+      "Cancellation of Transaction Notice"
+    ],
+    "Loan and Mortgage": [
+      "Loan Approval Letter",
+      "Loan Rejection Letter",
+      "Mortgage Payment Reminder",
+      "Mortgage Default Notice",
+      "Loan Payment Confirmation",
+      "Mortgage Modification Request",
+      "Loan Prepayment Notice"
+    ],
+    "Financial Assistance": [
+      "Grant Approval Letter",
+      "Grant Rejection Letter",
+      "Funding Request Letter",
+      "Assistance Follow-Up Letter",
+      "Financial Aid Disbursement Letter",
+      "Financial Aid Renewal Letter",
+      "Assistance Confirmation Letter"
+    ],
+    "Security Letters": [
+      "Security Incident Report",
+      "Access Authorization Letter",
+      "Security Breach Notification",
+      "Access Revocation Letter",
+      "Confidentiality Agreement",
+      "Security Policy Implementation",
+      "Background Check Confirmation"
+    ],
+    "Investment and Savings":[
+      "Investment Portfolio Update",
+      "Savings Account Interest Rate Change Notice",
+      "Investment Account Statement",
+      "Fixed Deposit Maturity Notification",
+      "Investment Risk Assessment Report",
+      "Investment Withdrawal Confirmation",
+      "Savings Plan Recommendation"
+    ],
+
+    "Customer Service":[
+      "General Inquiry Response",
+      "Complaint Acknowledgment",
+      "Feedback Response",
+      "Service Improvement Notification",
+      "Customer Appreciation Letter",
+      "Service Interruption Notification",
+      "Account Closure Confirmation"
+    ]
   },
   "Legal Letters": {
-    "Legal Notices": [],
-    "Demand Letters": [],
-    "Legal Correspondence": [],
-    "Contract Letters": [],
-    "Dispute Resolution": [],
+    "Legal Notices": [
+       "Cease and Desist Letter",
+       "Demand for Payment",
+       "Notice of Breach of Contract",
+       "Intellectual Property Rights Notice",
+       "Termination of Lease",
+       "Eviction Notice",
+       "Notice of Intent to Sue"
+
+    ],
+    "Demand Letters": [
+      "Demand for Payment",
+      "Demand for Lease Payment",
+      "Demand for Refund",
+      "Demand for Contract Performance",
+      "Demand for Service Completion",
+      "Demand for Contract Breach",
+      "Demand for Non-Disclosure Breach"
+    ],
+    "Legal Correspondence": [
+      "Settlement Agreement",
+      "Legal Compliance Notice",
+      "Notice of Breach of Contract",
+      "Legal Advice Request",
+      "Contract Termination Letter",
+      "Request for Proposal",
+      "Customer Complaint Response"
+    ],
+    "Contract Letters": [
+      "Settlement Agreement",
+      "Legal Compliance Notice",
+      "Notice of Breach of Contract",
+      "Legal Advice Request",
+      "Employment Contract",
+      "Contract Renewal Notice",
+      "Contract Termination Notice"
+    ],
+    "Dispute Resolution": [
+      "Settlement Agreement",
+      "Mediation Agreement",
+      "Arbitration Notice",
+      "Dispute Resolution Proposal",
+      "Legal Demand for Resolution",
+      "Conflict Resolution Proposal",
+      "Complaint Resolution Letter"
+    ],
   },
   "Government Letters": {
     "Public Services": [],

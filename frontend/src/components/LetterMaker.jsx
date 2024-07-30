@@ -6353,7 +6353,4525 @@ const letterTemplates = {
         { "id": 'YourContactInformation', "label": 'Your Contact Information', "type": 'text' }                                                                                                                                                                                   
       ]
     },
-      }
+      },
+
+      "Crime Reporting":{
+        "Incident Report": {
+          "template": `
+            Date: {Date}
+            Time: {Time}
+            Location: {Location}
+      
+            Incident Report
+      
+            Description of Incident:
+            {Description}
+      
+            Involved Parties:
+            - Victim: {VictimName}
+            - Suspect: {SuspectName}
+            - Witnesses: {WitnessNames}
+      
+            Evidence Collected:
+            {EvidenceDetails}
+      
+            Reporting Officer:
+            {OfficerName}
+            {OfficerBadgeNumber}
+      
+            Additional Notes:
+            {AdditionalNotes}
+      
+            Report Filed By:
+            {YourName}
+            {YourContactInformation}
+          `,
+          "fields": [
+            { "id": "Date", "label": "Date", "type": "date" },
+            { "id": "Time", "label": "Time", "type": "time" },
+            { "id": "Location", "label": "Location", "type": "text" },
+            { "id": "Description", "label": "Description of Incident", "type": "textarea" },
+            { "id": "VictimName", "label": "Victim Name", "type": "text" },
+            { "id": "SuspectName", "label": "Suspect Name", "type": "text" },
+            { "id": "WitnessNames", "label": "Witness Names", "type": "text" },
+            { "id": "EvidenceDetails", "label": "Evidence Collected", "type": "textarea" },
+            { "id": "OfficerName", "label": "Reporting Officer Name", "type": "text" },
+            { "id": "OfficerBadgeNumber", "label": "Officer Badge Number", "type": "text" },
+            { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+            { "id": "YourName", "label": "Your Name", "type": "text" },
+            { "id": "YourContactInformation", "label": "Your Contact Information", "type": "text" }
+          ]
+        },
+      
+        "Theft Report": {
+          "template": `
+            Date of Theft: {Date}
+            Time of Theft: {Time}
+            Location: {Location}
+      
+            Theft Report
+      
+            Description of Theft:
+            {Description}
+      
+            Items Stolen:
+            {ItemsStolen}
+      
+            Estimated Value of Items:
+            {EstimatedValue}
+      
+            Witnesses:
+            {WitnessNames}
+      
+            Evidence Collected:
+            {EvidenceDetails}
+      
+            Reporting Officer:
+            {OfficerName}
+            {OfficerBadgeNumber}
+      
+            Additional Notes:
+            {AdditionalNotes}
+      
+            Report Filed By:
+            {YourName}
+            {YourContactInformation}
+          `,
+          "fields": [
+            { "id": "Date", "label": "Date of Theft", "type": "date" },
+            { "id": "Time", "label": "Time of Theft", "type": "time" },
+            { "id": "Location", "label": "Location", "type": "text" },
+            { "id": "Description", "label": "Description of Theft", "type": "textarea" },
+            { "id": "ItemsStolen", "label": "Items Stolen", "type": "textarea" },
+            { "id": "EstimatedValue", "label": "Estimated Value of Items", "type": "text" },
+            { "id": "WitnessNames", "label": "Witness Names", "type": "text" },
+            { "id": "EvidenceDetails", "label": "Evidence Collected", "type": "textarea" },
+            { "id": "OfficerName", "label": "Reporting Officer Name", "type": "text" },
+            { "id": "OfficerBadgeNumber", "label": "Officer Badge Number", "type": "text" },
+            { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+            { "id": "YourName", "label": "Your Name", "type": "text" },
+            { "id": "YourContactInformation", "label": "Your Contact Information", "type": "text" }
+          ]
+        },
+      
+        "Burglary Report": {
+          "template": `
+            Date of Burglary: {Date}
+            Time of Burglary: {Time}
+            Location: {Location}
+      
+            Burglary Report
+      
+            Description of Burglary:
+            {Description}
+      
+            Entry Point:
+            {EntryPoint}
+      
+            Items Stolen:
+            {ItemsStolen}
+      
+            Damage Noted:
+            {DamageDetails}
+      
+            Witnesses:
+            {WitnessNames}
+      
+            Evidence Collected:
+            {EvidenceDetails}
+      
+            Reporting Officer:
+            {OfficerName}
+            {OfficerBadgeNumber}
+      
+            Additional Notes:
+            {AdditionalNotes}
+      
+            Report Filed By:
+            {YourName}
+            {YourContactInformation}
+          `,
+          "fields": [
+            { "id": "Date", "label": "Date of Burglary", "type": "date" },
+            { "id": "Time", "label": "Time of Burglary", "type": "time" },
+            { "id": "Location", "label": "Location", "type": "text" },
+            { "id": "Description", "label": "Description of Burglary", "type": "textarea" },
+            { "id": "EntryPoint", "label": "Entry Point", "type": "text" },
+            { "id": "ItemsStolen", "label": "Items Stolen", "type": "textarea" },
+            { "id": "DamageDetails", "label": "Damage Noted", "type": "textarea" },
+            { "id": "WitnessNames", "label": "Witness Names", "type": "text" },
+            { "id": "EvidenceDetails", "label": "Evidence Collected", "type": "textarea" },
+            { "id": "OfficerName", "label": "Reporting Officer Name", "type": "text" },
+            { "id": "OfficerBadgeNumber", "label": "Officer Badge Number", "type": "text" },
+            { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+            { "id": "YourName", "label": "Your Name", "type": "text" },
+            { "id": "YourContactInformation", "label": "Your Contact Information", "type": "text" }
+          ]
+        },
+      
+        "Vandalism Report": {
+          "template": `
+            Date of Vandalism: {Date}
+            Time of Vandalism: {Time}
+            Location: {Location}
+      
+            Vandalism Report
+      
+            Description of Vandalism:
+            {Description}
+      
+            Nature of Damage:
+            {DamageDescription}
+      
+            Affected Property:
+            {AffectedProperty}
+      
+            Witnesses:
+            {WitnessNames}
+      
+            Evidence Collected:
+            {EvidenceDetails}
+      
+            Reporting Officer:
+            {OfficerName}
+            {OfficerBadgeNumber}
+      
+            Additional Notes:
+            {AdditionalNotes}
+      
+            Report Filed By:
+            {YourName}
+            {YourContactInformation}
+          `,
+          "fields": [
+            { "id": "Date", "label": "Date of Vandalism", "type": "date" },
+            { "id": "Time", "label": "Time of Vandalism", "type": "time" },
+            { "id": "Location", "label": "Location", "type": "text" },
+            { "id": "Description", "label": "Description of Vandalism", "type": "textarea" },
+            { "id": "DamageDescription", "label": "Nature of Damage", "type": "textarea" },
+            { "id": "AffectedProperty", "label": "Affected Property", "type": "text" },
+            { "id": "WitnessNames", "label": "Witness Names", "type": "text" },
+            { "id": "EvidenceDetails", "label": "Evidence Collected", "type": "textarea" },
+            { "id": "OfficerName", "label": "Reporting Officer Name", "type": "text" },
+            { "id": "OfficerBadgeNumber", "label": "Officer Badge Number", "type": "text" },
+            { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+            { "id": "YourName", "label": "Your Name", "type": "text" },
+            { "id": "YourContactInformation", "label": "Your Contact Information", "type": "text" }
+          ]
+        },
+      
+        "Fraud Report": {
+          "template": `
+            Date of Fraud: {Date}
+            Time of Fraud: {Time}
+            Location: {Location}
+      
+            Fraud Report
+      
+            Description of Fraud:
+            {Description}
+      
+            Nature of Fraud:
+            {FraudNature}
+      
+            Affected Individuals:
+            {AffectedIndividuals}
+      
+            Financial Impact:
+            {FinancialImpact}
+      
+            Evidence Collected:
+            {EvidenceDetails}
+      
+            Reporting Officer:
+            {OfficerName}
+            {OfficerBadgeNumber}
+      
+            Additional Notes:
+            {AdditionalNotes}
+      
+            Report Filed By:
+            {YourName}
+            {YourContactInformation}
+          `,
+          "fields": [
+            { "id": "Date", "label": "Date of Fraud", "type": "date" },
+            { "id": "Time", "label": "Time of Fraud", "type": "time" },
+            { "id": "Location", "label": "Location", "type": "text" },
+            { "id": "Description", "label": "Description of Fraud", "type": "textarea" },
+            { "id": "FraudNature", "label": "Nature of Fraud", "type": "text" },
+            { "id": "AffectedIndividuals", "label": "Affected Individuals", "type": "textarea" },
+            { "id": "FinancialImpact", "label": "Financial Impact", "type": "text" },
+            { "id": "EvidenceDetails", "label": "Evidence Collected", "type": "textarea" },
+            { "id": "OfficerName", "label": "Reporting Officer Name", "type": "text" },
+            { "id": "OfficerBadgeNumber", "label": "Officer Badge Number", "type": "text" },
+            { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+            { "id": "YourName", "label": "Your Name", "type": "text" },
+            { "id": "YourContactInformation", "label": "Your Contact Information", "type": "text" }
+          ]
+        },
+      
+        "Assault Report": {
+          "template": `
+            Date of Assault: {Date}
+            Time of Assault: {Time}
+            Location: {Location}
+      
+            Assault Report
+      
+            Description of Assault:
+            {Description}
+      
+            Nature of Assault:
+            {AssaultNature}
+      
+            Victim Information:
+            {VictimInfo}
+      
+            Suspect Information:
+            {SuspectInfo}
+      
+            Witnesses:
+            {WitnessNames}
+      
+            Evidence Collected:
+            {EvidenceDetails}
+      
+            Reporting Officer:
+            {OfficerName}
+            {OfficerBadgeNumber}
+      
+            Additional Notes:
+            {AdditionalNotes}
+      
+            Report Filed By:
+            {YourName}
+            {YourContactInformation}
+          `,
+          "fields": [
+            { "id": "Date", "label": "Date of Assault", "type": "date" },
+            { "id": "Time", "label": "Time of Assault", "type": "time" },
+            { "id": "Location", "label": "Location", "type": "text" },
+            { "id": "Description", "label": "Description of Assault", "type": "textarea" },
+            { "id": "AssaultNature", "label": "Nature of Assault", "type": "text" },
+            { "id": "VictimInfo", "label": "Victim Information", "type": "textarea" },
+            { "id": "SuspectInfo", "label": "Suspect Information", "type": "textarea" },
+            { "id": "WitnessNames", "label": "Witness Names", "type": "text" },
+            { "id": "EvidenceDetails", "label": "Evidence Collected", "type": "textarea" },
+            { "id": "OfficerName", "label": "Reporting Officer Name", "type": "text" },
+            { "id": "OfficerBadgeNumber", "label": "Officer Badge Number", "type": "text" },
+            { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+            { "id": "YourName", "label": "Your Name", "type": "text" },
+            { "id": "YourContactInformation", "label": "Your Contact Information", "type": "text" }
+          ]
+        },
+      
+        "Robbery Report": {
+          "template": `
+            Date of Robbery: {Date}
+            Time of Robbery: {Time}
+            Location: {Location}
+      
+            Robbery Report
+      
+            Description of Robbery:
+            {Description}
+      
+            Method of Robbery:
+            {RobberyMethod}
+      
+            Items Stolen:
+            {ItemsStolen}
+      
+            Suspect Description:
+            {SuspectDescription}
+      
+            Witnesses:
+            {WitnessNames}
+      
+            Evidence Collected:
+            {EvidenceDetails}
+      
+            Reporting Officer:
+            {OfficerName}
+            {OfficerBadgeNumber}
+      
+            Additional Notes:
+            {AdditionalNotes}
+      
+            Report Filed By:
+            {YourName}
+            {YourContactInformation}
+          `,
+          "fields": [
+            { "id": "Date", "label": "Date of Robbery", "type": "date" },
+            { "id": "Time", "label": "Time of Robbery", "type": "time" },
+            { "id": "Location", "label": "Location", "type": "text" },
+            { "id": "Description", "label": "Description of Robbery", "type": "textarea" },
+            { "id": "RobberyMethod", "label": "Method of Robbery", "type": "text" },
+            { "id": "ItemsStolen", "label": "Items Stolen", "type": "textarea" },
+            { "id": "SuspectDescription", "label": "Suspect Description", "type": "text" },
+            { "id": "WitnessNames", "label": "Witness Names", "type": "text" },
+            { "id": "EvidenceDetails", "label": "Evidence Collected", "type": "textarea" },
+            { "id": "OfficerName", "label": "Reporting Officer Name", "type": "text" },
+            { "id": "OfficerBadgeNumber", "label": "Officer Badge Number", "type": "text" },
+            { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+            { "id": "YourName", "label": "Your Name", "type": "text" },
+            { "id": "YourContactInformation", "label": "Your Contact Information", "type": "text" }
+          ]
+        }
+      },
+
+      "Victim Support Services Request":{
+        "Restraining Order Request": {
+            template: `
+            **Date:** {Date}
+            **Recipient:** {CourtName}
+            **Case Number:** {CaseNumber}
+      
+            **Restraining Order Request**
+      
+            **Requestor Information:**
+            - **Name:** {RequestorName}
+            - **Address:** {RequestorAddress}
+            - **Phone Number:** {RequestorPhoneNumber}
+            - **Email Address:** {RequestorEmailAddress}
+      
+            **Respondent Information:**
+            - **Name:** {RespondentName}
+            - **Address:** {RespondentAddress}
+            - **Phone Number:** {RespondentPhoneNumber}
+      
+            **Reason for Request:**
+            {ReasonForRequest}
+      
+            **Description of Incidents:**
+            {IncidentDescription}
+      
+            **Evidence Submitted:**
+            {EvidenceDetails}
+      
+            **Requested Actions:**
+            {RequestedActions}
+      
+            **Additional Notes:**
+            {AdditionalNotes}
+      
+            **Requestor Signature:**
+            - **Name:** {RequestorName}
+            - **Date:** {SignatureDate}
+          `,
+          fields: [
+            { "name": "Date", "type": "date", "label": "Date" },
+            { "name": "CourtName", "type": "text", "label": "Recipient (Court Name)" },
+            { "name": "CaseNumber", "type": "text", "label": "Case Number" },
+            { "name": "RequestorName", "type": "text", "label": "Requestor Name" },
+            { "name": "RequestorAddress", "type": "text", "label": "Requestor Address" },
+            { "name": "RequestorPhoneNumber", "type": "tel", "label": "Requestor Phone Number" },
+            { "name": "RequestorEmailAddress", "type": "email", "label": "Requestor Email Address" },
+            { "name": "RespondentName", "type": "text", "label": "Respondent Name" },
+            { "name": "RespondentAddress", "type": "text", "label": "Respondent Address" },
+            { "name": "RespondentPhoneNumber", "type": "tel", "label": "Respondent Phone Number" },
+            { "name": "ReasonForRequest", "type": "textarea", "label": "Reason for Request" },
+            { "name": "IncidentDescription", "type": "textarea", "label": "Description of Incidents" },
+            { "name": "EvidenceDetails", "type": "textarea", "label": "Evidence Submitted" },
+            { "name": "RequestedActions", "type": "textarea", "label": "Requested Actions" },
+            { "name": "AdditionalNotes", "type": "textarea", "label": "Additional Notes" },
+            { "name": "SignatureName", "type": "text", "label": "Signature Name" },
+            { "name": "SignatureDate", "type": "date", "label": "Signature Date" }
+          ]
+        },
+      
+        "Protective Custody Request": {
+          template: `
+            **Date:** {Date}
+            **Recipient:** {AgencyName}
+            **Case Number:** {CaseNumber}
+      
+            **Protective Custody Request**
+      
+            **Requestor Information:**
+            - **Name:** {RequestorName}
+            - **Address:** {RequestorAddress}
+            - **Phone Number:** {RequestorPhoneNumber}
+            - **Email Address:** {RequestorEmailAddress}
+      
+            **Reason for Protective Custody:**
+            {ReasonForCustody}
+      
+            **Threat Details:**
+            {ThreatDetails}
+      
+            **Current Location:**
+            {CurrentLocation}
+      
+            **Requested Protection Measures:**
+            {ProtectionMeasures}
+      
+            **Supporting Documents:**
+            {SupportingDocuments}
+      
+            **Additional Notes:**
+            {AdditionalNotes}
+      
+            **Requestor Signature:**
+            - **Name:** {RequestorName}
+            - **Date:** {SignatureDate}
+          `,
+          fields: [
+            { "name": "Date", "type": "date", "label": "Date" },
+            { "name": "AgencyName", "type": "text", "label": "Recipient (Agency Name)" },
+            { "name": "CaseNumber", "type": "text", "label": "Case Number" },
+            { "name": "RequestorName", "type": "text", "label": "Requestor Name" },
+            { "name": "RequestorAddress", "type": "text", "label": "Requestor Address" },
+            { "name": "RequestorPhoneNumber", "type": "tel", "label": "Requestor Phone Number" },
+            { "name": "RequestorEmailAddress", "type": "email", "label": "Requestor Email Address" },
+            { "name": "ReasonForCustody", "type": "textarea", "label": "Reason for Protective Custody" },
+            { "name": "ThreatDetails", "type": "textarea", "label": "Threat Details" },
+            { "name": "CurrentLocation", "type": "text", "label": "Current Location" },
+            { "name": "ProtectionMeasures", "type": "textarea", "label": "Requested Protection Measures" },
+            { "name": "SupportingDocuments", "type": "textarea", "label": "Supporting Documents" },
+            { "name": "AdditionalNotes", "type": "textarea", "label": "Additional Notes" },
+            { "name": "SignatureName", "type": "text", "label": "Signature Name" },
+            { "name": "SignatureDate", "type": "date", "label": "Signature Date" }
+          ]
+        },
+      
+        "Safety Plan Request": {
+          template: `
+            **Date:** {Date}
+            **Recipient:** {AgencyName}
+            **Case Number:** {CaseNumber}
+      
+            **Safety Plan Request**
+      
+            **Requestor Information:**
+            - **Name:** {RequestorName}
+            - **Address:** {RequestorAddress}
+            - **Phone Number:** {RequestorPhoneNumber}
+            - **Email Address:** {RequestorEmailAddress}
+      
+            **Reason for Request:**
+            {ReasonForRequest}
+      
+            **Details of Safety Concerns:**
+            {SafetyConcerns}
+      
+            **Requested Safety Measures:**
+            {RequestedMeasures}
+      
+            **Emergency Contacts:**
+            {EmergencyContacts}
+      
+            **Additional Notes:**
+            {AdditionalNotes}
+      
+            **Requestor Signature:**
+            - **Name:** {RequestorName}
+            - **Date:** {SignatureDate}
+          `,
+          fields: [
+            { "name": "Date", "type": "date", "label": "Date" },
+            { "name": "AgencyName", "type": "text", "label": "Recipient (Agency Name)" },
+            { "name": "CaseNumber", "type": "text", "label": "Case Number" },
+            { "name": "RequestorName", "type": "text", "label": "Requestor Name" },
+            { "name": "RequestorAddress", "type": "text", "label": "Requestor Address" },
+            { "name": "RequestorPhoneNumber", "type": "tel", "label": "Requestor Phone Number" },
+            { "name": "RequestorEmailAddress", "type": "email", "label": "Requestor Email Address" },
+            { "name": "ReasonForRequest", "type": "textarea", "label": "Reason for Request" },
+            { "name": "SafetyConcerns", "type": "textarea", "label": "Details of Safety Concerns" },
+            { "name": "RequestedMeasures", "type": "textarea", "label": "Requested Safety Measures" },
+            { "name": "EmergencyContacts", "type": "textarea", "label": "Emergency Contacts" },
+            { "name": "AdditionalNotes", "type": "textarea", "label": "Additional Notes" },
+            { "name": "SignatureName", "type": "text", "label": "Signature Name" },
+            { "name": "SignatureDate", "type": "date", "label": "Signature Date" }
+          ]
+        },
+      
+        "Emergency Contact Information Update": {
+          template: `
+            **Date:** {Date}
+            **Recipient:** {AgencyName}
+      
+            **Emergency Contact Information Update**
+      
+            **Current Contact Information:**
+            - **Name:** {CurrentContactName}
+            - **Address:** {CurrentContactAddress}
+            - **Phone Number:** {CurrentContactPhoneNumber}
+            - **Email Address:** {CurrentContactEmailAddress}
+      
+            **Updated Contact Information:**
+            - **Name:** {UpdatedContactName}
+            - **Address:** {UpdatedContactAddress}
+            - **Phone Number:** {UpdatedContactPhoneNumber}
+            - **Email Address:** {UpdatedContactEmailAddress}
+      
+            **Reason for Update:**
+            {ReasonForUpdate}
+      
+            **Additional Notes:**
+            {AdditionalNotes}
+      
+            **Signature:**
+            - **Name:** {SignatureName}
+            - **Date:** {SignatureDate}
+          `,
+          fields: [
+            { "name": "Date", "type": "date", "label": "Date" },
+            { "name": "AgencyName", "type": "text", "label": "Recipient (Agency Name)" },
+            { "name": "CurrentContactName", "type": "text", "label": "Current Contact Name" },
+            { "name": "CurrentContactAddress", "type": "text", "label": "Current Contact Address" },
+            { "name": "CurrentContactPhoneNumber", "type": "tel", "label": "Current Contact Phone Number" },
+            { "name": "CurrentContactEmailAddress", "type": "email", "label": "Current Contact Email Address" },
+            { "name": "UpdatedContactName", "type": "text", "label": "Updated Contact Name" },
+            { "name": "UpdatedContactAddress", "type": "text", "label": "Updated Contact Address" },
+            { "name": "UpdatedContactPhoneNumber", "type": "tel", "label": "Updated Contact Phone Number" },
+            { "name": "UpdatedContactEmailAddress", "type": "email", "label": "Updated Contact Email Address" },
+            { "name": "ReasonForUpdate", "type": "textarea", "label": "Reason for Update" },
+            { "name": "AdditionalNotes", "type": "textarea", "label": "Additional Notes" },
+            { "name": "SignatureName", "type": "text", "label": "Signature Name" },
+            { "name": "SignatureDate", "type": "date", "label": "Signature Date" }
+          ]
+        },
+      
+        "Witness Protection Request": {
+          template: `
+            **Date:** {Date}
+            **Recipient:** {AgencyName}
+            **Case Number:** {CaseNumber}
+      
+            **Witness Protection Request**
+      
+            **Witness Information:**
+            - **Name:** {WitnessName}
+            - **Address:** {WitnessAddress}
+            - **Phone Number:** {WitnessPhoneNumber}
+            - **Email Address:** {WitnessEmailAddress}
+      
+            **Reason for Protection:**
+            {ReasonForProtection}
+      
+            **Threat Details:**
+            {ThreatDetails}
+      
+            **Requested Protection Measures:**
+            {ProtectionMeasures}
+      
+            **Supporting Evidence:**
+            {SupportingEvidence}
+      
+            **Additional Notes:**
+            {AdditionalNotes}
+      
+            **Witness Signature:**
+            - **Name:** {WitnessName}
+            - **Date:** {SignatureDate}
+          `,
+          fields: [
+            { "name": "Date", "type": "date", "label": "Date" },
+            { "name": "AgencyName", "type": "text", "label": "Recipient (Agency Name)" },
+            { "name": "CaseNumber", "type": "text", "label": "Case Number" },
+            { "name": "WitnessName", "type": "text", "label": "Witness Name" },
+            { "name": "WitnessAddress", "type": "text", "label": "Witness Address" },
+            { "name": "WitnessPhoneNumber", "type": "tel", "label": "Witness Phone Number" },
+            { "name": "WitnessEmailAddress", "type": "email", "label": "Witness Email Address" },
+            { "name": "ReasonForProtection", "type": "textarea", "label": "Reason for Protection" },
+            { "name": "ThreatDetails", "type": "textarea", "label": "Threat Details" },
+            { "name": "ProtectionMeasures", "type": "textarea", "label": "Requested Protection Measures" },
+            { "name": "SupportingEvidence", "type": "textarea", "label": "Supporting Evidence" },
+            { "name": "AdditionalNotes", "type": "textarea", "label": "Additional Notes" },
+            { "name": "SignatureName", "type": "text", "label": "Signature Name" },
+            { "name": "SignatureDate", "type": "date", "label": "Signature Date" }
+          ]
+        },
+      
+        "Security Assessment Request": {
+          template: `
+            **Date:** {Date}
+            **Recipient:** {AgencyName}
+      
+            **Security Assessment Request**
+      
+            **Requestor Information:**
+            - **Name:** {RequestorName}
+            - **Address:** {RequestorAddress}
+            - **Phone Number:** {RequestorPhoneNumber}
+            - **Email Address:** {RequestorEmailAddress}
+      
+            **Location for Assessment:**
+            {AssessmentLocation}
+      
+            **Reason for Assessment:**
+            {ReasonForAssessment}
+      
+            **Specific Concerns:**
+            {SpecificConcerns}
+      
+            **Requested Assessment Details:**
+            {RequestedDetails}
+      
+            **Additional Notes:**
+            {AdditionalNotes}
+      
+            **Requestor Signature:**
+            - **Name:** {RequestorName}
+            - **Date:** {SignatureDate}
+          `,
+          fields: [
+            { "name": "Date", "type": "date", "label": "Date" },
+            { "name": "AgencyName", "type": "text", "label": "Recipient (Agency Name)" },
+            { "name": "RequestorName", "type": "text", "label": "Requestor Name" },
+            { "name": "RequestorAddress", "type": "text", "label": "Requestor Address" },
+            { "name": "RequestorPhoneNumber", "type": "tel", "label": "Requestor Phone Number" },
+            { "name": "RequestorEmailAddress", "type": "email", "label": "Requestor Email Address" },
+            { "name": "AssessmentLocation", "type": "text", "label": "Location for Assessment" },
+            { "name": "ReasonForAssessment", "type": "textarea", "label": "Reason for Assessment" },
+            { "name": "SpecificConcerns", "type": "textarea", "label": "Specific Concerns" },
+            { "name": "RequestedDetails", "type": "textarea", "label": "Requested Assessment Details" },
+            { "name": "AdditionalNotes", "type": "textarea", "label": "Additional Notes" },
+            { "name": "SignatureName", "type": "text", "label": "Signature Name" },
+            { "name": "SignatureDate", "type": "date", "label": "Signature Date" }
+          ]
+        },
+      
+        "Victim Support Services Request": {
+          template: `
+            **Date:** {Date}
+            **Recipient:** {AgencyName}
+      
+            **Victim Support Services Request**
+      
+            **Victim Information:**
+            - **Name:** {VictimName}
+            - **Address:** {VictimAddress}
+            - **Phone Number:** {VictimPhoneNumber}
+            - **Email Address:** {VictimEmailAddress}
+      
+            **Type of Support Requested:**
+            {SupportType}
+      
+            **Reason for Request:**
+            {ReasonForRequest}
+      
+            **Specific Services Needed:**
+            {ServicesNeeded}
+      
+            **Additional Notes:**
+            {AdditionalNotes}
+      
+            **Victim Signature:**
+            - **Name:** {VictimName}
+            - **Date:** {SignatureDate}
+          `,
+          fields: [
+            { "name": "Date", "type": "date", "label": "Date" },
+            { "name": "AgencyName", "type": "text", "label": "Recipient (Agency Name)" },
+            { "name": "VictimName", "type": "text", "label": "Victim Name" },
+            { "name": "VictimAddress", "type": "text", "label": "Victim Address" },
+            { "name": "VictimPhoneNumber", "type": "tel", "label": "Victim Phone Number" },
+            { "name": "VictimEmailAddress", "type": "email", "label": "Victim Email Address" },
+            { "name": "SupportType", "type": "text", "label": "Type of Support Requested" },
+            { "name": "ReasonForRequest", "type": "textarea", "label": "Reason for Request" },
+            { "name": "ServicesNeeded", "type": "textarea", "label": "Specific Services Needed" },
+            { "name": "AdditionalNotes", "type": "textarea", "label": "Additional Notes" },
+            { "name": "SignatureName", "type": "text", "label": "Signature Name" },
+            { "name": "SignatureDate", "type": "date", "label": "Signature Date" }
+          ]
+        }
+      },
+
+      "Account Management":{
+         "Account Creation Request": {
+      template: `
+        **Date:** {RequestDate}
+        **Recipient:** {DepartmentName}
+
+        **Subject:** Account Creation Request
+
+        Dear Sir/Madam,
+
+        I am writing to request the creation of a new account. Please find the details below:
+
+        **Requester Information:**
+        - **Name:** {RequesterName}
+        - **Email Address:** {RequesterEmailAddress}
+        - **Phone Number:** {RequesterPhoneNumber}
+
+        **Account Details:**
+        - **Account Type:** {AccountType}
+        - **Username:** {Username}
+        - **Preferred Email Address:** {PreferredEmail}
+
+        **Reason for Account Creation:**
+        {ReasonForCreation}
+
+        **Additional Notes:**
+        {AdditionalNotes}
+
+        **Signature:**
+        - **Name:** {SignatureName}
+        - **Date:** {SignatureDate}
+
+        Thank you for your attention to this matter.
+
+        Sincerely,
+        {RequesterName}
+      `,
+      fields: [
+        { "id": "RequestDate", "label": "Request Date", "type": "date" },
+        { "id": "DepartmentName", "label": "Recipient (Department Name)", "type": "text" },
+        { "id": "RequesterName", "label": "Requester Name", "type": "text" },
+        { "id": "RequesterEmailAddress", "label": "Requester Email Address", "type": "email" },
+        { "id": "RequesterPhoneNumber", "label": "Requester Phone Number", "type": "tel" },
+        { "id": "AccountType", "label": "Account Type", "type": "text" },
+        { "id": "Username", "label": "Username", "type": "text" },
+        { "id": "PreferredEmail", "label": "Preferred Email Address", "type": "email" },
+        { "id": "ReasonForCreation", "label": "Reason for Account Creation", "type": "textarea" },
+        { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+        { "id": "SignatureName", "label": "Signature Name", "type": "text" },
+        { "id": "SignatureDate", "label": "Signature Date", "type": "date" }
+      ]
+    },
+    
+    "Account Deletion Request": {
+      template: `
+        **Date:** {RequestDate}
+        **Recipient:** {DepartmentName}
+
+        **Subject:** Account Deletion Request
+
+        Dear Sir/Madam,
+
+        I am writing to request the deletion of my account. Please find the details below:
+
+        **Requester Information:**
+        - **Name:** {RequesterName}
+        - **Email Address:** {RequesterEmailAddress}
+        - **Phone Number:** {RequesterPhoneNumber}
+
+        **Account Details:**
+        - **Account Type:** {AccountType}
+        - **Username:** {Username}
+
+        **Reason for Deletion:**
+        {ReasonForDeletion}
+
+        **Additional Notes:**
+        {AdditionalNotes}
+
+        **Signature:**
+        - **Name:** {SignatureName}
+        - **Date:** {SignatureDate}
+
+        Thank you for your prompt attention to this request.
+
+        Sincerely,
+        {RequesterName}
+      `,
+      fields: [
+        { "id": "RequestDate", "label": "Request Date", "type": "date" },
+        { "id": "DepartmentName", "label": "Recipient (Department Name)", "type": "text" },
+        { "id": "RequesterName", "label": "Requester Name", "type": "text" },
+        { "id": "RequesterEmailAddress", "label": "Requester Email Address", "type": "email" },
+        { "id": "RequesterPhoneNumber", "label": "Requester Phone Number", "type": "tel" },
+        { "id": "AccountType", "label": "Account Type", "type": "text" },
+        { "id": "Username", "label": "Username", "type": "text" },
+        { "id": "ReasonForDeletion", "label": "Reason for Deletion", "type": "textarea" },
+        { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+        { "id": "SignatureName", "label": "Signature Name", "type": "text" },
+        { "id": "SignatureDate", "label": "Signature Date", "type": "date" }
+      ]
+    },
+    
+    "Account Information Update Request": {
+      template: `
+        **Date:** {RequestDate}
+        **Recipient:** {DepartmentName}
+
+        **Subject:** Account Information Update Request
+
+        Dear Sir/Madam,
+
+        I am writing to request an update to my account information.
+         Please find the details below:
+
+        **Requester Information:**
+        - **Name:** {RequesterName}
+        - **Email Address:** {RequesterEmailAddress}
+        - **Phone Number:** {RequesterPhoneNumber}
+
+        **Account Details:**
+        - **Account Type:** {AccountType}
+        - **Username:** {Username}
+
+        **Information to be Updated:**
+        {InformationToUpdate}
+
+        **Reason for Update:**
+        {ReasonForUpdate}
+
+        **Additional Notes:**
+        {AdditionalNotes}
+
+        **Signature:**
+        - **Name:** {SignatureName}
+        - **Date:** {SignatureDate}
+
+        Thank you for processing this request.
+
+        Sincerely,
+        {RequesterName}
+      `,
+      fields: [
+        { "id": "RequestDate", "label": "Request Date", "type": "date" },
+        { "id": "DepartmentName", "label": "Recipient (Department Name)", "type": "text" },
+        { "id": "RequesterName", "label": "Requester Name", "type": "text" },
+        { "id": "RequesterEmailAddress", "label": "Requester Email Address", "type": "email" },
+        { "id": "RequesterPhoneNumber", "label": "Requester Phone Number", "type": "tel" },
+        { "id": "AccountType", "label": "Account Type", "type": "text" },
+        { "id": "Username", "label": "Username", "type": "text" },
+        { "id": "InformationToUpdate", "label": "Information to be Updated", "type": "textarea" },
+        { "id": "ReasonForUpdate", "label": "Reason for Update", "type": "textarea" },
+        { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+        { "id": "SignatureName", "label": "Signature Name", "type": "text" },
+        { "id": "SignatureDate", "label": "Signature Date", "type": "date" }
+      ]
+    },
+    
+    "Password Reset Request": {
+      template: `
+        **Date:** {RequestDate}
+        **Recipient:** {DepartmentName}
+
+        **Subject:** Password Reset Request
+
+        Dear Sir/Madam,
+
+        I am writing to request a password reset for my account. Please find the details below:
+
+        **Requester Information:**
+        - **Name:** {RequesterName}
+        - **Email Address:** {RequesterEmailAddress}
+        - **Phone Number:** {RequesterPhoneNumber}
+
+        **Account Details:**
+        - **Account Type:** {AccountType}
+        - **Username:** {Username}
+
+        **Reason for Password Reset:**
+        {ReasonForPasswordReset}
+
+        **Additional Notes:**
+        {AdditionalNotes}
+
+        **Signature:**
+        - **Name:** {SignatureName}
+        - **Date:** {SignatureDate}
+
+        Thank you for your assistance.
+
+        Sincerely,
+        {RequesterName}
+      `,
+      fields: [
+        { "id": "RequestDate", "label": "Request Date", "type": "date" },
+        { "id": "DepartmentName", "label": "Recipient (Department Name)", "type": "text" },
+        { "id": "RequesterName", "label": "Requester Name", "type": "text" },
+        { "id": "RequesterEmailAddress", "label": "Requester Email Address", "type": "email" },
+        { "id": "RequesterPhoneNumber", "label": "Requester Phone Number", "type": "tel" },
+        { "id": "AccountType", "label": "Account Type", "type": "text" },
+        { "id": "Username", "label": "Username", "type": "text" },
+        { "id": "ReasonForPasswordReset", "label": "Reason for Password Reset", "type": "textarea" },
+        { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+        { "id": "SignatureName", "label": "Signature Name", "type": "text" },
+        { "id": "SignatureDate", "label": "Signature Date", "type": "date" }
+      ]
+    },
+
+    "Account Reactivation Request": {
+      template: `
+        **Date:** {RequestDate}
+        **Recipient:** {DepartmentName}
+
+        **Subject:** Account Reactivation Request
+
+        Dear Sir/Madam,
+
+        I am writing to request the reactivation of my account. 
+        Please find the details below:
+
+        **Requester Information:**
+        - **Name:** {RequesterName}
+        - **Email Address:** {RequesterEmailAddress}
+        - **Phone Number:** {RequesterPhoneNumber}
+
+        **Account Details:**
+        - **Account Type:** {AccountType}
+        - **Username:** {Username}
+
+        **Reason for Reactivation:**
+        {ReasonForReactivation}
+
+        **Additional Notes:**
+        {AdditionalNotes}
+
+        **Signature:**
+        - **Name:** {SignatureName}
+        - **Date:** {SignatureDate}
+
+        Thank you for your prompt attention to this matter.
+
+        Sincerely,
+        {RequesterName}
+      `,
+      fields: [
+        { "id": "RequestDate", "label": "Request Date", "type": "date" },
+        { "id": "DepartmentName", "label": "Recipient (Department Name)", "type": "text" },
+        { "id": "RequesterName", "label": "Requester Name", "type": "text" },
+        { "id": "RequesterEmailAddress", "label": "Requester Email Address", "type": "email" },
+        { "id": "RequesterPhoneNumber", "label": "Requester Phone Number", "type": "tel" },
+        { "id": "AccountType", "label": "Account Type", "type": "text" },
+        { "id": "Username", "label": "Username", "type": "text" },
+        { "id": "ReasonForReactivation", "label": "Reason for Reactivation", "type": "textarea" },
+        { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+        { "id": "SignatureName", "label": "Signature Name", "type": "text" },
+        { "id": "SignatureDate", "label": "Signature Date", "type": "date" }
+      ]
+    },
+
+    "Account Suspension Request": {
+      template: `
+        **Date:** {RequestDate}
+        **Recipient:** {DepartmentName}
+
+        **Subject:** Account Suspension Request
+
+        Dear Sir/Madam,
+
+        I am writing to request the suspension of my account.
+         Please find the details below:
+
+        **Requester Information:**
+        - **Name:** {RequesterName}
+        - **Email Address:** {RequesterEmailAddress}
+        - **Phone Number:** {RequesterPhoneNumber}
+
+        **Account Details:**
+        - **Account Type:** {AccountType}
+        - **Username:** {Username}
+
+        **Reason for Suspension:**
+        {ReasonForSuspension}
+
+        **Additional Notes:**
+        {AdditionalNotes}
+
+        **Signature:**
+        - **Name:** {SignatureName}
+        - **Date:** {SignatureDate}
+
+        Thank you for your prompt attention to this request.
+
+        Sincerely,
+        {RequesterName}
+      `,
+      fields: [
+        { "id": "RequestDate", "label": "Request Date", "type": "date" },
+        { "id": "DepartmentName", "label": "Recipient (Department Name)", "type": "text" },
+        { "id": "RequesterName", "label": "Requester Name", "type": "text" },
+        { "id": "RequesterEmailAddress", "label": "Requester Email Address", "type": "email" },
+        { "id": "RequesterPhoneNumber", "label": "Requester Phone Number", "type": "tel" },
+        { "id": "AccountType", "label": "Account Type", "type": "text" },
+        { "id": "Username", "label": "Username", "type": "text" },
+        { "id": "ReasonForSuspension", "label": "Reason for Suspension", "type": "textarea" },
+        { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+        { "id": "SignatureName", "label": "Signature Name", "type": "text" },
+        { "id": "SignatureDate", "label": "Signature Date", "type": "date" }
+      ]
+    },
+
+    "Permission Change Request": {
+      template: `
+        **Date:** {RequestDate}
+        **Recipient:** {DepartmentName}
+
+        **Subject:** Permission Change Request
+
+        Dear Sir/Madam,
+
+        I am writing to request a change in permissions for my account.
+         Please find the details below:
+
+        **Requester Information:**
+        - **Name:** {RequesterName}
+        - **Email Address:** {RequesterEmailAddress}
+        - **Phone Number:** {RequesterPhoneNumber}
+
+        **Account Details:**
+        - **Account Type:** {AccountType}
+        - **Username:** {Username}
+
+        **Current Permissions:**
+        {CurrentPermissions}
+
+        **Requested Permissions:**
+        {RequestedPermissions}
+
+        **Reason for Change:**
+        {ReasonForChange}
+
+        **Additional Notes:**
+        {AdditionalNotes}
+
+        **Signature:**
+        - **Name:** {SignatureName}
+        - **Date:** {SignatureDate}
+
+        Thank you for considering this request.
+
+        Sincerely,
+        {RequesterName}
+      `,
+      fields: [
+        { "id": "RequestDate", "label": "Request Date", "type": "date" },
+        { "id": "DepartmentName", "label": "Recipient (Department Name)", "type": "text" },
+        { "id": "RequesterName", "label": "Requester Name", "type": "text" },
+        { "id": "RequesterEmailAddress", "label": "Requester Email Address", "type": "email" },
+        { "id": "RequesterPhoneNumber", "label": "Requester Phone Number", "type": "tel" },
+        { "id": "AccountType", "label": "Account Type", "type": "text" },
+        { "id": "Username", "label": "Username", "type": "text" },
+        { "id": "CurrentPermissions", "label": "Current Permissions", "type": "textarea" },
+        { "id": "RequestedPermissions", "label": "Requested Permissions", "type": "textarea" },
+        { "id": "ReasonForChange", "label": "Reason for Change", "type": "textarea" },
+        { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+        { "id": "SignatureName", "label": "Signature Name", "type": "text" },
+        { "id": "SignatureDate", "label": "Signature Date", "type": "date" }
+      ]
+    }
+  
+      },
+      "Transaction Letters":{
+
+        'Acknowledgment of Receipt of Payment': {
+      template: `
+        Subject: Acknowledgment of Receipt of Payment
+
+        Dear {RecipientName},
+
+        We acknowledge the receipt of your payment of {Amount} made on {PaymentDate} for 
+        invoice number {InvoiceNumber}.
+
+        Thank you for your prompt payment.
+
+        Sincerely,
+        {YourName}
+        {YourPosition}
+        {YourCompany}
+        {YourAddress}
+        {City}, {State}, {ZIPCode}
+        {YourContactNumber}
+        {YourEmail}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'Amount', label: 'Amount', type: 'text' },
+        { id: 'PaymentDate', label: 'Payment Date', type: 'date' },
+        { id: 'InvoiceNumber', label: 'Invoice Number', type: 'text' }
+      ]
+    },
+    'Confirmation of Transaction': {
+      template: `
+        Subject: Confirmation of Transaction
+
+        Dear {RecipientName},
+
+        This is to confirm that the transaction of {Amount} with transaction ID {TransactionID} 
+        was completed successfully on {PaymentDate}.
+
+        If you have any questions, please contact us.
+
+        Best regards,
+        {YourName}
+        {YourPosition}
+        {YourCompany}
+        {YourAddress}
+        {City}, {State}, {ZIPCode}
+        {YourContactNumber}
+        {YourEmail}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'Amount', label: 'Amount', type: 'text' },
+        { id: 'TransactionID', label: 'Transaction ID', type: 'text' },
+        { id: 'PaymentDate', label: 'Payment Date', type: 'date' }
+      ]
+    },
+    'Notification of Payment Due': {
+      template: `
+        Subject: Notification of Payment Due
+
+        Dear {RecipientName},
+
+        This is a reminder that payment of {Amount} for invoice number {InvoiceNumber} 
+        is due on {DueDate}.
+
+        Please ensure timely payment to avoid any late fees.
+
+        Thank you,
+        {YourName}
+        {YourPosition}
+        {YourCompany}
+        {YourAddress}
+        {City}, {State}, {ZIPCode}
+        {YourContactNumber}
+        {YourEmail}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'Amount', label: 'Amount', type: 'text' },
+        { id: 'InvoiceNumber', label: 'Invoice Number', type: 'text' },
+        { id: 'DueDate', label: 'Due Date', type: 'date' }
+      ]
+    },
+    'Payment Overdue Notice': {
+      template: `
+        Subject: Payment Overdue Notice
+
+        Dear {RecipientName},
+
+        We would like to remind you that your payment of {Amount} for invoice 
+        number {InvoiceNumber} is overdue.
+
+        As of today, the payment is {NumberOfDays} days past due. Please arrange for 
+        immediate payment to avoid further action.
+
+        Regards,
+        {YourName}
+        {YourPosition}
+        {YourCompany}
+        {YourAddress}
+        {City}, {State}, {ZIPCode}
+        {YourContactNumber}
+        {YourEmail}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'Amount', label: 'Amount', type: 'text' },
+        { id: 'InvoiceNumber', label: 'Invoice Number', type: 'text' },
+        { id: 'NumberOfDays', label: 'Number of Days Overdue', type: 'number' }
+      ]
+    },
+    'Refund Request Confirmation': {
+      template: `
+        Subject: Refund Request Confirmation
+
+        Dear {RecipientName},
+
+        We have received your request for a refund of {RefundAmount}. 
+        We are processing your request and will notify you once the refund has been issued.
+
+        Thank you for your patience.
+
+        Sincerely,
+        {YourName}
+        {YourPosition}
+        {YourCompany}
+        {YourAddress}
+        {City}, {State}, {ZIPCode}
+        {YourContactNumber}
+        {YourEmail}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'RefundAmount', label: 'Refund Amount', type: 'text' }
+      ]
+    },
+    'Dispute Resolution Acknowledgment': {
+      template: `
+        Subject: Dispute Resolution Acknowledgment
+
+        Dear {RecipientName},
+
+        We have received your dispute regarding {DisputeIssue}.
+         Our team is currently reviewing the matter and will get back to you with 
+         a resolution as soon as possible.
+
+        We appreciate your patience during this process.
+
+        Best regards,
+        {YourName}
+        {YourPosition}
+        {YourCompany}
+        {YourAddress}
+        {City}, {State}, {ZIPCode}
+        {YourContactNumber}
+        {YourEmail}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'DisputeIssue', label: 'Dispute Issue', type: 'text' }
+      ]
+    },
+    'Cancellation of Transaction Notice': {
+      template: `
+        Subject: Cancellation of Transaction Notice
+
+        Dear {RecipientName},
+
+        This is to inform you that the transaction of {Amount} has been 
+        canceled due to {CancellationReason}.
+
+        Please contact us if you have any questions or need further assistance.
+
+        Sincerely,
+        {YourName}
+        {YourPosition}
+        {YourCompany}
+        {YourAddress}
+        {City}, {State}, {ZIPCode}
+        {YourContactNumber}
+        {YourEmail}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'Amount', label: 'Amount', type: 'text' },
+        { id: 'CancellationReason', label: 'Cancellation Reason', type: 'text' }
+      ]
+    },
+      },
+
+      "Loan and Mortgage":{
+        'Loan Approval Letter': {
+      template: `
+        Subject: Loan Approval Notification
+
+        Dear {BorrowerName},
+
+        We are pleased to inform you that your loan application for {LoanAmount} has been approved. 
+        Below are the details of your loan:
+
+        - **Loan Amount**: {LoanAmount}
+        - **Loan Term**: {LoanTerm}
+        - **Interest Rate**: {InterestRate}
+        - **Monthly Payment**: {MonthlyPayment}
+        - **Start Date**: {StartDate}
+        - **End Date**: {EndDate}
+
+        Please review the terms and conditions attached and contact us if you have any questions.
+
+        Sincerely,
+        {LenderName}
+        {LenderAddress}
+        {LenderCity}, {LenderState} {LenderZIPCode}
+        {ContactNumber}
+        {Email}
+      `,
+      fields: [
+        { id: 'BorrowerName', label: 'Borrower Name', type: 'text' },
+        { id: 'LoanAmount', label: 'Loan Amount', type: 'text' },
+        { id: 'LoanTerm', label: 'Loan Term', type: 'text' },
+        { id: 'InterestRate', label: 'Interest Rate', type: 'text' },
+        { id: 'MonthlyPayment', label: 'Monthly Payment', type: 'text' },
+        { id: 'StartDate', label: 'Start Date', type: 'date' },
+        { id: 'EndDate', label: 'End Date', type: 'date' },
+        { id: 'LenderName', label: 'Lender Name', type: 'text' },
+        { id: 'LenderAddress', label: 'Lender Address', type: 'text' },
+        { id: 'LenderCity', label: 'Lender City', type: 'text' },
+        { id: 'LenderState', label: 'Lender State', type: 'text' },
+        { id: 'LenderZIPCode', label: 'Lender ZIP Code', type: 'text' },
+        { id: 'ContactNumber', label: 'Contact Number', type: 'text' },
+        { id: 'Email', label: 'Email', type: 'email' }
+      ]
+    },
+    'Loan Rejection Letter': {
+      template: `
+        Subject: Loan Application Rejection
+
+        Dear {BorrowerName},
+
+        We regret to inform you that your application for a loan of {LoanAmount} has been declined.
+         The decision was based on {ReasonForRejection}.
+
+        If you have any questions or need further information, please contact us.
+
+        Sincerely,
+        {LenderName}
+        {LenderAddress}
+        {LenderCity}, {LenderState} {LenderZIPCode}
+        {ContactNumber}
+        {Email}
+      `,
+      fields: [
+        { id: 'BorrowerName', label: 'Borrower Name', type: 'text' },
+        { id: 'LoanAmount', label: 'Loan Amount', type: 'text' },
+        { id: 'ReasonForRejection', label: 'Reason for Rejection', type: 'text' },
+        { id: 'LenderName', label: 'Lender Name', type: 'text' },
+        { id: 'LenderAddress', label: 'Lender Address', type: 'text' },
+        { id: 'LenderCity', label: 'Lender City', type: 'text' },
+        { id: 'LenderState', label: 'Lender State', type: 'text' },
+        { id: 'LenderZIPCode', label: 'Lender ZIP Code', type: 'text' },
+        { id: 'ContactNumber', label: 'Contact Number', type: 'text' },
+        { id: 'Email', label: 'Email', type: 'email' }
+      ]
+    },
+    'Mortgage Payment Reminder': {
+      template: `
+        Subject: Mortgage Payment Reminder
+
+        Dear {BorrowerName},
+
+        This is a reminder that your mortgage payment of {RepaymentAmount} is 
+        due on {PaymentDueDate}. 
+
+        - **Account Number**: {AccountNumber}
+        - **Loan Number**: {LoanNumber}
+
+        Please ensure that the payment is made by the due date to avoid any late fees.
+
+        Sincerely,
+        {LenderName}
+        {LenderAddress}
+        {LenderCity}, {LenderState} {LenderZIPCode}
+        {ContactNumber}
+        {Email}
+      `,
+      fields: [
+        { id: 'BorrowerName', label: 'Borrower Name', type: 'text' },
+        { id: 'RepaymentAmount', label: 'Repayment Amount', type: 'text' },
+        { id: 'PaymentDueDate', label: 'Payment Due Date', type: 'date' },
+        { id: 'AccountNumber', label: 'Account Number', type: 'text' },
+        { id: 'LoanNumber', label: 'Loan Number', type: 'text' },
+        { id: 'LenderName', label: 'Lender Name', type: 'text' },
+        { id: 'LenderAddress', label: 'Lender Address', type: 'text' },
+        { id: 'LenderCity', label: 'Lender City', type: 'text' },
+        { id: 'LenderState', label: 'Lender State', type: 'text' },
+        { id: 'LenderZIPCode', label: 'Lender ZIP Code', type: 'text' },
+        { id: 'ContactNumber', label: 'Contact Number', type: 'text' },
+        { id: 'Email', label: 'Email', type: 'email' }
+      ]
+    },
+    'Mortgage Default Notice': {
+      template: `
+        Subject: Mortgage Default Notice
+
+        Dear {BorrowerName},
+
+        This letter serves as a formal notice of default on your mortgage account.
+         The details of the default are as follows:
+
+        - **Default Date**: {DefaultDate}
+        - **Reason for Default**: {DefaultReason}
+        - **Settlement Amount**: {SettlementAmount}
+        - **Settlement Date**: {SettlementDate}
+
+        We request that you contact us immediately to discuss your options
+         for resolving this matter.
+
+        Sincerely,
+        {LenderName}
+        {LenderAddress}
+        {LenderCity}, {LenderState} {LenderZIPCode}
+        {ContactNumber}
+        {Email}
+      `,
+      fields: [
+        { id: 'BorrowerName', label: 'Borrower Name', type: 'text' },
+        { id: 'DefaultDate', label: 'Default Date', type: 'date' },
+        { id: 'DefaultReason', label: 'Reason for Default', type: 'text' },
+        { id: 'SettlementAmount', label: 'Settlement Amount', type: 'text' },
+        { id: 'SettlementDate', label: 'Settlement Date', type: 'date' },
+        { id: 'LenderName', label: 'Lender Name', type: 'text' },
+        { id: 'LenderAddress', label: 'Lender Address', type: 'text' },
+        { id: 'LenderCity', label: 'Lender City', type: 'text' },
+        { id: 'LenderState', label: 'Lender State', type: 'text' },
+        { id: 'LenderZIPCode', label: 'Lender ZIP Code', type: 'text' },
+        { id: 'ContactNumber', label: 'Contact Number', type: 'text' },
+        { id: 'Email', label: 'Email', type: 'email' }
+      ]
+    },
+    'Loan Payment Confirmation': {
+      template: `
+        Subject: Loan Payment Confirmation
+
+        Dear {BorrowerName},
+
+        We have received your loan payment of {RepaymentAmount} on {PaymentDate}.
+         Your updated balance is {RemainingBalance}.
+
+        - **Account Number**: {AccountNumber}
+        - **Loan Number**: {LoanNumber}
+
+        Thank you for your timely payment.
+
+        Sincerely,
+        {LenderName}
+        {LenderAddress}
+        {LenderCity}, {LenderState} {LenderZIPCode}
+        {ContactNumber}
+        {Email}
+      `,
+      fields: [
+        { id: 'BorrowerName', label: 'Borrower Name', type: 'text' },
+        { id: 'RepaymentAmount', label: 'Repayment Amount', type: 'text' },
+        { id: 'PaymentDate', label: 'Payment Date', type: 'date' },
+        { id: 'RemainingBalance', label: 'Remaining Balance', type: 'text' },
+        { id: 'AccountNumber', label: 'Account Number', type: 'text' },
+        { id: 'LoanNumber', label: 'Loan Number', type: 'text' },
+        { id: 'LenderName', label: 'Lender Name', type: 'text' },
+        { id: 'LenderAddress', label: 'Lender Address', type: 'text' },
+        { id: 'LenderCity', label: 'Lender City', type: 'text' },
+        { id: 'LenderState', label: 'Lender State', type: 'text' },
+        { id: 'LenderZIPCode', label: 'Lender ZIP Code', type: 'text' },
+        { id: 'ContactNumber', label: 'Contact Number', type: 'text' },
+        { id: 'Email', label: 'Email', type: 'email' }
+      ]
+    },
+    'Mortgage Modification Request': {
+      template: `
+        Subject: Request for Mortgage Modification
+
+        Dear {LenderName},
+
+        I am writing to request a modification of my mortgage terms due to {ReasonForModification}.
+         The details of my mortgage are as follows:
+
+        - **Loan Amount**: {LoanAmount}
+        - **Current Monthly Payment**: {CurrentMonthlyPayment}
+        - **Requested Modification**: {RequestedModification}
+
+        I appreciate your consideration of my request and look forward to your response.
+
+        Sincerely,
+        {BorrowerName}
+        {BorrowerAddress}
+        {City}, {State} {ZIPCode}
+        {ContactNumber}
+        {Email}
+      `,
+      fields: [
+        { id: 'LenderName', label: 'Lender Name', type: 'text' },
+        { id: 'LoanAmount', label: 'Loan Amount', type: 'text' },
+        { id: 'CurrentMonthlyPayment', label: 'Current Monthly Payment', type: 'text' },
+        { id: 'RequestedModification', label: 'Requested Modification', type: 'text' },
+        { id: 'ReasonForModification', label: 'Reason for Modification', type: 'text' },
+        { id: 'BorrowerName', label: 'Borrower Name', type: 'text' },
+        { id: 'BorrowerAddress', label: 'Borrower Address', type: 'text' },
+        { id: 'City', label: 'City', type: 'text' },
+        { id: 'State', label: 'State', type: 'text' },
+        { id: 'ZIPCode', label: 'ZIP Code', type: 'text' },
+        { id: 'ContactNumber', label: 'Contact Number', type: 'text' },
+        { id: 'Email', label: 'Email', type: 'email' }
+      ]
+    },
+    'Loan Prepayment Notice': {
+      template: `
+        Subject: Loan Prepayment Notification
+
+        Dear {LenderName},
+
+        I am writing to notify you of my intention to prepay my loan in full.
+         The details are as follows:
+
+        - **Loan Number**: {LoanNumber}
+        - **Amount Prepaid**: {PrepaymentAmount}
+        - **Prepayment Date**: {PrepaymentDate}
+
+        Please confirm receipt of this prepayment and adjust the loan balance accordingly.
+
+        Sincerely,
+        {BorrowerName}
+        {BorrowerAddress}
+        {City}, {State} {ZIPCode}
+        {ContactNumber}
+        {Email}
+      `,
+      fields: [
+        { id: 'LenderName', label: 'Lender Name', type: 'text' },
+        { id: 'LoanNumber', label: 'Loan Number', type: 'text' },
+        { id: 'PrepaymentAmount', label: 'Prepayment Amount', type: 'text' },
+        { id: 'PrepaymentDate', label: 'Prepayment Date', type: 'date' },
+        { id: 'BorrowerName', label: 'Borrower Name', type: 'text' },
+        { id: 'BorrowerAddress', label: 'Borrower Address', type: 'text' },
+        { id: 'City', label: 'City', type: 'text' },
+        { id: 'State', label: 'State', type: 'text' },
+        { id: 'ZIPCode', label: 'ZIP Code', type: 'text' },
+        { id: 'ContactNumber', label: 'Contact Number', type: 'text' },
+        { id: 'Email', label: 'Email', type: 'email' }
+      ]
+    },
+      },
+
+      "Financial Assistance":{
+        'Grant Approval Letter': {
+      template: `
+        Subject: Grant Approval Notification
+
+        Dear {RecipientName},
+
+        We are pleased to inform you that your application for financial assistance in the amount 
+        of {AssistanceAmount} has been approved. 
+        The details of the grant are as follows:
+
+        - **Assistance Amount**: {AssistanceAmount}
+        - **Purpose of Assistance**: {PurposeOfAssistance}
+        - **Application Date**: {ApplicationDate}
+        - **Decision Date**: {DecisionDate}
+        - **Approval Status**: {ApprovalStatus}
+
+        Please contact us if you need further information or have any questions.
+
+        Sincerely,
+        {ContactPerson}
+        {ContactNumber}
+        {Email}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'AssistanceAmount', label: 'Assistance Amount', type: 'text' },
+        { id: 'PurposeOfAssistance', label: 'Purpose of Assistance', type: 'text' },
+        { id: 'ApplicationDate', label: 'Application Date', type: 'date' },
+        { id: 'DecisionDate', label: 'Decision Date', type: 'date' },
+        { id: 'ApprovalStatus', label: 'Approval Status', type: 'text' },
+        { id: 'ContactPerson', label: 'Contact Person', type: 'text' },
+        { id: 'ContactNumber', label: 'Contact Number', type: 'text' },
+        { id: 'Email', label: 'Email', type: 'email' }
+      ]
+    },
+    'Grant Rejection Letter': {
+      template: `
+        Subject: Grant Application Rejection
+
+        Dear {RecipientName},
+
+        We regret to inform you that your application for financial assistance in the amount 
+        of {AssistanceAmount} has been declined. The decision was based on {RejectionReason}.
+
+        We encourage you to apply again in the future if circumstances change.
+
+        Sincerely,
+        {ContactPerson}
+        {ContactNumber}
+        {Email}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'AssistanceAmount', label: 'Assistance Amount', type: 'text' },
+        { id: 'RejectionReason', label: 'Reason for Rejection', type: 'text' },
+        { id: 'ContactPerson', label: 'Contact Person', type: 'text' },
+        { id: 'ContactNumber', label: 'Contact Number', type: 'text' },
+        { id: 'Email', label: 'Email', type: 'email' }
+      ]
+    },
+    'Funding Request Letter': {
+      template: `
+        Subject: Request for Financial Assistance
+
+        Dear {ContactPerson},
+
+        I am writing to request financial assistance for {PurposeOfAssistance}. 
+        The details of my request are as follows:
+
+        - **Assistance Amount Requested**: {AssistanceAmount}
+        - **Purpose of Assistance**: {PurposeOfAssistance}
+        - **Application Date**: {ApplicationDate}
+
+        I appreciate your consideration of my request and look forward to your response.
+
+        Sincerely,
+        {RecipientName}
+        {RecipientAddress}
+        {City}, {State} {ZIPCode}
+        {ContactNumber}
+        {Email}
+      `,
+      fields: [
+        { id: 'ContactPerson', label: 'Contact Person', type: 'text' },
+        { id: 'AssistanceAmount', label: 'Assistance Amount Requested', type: 'text' },
+        { id: 'PurposeOfAssistance', label: 'Purpose of Assistance', type: 'text' },
+        { id: 'ApplicationDate', label: 'Application Date', type: 'date' },
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'RecipientAddress', label: 'Recipient Address', type: 'text' },
+        { id: 'City', label: 'City', type: 'text' },
+        { id: 'State', label: 'State', type: 'text' },
+        { id: 'ZIPCode', label: 'ZIP Code', type: 'text' },
+        { id: 'ContactNumber', label: 'Contact Number', type: 'text' },
+        { id: 'Email', label: 'Email', type: 'email' }
+      ]
+    },
+    'Assistance Follow-Up Letter': {
+      template: `
+        Subject: Follow-Up on Financial Assistance Request
+
+        Dear {ContactPerson},
+
+        I am writing to follow up on my recent request for financial assistance dated {ApplicationDate}.
+         I would appreciate an update on the status of my application and any 
+         additional information required.
+
+        Thank you for your attention to this matter.
+
+        Sincerely,
+        {RecipientName}
+        {RecipientAddress}
+        {City}, {State} {ZIPCode}
+        {ContactNumber}
+        {Email}
+      `,
+      fields: [
+        { id: 'ContactPerson', label: 'Contact Person', type: 'text' },
+        { id: 'ApplicationDate', label: 'Application Date', type: 'date' },
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'RecipientAddress', label: 'Recipient Address', type: 'text' },
+        { id: 'City', label: 'City', type: 'text' },
+        { id: 'State', label: 'State', type: 'text' },
+        { id: 'ZIPCode', label: 'ZIP Code', type: 'text' },
+        { id: 'ContactNumber', label: 'Contact Number', type: 'text' },
+        { id: 'Email', label: 'Email', type: 'email' }
+      ]
+    },
+    'Financial Aid Disbursement Letter': {
+      template: `
+        Subject: Financial Aid Disbursement Notification
+
+        Dear {RecipientName},
+
+        We are pleased to inform you that financial aid in the amount of {GrantAmount} has 
+        been disbursed to you. The details are as follows:
+
+        - **Disbursement Amount**: {GrantAmount}
+        - **Purpose**: {GrantPurpose}
+        - **Disbursement Date**: {DisbursementDate}
+        - **Report Due Date**: {ReportDueDate}
+
+        Please ensure that you submit a report detailing the use of the funds by the due date.
+
+        Sincerely,
+        {ContactPerson}
+        {ContactNumber}
+        {Email}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'GrantAmount', label: 'Grant Amount', type: 'text' },
+        { id: 'GrantPurpose', label: 'Purpose of Grant', type: 'text' },
+        { id: 'DisbursementDate', label: 'Disbursement Date', type: 'date' },
+        { id: 'ReportDueDate', label: 'Report Due Date', type: 'date' },
+        { id: 'ContactPerson', label: 'Contact Person', type: 'text' },
+        { id: 'ContactNumber', label: 'Contact Number', type: 'text' },
+        { id: 'Email', label: 'Email', type: 'email' }
+      ]
+    },
+    'Financial Aid Renewal Letter': {
+      template: `
+        Subject: Financial Aid Renewal Request
+
+        Dear {ContactPerson},
+
+        I am writing to request the renewal of my financial aid for the period 
+        starting {RenewalStartDate}. Below are the details of my previous funding and 
+        request for renewal:
+
+        - **Previous Funding Amount**: {PreviousFundingAmount}
+        - **Requested Renewal Amount**: {RenewalAmount}
+        - **Renewal Start Date**: {RenewalStartDate}
+
+        I look forward to your response.
+
+        Sincerely,
+        {RecipientName}
+        {RecipientAddress}
+        {City}, {State} {ZIPCode}
+        {ContactNumber}
+        {Email}
+      `,
+      fields: [
+        { id: 'ContactPerson', label: 'Contact Person', type: 'text' },
+        { id: 'PreviousFundingAmount', label: 'Previous Funding Amount', type: 'text' },
+        { id: 'RenewalAmount', label: 'Requested Renewal Amount', type: 'text' },
+        { id: 'RenewalStartDate', label: 'Renewal Start Date', type: 'date' },
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'RecipientAddress', label: 'Recipient Address', type: 'text' },
+        { id: 'City', label: 'City', type: 'text' },
+        { id: 'State', label: 'State', type: 'text' },
+        { id: 'ZIPCode', label: 'ZIP Code', type: 'text' },
+        { id: 'ContactNumber', label: 'Contact Number', type: 'text' },
+        { id: 'Email', label: 'Email', type: 'email' }
+      ]
+    },
+    'Assistance Confirmation Letter': {
+      template: `
+        Subject: Confirmation of Financial Assistance
+
+        Dear {RecipientName},
+
+        This letter serves as confirmation that financial assistance in the amount 
+        of {AssistanceAmount} has been approved and processed. The details are:
+
+        - **Assistance Amount**: {AssistanceAmount}
+        - **Purpose**: {PurposeOfAssistance}
+        - **Effective Date**: {EffectiveDate}
+
+        Should you have any questions or need further assistance, 
+        please do not hesitate to contact us.
+
+        Sincerely,
+        {ContactPerson}
+        {ContactNumber}
+        {Email}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'AssistanceAmount', label: 'Assistance Amount', type: 'text' },
+        { id: 'PurposeOfAssistance', label: 'Purpose of Assistance', type: 'text' },
+        { id: 'EffectiveDate', label: 'Effective Date', type: 'date' },
+        { id: 'ContactPerson', label: 'Contact Person', type: 'text' },
+        { id: 'ContactNumber', label: 'Contact Number', type: 'text' },
+        { id: 'Email', label: 'Email', type: 'email' }
+      ]
+    }
+
+      },
+      
+      "Security Letters":{
+        'Security Incident Report': {
+      template: `
+        Subject: Security Incident Report
+
+        Dear {RecipientName},
+
+        This letter is to formally report a security incident that occurred on {IncidentDate}. 
+        The incident details are as follows:
+
+        - **Incident Description**: {IncidentDescription}
+        - **Type of Security Breach**: {SecurityBreachType}
+        - **Actions Taken**: {ResolutionActions}
+        - **Preventive Measures Implemented**: {PreventiveMeasures}
+
+        Please contact us if further clarification is needed.
+
+        Sincerely,
+        {SenderName}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'IncidentDate', label: 'Incident Date', type: 'date' },
+        { id: 'IncidentDescription', label: 'Incident Description', type: 'text' },
+        { id: 'SecurityBreachType', label: 'Type of Security Breach', type: 'text' },
+        { id: 'ResolutionActions', label: 'Actions Taken', type: 'text' },
+        { id: 'PreventiveMeasures', label: 'Preventive Measures Implemented', type: 'text' },
+        { id: 'SenderName', label: 'Sender Name', type: 'text' }
+      ]
+    },
+    'Access Authorization Letter': {
+      template: `
+        Subject: Access Authorization Confirmation
+
+        Dear {RecipientName},
+
+        We are pleased to inform you that you have been granted access to the 
+        following secure area(s) and/or information:
+
+        - **Security Clearance Level**: {SecurityClearanceLevel}
+        - **Access Granted On**: {AccessGrantedDate}
+        - **Purpose of Access**: {RequestReason}
+
+        Please ensure that you adhere to all security protocols and guidelines. 
+        For further details, contact our security office.
+
+        Sincerely,
+        {SenderName}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'SecurityClearanceLevel', label: 'Security Clearance Level', type: 'text' },
+        { id: 'AccessGrantedDate', label: 'Access Granted On', type: 'date' },
+        { id: 'RequestReason', label: 'Purpose of Access', type: 'text' },
+        { id: 'SenderName', label: 'Sender Name', type: 'text' }
+      ]
+    },
+    'Security Breach Notification': {
+      template: `
+        Subject: Notification of Security Breach
+
+        Dear {RecipientName},
+
+        We regret to inform you of a security breach that occurred on {IncidentDate}.
+         The nature of the breach involved {SecurityBreachType}.
+          Immediate actions have been taken to contain the situation.
+
+        - **Incident Description**: {IncidentDescription}
+        - **Actions Taken**: {ResolutionActions}
+        - **Further Preventive Measures**: {PreventiveMeasures}
+
+        We advise you to take the necessary precautions to protect your information. 
+        For any concerns, please contact our security team.
+
+        Sincerely,
+        {SenderName}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'IncidentDate', label: 'Incident Date', type: 'date' },
+        { id: 'SecurityBreachType', label: 'Type of Security Breach', type: 'text' },
+        { id: 'IncidentDescription', label: 'Incident Description', type: 'text' },
+        { id: 'ResolutionActions', label: 'Actions Taken', type: 'text' },
+        { id: 'PreventiveMeasures', label: 'Further Preventive Measures', type: 'text' },
+        { id: 'SenderName', label: 'Sender Name', type: 'text' }
+      ]
+    },
+    'Access Revocation Letter': {
+      template: `
+        Subject: Access Revocation Notification
+
+        Dear {RecipientName},
+
+        This letter is to formally notify you that your access to the secure area(s) 
+        and/or information has been revoked as of {AccessRevocationDate}. 
+        This decision was made due to {ReasonForRevocation}.
+
+        Please return any security badges or materials immediately. 
+        For further information, contact our security office.
+
+        Sincerely,
+        {SenderName}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'AccessRevocationDate', label: 'Access Revocation Date', type: 'date' },
+        { id: 'ReasonForRevocation', label: 'Reason for Revocation', type: 'text' },
+        { id: 'SenderName', label: 'Sender Name', type: 'text' }
+      ]
+    },
+    'Confidentiality Agreement': {
+      template: `
+        Subject: Confidentiality Agreement
+
+        Dear {RecipientName},
+
+        This letter serves as a confidentiality agreement 
+        between {SenderName} and {RecipientName}. 
+        You are required to keep all information classified as confidential 
+        under strict confidence.
+
+        - **Confidential Information**: {ConfidentialInformation}
+        - **Agreement Effective Date**: {EffectiveDate}
+
+        By signing this agreement, you acknowledge and agree to adhere 
+        to the confidentiality terms.
+
+        Sincerely,
+        {SenderName}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'ConfidentialInformation', label: 'Confidential Information', type: 'text' },
+        { id: 'EffectiveDate', label: 'Agreement Effective Date', type: 'date' },
+        { id: 'SenderName', label: 'Sender Name', type: 'text' }
+      ]
+    },
+    'Security Policy Implementation': {
+      template: `
+        Subject: Security Policy Implementation Notification
+
+        Dear {RecipientName},
+
+        We are implementing a new security policy effective from {PolicyImplementationDate}.
+         This policy is designed to enhance our security measures and protect our data.
+
+        - **Security Policy Overview**: {SecurityPolicy}
+        - **Policy Effective Date**: {PolicyImplementationDate}
+
+        Please review the policy and adhere to all guidelines. 
+        For further information, contact our security office.
+
+        Sincerely,
+        {SenderName}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'SecurityPolicy', label: 'Security Policy Overview', type: 'text' },
+        { id: 'PolicyImplementationDate', label: 'Policy Effective Date', type: 'date' },
+        { id: 'SenderName', label: 'Sender Name', type: 'text' }
+      ]
+    },
+    'Background Check Confirmation': {
+      template: `
+        Subject: Background Check Confirmation
+
+        Dear {RecipientName},
+
+        This letter confirms that a background check has been successfully completed
+         for {RecipientName}. The status of the background check is as follows:
+
+        - **Background Check Status**: {BackgroundCheckStatus}
+        - **Security Clearance Level**: {SecurityClearanceLevel}
+
+        Please maintain the confidentiality and security of this information. 
+        For any further inquiries, contact our security office.
+
+        Sincerely,
+        {SenderName}
+      `,
+      fields: [
+        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
+        { id: 'BackgroundCheckStatus', label: 'Background Check Status', type: 'text' },
+        { id: 'SecurityClearanceLevel', label: 'Security Clearance Level', type: 'text' },
+        { id: 'SenderName', label: 'Sender Name', type: 'text' }
+      ]
+    }
+      },
+
+      "Investment and Savings":{
+         "Investment Portfolio Update": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    We are pleased to provide you with an update on your investment portfolio 
+    with {YourCompany}. As of {CurrentDate}, your portfolio is valued 
+    at {PortfolioValue} with the following key changes:
+
+    - {InvestmentChange1}
+    - {InvestmentChange2}
+    - {InvestmentChange3}
+
+    We recommend {InvestmentAdvice} based on current market trends. 
+    For more detailed information, 
+    please refer to the attached statement or contact your financial advisor.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "PortfolioValue", "label": "Portfolio Value", "type": "text" },
+      { "id": "InvestmentChange1", "label": "Investment Change 1", "type": "text" },
+      { "id": "InvestmentChange2", "label": "Investment Change 2", "type": "text" },
+      { "id": "InvestmentChange3", "label": "Investment Change 3", "type": "text" },
+      { "id": "InvestmentAdvice", "label": "Investment Advice", "type": "text" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Savings Account Interest Rate Change Notice": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    We are writing to inform you about an upcoming change in the  
+    interest rate for your savings account with {YourCompany}. 
+    Effective {EffectiveDate}, the interest rate will be adjusted to {NewInterestRate}%.
+
+    This change is due to {ReasonForChange} and will apply to all savings accounts. 
+    We encourage you to review your account 
+    details and consider your options. If you have any questions or need further assistance, 
+    please contact our customer service team.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "EffectiveDate", "label": "Effective Date", "type": "date" },
+      { "id": "NewInterestRate", "label": "New Interest Rate", "type": "text" },
+      { "id": "ReasonForChange", "label": "Reason for Change", "type": "text" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Investment Account Statement": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    Please find enclosed your investment account statement for the period {StartDate} 
+    to {EndDate}. 
+    The statement includes details of all transactions, current holdings, 
+    and the overall performance of your investments.
+
+    Highlights of your portfolio for this period include:
+    - Total Contributions: {TotalContributions}
+    - Total Withdrawals: {TotalWithdrawals}
+    - Current Portfolio Value: {CurrentPortfolioValue}
+
+    For any queries or more detailed information, feel free to contact us.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "StartDate", "label": "Start Date", "type": "date" },
+      { "id": "EndDate", "label": "End Date", "type": "date" },
+      { "id": "TotalContributions", "label": "Total Contributions", "type": "text" },
+      { "id": "TotalWithdrawals", "label": "Total Withdrawals", "type": "text" },
+      { "id": "CurrentPortfolioValue", "label": "Current Portfolio Value", "type": "text" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Fixed Deposit Maturity Notification": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    We are pleased to inform you that your Fixed Deposit account with {YourCompany}, 
+    holding the account number {AccountNumber}, is due for maturity on {MaturityDate}. 
+    The principal amount of {PrincipalAmount} along with the accumulated interest of 
+    {InterestAmount} will be credited to your account.
+
+    You have the option to reinvest the matured amount into a new fixed deposit 
+    or transfer it to your savings account. Please let us know your preference by 
+    contacting us before {ResponseDate}. We appreciate your trust in our services.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "AccountNumber", "label": "Account Number", "type": "text" },
+      { "id": "MaturityDate", "label": "Maturity Date", "type": "date" },
+      { "id": "PrincipalAmount", "label": "Principal Amount", "type": "text" },
+      { "id": "InterestAmount", "label": "Interest Amount", "type": "text" },
+      { "id": "ResponseDate", "label": "Response Date", "type": "date" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Investment Risk Assessment Report": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    We have completed a comprehensive risk assessment for your investment 
+    portfolio as of {AssessmentDate}. 
+    The key findings of the assessment are as follows:
+
+    - Risk Level: {RiskLevel}
+    - Primary Risk Factors: {RiskFactors}
+    - Recommended Changes: {RecommendedChanges}
+
+    We suggest considering these factors and making adjustments to 
+    align with your risk tolerance. 
+    Please contact your financial advisor for a detailed discussion 
+    on potential strategies.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "AssessmentDate", "label": "Assessment Date", "type": "date" },
+      { "id": "RiskLevel", "label": "Risk Level", "type": "text" },
+      { "id": "RiskFactors", "label": "Risk Factors", "type": "text" },
+      { "id": "RecommendedChanges", "label": "Recommended Changes", "type": "text" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Investment Withdrawal Confirmation": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    This letter confirms the successful withdrawal of {WithdrawalAmount} from 
+    your investment account on {WithdrawalDate}. 
+    The transaction ID for this withdrawal is {TransactionID}.
+
+    If you did not initiate this withdrawal, please contact our customer service 
+    immediately at {CustomerServiceContact}. 
+    Otherwise, no further action is required.
+
+    Thank you for investing with {YourCompany}.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "WithdrawalAmount", "label": "Withdrawal Amount", "type": "text" },
+      { "id": "WithdrawalDate", "label": "Withdrawal Date", "type": "date" },
+      { "id": "TransactionID", "label": "Transaction ID", "type": "text" },
+      { "id": "CustomerServiceContact", "label": "Customer Service Contact", "type": "text" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Savings Plan Recommendation": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    Based on your current financial situation and savings goals, 
+    we have identified several savings plans 
+    that may be beneficial to you. We recommend considering 
+    the following options:
+
+    1. {SavingsPlanOption1}: {Description1}
+    2. {SavingsPlanOption2}: {Description2}
+    3. {SavingsPlanOption3}: {Description3}
+
+    Each of these plans offers unique benefits tailored to different 
+    financial objectives. 
+    Please review the attached details and let us know if you would like to 
+    discuss these options further.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "SavingsPlanOption1", "label": "Savings Plan Option 1", "type": "text" },
+      { "id": "Description1", "label": "Description 1", "type": "text" },
+      { "id": "SavingsPlanOption2", "label": "Savings Plan Option 2", "type": "text" },
+      { "id": "Description2", "label": "Description 2", "type": "text" },
+      { "id": "SavingsPlanOption3", "label": "Savings Plan Option 3", "type": "text" },
+      { "id": "Description3", "label": "Description 3", "type": "text" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  }
+      },
+
+      "Customer Service":{
+        "General Inquiry Response": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    Thank you for reaching out to {YourCompany} with your inquiry. 
+    We appreciate your interest and 
+    would like to provide you with the information you requested.
+
+    Regarding your question about {InquirySubject}, we would like to 
+    inform you that {ResponseContent}. 
+    If you have any further questions or need additional information, 
+    please do not hesitate to contact us.
+
+    We value your engagement and look forward to assisting you further.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "InquirySubject", "label": "Inquiry Subject", "type": "text" },
+      { "id": "ResponseContent", "label": "Response Content", "type": "textarea" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Complaint Acknowledgment": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    We have received your complaint regarding {ComplaintSubject} and 
+    want to acknowledge your feedback. 
+    We sincerely apologize for any inconvenience this may 
+    have caused you.
+
+    Our team is currently reviewing the issue, and we will take appropriate 
+    steps to address your concerns. 
+    You can expect a detailed response from us within {ResolutionTimeFrame}. 
+    In the meantime, 
+    if you have any additional information or need further assistance, 
+    please feel free to contact us.
+
+    We value your feedback and appreciate the opportunity to 
+    improve our services.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "ComplaintSubject", "label": "Complaint Subject", "type": "text" },
+      { "id": "ResolutionTimeFrame", "label": "Resolution Time Frame", "type": "text" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Feedback Response": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    Thank you for your recent feedback regarding {FeedbackTopic}. 
+    We greatly appreciate the time you took to share your 
+    thoughts and experiences with us.
+
+    Your feedback is valuable as it helps us understand our customers'
+     needs and expectations. 
+    We will review your comments carefully and use them to improve 
+    our services and products. 
+    If there are any specific actions we plan to take as a result of 
+    your feedback, 
+    we will inform you accordingly.
+
+    If you have any further suggestions or need assistance, 
+    please feel free to reach out.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "FeedbackTopic", "label": "Feedback Topic", "type": "text" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Service Improvement Notification": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    We are pleased to inform you about recent improvements 
+    we have made to our services. 
+    As of {ImprovementDate}, we have implemented the 
+    following changes:
+
+    - {Improvement1}
+    - {Improvement2}
+    - {Improvement3}
+
+    These enhancements are part of our ongoing commitment to providing 
+    you with the best possible experience. 
+    We believe these changes will significantly improve your 
+    satisfaction and convenience.
+
+    If you have any questions or would like further details, 
+    please do not hesitate to contact us.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "ImprovementDate", "label": "Improvement Date", "type": "date" },
+      { "id": "Improvement1", "label": "Improvement Detail 1", "type": "textarea" },
+      { "id": "Improvement2", "label": "Improvement Detail 2", "type": "textarea" },
+      { "id": "Improvement3", "label": "Improvement Detail 3", "type": "textarea" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Customer Appreciation Letter": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    We want to take a moment to express our sincere appreciation for your continued 
+    support and loyalty to {YourCompany}. 
+    As a valued customer, your satisfaction is our top priority, and we are grateful 
+    for the trust you place in us.
+
+    Your feedback and patronage have been instrumental in helping us grow and 
+    improve our services. 
+    We are committed to providing you with the best possible experience and look 
+    forward to serving you in the future.
+
+    Thank you once again for choosing {YourCompany}. 
+    If there is anything we can do to assist you, 
+    please do not hesitate to reach out.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Service Interruption Notification": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    We regret to inform you that there will be a temporary interruption in our services 
+    on {InterruptionDate} 
+    due to {ReasonForInterruption}. The interruption will begin at {StartTime} and 
+    is expected to last until {EndTime}.
+
+    We apologize for any inconvenience this may cause and appreciate your understanding. 
+    Our team will work diligently to minimize the impact and restore services as quickly                                                                                                                                                                                                                                                                                                                         
+    as possible.
+
+    If you have any questions or require further assistance, 
+    please do not hesitate to contact us.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "InterruptionDate", "label": "Interruption Date", "type": "date" },
+      { "id": "ReasonForInterruption", "label": "Reason for Interruption", "type": "textarea" },
+      { "id": "StartTime", "label": "Start Time", "type": "time" },
+      { "id": "EndTime", "label": "End Time", "type": "time" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Account Closure Confirmation": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    This letter serves as confirmation of the closure of your account with {YourCompany}. 
+    The closure was processed on {ClosureDate} at your request.
+
+    We appreciate the time you have spent with us and hope that you had a positive experience. 
+    Should you decide to return, we would be happy to assist you with any future needs.
+
+    If you have any questions or require further details regarding your account closure, 
+    please do not hesitate to contact us.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "ClosureDate", "label": "Closure Date", "type": "date" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  }
+      },
+
+      "Legal Notices":{
+        "Cease and Desist Letter": {
+          template: `
+          {YourName}
+          {YourPosition}
+          {YourCompany}
+          {YourAddress}
+          {City}, {State}, {ZIPCode}
+          {CurrentDate}
+      
+          {RecipientName}
+          {RecipientAddress}
+          {City}, {State}, {ZIPCode}
+      
+          Dear {RecipientName},
+      
+          RE: Cease and Desist Notice
+      
+          This letter serves as a formal notice demanding that you immediately 
+          cease and desist from {DescribeUnlawfulActivity} 
+          which is infringing upon our rights as outlined 
+          in {RelevantLawOrContract}. 
+      
+          Failure to comply with this request within {CompliancePeriod} days 
+          may result in legal action to protect our rights, 
+          including seeking damages and injunctive relief.
+      
+          We request that you confirm in writing within {ConfirmationPeriod} days 
+          of receipt of this letter that you have 
+          ceased all such activities.
+      
+          Sincerely,
+          {YourName}
+          {YourContactNumber}
+          {YourEmail}
+          `,
+          fields: [
+            { "id": "YourName", "label": "Your Name", "type": "text" },
+            { "id": "YourPosition", "label": "Your Position", "type": "text" },
+            { "id": "YourCompany", "label": "Your Company", "type": "text" },
+            { "id": "YourAddress", "label": "Your Address", "type": "text" },
+            { "id": "City", "label": "City", "type": "text" },
+            { "id": "State", "label": "State", "type": "text" },
+            { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+            { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+            { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+            { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+            { "id": "DescribeUnlawfulActivity", "label": "Describe Unlawful Activity", "type": "textarea" },
+            { "id": "RelevantLawOrContract", "label": "Relevant Law or Contract", "type": "text" },
+            { "id": "CompliancePeriod", "label": "Compliance Period (days)", "type": "number" },
+            { "id": "ConfirmationPeriod", "label": "Confirmation Period (days)", "type": "number" },
+            { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+            { "id": "YourEmail", "label": "Your Email", "type": "email" }
+          ]
+        },
+        "Demand for Payment": {
+          template: `
+          {YourName}
+          {YourPosition}
+          {YourCompany}
+          {YourAddress}
+          {City}, {State}, {ZIPCode}
+          {CurrentDate}
+      
+          {RecipientName}
+          {RecipientAddress}
+          {City}, {State}, {ZIPCode}
+      
+          Dear {RecipientName},
+      
+          RE: Demand for Payment
+      
+          This letter serves as a formal demand for payment of the outstanding amount 
+          of {AmountDue}, which is overdue 
+          for invoice number {InvoiceNumber} dated {InvoiceDate}.
+      
+          Please remit payment in full within {PaymentPeriod} days from the date of 
+          this letter to avoid further action. 
+          Failure to comply may result in legal action, including but not limited to,
+           the initiation of collection procedures.
+      
+          We appreciate your prompt attention to this matter.
+      
+          Sincerely,
+          {YourName}
+          {YourContactNumber}
+          {YourEmail}
+          `,
+          fields: [
+            { "id": "YourName", "label": "Your Name", "type": "text" },
+            { "id": "YourPosition", "label": "Your Position", "type": "text" },
+            { "id": "YourCompany", "label": "Your Company", "type": "text" },
+            { "id": "YourAddress", "label": "Your Address", "type": "text" },
+            { "id": "City", "label": "City", "type": "text" },
+            { "id": "State", "label": "State", "type": "text" },
+            { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+            { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+            { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+            { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+            { "id": "AmountDue", "label": "Amount Due", "type": "text" },
+            { "id": "InvoiceNumber", "label": "Invoice Number", "type": "text" },
+            { "id": "InvoiceDate", "label": "Invoice Date", "type": "date" },
+            { "id": "PaymentPeriod", "label": "Payment Period (days)", "type": "number" },
+            { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+            { "id": "YourEmail", "label": "Your Email", "type": "email" }
+          ]
+        },
+        "Notice of Breach of Contract": {
+          template: `
+          {YourName}
+          {YourPosition}
+          {YourCompany}
+          {YourAddress}
+          {City}, {State}, {ZIPCode}
+          {CurrentDate}
+      
+          {RecipientName}
+          {RecipientAddress}
+          {City}, {State}, {ZIPCode}
+      
+          Dear {RecipientName},
+      
+          RE: Notice of Breach of Contract
+      
+          This letter serves as a formal notice of breach of contract pursuant 
+          to the agreement dated {ContractDate} 
+          between {YourCompany} and {RecipientCompany}. 
+      
+          Specifically, the breach involves {DescribeBreach}. We request 
+          that you remedy this breach within {CurePeriod} 
+          days from the date of this notice. Failure to do so may result 
+          in further legal action to enforce the terms 
+          of the contract.
+      
+          We hope to resolve this matter amicably and look forward to your
+           prompt response.
+      
+          Sincerely,
+          {YourName}
+          {YourContactNumber}
+          {YourEmail}
+          `,
+          fields: [
+            { "id": "YourName", "label": "Your Name", "type": "text" },
+            { "id": "YourPosition", "label": "Your Position", "type": "text" },
+            { "id": "YourCompany", "label": "Your Company", "type": "text" },
+            { "id": "YourAddress", "label": "Your Address", "type": "text" },
+            { "id": "City", "label": "City", "type": "text" },
+            { "id": "State", "label": "State", "type": "text" },
+            { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+            { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+            { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+            { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+            { "id": "ContractDate", "label": "Contract Date", "type": "date" },
+            { "id": "DescribeBreach", "label": "Describe Breach", "type": "textarea" },
+            { "id": "CurePeriod", "label": "Cure Period (days)", "type": "number" },
+            { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+            { "id": "YourEmail", "label": "Your Email", "type": "email" }
+          ]
+        },
+        "Intellectual Property Rights Notice": {
+          template: `
+          {YourName}
+          {YourPosition}
+          {YourCompany}
+          {YourAddress}
+          {City}, {State}, {ZIPCode}
+          {CurrentDate}
+      
+          {RecipientName}
+          {RecipientAddress}
+          {City}, {State}, {ZIPCode}
+      
+          Dear {RecipientName},
+      
+          RE: Intellectual Property Rights Notice
+      
+          This letter is to inform you that the use of {DescribeInfringingMaterial}
+           on your website or in your materials 
+          constitutes an infringement of our intellectual property rights as 
+          protected under {RelevantIntellectualPropertyLaw}.
+      
+          We request that you cease and desist from any further use of this 
+          material and remove it from all platforms 
+          within {RemovalPeriod} days. Failure to comply may result in legal 
+          action to enforce our rights.
+      
+          We appreciate your immediate attention to this matter.
+      
+          Sincerely,
+          {YourName}
+          {YourContactNumber}
+          {YourEmail}
+          `,
+          fields: [
+            { "id": "YourName", "label": "Your Name", "type": "text" },
+            { "id": "YourPosition", "label": "Your Position", "type": "text" },
+            { "id": "YourCompany", "label": "Your Company", "type": "text" },
+            { "id": "YourAddress", "label": "Your Address", "type": "text" },
+            { "id": "City", "label": "City", "type": "text" },
+            { "id": "State", "label": "State", "type": "text" },
+            { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+            { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+            { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+            { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+            { "id": "DescribeInfringingMaterial", "label": "Describe Infringing Material", "type": "textarea" },
+            { "id": "RelevantIntellectualPropertyLaw", "label": "Relevant Intellectual Property Law", "type": "text" },
+            { "id": "RemovalPeriod", "label": "Removal Period (days)", "type": "number" },
+            { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+            { "id": "YourEmail", "label": "Your Email", "type": "email" }
+          ]
+        },
+        "Termination of Lease": {
+          template: `
+          {YourName}
+          {YourPosition}
+          {YourCompany}
+          {YourAddress}
+          {City}, {State}, {ZIPCode}
+          {CurrentDate}
+      
+          {TenantName}
+          {TenantAddress}
+          {City}, {State}, {ZIPCode}
+      
+          Dear {TenantName},
+      
+          RE: Termination of Lease
+      
+          This letter is to formally notify you of the termination of your lease agreement
+           for the property located at 
+          {PropertyAddress}. The lease termination will be effective on {TerminationDate}.
+      
+          Please ensure that you vacate the premises by the termination date and return
+           all keys and access devices. 
+          A final inspection will be conducted on {InspectionDate} to assess the 
+          condition of the property.
+      
+          If you have any questions or need further information, 
+          please contact us.
+      
+          Sincerely,
+          {YourName}
+          {YourContactNumber}
+          {YourEmail}
+          `,
+          fields: [
+            { "id": "YourName", "label": "Your Name", "type": "text" },
+            { "id": "YourPosition", "label": "Your Position", "type": "text" },
+            { "id": "YourCompany", "label": "Your Company", "type": "text" },
+            { "id": "YourAddress", "label": "Your Address", "type": "text" },
+            { "id": "City", "label": "City", "type": "text" },
+            { "id": "State", "label": "State", "type": "text" },
+            { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+            { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+            { "id": "TenantName", "label": "Tenant's Name", "type": "text" },
+            { "id": "TenantAddress", "label": "Tenant's Address", "type": "text" },
+            { "id": "PropertyAddress", "label": "Property Address", "type": "text" },
+            { "id": "TerminationDate", "label": "Termination Date", "type": "date" },
+            { "id": "InspectionDate", "label": "Inspection Date", "type": "date" },
+            { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+            { "id": "YourEmail", "label": "Your Email", "type": "email" }
+          ]
+        },
+        "Eviction Notice": {
+          template: `
+          {YourName}
+          {YourPosition}
+          {YourCompany}
+          {YourAddress}
+          {City}, {State}, {ZIPCode}
+          {CurrentDate}
+      
+          {TenantName}
+          {TenantAddress}
+          {City}, {State}, {ZIPCode}
+      
+          Dear {TenantName},
+      
+          RE: Eviction Notice
+      
+          This letter serves as a formal notice of eviction from the property 
+          located at {PropertyAddress}. 
+          The eviction will be effective on {EvictionDate} due 
+          to {ReasonForEviction}.
+      
+          Please ensure that you vacate the property by the specified date. 
+          Failure to do so may result in legal 
+          proceedings to enforce this eviction notice.
+      
+          We appreciate your cooperation in this matter.
+      
+          Sincerely,
+          {YourName}
+          {YourContactNumber}
+          {YourEmail}
+          `,
+          fields: [
+            { "id": "YourName", "label": "Your Name", "type": "text" },
+            { "id": "YourPosition", "label": "Your Position", "type": "text" },
+            { "id": "YourCompany", "label": "Your Company", "type": "text" },
+            { "id": "YourAddress", "label": "Your Address", "type": "text" },
+            { "id": "City", "label": "City", "type": "text" },
+            { "id": "State", "label": "State", "type": "text" },
+            { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+            { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+            { "id": "TenantName", "label": "Tenant's Name", "type": "text" },
+            { "id": "TenantAddress", "label": "Tenant's Address", "type": "text" },
+            { "id": "PropertyAddress", "label": "Property Address", "type": "text" },
+            { "id": "EvictionDate", "label": "Eviction Date", "type": "date" },
+            { "id": "ReasonForEviction", "label": "Reason for Eviction", "type": "textarea" },
+            { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+            { "id": "YourEmail", "label": "Your Email", "type": "email" }
+          ]
+        },
+        "Notice of Intent to Sue": {
+          template: `
+          {YourName}
+          {YourPosition}
+          {YourCompany}
+          {YourAddress}
+          {City}, {State}, {ZIPCode}
+          {CurrentDate}
+      
+          {RecipientName}
+          {RecipientAddress}
+          {City}, {State}, {ZIPCode}
+      
+          Dear {RecipientName},
+      
+          RE: Notice of Intent to Sue
+      
+          This letter serves as a formal notice of our intention to pursue legal action
+           against you for {DescribeIssue}, 
+          which is in violation of {RelevantLawOrContract}.
+      
+          We urge you to take immediate steps to address this issue and resolve
+           the matter within {ResolutionPeriod} 
+          days. Failure to do so may result in legal proceedings being initiated 
+          to seek damages and other remedies.
+      
+          We hope to resolve this matter without further legal action and await
+           your prompt response.
+      
+          Sincerely,
+          {YourName}
+          {YourContactNumber}
+          {YourEmail}
+          `,
+          fields: [
+            { "id": "YourName", "label": "Your Name", "type": "text" },
+            { "id": "YourPosition", "label": "Your Position", "type": "text" },
+            { "id": "YourCompany", "label": "Your Company", "type": "text" },
+            { "id": "YourAddress", "label": "Your Address", "type": "text" },
+            { "id": "City", "label": "City", "type": "text" },
+            { "id": "State", "label": "State", "type": "text" },
+            { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+            { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+            { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+            { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+            { "id": "DescribeIssue", "label": "Describe Issue", "type": "textarea" },
+            { "id": "RelevantLawOrContract", "label": "Relevant Law or Contract", "type": "text" },
+            { "id": "ResolutionPeriod", "label": "Resolution Period (days)", "type": "number" },
+            { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+            { "id": "YourEmail", "label": "Your Email", "type": "email" }
+          ]
+        },
+      },
+
+      "Demand Letters":{
+         "Demand for Payment": {
+    template: `
+{YourName}
+{YourPosition}
+{YourCompany}
+{YourAddress}
+{City}, {State}, {ZIPCode}
+{CurrentDate}
+
+{RecipientName}
+{RecipientAddress}
+{City}, {State}, {ZIPCode}
+
+Dear {RecipientName},
+
+RE: Demand for Payment
+
+We are writing to demand immediate payment of the outstanding balance on your account with us. As of {CurrentDate},
+ the total amount due is {AmountDue}. This payment is overdue by {NumberOfDays} days and was originally 
+ due on {OriginalDueDate}.
+
+Please remit payment in full within the next {PaymentPeriod} days to avoid further action. 
+Failure to make payment within this period will result in additional interest charges and potential 
+legal action to recover the amount owed.
+
+For payment, please use the following details:
+- Amount Due: {AmountDue}
+- Payment Method: {PaymentMethod}
+- Payment Instructions: {PaymentInstructions}
+
+If you have already sent the payment, 
+please disregard this notice. Should you need to discuss this matter,
+ contact us immediately.
+
+Sincerely,
+{YourName}
+{YourContactNumber}
+{YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "AmountDue", "label": "Amount Due", "type": "text" },
+      { "id": "NumberOfDays", "label": "Number of Days Overdue", "type": "number" },
+      { "id": "OriginalDueDate", "label": "Original Due Date", "type": "date" },
+      { "id": "PaymentPeriod", "label": "Payment Period", "type": "number" },
+      { "id": "PaymentMethod", "label": "Payment Method", "type": "text" },
+      { "id": "PaymentInstructions", "label": "Payment Instructions", "type": "text" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Demand for Lease Payment": {
+    template: `
+{YourName}
+{YourPosition}
+{YourCompany}
+{YourAddress}
+{City}, {State}, {ZIPCode}
+{CurrentDate}
+
+{TenantName}
+{TenantAddress}
+{City}, {State}, {ZIPCode}
+
+Dear {TenantName},
+
+RE: Demand for Lease Payment
+
+This letter serves as a formal demand for payment of the overdue 
+lease amount for the property located at {PropertyAddress}.
+ As of {CurrentDate}, the total overdue amount is {AmountDue},
+  which was due on {OriginalDueDate}.
+
+You are required to make payment immediately to avoid further 
+actions such as legal proceedings or eviction. 
+The total amount must be paid within {PaymentPeriod} days.
+
+For payment, please use the following details:
+- Amount Due: {AmountDue}
+- Payment Instructions: {PaymentInstructions}
+
+If payment has already been made, please disregard this notice. 
+Please contact us if you need to discuss this matter further.
+
+Sincerely,
+{YourName}
+{YourContactNumber}
+{YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "TenantName", "label": "Tenant's Name", "type": "text" },
+      { "id": "TenantAddress", "label": "Tenant's Address", "type": "text" },
+      { "id": "PropertyAddress", "label": "Property Address", "type": "text" },
+      { "id": "AmountDue", "label": "Amount Due", "type": "text" },
+      { "id": "OriginalDueDate", "label": "Original Due Date", "type": "date" },
+      { "id": "PaymentPeriod", "label": "Payment Period", "type": "number" },
+      { "id": "PaymentInstructions", "label": "Payment Instructions", "type": "text" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Demand for Refund": {
+    template: `
+{YourName}
+{YourPosition}
+{YourCompany}
+{YourAddress}
+{City}, {State}, {ZIPCode}
+{CurrentDate}
+
+{RecipientName}
+{RecipientAddress}
+{City}, {State}, {ZIPCode}
+
+Dear {RecipientName},
+
+RE: Demand for Refund
+
+We are writing to formally request a refund of {AmountDue} for {ReasonForRefund}. 
+This refund is due to {DetailedExplanationOfIssue} and was originally 
+requested on {RequestDate}.
+
+Please process this refund within the next {RefundPeriod} days to avoid 
+further escalation. Failure to issue the refund promptly will result in 
+legal action to recover the amount due.
+
+For any questions or concerns regarding this request,
+ please contact us immediately.
+
+Sincerely,
+{YourName}
+{YourContactNumber}
+{YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "AmountDue", "label": "Amount Due", "type": "text" },
+      { "id": "ReasonForRefund", "label": "Reason for Refund", "type": "text" },
+      { "id": "DetailedExplanationOfIssue", "label": "Detailed Explanation of Issue", "type": "text" },
+      { "id": "RequestDate", "label": "Request Date", "type": "date" },
+      { "id": "RefundPeriod", "label": "Refund Period", "type": "number" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Demand for Contract Performance": {
+    template: `
+{YourName}
+{YourPosition}
+{YourCompany}
+{YourAddress}
+{City}, {State}, {ZIPCode}
+{CurrentDate}
+
+{RecipientName}
+{RecipientAddress}
+{City}, {State}, {ZIPCode}
+
+Dear {RecipientName},
+
+RE: Demand for Contract Performance
+
+We are writing to demand the performance of the obligations specified 
+in our contract dated {ContractDate} for {ContractPurpose}. 
+As of {CurrentDate}, you have failed to meet the following 
+obligations: {ListObligationsNotMet}.
+
+Please remedy this situation within {PerformancePeriod} days to avoid 
+further legal action. 
+The failure to perform as agreed upon will result in legal action to 
+enforce the contract and seek damages.
+
+If you have any questions or require clarification, 
+please contact us immediately.
+
+Sincerely,
+{YourName}
+{YourContactNumber}
+{YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "ContractDate", "label": "Contract Date", "type": "date" },
+      { "id": "ContractPurpose", "label": "Contract Purpose", "type": "text" },
+      { "id": "ListObligationsNotMet", "label": "List of Obligations Not Met", "type": "text" },
+      { "id": "PerformancePeriod", "label": "Performance Period", "type": "number" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Demand for Service Completion": {
+    template: `
+{YourName}
+{YourPosition}
+{YourCompany}
+{YourAddress}
+{City}, {State}, {ZIPCode}
+{CurrentDate}
+
+{ServiceProviderName}
+{ServiceProviderAddress}
+{City}, {State}, {ZIPCode}
+
+Dear {ServiceProviderName},
+
+RE: Demand for Service Completion
+
+This letter is to formally demand the completion of the services outlined 
+in our agreement dated {AgreementDate} for {ServiceDescription}. 
+As of {CurrentDate}, the services have not been completed as agreed upon.
+
+Please complete the services within {CompletionPeriod} days to avoid 
+further actions. Failure to do so will result in the pursuit of legal 
+remedies to enforce the agreement and seek damages for non-performance.
+
+Please contact us if you need additional information or clarification.
+
+Sincerely,
+{YourName}
+{YourContactNumber}
+{YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "ServiceProviderName", "label": "Service Provider's Name", "type": "text" },
+      { "id": "ServiceProviderAddress", "label": "Service Provider's Address", "type": "text" },
+      { "id": "AgreementDate", "label": "Agreement Date", "type": "date" },
+      { "id": "ServiceDescription", "label": "Service Description", "type": "text" },
+      { "id": "CompletionPeriod", "label": "Completion Period", "type": "number" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Demand for Contract Breach": {
+    template: `
+{YourName}
+{YourPosition}
+{YourCompany}
+{YourAddress}
+{City}, {State}, {ZIPCode}
+{CurrentDate}
+
+{RecipientName}
+{RecipientAddress}
+{City}, {State}, {ZIPCode}
+
+Dear {RecipientName},
+
+RE: Demand for Remedy of Contract Breach
+
+We are writing to address a breach of contract concerning the agreement 
+dated {ContractDate} for {ContractPurpose}. 
+The breach involves {DescriptionOfBreach}, which occurred on {DateOfBreach}.
+
+You are required to remedy this breach within {RemedyPeriod} days from the 
+date of this letter. Failure to do so will result in legal action to enforce 
+the contract and recover any damages.
+
+If you have any questions or wish to discuss this matter,
+ please contact us as soon as possible.
+
+Sincerely,
+{YourName}
+{YourContactNumber}
+{YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "ContractDate", "label": "Contract Date", "type": "date" },
+      { "id": "ContractPurpose", "label": "Contract Purpose", "type": "text" },
+      { "id": "DescriptionOfBreach", "label": "Description of Breach", "type": "text" },
+      { "id": "DateOfBreach", "label": "Date of Breach", "type": "date" },
+      { "id": "RemedyPeriod", "label": "Remedy Period", "type": "number" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Demand for Non-Disclosure Breach": {
+    template: `
+{YourName}
+{YourPosition}
+{YourCompany}
+{YourAddress}
+{City}, {State}, {ZIPCode}
+{CurrentDate}
+
+{RecipientName}
+{RecipientAddress}
+{City}, {State}, {ZIPCode}
+
+Dear {RecipientName},
+
+RE: Demand for Remedy of Non-Disclosure Agreement Breach
+
+We are writing to address a breach of the Non-Disclosure Agreement 
+dated {NDAStartDate}, concerning {DescriptionOfConfidentialInformation}.
+ The breach occurred on {DateOfBreach}.
+
+You are required to cease all use and disclosure of the confidential information
+ and remedy this breach within {RemedyPeriod} days. 
+ Failure to comply will result in legal action to enforce the NDA and seek damages.
+
+If you need to discuss this matter or have any questions,
+ please contact us immediately.
+
+Sincerely,
+{YourName}
+{YourContactNumber}
+{YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "NDAStartDate", "label": "NDA Start Date", "type": "date" },
+      { "id": "DescriptionOfConfidentialInformation", "label": "Description of Confidential Information", "type": "text" },
+      { "id": "DateOfBreach", "label": "Date of Breach", "type": "date" },
+      { "id": "RemedyPeriod", "label": "Remedy Period", "type": "number" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  }
+      },
+
+      "Legal Correspondence":{
+        "Settlement Agreement": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    RE: Settlement Agreement for {CaseReference}
+
+    This letter serves as a formal agreement to settle the dispute regarding {DisputeDetails}.
+     The terms of the settlement are as follows:
+
+    1. Settlement Term 1: {SettlementTerm1}
+    2. Settlement Term 2: {SettlementTerm2}
+    3. Settlement Term 3: {SettlementTerm3}
+
+    Please respond by {ResponseDeadline}. Should you have any questions, 
+    contact me at {YourContactNumber} or {YourEmail}.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "CaseReference", "label": "Case Reference", "type": "text" },
+      { "id": "DisputeDetails", "label": "Dispute Details", "type": "text" },
+      { "id": "SettlementTerm1", "label": "Settlement Term 1", "type": "text" },
+      { "id": "SettlementTerm2", "label": "Settlement Term 2", "type": "text" },
+      { "id": "SettlementTerm3", "label": "Settlement Term 3", "type": "text" },
+      { "id": "ResponseDeadline", "label": "Response Deadline", "type": "date" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Legal Compliance Notice": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    RE: Compliance Notice for {ComplianceIssue}
+
+    This letter serves as a formal notice regarding non-compliance with {ComplianceIssue}.
+     We have identified {SpecificIssue} as not meeting the required standards.
+
+    You are required to rectify this non-compliance by {ComplianceDeadline}.
+     Failure to address this issue may result in further actions as 
+     outlined in {RelevantRegulations}.
+
+    Please acknowledge receipt of this notice and confirm your compliance plan.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "ComplianceIssue", "label": "Compliance Issue", "type": "text" },
+      { "id": "SpecificIssue", "label": "Specific Issue", "type": "text" },
+      { "id": "ComplianceDeadline", "label": "Compliance Deadline", "type": "date" },
+      { "id": "RelevantRegulations", "label": "Relevant Regulations", "type": "text" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Notice of Breach of Contract": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    RE: Notice of Breach of Contract
+
+    We hereby notify you of a breach of contract concerning {ContractDetails}.
+     The specific breach pertains to {SpecificBreach}.
+
+    You are required to remedy this breach within {RemedyPeriod} days. 
+    If you fail to take corrective action, we will seek legal remedies as 
+    provided in the contract.
+
+    Please address this matter urgently and confirm your actions.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "ContractDetails", "label": "Contract Details", "type": "text" },
+      { "id": "SpecificBreach", "label": "Specific Breach", "type": "text" },
+      { "id": "RemedyPeriod", "label": "Remedy Period", "type": "number" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Legal Advice Request": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    RE: Request for Legal Advice on {Subject}
+
+    I am seeking your legal expertise concerning {Subject}. Specifically,
+     I require guidance on {SpecificLegalIssue} and the implications 
+     of {RelatedDetails}.
+
+    Please provide your advice and recommendations at your earliest convenience.
+     Your assistance will be invaluable in helping us make informed decisions.
+
+    Thank you for your prompt attention to this matter.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "Subject", "label": "Subject", "type": "text" },
+      { "id": "SpecificLegalIssue", "label": "Specific Legal Issue", "type": "text" },
+      { "id": "RelatedDetails", "label": "Related Details", "type": "text" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Contract Termination Letter": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    RE: Termination of Contract
+
+    This letter is to formally notify you of the termination of our contract 
+    dated {ContractDate}. The reason for this termination is {TerminationReason}.
+
+    The termination will be effective from {TerminationEffectiveDate}.
+     Please ensure that all outstanding obligations are fulfilled by this date.
+
+    Should you have any questions or require further information, feel free to contact me.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "ContractDate", "label": "Contract Date", "type": "date" },
+      { "id": "TerminationReason", "label": "Termination Reason", "type": "text" },
+      { "id": "TerminationEffectiveDate", "label": "Termination Effective Date", "type": "date" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Request for Proposal": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    RE: Request for Proposal
+
+    We are seeking proposals for {ProjectDescription} and are inviting you to submit a 
+    detailed proposal for consideration.
+     The proposal should include {ProposalRequirements}.
+
+    The deadline for submitting your proposal is {ProposalDeadline}. 
+    For any inquiries, please contact me at {YourContactNumber} or {YourEmail}.
+
+    We look forward to receiving your proposal.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "ProjectDescription", "label": "Project Description", "type": "text" },
+      { "id": "ProposalRequirements", "label": "Proposal Requirements", "type": "text" },
+      { "id": "ProposalDeadline", "label": "Proposal Deadline", "type": "date" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  },
+  "Customer Complaint Response": {
+    template: `
+    {YourName}
+    {YourPosition}
+    {YourCompany}
+    {YourAddress}
+    {City}, {State}, {ZIPCode}
+    {CurrentDate}
+
+    {RecipientName}
+    {RecipientAddress}
+    {City}, {State}, {ZIPCode}
+
+    Dear {RecipientName},
+
+    RE: Response to Your Complaint
+
+    We have received your complaint dated {ComplaintDate} regarding {ComplaintDetails}.
+     We sincerely apologize for any inconvenience caused.
+
+    We have taken the following steps to address your concerns: {ActionTaken}. 
+
+    Please feel free to contact me directly if you have further questions or 
+    if the issue persists.
+
+    Thank you for bringing this to our attention.
+
+    Sincerely,
+    {YourName}
+    {YourContactNumber}
+    {YourEmail}
+    `,
+    fields: [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "ComplaintDate", "label": "Complaint Date", "type": "date" },
+      { "id": "ComplaintDetails", "label": "Complaint Details", "type": "text" },
+      { "id": "ActionTaken", "label": "Action Taken", "type": "text" },
+      { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" }
+    ]
+  }
+      },
+      
+
+      "Contract Letters": {
+    "Settlement Agreement": {
+      template: `
+      {YourName}
+      {YourPosition}
+      {YourCompany}
+      {YourAddress}
+      {City}, {State}, {ZIPCode}
+      {CurrentDate}
+
+      {RecipientName}
+      {RecipientAddress}
+      {City}, {State}, {ZIPCode}
+
+      Dear {RecipientName},
+
+      RE: Settlement Agreement
+
+      This letter serves as a formal agreement between {YourCompany} and {RecipientName}
+       regarding the settlement of {SettlementIssue}.
+        Both parties agree to the following terms:
+
+      1. {Term1}
+      2. {Term2}
+      3. {Term3}
+
+      The settlement amount of {SettlementAmount} will be paid by {PaymentDate}.
+       This agreement resolves all claims and disputes related to {SettlementIssue}.
+
+      Please sign below to confirm your acceptance of these terms.
+
+      Sincerely,
+      {YourName}
+      {YourContactNumber}
+      {YourEmail}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "SettlementIssue", "label": "Settlement Issue", "type": "text" },
+        { "id": "Term1", "label": "Term 1", "type": "text" },
+        { "id": "Term2", "label": "Term 2", "type": "text" },
+        { "id": "Term3", "label": "Term 3", "type": "text" },
+        { "id": "SettlementAmount", "label": "Settlement Amount", "type": "text" },
+        { "id": "PaymentDate", "label": "Payment Date", "type": "date" },
+        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+        { "id": "YourEmail", "label": "Your Email", "type": "email" }
+      ]
+    },
+    "Legal Compliance Notice": {
+      template: `
+      {YourName}
+      {YourPosition}
+      {YourCompany}
+      {YourAddress}
+      {City}, {State}, {ZIPCode}
+      {CurrentDate}
+
+      {RecipientName}
+      {RecipientAddress}
+      {City}, {State}, {ZIPCode}
+
+      Dear {RecipientName},
+
+      RE: Legal Compliance Notice
+
+      This notice is to inform you of {YourCompany}'s legal obligation to comply
+       with {SpecificRegulation} as required by {GoverningBody}.
+        Our records indicate that {DescribeNonCompliance}.
+
+      We request that you take the necessary actions to ensure compliance 
+      by {ComplianceDeadline}. 
+      Failure to do so may result in {PotentialConsequences}.
+
+      If you have any questions or need further clarification, 
+      please contact me at {YourContactNumber} or {YourEmail}.
+
+      Sincerely,
+      {YourName}
+      {YourContactNumber}
+      {YourEmail}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "SpecificRegulation", "label": "Specific Regulation", "type": "text" },
+        { "id": "GoverningBody", "label": "Governing Body", "type": "text" },
+        { "id": "DescribeNonCompliance", "label": "Describe Non-Compliance", "type": "text" },
+        { "id": "ComplianceDeadline", "label": "Compliance Deadline", "type": "date" },
+        { "id": "PotentialConsequences", "label": "Potential Consequences", "type": "text" },
+        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+        { "id": "YourEmail", "label": "Your Email", "type": "email" }
+      ]
+    },
+    "Notice of Breach of Contract": {
+      template: `
+      {YourName}
+      {YourPosition}
+      {YourCompany}
+      {YourAddress}
+      {City}, {State}, {ZIPCode}
+      {CurrentDate}
+
+      {RecipientName}
+      {RecipientAddress}
+      {City}, {State}, {ZIPCode}
+
+      Dear {RecipientName},
+
+      RE: Notice of Breach of Contract
+
+      We are writing to formally notify you of a breach of contract dated {ContractDate}.
+       The specific breach involves {BreachDetails}.
+
+      As per the terms of the contract, you are required to {RequiredAction}
+       by {ActionDeadline}. Failure to address this breach may result in {Consequences}.
+
+      Please contact me immediately to discuss this matter.
+
+      Sincerely,
+      {YourName}
+      {YourContactNumber}
+      {YourEmail}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "ContractDate", "label": "Contract Date", "type": "date" },
+        { "id": "BreachDetails", "label": "Breach Details", "type": "text" },
+        { "id": "RequiredAction", "label": "Required Action", "type": "text" },
+        { "id": "ActionDeadline", "label": "Action Deadline", "type": "date" },
+        { "id": "Consequences", "label": "Consequences", "type": "text" },
+        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+        { "id": "YourEmail", "label": "Your Email", "type": "email" }
+      ]
+    },
+    "Legal Advice Request": {
+      template: `
+      {YourName}
+      {YourPosition}
+      {YourCompany}
+      {YourAddress}
+      {City}, {State}, {ZIPCode}
+      {CurrentDate}
+
+      {RecipientName}
+      {RecipientAddress}
+      {City}, {State}, {ZIPCode}
+
+      Dear {RecipientName},
+
+      RE: Request for Legal Advice
+
+      I am seeking your legal advice on {LegalIssue}. Specifically, 
+      I need guidance on {SpecificQuestions}.
+
+      Please provide your advice and any necessary actions I should take.
+       If a meeting or additional documentation is required, 
+       kindly let me know.
+
+      Thank you for your assistance.
+
+      Sincerely,
+      {YourName}
+      {YourContactNumber}
+      {YourEmail}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "LegalIssue", "label": "Legal Issue", "type": "text" },
+        { "id": "SpecificQuestions", "label": "Specific Questions", "type": "text" },
+        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+        { "id": "YourEmail", "label": "Your Email", "type": "email" }
+      ]
+    },
+    "Employment Contract": {
+      template: `
+      {YourName}
+      {YourPosition}
+      {YourCompany}
+      {YourAddress}
+      {City}, {State}, {ZIPCode}
+      {CurrentDate}
+
+      {EmployeeName}
+      {EmployeeAddress}
+      {City}, {State}, {ZIPCode}
+
+      Dear {EmployeeName},
+
+      RE: Employment Contract
+
+      We are pleased to offer you employment with {YourCompany} as 
+      a {Position}. Your employment will commence on {StartDate} 
+      under the following terms:
+
+      1. **Salary**: {Salary}
+      2. **Benefits**: {Benefits}
+      3. **Work Hours**: {WorkHours}
+
+      Please sign below to confirm your acceptance of this offer.
+
+      Sincerely,
+      {YourName}
+      {YourContactNumber}
+      {YourEmail}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "EmployeeName", "label": "Employee's Name", "type": "text" },
+        { "id": "EmployeeAddress", "label": "Employee's Address", "type": "text" },
+        { "id": "Position", "label": "Position", "type": "text" },
+        { "id": "StartDate", "label": "Start Date", "type": "date" },
+        { "id": "Salary", "label": "Salary", "type": "text" },
+        { "id": "Benefits", "label": "Benefits", "type": "text" },
+        { "id": "WorkHours", "label": "Work Hours", "type": "text" },
+        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+        { "id": "YourEmail", "label": "Your Email", "type": "email" }
+      ]
+    },
+    "Contract Renewal Notice": {
+      template: `
+      {YourName}
+      {YourPosition}
+      {YourCompany}
+      {YourAddress}
+      {City}, {State}, {ZIPCode}
+      {CurrentDate}
+
+      {RecipientName}
+      {RecipientAddress}
+      {City}, {State}, {ZIPCode}
+
+      Dear {RecipientName},
+
+      RE: Contract Renewal Notice
+
+      This is to inform you that your current contract with {YourCompany},
+       which is set to expire on {ContractExpiryDate}, is eligible for renewal. 
+       We propose to extend the contract under the same terms and conditions 
+       until {NewExpiryDate}.
+
+      If you agree to this renewal, please sign and return the enclosed 
+      document by {ResponseDeadline}.
+
+      Sincerely,
+      {YourName}
+      {YourContactNumber}
+      {YourEmail}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "ContractExpiryDate", "label": "Contract Expiry Date", "type": "date" },
+        { "id": "NewExpiryDate", "label": "New Expiry Date", "type": "date" },
+        { "id": "ResponseDeadline", "label": "Response Deadline", "type": "date" },
+        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+        { "id": "YourEmail", "label": "Your Email", "type": "email" }
+      ]
+    },
+    "Contract Termination Notice": {
+      template: `
+      {YourName}
+      {YourPosition}
+      {YourCompany}
+      {YourAddress}
+      {City}, {State}, {ZIPCode}
+      {CurrentDate}
+
+      {RecipientName}
+      {RecipientAddress}
+      {City}, {State}, {ZIPCode}
+
+      Dear {RecipientName},
+
+      RE: Contract Termination Notice
+
+      This letter is to notify you that {YourCompany} will be terminating the 
+      contract dated {ContractDate} effective {TerminationDate}. 
+      The decision to terminate is due to {ReasonForTermination}.
+
+      Please arrange to return any property and settle any outstanding obligations 
+      by {SettlementDate}.
+
+      If you have any questions regarding this notice, 
+      please contact me.
+
+      Sincerely,
+      {YourName}
+      {YourContactNumber}
+      {YourEmail}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "ContractDate", "label": "Contract Date", "type": "date" },
+        { "id": "TerminationDate", "label": "Termination Date", "type": "date" },
+        { "id": "ReasonForTermination", "label": "Reason for Termination", "type": "text" },
+        { "id": "SettlementDate", "label": "Settlement Date", "type": "date" },
+        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+        { "id": "YourEmail", "label": "Your Email", "type": "email" }
+      ]
+    },
+  },
+
+     "Dispute Resolution": {
+    "Settlement Agreement": {
+      template: `
+      {YourName}
+      {YourPosition}
+      {YourCompany}
+      {YourAddress}
+      {City}, {State}, {ZIPCode}
+      {CurrentDate}
+
+      {RecipientName}
+      {RecipientAddress}
+      {City}, {State}, {ZIPCode}
+
+      Dear {RecipientName},
+
+      RE: Settlement Agreement
+
+      This Settlement Agreement is made between {YourCompany} and {RecipientName}
+       concerning the dispute arising from {DisputeDescription}. 
+
+      The parties agree to the following terms:
+      
+      1. **Settlement Amount**: {SettlementAmount}
+      2. **Payment Terms**: {PaymentTerms}
+      3. **Release of Claims**: {ReleaseOfClaims}
+
+      This agreement resolves all disputes related to {DisputeDescription} 
+      and is final and binding.
+
+      Sincerely,
+      {YourName}
+      {YourContactNumber}
+      {YourEmail}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "DisputeDescription", "label": "Dispute Description", "type": "text" },
+        { "id": "SettlementAmount", "label": "Settlement Amount", "type": "text" },
+        { "id": "PaymentTerms", "label": "Payment Terms", "type": "text" },
+        { "id": "ReleaseOfClaims", "label": "Release of Claims", "type": "text" },
+        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+        { "id": "YourEmail", "label": "Your Email", "type": "email" }
+      ]
+    },
+    "Mediation Agreement": {
+      template: `
+      {YourName}
+      {YourPosition}
+      {YourCompany}
+      {YourAddress}
+      {City}, {State}, {ZIPCode}
+      {CurrentDate}
+
+      {RecipientName}
+      {RecipientAddress}
+      {City}, {State}, {ZIPCode}
+
+      Dear {RecipientName},
+
+      RE: Mediation Agreement
+
+      This Mediation Agreement is made between {YourCompany} and {RecipientName}
+       to resolve the dispute concerning {DisputeDescription} through mediation.
+
+      The parties agree to the following terms:
+      
+      1. **Mediator**: {MediatorName}
+      2. **Mediation Date**: {MediationDate}
+      3. **Location**: {MediationLocation}
+
+      The mediation will be conducted in good faith to resolve the issues
+       stated above.
+
+      Sincerely,
+      {YourName}
+      {YourContactNumber}
+      {YourEmail}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "DisputeDescription", "label": "Dispute Description", "type": "text" },
+        { "id": "MediatorName", "label": "Mediator Name", "type": "text" },
+        { "id": "MediationDate", "label": "Mediation Date", "type": "date" },
+        { "id": "MediationLocation", "label": "Mediation Location", "type": "text" },
+        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+        { "id": "YourEmail", "label": "Your Email", "type": "email" }
+      ]
+    },
+    "Arbitration Notice": {
+      template: `
+      {YourName}
+      {YourPosition}
+      {YourCompany}
+      {YourAddress}
+      {City}, {State}, {ZIPCode}
+      {CurrentDate}
+
+      {RecipientName}
+      {RecipientAddress}
+      {City}, {State}, {ZIPCode}
+
+      Dear {RecipientName},
+
+      RE: Arbitration Notice
+
+      This notice is to inform you that {YourCompany} intends to resolve the dispute 
+      concerning {DisputeDescription} through arbitration.
+
+      The following details are provided:
+      
+      1. **Arbitrator**: {ArbitratorName}
+      2. **Arbitration Date**: {ArbitrationDate}
+      3. **Arbitration Location**: {ArbitrationLocation}
+
+      Please review the terms and confirm your agreement to 
+      proceed with arbitration.
+
+      Sincerely,
+      {YourName}
+      {YourContactNumber}
+      {YourEmail}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "DisputeDescription", "label": "Dispute Description", "type": "text" },
+        { "id": "ArbitratorName", "label": "Arbitrator Name", "type": "text" },
+        { "id": "ArbitrationDate", "label": "Arbitration Date", "type": "date" },
+        { "id": "ArbitrationLocation", "label": "Arbitration Location", "type": "text" },
+        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+        { "id": "YourEmail", "label": "Your Email", "type": "email" }
+      ]
+    },
+    "Dispute Resolution Proposal": {
+      template: `
+      {YourName}
+      {YourPosition}
+      {YourCompany}
+      {YourAddress}
+      {City}, {State}, {ZIPCode}
+      {CurrentDate}
+
+      {RecipientName}
+      {RecipientAddress}
+      {City}, {State}, {ZIPCode}
+
+      Dear {RecipientName},
+
+      RE: Dispute Resolution Proposal
+
+      This proposal outlines the proposed resolution for the dispute regarding
+       {DisputeDescription}.
+
+      The proposed resolution includes:
+      
+      1. **Proposed Solution**: {ProposedSolution}
+      2. **Implementation Timeline**: {ImplementationTimeline}
+      3. **Resolution Terms**: {ResolutionTerms}
+
+      We believe this proposal will address the issues effectively and
+       seek your agreement.
+
+      Sincerely,
+      {YourName}
+      {YourContactNumber}
+      {YourEmail}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "DisputeDescription", "label": "Dispute Description", "type": "text" },
+        { "id": "ProposedSolution", "label": "Proposed Solution", "type": "text" },
+        { "id": "ImplementationTimeline", "label": "Implementation Timeline", "type": "text" },
+        { "id": "ResolutionTerms", "label": "Resolution Terms", "type": "text" },
+        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+        { "id": "YourEmail", "label": "Your Email", "type": "email" }
+      ]
+    },
+    "Legal Demand for Resolution": {
+      template: `
+      {YourName}
+      {YourPosition}
+      {YourCompany}
+      {YourAddress}
+      {City}, {State}, {ZIPCode}
+      {CurrentDate}
+
+      {RecipientName}
+      {RecipientAddress}
+      {City}, {State}, {ZIPCode}
+
+      Dear {RecipientName},
+
+      RE: Legal Demand for Resolution
+
+      This letter serves as a formal demand for the resolution of the dispute
+       related to {DisputeDescription}. 
+
+      The specific demands are:
+      
+      1. **Demand 1**: {Demand1}
+      2. **Demand 2**: {Demand2}
+      3. **Demand 3**: {Demand3}
+
+      Please address these issues promptly to avoid further legal action.
+
+      Sincerely,
+      {YourName}
+      {YourContactNumber}
+      {YourEmail}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "DisputeDescription", "label": "Dispute Description", "type": "text" },
+        { "id": "Demand1", "label": "Demand 1", "type": "text" },
+        { "id": "Demand2", "label": "Demand 2", "type": "text" },
+        { "id": "Demand3", "label": "Demand 3", "type": "text" },
+        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+        { "id": "YourEmail", "label": "Your Email", "type": "email" }
+      ]
+    },
+    "Conflict Resolution Proposal": {
+      template: `
+      {YourName}
+      {YourPosition}
+      {YourCompany}
+      {YourAddress}
+      {City}, {State}, {ZIPCode}
+      {CurrentDate}
+
+      {RecipientName}
+      {RecipientAddress}
+      {City}, {State}, {ZIPCode}
+
+      Dear {RecipientName},
+
+      RE: Conflict Resolution Proposal
+
+      This proposal is made to address the conflict arising from {ConflictDescription} 
+      between {YourCompany} and {RecipientName}.
+
+      Proposed resolution includes:
+      
+      1. **Resolution Method**: {ResolutionMethod}
+      2. **Proposed Actions**: {ProposedActions}
+      3. **Review Date**: {ReviewDate}
+
+      We believe this proposal will resolve the conflict effectively and 
+      request your feedback.
+
+      Sincerely,
+      {YourName}
+      {YourContactNumber}
+      {YourEmail}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "ConflictDescription", "label": "Conflict Description", "type": "text" },
+        { "id": "ResolutionMethod", "label": "Resolution Method", "type": "text" },
+        { "id": "ProposedActions", "label": "Proposed Actions", "type": "text" },
+        { "id": "ReviewDate", "label": "Review Date", "type": "date" },
+        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+        { "id": "YourEmail", "label": "Your Email", "type": "email" }
+      ]
+    },
+    "Complaint Resolution Letter": {
+      template: `
+      {YourName}
+      {YourPosition}
+      {YourCompany}
+      {YourAddress}
+      {City}, {State}, {ZIPCode}
+      {CurrentDate}
+
+      {RecipientName}
+      {RecipientAddress}
+      {City}, {State}, {ZIPCode}
+
+      Dear {RecipientName},
+
+      RE: Complaint Resolution Letter
+
+      This letter is to address the complaint regarding {ComplaintDescription}.
+
+      The following actions will be taken:
+      
+      1. **Resolution Action 1**: {ResolutionAction1}
+      2. **Resolution Action 2**: {ResolutionAction2}
+      3. **Follow-Up Date**: {FollowUpDate}
+
+      We appreciate your patience and cooperation in resolving this matter.
+
+      Sincerely,
+      {YourName}
+      {YourContactNumber}
+      {YourEmail}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "ComplaintDescription", "label": "Complaint Description", "type": "text" },
+        { "id": "ResolutionAction1", "label": "Resolution Action 1", "type": "text" },
+        { "id": "ResolutionAction2", "label": "Resolution Action 2", "type": "text" },
+        { "id": "FollowUpDate", "label": "Follow-Up Date", "type": "date" },
+        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" },
+        { "id": "YourEmail", "label": "Your Email", "type": "email" }
+      ]
+    },
+  },
+
 
 
 };
