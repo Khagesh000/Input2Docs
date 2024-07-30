@@ -102,15 +102,91 @@ const categories = {
        "Warning Letter",
        "Resignation Acceptance Letter"
     ],
-    "Client Relations": [],
-    "Meeting and Appointment": [],
+    "Client Relations": [
+      "Welcome Email",
+      "Follow-Up Email",
+      "Feedback Request",
+      "Problem Resolution",
+      "Service/Product Update",
+      "Special Offers",
+      "Anniversary Thank You"
+    ],
+    "Meeting and Appointment": [
+      "Meeting Invitation",
+      "Appointment Confirmation",
+      "Meeting Agenda",
+      "Appointment Reminder",
+      "Meeting Cancellation",
+      "Reschedule Request",
+      "Meeting Follow-Up",
+    ],
+    "Financial Documents":[
+      "Expense Report",
+      "Financial Statement",
+      "Budget Proposal",
+      "Reimbursement Request",
+      "Payment Reminder",
+      "Audit Report",
+      "Tax Documentation"
+    ],
+    "Legal and Compliance":[
+      "Confidentiality Agreement",
+      "Non-Disclosure Agreement (NDA)",
+      "Contract Agreement",
+      "Policy Compliance Notice",
+      "Data Protection Notice",
+      "Compliance Audit Notification",
+      "Legal Notice"
+    ]
   },
   "Police Station Letters": {
-    "Complaint Letters": [],
-    "Request Letters": [],
-    "Witness Statements": [],
-    "Traffic Violation": [],
-    "Victim Assistance": [],
+    "Complaint Letters": [
+      "Complaint Against Police Misconduct",
+      "Complaint About Delayed Investigation",
+      "Complaint About Unlawful Arrest",
+      "Complaint About Police Negligence",
+      "Complaint About Police Brutality",
+      "Complaint About Police Harassment",
+      "Complaint About Negligent Response",
+     
+
+    ],
+    "Request Letters": [
+      "Leave Request",
+      "Information Request",
+      "Resource Request",
+      "Approval Request",
+      "Change Request",
+      "Extension Request",
+      "Recommendation Request"
+    ],
+    "Witness Statements": [
+      "Incident Report",
+      "Character Reference",
+      "Affidavit",
+      "Testimonial",
+      "Sworn Statement",
+      "Witness Testimony",
+      "Witness Affidavit",
+    ],
+    "Traffic Violation": [
+      "Speeding Violation",
+      "DUI Violation",
+      "Hit and Run",
+      "Reckless Driving",
+      "Traffic Light Violation",
+      "Illegal U-Turn",
+      "Failure to Yield"
+    ],
+    "Victim Assistance": [
+      "Emergency Assistance Request",
+      "Victim Impact Statement",
+      "Counseling Request",
+      "Legal Assistance Request",
+      "Victim Compensation Claim",
+      "Support Group Referral",
+      "Medical Assistance Request",
+    ],
   },
   "Bank Letters": {
     "Account Management": [],
