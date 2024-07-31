@@ -1,104 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-
-const emailTemplates = {
-  "Sales Emails": {
-    "Introduction Email": {
-      template: `
-        Hi {RecipientName},
-
-        My name is {SenderName}, and I am the {SenderPosition} at {SenderCompany}.
-        I am writing to introduce our company and the services we offer.
-
-        {EmailBody}
-
-        Looking forward to hearing from you.
-
-        Best regards,
-        {SenderName}
-      `,
-      fields: [
-        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
-        { id: 'SenderName', label: 'Sender Name', type: 'text' },
-        { id: 'SenderPosition', label: 'Sender Position', type: 'text' },
-        { id: 'SenderCompany', label: 'Sender Company', type: 'text' },
-        { id: 'SenderEmail', label: 'Your Email', type: 'email' },
-        { id: 'RecipientEmail', label: 'Recipient Email', type: 'email' },
-        { id: 'EmailBody', label: 'Email Body', type: 'quill' },
-      ]
-    },
-    "Follow-Up Email": {
-      template: `
-        Hi {RecipientName},
-
-        I hope this email finds you well. I wanted to follow up on our previous conversation regarding.
-
-        {EmailBody}
-
-        Looking forward to your response.
-
-        Best regards,
-        {SenderName}
-      `,
-      fields: [
-        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
-        { id: 'SenderName', label: 'Sender Name', type: 'text' },
-        { id: 'SenderEmail', label: 'Your Email', type: 'email' },
-        { id: 'RecipientEmail', label: 'Recipient Email', type: 'email' },
-        { id: 'EmailBody', label: 'Email Body', type: 'quill' },
-      ]
-    }
-  },
-  "Marketing Emails": {
-    "Product Launch Email": {
-      template: `
-        Hi {RecipientName},
-
-        We are excited to announce the launch of our new product, {ProductName}!
-
-        {EmailBody}
-
-        Please visit our website to learn more about {ProductName}.
-
-        Best regards,
-        {SenderName}
-      `,
-      fields: [
-        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
-        { id: 'ProductName', label: 'Product Name', type: 'text' },
-        { id: 'SenderName', label: 'Sender Name', type: 'text' },
-        { id: 'SenderEmail', label: 'Your Email', type: 'email' },
-        { id: 'RecipientEmail', label: 'Recipient Email', type: 'email' },
-        { id: 'EmailBody', label: 'Email Body', type: 'quill' },
-      ]
-    },
-    "Newsletter Email": {
-      template: `
-        Hi {RecipientName},
-
-        Welcome to our latest newsletter! Here are some updates and news from {CompanyName}:
-
-        {EmailBody}
-
-        Stay tuned for more updates in our upcoming newsletters.
-
-        Best regards,
-        {SenderName}
-      `,
-      fields: [
-        { id: 'RecipientName', label: 'Recipient Name', type: 'text' },
-        { id: 'CompanyName', label: 'Company Name', type: 'text' },
-        { id: 'SenderName', label: 'Sender Name', type: 'text' },
-        { id: 'SenderEmail', label: 'Your Email', type: 'email' },
-        { id: 'RecipientEmail', label: 'Recipient Email', type: 'email' },
-        { id: 'EmailBody', label: 'Email Body', type: 'quill' },
-      ]
-    }
-  }
-};
+import '../EmailMaker.css'
 
 const EmailMaker = ({ selectedTemplate }) => {
+  const [emailTemplates, setEmailTemplates] = useState({});
   const [formData, setFormData] = useState({});
   const [generatedEmail, setGeneratedEmail] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -107,25 +13,39 @@ const EmailMaker = ({ selectedTemplate }) => {
   const generatedEmailRef = useRef(null);
   const [networkError, setNetworkError] = useState(false);
 
+  const quillStyle = {
+    backgroundColor: '#ffffff' // White background
+  };
+
+  useEffect(() => {
+    // Fetch email templates
+    fetch('/json/templates.json')
+      .then(response => response.json())
+      .then(data => setEmailTemplates(data))
+      .catch(error => {
+        console.error('Error fetching templates:', error);
+        alert('Error fetching email templates.');
+      });
+  }, []);
+
   useEffect(() => {
     const handleOnline = () => setNetworkError(false);
     const handleOffline = () => setNetworkError(true);
-  
+
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
-  
+
     // Check initial status
     if (!navigator.onLine) {
       setNetworkError(true);
     }
-  
+
     return () => {
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
     };
   }, []);
 
-  
   useEffect(() => {
     if (selectedTemplate) {
       const category = Object.keys(emailTemplates).find(cat =>
@@ -142,7 +62,7 @@ const EmailMaker = ({ selectedTemplate }) => {
         setFormData({});
       }
     }
-  }, [selectedTemplate]);
+  }, [selectedTemplate, emailTemplates]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -219,10 +139,14 @@ const EmailMaker = ({ selectedTemplate }) => {
       setIsSendingEmail(false);
       setTimeout(() => {
         setShowSuccessMessage(false);
-      }, 100); // Message visible for 10 seconds
+      }, 10000); // Message visible for 3 seconds
 
     } catch (error) {
-      console.error('Error sending email:', error);
+      if (error.name === 'AbortError') {
+        console.error('Fetch request was aborted');
+      } else {
+        console.error('Error sending email:', error);
+      }
       setIsSendingEmail(false);
     }
   };
@@ -237,95 +161,76 @@ const EmailMaker = ({ selectedTemplate }) => {
     return null;
   }
 
-  const fields = emailTemplates[formData.category]?.[formData.email_type]?.fields;
-  if (!fields) {
-    console.error(`Fields not found for template '${formData.email_type}' in category '${formData.category}'`);
-    return null;
-  }
+  const fields = emailTemplates[formData.category]?.[formData.email_type]?.fields || [];
 
   return (
-    <div className="container mt-4">
-      <div className="row">
-        <div className="col-md-8">
-          <h3 className='selected-template'>Selected Template: {formData.email_type}</h3>
-          <div className="card">
-            <div className="card-body generate">
-              {!formSubmitted ? (
-                <form onSubmit={handleSubmit}>
-                  {fields.map(field => (
-                    <div className="mb-3" key={field.id}>
-                      <label htmlFor={field.id} className="form-label">{field.label}</label>
-                      {field.type === 'quill' ? (
-                        <ReactQuill
-                          value={formData.EmailBody || ''}
-                          onChange={handleQuillChange}
-                          modules={EmailMaker.modules}
-                          formats={EmailMaker.formats}
-                          className="quill-editor"
-                        />
-                      ) : (
-                        <input
-                          type={field.type}
-                          className="form-control"
-                          id={field.id}
-                          name={field.id}
-                          value={formData[field.id] || ''}
-                          onChange={handleChange}
-                          required
-                        />
-                      )}
-                    </div>
-                  ))}
-                  <button type="submit" className="btn btn-primary generate-button">Generate Email</button>
-                </form>
-              ) : (
-                <div className='GenEmailSection'>
-                  <h5>Generated Email</h5>
-                  <div id="generatedEmail" ref={generatedEmailRef}>
-                    <pre>{generatedEmail}</pre>
-                  </div>
-                  <div className="button-container">
-                    <button className="btn btn-primary edit-button" onClick={handleEdit}>Edit</button>
-                    <button className="btn btn-success send-button" onClick={sendEmail} disabled={isSendingEmail}>
-                      {isSendingEmail ? 'Sending...' : 'Send Email'}
-                    </button>
-                  </div>
-                </div>
-              )}
-              {showSuccessMessage && (
-                <div className="alert alert-success mt-3" role="alert">
-                  Email sent successfully!
-                </div>
-              )}
-              {networkError && (
-              <div className="network-error mt-3">
-                Network issue detected. Some features may not work properly.
-              </div>
+    <div className="email-maker">
+      <form onSubmit={handleSubmit}>
+        {fields.map(field => (
+          <div key={field.id} className="form-group">
+            <label htmlFor={field.id}>{field.label}</label>
+            {field.type === 'text' && (
+              <input
+                type="text"
+                id={field.id}
+                name={field.id}
+                value={formData[field.id] || ''}
+                onChange={handleChange}
+                className="form-control"
+              />
             )}
-            </div>
+            {field.type === 'email' && (
+              <input
+                type="email"
+                id={field.id}
+                name={field.id}
+                value={formData[field.id] || ''}
+                onChange={handleChange}
+                className="form-control"
+              />
+            )}
+            {field.type === 'quill' && (
+              <ReactQuill
+                theme="snow"
+                value={formData.EmailBody || ''}
+                onChange={handleQuillChange}
+                placeholder={field.label}
+                style={quillStyle}
+              />
+            )}
           </div>
+        ))}
+        <button type="submit" className="btn btn-primary" disabled={isSendingEmail}>
+          {isSendingEmail ? 'Sending...' : 'Generate Email'}
+        </button>
+      </form>
+
+      {formSubmitted && (
+        <div className="generated-email" ref={generatedEmailRef}>
+          <h2>Generated Email</h2>
+          <pre>{generatedEmail}</pre>
+          <button onClick={sendEmail} className="btn btn-success" disabled={isSendingEmail}>
+            {isSendingEmail ? 'Sending...' : 'Send Email'}
+          </button>
+          <button onClick={handleEdit} className="btn btn-secondary">
+            Edit
+          </button>
         </div>
-      </div>
+      )}
+
+      {showSuccessMessage && (
+        <div className="success-message">
+          <p>Email Sent Successfully!</p>
+        </div>
+      )}
+
+      {networkError && (
+        <div className="network-error">
+          <p>Network Error: Please check your internet connection.</p>
+        </div>
+      )}
     </div>
   );
 };
-
-EmailMaker.modules = {
-  toolbar: [
-    [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
-    [{size: []}],
-    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-    [{'list': 'ordered'}, {'list': 'bullet'}],
-    ['link', 'image', 'video'],
-    ['clean']
-  ],
-};
-
-EmailMaker.formats = [
-  'header', 'font', 'size',
-  'bold', 'italic', 'underline', 'strike', 'blockquote',
-  'list', 'bullet',
-  'link', 'image', 'video'
-];
 
 export default EmailMaker;

@@ -1,0 +1,51 @@
+{
+    "Sales Emails": {
+      "Introduction Email": {
+        "template": "Hi {RecipientName},\n\nMy name is {SenderName}, and I am the {SenderPosition} at {SenderCompany}.\nI am writing to introduce our company and the services we offer.\n\n{EmailBody}\n\nLooking forward to hearing from you.\n\nBest regards,\n{SenderName}",
+        "fields": [
+          { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+          { "id": "SenderName", "label": "Sender Name", "type": "text" },
+          { "id": "SenderPosition", "label": "Sender Position", "type": "text" },
+          { "id": "SenderCompany", "label": "Sender Company", "type": "text" },
+          { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+          { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+          { "id": "EmailBody", "label": "Email Body", "type": "quill" }
+        ]
+      },
+      "Follow-Up Email": {
+        "template": "Hi {RecipientName},\n\nI hope this email finds you well. I wanted to follow up on our previous conversation regarding.\n\n{EmailBody}\n\nLooking forward to your response.\n\nBest regards,\n{SenderName}",
+        "fields": [
+          { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+          { "id": "SenderName", "label": "Sender Name", "type": "text" },
+          { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+          { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+          { "id": "EmailBody", "label": "Email Body", "type": "quill" }
+        ]
+      }
+    },
+    "Marketing Emails": {
+      "Product Launch Email": {
+        "template": "Hi {RecipientName},\n\nWe are excited to announce the launch of our new product, {ProductName}!\n\n{EmailBody}\n\nPlease visit our website to learn more about {ProductName}.\n\nBest regards,\n{SenderName}",
+        "fields": [
+          { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+          { "id": "ProductName", "label": "Product Name", "type": "text" },
+          { "id": "SenderName", "label": "Sender Name", "type": "text" },
+          { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+          { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+          { "id": "EmailBody", "label": "Email Body", "type": "quill" }
+        ]
+      },
+      "Newsletter Email": {
+        "template": "Hi {RecipientName},\n\nWelcome to our latest newsletter! Here are some updates and news from {CompanyName}:\n\n{EmailBody}\n\nStay tuned for more updates in our upcoming newsletters.\n\nBest regards,\n{SenderName}",
+        "fields": [
+          { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+          { "id": "CompanyName", "label": "Company Name", "type": "text" },
+          { "id": "SenderName", "label": "Sender Name", "type": "text" },
+          { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+          { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+          { "id": "EmailBody", "label": "Email Body", "type": "quill" }
+        ]
+      }
+    }
+  }
+  

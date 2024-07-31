@@ -349,10 +349,42 @@ const categories = {
       "Notification of Public Hearing",
       "Request for Government Feedback",
     ],
-    "Permit and Licensing": [],
-    "Regulatory Compliance": [],
-    "Public Announcement": [],
-    "Government Grant": [],
+    "Permit and Licensing": [
+      "Building Permit Application",
+      "Business License Application",
+      "Food Service Permit Application",
+      "Liquor License Application",
+       "Event Permit Application",
+       "Health and Safety Permit",
+       "Construction Permit Application"
+    ],
+    "Regulatory Compliance": [
+      "Environmental Impact Assessment",
+      "Health and Safety Compliance Report",
+      "Data Protection Compliance Statement",
+      "Occupational Safety and Health Compliance Report",
+      "Financial Compliance Declaration",
+      "Product Safety Compliance Report",
+      "Export Control Compliance Statement"
+    ],
+    "Public Announcement": [
+      "Company Name Change",
+      "New Product Launch",
+      "Office Relocation",
+      "Service Disruption Notice",
+      "Policy Change Notification",
+      "Annual General Meeting",
+      "EmployeeT ermination"
+    ],
+    "Government Grant": [
+      "Research Grant",
+      "Community Development Grant",
+      "Educational Grant",
+      "Small Business Grant",
+      "Non Profit Grant",
+      "Environmental Grant",
+      "Health Grant"
+    ],
   },
   
 };
