@@ -319,9 +319,36 @@ const categories = {
       "Conflict Resolution Proposal",
       "Complaint Resolution Letter"
     ],
+    "Regulatory Compliance Letters": [
+      "Regulatory Compliance Acknowledgment",
+      "Notice of Regulatory Violation",
+      "Compliance Certification Request",
+      "Regulatory Inquiry Response",
+      "Compliance Audit Notification",
+      "Compliance Policy Implementation",
+      "Legal Compliance Report"
+    ],
+
+    "Employment Law Letters":[
+      "Employment Termination Notice",
+      "Employment Dispute Resolution",
+      "Harassment Complaint Response",
+      "Employee Warning Notice",
+      "Notice of Disciplinary Action",
+      "Workplace Policy Violation Notice",
+      "Employment Law Compliance Notice"
+    ]
   },
   "Government Letters": {
-    "Public Services": [],
+    "Public Services": [
+      "Request for Public Records",
+      "Complaint Against Government Service",
+      "Request for Government Grant",
+      "Notification of Policy Changes",
+      "Request for Government Assistance",
+      "Notification of Public Hearing",
+      "Request for Government Feedback",
+    ],
     "Permit and Licensing": [],
     "Regulatory Compliance": [],
     "Public Announcement": [],

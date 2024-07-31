@@ -10871,9 +10871,1011 @@ Sincerely,
       ]
     },
   },
+     
+  "Regulatory Compliance Letters": {
+    "Regulatory Compliance Acknowledgment": {
+      template: `
+{YourName}
+{YourPosition}
+{YourCompany}
+{YourAddress}
+{City}, {State}, {ZIPCode}
+{CurrentDate}
+
+{RecipientName}
+{RecipientPosition}
+{RecipientCompany}
+{RecipientAddress}
+{City}, {State}, {ZIPCode}
+
+Dear {RecipientName},
+
+We acknowledge receipt of your notification regarding compliance with {SpecificRegulation}. 
+We are pleased to confirm that our operations align with the requirements specified in {SpecificRegulation}, 
+and we are committed to maintaining these standards.
+
+If there are any further steps we need to take or documentation we need to provide, 
+please let us know.
+
+Sincerely,
+{YourName}
+{YourPosition}
+{YourCompany}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+        { "id": "RecipientCompany", "label": "Recipient's Company", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "SpecificRegulation", "label": "Specific Regulation", "type": "text" }
+      ]
+    },
+    "Notice of Regulatory Violation": {
+      template: `
+{YourName}
+{YourPosition}
+{YourCompany}
+{YourAddress}
+{City}, {State}, {ZIPCode}
+{CurrentDate}
+
+{RecipientName}
+{RecipientPosition}
+{RecipientCompany}
+{RecipientAddress}
+{City}, {State}, {ZIPCode}
+
+Dear {RecipientName},
+
+This letter serves as a formal notice of a regulatory violation observed in our recent audit. 
+The violation pertains to {SpecificRegulation}, specifically {ViolationDetails}.
+
+We request immediate corrective action and a detailed report outlining the steps taken to rectify
+ this issue. 
+Failure to comply may result in further action as outlined under {RelevantLegislation}.
+
+Sincerely,
+{YourName}
+{YourPosition}
+{YourCompany}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+        { "id": "RecipientCompany", "label": "Recipient's Company", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "SpecificRegulation", "label": "Specific Regulation", "type": "text" },
+        { "id": "ViolationDetails", "label": "Violation Details", "type": "text" },
+        { "id": "RelevantLegislation", "label": "Relevant Legislation", "type": "text" }
+      ]
+    },
+    "Compliance Certification Request": {
+      template: `
+{YourName}
+{YourPosition}
+{YourCompany}
+{YourAddress}
+{City}, {State}, {ZIPCode}
+{CurrentDate}
+
+{RecipientName}
+{RecipientPosition}
+{RecipientCompany}
+{RecipientAddress}
+{City}, {State}, {ZIPCode}
+
+Dear {RecipientName},
+
+We request a compliance certification for {SpecificRegulation} as part of our internal review process. 
+Kindly provide the necessary documentation confirming compliance with the stated regulation.
+
+Please inform us if there are any additional requirements or processes to be followed.
+
+Thank you for your attention to this matter.
+
+Sincerely,
+{YourName}
+{YourPosition}
+{YourCompany}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+        { "id": "RecipientCompany", "label": "Recipient's Company", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "SpecificRegulation", "label": "Specific Regulation", "type": "text" }
+      ]
+    },
+    "Regulatory Inquiry Response": {
+      template: `
+{YourName}
+{YourPosition}
+{YourCompany}
+{YourAddress}
+{City}, {State}, {ZIPCode}
+{CurrentDate}
+
+{RecipientName}
+{RecipientPosition}
+{RecipientCompany}
+{RecipientAddress}
+{City}, {State}, {ZIPCode}
+
+Dear {RecipientName},
+
+In response to your recent inquiry regarding compliance with {SpecificRegulation}, 
+we confirm that all necessary measures have been implemented to ensure adherence to the 
+specified standards. 
+
+Enclosed are the requested documents and reports for your review. 
+Should you require further information, 
+please do not hesitate to contact us.
+
+Sincerely,
+{YourName}
+{YourPosition}
+{YourCompany}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+        { "id": "RecipientCompany", "label": "Recipient's Company", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "SpecificRegulation", "label": "Specific Regulation", "type": "text" }
+      ]
+    },
+    "Compliance Audit Notification": {
+      template: `
+{YourName}
+{YourPosition}
+{YourCompany}
+{YourAddress}
+{City}, {State}, {ZIPCode}
+{CurrentDate}
+
+{RecipientName}
+{RecipientPosition}
+{RecipientCompany}
+{RecipientAddress}
+{City}, {State}, {ZIPCode}
+
+Dear {RecipientName},
+
+This letter is to inform you of an upcoming compliance audit scheduled for {AuditDate}. 
+The audit will focus on {AuditScope}, 
+and we request your full cooperation during this process.
+
+Please ensure that all relevant documentation and records are available for review. 
+If you have any questions, feel free to contact us.
+
+Sincerely,
+{YourName}
+{YourPosition}
+{YourCompany}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+        { "id": "RecipientCompany", "label": "Recipient's Company", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "AuditDate", "label": "Audit Date", "type": "date" },
+        { "id": "AuditScope", "label": "Audit Scope", "type": "text" }
+      ]
+    },
+    "Compliance Policy Implementation": {
+      template: `
+{YourName}
+{YourPosition}
+{YourCompany}
+{YourAddress}
+{City}, {State}, {ZIPCode}
+{CurrentDate}
+
+{RecipientName}
+{RecipientPosition}
+{RecipientCompany}
+{RecipientAddress}
+{City}, {State}, {ZIPCode}
+
+Dear {RecipientName},
+
+We are pleased to inform you that our company has implemented new compliance policies in 
+accordance with {SpecificRegulation}. 
+These policies are designed to enhance our adherence to regulatory requirements and improve overall
+ operational standards.
+
+We encourage all employees and partners to review the attached policy documents and familiarize 
+themselves with the new procedures. Should you have any questions, 
+please contact the compliance department.
+
+Sincerely,
+{YourName}
+{YourPosition}
+{YourCompany}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+        { "id": "RecipientCompany", "label": "Recipient's Company", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "SpecificRegulation", "label": "Specific Regulation", "type": "text" }
+      ]
+    },
+    "Legal Compliance Report": {
+      template: `
+{YourName}
+{YourPosition}
+{YourCompany}
+{YourAddress}
+{City}, {State}, {ZIPCode}
+{CurrentDate}
+
+{RecipientName}
+{RecipientPosition}
+{RecipientCompany}
+{RecipientAddress}
+{City}, {State}, {ZIPCode}
+
+Dear {RecipientName},
+
+Enclosed is the latest Legal Compliance Report for the period of {ReportPeriod}.
+ The report details our compliance with {SpecificRegulation} and highlights 
+ any areas of concern that require attention.
+
+We are committed to maintaining high standards of compliance and welcome any 
+feedback or suggestions you may have.
+
+Sincerely,
+{YourName}
+{YourPosition}
+{YourCompany}
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+        { "id": "RecipientCompany", "label": "Recipient's Company", "type": "text" },
+        { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+        { "id": "ReportPeriod", "label": "Report Period", "type": "text" },
+        { "id": "SpecificRegulation", "label": "Specific Regulation", "type": "text" }
+      ]
+    }
+  },
+
+     "Employment Law Letters": {
+    "Employment Termination Notice": {
+        template: `
+        {YourName}  
+        {YourPosition}  
+        {YourCompany}  
+        {YourAddress}  
+        {City}, {State}, {ZIPCode}  
+        {CurrentDate}  
+        
+        {EmployeeName}  
+        {EmployeePosition}  
+        {EmployeeAddress}  
+        {City}, {State}, {ZIPCode}  
+        
+        Dear {EmployeeName},
+        
+        We regret to inform you that your employment with {YourCompany} is being terminated,
+         effective {TerminationDate}. This decision is based on {ReasonForTermination},
+          which has been previously discussed with you.
+        
+        Please return any company property by {ReturnDate}, and note that you will receive
+         your final paycheck, including any accrued vacation, on {FinalPayDate}. 
+         If you have any questions, please contact the HR department.
+        
+        We wish you the best in your future endeavors.
+        
+        Sincerely,  
+        {YourName}  
+        {YourPosition}  
+        {YourCompany}  
+      `,
+        fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "EmployeeName", "label": "Employee's Name", "type": "text" },
+        { "id": "EmployeePosition", "label": "Employee's Position", "type": "text" },
+        { "id": "EmployeeAddress", "label": "Employee's Address", "type": "text" },
+        { "id": "TerminationDate", "label": "Termination Date", "type": "date" },
+        { "id": "ReasonForTermination", "label": "Reason for Termination", "type": "text" },
+        { "id": "ReturnDate", "label": "Return Date for Company Property", "type": "date" },
+        { "id": "FinalPayDate", "label": "Final Pay Date", "type": "date" }
+      ]
+    },
+    "Employment Dispute Resolution": {
+        template: `
+        {YourName}  
+        {YourPosition}  
+        {YourCompany}  
+        {YourAddress}  
+        {City}, {State}, {ZIPCode}  
+        {CurrentDate}  
+        
+        {EmployeeName}  
+        {EmployeePosition}  
+        {EmployeeAddress}  
+        {City}, {State}, {ZIPCode}  
+        
+        Dear {EmployeeName},
+        
+        This letter is to address the employment dispute that has arisen regarding {Issue}. 
+        We aim to resolve this issue amicably and professionally, 
+        ensuring that all parties are heard and the resolution is fair and just.
+        
+        We propose the following steps to address the dispute:  
+        1. {ProposedSolutionStep1}  
+        2. {ProposedSolutionStep2}  
+        3. {ProposedSolutionStep3}  
+        
+        Please respond by {ResponseDate} with your agreement or any concerns you may have.
+         We are committed to resolving this matter promptly and respectfully.
+        
+        Sincerely,  
+        {YourName}  
+        {YourPosition}  
+        {YourCompany}  
+      `,
+        fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "EmployeeName", "label": "Employee's Name", "type": "text" },
+        { "id": "EmployeePosition", "label": "Employee's Position", "type": "text" },
+        { "id": "EmployeeAddress", "label": "Employee's Address", "type": "text" },
+        { "id": "Issue", "label": "Issue in Dispute", "type": "text" },
+        { "id": "ProposedSolutionStep1", "label": "Proposed Solution Step 1", "type": "text" },
+        { "id": "ProposedSolutionStep2", "label": "Proposed Solution Step 2", "type": "text" },
+        { "id": "ProposedSolutionStep3", "label": "Proposed Solution Step 3", "type": "text" },
+        { "id": "ResponseDate", "label": "Response Date", "type": "date" }
+      ]
+    },
+    "Harassment Complaint Response": {
+        template: `
+        {YourName}  
+        {YourPosition}  
+        {YourCompany}  
+        {YourAddress}  
+        {City}, {State}, {ZIPCode}  
+        {CurrentDate}  
+        
+        {EmployeeName}  
+        {EmployeePosition}  
+        {EmployeeAddress}  
+        {City}, {State}, {ZIPCode}  
+        
+        Dear {EmployeeName},
+        
+        We acknowledge receipt of your harassment complaint dated {ComplaintDate}. 
+        We take such matters very seriously and have initiated an investigation to 
+        ensure a thorough and fair examination of the situation.
+        
+        Our commitment is to provide a safe and respectful workplace for all employees.
+         During the investigation, we will keep the information confidential and handle the 
+         matter with the utmost care. We will inform you of the findings and any actions to be taken.
+        
+        Please feel free to contact us if you have any concerns or additional information.
+         We appreciate your cooperation and patience during this process.
+        
+        Sincerely,  
+        {YourName}  
+        {YourPosition}  
+        {YourCompany}  
+      `,
+        fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "EmployeeName", "label": "Employee's Name", "type": "text" },
+        { "id": "EmployeePosition", "label": "Employee's Position", "type": "text" },
+        { "id": "EmployeeAddress", "label": "Employee's Address", "type": "text" },
+        { "id": "ComplaintDate", "label": "Complaint Date", "type": "date" }
+      ]
+    },
+    "Employee Warning Notice": {
+        template: `
+        {YourName}  
+        {YourPosition}  
+        {YourCompany}  
+        {YourAddress}  
+        {City}, {State}, {ZIPCode}  
+        {CurrentDate}  
+        
+        {EmployeeName}  
+        {EmployeePosition}  
+        {EmployeeAddress}  
+        {City}, {State}, {ZIPCode}  
+        
+        Dear {EmployeeName},
+        
+        This letter serves as a formal warning regarding your conduct and 
+        performance at {YourCompany}. 
+        Specifically, we have noted the following issues: {IssueDetails}.
+        
+        We expect immediate improvement in these areas. Failure to do so 
+        may result in further disciplinary action, up to and including 
+        termination of employment. We encourage you to take this opportunity
+         to improve and meet the company's expectations.
+        
+        Please acknowledge receipt of this notice by signing below.
+        
+        Sincerely,  
+        {YourName}  
+        {YourPosition}  
+        {YourCompany}  
+        
+        Acknowledged by:  
+        {EmployeeName}  
+        {Date}  
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "EmployeeName", "label": "Employee's Name", "type": "text" },
+        { "id": "EmployeePosition", "label": "Employee's Position", "type": "text" },
+        { "id": "EmployeeAddress", "label": "Employee's Address", "type": "text" },
+        { "id": "IssueDetails", "label": "Details of the Issue", "type": "textarea" },
+        { "id": "Date", "label": "Date of Acknowledgment", "type": "date" }
+      ]
+    },
+    "Notice of Disciplinary Action": {
+        template: `
+        {YourName}  
+        {YourPosition}  
+        {YourCompany}  
+        {YourAddress}  
+        {City}, {State}, {ZIPCode}  
+        {CurrentDate}  
+        
+        {EmployeeName}  
+        {EmployeePosition}  
+        {EmployeeAddress}  
+        {City}, {State}, {ZIPCode}  
+        
+        Dear {EmployeeName},
+        
+        This letter serves as formal notification of disciplinary action due to {ReasonForDisciplinaryAction}.
+         This action is necessary due to the seriousness of the conduct and its impact on our workplace.
+        
+        The specific disciplinary measures being implemented include {DisciplinaryMeasures}. 
+        These actions are effective immediately and will remain in place until {EndDateOfDisciplinaryAction}.
+        
+        Please take this seriously and use this opportunity to improve. Failure to comply with
+         these measures may result in further disciplinary action, up to and including termination.
+        
+        Sincerely,  
+        {YourName}  
+        {YourPosition}  
+        {YourCompany}  
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "EmployeeName", "label": "Employee's Name", "type": "text" },
+        { "id": "EmployeePosition", "label": "Employee's Position", "type": "text" },
+        { "id": "EmployeeAddress", "label": "Employee's Address", "type": "text" },
+        { "id": "ReasonForDisciplinaryAction", "label": "Reason for Disciplinary Action", "type": "text" },
+        { "id": "DisciplinaryMeasures", "label": "Disciplinary Measures", "type": "textarea" },
+        { "id": "EndDateOfDisciplinaryAction", "label": "End Date of Disciplinary Action", "type": "date" }
+      ]
+    },
+    "Workplace Policy Violation Notice": {
+      template: `
+        {YourName}  
+        {YourPosition}  
+        {YourCompany}  
+        {YourAddress}  
+        {City}, {State}, {ZIPCode}  
+        {CurrentDate}  
+        
+        {EmployeeName}  
+        {EmployeePosition}  
+        {EmployeeAddress}  
+        {City}, {State}, {ZIPCode}  
+        
+        Dear {EmployeeName},
+        
+        It has come to our attention that you have violated the company's workplace 
+        policy regarding {PolicyDetails}. This violation occurred on {ViolationDate} 
+        and is contrary to our company's standards and values.
+        
+        As a result of this policy violation, we are issuing this formal notice to 
+        document the incident and remind you of the importance of adhering to all 
+        workplace policies. Any further violations may result in additional
+         disciplinary actions.
+        
+        Please contact the HR department if you have any questions or concerns.
+        
+        Sincerely,  
+        {YourName}  
+        {YourPosition}  
+        {YourCompany}  
+      `,
+        fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "EmployeeName", "label": "Employee's Name", "type": "text" },
+        { "id": "EmployeePosition", "label": "Employee's Position", "type": "text" },
+        { "id": "EmployeeAddress", "label": "Employee's Address", "type": "text" },
+        { "id": "PolicyDetails", "label": "Details of Policy Violation", "type": "text" },
+        { "id": "ViolationDate", "label": "Date of Violation", "type": "date" }
+      ]
+    },
+    "Employment Law Compliance Notice": {
+        template: `
+        {YourName}  
+        {YourPosition}  
+        {YourCompany}  
+        {YourAddress}  
+        {City}, {State}, {ZIPCode}  
+        {CurrentDate}  
+        
+        {EmployeeName}  
+        {EmployeePosition}  
+        {EmployeeAddress}  
+        {City}, {State}, {ZIPCode}  
+        
+        Dear {EmployeeName},
+        
+        This notice is to inform you of recent updates to our employment policies
+         to ensure compliance with new employment laws. 
+         These changes are effective immediately and are in place to align with the
+          latest legal standards.
+        
+        The updated policies include:  
+        1. {UpdatedPolicy1}  
+        2. {UpdatedPolicy2}  
+        3. {UpdatedPolicy3}  
+        
+        Please review these changes and ensure your understanding and compliance.
+         If you have any questions, feel free to contact the HR department.
+        
+        Sincerely,  
+        {YourName}  
+        {YourPosition}  
+        {YourCompany}  
+      `,
+       fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "EmployeeName", "label": "Employee's Name", "type": "text" },
+        { "id": "EmployeePosition", "label": "Employee's Position", "type": "text" },
+        { "id": "EmployeeAddress", "label": "Employee's Address", "type": "text" },
+        { "id": "UpdatedPolicy1", "label": "Updated Policy 1", "type": "text" },
+        { "id": "UpdatedPolicy2", "label": "Updated Policy 2", "type": "text" },
+        { "id": "UpdatedPolicy3", "label": "Updated Policy 3", "type": "text" }
+      ]
+    }
+  },
 
 
-
+  "GovernmentLetters": {
+    "Request for Public Records": {
+        template: `
+        [Your Name]  
+        [Your Position]  
+        [Your Organization]  
+        [Your Address]  
+        [City], [State], [ZIP Code]  
+        [Current Date]  
+        
+        [Recipient's Name]  
+        [Recipient's Position]  
+        [Government Agency Name]  
+        [Agency Address]  
+        [City], [State], [ZIP Code]  
+        
+        Dear [Recipient's Name],
+        
+        I am writing to formally request access to public records under 
+        the Freedom of Information Act. Specifically, I am seeking 
+        the following records: [Description of Records Requested].
+        
+        Please provide these documents at your earliest convenience. 
+        If there are any fees associated with this request,
+         please let me know beforehand.
+        
+        Thank you for your assistance in this matter.
+        
+        Sincerely,  
+        [Your Name]  
+        [Your Position]  
+        [Your Organization]  
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourOrganization", "label": "Your Organization", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+        { "id": "GovernmentAgencyName", "label": "Government Agency Name", "type": "text" },
+        { "id": "AgencyAddress", "label": "Agency Address", "type": "text" },
+        { "id": "DescriptionOfRecordsRequested", "label": "Description of Records Requested", "type": "textarea" }
+      ]
+    },
+    "Complaint Against Government Service": {
+      template: `
+        [Your Name]  
+        [Your Address]  
+        [City], [State], [ZIP Code]  
+        [Current Date]  
+        
+        [Recipient's Name]  
+        [Recipient's Position]  
+        [Government Agency Name]  
+        [Agency Address]  
+        [City], [State], [ZIP Code]  
+        
+        Dear [Recipient's Name],
+        
+        I am writing to file a formal complaint regarding the service 
+        I received from your agency on [Date of Service]. 
+        The issue pertains to [Detailed Description of Complaint].
+        
+        I request that you investigate this matter and provide a resolution. 
+        Please contact me if you need further information.
+        
+        Thank you for your prompt attention to this issue.
+        
+        Sincerely,  
+        [Your Name]  
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+        { "id": "GovernmentAgencyName", "label": "Government Agency Name", "type": "text" },
+        { "id": "AgencyAddress", "label": "Agency Address", "type": "text" },
+        { "id": "DateOfService", "label": "Date of Service", "type": "date" },
+        { "id": "DetailedDescriptionOfComplaint", "label": "Detailed Description of Complaint", "type": "textarea" }
+      ]
+    },
+    "Request for Government Grant": {
+        template: `
+        [Your Name]  
+        [Your Position]  
+        [Your Organization]  
+        [Your Address]  
+        [City], [State], [ZIP Code]  
+        [Current Date]  
+        
+        [Recipient's Name]  
+        [Recipient's Position]  
+        [Government Agency Name]  
+        [Agency Address]  
+        [City], [State], [ZIP Code]  
+        
+        Dear [Recipient's Name],
+        
+        I am writing to request a grant for [Purpose of Grant].
+         Our organization is committed to [Brief Description of 
+         Your Organization’s Mission or Project].
+        
+        We are seeking a grant of [Amount Requested] to 
+        support [Specific Use of Funds]. 
+        Attached is our detailed proposal and budget plan.
+        
+        We appreciate your consideration and look forward to your response.
+        
+        Sincerely,  
+        [Your Name]  
+        [Your Position]  
+        [Your Organization]  
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourOrganization", "label": "Your Organization", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+        { "id": "GovernmentAgencyName", "label": "Government Agency Name", "type": "text" },
+        { "id": "AgencyAddress", "label": "Agency Address", "type": "text" },
+        { "id": "PurposeOfGrant", "label": "Purpose of Grant", "type": "textarea" },
+        { "id": "AmountRequested", "label": "Amount Requested", "type": "text" },
+        { "id": "SpecificUseOfFunds", "label": "Specific Use of Funds", "type": "textarea" }
+      ]
+    },
+    "Notification of Policy Changes": {
+        template: `
+        [Your Name]  
+        [Your Position]  
+        [Your Organization]  
+        [Your Address]  
+        [City], [State], [ZIP Code]  
+        [Current Date]  
+        
+        [Recipient's Name]  
+        [Recipient's Position]  
+        [Government Agency Name]  
+        [Agency Address]  
+        [City], [State], [ZIP Code]  
+        
+        Dear [Recipient's Name],
+        
+        We are writing to inform you of important changes to our policies 
+        effective [Effective Date]. These changes include:
+        1. [Policy Change 1]
+        2. [Policy Change 2]
+        3. [Policy Change 3]
+        
+        Please review the updated policies and let us know if you have 
+        any questions or concerns.
+        
+        Sincerely,  
+        [Your Name]  
+        [Your Position]  
+        [Your Organization]  
+      `,
+       fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourOrganization", "label": "Your Organization", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+        { "id": "GovernmentAgencyName", "label": "Government Agency Name", "type": "text" },
+        { "id": "AgencyAddress", "label": "Agency Address", "type": "text" },
+        { "id": "EffectiveDate", "label": "Effective Date", "type": "date" },
+        { "id": "PolicyChanges", "label": "Policy Changes", "type": "textarea" }
+      ]
+    },
+    "Request for Government Assistance": {
+        template: `
+        [Your Name]  
+        [Your Address]  
+        [City], [State], [ZIP Code]  
+        [Current Date]  
+        
+        [Recipient's Name]  
+        [Recipient's Position]  
+        [Government Agency Name]  
+        [Agency Address]  
+        [City], [State], [ZIP Code]  
+        
+        Dear [Recipient's Name],
+        
+        I am seeking assistance from your agency for [Reason for Request]. 
+        Specifically, I am requesting [Type of Assistance Needed].
+        
+        I have attached relevant documentation and details of my situation. 
+        Please review and let me know how I can proceed to obtain the required assistance.
+        
+        Thank you for your time and consideration.
+        
+        Sincerely,  
+        [Your Name]  
+      `,
+        fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+        { "id": "GovernmentAgencyName", "label": "Government Agency Name", "type": "text" },
+        { "id": "AgencyAddress", "label": "Agency Address", "type": "text" },
+        { "id": "ReasonForRequest", "label": "Reason for Request", "type": "textarea" },
+        { "id": "TypeOfAssistanceNeeded", "label": "Type of Assistance Needed", "type": "textarea" }
+      ]
+    },
+    "Notification of Public Hearing": {
+        template: `
+        [Your Name]  
+        [Your Position]  
+        [Your Organization]  
+        [Your Address]  
+        [City], [State], [ZIP Code]  
+        [Current Date]  
+        
+        [Recipient's Name]  
+        [Recipient's Position]  
+        [Government Agency Name]  
+        [Agency Address]  
+        [City], [State], [ZIP Code]  
+        
+        Dear [Recipient's Name],
+        
+        This letter is to inform you of a public hearing scheduled 
+        for [Date of Hearing] at [Time of Hearing]. 
+        The purpose of the hearing is to discuss [Subject of Hearing].
+        
+        The hearing will be held at [Location of Hearing]. 
+        Your attendance and participation would be greatly appreciated.
+        
+        Sincerely,  
+        [Your Name]  
+        [Your Position]  
+        [Your Organization]  
+      `,
+      fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourOrganization", "label": "Your Organization", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+        { "id": "GovernmentAgencyName", "label": "Government Agency Name", "type": "text" },
+        { "id": "AgencyAddress", "label": "Agency Address", "type": "text" },
+        { "id": "DateOfHearing", "label": "Date of Hearing", "type": "date" },
+        { "id": "TimeOfHearing", "label": "Time of Hearing", "type": "text" },
+        { "id": "SubjectOfHearing", "label": "Subject of Hearing", "type": "textarea" },
+        { "id": "LocationOfHearing", "label": "Location of Hearing", "type": "text" }
+      ]
+    },
+    "Request for Government Feedback": {
+        template: `
+        [Your Name]  
+        [Your Position]  
+        [Your Organization]  
+        [Your Address]  
+        [City], [State], [ZIP Code]  
+        [Current Date]  
+        
+        [Recipient's Name]  
+        [Recipient's Position]  
+        [Government Agency Name]  
+        [Agency Address]  
+        [City], [State], [ZIP Code]  
+        
+        Dear [Recipient's Name],
+        
+        I am writing to request feedback on [Subject or Proposal]. 
+        Our organization is seeking input from your agency to ensure 
+        that [Brief Description of Project or Proposal].
+        
+        Your feedback is highly valued and will contribute 
+        to [Purpose of Feedback].
+         Please provide your comments or suggestions by [Deadline].
+        
+        Thank you for your time and consideration.
+        
+        Sincerely,  
+        [Your Name]  
+        [Your Position]  
+        [Your Organization]  
+      `,
+        fields: [
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourOrganization", "label": "Your Organization", "type": "text" },
+        { "id": "YourAddress", "label": "Your Address", "type": "text" },
+        { "id": "City", "label": "City", "type": "text" },
+        { "id": "State", "label": "State", "type": "text" },
+        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+        { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+        { "id": "GovernmentAgencyName", "label": "Government Agency Name", "type": "text" },
+        { "id": "AgencyAddress", "label": "Agency Address", "type": "text" },
+        { "id": "SubjectOrProposal", "label": "Subject or Proposal", "type": "textarea" },
+        { "id": "PurposeOfFeedback", "label": "Purpose of Feedback", "type": "textarea" },
+        { "id": "Deadline", "label": "Deadline", "type": "date" }
+      ]
+    }
+  },
 };
 
 const LetterMaker = ({ selectedTemplate }) => {
