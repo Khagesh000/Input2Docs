@@ -89,43 +89,42 @@
         { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" }
       ]
     },
-    "Extracurricular Activity Permission": {
-      "template": "{YourName}\n{YourAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\n{RecipientsName}\n{SchoolName}\n{SchoolAddress}\n{City}, {State}, {ZIPCode}\n\nDear {RecipientsName},\n\n I am writing to give my consent for my child, {ChildName}, to participate in {ActivityName} \n starting from {ActivityStartDate} to {ActivityEndDate}. \n I understand that the activity will take place during school hours and will be supervised by school staff.\n\n Please feel free to contact me at {YourContactNumber} if you need further information or if there are any concerns.\n\n Thank you for providing this opportunity for my child.\n\n Sincerely,\n {YourName}\n {YourContactNumber}",
-      "fields": [
-        { "id": "YourName", "label": "Your Name", "type": "text" },
-        { "id": "YourAddress", "label": "Your Address", "type": "text" },
-        { "id": "City", "label": "City", "type": "text" },
-        { "id": "State", "label": "State", "type": "text" },
-        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
-        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
-        { "id": "RecipientsName", "label": "Recipient's Name", "type": "text" },
-        { "id": "SchoolName", "label": "School's Name", "type": "text" },
-        { "id": "SchoolAddress", "label": "School's Address", "type": "text" },
-        { "id": "ChildName", "label": "Child's Name", "type": "text" },
-        { "id": "ActivityName", "label": "Activity Name", "type": "text" },
-        { "id": "ActivityStartDate", "label": "Activity Start Date", "type": "date" },
-        { "id": "ActivityEndDate", "label": "Activity End Date", "type": "date" },
-        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" }
-      ]
-    },
-    "Permission to Attend a Workshop": {
-      "template": "{YourName}\n{YourAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\n{RecipientName}\n{WorkshopOrganizer}\n{WorkshopAddress}\n{City}, {State}, {ZIPCode}\n\nDear {RecipientName},\n\n I am writing to give my permission for my child, {ChildName}, to attend the workshop on {WorkshopTopic} \n scheduled for {WorkshopDate}. \n This workshop is an excellent opportunity for my child's development, and I trust that all necessary safety measures will be in place.\n\n If you require any additional information or have any concerns, please contact me at {YourContactNumber}.\n\n Thank you for organizing this valuable event.\n\n Sincerely,\n {YourName}\n {YourContactNumber}",
-      "fields": [
-        { "id": "YourName", "label": "Your Name", "type": "text" },
-        { "id": "YourAddress", "label": "Your Address", "type": "text" },
-        { "id": "City", "label": "City", "type": "text" },
-        { "id": "State", "label": "State", "type": "text" },
-        { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
-        { "id": "CurrentDate", "label": "Current Date", "type": "date" },
-        { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
-        { "id": "WorkshopOrganizer", "label": "Workshop Organizer", "type": "text" },
-        { "id": "WorkshopAddress", "label": "Workshop Address", "type": "text" },
-        { "id": "ChildName", "label": "Child's Name", "type": "text" },
-        { "id": "WorkshopTopic", "label": "Workshop Topic", "type": "text" },
-        { "id": "WorkshopDate", "label": "Workshop Date", "type": "date" },
-        { "id": "YourContactNumber", "label": "Your Contact Number", "type": "text" }
-      ]
-    }
+    "Permission to Use Property":{
+  "template": "{RecipientName}\n{RecipientAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\nDear {RecipientName},\n\nI am writing to request permission to use {PropertyAddress} for {Purpose}. The details of the intended use are as follows:\n\n- Duration: {UsageDuration}\n- Specific Area(s) of Property: {SpecificArea}\n- Additional Notes: {AdditionalNotes}\n\nPlease let me know if you require any additional information or if there are any conditions for the use of the property.\n\nThank you for your consideration.\n\nSincerely,\n{YourName}\n{YourContactInformation}",
+  "fields": [
+    { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+    { "id": "RecipientAddress", "label": "Recipient Address", "type": "text" },
+    { "id": "City", "label": "City", "type": "text" },
+    { "id": "State", "label": "State", "type": "text" },
+    { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+    { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+    { "id": "PropertyAddress", "label": "Property Address", "type": "text" },
+    { "id": "Purpose", "label": "Purpose", "type": "text" },
+    { "id": "UsageDuration", "label": "Usage Duration", "type": "text" },
+    { "id": "SpecificArea", "label": "Specific Area(s) of Property", "type": "text" },
+    { "id": "AdditionalNotes", "label": "Additional Notes", "type": "textarea" },
+    { "id": "YourName", "label": "Your Name", "type": "text" },
+    { "id": "YourContactInformation", "label": "Your Contact Information", "type": "text" }
+  ]
+},
+    "Parental Permission for School":{
+  "template": "{ParentName}\n{ParentAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\nDear {SchoolPrincipalName},\n\nI, {ParentName}, am the parent/guardian of {StudentName}. I am writing to provide permission for my child to {Activity} on {Date} at {Location}. The details are as follows:\n\n- Student's Full Name: {StudentName}\n- Class/Grade: {StudentGrade}\n- Activity: {Activity}\n- Date of Activity: {Date}\n- Location: {Location}\n\nPlease let me know if there are any additional forms or information required.\n\nThank you for your attention to this matter.\n\nSincerely,\n{ParentName}\n{ParentContactInformation}",
+  "fields": [
+    { "id": "ParentName", "label": "Parent/Guardian Name", "type": "text" },
+    { "id": "ParentAddress", "label": "Parent/Guardian Address", "type": "text" },
+    { "id": "City", "label": "City", "type": "text" },
+    { "id": "State", "label": "State", "type": "text" },
+    { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+    { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+    { "id": "SchoolPrincipalName", "label": "School Principal's Name", "type": "text" },
+    { "id": "StudentName", "label": "Student's Full Name", "type": "text" },
+    { "id": "StudentGrade", "label": "Class/Grade", "type": "text" },
+    { "id": "Activity", "label": "Activity", "type": "text" },
+    { "id": "Date", "label": "Date of Activity", "type": "date" },
+    { "id": "Location", "label": "Location", "type": "text" },
+    { "id": "ParentContactInformation", "label": "Parent/Guardian Contact Information", "type": "text" }
+  ]
+}
   },
   "Excuse Letters": {
     "Absentee Excuse Letter": {
@@ -5125,7 +5124,287 @@
         { "id": "GrantAdministratorTitle", "label": "Grant Administrator's Title", "type": "text" }
       ]
     }
-  }
+  },
 
+  "Legal and Compliance Notifications":{
+      "Notice of Violation": {
+    "template": "{YourName}\n{YourPosition}\n{YourOrganization}\n{YourAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\n{RecipientName}\n{RecipientPosition}\n{RecipientOrganization}\n{RecipientAddress}\n{City}, {State}, {ZIPCode}\n\nSubject: Notice of Violation\n\nDear {RecipientName},\n\nThis letter serves as an official notice that {DescriptionOfViolation} occurred on {DateOfViolation}. This action is a violation of {RelevantLawOrRegulation}.\n\nYou are required to {CorrectiveActionRequired} by {Deadline}. Failure to comply may result in {ConsequencesOfNonCompliance}.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{YourOrganization}",
+    "fields": [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourOrganization", "label": "Your Organization", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+      { "id": "RecipientOrganization", "label": "Recipient's Organization", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "DateOfViolation", "label": "Date of Violation", "type": "date" },
+      { "id": "DescriptionOfViolation", "label": "Description of Violation", "type": "textarea" },
+      { "id": "RelevantLawOrRegulation", "label": "Relevant Law or Regulation", "type": "text" },
+      { "id": "CorrectiveActionRequired", "label": "Corrective Action Required", "type": "textarea" },
+      { "id": "Deadline", "label": "Deadline", "type": "date" },
+      { "id": "ConsequencesOfNonCompliance", "label": "Consequences of Non-Compliance", "type": "textarea" }
+    ]
+  },
+  "Cease and Desist Letter": {
+    "template": "{YourName}\n{YourPosition}\n{YourOrganization}\n{YourAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\n{RecipientName}\n{RecipientAddress}\n{City}, {State}, {ZIPCode}\n\nSubject: Cease and Desist\n\nDear {RecipientName},\n\nThis letter serves as a formal notice to cease and desist {DescriptionOfInfringingActivity}. Your actions are in violation of {RelevantLawOrRegulation}.\n\nYou are required to immediately stop these actions and provide a written assurance by {Deadline} that no further violations will occur. Failure to comply may result in legal action.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{YourOrganization}",
+    "fields": [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourOrganization", "label": "Your Organization", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "DescriptionOfInfringingActivity", "label": "Description of Infringing Activity", "type": "textarea" },
+      { "id": "RelevantLawOrRegulation", "label": "Relevant Law or Regulation", "type": "text" },
+      { "id": "Deadline", "label": "Deadline", "type": "date" }
+    ]
+  },
+  "Legal Compliance Certification": {
+    "template": "{YourName}\n{YourPosition}\n{YourOrganization}\n{YourAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\n{RecipientName}\n{RecipientPosition}\n{RecipientOrganization}\n{RecipientAddress}\n{City}, {State}, {ZIPCode}\n\nSubject: Legal Compliance Certification\n\nDear {RecipientName},\n\nThis letter certifies that {YourOrganization} is in full compliance with all applicable laws and regulations, specifically {RelevantLawsOrRegulations}.\n\nThis certification is provided as of {CurrentDate} and pertains to {ScopeOfCertification}.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{YourOrganization}",
+    "fields": [
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourOrganization", "label": "Your Organization", "type": "text" },
+      { "id": "YourAddress", "label": "Your Address", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "State", "label": "State", "type": "text" },
+      { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+      { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+      { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+      { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+      { "id": "RecipientOrganization", "label": "Recipient's Organization", "type": "text" },
+      { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+      { "id": "RelevantLawsOrRegulations", "label": "Relevant Laws or Regulations", "type": "textarea" },
+      { "id": "ScopeOfCertification", "label": "Scope of Certification", "type": "textarea" }
+    ]
+  },
+  "Notice of Investigation":{
+  "template": "{YourName}\n{YourPosition}\n{YourOrganization}\n{YourAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\n{RecipientName}\n{RecipientPosition}\n{RecipientOrganization}\n{RecipientAddress}\n{City}, {State}, {ZIPCode}\n\nSubject: Notice of Investigation\n\nDear {RecipientName},\n\nThis letter serves as a formal notification that an investigation has been initiated concerning {SubjectOfInvestigation}. This investigation will examine {DetailsOfInvestigationScope}.\n\nYou are required to provide {DocumentsOrInformationRequired} by {Deadline}. Please cooperate fully with the investigation team.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourOrganization}",
+  "fields": [
+    { "id": "YourName", "label": "Your Name", "type": "text" },
+    { "id": "YourPosition", "label": "Your Position", "type": "text" },
+    { "id": "YourOrganization", "label": "Your Organization", "type": "text" },
+    { "id": "YourAddress", "label": "Your Address", "type": "text" },
+    { "id": "City", "label": "City", "type": "text" },
+    { "id": "State", "label": "State", "type": "text" },
+    { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+    { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+    { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+    { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+    { "id": "RecipientOrganization", "label": "Recipient's Organization", "type": "text" },
+    { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+    { "id": "SubjectOfInvestigation", "label": "Subject of Investigation", "type": "textarea" },
+    { "id": "DetailsOfInvestigationScope", "label": "Details of Investigation Scope", "type": "textarea" },
+    { "id": "DocumentsOrInformationRequired", "label": "Documents or Information Required", "type": "textarea" },
+    { "id": "Deadline", "label": "Deadline", "type": "date" }
+  ]
+},
+"Regulatory Change Notification":{
+  "template": "{YourName}\n{YourPosition}\n{YourOrganization}\n{YourAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\n{RecipientName}\n{RecipientPosition}\n{RecipientOrganization}\n{RecipientAddress}\n{City}, {State}, {ZIPCode}\n\nSubject: Regulatory Change Notification\n\nDear {RecipientName},\n\nThis letter is to inform you of changes to {SpecificRegulationOrPolicy} effective from {EffectiveDate}. The changes include {DetailsOfChanges}.\n\nPlease review the updated regulations and ensure compliance by {ComplianceDeadline}. Should you have any questions, feel free to contact us.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourOrganization}",
+  "fields": [
+    { "id": "YourName", "label": "Your Name", "type": "text" },
+    { "id": "YourPosition", "label": "Your Position", "type": "text" },
+    { "id": "YourOrganization", "label": "Your Organization", "type": "text" },
+    { "id": "YourAddress", "label": "Your Address", "type": "text" },
+    { "id": "City", "label": "City", "type": "text" },
+    { "id": "State", "label": "State", "type": "text" },
+    { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+    { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+    { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+    { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+    { "id": "RecipientOrganization", "label": "Recipient's Organization", "type": "text" },
+    { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+    { "id": "SpecificRegulationOrPolicy", "label": "Specific Regulation or Policy", "type": "text" },
+    { "id": "EffectiveDate", "label": "Effective Date", "type": "date" },
+    { "id": "DetailsOfChanges", "label": "Details of Changes", "type": "textarea" },
+    { "id": "ComplianceDeadline", "label": "Compliance Deadline", "type": "date" }
+  ]
+},
+"Penalty or Fine Notification":{
+  "template": "{YourName}\n{YourPosition}\n{YourOrganization}\n{YourAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\n{RecipientName}\n{RecipientPosition}\n{RecipientOrganization}\n{RecipientAddress}\n{City}, {State}, {ZIPCode}\n\nSubject: Penalty or Fine Notification\n\nDear {RecipientName},\n\nThis letter serves as an official notification that {YourOrganization} has imposed a penalty of {Amount} for {ReasonForPenalty}. This penalty is due to {ExplanationOfViolation}.\n\nThe total amount due is {TotalAmount} and must be paid by {PaymentDeadline}. Failure to comply may result in further legal action.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourOrganization}",
+  "fields": [
+    { "id": "YourName", "label": "Your Name", "type": "text" },
+    { "id": "YourPosition", "label": "Your Position", "type": "text" },
+    { "id": "YourOrganization", "label": "Your Organization", "type": "text" },
+    { "id": "YourAddress", "label": "Your Address", "type": "text" },
+    { "id": "City", "label": "City", "type": "text" },
+    { "id": "State", "label": "State", "type": "text" },
+    { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+    { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+    { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+    { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+    { "id": "RecipientOrganization", "label": "Recipient's Organization", "type": "text" },
+    { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+    { "id": "Amount", "label": "Amount", "type": "text" },
+    { "id": "ReasonForPenalty", "label": "Reason for Penalty", "type": "textarea" },
+    { "id": "ExplanationOfViolation", "label": "Explanation of Violation", "type": "textarea" },
+    { "id": "TotalAmount", "label": "Total Amount", "type": "text" },
+    { "id": "PaymentDeadline", "label": "Payment Deadline", "type": "date" }
+  ]
+},
+"Court Summons":{
+  "template": "{YourName}\n{YourPosition}\n{YourOrganization}\n{YourAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\n{RecipientName}\n{RecipientPosition}\n{RecipientOrganization}\n{RecipientAddress}\n{City}, {State}, {ZIPCode}\n\nSubject: Court Summons\n\nDear {RecipientName},\n\nThis letter serves as a court summons for you to appear in court regarding {CaseDescription}. You are required to appear at {CourtAddress} on {DateAndTimeOfAppearance}.\n\nFailure to appear may result in {ConsequencesOfNonAppearance}. Please contact {CourtContactInformation} if you have any questions or require further information.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourOrganization}",
+  "fields": [
+    { "id": "YourName", "label": "Your Name", "type": "text" },
+    { "id": "YourPosition", "label": "Your Position", "type": "text" },
+    { "id": "YourOrganization", "label": "Your Organization", "type": "text" },
+    { "id": "YourAddress", "label": "Your Address", "type": "text" },
+    { "id": "City", "label": "City", "type": "text" },
+    { "id": "State", "label": "State", "type": "text" },
+    { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+    { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+    { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+    { "id": "RecipientPosition", "label": "Recipient's Position", "type": "text" },
+    { "id": "RecipientOrganization", "label": "Recipient's Organization", "type": "text" },
+    { "id": "RecipientAddress", "label": "Recipient's Address", "type": "text" },
+    { "id": "CaseDescription", "label": "Case Description", "type": "textarea" },
+    { "id": "CourtAddress", "label": "Court Address", "type": "text" },
+    { "id": "DateAndTimeOfAppearance", "label": "Date and Time of Appearance", "type": "datetime" },
+    { "id": "ConsequencesOfNonAppearance", "label": "Consequences of Non-Appearance", "type": "textarea" },
+    { "id": "CourtContactInformation", "label": "Court Contact Information", "type": "text" }
+  ]
+}
+  },
+
+  "Community and Social Services":{
+    "Public Service Announcement":{
+  "template": "{AnnouncementTitle}\n{OrganizationName}\n{OrganizationAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\nDear Community Members,\n\nWe would like to inform you about {AnnouncementDetails}. This announcement is important for {PurposeOfAnnouncement}.\n\nFor more information, please contact {ContactInformation}.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourOrganization}",
+  "fields": [
+    { "id": "AnnouncementTitle", "label": "Announcement Title", "type": "text" },
+    { "id": "OrganizationName", "label": "Organization Name", "type": "text" },
+    { "id": "OrganizationAddress", "label": "Organization Address", "type": "text" },
+    { "id": "City", "label": "City", "type": "text" },
+    { "id": "State", "label": "State", "type": "text" },
+    { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+    { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+    { "id": "AnnouncementDetails", "label": "Announcement Details", "type": "textarea" },
+    { "id": "PurposeOfAnnouncement", "label": "Purpose of Announcement", "type": "textarea" },
+    { "id": "ContactInformation", "label": "Contact Information", "type": "text" },
+    { "id": "YourName", "label": "Your Name", "type": "text" },
+    { "id": "YourPosition", "label": "Your Position", "type": "text" },
+    { "id": "YourOrganization", "label": "Your Organization", "type": "text" }
+  ]
+},
+"Social Assistance Application":{
+  "template": "{ApplicantName}\n{ApplicantAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\nDear {RecipientName},\n\nI am writing to apply for social assistance under {ProgramName}. My personal details are as follows:\n\nName: {ApplicantName}\nAddress: {ApplicantAddress}\nCity: {City}\nState: {State}\nZIP Code: {ZIPCode}\n\nI am requesting assistance for {ReasonForAssistance}. Please find the necessary documents attached.\n\nThank you for your consideration.\n\nSincerely,\n{ApplicantName}",
+  "fields": [
+    { "id": "ApplicantName", "label": "Applicant Name", "type": "text" },
+    { "id": "ApplicantAddress", "label": "Applicant Address", "type": "text" },
+    { "id": "City", "label": "City", "type": "text" },
+    { "id": "State", "label": "State", "type": "text" },
+    { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+    { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+    { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+    { "id": "ProgramName", "label": "Program Name", "type": "text" },
+    { "id": "ReasonForAssistance", "label": "Reason for Assistance", "type": "textarea" }
+  ]
+},
+"Community Event Notification":{
+  "template": "{EventTitle}\n{EventDate}\n{EventTime}\n{EventLocation}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\nDear Community Members,\n\nWe are excited to announce the upcoming event: {EventTitle}. The details are as follows:\n\nDate: {EventDate}\nTime: {EventTime}\nLocation: {EventLocation}\n\nThis event will include {EventActivities}. We hope to see you there!\n\nFor more information, contact {ContactInformation}.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourOrganization}",
+  "fields": [
+    { "id": "EventTitle", "label": "Event Title", "type": "text" },
+    { "id": "EventDate", "label": "Event Date", "type": "date" },
+    { "id": "EventTime", "label": "Event Time", "type": "time" },
+    { "id": "EventLocation", "label": "Event Location", "type": "text" },
+    { "id": "City", "label": "City", "type": "text" },
+    { "id": "State", "label": "State", "type": "text" },
+    { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+    { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+    { "id": "EventActivities", "label": "Event Activities", "type": "textarea" },
+    { "id": "ContactInformation", "label": "Contact Information", "type": "text" },
+    { "id": "YourName", "label": "Your Name", "type": "text" },
+    { "id": "YourPosition", "label": "Your Position", "type": "text" },
+    { "id": "YourOrganization", "label": "Your Organization", "type": "text" }
+  ]
+},
+"Volunteer Recruitment Notice":{
+  "template": "{OrganizationName}\n{OrganizationAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\nDear Prospective Volunteers,\n\n{OrganizationName} is seeking enthusiastic volunteers to help with {ProjectOrEvent}. The details are as follows:\n\nRole: {VolunteerRole}\nRequirements: {Requirements}\nDuration: {Duration}\n\nIf you are interested, please contact us at {ContactInformation} or visit {Website}.\n\nWe look forward to your participation.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourOrganization}",
+  "fields": [
+    { "id": "OrganizationName", "label": "Organization Name", "type": "text" },
+    { "id": "OrganizationAddress", "label": "Organization Address", "type": "text" },
+    { "id": "City", "label": "City", "type": "text" },
+    { "id": "State", "label": "State", "type": "text" },
+    { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+    { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+    { "id": "ProjectOrEvent", "label": "Project or Event", "type": "text" },
+    { "id": "VolunteerRole", "label": "Volunteer Role", "type": "text" },
+    { "id": "Requirements", "label": "Requirements", "type": "textarea" },
+    { "id": "Duration", "label": "Duration", "type": "text" },
+    { "id": "ContactInformation", "label": "Contact Information", "type": "text" },
+    { "id": "Website", "label": "Website", "type": "text" },
+    { "id": "YourName", "label": "Your Name", "type": "text" },
+    { "id": "YourPosition", "label": "Your Position", "type": "text" },
+    { "id": "YourOrganization", "label": "Your Organization", "type": "text" }
+  ]
+},
+"Community Safety Alert":{
+  "template": "{AlertTitle}\n{AlertDate}\n{AlertTime}\n{AlertLocation}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\nDear Community Members,\n\nWe would like to inform you about {AlertDetails}. This alert is important for {SafetyConcern}.\n\nPlease follow the safety guidelines provided: {SafetyGuidelines}.\n\nFor more information, contact {ContactInformation}.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourOrganization}",
+  "fields": [
+    { "id": "AlertTitle", "label": "Alert Title", "type": "text" },
+    { "id": "AlertDate", "label": "Alert Date", "type": "date" },
+    { "id": "AlertTime", "label": "Alert Time", "type": "time" },
+    { "id": "AlertLocation", "label": "Alert Location", "type": "text" },
+    { "id": "City", "label": "City", "type": "text" },
+    { "id": "State", "label": "State", "type": "text" },
+    { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+    { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+    { "id": "AlertDetails", "label": "Alert Details", "type": "textarea" },
+    { "id": "SafetyConcern", "label": "Safety Concern", "type": "text" },
+    { "id": "SafetyGuidelines", "label": "Safety Guidelines", "type": "textarea" },
+    { "id": "ContactInformation", "label": "Contact Information", "type": "text" },
+    { "id": "YourName", "label": "Your Name", "type": "text" },
+    { "id": "YourPosition", "label": "Your Position", "type": "text" },
+    { "id": "YourOrganization", "label": "Your Organization", "type": "text" }
+  ]
+},
+"Public Health Advisory":{
+  "template": "{AdvisoryTitle}\n{OrganizationName}\n{OrganizationAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\nDear Community Members,\n\nThis is a public health advisory regarding {HealthIssue}. The key points to be aware of include:\n\n1. {KeyPoint1}\n2. {KeyPoint2}\n3. {KeyPoint3}\n\nPlease take necessary precautions and follow the guidelines provided.\n\nFor more information, contact {ContactInformation}.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourOrganization}",
+  "fields": [
+    { "id": "AdvisoryTitle", "label": "Advisory Title", "type": "text" },
+    { "id": "OrganizationName", "label": "Organization Name", "type": "text" },
+    { "id": "OrganizationAddress", "label": "Organization Address", "type": "text" },
+    { "id": "City", "label": "City", "type": "text" },
+    { "id": "State", "label": "State", "type": "text" },
+    { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+    { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+    { "id": "HealthIssue", "label": "Health Issue", "type": "text" },
+    { "id": "KeyPoint1", "label": "Key Point 1", "type": "textarea" },
+    { "id": "KeyPoint2", "label": "Key Point 2", "type": "textarea" },
+    { "id": "KeyPoint3", "label": "Key Point 3", "type": "textarea" },
+    { "id": "ContactInformation", "label": "Contact Information", "type": "text" },
+    { "id": "YourName", "label": "Your Name", "type": "text" },
+    { "id": "YourPosition", "label": "Your Position", "type": "text" },
+    { "id": "YourOrganization", "label": "Your Organization", "type": "text" }
+  ]
+},
+"Disaster Relief Request":{
+  "template": "{YourName}\n{YourOrganization}\n{YourAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\nDear {RecipientName},\n\nI am writing to request disaster relief for {AffectedArea}. The details of the situation are as follows:\n\n1. {SituationDescription}\n2. {RequestedAssistance}\n3. {UrgencyLevel}\n\nWe appreciate your support and assistance during this critical time.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourOrganization}",
+  "fields": [
+    { "id": "YourName", "label": "Your Name", "type": "text" },
+    { "id": "YourOrganization", "label": "Your Organization", "type": "text" },
+    { "id": "YourAddress", "label": "Your Address", "type": "text" },
+    { "id": "City", "label": "City", "type": "text" },
+    { "id": "State", "label": "State", "type": "text" },
+    { "id": "ZIPCode", "label": "ZIP Code", "type": "text" },
+    { "id": "CurrentDate", "label": "Current Date", "type": "date" },
+    { "id": "RecipientName", "label": "Recipient's Name", "type": "text" },
+    { "id": "AffectedArea", "label": "Affected Area", "type": "text" },
+    { "id": "SituationDescription", "label": "Situation Description", "type": "textarea" },
+    { "id": "RequestedAssistance", "label": "Requested Assistance", "type": "textarea" },
+    { "id": "UrgencyLevel", "label": "Urgency Level", "type": "text" },
+    { "id": "YourPosition", "label": "Your Position", "type": "text" }
+  ]
+}
+
+  }
 
 }

@@ -385,6 +385,25 @@ const categories = {
       "Environmental Grant",
       "Health Grant"
     ],
+    "Legal and Compliance Notifications":[
+      "Notice of Violation",
+      "Cease and Desist Letter",
+      "Legal Compliance Certification",
+      "Notice of Investigation",
+      "Regulatory Change Notification",
+      "Penalty or Fine Notification",
+      "Court Summons"
+    ],
+    "Community and Social Services":[
+      "Public Service Announcement",
+      "Social Assistance Application",
+      "Community Event Notification",
+      "Volunteer Recruitment Notice",
+      "Community Safety Alert",
+      "Public Health Advisory",
+      "Disaster Relief Request"
+    ]
+
   },
   
 };
