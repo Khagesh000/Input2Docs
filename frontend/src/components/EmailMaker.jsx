@@ -90,6 +90,7 @@ const EmailMaker = ({ selectedTemplate }) => {
     // Remove unwanted <p> tags
     filledTemplate = filledTemplate.replace(/<p>/g, '').replace(/<\/p>/g, '');
 
+    console.log('Filled Template:', filledTemplate);
     setGeneratedEmail(filledTemplate);
     setFormSubmitted(true);
     setShowSuccessMessage(false);
@@ -105,51 +106,61 @@ const EmailMaker = ({ selectedTemplate }) => {
       alert('Cannot send email due to network issues.');
       return;
     }
-
+  
     try {
       setIsSendingEmail(true);
+      
       const controller = new AbortController();
       const timeout = setTimeout(() => {
         controller.abort();
-      }, 60000);
-
+      }, 60000); // Set timeout for 60 seconds
+  
+      // Log the payload to check for issues
+      console.log("Sending payload:", { ...formData, emailBody: generatedEmail });
+  
       const response = await fetch('https://input2docs.onrender.com/api/send-email/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, emailBody: generatedEmail }), // Ensure this matches server expectations
         signal: controller.signal,
       });
-
+  
       clearTimeout(timeout);
-
+  
       if (!response.ok) {
-        throw new Error('Failed to send email');
+        const errorText = await response.text();
+        console.error('Error response:', errorText); // Log error response
+        throw new Error(`Failed to send email: ${response.status} ${response.statusText} - ${errorText}`);
       }
-
+  
       alert("Email Sent Successfully!!!");
       setShowSuccessMessage(true);
       localStorage.setItem('emailSent', 'true');
-
+  
       // Reset the form and states
       setFormData({});
       setGeneratedEmail('');
       setFormSubmitted(false);
       setIsSendingEmail(false);
+  
       setTimeout(() => {
         setShowSuccessMessage(false);
-      }, 10000); // Message visible for 3 seconds
-
+      }, 10000); // Message visible for 10 seconds
+  
     } catch (error) {
       if (error.name === 'AbortError') {
-        console.error('Fetch request was aborted');
+        console.error('Fetch request was aborted due to timeout');
+        alert('Request timed out. Please try again.');
       } else {
-        console.error('Error sending email:', error);
+        console.error('Error sending email:', error.message);
+        alert(`Error sending email: ${error.message}`);
       }
       setIsSendingEmail(false);
     }
   };
+  
 
   const handleEdit = () => {
     setFormSubmitted(false);

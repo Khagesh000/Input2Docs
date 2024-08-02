@@ -1,27 +1,100 @@
 {
     "Sales Emails": {
       "Introduction Email": {
-        "template": "Hi {RecipientName},\n\nMy name is {SenderName}, and I am the {SenderPosition} at {SenderCompany}.\nI am writing to introduce our company and the services we offer.\n\n{EmailBody}\n\nLooking forward to hearing from you.\n\nBest regards,\n{SenderName}",
-        "fields": [
-          { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
-          { "id": "SenderName", "label": "Sender Name", "type": "text" },
-          { "id": "SenderPosition", "label": "Sender Position", "type": "text" },
-          { "id": "SenderCompany", "label": "Sender Company", "type": "text" },
-          { "id": "SenderEmail", "label": "Your Email", "type": "email" },
-          { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
-          { "id": "EmailBody", "label": "Email Body", "type": "quill" }
-        ]
-      },
-      "Follow-Up Email": {
-        "template": "Hi {RecipientName},\n\nI hope this email finds you well. I wanted to follow up on our previous conversation regarding.\n\n{EmailBody}\n\nLooking forward to your response.\n\nBest regards,\n{SenderName}",
-        "fields": [
-          { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
-          { "id": "SenderName", "label": "Sender Name", "type": "text" },
-          { "id": "SenderEmail", "label": "Your Email", "type": "email" },
-          { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
-          { "id": "EmailBody", "label": "Email Body", "type": "quill" }
-        ]
-      }
+      "template": "Hi {RecipientName},\n\nI hope this email finds you well. My name is {SenderName}, and I am the {SenderPosition} at {SenderCompany}. I am reaching out to introduce our company and the solutions we provide that could benefit your organization.\n\nAt {SenderCompany}, we specialize in {ProductOrService} and have helped companies like {NotableClient} achieve {KeyBenefit}. We believe our offerings can significantly address {RecipientCompany}'s needs for {SpecificNeed}.\n\nI would love to schedule a brief call to discuss how we can assist you further. Please let me know a convenient time for you.\n\nBest regards,\n{SenderName}\n{SenderPosition}\n{SenderCompany}\n{SenderPhone}\n{SenderEmail}\n{SenderWebsite}",
+      "fields": [
+        { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+        { "id": "SenderName", "label": "Sender Name", "type": "text" },
+        { "id": "SenderPosition", "label": "Sender Position", "type": "text" },
+        { "id": "SenderCompany", "label": "Sender Company", "type": "text" },
+        { "id": "ProductOrService", "label": "Product or Service", "type": "text" },
+        { "id": "NotableClient", "label": "Notable Client", "type": "text" },
+        { "id": "KeyBenefit", "label": "Key Benefit", "type": "text" },
+        { "id": "RecipientCompany", "label": "Recipient Company", "type": "text" },
+        { "id": "SpecificNeed", "label": "Specific Need", "type": "text" },
+        { "id": "SenderPhone", "label": "Sender Phone", "type": "text" },
+        { "id": "SenderEmail", "label": "Sender Email", "type": "email" },
+        { "id": "EmailBody", "label": "Sender Website", "type": "quill" }
+      ]
+    },
+    "Follow-Up Email": {
+      "template": "Hi {RecipientName},\n\nI hope you're well. I wanted to follow up on the email I sent regarding {PreviousTopic}. I understand how busy things can get and wanted to ensure you had a chance to review the information.\n\nOur solution for {SpecificNeed} could greatly benefit {RecipientCompany}, and I would be delighted to discuss it further. Please let me know if you have any questions or if there’s a better time to connect.\n\nBest regards,\n{SenderName}\n{SenderPosition}\n{SenderCompany}\n{SenderPhone}\n{SenderEmail}\n{SenderWebsite}",
+      "fields": [
+        { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+        { "id": "SenderName", "label": "Sender Name", "type": "text" },
+        { "id": "SenderPosition", "label": "Sender Position", "type": "text" },
+        { "id": "SenderCompany", "label": "Sender Company", "type": "text" },
+        { "id": "PreviousTopic", "label": "Previous Topic", "type": "text" },
+        { "id": "SpecificNeed", "label": "Specific Need", "type": "text" },
+        { "id": "SenderPhone", "label": "Sender Phone", "type": "text" },
+        { "id": "SenderEmail", "label": "Sender Email", "type": "email" },
+        { "id": "SenderWebsite", "label": "Sender Website", "type": "text" }
+      ]
+    },
+    "Product Launch Email": {
+      "template": "Hi {RecipientName},\n\nWe’re excited to announce the launch of our new product, {ProductName}, designed to {ProductBenefit}. At {SenderCompany}, we have worked tirelessly to develop a solution that {ProductFeature}.\n\nI would love to share more details with you and offer an exclusive first look. Please let me know if you’re interested or if you’d like to schedule a demo.\n\nBest regards,\n{SenderName}\n{SenderPosition}\n{SenderCompany}\n{SenderPhone}\n{SenderEmail}\n{SenderWebsite}",
+      "fields": [
+        { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+        { "id": "SenderName", "label": "Sender Name", "type": "text" },
+        { "id": "SenderPosition", "label": "Sender Position", "type": "text" },
+        { "id": "SenderCompany", "label": "Sender Company", "type": "text" },
+        { "id": "ProductName", "label": "Product Name", "type": "text" },
+        { "id": "ProductBenefit", "label": "Product Benefit", "type": "text" },
+        { "id": "ProductFeature", "label": "Product Feature", "type": "text" },
+        { "id": "SenderPhone", "label": "Sender Phone", "type": "text" },
+        { "id": "SenderEmail", "label": "Sender Email", "type": "email" },
+        { "id": "SenderWebsite", "label": "Sender Website", "type": "text" }
+      ]
+    },
+    "Sales Pitch Email": {
+      "template": "Hi {RecipientName},\n\nI wanted to take a moment to present {SenderCompany}’s solution for {SpecificNeed}. Our product/service is specifically designed to {SolutionDescription} and has been well received by clients such as {ClientExamples}.\n\nWe offer a {SpecialOffer} for new clients. I’d love to discuss how we can assist you in achieving your goals. Let’s arrange a time to chat.\n\nBest regards,\n{SenderName}\n{SenderPosition}\n{SenderCompany}\n{SenderPhone}\n{SenderEmail}\n{SenderWebsite}",
+      "fields": [
+        { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+        { "id": "SenderName", "label": "Sender Name", "type": "text" },
+        { "id": "SenderPosition", "label": "Sender Position", "type": "text" },
+        { "id": "SenderCompany", "label": "Sender Company", "type": "text" },
+        { "id": "SpecificNeed", "label": "Specific Need", "type": "text" },
+        { "id": "SolutionDescription", "label": "Solution Description", "type": "text" },
+        { "id": "ClientExamples", "label": "Client Examples", "type": "text" },
+        { "id": "SpecialOffer", "label": "Special Offer", "type": "text" },
+        { "id": "SenderPhone", "label": "Sender Phone", "type": "text" },
+        { "id": "SenderEmail", "label": "Sender Email", "type": "email" },
+        { "id": "SenderWebsite", "label": "Sender Website", "type": "text" }
+      ]
+    },
+    "Discount or Promotion Email": {
+      "template": "Hi {RecipientName},\n\nWe’re excited to offer you an exclusive discount on our {ProductOrService}. For a limited time, you can enjoy {DiscountPercentage} off your purchase with the code {PromoCode}.\n\nThis offer is valid until {ExpirationDate}. Don’t miss out on this opportunity to {BenefitDescription}!\n\nBest regards,\n{SenderName}\n{SenderPosition}\n{SenderCompany}\n{SenderPhone}\n{SenderEmail}\n{SenderWebsite}",
+      "fields": [
+        { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+        { "id": "SenderName", "label": "Sender Name", "type": "text" },
+        { "id": "SenderPosition", "label": "Sender Position", "type": "text" },
+        { "id": "SenderCompany", "label": "Sender Company", "type": "text" },
+        { "id": "ProductOrService", "label": "Product or Service", "type": "text" },
+        { "id": "DiscountPercentage", "label": "Discount Percentage", "type": "text" },
+        { "id": "PromoCode", "label": "Promo Code", "type": "text" },
+        { "id": "ExpirationDate", "label": "Expiration Date", "type": "date" },
+        { "id": "BenefitDescription", "label": "Benefit Description", "type": "text" },
+        { "id": "SenderPhone", "label": "Sender Phone", "type": "text" },
+        { "id": "SenderEmail", "label": "Sender Email", "type": "email" },
+        { "id": "SenderWebsite", "label": "Sender Website", "type": "text" }
+      ]
+    },
+    "Re-engagement Email": {
+    "template": "Hi {RecipientName},\n\nWe’ve noticed that you haven’t interacted with {SenderCompany} for a while, and we genuinely miss having you as a part of our community.\n\nAt {SenderCompany}, we continuously strive to improve our {ProductOrService}, and we believe there’s still a lot of value we can offer you. We’d love to hear your feedback on how we can better serve your needs or any concerns you might have.\n\nAs a token of our appreciation, we’d like to offer you {SpecialOffer}. Please use the code {PromoCode} at checkout. This offer is valid until {ExpirationDate}.\n\nWe hope to reconnect with you soon. If you have any questions or need assistance, feel free to reach out to us directly.\n\nBest regards,\n{SenderName}\n{SenderPosition}\n{SenderCompany}\n{SenderPhone}\n{SenderEmail}\n{SenderWebsite}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "SenderName", "label": "Sender Name", "type": "text" },
+      { "id": "SenderPosition", "label": "Sender Position", "type": "text" },
+      { "id": "SenderCompany", "label": "Sender Company", "type": "text" },
+      { "id": "ProductOrService", "label": "Product or Service", "type": "text" },
+      { "id": "SpecialOffer", "label": "Special Offer", "type": "text" },
+      { "id": "PromoCode", "label": "Promo Code", "type": "text" },
+      { "id": "ExpirationDate", "label": "Expiration Date", "type": "date" },
+      { "id": "SenderPhone", "label": "Sender Phone", "type": "text" },
+      { "id": "SenderEmail", "label": "Sender Email", "type": "email" },
+      { "id": "SenderWebsite", "label": "Sender Website", "type": "text" }
+    ]
+  }
     },
     "Marketing Emails": {
       "Product Launch Email": {
