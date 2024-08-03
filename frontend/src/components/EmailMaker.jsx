@@ -17,6 +17,9 @@ const EmailMaker = ({ selectedTemplate }) => {
     backgroundColor: '#ffffff' // White background
   };
 
+
+  
+
   useEffect(() => {
     // Fetch email templates
     fetch('/json/templates.json')
@@ -51,6 +54,9 @@ const EmailMaker = ({ selectedTemplate }) => {
       const category = Object.keys(emailTemplates).find(cat =>
         Object.keys(emailTemplates[cat]).includes(selectedTemplate)
       );
+         
+      console.log('Selected template:', selectedTemplate);
+      console.log('Category found:', category);
 
       if (category) {
         setFormData({
@@ -59,6 +65,7 @@ const EmailMaker = ({ selectedTemplate }) => {
         });
         setFormSubmitted(false);
       } else {
+        console.error(`No category found for selected template: ${selectedTemplate}`);
         setFormData({});
       }
     }
@@ -90,7 +97,6 @@ const EmailMaker = ({ selectedTemplate }) => {
     // Remove unwanted <p> tags
     filledTemplate = filledTemplate.replace(/<p>/g, '').replace(/<\/p>/g, '');
 
-    console.log('Filled Template:', filledTemplate);
     setGeneratedEmail(filledTemplate);
     setFormSubmitted(true);
     setShowSuccessMessage(false);
@@ -106,61 +112,56 @@ const EmailMaker = ({ selectedTemplate }) => {
       alert('Cannot send email due to network issues.');
       return;
     }
-  
+
     try {
       setIsSendingEmail(true);
-      
       const controller = new AbortController();
       const timeout = setTimeout(() => {
         controller.abort();
-      }, 60000); // Set timeout for 60 seconds
-  
-      // Log the payload to check for issues
-      console.log("Sending payload:", { ...formData, emailBody: generatedEmail });
-  
-      const response = await fetch('https://input2docs.onrender.com/api/send-email/', {
+      }, 60000);
+
+      const response = await fetch('http://127.0.0.1:8000/api/send-email/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...formData, emailBody: generatedEmail }), // Ensure this matches server expectations
+        body: JSON.stringify(formData),
         signal: controller.signal,
       });
-  
+
       clearTimeout(timeout);
-  
+
       if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Error response:', errorText); // Log error response
-        throw new Error(`Failed to send email: ${response.status} ${response.statusText} - ${errorText}`);
+        const errorData = await response.json();
+      console.error('Error sending email:', errorData);
+      alert(`Error: ${errorData.message || 'Failed to send email'}`);
+      throw new Error(errorData.message || 'Failed to send email');
       }
-  
+
       alert("Email Sent Successfully!!!");
       setShowSuccessMessage(true);
       localStorage.setItem('emailSent', 'true');
-  
+
       // Reset the form and states
       setFormData({});
       setGeneratedEmail('');
       setFormSubmitted(false);
       setIsSendingEmail(false);
-  
       setTimeout(() => {
         setShowSuccessMessage(false);
-      }, 10000); // Message visible for 10 seconds
-  
+      }, 10000); // Message visible for 3 seconds
+
     } catch (error) {
       if (error.name === 'AbortError') {
-        console.error('Fetch request was aborted due to timeout');
+        console.error('Fetch request was aborted');
         alert('Request timed out. Please try again.');
       } else {
-        console.error('Error sending email:', error.message);
-        alert(`Error sending email: ${error.message}`);
+        console.error('Error sending email:', error);
+        alert('An error occurred while sending the email. Please try again.');
       }
       setIsSendingEmail(false);
     }
   };
-  
 
   const handleEdit = () => {
     setFormSubmitted(false);

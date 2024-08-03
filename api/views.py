@@ -1,34 +1,65 @@
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import EmailSerializer
 from django.core.mail import send_mail
 import logging
+from .serializers import EmailSerializer 
+import html
+from django.conf import settings
+import os
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)  
 
-# Email templates
+# Email templates (consider moving to a separate file for maintainability)
 emailTemplates = {
     "Sales Emails": {
         "Introduction Email": {
-            "template": "Hi {RecipientName},\n\nI hope this email finds you well. My name is {SenderName}, and I am the {SenderPosition} at {SenderCompany}. I am reaching out to introduce our company and the solutions we provide that could benefit your organization.\n\nAt {SenderCompany}, we specialize in {ProductOrService} and have helped companies like {NotableClient} achieve {KeyBenefit}. We believe our offerings can significantly address {RecipientCompany}'s needs for {SpecificNeed}.\n\nI would love to schedule a brief call to discuss how we can assist you further. Please let me know a convenient time for you.\n\nBest regards,\n{SenderName}\n{SenderPosition}\n{SenderCompany}\n{SenderPhone}\n{SenderEmail}\n{SenderWebsite}",
+            "template": "Hi {RecipientName},\n\nMy name is {SenderName}, and I am the {SenderPosition} at {SenderCompany}.\nI am writing to introduce our company and the services we offer.\n\n{EmailBody}\n\nLooking forward to hearing from you.\n\nBest regards,\n{SenderName}",
             "fields": [
                 { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
                 { "id": "SenderName", "label": "Sender Name", "type": "text" },
                 { "id": "SenderPosition", "label": "Sender Position", "type": "text" },
                 { "id": "SenderCompany", "label": "Sender Company", "type": "text" },
-                { "id": "ProductOrService", "label": "Product or Service", "type": "text" },
-                { "id": "NotableClient", "label": "Notable Client", "type": "text" },
-                { "id": "KeyBenefit", "label": "Key Benefit", "type": "text" },
-                { "id": "RecipientCompany", "label": "Recipient Company", "type": "text" },
-                { "id": "SpecificNeed", "label": "Specific Need", "type": "text" },
-                { "id": "SenderPhone", "label": "Sender Phone", "type": "text" },
-                { "id": "SenderEmail", "label": "Sender Email", "type": "email" },
-                { "id": "SenderWebsite", "label": "Sender Website", "type": "text" }
+                { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+                { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+                { "id": "EmailBody", "label": "Email Body", "type": "quill" }
+            ]
+        },
+        "Follow-Up Email": {
+            "template": "Hi {RecipientName},\n\nI hope this email finds you well. I wanted to follow up on our previous conversation regarding.\n\n{EmailBody}\n\nLooking forward to your response.\n\nBest regards,\n{SenderName}",
+            "fields": [
+                { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+                { "id": "SenderName", "label": "Sender Name", "type": "text" },
+                { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+                { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+                { "id": "EmailBody", "label": "Email Body", "type": "quill" }
             ]
         }
     },
-    # Add other email templates here as needed
+    "Marketing Emails": {
+        "Product Launch Email": {
+            "template": "Hi {RecipientName},\n\nWe are excited to announce the launch of our new product, {ProductName}!\n\n{EmailBody}\n\nPlease visit our website to learn more about {ProductName}.\n\nBest regards,\n{SenderName}",
+            "fields": [
+                { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+                { "id": "ProductName", "label": "Product Name", "type": "text" },
+                { "id": "SenderName", "label": "Sender Name", "type": "text" },
+                { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+                { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+                { "id": "EmailBody", "label": "Email Body", "type": "quill" }
+            ]
+        },
+        "Newsletter Email": {
+            "template": "Hi {RecipientName},\n\nWelcome to our latest newsletter! Here are some updates and news from {CompanyName}:\n\n{EmailBody}\n\nStay tuned for more updates in our upcoming newsletters.\n\nBest regards,\n{SenderName}",
+            "fields": [
+                { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+                { "id": "CompanyName", "label": "Company Name", "type": "text" },
+                { "id": "SenderName", "label": "Sender Name", "type": "text" },
+                { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+                { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+                { "id": "EmailBody", "label": "Email Body", "type": "quill" }
+            ]
+        }
+    }
 }
 
 class SendEmailView(APIView):
@@ -65,6 +96,9 @@ class SendEmailView(APIView):
         # Fill in the placeholders in the template
         try:
             email_body = template.format(**email_data)
+
+            email_body = html.unescape(email_body).replace("<p>", "").replace("</p>", "")
+
             send_mail(
                 subject=email_data.get("subject", "No Subject"),
                 message=email_body,
