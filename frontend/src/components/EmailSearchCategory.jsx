@@ -516,7 +516,9 @@ const EmailSearchCategory = () => {
         {selectedTemplate && (
           <div>
             <h2 className='text-center Generate-your'>Generate Your Email</h2>
+            <p className='select-temp'>Selected Template:<span>{selectedTemplate}</span></p> {/* Display selected template */}
             <EmailMaker selectedCategory={selectedCategory} selectedSubcategory={selectedSubcategory} selectedTemplate={selectedTemplate} />
+           
           </div>
         )}
       </div>
