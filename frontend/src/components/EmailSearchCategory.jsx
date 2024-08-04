@@ -11,7 +11,7 @@ const categories = {
       "Product Launch Email",
       "Sales Pitch Email",
       "Discount or Promotion Email",
-      "Case Study or Success Story Emai",
+      "Case Study or Success Story Email",
       "Re-engagement Email"
     ],
     "Marketing Emails": [

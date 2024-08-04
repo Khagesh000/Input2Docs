@@ -1,66 +1,31 @@
+import json
+from django.conf import settings
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.core.mail import send_mail
 import logging
-from .serializers import EmailSerializer 
+from .serializers import EmailSerializer
 import html
-from django.conf import settings
 import os
 
-logger = logging.getLogger(__name__)  
 
-# Email templates (consider moving to a separate file for maintainability)
-emailTemplates = {
-    "Sales Emails": {
-        "Introduction Email": {
-            "template": "Hi {RecipientName},\n\nMy name is {SenderName}, and I am the {SenderPosition} at {SenderCompany}.\nI am writing to introduce our company and the services we offer.\n\n{EmailBody}\n\nLooking forward to hearing from you.\n\nBest regards,\n{SenderName}",
-            "fields": [
-                { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
-                { "id": "SenderName", "label": "Sender Name", "type": "text" },
-                { "id": "SenderPosition", "label": "Sender Position", "type": "text" },
-                { "id": "SenderCompany", "label": "Sender Company", "type": "text" },
-                { "id": "SenderEmail", "label": "Your Email", "type": "email" },
-                { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
-                { "id": "EmailBody", "label": "Email Body", "type": "quill" }
-            ]
-        },
-        "Follow-Up Email": {
-            "template": "Hi {RecipientName},\n\nI hope this email finds you well. I wanted to follow up on our previous conversation regarding.\n\n{EmailBody}\n\nLooking forward to your response.\n\nBest regards,\n{SenderName}",
-            "fields": [
-                { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
-                { "id": "SenderName", "label": "Sender Name", "type": "text" },
-                { "id": "SenderEmail", "label": "Your Email", "type": "email" },
-                { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
-                { "id": "EmailBody", "label": "Email Body", "type": "quill" }
-            ]
-        }
-    },
-    "Marketing Emails": {
-        "Product Launch Email": {
-            "template": "Hi {RecipientName},\n\nWe are excited to announce the launch of our new product, {ProductName}!\n\n{EmailBody}\n\nPlease visit our website to learn more about {ProductName}.\n\nBest regards,\n{SenderName}",
-            "fields": [
-                { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
-                { "id": "ProductName", "label": "Product Name", "type": "text" },
-                { "id": "SenderName", "label": "Sender Name", "type": "text" },
-                { "id": "SenderEmail", "label": "Your Email", "type": "email" },
-                { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
-                { "id": "EmailBody", "label": "Email Body", "type": "quill" }
-            ]
-        },
-        "Newsletter Email": {
-            "template": "Hi {RecipientName},\n\nWelcome to our latest newsletter! Here are some updates and news from {CompanyName}:\n\n{EmailBody}\n\nStay tuned for more updates in our upcoming newsletters.\n\nBest regards,\n{SenderName}",
-            "fields": [
-                { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
-                { "id": "CompanyName", "label": "Company Name", "type": "text" },
-                { "id": "SenderName", "label": "Sender Name", "type": "text" },
-                { "id": "SenderEmail", "label": "Your Email", "type": "email" },
-                { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
-                { "id": "EmailBody", "label": "Email Body", "type": "quill" }
-            ]
-        }
-    }
-}
+logger = logging.getLogger(__name__)
+
+def load_email_templates():
+    path = os.path.join(settings.BASE_DIR, 'api', 'data', 'templates.json')
+    try:
+        with open(path, 'r') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        logger.error("The email templates file was not found.")
+        raise
+    except json.JSONDecodeError:
+        logger.error("Error decoding the email templates file.")
+        raise
+
+# Load the templates when the module is first imported
+emailTemplates = load_email_templates() 
 
 class SendEmailView(APIView):
     def post(self, request, *args, **kwargs):
@@ -85,7 +50,9 @@ class SendEmailView(APIView):
             return Response({"error": "Invalid email type"}, status=status.HTTP_400_BAD_REQUEST)
 
         # Get the template and required fields
-        template = emailTemplates[category][email_type]["template"]
+        template_data = emailTemplates[category][email_type]
+        template = template_data["template"]
+        subject_template = template_data.get("subject", "No Subject")
         required_fields = {field["id"] for field in emailTemplates[category][email_type]["fields"]}
         
         # Check for missing required fields
@@ -93,14 +60,19 @@ class SendEmailView(APIView):
         if missing_fields:
             return Response({"error": f"Missing required fields: {', '.join(missing_fields)}"}, status=status.HTTP_400_BAD_REQUEST)
         
+
+
+        
+
+
         # Fill in the placeholders in the template
         try:
+            subject = subject_template.format(**email_data)
             email_body = template.format(**email_data)
-
             email_body = html.unescape(email_body).replace("<p>", "").replace("</p>", "")
 
             send_mail(
-                subject=email_data.get("subject", "No Subject"),
+                subject=subject,
                 message=email_body,
                 from_email=email_data.get("SenderEmail"),
                 recipient_list=[email_data.get("RecipientEmail")],

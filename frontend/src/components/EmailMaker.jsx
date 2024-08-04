@@ -82,6 +82,7 @@ const EmailMaker = ({ selectedTemplate }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('Form Data:', formData);
     const templateDetails = emailTemplates[formData.category]?.[formData.email_type];
     if (!templateDetails || !templateDetails.fields) {
       console.error(`Template details or fields not found for category '${formData.category}' and template '${formData.email_type}'`);
@@ -97,6 +98,11 @@ const EmailMaker = ({ selectedTemplate }) => {
     // Remove unwanted <p> tags
     filledTemplate = filledTemplate.replace(/<p>/g, '').replace(/<\/p>/g, '');
 
+     // Include subject in generated email
+     const emailSubject = formData.subject || 'No Subject';
+     const emailContent = `<h2>Subject: ${emailSubject}</h2><div>${filledTemplate}</div>`;
+
+     
     setGeneratedEmail(filledTemplate);
     setFormSubmitted(true);
     setShowSuccessMessage(false);
@@ -126,7 +132,7 @@ const EmailMaker = ({ selectedTemplate }) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
-        signal: controller.signal,
+        signal: controller.signal, 
       });
 
       clearTimeout(timeout);
