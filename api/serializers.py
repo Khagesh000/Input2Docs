@@ -13,13 +13,14 @@ class EmailSerializer(serializers.Serializer):
     CompanyName = serializers.CharField(max_length=100, required=False)
     SenderPhone = serializers.CharField(max_length=100, required=False)
     EmailBody = serializers.CharField(required=False)
-    
+
     # Additional fields based on templates.json
     CompanySpecialty = serializers.CharField(max_length=100, required=False)
     CompanyMission = serializers.CharField(max_length=100, required=False)
     RelevantIndustry = serializers.CharField(max_length=100, required=False)
     PreviousDiscussionTopic = serializers.CharField(max_length=100, required=False)
     ServiceOrProduct = serializers.CharField(max_length=100, required=False)
+    ProductOrService = serializers.CharField(max_length=100, required=False)
     ProductFeatures = serializers.CharField(max_length=100, required=False)
     ProductBenefits = serializers.CharField(max_length=100, required=False)
     Industry = serializers.CharField(max_length=100, required=False)
@@ -37,12 +38,78 @@ class EmailSerializer(serializers.Serializer):
     SuccessOutcome = serializers.CharField(max_length=100, required=False)
     ClientProblem = serializers.CharField(max_length=100, required=False)
     SolutionBenefit = serializers.CharField(max_length=100, required=False)
+    Discount = serializers.CharField(max_length=255, required=False)
+    RSVPDate = serializers.CharField(required=False)  # Use CharField for flexible date formats
+    EventDate = serializers.CharField(required=False)  # Use CharField for flexible date formats
+    EventLocation = serializers.CharField(max_length=255, required=False)
+    EventName = serializers.CharField(max_length=255, required=False)
+    EventHighlights = serializers.CharField(max_length=1000, required=False)
+    SurveyLink = serializers.CharField(max_length=1000, required=False)
+
+     #Customer services
+    SupportEmail = serializers.CharField(max_length=1000, required=False)
+    SupportPhone = serializers.CharField(max_length=1000, required=False)
+    SupportAgentName = serializers.CharField(max_length=1000, required=False)
+
+    ComplaintID = serializers.CharField(max_length=1000, required=False)
+    ResolutionDetails = serializers.CharField(max_length=1000, required=False)
+
+    OrderNumber = serializers.CharField(max_length=1000, required=False)
+    OrderDetails = serializers.CharField(max_length=1000, required=False)
+
+    TrackingNumber = serializers.CharField(max_length=1000, required=False)
+    EstimatedDeliveryDate = serializers.CharField(max_length=1000, required=False)
+
+    RequestID = serializers.CharField(max_length=1000, required=False)
+    RequestType = serializers.CharField(max_length=1000, required=False)
+    RefundAmount = serializers.CharField(max_length=1000, required=False)
+
+    SupportTeam = serializers.CharField(max_length=1000, required=False)
+    FeedbackSurveyLink = serializers.CharField(max_length=1000, required=False)
+
+    TicketNumber = serializers.CharField(max_length=1000, required=False)
     
+    #Hr & Internal communication emails
+    Salary = serializers.CharField(max_length=1000, required=False)
+    StartDate = serializers.CharField(max_length=1000, required=False)
+    Position = serializers.CharField(max_length=1000, required=False)
+    
+    OnboardingDate = serializers.CharField(max_length=1000, required=False)
+
+    Month = serializers.CharField(max_length=1000, required=False)
+    UpcomingEvents = serializers.CharField(max_length=1000, required=False)
+    EmployeeSpotlight = serializers.CharField(max_length=1000, required=False)
+    Highlights = serializers.CharField(max_length=1000, required=False)
+    
+    PolicyName = serializers.CharField(max_length=1000, required=False)
+    EffectiveDate = serializers.CharField(max_length=1000, required=False)
+    
+    MeetingLocation = serializers.CharField(max_length=1000, required=False)
+    MeetingTime = serializers.CharField(max_length=1000, required=False)
+    MeetingDate = serializers.CharField(max_length=1000, required=False)
+    MeetingTopic = serializers.CharField(max_length=1000, required=False)
+
+    ReviewDate = serializers.CharField(max_length=1000, required=False)
+
+    Achievement = serializers.CharField(max_length=1000, required=False)
+
+
+     #Partenrship and collabration emails
+    YourName = serializers.CharField(max_length=1000, required=False)
+    YourCompany = serializers.CharField(max_length=1000, required=False)
+    YourEmail = serializers.CharField(max_length=1000, required=False)
+    YourPhone = serializers.CharField(max_length=1000, required=False)
+    RecipientCompany = serializers.CharField(max_length=1000, required=False)
+    YourPosition = serializers.CharField(max_length=1000, required=False)
+    
+    PartnerCompany = serializers.CharField(max_length=1000, required=False)
+
     subject = serializers.CharField(max_length=255, required=False)
 
+    
     def validate(self, attrs):
-        # Additional validation logic if needed
         email_type = attrs.get('email_type')
-        if email_type == 'Newsletter Email' and not attrs.get('CompanyName'):
-            raise serializers.ValidationError({'CompanyName': 'This field is required for Newsletter Email'})
+
+        
+        
         return attrs

@@ -24,7 +24,6 @@ def load_email_templates():
         logger.error("Error decoding the email templates file.")
         raise
 
-# Load the templates when the module is first imported
 emailTemplates = load_email_templates() 
 
 class SendEmailView(APIView):
@@ -36,35 +35,26 @@ class SendEmailView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
         email_data = serializer.validated_data
-
-        # Extract category and email type from the request data
         email_type = email_data.get("email_type")
         category = email_data.get("category")
 
         if category not in emailTemplates:
-            logger.error(f'Invalid email category: {category}')
             return Response({"error": "Invalid email category"}, status=status.HTTP_400_BAD_REQUEST)
 
         if email_type not in emailTemplates[category]:
-            logger.error(f'Invalid email type: {email_type}')
             return Response({"error": "Invalid email type"}, status=status.HTTP_400_BAD_REQUEST)
 
         # Get the template and required fields
         template_data = emailTemplates[category][email_type]
         template = template_data["template"]
         subject_template = template_data.get("subject", "No Subject")
-        required_fields = {field["id"] for field in emailTemplates[category][email_type]["fields"]}
-        
+        required_fields = {field["id"] for field in template_data["fields"]}
+
         # Check for missing required fields
         missing_fields = [field for field in required_fields if field not in email_data]
         if missing_fields:
             return Response({"error": f"Missing required fields: {', '.join(missing_fields)}"}, status=status.HTTP_400_BAD_REQUEST)
         
-
-
-        
-
-
         # Fill in the placeholders in the template
         try:
             subject = subject_template.format(**email_data)
@@ -79,6 +69,9 @@ class SendEmailView(APIView):
                 fail_silently=False,
             )
             return Response({"status": "Email sent successfully"}, status=status.HTTP_200_OK)
+        except KeyError as e:
+            logger.error(f'Missing key in email data: {e}')
+            return Response({"error": f"Missing key: {e}"}, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             logger.error(f'Error sending email: {str(e)}')
             return Response({"error": "Failed to send email"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

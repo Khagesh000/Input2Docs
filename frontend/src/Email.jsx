@@ -37,7 +37,7 @@ const Email = () => {
       {/* Conditional rendering of EmailMaker component */}
       {selectedSubcategory && (
         <div className='LetterMakerSection'>
-          <EmailMaker selectedTemplate={selectedSubcategory} />
+          <EmailMaker selectedTemplate={selectedSubcategory}  />
         </div>
       )}
 

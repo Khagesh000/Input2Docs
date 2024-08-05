@@ -12,6 +12,7 @@ const EmailMaker = ({ selectedTemplate }) => {
   const [isSendingEmail, setIsSendingEmail] = useState(false);
   const generatedEmailRef = useRef(null);
   const [networkError, setNetworkError] = useState(false);
+  const [validationError, setValidationError] = useState('');
 
   const quillStyle = {
     backgroundColor: '#ffffff' // White background
@@ -64,6 +65,7 @@ const EmailMaker = ({ selectedTemplate }) => {
           email_type: selectedTemplate,
         });
         setFormSubmitted(false);
+        setValidationError('');
       } else {
         console.error(`No category found for selected template: ${selectedTemplate}`);
         setFormData({});
@@ -87,6 +89,15 @@ const EmailMaker = ({ selectedTemplate }) => {
     if (!templateDetails || !templateDetails.fields) {
       console.error(`Template details or fields not found for category '${formData.category}' and template '${formData.email_type}'`);
       return;
+    }
+
+    // Validate required fields
+    const missingFields = templateDetails.fields.filter(field => field.required && !formData[field.id]);
+    if (missingFields.length > 0) {
+      setValidationError(`Please fill in the following fields: ${missingFields.map(field => field.label).join(', ')}`);
+      return;
+    } else {
+      setValidationError('');
     }
 
     let filledTemplate = templateDetails.template;
@@ -126,7 +137,7 @@ const EmailMaker = ({ selectedTemplate }) => {
         controller.abort();
       }, 60000);
 
-      const response = await fetch('https://input2docs.onrender.com/api/send-email/', {
+      const response = await fetch('http://127.0.0.1:8000/api/send-email/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -221,6 +232,11 @@ const EmailMaker = ({ selectedTemplate }) => {
         <button type="submit" className="btn btn-primary" disabled={isSendingEmail}>
           {isSendingEmail ? 'Sending...' : 'Generate Email'}
         </button>
+        {validationError && (
+          <div className="error-message">
+            <p>{validationError}</p>
+          </div>
+        )}
       </form>
 
       {formSubmitted && (
