@@ -27,9 +27,13 @@ def load_email_templates():
 emailTemplates = load_email_templates() 
 
 def remove_html_tags(text):
-    """Remove HTML tags from a string."""
+    """Remove HTML tags from a string, replacing them with appropriate spaces."""
+    # List of tags to replace with space to maintain proper spacing in text
+    tags_with_space = ['</p>', '</div>', '</br>', '<br>', '</li>', '</ul>', '</strong>', '</em>']
+    for tag in tags_with_space:
+        text = text.replace(tag, ' ')
     clean = re.compile('<.*?>')
-    return re.sub(clean, '', text)
+    return re.sub(clean, '', text).strip()
 
 class SendEmailView(APIView):
     def post(self, request, *args, **kwargs):
