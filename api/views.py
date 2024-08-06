@@ -31,7 +31,7 @@ def remove_html_tags(text):
     # List of tags to replace with space to maintain proper spacing in text
     tags_with_space = ['</p>', '</div>', '</br>', '<br>', '</li>', '</ul>', '</strong>', '</em>']
     for tag in tags_with_space:
-        text = text.replace(tag, ' ')
+        text = text.replace(tag, '\n')
     clean = re.compile('<.*?>')
     return re.sub(clean, '', text).strip()
 

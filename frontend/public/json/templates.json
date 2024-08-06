@@ -657,6 +657,130 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true }
     ]
   }
+  },
+  
+  "Operational Emails":{
+    "System Maintenance Notification Email": {
+    "subject": "Upcoming System Maintenance Notification",
+    "template": "Dear {RecipientName},\n\nWe are writing to inform you about a scheduled system maintenance that will take place on {MaintenanceDate} from {StartTime} to {EndTime}. During this period, you may experience limited access to our services as we work on upgrading and improving our system infrastructure.\n\nWe understand the importance of uninterrupted access and will do our best to minimize any inconvenience. If you have any questions or need assistance during this time, please contact our support team at {SupportEmail}.\n\nThank you for your understanding and cooperation.\n\nBest regards,\n{SenderName}\n{CompanyName}\n{CompanyAddress}\n{CompanyPhone}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "SenderName", "label": "Sender Name", "type": "text" },
+      { "id": "MaintenanceDate", "label": "Maintenance Date", "type": "text" },
+      { "id": "StartTime", "label": "Start Time", "type": "text" },
+      { "id": "EndTime", "label": "End Time", "type": "text" },
+      { "id": "SupportEmail", "label": "Support Email", "type": "email" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "CompanyAddress", "label": "Company Address", "type": "text" },
+      { "id": "CompanyPhone", "label": "Company Phone", "type": "text" }
+    ]
+  },
+  "Service Interruption Notification Email": {
+    "subject": "Notice: Service Interruption on {InterruptionDate}",
+    "template": "Dear {RecipientName},\n\nWe regret to inform you that due to {InterruptionReason}, there will be a temporary interruption in our services on {InterruptionDate}. Our technical team is already working on resolving the issue, and we expect to have full service restored by {ResolutionTime}.\n\nWe apologize for any inconvenience this may cause and appreciate your patience and understanding during this time. Should you have any urgent concerns, please do not hesitate to reach out to our support team at {SupportEmail}.\n\nThank you for your continued support.\n\nSincerely,\n{SenderName}\n{CompanyName}\n{CompanyAddress}\n{CompanyPhone}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "SenderName", "label": "Sender Name", "type": "text" },
+      { "id": "InterruptionDate", "label": "Interruption Date", "type": "text" },
+      { "id": "InterruptionReason", "label": "Reason for Interruption", "type": "text" },
+      { "id": "ResolutionTime", "label": "Expected Resolution Time", "type": "text" },
+      { "id": "SupportEmail", "label": "Support Email", "type": "email" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "CompanyAddress", "label": "Company Address", "type": "text" },
+      { "id": "CompanyPhone", "label": "Company Phone", "type": "text" }
+    ]
+  },
+  "Account Activation Email": {
+    "subject": "Activate Your Account at {CompanyName}",
+    "template": "Hello {RecipientName},\n\nWelcome to {CompanyName}! We are thrilled to have you on board. To complete your registration and activate your account, please click on the link below:\n\n{ActivationLink}\n\nIf the link above doesn't work, copy and paste the following URL into your web browser:\n{ActivationURL}\n\nFor your security, this link will expire in {LinkExpirationTime}. If you did not request this email, please disregard it.\n\nWe look forward to providing you with our services.\n\nBest regards,\n{SenderName}\n{CompanyName}\n{CompanyAddress}\n{CompanyPhone}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "SenderName", "label": "Sender Name", "type": "text" },
+      { "id": "ActivationLink", "label": "Activation Link", "type": "text" },
+      { "id": "ActivationURL", "label": "Activation URL", "type": "text" },
+      { "id": "LinkExpirationTime", "label": "Link Expiration Time", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "CompanyAddress", "label": "Company Address", "type": "text" },
+      { "id": "CompanyPhone", "label": "Company Phone", "type": "text" }
+    ]
+  },
+  "Password Reset Email": {
+    "subject": "Password Reset Request",
+    "template": "Dear {RecipientName},\n\nWe received a request to reset the password for your account. To proceed with the password reset, please click the link below:\n\n{ResetLink}\n\nIf the link above doesn't work, copy and paste the following URL into your browser:\n{ResetURL}\n\nFor your security, this link will expire in {LinkExpirationTime}. If you did not request a password reset, please ignore this email or contact our support team immediately at {SupportEmail}.\n\nThank you for using our services.\n\nBest regards,\n{SenderName}\n{CompanyName}\n{CompanyAddress}\n{CompanyPhone}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "SenderName", "label": "Your Name", "type": "text" },
+      { "id": "ResetLink", "label": "Reset Link", "type": "text" },
+      { "id": "ResetURL", "label": "Reset URL", "type": "text" },
+      { "id": "LinkExpirationTime", "label": "Link Expiration Time", "type": "text" },
+      { "id": "SupportEmail", "label": "Support Email", "type": "email" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "CompanyAddress", "label": "Company Address", "type": "text" },
+      { "id": "CompanyPhone", "label": "Company Phone", "type": "text" }
+    ]
+  },
+  "Billing Invoice Email": {
+    "subject": "Your Billing Invoice for {InvoiceMonth}",
+    "template": "Dear {RecipientName},\n\nPlease find attached the invoice for your recent transaction with us for the month of {InvoiceMonth}. The total amount due is {TotalAmount}.\n\n**Invoice Details:**\n- **Invoice Number:** {InvoiceNumber}\n- **Invoice Date:** {InvoiceDate}\n- **Due Date:** {DueDate}\n\nWe appreciate your prompt payment. If you have any questions or concerns regarding this invoice, please contact our billing department at {SupportEmail}.\n\nThank you for your business.\n\nSincerely,\n{SenderName}\n{CompanyName}\n{CompanyAddress}\n{CompanyPhone}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "SenderName", "label": "Sender Name", "type": "text" },
+      { "id": "InvoiceMonth", "label": "Invoice Month", "type": "text" },
+      { "id": "TotalAmount", "label": "Total Amount", "type": "text" },
+      { "id": "InvoiceNumber", "label": "Invoice Number", "type": "text" },
+      { "id": "InvoiceDate", "label": "Invoice Date", "type": "text" },
+      { "id": "DueDate", "label": "Due Date", "type": "text" },
+      { "id": "SupportEmail", "label": "Support Email", "type": "email" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "CompanyAddress", "label": "Company Address", "type": "text" },
+      { "id": "CompanyPhone", "label": "Company Phone", "type": "text" }
+    ]
+  },
+  "Subscription Renewal Reminder Email": {
+    "subject": "Reminder: Your Subscription Renewal for {ProductName}",
+    "template": "Hello {RecipientName},\n\nThis is a friendly reminder that your subscription for {ProductName} is set to renew on {RenewalDate}. The renewal amount of {RenewalAmount} will be automatically charged to your account on the renewal date.\n\n**Subscription Details:**\n- **Product Name:** {ProductName}\n- **Current Plan:** {CurrentPlan}\n- **Renewal Date:** {RenewalDate}\n- **Renewal Amount:** {RenewalAmount}\n\nIf you wish to make any changes to your subscription or need assistance, please contact our support team at {SupportEmail} before the renewal date.\n\nThank you for choosing {CompanyName}!\n\nBest regards,\n{SenderName}\n{CompanyName}\n{CompanyAddress}\n{CompanyPhone}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "SenderName", "label": "Sender Name", "type": "text" },
+      { "id": "ProductName", "label": "Product Name", "type": "text" },
+      { "id": "CurrentPlan", "label": "Current Plan", "type": "text" },
+      { "id": "RenewalDate", "label": "Renewal Date", "type": "text" },
+      { "id": "RenewalAmount", "label": "Renewal Amount", "type": "text" },
+      { "id": "SupportEmail", "label": "Support Email", "type": "email" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "CompanyAddress", "label": "Company Address", "type": "text" },
+      { "id": "CompanyPhone", "label": "Company Phone", "type": "text" }
+    ]
+  },
+  "Account Deactivation Warning Email": {
+    "subject": "Warning: Account Deactivation Notice for {AccountName}",
+    "template": "Dear {RecipientName},\n\nWe noticed that your account for {AccountName} has been inactive for {InactivePeriod}. According to our policy, inactive accounts are subject to deactivation.\n\nTo keep your account active, please log in to your account before {DeactivationDate}. If your account is deactivated, you may lose access to your data and services.\n\n**Account Details:**\n- **Account Name:** {AccountName}\n- **Inactive Period:** {InactivePeriod}\n- **Deactivation Date:** {DeactivationDate}\n\nIf you have any questions or need assistance, please contact our support team at {SupportEmail}.\n\nThank you for your attention.\n\nBest regards,\n{SenderName}\n{CompanyName}\n{CompanyAddress}\n{CompanyPhone}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "SenderName", "label": "Sender Name", "type": "text" },
+      { "id": "AccountName", "label": "Account Name", "type": "text" },
+      { "id": "InactivePeriod", "label": "Inactive Period", "type": "text" },
+      { "id": "DeactivationDate", "label": "Deactivation Date", "type": "text" },
+      { "id": "SupportEmail", "label": "Support Email", "type": "email" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "CompanyAddress", "label": "Company Address", "type": "text" },
+      { "id": "CompanyPhone", "label": "Company Phone", "type": "text" }
+    ]
+  }
   }
   
 }

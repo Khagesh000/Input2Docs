@@ -111,6 +111,37 @@ class EmailSerializer(serializers.Serializer):
     FeedbackDetails = serializers.CharField(max_length=1000, required=False)
     FeedbackTopic = serializers.CharField(max_length=1000, required=False)
 
+    #operational Emails
+    MaintenanceDate = serializers.CharField(max_length=1000, required=False)
+    EndTime = serializers.CharField(max_length=1000, required=False)
+    StartTime = serializers.CharField(max_length=1000, required=False)
+    CompanyPhone = serializers.CharField(max_length=1000, required=False)
+    CompanyAddress = serializers.CharField(max_length=1000, required=False)
+
+    ResolutionTime = serializers.CharField(max_length=1000, required=False)
+    InterruptionDate = serializers.CharField(max_length=1000, required=False)
+    InterruptionReason = serializers.CharField(max_length=1000, required=False)
+    
+    LinkExpirationTime = serializers.CharField(max_length=1000, required=False)
+    ActivationURL = serializers.CharField(max_length=1000, required=False)
+    ActivationLink = serializers.CharField(max_length=1000, required=False)
+
+    ResetURL = serializers.CharField(max_length=1000, required=False)
+    ResetLink = serializers.CharField(max_length=1000, required=False)
+ 
+    DueDate = serializers.CharField(max_length=1000, required=False)
+    InvoiceDate = serializers.CharField(max_length=1000, required=False)
+    InvoiceMonth = serializers.CharField(max_length=1000, required=False)
+    InvoiceNumber = serializers.CharField(max_length=1000, required=False)
+    TotalAmount = serializers.CharField(max_length=1000, required=False)
+
+    RenewalDate = serializers.CharField(max_length=1000, required=False)
+    RenewalAmount = serializers.CharField(max_length=1000, required=False)
+    CurrentPlan = serializers.CharField(max_length=1000, required=False)
+
+    InactivePeriod = serializers.CharField(max_length=1000, required=False)
+    DeactivationDate = serializers.CharField(max_length=1000, required=False)
+    AccountName = serializers.CharField(max_length=1000, required=False)
 
     subject = serializers.CharField(max_length=255, required=False)
 
