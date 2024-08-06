@@ -97,16 +97,25 @@ class EmailSerializer(serializers.Serializer):
      #Partenrship and collabration emails
     YourName = serializers.CharField(max_length=1000, required=False)
     YourCompany = serializers.CharField(max_length=1000, required=False)
-    YourEmail = serializers.CharField(max_length=1000, required=False)
+    
     YourPhone = serializers.CharField(max_length=1000, required=False)
     RecipientCompany = serializers.CharField(max_length=1000, required=False)
     YourPosition = serializers.CharField(max_length=1000, required=False)
     
     PartnerCompany = serializers.CharField(max_length=1000, required=False)
 
+    #Thank You Emails
+    OrderDate = serializers.CharField(max_length=1000, required=False)
+    AmountPaid = serializers.CharField(max_length=1000, required=False)
+
+    FeedbackDetails = serializers.CharField(max_length=1000, required=False)
+    FeedbackTopic = serializers.CharField(max_length=1000, required=False)
+
+
     subject = serializers.CharField(max_length=255, required=False)
 
     
+
     def validate(self, attrs):
         email_type = attrs.get('email_type')
 

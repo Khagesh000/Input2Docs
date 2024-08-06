@@ -448,7 +448,7 @@
   "Partnership & Collaboration Emails":{
     "Partnership Proposal Email": {
     "subject": "Proposal for Strategic Partnership",
-    "template": "Dear {RecipientName},\n\nWe are excited to propose a strategic partnership between {YourCompany} and {RecipientCompany}. By combining our strengths and resources, we believe we can create significant value and achieve our mutual goals more effectively.\n\nOur collaboration could include:\n\n- Joint marketing initiatives\n- Shared resources and expertise\n- Co-branded products or services\n\nWe are eager to discuss this opportunity in detail and explore how our partnership can be mutually beneficial. Please let us know a convenient time for a meeting or call.\n\nLooking forward to your positive response.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourPhone}\n{YourEmail}",
+    "template": "Dear {RecipientName},\n\nWe are excited to propose a strategic partnership between {YourCompany} and {RecipientCompany}. By combining our strengths and resources, we believe we can create significant value and achieve our mutual goals more effectively.\n\nOur collaboration could include:\n\n- Joint marketing initiatives\n- Shared resources and expertise\n- Co-branded products or services\n\nWe are eager to discuss this opportunity in detail and explore how our partnership can be mutually beneficial. Please let us know a convenient time for a meeting or call.\n\nLooking forward to your positive response.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourPhone}\n{SenderEmail}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "RecipientCompany", "label": "Recipient Company", "type": "text", "required": true },
@@ -456,13 +456,13 @@
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
       { "id": "YourPhone", "label": "Your Phone", "type": "text", "required": true },
-      { "id": "YourEmail", "label": "Your Email", "type": "email", "required": true },
-      { "id": "SenderEmail", "label": "Sender Email", "type": "email", "required": true }
+      { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true }
     ]
   },
   "Collaboration Invitation Email": {
     "subject": "Invitation to Collaborate",
-    "template": "Hi {RecipientName},\n\nWe are thrilled to invite {RecipientCompany} to collaborate with {YourCompany} on an exciting new project. This partnership aims to leverage our combined expertise to create innovative solutions and drive impactful results.\n\nThe collaboration could involve:\n\n- Joint product development\n- Shared marketing campaigns\n- Collaborative research and insights\n\nWe would love to discuss this opportunity further and explore how we can work together for our mutual benefit. Please let us know your availability for a meeting.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourPhone}\n{YourEmail}",
+    "template": "Hi {RecipientName},\n\nWe are thrilled to invite {RecipientCompany} to collaborate with {YourCompany} on an exciting new project. This partnership aims to leverage our combined expertise to create innovative solutions and drive impactful results.\n\nThe collaboration could involve:\n\n- Joint product development\n- Shared marketing campaigns\n- Collaborative research and insights\n\nWe would love to discuss this opportunity further and explore how we can work together for our mutual benefit. Please let us know your availability for a meeting.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourPhone}\n{SenderEmail}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "RecipientCompany", "label": "Recipient Company", "type": "text", "required": true },
@@ -470,13 +470,13 @@
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
       { "id": "YourPhone", "label": "Your Phone", "type": "text", "required": true },
-      { "id": "YourEmail", "label": "Your Email", "type": "email", "required": true },
-      { "id": "SenderEmail", "label": "Sender Email", "type": "email", "required": true }
+      { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true }
     ]
   },
   "Joint Venture Announcement Email": {
     "subject": "Announcing Our New Joint Venture",
-    "template": "Dear {RecipientName},\n\nWe are excited to announce a new joint venture between {YourCompany} and {PartnerCompany}. This collaboration is set to combine our resources and expertise to deliver innovative solutions and achieve remarkable outcomes.\n\nThe joint venture will focus on:\n\n- Developing new product lines\n- Expanding market reach\n- Enhancing customer experience\n\nWe are enthusiastic about the potential of this venture and look forward to working together to bring these plans to fruition. Thank you for your support and partnership.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourPhone}\n{YourEmail}",
+    "template": "Dear {RecipientName},\n\nWe are excited to announce a new joint venture between {YourCompany} and {PartnerCompany}. This collaboration is set to combine our resources and expertise to deliver innovative solutions and achieve remarkable outcomes.\n\nThe joint venture will focus on:\n\n- Developing new product lines\n- Expanding market reach\n- Enhancing customer experience\n\nWe are enthusiastic about the potential of this venture and look forward to working together to bring these plans to fruition. Thank you for your support and partnership.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourPhone}\n{SenderEmail}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "PartnerCompany", "label": "Partner Company", "type": "text", "required": true },
@@ -484,13 +484,13 @@
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
       { "id": "YourPhone", "label": "Your Phone", "type": "text", "required": true },
-      { "id": "YourEmail", "label": "Your Email", "type": "email", "required": true },
-      { "id": "SenderEmail", "label": "Sender Email", "type": "email", "required": true }
+      { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true }
     ]
   },
   "Sponsorship Request Email": {
     "subject": "Sponsorship Opportunity for {EventName}",
-    "template": "Dear {RecipientName},\n\nWe are reaching out to request your esteemed sponsorship for our upcoming event, {EventName}. Your support will play a crucial role in ensuring the success and impact of this event.\n\nSponsorship opportunities include:\n\n- Event branding and promotion\n- Exclusive partnership benefits\n- Networking and engagement opportunities\n\nWe would be delighted to discuss the various sponsorship options available and how your support can make a significant difference. Please let us know if you are interested in partnering with us.\n\nThank you for considering this opportunity.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourPhone}\n{YourEmail}",
+    "template": "Dear {RecipientName},\n\nWe are reaching out to request your esteemed sponsorship for our upcoming event, {EventName}. Your support will play a crucial role in ensuring the success and impact of this event.\n\nSponsorship opportunities include:\n\n- Event branding and promotion\n- Exclusive partnership benefits\n- Networking and engagement opportunities\n\nWe would be delighted to discuss the various sponsorship options available and how your support can make a significant difference. Please let us know if you are interested in partnering with us.\n\nThank you for considering this opportunity.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourPhone}\n{SenderEmail}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "EventName", "label": "Event Name", "type": "text", "required": true },
@@ -498,26 +498,26 @@
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
       { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true },
       { "id": "YourPhone", "label": "Your Phone", "type": "text", "required": true },
-      { "id": "YourEmail", "label": "Your Email", "type": "email", "required": true },
-      { "id": "SenderEmail", "label": "Sender Email", "type": "email", "required": true }
+      { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true }
     ]
   },
   "Affiliate Program Email": {
     "subject": "Join Our Exciting Affiliate Program at {YourCompany}!",
-    "template": "<p>Dear {RecipientName},</p>\n<p>We are thrilled to invite you to become an affiliate partner with {YourCompany}. Our affiliate program offers lucrative commissions for promoting our high-quality products and services.</p>\n<p>As an affiliate, you will enjoy:</p>\n<ul>\n<li>Competitive commission rates</li>\n<li>Exclusive access to promotional materials</li>\n<li>Advanced tracking and analytics tools</li>\n</ul>\n<p>To get started, please review the attached guidelines and reach out with any questions. We are dedicated to your success and look forward to a fruitful partnership.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{YourEmail}</p>",
+    "template": "<p>Dear {RecipientName},</p>\n<p>We are thrilled to invite you to become an affiliate partner with {YourCompany}. Our affiliate program offers lucrative commissions for promoting our high-quality products and services.</p>\n<p>As an affiliate, you will enjoy:</p>\n<ul>\n<li>Competitive commission rates</li>\n<li>Exclusive access to promotional materials</li>\n<li>Advanced tracking and analytics tools</li>\n</ul>\n<p>To get started, please review the attached guidelines and reach out with any questions. We are dedicated to your success and look forward to a fruitful partnership.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{SenderEmail}</p>",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true },
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
       { "id": "YourPhone", "label": "Your Phone", "type": "text", "required": true },
-      { "id": "YourEmail", "label": "Your Email", "type": "email", "required": true },
-      { "id": "SenderEmail", "label": "Sender Email", "type": "email", "required": true }
+      { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true }
     ]
   },
   "Co-Marketing Opportunity Email": {
     "subject": "Exciting Co-Marketing Opportunity with {YourCompany}",
-    "template": "<p>Hello {RecipientName},</p>\n<p>We are reaching out to explore a co-marketing opportunity between {YourCompany} and {RecipientCompany}. By collaborating on marketing initiatives, we can amplify our reach and drive significant engagement.</p>\n<p>Potential co-marketing activities include:</p>\n<ul>\n<li>Joint webinars or events</li>\n<li>Collaborative content creation</li>\n<li>Cross-promotional campaigns</li>\n</ul>\n<p>We believe this partnership will bring substantial benefits to both parties. Please let us know your interest and availability for a discussion.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{YourEmail}</p>",
+    "template": "<p>Hello {RecipientName},</p>\n<p>We are reaching out to explore a co-marketing opportunity between {YourCompany} and {RecipientCompany}. By collaborating on marketing initiatives, we can amplify our reach and drive significant engagement.</p>\n<p>Potential co-marketing activities include:</p>\n<ul>\n<li>Joint webinars or events</li>\n<li>Collaborative content creation</li>\n<li>Cross-promotional campaigns</li>\n</ul>\n<p>We believe this partnership will bring substantial benefits to both parties. Please let us know your interest and availability for a discussion.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{SenderEmail}</p>",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "RecipientCompany", "label": "Recipient Company", "type": "text", "required": true },
@@ -525,21 +525,21 @@
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
       { "id": "YourPhone", "label": "Your Phone", "type": "text", "required": true },
-      { "id": "YourEmail", "label": "Your Email", "type": "email", "required": true },
-      { "id": "SenderEmail", "label": "Sender Email", "type": "email", "required": true }
+      { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true }
     ]
   },
   "Partner Onboarding Email": {
     "subject": "Welcome Aboard: Partner Onboarding at {YourCompany}",
-    "template": "<p>Dear {RecipientName},</p>\n<p>Welcome to the {YourCompany} partner network! We are excited to have you on board and look forward to a successful collaboration.</p>\n<p>To facilitate a smooth onboarding process, please find the following resources attached:</p>\n<ul>\n<li>Partner Guidelines and Agreement</li>\n<li>Marketing and Sales Resources</li>\n<li>Contact Information for Support</li>\n</ul>\n<p>If you have any questions or need assistance, please feel free to reach out. We are here to support you every step of the way.</p>\n<p>Warm regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{YourEmail}</p>",
+    "template": "<p>Dear {RecipientName},</p>\n<p>Welcome to the {YourCompany} partner network! We are excited to have you on board and look forward to a successful collaboration.</p>\n<p>To facilitate a smooth onboarding process, please find the following resources attached:</p>\n<ul>\n<li>Partner Guidelines and Agreement</li>\n<li>Marketing and Sales Resources</li>\n<li>Contact Information for Support</li>\n</ul>\n<p>If you have any questions or need assistance, please feel free to reach out. We are here to support you every step of the way.</p>\n<p>Warm regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{SenderEmail}</p>",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true },
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
       { "id": "YourPhone", "label": "Your Phone", "type": "text", "required": true },
-      { "id": "YourEmail", "label": "Your Email", "type": "email", "required": true },
-      { "id": "SenderEmail", "label": "Sender Email", "type": "email", "required": true }
+      { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true }
     ]
   }
   },
@@ -547,7 +547,7 @@
   "Thank You Emails":{
     "Thank You for Your Purchase Email": {
     "subject": "Thank You for Your Purchase from {YourCompany}!",
-    "template": "<p>Dear {RecipientName},</p>\n<p>Thank you for your recent purchase at {YourCompany}. We are thrilled to have you as a customer and hope you are enjoying your new {ProductName}.</p>\n<p>Your order details are as follows:</p>\n<ul>\n  <li><strong>Order Number:</strong> {OrderNumber}</li>\n  <li><strong>Order Date:</strong> {OrderDate}</li>\n  <li><strong>Product Name:</strong> {ProductName}</li>\n  <li><strong>Amount Paid:</strong> {AmountPaid}</li>\n</ul>\n<p>If you have any questions or need assistance, please do not hesitate to contact us at {SenderEmail}. We are here to help!</p>\n<p>Thank you once again for choosing {YourCompany}. We look forward to serving you in the future.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{YourEmail}</p>",
+    "template": "<p>Dear {RecipientName},</p>\n<p>Thank you for your recent purchase at {YourCompany}. We are thrilled to have you as a customer and hope you are enjoying your new {ProductName}.</p>\n<p>Your order details are as follows:</p>\n<ul>\n  <li><strong>Order Number:</strong> {OrderNumber}</li>\n  <li><strong>Order Date:</strong> {OrderDate}</li>\n  <li><strong>Product Name:</strong> {ProductName}</li>\n  <li><strong>Amount Paid:</strong> {AmountPaid}</li>\n</ul>\n<p>If you have any questions or need assistance, please do not hesitate to contact us at {RecipientEmail}. We are here to help!</p>\n<p>Thank you once again for choosing {YourCompany}. We look forward to serving you in the future.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{SenderEmail}</p>",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true },
@@ -555,105 +555,106 @@
       { "id": "OrderNumber", "label": "Order Number", "type": "text", "required": true },
       { "id": "OrderDate", "label": "Order Date", "type": "text", "required": true },
       { "id": "AmountPaid", "label": "Amount Paid", "type": "text", "required": true },
-      { "id": "SenderEmail", "label": "Sender Email", "type": "email", "required": true },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true },
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
       { "id": "YourPhone", "label": "Your Phone", "type": "text", "required": true },
-      { "id": "YourEmail", "label": "Your Email", "type": "email", "required": true }
+      { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true }
     ]
   },
   "Thank You for Your Feedback Email": {
     "subject": "Thank You for Your Feedback, {RecipientName}!",
-    "template": "<p>Dear {RecipientName},</p>\n<p>Thank you for taking the time to provide us with your valuable feedback. Your insights are crucial in helping us improve our services and products.</p>\n<p>We appreciate your input on:</p>\n<ul>\n  <li><strong>Feedback Topic:</strong> {FeedbackTopic}</li>\n  <li><strong>Details:</strong> {FeedbackDetails}</li>\n</ul>\n<p>Our team will review your feedback and take it into consideration. If you have any additional comments or need further assistance, please feel free to reach out to us at {SenderEmail}.</p>\n<p>Thank you once again for your support and for helping us serve you better.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{YourEmail}</p>",
+    "template": "<p>Dear {RecipientName},</p>\n<p>Thank you for taking the time to provide us with your valuable feedback. Your insights are crucial in helping us improve our services and products.</p>\n<p>We appreciate your input on:</p>\n<ul>\n  <li><strong>Feedback Topic:</strong> {FeedbackTopic}</li>\n  <li><strong>Details:</strong> {FeedbackDetails}</li>\n</ul>\n<p>Our team will review your feedback and take it into consideration. If you have any additional comments or need further assistance, please feel free to reach out to us at {RecipientEmail}.</p>\n<p>Thank you once again for your support and for helping us serve you better.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{SenderEmail}</p>",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "FeedbackTopic", "label": "Feedback Topic", "type": "text", "required": true },
       { "id": "FeedbackDetails", "label": "Feedback Details", "type": "text", "required": true },
-      { "id": "SenderEmail", "label": "Sender Email", "type": "email", "required": true },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true },
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
       { "id": "YourPhone", "label": "Your Phone", "type": "text", "required": true },
-      { "id": "YourEmail", "label": "Your Email", "type": "email", "required": true }
+      { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true },
+      { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true }
     ]
   },
   "Thank You for Your Support Email": {
     "subject": "Thank You for Your Support, {RecipientName}!",
-    "template": "<p>Dear {RecipientName},</p>\n<p>We want to extend our heartfelt thanks for your continued support of {YourCompany}. Your commitment to our mission and your engagement with our services are greatly valued.</p>\n<p>Your recent support has helped us:</p>\n<ul>\n  <li><strong>Support Cause:</strong> {Cause}</li>\n  <li><strong>Amount Contributed:</strong> {AmountContributed}</li>\n  <li><strong>Support Date:</strong> {SupportDate}</li>\n</ul>\n<p>If you have any questions or wish to learn more about how your support is making a difference, please contact us at {SenderEmail}. We would love to hear from you.</p>\n<p>Thank you once again for being an integral part of our journey.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{YourEmail}</p>",
+    "template": "<p>Dear {RecipientName},</p>\n<p>We want to extend our heartfelt thanks for your continued support of {YourCompany}. Your commitment to our mission and your engagement with our services are greatly valued.</p>\n<p>Your recent support has helped us:</p>\n<ul>\n  <li><strong>Support Cause:</strong> {Cause}</li>\n  <li><strong>Amount Contributed:</strong> {AmountContributed}</li>\n  <li><strong>Support Date:</strong> {SupportDate}</li>\n</ul>\n<p>If you have any questions or wish to learn more about how your support is making a difference, please contact us at {RecipientEmail}. We would love to hear from you.</p>\n<p>Thank you once again for being an integral part of our journey.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{SenderEmail}</p>",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true },
       { "id": "Cause", "label": "Cause Supported", "type": "text", "required": true },
       { "id": "AmountContributed", "label": "Amount Contributed", "type": "text", "required": true },
       { "id": "SupportDate", "label": "Support Date", "type": "text", "required": true },
-      { "id": "SenderEmail", "label": "Sender Email", "type": "email", "required": true },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true },
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
       { "id": "YourPhone", "label": "Your Phone", "type": "text", "required": true },
-      { "id": "YourEmail", "label": "Your Email", "type": "email", "required": true }
+      { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true }
     ]
   },
   "Thank You for Attending Email": {
     "subject": "Thank You for Attending Our Event, {RecipientName}!",
-    "template": "<p>Dear {RecipientName},</p>\n<p>Thank you for attending our recent event, {EventName}. We are delighted that you could join us and hope you found the experience valuable and enjoyable.</p>\n<p>We would love to hear your feedback on:</p>\n<ul>\n  <li><strong>Event Highlights:</strong> {EventHighlights}</li>\n  <li><strong>Your Overall Experience:</strong> {OverallExperience}</li>\n</ul>\n<p>Your insights will help us enhance future events. If you have any additional comments or suggestions, please feel free to reach out to us at {SenderEmail}.</p>\n<p>Thank you once again for being a part of our event. We look forward to seeing you at future gatherings.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{YourEmail}</p>",
+    "template": "<p>Dear {RecipientName},</p>\n<p>Thank you for attending our recent event, {EventName}. We are delighted that you could join us and hope you found the experience valuable and enjoyable.</p>\n<p>We would love to hear your feedback on:</p>\n<ul>\n  <li><strong>Event Highlights:</strong> {EventHighlights}</li>\n  <li><strong>Your Overall Experience:</strong> {OverallExperience}</li>\n</ul>\n<p>Your insights will help us enhance future events. If you have any additional comments or suggestions, please feel free to reach out to us at {RecipientEmail}.</p>\n<p>Thank you once again for being a part of our event. We look forward to seeing you at future gatherings.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{SenderEmail}</p>",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true },
       { "id": "EventName", "label": "Event Name", "type": "text", "required": true },
       { "id": "EventHighlights", "label": "Event Highlights", "type": "text", "required": true },
       { "id": "OverallExperience", "label": "Overall Experience", "type": "text", "required": true },
-      { "id": "SenderEmail", "label": "Sender Email", "type": "email", "required": true },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true },
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
       { "id": "YourPhone", "label": "Your Phone", "type": "text", "required": true },
-      { "id": "YourEmail", "label": "Your Email", "type": "email", "required": true }
+      { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true }
     ]
   },
   "Thank You for Your Business Email": {
     "subject": "Thank You for Your Business with {YourCompany}!",
-    "template": "<p>Dear {RecipientName},</p>\n<p>We want to extend our sincere gratitude for doing business with {YourCompany}. Your trust and partnership mean a lot to us, and we are committed to providing you with the best service possible.</p>\n<p>Here are the details of our recent interaction:</p>\n<ul>\n  <li><strong>Business Transaction:</strong> {TransactionDetails}</li>\n  <li><strong>Date:</strong> {TransactionDate}</li>\n  <li><strong>Amount:</strong> {TransactionAmount}</li>\n</ul>\n<p>If you have any questions or need further assistance, please contact us at {SenderEmail}. We are here to support you.</p>\n<p>Thank you once again for your business. We look forward to continuing our successful partnership.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{YourEmail}</p>",
+    "template": "<p>Dear {RecipientName},</p>\n<p>We want to extend our sincere gratitude for doing business with {YourCompany}. Your trust and partnership mean a lot to us, and we are committed to providing you with the best service possible.</p>\n<p>Here are the details of our recent interaction:</p>\n<ul>\n  <li><strong>Business Transaction:</strong> {TransactionDetails}</li>\n  <li><strong>Date:</strong> {TransactionDate}</li>\n  <li><strong>Amount:</strong> {TransactionAmount}</li>\n</ul>\n<p>If you have any questions or need further assistance, please contact us at {RecipientEmail}. We are here to support you.</p>\n<p>Thank you once again for your business. We look forward to continuing our successful partnership.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{SenderEmail}</p>",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true },
       { "id": "TransactionDetails", "label": "Transaction Details", "type": "text", "required": true },
       { "id": "TransactionDate", "label": "Transaction Date", "type": "text", "required": true },
       { "id": "TransactionAmount", "label": "Transaction Amount", "type": "text", "required": true },
-      { "id": "SenderEmail", "label": "Sender Email", "type": "email", "required": true },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true },
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
       { "id": "YourPhone", "label": "Your Phone", "type": "text", "required": true },
-      { "id": "YourEmail", "label": "Your Email", "type": "email", "required": true }
+      { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true }
     ]
   },
   "Thank You for Your Donation Email": {
     "subject": "Thank You for Your Generous Donation!",
-    "template": "<p>Dear {RecipientName},</p>\n<p>Thank you for your generous donation to {YourCompany}. Your support is crucial to our mission, and we are deeply grateful for your contribution.</p>\n<p>Your donation details are as follows:</p>\n<ul>\n  <li><strong>Donation Amount:</strong> {DonationAmount}</li>\n  <li><strong>Donation Date:</strong> {DonationDate}</li>\n  <li><strong>Purpose of Donation:</strong> {DonationPurpose}</li>\n</ul>\n<p>If you have any questions or need more information about how your donation is being used, please contact us at {SenderEmail}. We are happy to provide you with updates.</p>\n<p>Thank you once again for your kindness and support.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{YourEmail}</p>",
+    "template": "<p>Dear {RecipientName},</p>\n<p>Thank you for your generous donation to {YourCompany}. Your support is crucial to our mission, and we are deeply grateful for your contribution.</p>\n<p>Your donation details are as follows:</p>\n<ul>\n  <li><strong>Donation Amount:</strong> {DonationAmount}</li>\n  <li><strong>Donation Date:</strong> {DonationDate}</li>\n  <li><strong>Purpose of Donation:</strong> {DonationPurpose}</li>\n</ul>\n<p>If you have any questions or need more information about how your donation is being used, please contact us at {RecipientEmail}. We are happy to provide you with updates.</p>\n<p>Thank you once again for your kindness and support.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{SenderEmail}</p>",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true },
       { "id": "DonationAmount", "label": "Donation Amount", "type": "text", "required": true },
       { "id": "DonationDate", "label": "Donation Date", "type": "text", "required": true },
       { "id": "DonationPurpose", "label": "Purpose of Donation", "type": "text", "required": true },
-      { "id": "SenderEmail", "label": "Sender Email", "type": "email", "required": true },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true },
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
       { "id": "YourPhone", "label": "Your Phone", "type": "text", "required": true },
-      { "id": "YourEmail", "label": "Your Email", "type": "email", "required": true }
+      { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true }
     ]
   },
   "Thank You for Your Inquiry Email": {
     "subject": "Thank You for Your Inquiry!",
-    "template": "<p>Dear {RecipientName},</p>\n<p>Thank you for reaching out to {YourCompany}. We appreciate your interest and are excited to assist you with your inquiry.</p>\n<p>Here is a summary of your inquiry:</p>\n<ul>\n  <li><strong>Inquiry Subject:</strong> {InquirySubject}</li>\n  <li><strong>Inquiry Details:</strong> {InquiryDetails}</li>\n  <li><strong>Date of Inquiry:</strong> {InquiryDate}</li>\n</ul>\n<p>Our team will review your inquiry and get back to you as soon as possible. If you have any further questions or need immediate assistance, please contact us at {SenderEmail}.</p>\n<p>Thank you once again for your interest. We look forward to assisting you.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{YourEmail}</p>",
+    "template": "<p>Dear {RecipientName},</p>\n<p>Thank you for reaching out to {YourCompany}. We appreciate your interest and are excited to assist you with your inquiry.</p>\n<p>Here is a summary of your inquiry:</p>\n<ul>\n  <li><strong>Inquiry Subject:</strong> {InquirySubject}</li>\n  <li><strong>Inquiry Details:</strong> {InquiryDetails}</li>\n  <li><strong>Date of Inquiry:</strong> {InquiryDate}</li>\n</ul>\n<p>Our team will review your inquiry and get back to you as soon as possible. If you have any further questions or need immediate assistance, please contact us at {RecipientEmail}.</p>\n<p>Thank you once again for your interest. We look forward to assisting you.</p>\n<p>Best regards,<br>{YourName}<br>{YourPosition}<br>{YourCompany}<br>{YourPhone}<br>{SenderEmail}</p>",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true },
       { "id": "InquirySubject", "label": "Inquiry Subject", "type": "text", "required": true },
       { "id": "InquiryDetails", "label": "Inquiry Details", "type": "text", "required": true },
       { "id": "InquiryDate", "label": "Inquiry Date", "type": "text", "required": true },
-      { "id": "SenderEmail", "label": "Sender Email", "type": "email", "required": true },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true },
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
       { "id": "YourPhone", "label": "Your Phone", "type": "text", "required": true },
-      { "id": "YourEmail", "label": "Your Email", "type": "email", "required": true }
+      { "id": "SenderEmail", "label": "Your Email", "type": "email", "required": true }
     ]
   }
   }

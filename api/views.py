@@ -3,12 +3,12 @@ from django.conf import settings
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.core.mail import send_mail
+from django.core.mail import send_mail, BadHeaderError
 import logging
 from .serializers import EmailSerializer
 import html
 import os
-
+import re
 
 logger = logging.getLogger(__name__)
 
@@ -25,6 +25,11 @@ def load_email_templates():
         raise
 
 emailTemplates = load_email_templates() 
+
+def remove_html_tags(text):
+    """Remove HTML tags from a string."""
+    clean = re.compile('<.*?>')
+    return re.sub(clean, '', text)
 
 class SendEmailView(APIView):
     def post(self, request, *args, **kwargs):
@@ -60,18 +65,30 @@ class SendEmailView(APIView):
             subject = subject_template.format(**email_data)
             email_body = template.format(**email_data)
             email_body = html.unescape(email_body).replace("<p>", "").replace("</p>", "")
+            email_body = remove_html_tags(email_body)  # Remove all HTML tags
+            
+            try:
+                send_mail(
+                    subject=subject,
+                    message=email_body,
+                    from_email=email_data.get("SenderEmail"),
+                    recipient_list=[email_data.get("RecipientEmail")],
+                    fail_silently=False,
+                )
+            except BadHeaderError:
+                logger.error('Invalid header found.')
+                return Response({"error": "Invalid header found."}, status=status.HTTP_400_BAD_REQUEST)
+            except Exception as e:
+                logger.error(f'Error sending email: {str(e)}')
+                return Response({"error": f"Failed to send email: {str(e)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-            send_mail(
-                subject=subject,
-                message=email_body,
-                from_email=email_data.get("SenderEmail"),
-                recipient_list=[email_data.get("RecipientEmail")],
-                fail_silently=False,
-            )
             return Response({"status": "Email sent successfully"}, status=status.HTTP_200_OK)
         except KeyError as e:
             logger.error(f'Missing key in email data: {e}')
             return Response({"error": f"Missing key: {e}"}, status=status.HTTP_400_BAD_REQUEST)
+        except ValueError as e:
+            logger.error(f'Value error: {e}')
+            return Response({"error": f"Value error: {e}"}, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
-            logger.error(f'Error sending email: {str(e)}')
-            return Response({"error": "Failed to send email"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            logger.error(f'Unexpected error: {str(e)}')
+            return Response({"error": "Failed to process email data"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

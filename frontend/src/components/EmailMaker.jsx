@@ -107,7 +107,12 @@ const EmailMaker = ({ selectedTemplate }) => {
     });
 
     // Remove unwanted <p> tags
-    filledTemplate = filledTemplate.replace(/<p>/g, '').replace(/<\/p>/g, '');
+    filledTemplate = filledTemplate.replace(/<p>/g, ' ').replace(/<\/p>/g, '')
+                                   .replace(/<\/?div>/g, ' ') // Remove <div> and </div>
+                                   .replace(/<\/?strong>/g, ' ') // Remove <strong> and </strong>
+                                   .replace(/<\/?ul>/g, ' ') // Remove <ul> and </ul>
+                                   .replace(/<\/?li>/g, ' ') 
+                                   .replace(/<\/?br>/g, ' ') // Remove <li> and </li>
 
      // Include subject in generated email
      const emailSubject = formData.subject || 'No Subject';
