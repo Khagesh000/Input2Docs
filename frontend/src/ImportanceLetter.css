@@ -17,7 +17,7 @@
   
   .rotating-image {
     width: 100%;
-    height: 400px;
+    height: 300px;
     perspective: 1000px; /* Perspective for 3D effect */
   }
   
@@ -26,7 +26,7 @@
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    animation: rotateImage 10s linear infinite; /* Adjust rotation time here */
+    animation: rotateImage 15s linear infinite; /* Adjust rotation time here */
   }
   
   .rotating-image img {
@@ -41,12 +41,28 @@
   
   .rotating-image-content {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #0c0c0c;
     z-index: 1; /* Ensure content is above the overlay */
+    width: 100%; /* Ensure content fits inside image */
+  padding: 10px;
+  box-sizing: border-box;
+  }
+
+  .rotateimage{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #0c0c0c;
+    z-index: 1; /* Ensure content is above the overlay */
+    width: 100%; /* Ensure content fits inside image */
+  padding: 10px;
+  box-sizing: border-box;
   }
   
   .rotating-image-content h3 {
@@ -131,6 +147,7 @@
 }
 
 @keyframes fadeIn {
+
   from {
     opacity: 0;
   }
@@ -138,3 +155,55 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 768px) {
+  .rotating-image-content {
+    font-size: 12px; /* Smaller font size for small screens */
+    padding: 5px; /* Less padding for small screens */
+  }
+  .rotating-image {
+    height: 300px; /* Adjust height for small screens */
+  }
+  .rotating-image img {
+    height: 300px; /* Adjust height for small screens */
+  }
+  .content-wrapper {
+    order: -1; /* Move content wrapper above the image on small screens */
+  }
+  .importance-letter-container .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .col-lg-6 {
+    width: 100%;
+  }
+  
+}
+
+@media (max-width: 480px){
+  .rotating-image-content {
+    font-size: 8px; /* Smaller font size for small screens */
+    padding: 2px; /* Less padding for small screens */
+  }
+  .rotating-image {
+    height: 300px; /* Adjust height for small screens */
+  }
+  .rotating-image img {
+    height: 300px; /* Adjust height for small screens */
+  }
+  .content-wrapper {
+    order: -1; /* Move content wrapper above the image on small screens */
+  }
+  .importance-letter-container .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .col-lg-6 {
+    width: 100%;
+  }
+  .rotating-image-inner {
+    height: 100%; /* Ensure rotating inner height matches container */
+  }
+}
+
+

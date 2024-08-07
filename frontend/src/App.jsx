@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/navbar';
 import HomeImageCarousel from './components/HomeImageCaurosel'; // Assuming this is correctly imported
@@ -37,23 +37,24 @@ function MainContent() {
 
 function App() {
   const location = useLocation();
-  const isLetterPage = location.pathname === '/letter';
-  const isEmailPage = location.pathname === '/email';
-  const isAboutPage = location.pathname === '/about';
-  const isCoverLetterPage = location.pathname === '/cover';
-  const isResumePage = location.pathname === '/resume';
+  const [loading, setLoading] = useState(true);
+  const isSpecialPage = ['/letter', '/email', '/about', '/cover', '/resume'].includes(location.pathname);
 
-
+  useEffect(() => {
+    // Simulate loading delay
+    const timer = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div>
-      {!isLetterPage && !isEmailPage && !isAboutPage && !isCoverLetterPage && !isResumePage && <MainContent />} {/* Hide MainContent on both /letter and /email pages */}
+      {!isSpecialPage && <MainContent />} {/* Hide MainContent on special pages */}
       <Routes>
         <Route path="/letter" element={<Letter />} />
         <Route path="/email" element={<Email />} />
-        <Route path="/about" element={<About />}/>
-        <Route path="/cover" element={<CoverLetter />}/>
-        <Route path='resume' element={<Resume/>}/>
+        <Route path="/about" element={<About />} />
+        <Route path="/cover" element={<CoverLetter />} />
+        <Route path="/resume" element={<Resume />} />
       </Routes>
     </div>
   );

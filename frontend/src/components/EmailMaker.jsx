@@ -142,7 +142,7 @@ const EmailMaker = ({ selectedTemplate }) => {
         controller.abort();
       }, 60000);
 
-      const response = await fetch('https://input2docs.onrender.com/api/send-email/', {
+      const response = await fetch('http://127.0.0.1:8000/api/send-email/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -213,6 +213,26 @@ const EmailMaker = ({ selectedTemplate }) => {
                 className="form-control"
               />
             )}
+             {field.type === 'textarea' && (
+            <textarea
+              id={field.id}
+              name={field.id}
+              value={formData[field.id] || ''}
+              onChange={handleChange}
+              rows="6" // Adjust as needed
+              className="form-control"
+            />
+          )}
+          {field.type === 'date' && (
+            <input
+              type="date"
+              id={field.id}
+              name={field.id}
+              value={formData[field.id] || ''}
+              onChange={handleChange}
+              className="form-control"
+            />
+          )}
             {field.type === 'email' && (
               <input
                 type="email"

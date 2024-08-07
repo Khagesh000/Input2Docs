@@ -193,7 +193,7 @@
   "fields": [
     { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
     { "id": "EventName", "label": "Event Name", "type": "text" },
-    { "id": "EventDate", "label": "Event Date", "type": "text" },
+    { "id": "EventDate", "label": "Event Date", "type": "date" },
     { "id": "EventLocation", "label": "Event Location", "type": "text" },
     { "id": "EventHighlights", "label": "Event Highlights", "type": "text" },
     { "id": "RSVPDate", "label": "RSVP Date", "type": "text" },
@@ -284,7 +284,7 @@
     { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
     { "id": "OrderNumber", "label": "Order Number", "type": "text" },
     { "id": "TrackingNumber", "label": "Tracking Number", "type": "text" },
-    { "id": "EstimatedDeliveryDate", "label": "Estimated Delivery Date", "type": "text" },
+    { "id": "EstimatedDeliveryDate", "label": "Estimated Delivery Date", "type": "date" },
     { "id": "CompanyName", "label": "Company Name", "type": "text" },
     { "id": "SupportPhone", "label": "Support Phone Number", "type": "text" },
     { "id": "SupportEmail", "label": "Support Email", "type": "email" },
@@ -345,7 +345,7 @@
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
       { "id": "Position", "label": "Position", "type": "text" },
-      { "id": "StartDate", "label": "Start Date", "type": "text" },
+      { "id": "StartDate", "label": "Start Date", "type": "date" },
       { "id": "Salary", "label": "Salary", "type": "text" },
       { "id": "SenderName", "label": "Sender Name", "type": "text" },
       { "id": "SenderPosition", "label": "Sender Position", "type": "text" },
@@ -360,7 +360,7 @@
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
-      { "id": "OnboardingDate", "label": "Onboarding Date", "type": "text" },
+      { "id": "OnboardingDate", "label": "Onboarding Date", "type": "date" },
       { "id": "SenderName", "label": "Sender Name", "type": "text" },
       { "id": "SenderPosition", "label": "Sender Position", "type": "text" },
       { "id": "SenderPhone", "label": "Sender Phone", "type": "text" },
@@ -390,7 +390,7 @@
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "PolicyName", "label": "Policy Name", "type": "text", "required": true },
-      { "id": "EffectiveDate", "label": "Effective Date", "type": "text", "required": true },
+      { "id": "EffectiveDate", "label": "Effective Date", "type": "date", "required": true },
       { "id": "SenderName", "label": "Sender Name", "type": "text", "required": true },
       { "id": "SenderPosition", "label": "Sender Position", "type": "text", "required": true },
       { "id": "CompanyName", "label": "Company Name", "type": "text", "required": true },
@@ -405,7 +405,7 @@
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "MeetingTopic", "label": "Meeting Topic", "type": "text", "required": true },
-      { "id": "MeetingDate", "label": "Meeting Date", "type": "text", "required": true },
+      { "id": "MeetingDate", "label": "Meeting Date", "type": "date", "required": true },
       { "id": "MeetingTime", "label": "Meeting Time", "type": "text", "required": true },
       { "id": "MeetingLocation", "label": "Meeting Location", "type": "text", "required": true },
       { "id": "SenderName", "label": "Sender Name", "type": "text", "required": true },
@@ -421,7 +421,7 @@
     "template": "Hi {RecipientName},\n\nThis is a friendly reminder about your upcoming performance review scheduled on {ReviewDate}. Please take the time to prepare by reflecting on your achievements, challenges, and areas for growth over the past review period. If you have any documents or reports you would like to discuss, please bring them along.\n\nLooking forward to our meeting.\n\nBest regards,\n{SenderName}\n{SenderPosition}\n{CompanyName}\n{SenderPhone}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
-      { "id": "ReviewDate", "label": "Review Date", "type": "text", "required": true },
+      { "id": "ReviewDate", "label": "Review Date", "type": "date", "required": true },
       { "id": "SenderName", "label": "Sender Name", "type": "text", "required": true },
       { "id": "SenderPosition", "label": "Sender Position", "type": "text", "required": true },
       { "id": "CompanyName", "label": "Company Name", "type": "text", "required": true },
@@ -553,7 +553,7 @@
       { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true },
       { "id": "ProductName", "label": "Product Name", "type": "text", "required": true },
       { "id": "OrderNumber", "label": "Order Number", "type": "text", "required": true },
-      { "id": "OrderDate", "label": "Order Date", "type": "text", "required": true },
+      { "id": "OrderDate", "label": "Order Date", "type": "date", "required": true },
       { "id": "AmountPaid", "label": "Amount Paid", "type": "text", "required": true },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true },
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
@@ -585,7 +585,7 @@
       { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true },
       { "id": "Cause", "label": "Cause Supported", "type": "text", "required": true },
       { "id": "AmountContributed", "label": "Amount Contributed", "type": "text", "required": true },
-      { "id": "SupportDate", "label": "Support Date", "type": "text", "required": true },
+      { "id": "SupportDate", "label": "Support Date", "type": "date", "required": true },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true },
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
@@ -616,7 +616,7 @@
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true },
       { "id": "TransactionDetails", "label": "Transaction Details", "type": "text", "required": true },
-      { "id": "TransactionDate", "label": "Transaction Date", "type": "text", "required": true },
+      { "id": "TransactionDate", "label": "Transaction Date", "type": "date", "required": true },
       { "id": "TransactionAmount", "label": "Transaction Amount", "type": "text", "required": true },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true },
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
@@ -632,7 +632,7 @@
       { "id": "RecipientName", "label": "Recipient Name", "type": "text", "required": true },
       { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true },
       { "id": "DonationAmount", "label": "Donation Amount", "type": "text", "required": true },
-      { "id": "DonationDate", "label": "Donation Date", "type": "text", "required": true },
+      { "id": "DonationDate", "label": "Donation Date", "type": "date", "required": true },
       { "id": "DonationPurpose", "label": "Purpose of Donation", "type": "text", "required": true },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true },
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
@@ -649,7 +649,7 @@
       { "id": "YourCompany", "label": "Your Company", "type": "text", "required": true },
       { "id": "InquirySubject", "label": "Inquiry Subject", "type": "text", "required": true },
       { "id": "InquiryDetails", "label": "Inquiry Details", "type": "text", "required": true },
-      { "id": "InquiryDate", "label": "Inquiry Date", "type": "text", "required": true },
+      { "id": "InquiryDate", "label": "Inquiry Date", "type": "date", "required": true },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email", "required": true },
       { "id": "YourName", "label": "Your Name", "type": "text", "required": true },
       { "id": "YourPosition", "label": "Your Position", "type": "text", "required": true },
@@ -668,7 +668,7 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "SenderName", "label": "Sender Name", "type": "text" },
-      { "id": "MaintenanceDate", "label": "Maintenance Date", "type": "text" },
+      { "id": "MaintenanceDate", "label": "Maintenance Date", "type": "date" },
       { "id": "StartTime", "label": "Start Time", "type": "text" },
       { "id": "EndTime", "label": "End Time", "type": "text" },
       { "id": "SupportEmail", "label": "Support Email", "type": "email" },
@@ -685,7 +685,7 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "SenderName", "label": "Sender Name", "type": "text" },
-      { "id": "InterruptionDate", "label": "Interruption Date", "type": "text" },
+      { "id": "InterruptionDate", "label": "Interruption Date", "type": "date" },
       { "id": "InterruptionReason", "label": "Reason for Interruption", "type": "text" },
       { "id": "ResolutionTime", "label": "Expected Resolution Time", "type": "text" },
       { "id": "SupportEmail", "label": "Support Email", "type": "email" },
@@ -738,8 +738,8 @@
       { "id": "InvoiceMonth", "label": "Invoice Month", "type": "text" },
       { "id": "TotalAmount", "label": "Total Amount", "type": "text" },
       { "id": "InvoiceNumber", "label": "Invoice Number", "type": "text" },
-      { "id": "InvoiceDate", "label": "Invoice Date", "type": "text" },
-      { "id": "DueDate", "label": "Due Date", "type": "text" },
+      { "id": "InvoiceDate", "label": "Invoice Date", "type": "date" },
+      { "id": "DueDate", "label": "Due Date", "type": "date" },
       { "id": "SupportEmail", "label": "Support Email", "type": "email" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
       { "id": "CompanyAddress", "label": "Company Address", "type": "text" },
@@ -756,7 +756,7 @@
       { "id": "SenderName", "label": "Sender Name", "type": "text" },
       { "id": "ProductName", "label": "Product Name", "type": "text" },
       { "id": "CurrentPlan", "label": "Current Plan", "type": "text" },
-      { "id": "RenewalDate", "label": "Renewal Date", "type": "text" },
+      { "id": "RenewalDate", "label": "Renewal Date", "type": "date" },
       { "id": "RenewalAmount", "label": "Renewal Amount", "type": "text" },
       { "id": "SupportEmail", "label": "Support Email", "type": "email" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
@@ -774,11 +774,741 @@
       { "id": "SenderName", "label": "Sender Name", "type": "text" },
       { "id": "AccountName", "label": "Account Name", "type": "text" },
       { "id": "InactivePeriod", "label": "Inactive Period", "type": "text" },
-      { "id": "DeactivationDate", "label": "Deactivation Date", "type": "text" },
+      { "id": "DeactivationDate", "label": "Deactivation Date", "type": "date" },
       { "id": "SupportEmail", "label": "Support Email", "type": "email" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
       { "id": "CompanyAddress", "label": "Company Address", "type": "text" },
       { "id": "CompanyPhone", "label": "Company Phone", "type": "text" }
+    ]
+  }
+  }, 
+  "Job Application Emails":{
+    "Cover Letter Email": {
+    "subject": "Application for {JobTitle} Position",
+    "template": "Dear {HiringManagerName},\n\nI am writing to express my interest in the {JobTitle} position at {CompanyName}, as advertised on {JobBoard}. With my background in {YourField} and experience in {RelevantSkills}, I am confident in my ability to contribute effectively to your team.\n\nIn my previous role at {PreviousCompany}, I {describeachievementsandresponsibilities}. I am particularly drawn to {CompanyName} because {reasonForInterestInCompany}.\n\nI have attached my resume and portfolio for your review. I look forward to the opportunity to discuss how my skills and experiences align with the needs of your team.\n\nThank you for considering my application. I look forward to hearing from you.\n\nSincerely,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+      { "id": "JobTitle", "label": "Job Title", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "JobBoard", "label": "Job Board", "type": "text" },
+      { "id": "YourField", "label": "Your Field", "type": "text" },
+      { "id": "RelevantSkills", "label": "Relevant Skills", "type": "text" },
+      { "id": "PreviousCompany", "label": "Previous Company", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" },
+      { "id": "describeachievementsandresponsibilities", "label": "Achievements & Responsibilities", "type": "textarea", "rows": 6 },
+      { "id": "reasonForInterestInCompany", "label": "Reason for Interest in Company", "type": "textarea", "rows": 4 }
+    ]
+  },
+  "Thank You Email After Interview": {
+    "subject": "Thank You - {YourName} Interview for {JobTitle}",
+    "template": "Dear {InterviewersName},\n\nThank you for the opportunity to interview for the {JobTitle} position at {CompanyName} on {InterviewDate}. I enjoyed our conversation and learning more about the exciting work being done by your team.\n\nI am particularly excited about {specificaspectofthecompanyorrolediscussed}. My experience in {relevantexperienceorskill} would enable me to make a meaningful contribution to your team.\n\nPlease do not hesitate to reach out if you need any additional information. I am looking forward to the possibility of joining {CompanyName} and contributing to {specificcompanygoalorproject}.\n\nThank you once again for your time and consideration.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "InterviewersName", "label": "Interviewer's Name", "type": "text" },
+      { "id": "JobTitle", "label": "Job Title", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "InterviewDate", "label": "Interview Date", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" },
+      { "id": "specificaspectofthecompanyorrolediscussed", "label": "Aspects of the company role", "type": "textarea", "rows": 6 },
+      { "id": "relevantexperienceorskill", "label": "Experience or skill", "type": "textarea", "rows": 6 },
+      { "id": "specificcompanygoalorproject", "label": "Company Goal Or project", "type": "textarea", "rows": 6 }
+    ]
+  },
+  "Job Inquiry Email": {
+    "subject": "Inquiry About Job Openings",
+    "template": "Dear {HiringManagerName},\n\nI hope this message finds you well. I am writing to inquire about potential job openings in the {Department} at {CompanyName}. With a background in {YourField} and experience in {RelevantExperience}, I am eager to contribute to your team.\n\nI have been following {CompanyName} and am impressed by {specificAchievementsOrCulture}. I believe that my skills in {specificSkills} could be an asset to your team.\n\nPlease let me know if there are any opportunities available. I have attached my resume for your review. I look forward to the opportunity to discuss how I can contribute to {CompanyName}.\n\nThank you for your time and consideration.\n\nSincerely,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+      { "id": "Department", "label": "Department", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourField", "label": "Your Field", "type": "text" },
+      { "id": "RelevantExperience", "label": "Relevant Experience", "type": "text" },
+      { "id": "specificAchievementsOrCulture", "label": "Specific Achievements or Company Culture", "type": "textarea", "rows": 6 },
+      { "id": "specificSkills", "label": "Specific Skills", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Follow-Up Email After Application": {
+    "subject": "Follow-Up on Application for {JobTitle} Position",
+    "template": "Dear {HiringManagerName},\n\nI hope this message finds you well. I recently applied for the {JobTitle} position at {CompanyName} and wanted to follow up on my application status. I am very excited about the opportunity to work with your team and contribute to {specificProjectOrInitiative}.\n\nI believe my experience in {RelevantExperience} and skills in {SpecificSkills} make me a strong candidate for this role. I would appreciate any update on the timeline for the hiring process.\n\nThank you for considering my application. I look forward to the opportunity to discuss how I can contribute to {CompanyName}.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+      { "id": "JobTitle", "label": "Job Title", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "RelevantExperience", "label": "Relevant Experience", "type": "text" },
+      { "id": "SpecificSkills", "label": "Specific Skills", "type": "text" },
+      { "id": "specificProjectOrInitiative", "label": "Specific Project or Company Initiative", "type": "textarea", "rows": 6 },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Job Acceptance Email": {
+    "subject": "Acceptance of {JobTitle} Position",
+    "template": "Dear {HiringManagerName},\n\nI am thrilled to accept the offer for the {JobTitle} position at {CompanyName}. Thank you for this exciting opportunity. I am eager to contribute to the team and work on {specificProjectOrRoleTasks}.\n\nAs discussed, I will begin on {StartDate}. Please let me know if there are any documents or preparations needed before my start date.\n\nThank you once again for this opportunity. I look forward to joining {CompanyName}.\n\nSincerely,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+      { "id": "JobTitle", "label": "Job Title", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "StartDate", "label": "Start Date", "type": "date" },
+      { "id": "specificProjectOrRoleTasks", "label": "Specific Project or Role-Related Tasks", "type": "textarea", "rows": 6 },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Job Decline Email": {
+    "subject": "Declining Offer for {JobTitle} Position",
+    "template": "Dear {HiringManagerName},\n\nThank you for offering me the {JobTitle} position at {CompanyName}. After careful consideration, I have decided to decline the offer. This was a difficult decision, as I was very impressed with the company and the team.\n\nI appreciate the time and effort you and your team have invested in the hiring process. I am confident that {CompanyName} will continue to succeed and grow. I wish you and the team all the best.\n\nThank you once again for the opportunity and your understanding.\n\nSincerely,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+      { "id": "JobTitle", "label": "Job Title", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Interview Rescheduling Email": {
+    "subject": "Request to Reschedule Interview for {JobTitle} Position",
+    "template": "Dear {InterviewersName},\n\nI am writing to request a rescheduling of my interview for the {JobTitle} position at {CompanyName}, originally scheduled for {OriginalInterviewDate}. Due to {ReasonForRescheduling}, I am unable to attend at the planned time.\n\nI sincerely apologize for any inconvenience this may cause. I am very interested in the opportunity and would appreciate the chance to meet at another time. Please let me know if {AlternativeDate} works for you, or suggest another date and time that suits your schedule.\n\nThank you for your understanding and consideration.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "InterviewersName", "label": "Interviewer's Name", "type": "text" },
+      { "id": "JobTitle", "label": "Job Title", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "OriginalInterviewDate", "label": "Original Interview Date", "type": "date" },
+      { "id": "ReasonForRescheduling", "label": "Reason for Rescheduling", "type": "text" },
+      { "id": "AlternativeDate", "label": "Alternative Date", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  }
+  },
+  "Resume Emails":{
+    "Resume Submission Email": {
+    "subject": "Application for {JobTitle} Position at {CompanyName}",
+    "template": "Dear {HiringManagerName},\n\nI hope this message finds you well. I am excited to submit my resume for the {JobTitle} position at {CompanyName}. With my background in {relevantExperienceOrSkills}, I am confident that I can bring valuable contributions to your team.\n\nAttached to this email is my updated resume, which provides a detailed overview of my professional experience, skills, and achievements. I am particularly drawn to this opportunity because of {specificReason}.\n\nI would welcome the chance to further discuss how my background aligns with the needs of your team. Thank you for considering my application. I look forward to the possibility of contributing to {CompanyName}.\n\nWarm regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+      { "id": "JobTitle", "label": "Job Title", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" },
+      { "id": "relevantExperienceOrSkills", "label": "Relevant Experience or Skills", "type": "textarea", "rows": 6 },
+      { "id": "specificReason", "label": "Specific Reason Related to the Company or Role", "type": "textarea", "rows": 6 }
+    ]
+  },
+  "Resume Update Email": {
+    "subject": "Updated Resume Submission for {JobTitle} Position",
+    "template": "Dear {HiringManagerName},\n\nI hope you are well. Following my initial application for the {JobTitle} position at {CompanyName}, I am writing to submit an updated version of my resume. The updated resume includes recent accomplishments and experiences that better reflect my qualifications for this role.\n\nPlease find the revised resume attached for your review. I am very enthusiastic about the opportunity to contribute to your team and am confident that my enhanced skills and experiences make me a strong candidate for this position.\n\nThank you for your continued consideration. I look forward to the possibility of discussing my application further and am available at your convenience.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+      { "id": "JobTitle", "label": "Job Title", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+      
+    ]
+  },
+  "Resume Request Email": {
+    "subject": "Request for Resume Submission for {JobTitle} Position",
+    "template": "Dear {ApplicantName},\n\nI hope this email finds you well. We have reviewed your initial application and are interested in learning more about your qualifications for the {JobTitle} position at {CompanyName}.\n\nTo proceed with your application, we kindly request that you submit your resume. Please attach your resume to this email and send it to {SenderEmail} at your earliest convenience.\n\nIf you have any questions or need additional information, please do not hesitate to reach out. We appreciate your prompt response and look forward to receiving your resume.\n\nThank you for your cooperation.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "ApplicantName", "label": "Applicant Name", "type": "text" },
+      { "id": "JobTitle", "label": "Job Title", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Resume Follow-Up Email": {
+    "subject": "Follow-Up on Resume Submission for {JobTitle} Position",
+    "template": "Dear {HiringManagerName},\n\nI hope you are doing well. I am writing to follow up on the resume I submitted for the {JobTitle} position at {CompanyName} on {SubmissionDate}. I am very enthusiastic about this opportunity and wanted to ensure that my application has been received.\n\nIf there are any additional details or documents required, please let me know. I am very keen to contribute to your team and am available to discuss my application at your convenience.\n\nThank you once again for considering my application. I look forward to the possibility of hearing from you soon.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+      { "id": "JobTitle", "label": "Job Title", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "SubmissionDate", "label": "Submission Date", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Blind Resume Submission Email": {
+    "subject": "Resume Submission for {JobTitle} Position",
+  "template": "Dear Hiring Team,\n\nI hope this email finds you well. I am reaching out to express my interest in the {JobTitle} position at {CompanyName}. Please find my resume attached for your review.\n\nAlthough I am not applying through a specific referral or job posting, I am very enthusiastic about the opportunity to contribute to {CompanyName} and would be excited to bring my skills in {RelevantExperienceSkills} to your team.\n\nIf there are any current or upcoming openings that align with my background, I would greatly appreciate the opportunity to discuss how my experience and skills could be a fit. Thank you for considering my application.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+  "fields": [
+    { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+    { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+    { "id": "JobTitle", "label": "Job Title", "type": "text" },
+    { "id": "CompanyName", "label": "Company Name", "type": "text" },
+    { "id": "YourName", "label": "Your Name", "type": "text" },
+    { "id": "YourPhone", "label": "Your Phone Number", "type": "text" },
+    { "id": "RelevantExperienceSkills", "label": "Relevant Experience or Skills", "type": "textarea", "rows": 6 }
+  ]
+  },
+  "Referral Resume Submission Email": {
+    "subject": "Resume Submission for {JobTitle} Position - Referred by {ReferrersName}",
+  "template": "Dear {HiringManagerName},\n\nI hope you are well. I am writing to submit my resume for the {JobTitle} position at {CompanyName}. I was referred to this opportunity by {ReferrersName}, who suggested that my background in {RelevantExperienceSkills} could be a strong match for your team.\n\nAttached is my resume for your review. I am enthusiastic about the possibility of contributing to {CompanyName} and am confident that my skills and experiences align well with the requirements of the position.\n\nI would greatly appreciate the chance to discuss how my background aligns with your needs. Thank you for considering my application. I look forward to the opportunity to connect.\n\nSincerely,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+  "fields": [
+    { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+    { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+    { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+    { "id": "JobTitle", "label": "Job Title", "type": "text" },
+    { "id": "CompanyName", "label": "Company Name", "type": "text" },
+    { "id": "ReferrersName", "label": "Referrer's Name", "type": "text" },
+    { "id": "YourName", "label": "Your Name", "type": "text" },
+    { "id": "YourPhone", "label": "Your Phone Number", "type": "text" },
+    { "id": "RelevantExperienceSkills", "label": "Relevant Experience or Skills", "type": "textarea", "rows": 6 }
+  ]
+  },
+  "Resume Acknowledgment Email": {
+    "subject": "Acknowledgment of Your Resume Submission",
+    "template": "Dear {ApplicantName},\n\nThank you for submitting your resume for the {JobTitle} position at {CompanyName}. We have received your application and appreciate your interest in joining our team.\n\nOur team will review your resume and qualifications in the context of our current job openings. If your experience and skills match our needs, we will reach out to you to discuss next steps.\n\nIn the meantime, if you have any questions or need further information, please feel free to contact us at {SenderEmail}. We appreciate your patience and thank you once again for considering a career with {CompanyName}.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "ApplicantName", "label": "Applicant Name", "type": "text" },
+      { "id": "JobTitle", "label": "Job Title", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  }
+  },
+  "Meeting Request Emails":{
+    "Initial Meeting Request Email": {
+      "subject": "Request for Initial Meeting Regarding {Topic}",
+      "template": "Dear {RecipientName},\n\nI hope this message finds you well. I am reaching out to request an initial meeting to discuss {SpecificTopicOrProject} and explore how we might collaborate effectively.\n\nCould you please let me know your availability for a meeting over the next week? I am flexible with timing and can adjust to fit your schedule. If you have any preferred times or dates, please feel free to share them.\n\nThank you for considering my request. I look forward to the opportunity to discuss this in more detail.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+      "fields": [
+        { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+        { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+        { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+        { "id": "Topic", "label": "Meeting Topic", "type": "text" },
+        { "id": "SpecificTopicOrProject", "label": "Specific Topic or Project", "type": "textarea", "rows": 6 },
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+      ]
+    },
+    "Follow-Up Meeting Request Email": {
+      "subject": "Follow-Up Meeting Request for {Topic}",
+      "template": "Dear {RecipientName},\n\nI hope you are doing well. Following up on our previous conversation regarding {SpecificTopicOrProject}, I would like to schedule a follow-up meeting to review progress and discuss next steps.\n\nPlease let me know your availability over the next week for a follow-up discussion. If there are specific times or dates that work best for you, I am happy to accommodate.\n\nThank you for your time, and I look forward to continuing our discussion.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+      "fields": [
+        { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+        { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+        { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+        { "id": "Topic", "label": "Meeting Topic", "type": "text" },
+        { "id": "SpecificTopicOrProject", "label": "Specific Topic or Project", "type": "textarea", "rows": 6 },
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+      ]
+    },
+    "Meeting Confirmation Email": {
+      "subject": "Meeting Confirmation: {Topic} on {MeetingDate}",
+      "template": "Dear {RecipientName},\n\nI am writing to confirm our upcoming meeting scheduled for {MeetingDate} at {MeetingTime}. We will be discussing {SpecificTopicOrAgenda}.\n\nPlease let me know if there are any additional items you would like to include in the agenda or if any changes to the timing are required.\n\nLooking forward to our discussion.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+      "fields": [
+        { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+        { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+        { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+        { "id": "Topic", "label": "Meeting Topic", "type": "text" },
+        { "id": "MeetingDate", "label": "Meeting Date", "type": "date" },
+        { "id": "MeetingTime", "label": "Meeting Time", "type": "text" },
+        { "id": "SpecificTopicOrAgenda", "label": "Specific Topic or Agenda", "type": "textarea", "rows": 6 },
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+      ]
+    },
+    "Meeting Rescheduling Email": {
+      "subject": "Request to Reschedule Meeting on {OriginalMeetingDate}",
+      "template": "Dear {RecipientName},\n\nI hope this message finds you well. I am writing to request a rescheduling of our meeting originally planned for {OriginalMeetingDate} at {OriginalMeetingTime}. Due to {ReasonForRescheduling}, I am unable to attend at the scheduled time.\n\nCould you please suggest alternative dates and times that might work for you? I am flexible and will do my best to accommodate your availability.\n\nThank you for your understanding and flexibility. I look forward to finding a suitable time to meet.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+      "fields": [
+        { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+        { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+        { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+        { "id": "OriginalMeetingDate", "label": "Original Meeting Date", "type": "date" },
+        { "id": "OriginalMeetingTime", "label": "Original Meeting Time", "type": "text" },
+        { "id": "ReasonForRescheduling", "label": "Reason for Rescheduling", "type": "textarea", "rows": 6 },
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+      ]
+    },
+  "Meeting Agenda Email": {
+    "subject": "Meeting Agenda for {MeetingTopic} on {MeetingDate}",
+    "template": "Dear {RecipientName},\n\nI hope you are doing well. As we prepare for our upcoming meeting scheduled for {MeetingDate} at {MeetingTime}, I wanted to share the agenda to ensure we cover all key points.\n\n**Agenda:**\n1. {AgendaItem1}\n2. {AgendaItem2}\n3. {AgendaItem3}\n4. {AgendaItem4}\n\nPlease let me know if there are any additional topics you would like to include or if there are any changes you would suggest. Your input is valuable, and I want to ensure that our meeting is as productive as possible.\n\nLooking forward to our discussion.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "MeetingTopic", "label": "Meeting Topic", "type": "text" },
+      { "id": "MeetingDate", "label": "Meeting Date", "type": "date" },
+      { "id": "MeetingTime", "label": "Meeting Time", "type": "text" },
+      { "id": "AgendaItem1", "label": "Agenda Item 1", "type": "text" },
+      { "id": "AgendaItem2", "label": "Agenda Item 2", "type": "text" },
+      { "id": "AgendaItem3", "label": "Agenda Item 3", "type": "text" },
+      { "id": "AgendaItem4", "label": "Agenda Item 4", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Meeting Cancellation Email": {
+    "subject": "Meeting Cancellation: {MeetingTopic} on {MeetingDate}",
+    "template": "Dear {RecipientName},\n\nI regret to inform you that our scheduled meeting on {MeetingDate} at {MeetingTime} regarding {MeetingTopic} will need to be cancelled due to {ReasonForCancellation}.\n\nI apologize for any inconvenience this may cause and would be happy to reschedule the meeting at a more convenient time. Please let me know your availability for alternative dates, or suggest a time that suits you best.\n\nThank you for your understanding, and I look forward to reconvening soon.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "MeetingTopic", "label": "Meeting Topic", "type": "text" },
+      { "id": "MeetingDate", "label": "Meeting Date", "type": "date" },
+      { "id": "MeetingTime", "label": "Meeting Time", "type": "text" },
+      { "id": "ReasonForCancellation", "label": "Reason for Cancellation", "type": "textarea", "rows": 6 },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Virtual Meeting Request Email": {
+    "subject": "Request for Virtual Meeting Regarding {Topic}",
+    "template": "Dear {RecipientName},\n\nI hope this email finds you well. I would like to request a virtual meeting to discuss {Topic}. Given the nature of our discussion, I believe a virtual meeting would be the most efficient way to proceed.\n\nCould you please let me know your availability for a virtual meeting over the next week? I am flexible and can adjust to fit your schedule. Additionally, please indicate your preferred video conferencing platform (e.g., Zoom, Microsoft Teams, Google Meet) if you have one.\n\nThank you for your time and consideration. I look forward to our discussion.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "Topic", "label": "Meeting Topic", "type": "textarea", "rows": 6 },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" },
+      { "id": "PreferredPlatform", "label": "Preferred Video Conferencing Platform", "type": "text" }
+    ]
+  }
+  },
+  "Recommendation Request Emails":{
+    "Recommendation Letter Request Email": {
+    "subject": "Request for a Recommendation Letter",
+    "template": "Dear {RecipientName},\n\nI hope this message finds you well. I am reaching out to request your assistance in writing a recommendation letter for me. As I apply for {SpecificPosition}, your insight into my skills and experiences would be invaluable.\n\nSpecifically, I would appreciate it if you could highlight {KeySkills} and how they align with {SpecificRequirements}. If you need any additional information or details, please let me know.\n\nThe deadline for submitting the letter is {SubmissionDeadline}. I am happy to provide any supporting documents or information to facilitate the writing process.\n\nThank you very much for considering my request. I truly appreciate your support.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "SpecificPosition", "label": "Specific Position/Program/Scholarship", "type": "text" },
+      { "id": "KeySkills", "label": "Key Skills/Experiences or Accomplishments", "type": "textarea", "rows": 6 },
+      { "id": "SpecificRequirements", "label": "Specific Requirements or Goals", "type": "text" },
+      { "id": "SubmissionDeadline", "label": "Submission Deadline", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "LinkedIn Recommendation Request Email": {
+    "subject": "Request for LinkedIn Recommendation",
+    "template": "Dear {RecipientName},\n\nI hope you are doing well. I am in the process of updating my LinkedIn profile and would be honored if you could write a recommendation for me. Your perspective on my {SkillsAchievements} would greatly enhance my profile.\n\nIn particular, it would be helpful if you could comment on {specificSkills} and how they contributed to our work together. If you need any additional information or context, please let me know.\n\nThank you very much for considering my request. Your support means a lot to me.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "SkillsAchievements", "label": "Skills/Achievements/Experiences", "type": "text" },
+      { "id": "specificSkills", "label": "Specific Skills or Experiences", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Referral Request Email": {
+    "subject": "Request for a Referral",
+    "template": "Dear {RecipientName},\n\nI hope this email finds you well. I am reaching out to request a referral for a position at {CompanyName}. Given our past collaboration and your understanding of my skills and experiences, your referral would greatly enhance my application.\n\nThe role I am applying for is {JobTitle}, and you can find more details about the position at {JobPostingURL}. If you are willing, please let me know if you need any additional information or materials from me.\n\nThank you very much for your support and assistance. I truly appreciate your help.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "JobTitle", "label": "Job Title", "type": "text" },
+      { "id": "JobPostingURL", "label": "Job Posting URL", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Character Reference Request Email": {
+    "subject": "Request for Character Reference",
+    "template": "Dear {RecipientName},\n\nI hope this message finds you well. I am writing to request a character reference from you for my application to {SpecificProgram}. Given our relationship and your knowledge of my character, I believe your reference would be extremely valuable.\n\nIt would be helpful if you could address {SpecificQualities} and provide examples of how they reflect my suitability for {SpecificProgram}. If you require any additional details or have any questions, please let me know.\n\nThank you very much for your time and assistance. I greatly appreciate your support.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "SpecificProgram", "label": "Specific Program/Position/Scholarship", "type": "text" },
+      { "id": "SpecificQualities", "label": "Specific Qualities/Characteristics", "type": "textarea", "rows": 6 },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Professional Reference Request Email": {
+    "subject": "Request for Professional Reference",
+    "template": "Dear {RecipientName},\n\nI hope you are well. I am reaching out to request a professional reference from you as part of my application for {SpecificJob}. Your insight into my professional skills and experiences would be greatly valued by the hiring team.\n\nIt would be helpful if you could highlight {KeySkills} and how they were demonstrated during our time working together. Please let me know if you need any additional information or documents from me.\n\nThe deadline for submitting the reference is {SubmissionDeadline}. Thank you very much for your assistance and support.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "SpecificJob", "label": "Specific Job/Position/Program", "type": "textarea", "rows" :6},
+      { "id": "KeySkills", "label": "Key Skills/Experiences or Achievements", "type": "textarea", "rows":6 },
+      { "id": "SubmissionDeadline", "label": "Submission Deadline", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Academic Recommendation Request Email": {
+    "subject": "Request for Academic Recommendation",
+    "template": "Dear {RecipientName},\n\nI hope this message finds you well. I am writing to request your support in providing an academic recommendation for me as part of my application to {SpecificAcademicProgram}. Your perspective on my academic achievements and capabilities would be invaluable.\n\nPlease focus on {SpecificAcademicAchievements} and how they reflect my potential for success in {SpecificAcademicProgram}. If you need any additional details or materials, please let me know.\n\nThe recommendation needs to be submitted by {SubmissionDeadline}. I appreciate your time and assistance in this matter.\n\nSincerely,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "SpecificAcademicProgram", "label": "Specific Academic Program/Scholarship", "type": "textarea", "rows":6 },
+      { "id": "SpecificAcademicAchievements", "label": "Specific Academic Achievements/Skills", "type": "textarea", "rows" :4},
+      { "id": "SubmissionDeadline", "label": "Submission Deadline", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Thank You Email for Recommendation": {
+    "subject": "Thank You for Your Recommendation",
+    "template": "Dear {RecipientName},\n\nI hope you are doing well. I wanted to express my sincere gratitude for taking the time to write a recommendation for me. Your support and kind words were instrumental in my application for {SpecificPosition}.\n\nI truly appreciate the effort you put into providing such a detailed and thoughtful recommendation. If there is ever anything I can do to return the favor, please do not hesitate to let me know.\n\nThank you once again for your valuable support.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "SpecificPosition", "label": "Specific Position/Program/Scholarship", "type": "textarea", "rows":6 },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  }
+  },
+  "Feedback Emails":{
+    "Performance Feedback Request Email": {
+    "subject": "Request for Performance Feedback",
+    "template": "Dear {RecipientName},\n\nI hope this message finds you well. As part of my ongoing professional development, I am reaching out to request your feedback on my performance over the past {TimePeriod}. Your insights and observations are incredibly valuable to me and will help guide my growth and improvement.\n\nSpecifically, I would appreciate your thoughts on the following areas:\n- Strengths and accomplishments\n- Areas for improvement\n- Suggestions for development\n\nPlease let me know if you need any additional information or if there is a preferred format for providing feedback. I would be grateful if you could provide your feedback by {FeedbackDeadline}.\n\nThank you very much for your time and assistance.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "TimePeriod", "label": "Time Period", "type": "text" },
+      { "id": "FeedbackDeadline", "label": "Feedback Deadline", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Customer Feedback Request Email": {
+    "subject": "Request for Customer Feedback",
+    "template": "Dear {CustomerName},\n\nI hope you are doing well. We value your opinion and would greatly appreciate your feedback on your recent experience with {CompanyName}. Your insights will help us improve our services and better meet your needs in the future.\n\nPlease take a few moments to provide feedback on the following aspects:\n- Quality of service\n- Product satisfaction\n- Areas for improvement\n- Overall experience\n\nYour feedback is important to us, and we would be grateful if you could share your thoughts by {FeedbackDeadline}. If you have any specific comments or suggestions, please feel free to include them as well.\n\nThank you for your time and valuable input.\n\nBest regards,\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "CustomerName", "label": "Customer Name", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "FeedbackDeadline", "label": "Feedback Deadline", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Employee Feedback Request Email": {
+    "subject": "Request for Employee Feedback",
+    "template": "Dear {EmployeeName},\n\nI hope this email finds you well. To support our commitment to continuous improvement, we are seeking feedback on your experience working with {CompanyName}. Your input will help us enhance our work environment and support structures.\n\nWe are interested in your thoughts on:\n- Work environment and culture\n- Management and leadership\n- Opportunities for growth\n- Any other comments or suggestions\n\nWe would appreciate it if you could provide your feedback by {FeedbackDeadline}. If you have any specific issues or concerns you would like to discuss, please let us know.\n\nThank you for your cooperation and valuable feedback.\n\nSincerely,\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "EmployeeName", "label": "Employee Name", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "FeedbackDeadline", "label": "Feedback Deadline", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Product Feedback Request Email": {
+    "subject": "Request for Product Feedback",
+    "template": "Dear {RecipientName},\n\nWe hope you are enjoying your recent purchase of {ProductName}. Your feedback is crucial in helping us improve our products and services.\n\nCould you please share your thoughts on the following aspects of the product?\n- Product quality and functionality\n- Usability and user experience\n- Any issues or improvements\n- Overall satisfaction\n\nPlease provide your feedback by {FeedbackDeadline}. Your input is greatly valued, and we appreciate any suggestions you may have.\n\nThank you for your time and support.\n\nBest regards,\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "ProductName", "label": "Product Name", "type": "text" },
+      { "id": "FeedbackDeadline", "label": "Feedback Deadline", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" }
+    ]
+  },
+  "Peer Feedback Request Email": {
+    "subject": "Request for Peer Feedback",
+    "template": "Dear {PeerName},\n\nI hope you are well. As part of our continuous improvement efforts and to support professional development, I am requesting your feedback on my performance and contributions within our team.\n\nYour honest and constructive feedback will be greatly appreciated, especially in the following areas:\n- Collaboration and teamwork\n- Communication and interaction\n- Problem-solving and creativity\n- Strengths and areas for growth\n\nIf possible, please provide your feedback by {FeedbackDeadline}. If you have any specific comments or examples to share, they would be particularly helpful.\n\nThank you very much for your time and assistance.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "PeerName", "label": "Peer Name", "type": "text" },
+      { "id": "FeedbackDeadline", "label": "Feedback Deadline", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Project Feedback Request Email": {
+    "subject": "Request for Feedback on {ProjectName}",
+    "template": "Dear {RecipientName},\n\nI hope you are doing well. I am reaching out to request your feedback on the {ProjectName} project that we recently completed. Your insights and opinions are invaluable to us and will help us enhance our project execution in the future.\n\nSpecifically, I would appreciate your feedback on:\n- Project planning and execution\n- Team collaboration and communication\n- Challenges faced and how they were handled\n- Overall success and areas for improvement\n\nPlease share your feedback by {FeedbackDeadline}. If you have any additional comments or suggestions, they would be very helpful.\n\nThank you for your time and valuable input.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "ProjectName", "label": "Project Name", "type": "text" },
+      { "id": "FeedbackDeadline", "label": "Feedback Deadline", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Exit Interview Feedback Email": {
+    "subject": "Request for Feedback: Exit Interview",
+    "template": "Dear {EmployeeName},\n\nAs part of the exit process, we would like to request your feedback on your experience working with {CompanyName}. Your insights will help us understand what we are doing well and where we can make improvements.\n\nWe would appreciate your thoughts on the following:\n- Work environment and culture\n- Management and support\n- Reasons for leaving\n- Suggestions for improvements\n\nPlease share your feedback by {FeedbackDeadline}. Your feedback is crucial for us to enhance our workplace and support for future employees.\n\nThank you for your time and cooperation.\n\nBest regards,\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "EmployeeName", "label": "Employee Name", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "FeedbackDeadline", "label": "Feedback Deadline", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  }
+  },
+  "Networking Emails":{
+    "Networking Introduction Email": {
+    "subject": "Introduction from {YourName}",
+    "template": "Dear {RecipientName},\n\nI hope this message finds you well. My name is {YourName}, and I recently came across your profile while researching {IndustryField}. I am very impressed with your work in {SpecificArea} and would love to connect with you.\n\nI am currently {YourCurrentRole}, and I am particularly interested in {SpecificInterest}. I believe that your insights and experience could be invaluable as I {ReasonForReachingOut}.\n\nIf you have some time in the coming weeks, I would greatly appreciate the opportunity to have a brief chat or meeting with you. Please let me know your availability, or feel free to suggest a convenient time for us to connect.\n\nThank you very much for considering my request. I look forward to your response.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourPhone}\n{YourLinkedInProfile}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" },
+      { "id": "YourLinkedInProfile", "label": "Your LinkedIn Profile", "type": "text" },
+      { "id": "IndustryField", "label": "Industry/Field of Interest", "type": "text" },
+      { "id": "SpecificArea", "label": "Specific Area or Project", "type": "text" },
+      { "id": "YourCurrentRole", "label": "Your Current Role", "type": "text" },
+      { "id": "SpecificInterest", "label": "Specific Interest", "type": "text" },
+      { "id": "ReasonForReachingOut", "label": "Reason for Reaching Out", "type": "text" }
+    ]
+  },
+  "Follow-Up After Networking Event Email": {
+    "subject": "Great Meeting You at {EventName}",
+    "template": "Dear {RecipientName},\n\nI hope this email finds you well. It was a pleasure meeting you at {EventName} on {EventDate}. I really enjoyed our conversation about {TopicDiscussed} and would love to continue it.\n\nI am {YourCurrentRole} at {YourCompany}, and I believe there could be a great opportunity for us to collaborate or exchange ideas regarding {PotentialOpportunity}. If you’re open to it, I’d love to schedule a time for us to have a follow-up conversation.\n\nPlease let me know your availability over the next few weeks. I look forward to continuing our discussion.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" },
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "TopicDiscussed", "label": "Topic Discussed", "type": "text" },
+      { "id": "YourCurrentRole", "label": "Your Current Role", "type": "text" },
+      { "id": "PotentialOpportunity", "label": "Potential Opportunity", "type": "text" }
+    ]
+  },
+  "Request for Informational Interview Email": {
+    "subject": "Request for Informational Interview",
+    "template": "Dear {RecipientName},\n\nI hope this email finds you well. My name is {YourName}, and I am currently {YourCurrentRole} at {YourCompany}. I have been following your career and am very impressed with your achievements in {RecipientIndustryField}.\n\nI am very interested in learning more about your experiences and the field of {RecipientIndustryField}. If you are available, I would greatly appreciate the opportunity to conduct an informational interview with you at a time that is convenient for you.\n\nPlease let me know if you would be open to a brief conversation. I am flexible with my schedule and can work around your availability.\n\nThank you for considering my request. I look forward to the possibility of speaking with you.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" },
+      { "id": "YourCurrentRole", "label": "Your Current Role", "type": "text" },
+      { "id": "RecipientIndustryField", "label": "Recipient's Industry/Field", "type": "text" }
+    ]
+  },
+  "Reconnecting Email": {
+    "subject": "Reconnecting with {RecipientName}",
+    "template": "Dear {RecipientName},\n\nI hope this message finds you well. It has been a while since we last connected, and I wanted to reach out to see how you’ve been and update you on what I’ve been up to.\n\nSince our last conversation, I have been working on {RecentProjectsUpdates} and am excited about the progress. I would love to catch up and hear about what you have been working on as well.\n\nIf you’re available, could we schedule a time for a brief call or coffee? Please let me know your availability.\n\nLooking forward to reconnecting.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" },
+      { "id": "RecentProjectsUpdates", "label": "Recent Projects/Updates", "type": "text" }
+    ]
+  },
+  "Referral Request Email": {
+    "subject": "Request for Referral for {Position} Position",
+    "template": "Dear {RecipientName},\n\nI hope you are doing well. I am reaching out to ask if you would be willing to provide a referral for me for the {Position} position at {CompanyName}. Your insight and recommendation would be greatly valued and could significantly enhance my application.\n\nGiven your understanding of my skills and experience, I believe a referral from you would carry substantial weight. If you need any additional information or if there are specific details you would like me to provide, please let me know.\n\nThank you very much for considering my request. I truly appreciate your support.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" }
+    ]
+  },
+  "LinkedIn Connection Request Email": {
+    "subject": "Connection Request from {YourName}",
+    "template": "Hi {RecipientName},\n\nI hope you are well. My name is {YourName}, and I came across your profile while researching {RecipientIndustryField}. I am impressed by your background in {RecipientIndustryField} and would like to connect with you on LinkedIn.\n\nI am currently {YourCurrentRole} at {YourCompany}, and I am interested in expanding my network with professionals who have experience in {RecipientIndustryField}. I believe connecting could be mutually beneficial as we share similar interests and professional goals.\n\nLooking forward to connecting with you.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourCurrentRole", "label": "Your Current Role", "type": "text" },
+      { "id": "RecipientIndustryField", "label": "Recipient's Industry/Field", "type": "text" }
+    ]
+  },
+  "Invitation to Professional Event Email": {
+    "subject": "Invitation to {EventName} on {EventDate}",
+    "template": "Dear {RecipientName},\n\nI am pleased to invite you to {EventName}, which will be held on {EventDate} at {EventLocation}. This event will feature {EventHighlights} and provide an excellent opportunity to {PurposeOfEvent}.\n\nWe would be honored to have your presence at this event. Please let us know if you are able to attend, and if you require any additional information or assistance, feel free to contact me.\n\nLooking forward to your positive response.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" },
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventLocation", "label": "Event Location", "type": "text" },
+      { "id": "EventHighlights", "label": "Event Highlights", "type": "text" },
+      { "id": "PurposeOfEvent", "label": "Purpose of Event", "type": "text" }
+    ]
+  }
+  },
+  "Offer & Negotiation Emails":{
+    "Job Offer Email": {
+    "subject": "Job Offer for {Position} at {CompanyName}",
+    "template": "Dear {CandidateName},\n\nWe are excited to extend an offer for the position of {Position} at {CompanyName}. We were impressed by your skills and experience and believe you would be a valuable addition to our team.\n\nPlease find the details of the offer below:\n- **Position**: {Position}\n- **Start Date**: {StartDate}\n- **Salary**: {Salary}\n- **Benefits**: {Benefits}\n\nWe would appreciate it if you could review the offer and confirm your acceptance by {AcceptanceDeadline}. If you have any questions or need further information, please feel free to reach out.\n\nWe look forward to the possibility of working together.\n\nBest regards,\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "CandidateName", "label": "Candidate Name", "type": "date" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "StartDate", "label": "Start Date", "type": "date" },
+      { "id": "Salary", "label": "Salary", "type": "text" },
+      { "id": "Benefits", "label": "Benefits", "type": "text" },
+      { "id": "AcceptanceDeadline", "label": "Acceptance Deadline", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Salary Negotiation Email": {
+    "subject": "Salary Negotiation for {Position} Position",
+    "template": "Dear {HiringManagerName},\n\nThank you for offering me the position of {Position} at {CompanyName}. I am enthusiastic about the opportunity and am confident that my skills and experience align well with the role.\n\nAfter careful consideration, I would like to discuss the salary component of the offer. Based on my research and experience, I believe a salary of {DesiredSalary} would be more reflective of my skills and the value I bring to the team.\n\nI am open to discussing this further and finding a mutually agreeable solution. Please let me know a convenient time for us to discuss this.\n\nThank you for your understanding and consideration.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "DesiredSalary", "label": "Desired Salary", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Counter Offer Email": {
+    "subject": "Counter Offer for {Position} at {CompanyName}",
+    "template": "Dear {HiringManagerName},\n\nThank you for your offer for the position of {Position} at {CompanyName}. I am genuinely interested in the role and the opportunity to work with your team.\n\nHowever, I have received another offer with a salary of {OtherOfferSalary}. Given this, I would like to discuss the possibility of increasing the salary component of your offer. I am confident that with an adjustment to {RequestedSalary}, I would be able to accept the offer and start contributing to {CompanyName}.\n\nPlease let me know if we can discuss this further. I look forward to your response.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "OtherOfferSalary", "label": "Other Offer Salary", "type": "text" },
+      { "id": "RequestedSalary", "label": "Requested Salary", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Acceptance of Offer Email": {
+    "subject": "Acceptance of Offer for {Position} Position",
+    "template": "Dear {HiringManagerName},\n\nI am pleased to formally accept the offer for the position of {Position} at {CompanyName}. I am excited about the opportunity and look forward to contributing to your team.\n\nAs per our discussion, my start date will be {StartDate}. Please let me know if there are any additional steps or paperwork required before my start date.\n\nThank you again for this opportunity. I am eager to get started and make a positive impact at {CompanyName}.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "StartDate", "label": "Start Date", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Rejection of Offer Email": {
+    "subject": "Rejection of Offer for {Position} Position",
+    "template": "Dear {HiringManagerName},\n\nThank you for offering me the position of {Position} at {CompanyName}. After careful consideration, I have decided to decline the offer. This was a difficult decision, as I was genuinely impressed with {CompanyName} and the team.\n\nI appreciate the time and effort you invested in the interview process and in extending the offer. I wish you and your team continued success and hope our paths may cross again in the future.\n\nThank you once again for the opportunity and your understanding.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Negotiation Follow-Up Email": {
+    "subject": "Follow-Up on Salary Negotiation for {Position} Position",
+    "template": "Dear {HiringManagerName},\n\nI hope this message finds you well. I am writing to follow up on our recent discussion regarding the salary offer for the {Position} position at {CompanyName}.\n\nI wanted to reiterate my enthusiasm for the role and my interest in joining your team. After further reflection, I believe a salary adjustment to {RequestedSalary} would be more in line with my experience and the value I would bring to {CompanyName}.\n\nI am open to discussing this further and am hopeful that we can come to a mutually agreeable solution. Please let me know if there is a convenient time for us to continue this discussion.\n\nThank you for your consideration.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "RequestedSalary", "label": "Requested Salary", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
+    ]
+  },
+  "Offer Clarification Email": {
+    "subject": "Clarification Needed on Offer for {Position} Position",
+    "template": "Dear {HiringManagerName},\n\nThank you for the offer for the position of {Position} at {CompanyName}. I am very interested in the opportunity and excited about the prospect of joining your team.\n\nI would like to seek clarification on a few points regarding the offer:\n- **Benefits**: Can you provide more details on the benefits package?\n- **Work Schedule**: What will be the standard work hours and remote work policy?\n- **Additional Perks**: Are there any other benefits or perks that are included?\n\nUnderstanding these details will help me make an informed decision. I appreciate your assistance and look forward to your response.\n\nThank you.\n\nBest regards,\n{YourName}\n{YourPhone}\n{SenderEmail}",
+    "fields": [
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "HiringManagerName", "label": "Hiring Manager Name", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPhone", "label": "Your Phone Number", "type": "text" }
     ]
   }
   }

@@ -6,46 +6,7 @@ import img3 from '../assets/images/lettermaker.png';
 export default function ImportanceLetter() {
   return (
     <div>
-      <div className="importance-letter-container1 mt-4 mb-5">
-        <div className="row align-items-center">
-          {/* Left Side: Rotating Image with Content */}
-          <div className="col-lg-6">
-            <div className="image-wrapper">
-              <div className="rotating-image">
-                <div className="rotating-image-inner">
-                  <img src={img2} alt="Enhance Communication" className="img-fluid" />
-                  <div className="rotating-image-content">
-                    <h3 className="text-dark">Enhance Your Communication</h3>
-                    <p className="text-dark">
-                      Creating effective emails requires clarity in purpose and audience understanding.
-                      Structure your content with a clear subject line, informative body, and concise
-                      conclusion. Maintain a professional tone, use simple language, and personalize where
-                      possible. Follow up as needed for clarity and compliance.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Right Side: Text Content */}
-          <div className="col-lg-6 ">
-            <div className="content-wrapper">
-              <h2 className="text-dark">Importance and Benefits of Emails</h2>
-              <p className="text-dark">
-                Emails play a crucial role in communication, whether in personal or professional settings.
-                They provide a quick and efficient way to convey messages, requests, or information. Emails can establish
-                credibility, document important details, and serve as a record of communication.
-              </p>
-              <p className="text-dark">
-                Some benefits of emails include their ability to reach a specific recipient instantly, their
-                formal nature which is suitable for official communications, and their potential to be archived
-                for future reference.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      
       <section className="points-section">
         <div className="row">
           <div className="col-lg-6">

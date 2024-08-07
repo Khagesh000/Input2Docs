@@ -27,16 +27,14 @@ export default class Navbar extends Component {
           
           {/* Navbar Toggler */}
           <button
-            className="navbar-toggler"
+            className={`navbar-toggler ${this.state.isOpen ? 'collapsed' : ''}`}
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded={this.state.isOpen}
             aria-label="Toggle navigation"
             onClick={this.toggleNavbar}
           >
-            <span className="navbar-toggler-icon"></span>
+            <span></span> {/* Custom toggler with lines */}
           </button>
           
           {/* Navbar Links */}

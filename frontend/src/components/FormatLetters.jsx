@@ -20,7 +20,7 @@ export default class FormatLetters extends Component {
             <div className="card-square">
               <img src={businessIcon} alt="Business Letters" className="img-square" />
               <h5>Business Letters</h5>
-              <p>Formal letters used for business communication.</p>
+              <p className='text-black'>Formal letters used for business communication.</p>
             </div>
           </div>
 
@@ -29,7 +29,7 @@ export default class FormatLetters extends Component {
             <div className="card-square">
               <img src={personalIcon} alt="Personal Letters" className="img-square" />
               <h5>Personal Letters</h5>
-              <p>Informal letters written to friends and family.</p>
+              <p className='text-black'>Informal letters written to friends and family.</p>
             </div>
           </div>
 
@@ -38,7 +38,7 @@ export default class FormatLetters extends Component {
             <div className="card-square">
               <img src={officialIcon} alt="Official Letters" className="img-square" />
               <h5>Official Letters</h5>
-              <p>Formal letters sent to authorities.</p>
+              <p className='text-black'>Formal letters sent to authorities.</p>
             </div>
           </div>
 
@@ -47,7 +47,7 @@ export default class FormatLetters extends Component {
             <div className="card-square">
               <img src={academicIcon} alt="Academic Letters" className="img-square" />
               <h5>Academic Letters</h5>
-              <p>Letters related to educational purposes.</p>
+              <p className='text-black'>Letters related to educational purposes.</p>
             </div>
           </div>
 
@@ -56,7 +56,7 @@ export default class FormatLetters extends Component {
             <div className="card-square">
               <img src={employmentIcon} alt="Employment Letters" className="img-square" />
               <h5>Employment Letters</h5>
-              <p>Letters related to job applications and employment.</p>
+              <p className='text-black'>Letters related to job applications and employment.</p>
             </div>
           </div>
 
@@ -65,7 +65,7 @@ export default class FormatLetters extends Component {
             <div className="card-square">
               <img src={anotherIcon} alt="Another Type" className="img-square" />
               <h5>Another Type</h5>
-              <p>Description of another type of letter.</p>
+              <p className='text-black'>Description of another type of letter.</p>
             </div>
           </div>
         </div>

@@ -1,50 +1,12 @@
 import React from 'react';
-import '../ImportanceLetter.css'; // Import custom CSS for styling
-import img2 from '../assets/images/adsplace2.jpg';
+ // Import custom CSS for styling
+
 import img3 from '../assets/images/lettermaker.png';
 
 export default function ImportanceLetter() {
   return (
     <div>
-      <div className="importance-letter-container mt-4">
-        <div className="row align-items-center">
-          {/* Left Side: Rotating Image with Content */}
-          <div className="col-lg-6">
-            <div className="image-wrapper">
-              <div className="rotating-image">
-                <div className="rotating-image-inner">
-                  <img src={img2} alt="Enhance Communication" className="img-fluid" />
-                  <div className="rotating-image-content">
-                    <h3 className="text-dark">Enhance Your Communication</h3>
-                    <p className="text-black">
-                      Creating effective letters requires clarity in purpose and audience understanding.
-                      Structure your content with a clear introduction, informative body, and concise
-                      conclusion. Maintain a professional tone, use simple language, and personalize where
-                      possible. Follow up as needed for clarity and compliance.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Right Side: Text Content */}
-          <div className="col-lg-6 ">
-            <div className="content-wrapper">
-              <h2 className="text-dark">Importance and Benefits of Letters</h2>
-              <p className="text-black">
-                Letters play a crucial role in communication, whether in personal or professional settings.
-                They provide a formal way to convey messages, requests, or information. Letters can establish
-                credibility, document important details, and serve as a record of communication.
-              </p>
-              <p className="text-black">
-                Some benefits of letters include their ability to reach a specific recipient directly, their
-                formal nature which is suitable for official communications, and their potential to be archived
-                for future reference.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       <section className="points-section">
         <div className="row">

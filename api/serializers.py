@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 class EmailSerializer(serializers.Serializer):
+    subject = serializers.CharField(max_length=255, required=False)
     category = serializers.CharField(max_length=100)
     email_type = serializers.CharField(max_length=100)
     RecipientName = serializers.CharField(max_length=100, required=False)
@@ -143,9 +144,121 @@ class EmailSerializer(serializers.Serializer):
     DeactivationDate = serializers.CharField(max_length=1000, required=False)
     AccountName = serializers.CharField(max_length=1000, required=False)
 
-    subject = serializers.CharField(max_length=255, required=False)
+    #Professional emails
+    PreviousCompany = serializers.CharField(max_length=1000, required=False)
+    HiringManagerName = serializers.CharField(max_length=1000, required=False)
+    RelevantSkills = serializers.CharField(max_length=1000, required=False)
+    YourField = serializers.CharField(max_length=1000, required=False)
+    JobBoard = serializers.CharField(max_length=1000, required=False)
+    JobTitle = serializers.CharField(max_length=1000, required=False)
+    describeachievementsandresponsibilities = serializers.CharField(max_length=1000, required=False)
+    reasonForInterestInCompany = serializers.CharField(max_length=1000, required=False)
+
+    InterviewDate = serializers.CharField(max_length=1000, required=False)
+    InterviewersName = serializers.CharField(max_length=1000, required=False)
+    specificaspectofthecompanyorrolediscussed = serializers.CharField(max_length=1000, required=False)
+    relevantexperienceorskill = serializers.CharField(max_length=1000, required=False)
+    specificcompanygoalorproject = serializers.CharField(max_length=1000, required=False)
+
+    specificSkills = serializers.CharField(max_length=1000, required=False)
+    RelevantExperience = serializers.CharField(max_length=1000, required=False)
+    Department = serializers.CharField(max_length=1000, required=False)
+    specificAchievementsOrCulture = serializers.CharField(max_length=1000, required=False)
+
+
+    specificProjectOrInitiative = serializers.CharField(max_length=1000, required=False)
+
+    specificProjectOrRoleTasks = serializers.CharField(max_length=1000, required=False)
+
+    OriginalInterviewDate = serializers.CharField(max_length=1000, required=False)
+    ReasonForRescheduling = serializers.CharField(max_length=1000, required=False)
+    AlternativeDate = serializers.CharField(max_length=1000, required=False)
+
+    relevantExperienceOrSkills = serializers.CharField(max_length=1000, required=False)
+    specificReason = serializers.CharField(max_length=1000, required=False)
+
+    ApplicantName = serializers.CharField(max_length=1000, required=False)
+
+    SubmissionDate = serializers.CharField(max_length=1000, required=False)
+
+    RelevantExperienceSkills = serializers.CharField(max_length=1000, required=False)
+
+    ReferrersName = serializers.CharField(max_length=1000, required=False)
+     
+     #Meeting request emails
+    SpecificTopicOrProject = serializers.CharField(max_length=1000, required=False)
+    Topic = serializers.CharField(max_length=1000, required=False)
+
+    SpecificTopicOrAgenda = serializers.CharField(max_length=255, required=False)
+
+    OriginalMeetingDate = serializers.CharField(max_length=1000, required=False)
+    OriginalMeetingTime = serializers.CharField(max_length=1000, required=False)
+
+    AgendaItem1 = serializers.CharField(max_length=1000, required=False)
+    AgendaItem2 = serializers.CharField(max_length=1000, required=False)
+    AgendaItem3 = serializers.CharField(max_length=1000, required=False)
+    AgendaItem4 = serializers.CharField(max_length=1000, required=False)
+
+    ReasonForCancellation = serializers.CharField(max_length=255, required=False)
+
+    PreferredPlatform = serializers.CharField(max_length=255, required=False)
+
+    #Recomendation requirement emails
+    SpecificRequirements = serializers.CharField(max_length=1000, required=False)
+    KeySkills = serializers.CharField(max_length=1000, required=False)
+    SubmissionDeadline = serializers.CharField(max_length=1000, required=False)
+    SpecificPosition = serializers.CharField(max_length=1000, required=False)
 
     
+    SkillsAchievements = serializers.CharField(max_length=1000, required=False)
+
+    JobPostingURL = serializers.CharField(max_length=1000, required=False)
+
+    SpecificQualities = serializers.CharField(max_length=1000, required=False)
+    SpecificProgram = serializers.CharField(max_length=1000, required=False)
+
+    SpecificJob = serializers.CharField(max_length=1000, required=False)
+
+    SpecificAcademicAchievements = serializers.CharField(max_length=1000, required=False)
+    SpecificAcademicProgram = serializers.CharField(max_length=1000, required=False)
+
+     #Feedback email
+    FeedbackDeadline = serializers.CharField(max_length=1000, required=False)
+    TimePeriod = serializers.CharField(max_length=1000, required=False)
+
+    CustomerName = serializers.CharField(max_length=1000, required=False)
+
+    EmployeeName = serializers.CharField(max_length=1000, required=False)
+
+    CompanyName = serializers.CharField(max_length=1000, required=False)
+
+    PeerName = serializers.CharField(max_length=1000, required=False)
+
+    ProjectName = serializers.CharField(max_length=1000, required=False)
+
+    #Network emails
+    SpecificInterest = serializers.CharField(max_length=1000, required=False)
+    IndustryField = serializers.CharField(max_length=1000, required=False)
+    YourLinkedInProfile = serializers.CharField(max_length=1000, required=False)
+    YourCurrentRole = serializers.CharField(max_length=1000, required=False)
+    ReasonForReachingOut = serializers.CharField(max_length=1000, required=False)
+    IndustryField = serializers.CharField(max_length=1000, required=False)
+
+    PotentialOpportunity = serializers.CharField(max_length=1000, required=False)
+    TopicDiscussed = serializers.CharField(max_length=1000, required=False)
+    RecipientIndustryField = serializers.CharField(max_length=1000, required=False)
+
+    PurposeOfEvent = serializers.CharField(max_length=1000, required=False)
+
+    RecentProjectsUpdates = serializers.CharField(max_length=1000, required=False)
+   
+     #Offers and nagotion emails
+    DesiredSalary = serializers.CharField(max_length=1000, required=False)
+
+    RequestedSalary = serializers.CharField(max_length=1000, required=False)
+    OtherOfferSalary = serializers.CharField(max_length=1000, required=False)
+    
+
 
     def validate(self, attrs):
         email_type = attrs.get('email_type')

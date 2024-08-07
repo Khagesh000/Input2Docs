@@ -451,7 +451,7 @@ const EmailSearchCategory = () => {
         {/* Main Category Dropdown */}
         <div className="btn-group">
           <button
-            className="btn btn-outline-secondary dropdown-toggle"
+            className="btn btn-outline-secondary dropdown-toggle custom-dropdown"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"

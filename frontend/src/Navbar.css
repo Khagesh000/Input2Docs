@@ -3,6 +3,25 @@
   position: fixed;
   width: 100%;
   z-index: 1030;
+  background-color: #343a40; /* Dark background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a more attractive look */
+  padding: 0.5rem 1rem; /* Adjust padding for better spacing */
+  overflow: hidden; /* Prevent content overflow */
+  position: relative; /* Ensure positioning for pseudo-elements */
+}
+
+/* Curtain effect at the end of the navbar */
+.navbar::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 15px; /* Adjust height as needed */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)); /* Dark gradient effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for a more dramatic effect */
+  z-index: 1; /* Ensure it is above other content */
 }
 
 /* Ensure the page content moves with the navbar */
@@ -16,5 +35,118 @@
 
 /* Custom styling for Input2Docs on the left */
 .navbar-brand {
-  margin-right: auto; /* Pushes the brand to the left */
+  color: white; /* White text */
+  font-size: 1.75rem; /* Increase font size */
+  font-weight: bold; /* Bold text */
+  text-transform: uppercase; /* Uppercase text for branding */
+}
+
+.navbar-brand:hover {
+  color: #f8f9fa; /* Lighter hover color */
+}
+
+/* Navbar items */
+.navbar-nav .nav-item .nav-link {
+  color: white; /* White text */
+  font-size: 1rem; /* Increase font size */
+  padding: 10px 15px; /* Padding for clickable area */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #f8f9fa; /* Lighter hover color */
+  background-color: #495057; /* Darker background on hover */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Dropdown styling */
+.nav-item.dropdown .dropdown-menu {
+  background-color: white; /* Dark background for dropdown */
+  border: none; /* Remove border */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item {
+  color: black; /* Black text */
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: #495057; /* Darker background on hover */
+}
+
+/* Custom Menu Button */
+.navbar-toggler {
+  border: none; /* Remove border */
+  outline: none; /* Remove outline */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: transparent; /* Make button background transparent */
+  padding: 0; /* Remove any extra padding */
+}
+
+.navbar-toggler span {
+  position: absolute;
+  display: block;
+  width: 30px; /* Ensure all lines have the same width */
+  height: 3px; /* Line height */
+  background-color: wheat; /* Wheat color for lines */
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler span::before,
+.navbar-toggler span::after {
+  content: '';
+  position: absolute;
+  width: 30px; /* Ensure all lines have the same width */
+  height: 3px; /* Line height */
+  background-color: wheat; /* Wheat color for lines */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Position the lines */
+.navbar-toggler span {
+  top: 50%; /* Center the middle line */
+  transform: translateY(-50%); /* Adjust vertical alignment */
+}
+
+.navbar-toggler span::before {
+  top: -10px;
+  right: -1px; /* Space above the middle line */
+}
+
+.navbar-toggler span::after {
+  top: 10px;
+  right: -1px; /* Space below the middle line */
+}
+
+/* Change menu button on toggle */
+.navbar-toggler.collapsed span {
+  transform: rotate(45deg); /* Rotate the middle line */
+  background-color: red; /* Change color on toggle */
+}
+
+.navbar-toggler.collapsed span::before {
+  top: 0; /* Move the before line to the middle */
+  transform: rotate(90deg); /* Rotate to form a cross */
+  background-color: red; /* Change color on toggle */
+}
+
+.navbar-toggler.collapsed span::after {
+  top: 0; /* Move the after line to the middle */
+  background-color: transparent; /* Hide the after line */
+}
+
+/* Adjustments for small screens */
+@media (max-width: 767.98px) {
+  .navbar-nav .nav-item .nav-link {
+    font-size: 0.9rem; /* Slightly smaller font size */
+  }
+
+  .navbar-nav .nav-item.dropdown .dropdown-menu {
+    width: 100%; /* Full width dropdown on small screens */
+  }
 }
