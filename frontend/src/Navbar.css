@@ -1,3 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+/* Custom styling for Input2Docs on the left */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.75rem; /* Increase font size */
+  font-weight: 550; /* Bold text */
+  font-family: fantasy; /* Change to a more attractive font family */
+  text-transform: uppercase; /* Uppercase text for branding */
+  letter-spacing: 1px;
+  /* Add letter spacing for style */
+}
+
+.navbar-brand:hover {
+  color: inherit; /* Prevent color change on hover */
+}
+
+.brand-input {
+  color: wheat; /* Wheat color for Input */
+}
+
+.brand-2docs {
+  color: red; /* Red color for 2Docs */
+}
+
 /* Navbar fixed at the top */
 .navbar {
   position: fixed;
@@ -31,18 +56,6 @@
 
 .content-expanded {
   margin-top: 60px; /* Adjust based on the navbar height */
-}
-
-/* Custom styling for Input2Docs on the left */
-.navbar-brand {
-  color: white; /* White text */
-  font-size: 1.75rem; /* Increase font size */
-  font-weight: bold; /* Bold text */
-  text-transform: uppercase; /* Uppercase text for branding */
-}
-
-.navbar-brand:hover {
-  color: #f8f9fa; /* Lighter hover color */
 }
 
 /* Navbar items */
@@ -86,6 +99,13 @@
   height: 30px;
   background: transparent; /* Make button background transparent */
   padding: 0; /* Remove any extra padding */
+  box-shadow: none; /* Remove box shadow */
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none; /* Remove outline */
+  box-shadow: none; /* Remove box shadow */
 }
 
 .navbar-toggler span {
@@ -95,6 +115,7 @@
   height: 3px; /* Line height */
   background-color: wheat; /* Wheat color for lines */
   transition: all 0.3s ease-in-out;
+  outline: none;
 }
 
 .navbar-toggler span::before,
@@ -105,6 +126,7 @@
   height: 3px; /* Line height */
   background-color: wheat; /* Wheat color for lines */
   transition: all 0.3s ease-in-out;
+  outline: none;
 }
 
 /* Position the lines */
@@ -148,5 +170,19 @@
 
   .navbar-nav .nav-item.dropdown .dropdown-menu {
     width: 100%; /* Full width dropdown on small screens */
+  }
+
+  .navbar-toggler {
+    width: 40px; /* Adjust width */
+    height: 40px; /* Adjust height */
+    outline: none;
+  }
+
+  .navbar-toggler span,
+  .navbar-toggler span::before,
+  .navbar-toggler span::after {
+    width: 25px; /* Adjust line width */
+    height: 2px; /* Adjust line height */
+    outline: none;
   }
 }

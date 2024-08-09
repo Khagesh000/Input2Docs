@@ -205,7 +205,7 @@ const categories = {
   },
 
   "Networking Emails":{
-    "Introduction Email": [
+    "Network Introduction Email": [
     "Professional Introduction",
     "Brief Overview of Background",
     "Purpose of Reaching Out",

@@ -22,9 +22,9 @@ export default class Navbar extends Component {
         <div className="container-fluid">
           {/* Navbar Brand on the Left */}
           <a className="navbar-brand" href="/">
-            Input2Docs
+            <span className="brand-input">Input</span><span className="brand-2docs">2Docs</span>
           </a>
-          
+
           {/* Navbar Toggler */}
           <button
             className={`navbar-toggler ${this.state.isOpen ? 'collapsed' : ''}`}
@@ -36,7 +36,7 @@ export default class Navbar extends Component {
           >
             <span></span> {/* Custom toggler with lines */}
           </button>
-          
+
           {/* Navbar Links */}
           <div
             className={`collapse navbar-collapse ${this.state.isOpen ? 'show' : ''}`}
@@ -64,7 +64,7 @@ export default class Navbar extends Component {
                   ABOUT US
                 </a>
               </li>
-              
+
               {/* Dropdown Menu */}
               <li className="nav-item dropdown">
                 <a
