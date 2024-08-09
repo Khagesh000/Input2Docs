@@ -2846,6 +2846,1663 @@
       { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
     ]
   }
+  },
+  "Event Invitation Email":{
+    "Formal Event Invitation": {
+    "subject": "Invitation to {EventName}",
+    "template": "Dear {RecipientName},\n\nIt is with great pleasure that we invite you to {EventName}. The event will be held on {EventDate} at {EventLocation}. Your presence would be a great honor, and we sincerely hope you can join us for this special occasion.\n\nPlease find the detailed agenda and dress code attached. We kindly request you to RSVP by {RSVPDeadline}.\n\nWe look forward to welcoming you and sharing this memorable experience.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventLocation", "label": "Event Location", "type": "text" },
+      { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Save the Date Notice": {
+    "subject": "Save the Date: {EventName} on {EventDate}",
+    "template": "Dear {RecipientName},\n\nWe are excited to announce that {EventName} will take place on {EventDate}. Please mark your calendar and save the date for this important event.\n\nFurther details, including the venue and agenda, will be shared soon. We look forward to your presence and participation.\n\nThank you for saving the date, and stay tuned for more information.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Exclusive Event Invitation": {
+    "subject": "Exclusive Invitation to {EventName}",
+    "template": "Dear {RecipientName},\n\nYou are cordially invited to an exclusive event, {EventName}, which will be held on {EventDate} at {EventLocation}. This event is by invitation only, and we are delighted to extend this invitation to you as a valued guest.\n\nThe event will include {EventHighlights}, and we would be thrilled to have you join us. Kindly RSVP by {RSVPDeadline} to confirm your attendance.\n\nWe look forward to celebrating this occasion with you.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventLocation", "label": "Event Location", "type": "text" },
+      { "id": "EventHighlights", "label": "Event Highlights", "type": "text" },
+      { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Event RSVP Request": {
+    "subject": "RSVP Request for {EventName}",
+    "template": "Dear {RecipientName},\n\nAs we prepare for {EventName}, we kindly request you to confirm your attendance by responding to this RSVP request. The event is scheduled for {EventDate} at {EventLocation}, and your presence would be greatly appreciated.\n\nPlease RSVP by {RSVPDeadline} to assist us in making the necessary arrangements. Should you have any special requirements or need further information, please do not hesitate to reach out.\n\nThank you in advance for your prompt response, and we look forward to seeing you at the event.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventLocation", "label": "Event Location", "type": "text" },
+      { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Invitation with Agenda": {
+    "subject": "Invitation to {EventName} with Detailed Agenda",
+    "template": "Dear {RecipientName},\n\nWe are excited to invite you to {EventName}, scheduled to take place on {EventDate} at {EventLocation}. This event will feature an engaging agenda, which we have attached for your review.\n\nKey sessions include {KeySessions}, and we believe this event will be of great interest to you. Please find the detailed agenda attached, and we encourage you to RSVP by {RSVPDeadline} to confirm your attendance.\n\nWe look forward to your participation and hope you will join us for a day of insightful discussions and networking opportunities.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventLocation", "label": "Event Location", "type": "text" },
+      { "id": "KeySessions", "label": "Key Sessions", "type": "text" },
+      { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Invitation with Event Details": {
+    "subject": "Join Us for {EventName} - Event Details Inside",
+    "template": "Dear {RecipientName},\n\nYou are cordially invited to {EventName}, happening on {EventDate} at {EventLocation}. We are excited to provide you with all the details you need to ensure an enriching experience.\n\nEvent Highlights:\n- {EventHighlight1}\n- {EventHighlight2}\n- {EventHighlight3}\n\nWe kindly ask you to RSVP by {RSVPDeadline}. Should you have any questions or require additional information, feel free to contact us.\n\nWe look forward to your presence at this anticipated event.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventLocation", "label": "Event Location", "type": "text" },
+      { "id": "EventHighlight1", "label": "Event Highlight 1", "type": "text" },
+      { "id": "EventHighlight2", "label": "Event Highlight 2", "type": "text" },
+      { "id": "EventHighlight3", "label": "Event Highlight 3", "type": "text" },
+      { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Invitation for Guest Speakers": {
+    "subject": "Invitation to Speak at {EventName}",
+    "template": "Dear {RecipientName},\n\nWe are honored to invite you to serve as a guest speaker at {EventName}, scheduled for {EventDate} at {EventLocation}. Your expertise in {SpeakerTopic} makes you an ideal candidate to share valuable insights with our audience.\n\nThe event will cover topics such as {EventTopics}, and we would be thrilled if you could contribute your knowledge and experience. Please let us know your availability by {RSVPDeadline}, and we would be happy to discuss the details further.\n\nWe look forward to your positive response and hope you will join us in making this event a success.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventLocation", "label": "Event Location", "type": "text" },
+      { "id": "SpeakerTopic", "label": "Speaker Topic", "type": "text" },
+      { "id": "EventTopics", "label": "Event Topics", "type": "text" },
+      { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  }
+  },
+  "Event Reminder Email":{
+    "Reminder for Upcoming Event": {
+      "subject": "Reminder: {EventName} is Just Around the Corner!",
+      "template": "Dear {RecipientName},\n\nThis is a friendly reminder that {EventName} is fast approaching. The event is scheduled for {EventDate} at {EventLocation}. We are excited to have you join us and want to ensure everything is in place for your participation.\n\nPlease don't forget to mark your calendar, and should you have any questions or need further assistance, feel free to reach out to us.\n\nWe look forward to seeing you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+      "fields": [
+        { "id": "EventName", "label": "Event Name", "type": "text" },
+        { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+        { "id": "EventDate", "label": "Event Date", "type": "date" },
+        { "id": "EventLocation", "label": "Event Location", "type": "text" },
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+      ]
+    },
+    "Reminder with Event Agenda": {
+      "subject": "Don't Miss Out: {EventName} Agenda Inside!",
+      "template": "Dear {RecipientName},\n\nWe are eagerly counting down the days until {EventName} on {EventDate}. To ensure you are well-prepared, we have attached the event agenda for your review.\n\nHighlights include:\n- {Highlight1}\n- {Highlight2}\n- {Highlight3}\n\nWe hope this information helps you plan your day accordingly. If you have any questions, please do not hesitate to contact us. We are excited to welcome you to what promises to be a fantastic event!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+      "fields": [
+        { "id": "EventName", "label": "Event Name", "type": "text" },
+        { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+        { "id": "EventDate", "label": "Event Date", "type": "date" },
+        { "id": "Highlight1", "label": "Event Highlight 1", "type": "text" },
+        { "id": "Highlight2", "label": "Event Highlight 2", "type": "text" },
+        { "id": "Highlight3", "label": "Event Highlight 3", "type": "text" },
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+      ]
+    },
+    "Reminder with Venue Details": {
+      "subject": "Important Venue Details for {EventName}",
+      "template": "Dear {RecipientName},\n\nAs {EventName} approaches, we want to ensure you have all the necessary details for a smooth experience. The event will be held at {EventLocation} on {EventDate}.\n\nVenue Details:\n- Address: {VenueAddress}\n- Parking: {ParkingInfo}\n- Public Transportation: {TransportationInfo}\n\nPlease review these details to ensure a hassle-free arrival. Should you need any additional information or assistance, we are here to help.\n\nWe look forward to welcoming you to {EventName}!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+      "fields": [
+        { "id": "EventName", "label": "Event Name", "type": "text" },
+        { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+        { "id": "EventDate", "label": "Event Date", "type": "date" },
+        { "id": "EventLocation", "label": "Event Location", "type": "text" },
+        { "id": "VenueAddress", "label": "Venue Address", "type": "text" },
+        { "id": "ParkingInfo", "label": "Parking Information", "type": "text" },
+        { "id": "TransportationInfo", "label": "Public Transportation Information", "type": "text" },
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+      ]
+    },
+    "Reminder with RSVP Confirmation": {
+      "subject": "RSVP Confirmation for {EventName} on {EventDate}",
+      "template": "Dear {RecipientName},\n\nThank you for confirming your attendance at {EventName} on {EventDate}. We are thrilled to have you join us and wanted to send a quick reminder to ensure you have all the details you need.\n\nEvent Details:\n- Location: {EventLocation}\n- Agenda: {AgendaDetails}\n- Special Instructions: {SpecialInstructions}\n\nIf any changes arise, please let us know. We are here to accommodate any special requests or needs you may have. Looking forward to a successful event with your participation!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+      "fields": [
+        { "id": "EventName", "label": "Event Name", "type": "text" },
+        { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+        { "id": "EventDate", "label": "Event Date", "type": "date" },
+        { "id": "EventLocation", "label": "Event Location", "type": "text" },
+        { "id": "AgendaDetails", "label": "Agenda Details", "type": "text" },
+        { "id": "SpecialInstructions", "label": "Special Instructions", "type": "text" },
+        { "id": "YourName", "label": "Your Name", "type": "text" },
+        { "id": "YourPosition", "label": "Your Position", "type": "text" },
+        { "id": "YourCompany", "label": "Your Company", "type": "text" },
+        { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+      ]
+    },
+    "Reminder for Registration Deadline": {
+    "subject": "Important: Registration Deadline for {EventName} Approaching!",
+    "template": "Dear {RecipientName},\n\nThis is a gentle reminder that the registration deadline for {EventName} is fast approaching on {RegistrationDeadline}. If you haven't yet registered, please make sure to do so before the deadline to secure your spot.\n\nTo register, simply visit {RegistrationLink} and complete the registration process. If you have any questions or encounter any issues, feel free to reach out to us.\n\nWe look forward to your participation!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "RegistrationDeadline", "label": "Registration Deadline", "type": "date" },
+      { "id": "RegistrationLink", "label": "Registration Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Reminder for Special Instructions": {
+    "subject": "Reminder: Special Instructions for {EventName}",
+    "template": "Dear {RecipientName},\n\nAs we approach {EventName}, we wanted to remind you of the special instructions that will help ensure your smooth participation. Please take note of the following:\n\n- {Instruction1}\n- {Instruction2}\n- {Instruction3}\n\nThese details are important for a seamless experience, so please review them carefully. If you have any questions or need further clarification, don't hesitate to get in touch with us.\n\nThank you for your attention to these instructions. We look forward to seeing you at the event!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "Instruction1", "label": "Special Instruction 1", "type": "text" },
+      { "id": "Instruction2", "label": "Special Instruction 2", "type": "text" },
+      { "id": "Instruction3", "label": "Special Instruction 3", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Reminder for Event Check-In": {
+    "subject": "Event Check-In Details for {EventName}",
+    "template": "Dear {RecipientName},\n\nAs we approach the date for {EventName}, we want to provide you with important check-in details to ensure a smooth experience. Please make note of the following:\n\n- Check-In Time: {CheckInTime}\n- Location: {CheckInLocation}\n- Required Documents: {RequiredDocuments}\n\nPlease arrive on time and have the necessary documents ready to expedite the process. Should you have any questions or need assistance, we are here to help.\n\nWe look forward to seeing you at the event and ensuring a seamless check-in experience!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "CheckInTime", "label": "Check-In Time", "type": "text" },
+      { "id": "CheckInLocation", "label": "Check-In Location", "type": "text" },
+      { "id": "RequiredDocuments", "label": "Required Documents", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  }
+  },
+  "Event Confirmation Email":{
+    "Event Registration Confirmation": {
+    "subject": "Your Registration for {EventName} is Confirmed!",
+    "template": "Dear {RecipientName},\n\nWe are thrilled to confirm your registration for {EventName} on {EventDate}. Your registration has been successfully processed, and we look forward to having you join us.\n\nEvent Details:\n- **Event Name:** {EventName}\n- **Date:** {EventDate}\n- **Time:** {EventTime}\n- **Venue:** {EventVenue}\n\nIf you need to make any changes to your registration, please contact us at {SupportEmail} or {SupportPhone}.\n\nThank you for registering, and we can't wait to see you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventTime", "label": "Event Time", "type": "text" },
+      { "id": "EventVenue", "label": "Event Venue", "type": "text" },
+      { "id": "SupportEmail", "label": "Support Email", "type": "email" },
+      { "id": "SupportPhone", "label": "Support Phone", "type": "tel" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Attendance Confirmation": {
+    "subject": "Your Attendance for {EventName} is Confirmed!",
+    "template": "Dear {RecipientName},\n\nThank you for confirming your attendance at {EventName} on {EventDate}. We are excited to welcome you to this event!\n\nPlease find the event details below:\n- **Event Name:** {EventName}\n- **Date:** {EventDate}\n- **Time:** {EventTime}\n- **Venue:** {EventVenue}\n\nWe are looking forward to seeing you. If you have any questions or need further assistance, please contact us at {SupportEmail} or {SupportPhone}.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventTime", "label": "Event Time", "type": "text" },
+      { "id": "EventVenue", "label": "Event Venue", "type": "text" },
+      { "id": "SupportEmail", "label": "Support Email", "type": "email" },
+      { "id": "SupportPhone", "label": "Support Phone", "type": "tel" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Confirmation of Event Details": {
+    "subject": "Confirmation: {EventName} Event Details",
+    "template": "Dear {RecipientName},\n\nThis email serves to confirm the details of {EventName}, which you have registered for. Please review the information below to ensure everything is correct:\n\n- **Event Name:** {EventName}\n- **Date:** {EventDate}\n- **Time:** {EventTime}\n- **Venue:** {EventVenue}\n- **Agenda:** {EventAgenda}\n\nIf you have any questions or need to update your registration, please do not hesitate to contact us at {SupportEmail} or {SupportPhone}.\n\nThank you for your participation, and we look forward to seeing you at the event!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventTime", "label": "Event Time", "type": "text" },
+      { "id": "EventVenue", "label": "Event Venue", "type": "text" },
+      { "id": "EventAgenda", "label": "Event Agenda", "type": "textarea" },
+      { "id": "SupportEmail", "label": "Support Email", "type": "email" },
+      { "id": "SupportPhone", "label": "Support Phone", "type": "tel" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Confirmation with Ticket Information": {
+    "subject": "Your Ticket for {EventName} is Confirmed!",
+    "template": "Dear {RecipientName},\n\nWe are pleased to confirm your ticket for {EventName} on {EventDate}. Your ticket is now secured, and we are excited to welcome you to the event.\n\nPlease find your ticket details below:\n- **Ticket Number:** {TicketNumber}\n- **Event Name:** {EventName}\n- **Date:** {EventDate}\n- **Time:** {EventTime}\n- **Venue:** {EventVenue}\n- **Seat Number:** {SeatNumber}\n\nPlease bring this ticket with you on the day of the event. If you have any questions or need assistance, feel free to contact us at {SupportEmail} or {SupportPhone}.\n\nThank you for securing your spot, and we look forward to seeing you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "TicketNumber", "label": "Ticket Number", "type": "text" },
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventTime", "label": "Event Time", "type": "text" },
+      { "id": "EventVenue", "label": "Event Venue", "type": "text" },
+      { "id": "SeatNumber", "label": "Seat Number", "type": "text" },
+      { "id": "SupportEmail", "label": "Support Email", "type": "email" },
+      { "id": "SupportPhone", "label": "Support Phone", "type": "tel" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Confirmation of Special Requests": {
+    "subject": "Your Special Requests for {EventName} Have Been Confirmed!",
+    "template": "Dear {RecipientName},\n\nWe are pleased to inform you that your special requests for {EventName} on {EventDate} have been confirmed. Please see the details of your requests below:\n\n- **Request Type:** {RequestType}\n- **Details:** {RequestDetails}\n\nWe will do our best to accommodate your needs during the event. If there are any additional requests or modifications you'd like to make, please contact us at {SupportEmail} or {SupportPhone}.\n\nThank you for letting us know your preferences, and we look forward to making your experience at {EventName} as comfortable and enjoyable as possible.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "RequestType", "label": "Request Type", "type": "text" },
+      { "id": "RequestDetails", "label": "Request Details", "type": "textarea" },
+      { "id": "SupportEmail", "label": "Support Email", "type": "email" },
+      { "id": "SupportPhone", "label": "Support Phone", "type": "tel" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Confirmation of Event Schedule": {
+    "subject": "Confirmed: Schedule for {EventName} on {EventDate}",
+    "template": "Dear {RecipientName},\n\nWe are happy to confirm the event schedule for {EventName}, which will take place on {EventDate}. Below are the confirmed details:\n\n- **Event Name:** {EventName}\n- **Date:** {EventDate}\n- **Time:** {EventTime}\n- **Venue:** {EventVenue}\n- **Agenda:**\n{EventAgenda}\n\nPlease review the schedule and let us know if you have any questions or concerns. We look forward to your participation and hope the event will be a valuable experience for you.\n\nFor any further inquiries, please reach out to us at {SupportEmail} or {SupportPhone}.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventTime", "label": "Event Time", "type": "text" },
+      { "id": "EventVenue", "label": "Event Venue", "type": "text" },
+      { "id": "EventAgenda", "label": "Event Agenda", "type": "textarea" },
+      { "id": "SupportEmail", "label": "Support Email", "type": "email" },
+      { "id": "SupportPhone", "label": "Support Phone", "type": "tel" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Confirmation of Participation": {
+    "subject": "Participation Confirmed for {EventName}",
+    "template": "Dear {RecipientName},\n\nWe are delighted to confirm your participation in {EventName} on {EventDate}. Your involvement is highly valued, and we look forward to your active contribution.\n\nHere are the event details:\n\n- **Event Name:** {EventName}\n- **Date:** {EventDate}\n- **Time:** {EventTime}\n- **Venue:** {EventVenue}\n\nPlease let us know if you require any further information or assistance before the event. We're here to help ensure that your experience is positive and impactful.\n\nThank you for confirming your participation. We look forward to seeing you at {EventName}.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventTime", "label": "Event Time", "type": "text" },
+      { "id": "EventVenue", "label": "Event Venue", "type": "text" },
+      { "id": "SupportEmail", "label": "Support Email", "type": "email" },
+      { "id": "SupportPhone", "label": "Support Phone", "type": "tel" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  }
+
+  },
+  "Event Follow-Up Email":{
+    "Thank You for Attending": {
+    "subject": "Thank You for Attending {EventName}!",
+    "template": "Dear {RecipientName},\n\nThank you for attending {EventName} on {EventDate}. Your presence was greatly appreciated, and we hope you found the event valuable and engaging. We were thrilled to have you with us and would love to hear your thoughts on the experience.\n\nPlease feel free to share any feedback or suggestions with us at {FeedbackEmail}. Your input helps us improve future events.\n\nOnce again, thank you for joining us, and we look forward to seeing you at future events!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "FeedbackEmail", "label": "Feedback Email", "type": "email" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Event Highlights and Recap": {
+    "subject": "Highlights from {EventName}",
+    "template": "Dear {RecipientName},\n\nWe hope you enjoyed {EventName} on {EventDate}. As a quick recap, here are some of the highlights:\n\n- **Keynote Speaker:** {KeynoteSpeaker}\n- **Main Topics Covered:** {TopicsCovered}\n- **Notable Sessions:** {NotableSessions}\n- **Exciting Announcements:** {Announcements}\n\nWe’re thrilled to have had such an engaging and informative event, and we’re grateful for your participation. If you’d like to revisit any part of the event, you can find the full recordings and resources at {EventResourcesLink}.\n\nThank you once again for making {EventName} a success. We look forward to seeing you at our next event!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "KeynoteSpeaker", "label": "Keynote Speaker", "type": "text" },
+      { "id": "TopicsCovered", "label": "Main Topics Covered", "type": "textarea" },
+      { "id": "NotableSessions", "label": "Notable Sessions", "type": "textarea" },
+      { "id": "Announcements", "label": "Exciting Announcements", "type": "textarea" },
+      { "id": "EventResourcesLink", "label": "Event Resources Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Follow-Up on Post-Event Feedback": {
+    "subject": "We Value Your Feedback on {EventName}",
+    "template": "Dear {RecipientName},\n\nWe hope you enjoyed {EventName} on {EventDate}. Your feedback is incredibly important to us as we strive to improve our future events. We would greatly appreciate it if you could take a few minutes to share your thoughts by completing our short survey at {FeedbackSurveyLink}.\n\nYour insights will help us to continue delivering valuable and engaging experiences. Thank you in advance for your time and feedback!\n\nWe look forward to hearing from you.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "FeedbackSurveyLink", "label": "Feedback Survey Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Follow-Up with Event Photos": {
+    "subject": "Relive the Moments from {EventName}",
+    "template": "Dear {RecipientName},\n\nWe hope you had a fantastic time at {EventName} on {EventDate}. We’ve put together a gallery of some of the best moments captured during the event, and we’re excited to share them with you!\n\nYou can view and download the photos from {EventPhotosLink}. We hope these memories will bring a smile to your face and remind you of the valuable connections and experiences you gained.\n\nThank you again for being a part of {EventName}, and we look forward to seeing you at our future events!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventPhotosLink", "label": "Event Photos Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Follow-Up on Networking Opportunities": {
+    "subject": "Let's Continue Our Networking from {EventName}",
+    "template": "Dear {RecipientName},\n\nIt was a pleasure meeting you at {EventName} on {EventDate}. I enjoyed our conversation about {DiscussedTopics} and believe there could be great opportunities for us to collaborate or support each other's endeavors.\n\nI'd love to continue our discussion and explore potential ways we can work together. Please let me know a convenient time for us to connect further.\n\nLooking forward to staying in touch.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "DiscussedTopics", "label": "Topics Discussed", "type": "textarea" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Follow-Up on Event Materials": {
+    "subject": "Access to Materials from {EventName}",
+    "template": "Dear {RecipientName},\n\nThank you for attending {EventName} on {EventDate}. As promised, I’m sharing the materials and resources from the event. You can download the presentation slides, handouts, and additional resources from {EventMaterialsLink}.\n\nIf you have any questions or need further clarification on any of the topics covered, please don’t hesitate to reach out. I’d be happy to assist you.\n\nThank you again for your participation, and I hope you find the materials useful.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventMaterialsLink", "label": "Event Materials Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Follow-Up for Future Engagement": {
+    "subject": "Looking Forward to Future Engagement",
+    "template": "Dear {RecipientName},\n\nI hope you enjoyed {EventName} on {EventDate}. It was a pleasure connecting with you, and I wanted to express my interest in exploring future opportunities for us to collaborate or engage in mutual endeavors.\n\nWhether it’s working on a project together, sharing insights, or simply staying connected, I’m eager to keep our conversation going and see where it might lead.\n\nPlease let me know if there’s a good time for us to discuss potential next steps.\n\nThank you, and I look forward to our continued connection.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  }
+  },
+  "Event Cancellation Email":{
+    "Event Cancellation Notice": {
+    "subject": "Notice of Event Cancellation: {EventName}",
+    "template": "Dear {RecipientName},\n\nWe regret to inform you that the {EventName} scheduled for {EventDate} has been cancelled due to unforeseen circumstances. We understand this may be disappointing and apologize for any inconvenience this may cause.\n\nWe greatly appreciate your interest in the event, and we hope to have the opportunity to welcome you at a future event.\n\nThank you for your understanding.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Cancellation Due to Unexpected Circumstances": {
+    "subject": "Cancellation of {EventName} Due to Unforeseen Circumstances",
+    "template": "Dear {RecipientName},\n\nIt is with deep regret that we announce the cancellation of {EventName} scheduled for {EventDate}. Unfortunately, unexpected circumstances beyond our control have necessitated this decision.\n\nWe sincerely apologize for any inconvenience this may cause and thank you for your understanding. We are currently evaluating the situation and will update you if there are any further developments.\n\nThank you for your continued support.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Cancellation with Rescheduling Information": {
+    "subject": "Event Rescheduling: {EventName} Postponed",
+    "template": "Dear {RecipientName},\n\nWe regret to inform you that the {EventName} originally scheduled for {EventDate} has been postponed due to {ReasonForPostponement}. However, we are pleased to inform you that the event has been rescheduled to {NewEventDate}.\n\nWe apologize for any inconvenience this may cause and hope you can join us on the new date. All previously issued tickets will be valid for the rescheduled event. Should you have any questions or concerns, please do not hesitate to contact us.\n\nThank you for your understanding and continued support.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "ReasonForPostponement", "label": "Reason for Postponement", "type": "textarea" },
+      { "id": "NewEventDate", "label": "New Event Date", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Cancellation with Apology and Refund Info": {
+    "subject": "Event Cancellation and Refund Information for {EventName}",
+    "template": "Dear {RecipientName},\n\nWe regret to announce the cancellation of the {EventName} that was scheduled for {EventDate}. Unfortunately, due to {ReasonForCancellation}, we are unable to proceed with the event as planned.\n\nWe understand that this may cause inconvenience, and we sincerely apologize. We will be issuing full refunds to all ticket holders, which should be processed within {RefundProcessingTime}. If you have any questions regarding the refund or need further assistance, please contact our support team at {SupportContactInfo}.\n\nThank you for your understanding, and we hope to welcome you to our future events.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "ReasonForCancellation", "label": "Reason for Cancellation", "type": "textarea" },
+      { "id": "RefundProcessingTime", "label": "Refund Processing Time", "type": "text" },
+      { "id": "SupportContactInfo", "label": "Support Contact Information", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Cancellation Due to Low Attendance": {
+    "subject": "Cancellation of {EventName} Due to Low Attendance",
+    "template": "Dear {RecipientName},\n\nWe regret to inform you that the {EventName}, scheduled for {EventDate}, has been cancelled. Unfortunately, due to lower than expected attendance, we are unable to proceed with the event as planned.\n\nWe apologize for any inconvenience this may cause and appreciate your understanding. We are exploring future opportunities and hope to welcome you to our next event.\n\nThank you for your support.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Cancellation Due to Venue Issues": {
+    "subject": "Event Cancellation: {EventName} Due to Venue Issues",
+    "template": "Dear {RecipientName},\n\nWe regret to inform you that the {EventName} scheduled for {EventDate} has been cancelled due to unexpected issues with the venue. Despite our best efforts, we are unable to hold the event at the planned location.\n\nWe apologize for any inconvenience this may cause. We are actively seeking alternative arrangements and will provide updates as soon as possible. Thank you for your understanding and patience.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Cancellation with Alternative Options": {
+    "subject": "Event Cancellation and Alternative Options for {EventName}",
+    "template": "Dear {RecipientName},\n\nWe regret to inform you that the {EventName} scheduled for {EventDate} has been cancelled due to {ReasonForCancellation}. We understand the inconvenience this may cause and are offering alternative options to make up for this.\n\nYou may choose from the following alternatives:\n1. [Alternative Option 1]\n2. [Alternative Option 2]\n3. [Alternative Option 3]\n\nPlease let us know your preference or if there is anything else we can assist with. We appreciate your understanding and hope to see you at one of our future events.\n\nThank you for your support.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "ReasonForCancellation", "label": "Reason for Cancellation", "type": "textarea" },
+      { "id": "AlternativeOption1", "label": "Alternative Option 1", "type": "text" },
+      { "id": "AlternativeOption2", "label": "Alternative Option 2", "type": "text" },
+      { "id": "AlternativeOption3", "label": "Alternative Option 3", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  }
+  },
+  "Event Feedback Request Email":{
+    "Request for Post-Event Survey": {
+    "subject": "We Value Your Feedback: Post-Event Survey for {EventName}",
+    "template": "Dear {RecipientName},\n\nThank you for attending {EventName} on {EventDate}. We hope you found the event valuable and enjoyable.\n\nTo help us improve future events, we kindly request you to complete our short post-event survey. Your feedback is essential for us to understand your experience and make necessary improvements.\n\n[Survey Link]\n\nWe appreciate your time and input.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "SurveyLink", "label": "Survey Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Feedback on Event Experience": {
+    "subject": "Share Your Experience: Feedback on {EventName}",
+    "template": "Dear {RecipientName},\n\nThank you for participating in {EventName} held on {EventDate}. We hope you had a great experience.\n\nWe would love to hear about your experience at the event. Your feedback is crucial for us to ensure we continue to deliver high-quality events. Please take a moment to provide your comments and suggestions.\n\n[Feedback Form Link]\n\nThank you for your time and valuable insights.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "FeedbackFormLink", "label": "Feedback Form Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Request for Comments on Event Content": {
+    "subject": "We’d Love Your Thoughts on {EventName} Content",
+    "template": "Dear {RecipientName},\n\nWe hope you enjoyed the content presented during {EventName} on {EventDate}.\n\nWe are eager to hear your thoughts on the event content, including topics covered and the relevance to your interests. Your feedback will help us tailor future content to better meet your needs.\n\n[Comments Form Link]\n\nThank you for sharing your views with us.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "CommentsFormLink", "label": "Comments Form Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Request for Feedback on Event Organization": {
+    "subject": "Help Us Improve: Feedback on {EventName} Organization",
+    "template": "Dear {RecipientName},\n\nThank you for attending {EventName} on {EventDate}. We strive to organize events that are smooth and enjoyable.\n\nTo ensure we are meeting your expectations, we would appreciate your feedback on the organization of the event, including logistics, scheduling, and overall execution.\n\n[Feedback Form Link]\n\nYour insights are invaluable and will assist us in enhancing future events.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "FeedbackFormLink", "label": "Feedback Form Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Request for Suggestions for Improvement": {
+    "subject": "We Value Your Input: Suggestions for Improvement on {EventName}",
+    "template": "Dear {RecipientName},\n\nThank you for attending {EventName} on {EventDate}. We continuously strive to enhance our events and provide the best experience for our attendees.\n\nTo achieve this, we are reaching out to gather your valuable suggestions for improvement. Please share any ideas or recommendations you have that could help us enhance future events.\n\n[Suggestions Form Link]\n\nYour feedback is crucial for us, and we appreciate your time and contribution.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "SuggestionsFormLink", "label": "Suggestions Form Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Request for Ratings on Event Aspects": {
+    "subject": "Help Us Improve: Rate Your Experience at {EventName}",
+    "template": "Dear {RecipientName},\n\nWe hope you enjoyed {EventName} on {EventDate}. To help us understand your experience better and make improvements, we kindly ask you to rate various aspects of the event.\n\nPlease take a few moments to provide your ratings on the following areas:\n- Event organization\n- Speaker presentations\n- Venue and facilities\n- Overall satisfaction\n\n[Ratings Form Link]\n\nYour feedback is highly valuable to us. Thank you for your time and insights.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "RatingsFormLink", "label": "Ratings Form Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Follow-Up on Feedback Submission": {
+    "subject": "Thank You for Your Feedback: Follow-Up on {EventName}",
+    "template": "Dear {RecipientName},\n\nThank you for providing your feedback on {EventName} held on {EventDate}. We appreciate your insights and are committed to using your feedback to improve our future events.\n\nWe wanted to follow up to let you know that we have received your feedback and are currently reviewing it. If you have any further comments or additional information to share, please feel free to reach out.\n\nThank you once again for your valuable contribution.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  }
+  },
+  "Event Promotion Email":{
+    "Promotional Email for Upcoming Event": {
+    "subject": "Don't Miss Out: Exciting Upcoming Event at {EventName}",
+    "template": "Dear {RecipientName},\n\nWe are thrilled to announce our upcoming event, {EventName}, scheduled for {EventDate}. This event promises to be an exciting opportunity to {brief description of event activities or purpose}.\n\nJoin us for an engaging experience featuring {key highlights or speakers}. Secure your spot now and be part of this memorable occasion.\n\n[Register Now Link]\n\nWe look forward to seeing you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "RegisterNowLink", "label": "Registration Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Early Bird Registration Promotion": {
+    "subject": "Early Bird Special: Save on {EventName} Tickets!",
+    "template": "Dear {RecipientName},\n\nTake advantage of our Early Bird offer for {EventName}! Register before {EarlyBirdDeadline} and enjoy exclusive savings on your tickets.\n\nThis is a limited-time offer, so don’t miss your chance to secure your spot at a reduced rate. Experience {event highlights or special features} at {EventName} and make the most of this opportunity.\n\n[Claim Early Bird Discount Link]\n\nWe can’t wait to welcome you to {EventName}!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EarlyBirdDeadline", "label": "Early Bird Deadline", "type": "date" },
+      { "id": "ClaimEarlyBirdDiscountLink", "label": "Early Bird Discount Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Special Offer for Event Tickets": {
+    "subject": "Exclusive Offer: Special Discounts on {EventName} Tickets!",
+    "template": "Dear {RecipientName},\n\nWe’re excited to offer you a special discount on tickets for {EventName}! For a limited time, you can enjoy {discount details or percentage} off your ticket purchase.\n\nThis offer is available until {OfferEndDate}, so act fast to take advantage of this exclusive deal and join us for {event highlights or key attractions}.\n\n[Get Special Offer Link]\n\nWe look forward to seeing you at {EventName}!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "DiscountDetails", "label": "Discount Details", "type": "text" },
+      { "id": "OfferEndDate", "label": "Offer End Date", "type": "date" },
+      { "id": "GetSpecialOfferLink", "label": "Special Offer Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Event Highlights Promotion": {
+    "subject": "Discover the Highlights of {EventName}!",
+    "template": "Dear {RecipientName},\n\nWe’re excited to share the highlights of our upcoming event, {EventName}! Here’s what you can look forward to:\n\n- {Highlight 1}\n- {Highlight 2}\n- {Highlight 3}\n\nJoin us on {EventDate} for an unforgettable experience featuring {key attractions or guest speakers}. Don’t miss out on the chance to be part of this amazing event.\n\n[Learn More and Register Link]\n\nWe hope to see you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "Highlight1", "label": "Highlight 1", "type": "text" },
+      { "id": "Highlight2", "label": "Highlight 2", "type": "text" },
+      { "id": "Highlight3", "label": "Highlight 3", "type": "text" },
+      { "id": "LearnMoreAndRegisterLink", "label": "Learn More and Register Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Promotion for Event Speakers": {
+    "subject": "Meet Our Exciting Speakers for {EventName}!",
+    "template": "Dear {RecipientName},\n\nWe are excited to introduce the remarkable lineup of speakers for {EventName}! Our event will feature:\n\n- **{Speaker1Name}**: {Speaker1Bio}\n- **{Speaker2Name}**: {Speaker2Bio}\n- **{Speaker3Name}**: {Speaker3Bio}\n\nEach speaker will provide unique insights and share their expertise on {relevant topics}. This is a fantastic opportunity to hear from industry leaders and gain valuable knowledge.\n\nDon't miss the chance to hear these inspiring talks. Register today and be part of an unforgettable event!\n\n[Register Now Link]\n\nWe look forward to seeing you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "Speaker1Name", "label": "Speaker 1 Name", "type": "text" },
+      { "id": "Speaker1Bio", "label": "Speaker 1 Bio", "type": "text" },
+      { "id": "Speaker2Name", "label": "Speaker 2 Name", "type": "text" },
+      { "id": "Speaker2Bio", "label": "Speaker 2 Bio", "type": "text" },
+      { "id": "Speaker3Name", "label": "Speaker 3 Name", "type": "text" },
+      { "id": "Speaker3Bio", "label": "Speaker 3 Bio", "type": "text" },
+      { "id": "RegisterNowLink", "label": "Register Now Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Promotion for Event Partners": {
+    "subject": "Exciting Partnership Opportunities for {EventName}!",
+    "template": "Dear {RecipientName},\n\nWe are pleased to announce exciting partnership opportunities for our upcoming event, {EventName}. This is a chance for you to showcase your brand and engage with a highly targeted audience.\n\nAs a partner, you will benefit from:\n\n- **Exclusive Exposure**: Your brand will be featured prominently in our event materials and promotions.\n- **Engagement Opportunities**: Connect with attendees through our event platform and on-site activities.\n- **Networking**: Build valuable relationships with industry leaders and potential clients.\n\nLet’s collaborate to make {EventName} a great success. Reach out to us for more details on how to become a partner.\n\n[Partner Inquiry Link]\n\nLooking forward to a successful partnership!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "PartnerInquiryLink", "label": "Partner Inquiry Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  },
+  "Final Call for Event Registration": {
+    "subject": "Last Chance to Register for {EventName}!",
+    "template": "Dear {RecipientName},\n\nThis is your final reminder to register for {EventName}, happening on {EventDate}. Don’t miss out on the opportunity to be part of this exciting event.\n\nWe have an incredible lineup of speakers, engaging sessions, and networking opportunities waiting for you. Register now to secure your place and make sure you don’t miss any of the action.\n\n[Register Now Link]\n\nThis is your last chance to join us for {EventName}. We hope to see you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "RegisterNowLink", "label": "Register Now Link", "type": "url" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+    ]
+  }
+  },
+  "Press Release Email":{
+    "New Product Launch Press Release": {
+    "subject": "Introducing Our Exciting New Product: {ProductName}!",
+    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Unveils {ProductName} - The Future of {ProductCategory}\n\n{City, Date} – {CompanyName}, a leader in {industry/sector}, is thrilled to announce the launch of its newest innovation, {ProductName}. Designed to revolutionize the {product category}, this cutting-edge product offers:\n\n- **Feature 1**: {Feature1Description}\n- **Feature 2**: {Feature2Description}\n- **Feature 3**: {Feature3Description}\n\n{ProductName} is set to hit the market on {LaunchDate}, promising unparalleled performance and quality. This launch represents a significant step forward for our company as we continue to push the boundaries of {industry/sector}.\n\nFor more information about {ProductName}, please visit {ProductLink} or contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {brief description of the company, including its mission and vision}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
+    "fields": [
+      { "id": "ProductName", "label": "Product Name", "type": "text" },
+      { "id": "ProductCategory", "label": "Product Category", "type": "text" },
+      { "id": "Feature1Description", "label": "Feature 1 Description", "type": "text" },
+      { "id": "Feature2Description", "label": "Feature 2 Description", "type": "text" },
+      { "id": "Feature3Description", "label": "Feature 3 Description", "type": "text" },
+      { "id": "LaunchDate", "label": "Launch Date", "type": "date" },
+      { "id": "ProductLink", "label": "Product Link", "type": "url" },
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "MediaContactPosition", "label": "Media Contact Position", "type": "text" },
+      { "id": "MediaContactEmail", "label": "Media Contact Email", "type": "email" },
+      { "id": "MediaContactPhone", "label": "Media Contact Phone", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "PressContactName", "label": "Press Contact Name", "type": "text" },
+      { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" },
+      { "id": "PressContactEmail", "label": "Press Contact Email", "type": "email" },
+      { "id": "PressContactPhone", "label": "Press Contact Phone", "type": "text" }
+    ]
+  },
+  "Company Milestone Announcement": {
+    "subject": "{CompanyName} Celebrates Major Milestone: {MilestoneDescription}",
+    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Celebrates a Significant Milestone – {MilestoneDescription}\n\n{City, Date} – {CompanyName}, a renowned leader in {industry/sector}, proudly announces the achievement of a major milestone: {MilestoneDescription}. This accomplishment underscores our commitment to {industry/sector} excellence and innovation.\n\nSince our inception in {YearEstablished}, {CompanyName} has been dedicated to {brief company mission or values}. Reaching this milestone is a testament to our team’s hard work and the unwavering support of our clients and partners.\n\nWe invite you to join us in celebrating this achievement and look forward to continued success and growth.\n\nFor more details, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {brief description of the company, including its mission and vision}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
+    "fields": [
+      { "id": "MilestoneDescription", "label": "Milestone Description", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YearEstablished", "label": "Year Established", "type": "text" },
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "MediaContactPosition", "label": "Media Contact Position", "type": "text" },
+      { "id": "MediaContactEmail", "label": "Media Contact Email", "type": "email" },
+      { "id": "MediaContactPhone", "label": "Media Contact Phone", "type": "text" },
+      { "id": "PressContactName", "label": "Press Contact Name", "type": "text" },
+      { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" },
+      { "id": "PressContactEmail", "label": "Press Contact Email", "type": "email" },
+      { "id": "PressContactPhone", "label": "Press Contact Phone", "type": "text" }
+    ]
+  },
+  "Crisis Management Press Release": {
+    "subject": "{CompanyName} Addresses Recent {CrisisType} Incident",
+    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Responds to {CrisisType} Incident with Full Transparency and Commitment to Resolution\n\n{City, Date} – In light of the recent {CrisisType} incident, {CompanyName} is committed to addressing the situation with the highest level of transparency and responsibility. We are taking immediate and comprehensive steps to resolve the issue and prevent future occurrences.\n\nOur actions include:\n\n- **Action 1**: {Action1Description}\n- **Action 2**: {Action2Description}\n- **Action 3**: {Action3Description}\n\nWe deeply regret any inconvenience this incident may have caused and are dedicated to maintaining the trust and confidence of our clients, partners, and stakeholders.\n\nFor further information, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {brief description of the company, including its mission and vision}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
+    "fields": [
+      { "id": "CrisisType", "label": "Crisis Type", "type": "text" },
+      { "id": "Action1Description", "label": "Action 1 Description", "type": "text" },
+      { "id": "Action2Description", "label": "Action 2 Description", "type": "text" },
+      { "id": "Action3Description", "label": "Action 3 Description", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "MediaContactPosition", "label": "Media Contact Position", "type": "text" },
+      { "id": "MediaContactEmail", "label": "Media Contact Email", "type": "email" },
+      { "id": "MediaContactPhone", "label": "Media Contact Phone", "type": "text" },
+      { "id": "PressContactName", "label": "Press Contact Name", "type": "text" },
+      { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" },
+      { "id": "PressContactEmail", "label": "Press Contact Email", "type": "email" },
+      { "id": "PressContactPhone", "label": "Press Contact Phone", "type": "text" }
+    ]
+  },
+  "Event Announcement Press Release": {
+    "subject": "Announcing {EventName}: Join Us for an Unforgettable Experience!",
+    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Proudly Announces {EventName}\n\n{City, Date} – {CompanyName} is delighted to announce {EventName}, a premier event set to take place on {EventDate} at {EventLocation}. This event promises an engaging experience with a variety of activities, including:\n\n- **Activity 1**: {Activity1Description}\n- **Activity 2**: {Activity2Description}\n- **Activity 3**: {Activity3Description}\n\nJoin us for this exciting occasion and be part of an event designed to {event goals or objectives}. Tickets are now available for purchase at {EventLink}.\n\nFor additional details and media inquiries, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {brief description of the company, including its mission and vision}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
+    "fields": [
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventLocation", "label": "Event Location", "type": "text" },
+      { "id": "Activity1Description", "label": "Activity 1 Description", "type": "text" },
+      { "id": "Activity2Description", "label": "Activity 2 Description", "type": "text" },
+      { "id": "Activity3Description", "label": "Activity 3 Description", "type": "text" },
+      { "id": "EventLink", "label": "Event Link", "type": "url" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "MediaContactPosition", "label": "Media Contact Position", "type": "text" },
+      { "id": "MediaContactEmail", "label": "Media Contact Email", "type": "email" },
+      { "id": "MediaContactPhone", "label": "Media Contact Phone", "type": "text" },
+      { "id": "PressContactName", "label": "Press Contact Name", "type": "text" },
+      { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" },
+      { "id": "PressContactEmail", "label": "Press Contact Email", "type": "email" },
+      { "id": "PressContactPhone", "label": "Press Contact Phone", "type": "text" }
+    ]
+  },
+  "Partnership or Collaboration Press Release": {
+    "subject": "{CompanyName} Announces Exciting Partnership with {PartnerCompany}",
+    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Announces Strategic Partnership with **{PartnerCompany}**\n\n{City, Date} – {CompanyName}, a leader in {industry/sector}, is thrilled to announce a new strategic partnership with **{PartnerCompany}**. This collaboration aims to leverage both companies’ strengths to {describe the goal of the partnership, e.g., “enhance technological innovation,” “expand market reach,” “develop new products,” etc.}.\n\nThe key aspects of this partnership include:\n\n- **Joint Initiative**: {Describe the joint initiative or project}\n- **Shared Goals**: {List shared goals or objectives}\n- **Benefits**: {Outline the benefits for both companies and their customers}\n\n**{PartnerCompany}** brings extensive experience in {PartnerCompany’s industry or field} and is renowned for {notable achievements or strengths}. Together, both companies are set to achieve remarkable outcomes.\n\nFor more information about this partnership, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {brief description of the company, including its mission and vision}.\n\n**About {PartnerCompany}:**\n{PartnerCompany} is a {brief description of the partner company, including its mission and vision}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
+    "fields": [
+      { "id": "PartnerCompany", "label": "Partner Company", "type": "text" },
+      { "id": "JointInitiative", "label": "Joint Initiative", "type": "text" },
+      { "id": "SharedGoals", "label": "Shared Goals", "type": "text" },
+      { "id": "Benefits", "label": "Benefits", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "PartnerCompanyDescription", "label": "Partner Company Description", "type": "text" },
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "MediaContactPosition", "label": "Media Contact Position", "type": "text" },
+      { "id": "MediaContactEmail", "label": "Media Contact Email", "type": "email" },
+      { "id": "MediaContactPhone", "label": "Media Contact Phone", "type": "text" },
+      { "id": "PressContactName", "label": "Press Contact Name", "type": "text" },
+      { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" },
+      { "id": "PressContactEmail", "label": "Press Contact Email", "type": "email" },
+      { "id": "PressContactPhone", "label": "Press Contact Phone", "type": "text" }
+    ]
+  },
+  "Executive Appointment Press Release": {
+    "subject": "{CompanyName} Appoints {ExecutiveName} as New {Position}",
+    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Appoints **{ExecutiveName}** as New **{Position}**\n\n{City, Date} – {CompanyName} is pleased to announce the appointment of **{ExecutiveName}** as the new **{Position}**. In this role, **{ExecutiveName}** will be responsible for {brief overview of responsibilities or goals for the position}.\n\n**{ExecutiveName}** brings extensive experience in {industry/field} and has previously held positions at {PreviousCompanyNames} where they achieved {notable achievements}. Their expertise in {specific skills or knowledge areas} will be instrumental in driving {CompanyName}’s future success.\n\n**{ExecutiveName}** commented, “{Quote from the executive about their new role and excitement}.”\n\nFor further information about this appointment, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {brief description of the company, including its mission and vision}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
+    "fields": [
+      { "id": "ExecutiveName", "label": "Executive Name", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "Responsibilities", "label": "Responsibilities", "type": "text" },
+      { "id": "PreviousCompanyNames", "label": "Previous Company Names", "type": "text" },
+      { "id": "NotableAchievements", "label": "Notable Achievements", "type": "text" },
+      { "id": "Quote", "label": "Quote from Executive", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "MediaContactPosition", "label": "Media Contact Position", "type": "text" },
+      { "id": "MediaContactEmail", "label": "Media Contact Email", "type": "email" },
+      { "id": "MediaContactPhone", "label": "Media Contact Phone", "type": "text" },
+      { "id": "PressContactName", "label": "Press Contact Name", "type": "text" },
+      { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" },
+      { "id": "PressContactEmail", "label": "Press Contact Email", "type": "email" },
+      { "id": "PressContactPhone", "label": "Press Contact Phone", "type": "text" }
+    ]
+  },
+  "Product Recall or Safety Notice Press Release": {
+    "subject": "{CompanyName} Announces Recall of {ProductName} Due to Safety Concerns",
+    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Announces Recall of **{ProductName}** Due to Safety Concerns\n\n{City, Date} – {CompanyName} is issuing a recall of **{ProductName}** following the discovery of potential safety issues. The company is committed to ensuring the safety of its customers and is taking immediate action to address the situation.\n\n**Details of the Recall:**\n- **Affected Product**: {ProductName}\n- **Reason for Recall**: {Describe the safety issue}\n- **Action Required**: {Instructions for customers, e.g., “Please stop using the product immediately and return it to the place of purchase.”}\n\n**Company Statement:**\n{Statement from company leadership about the recall and commitment to safety}\n\nFor further details, customers are encouraged to contact:\n\n**Customer Service Contact:**\n{CustomerServiceName}\n{CustomerServicePosition}\n{CustomerServiceEmail}\n{CustomerServicePhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {brief description of the company, including its mission and vision}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
+    "fields": [
+      { "id": "ProductName", "label": "Product Name", "type": "text" },
+      { "id": "SafetyIssueDescription", "label": "Safety Issue Description", "type": "text" },
+      { "id": "ActionRequired", "label": "Action Required", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "CustomerServiceName", "label": "Customer Service Name", "type": "text" },
+      { "id": "CustomerServicePosition", "label": "Customer Service Position", "type": "text" },
+      { "id": "CustomerServiceEmail", "label": "Customer Service Email", "type": "email" },
+      { "id": "CustomerServicePhone", "label": "Customer Service Phone", "type": "text" },
+      { "id": "PressContactName", "label": "Press Contact Name", "type": "text" },
+      { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" },
+      { "id": "PressContactEmail", "label": "Press Contact Email", "type": "email" },
+      { "id": "PressContactPhone", "label": "Press Contact Phone", "type": "text" }
+    ]
+  }
+  },
+  "Media Inquiry Response Email":{
+    "Response to Media Interview Request": {
+    "subject": "Re: Interview Request with {CompanyName}",
+    "template": "Dear {MediaContactName},\n\nThank you for reaching out to **{CompanyName}** regarding the interview request with **{ExecutiveName/Spokesperson}**. We are pleased to confirm our availability for the interview.\n\n**Details:**\n- **Interviewee**: {ExecutiveName/Spokesperson}\n- **Preferred Date and Time**: {PreferredDateAndTime}\n- **Location/Platform**: {LocationOrPlatform}\n\nPlease let us know if there are any specific topics or questions you would like to cover, or if there are any additional details we should prepare for the interview.\n\nWe look forward to the opportunity to speak with you.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "ExecutiveName", "label": "Executive Name/Spokesperson", "type": "text" },
+      { "id": "PreferredDateAndTime", "label": "Preferred Date and Time", "type": "text" },
+      { "id": "LocationOrPlatform", "label": "Location/Platform", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Response to Media Information Request": {
+    "subject": "Re: Request for Information about {Topic}",
+    "template": "Dear {MediaContactName},\n\nThank you for your request for information about **{Topic}**. We are happy to provide the following details:\n\n**Information:**\n{DetailedInformation}\n\nIf you have any further questions or need additional information, please feel free to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "Topic", "label": "Topic", "type": "text" },
+      { "id": "DetailedInformation", "label": "Detailed Information", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Response to Media Pitch or Query": {
+    "subject": "Re: Media Pitch on {Subject}",
+    "template": "Dear {MediaContactName},\n\nThank you for your media pitch regarding **{Subject}**. We appreciate your interest in **{CompanyName}** and would like to provide the following response:\n\n**Response:**\n{ResponseDetails}\n\nWe are happy to provide additional information or arrange interviews if needed. Please let us know how we can assist further.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "Subject", "label": "Subject", "type": "text" },
+      { "id": "ResponseDetails", "label": "Response Details", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Clarification on Recent News": {
+    "subject": "Re: Clarification on Recent News about {Topic}",
+    "template": "Dear {MediaContactName},\n\nThank you for reaching out regarding the recent news about **{Topic}**. We would like to provide clarification on the following points:\n\n**Clarification:**\n{ClarificationDetails}\n\nWe hope this addresses your queries. Should you need any more information or have further questions, please do not hesitate to contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "Topic", "label": "Topic", "type": "text" },
+      { "id": "ClarificationDetails", "label": "Clarification Details", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Confirmation of Media Interview Details": {
+    "subject": "Confirmation of Media Interview with {ExecutiveName}",
+    "template": "Dear {MediaContactName},\n\nWe are pleased to confirm the details for the upcoming media interview with **{ExecutiveName}** from **{CompanyName}**.\n\n**Interview Details:**\n- **Date and Time**: {InterviewDateTime}\n- **Location/Platform**: {InterviewLocation}\n- **Interviewee**: {ExecutiveName}\n- **Topic**: {InterviewTopic}\n\nIf there are any changes or additional requirements, please let us know at your earliest convenience.\n\nWe look forward to the interview.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "ExecutiveName", "label": "Executive Name", "type": "text" },
+      { "id": "InterviewDateTime", "label": "Interview Date and Time", "type": "text" },
+      { "id": "InterviewLocation", "label": "Interview Location/Platform", "type": "text" },
+      { "id": "InterviewTopic", "label": "Interview Topic", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Response to Media Fact-Checking": {
+    "subject": "Response to Media Fact-Checking Request",
+    "template": "Dear {MediaContactName},\n\nThank you for reaching out regarding the fact-checking of information about **{Topic}**. We appreciate your diligence and are pleased to provide the following details to clarify and confirm the facts:\n\n**Fact-Checked Information:**\n{FactCheckedDetails}\n\nIf you need any further information or have additional questions, please do not hesitate to contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "Topic", "label": "Topic", "type": "text" },
+      { "id": "FactCheckedDetails", "label": "Fact-Checked Details", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Response to Media Coverage Request": {
+    "subject": "Response to Media Coverage Request for {Event/Topic}",
+    "template": "Dear {MediaContactName},\n\nThank you for your request for media coverage of **{Event/Topic}**. We are happy to provide the following details to facilitate your coverage:\n\n**Coverage Details:**\n{CoverageDetails}\n\nIf you need additional information or specific arrangements, please let us know. We are committed to assisting you with your media coverage needs.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "Event/Topic", "label": "Event/Topic", "type": "text" },
+      { "id": "CoverageDetails", "label": "Coverage Details", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  }
+  },
+  "Media Kit Email":{
+    "Press Kit for New Product Launch": {
+    "subject": "Press Kit for New Product Launch of {ProductName}",
+    "template": "Dear {MediaContactName},\n\nWe are excited to share with you the press kit for our new product launch of **{ProductName}**. This comprehensive kit includes all the necessary information and resources to assist you in covering this exciting announcement.\n\n**Press Kit Includes:**\n- **Product Overview**: Detailed description of {ProductName}, including features and benefits.\n- **High-Resolution Images**: Professional photos of the product.\n- **Press Release**: Official announcement and key details about the launch.\n- **FAQs**: Commonly asked questions about {ProductName}.\n- **Contact Information**: For further inquiries or interviews.\n\nWe appreciate your interest and coverage. Should you need any additional information or resources, please do not hesitate to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "ProductName", "label": "Product Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Company Overview Media Kit": {
+    "subject": "Company Overview Media Kit for {CompanyName}",
+    "template": "Dear {MediaContactName},\n\nWe are pleased to provide you with the Company Overview Media Kit for **{CompanyName}**. This kit offers a detailed look at our company and its key aspects, which will aid you in your coverage and reporting.\n\n**Media Kit Includes:**\n- **Company Profile**: Overview of {CompanyName}, including history, mission, and values.\n- **Executive Bios**: Background information on our key executives.\n- **High-Resolution Logos**: Company logos in various formats.\n- **Key Statistics**: Important company metrics and achievements.\n- **Contact Information**: For further inquiries or interviews.\n\nWe hope this media kit serves as a valuable resource. If you have any further questions or need additional materials, please contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Executive Bios and Photos Media Kit": {
+    "subject": "Executive Bios and Photos Media Kit for {CompanyName}",
+    "template": "Dear {MediaContactName},\n\nWe are pleased to share the Executive Bios and Photos Media Kit for **{CompanyName}**. This kit includes detailed biographies and high-resolution photos of our key executives.\n\n**Media Kit Includes:**\n- **Executive Bios**: Detailed biographies of {ExecutiveNames}, including their roles and accomplishments.\n- **High-Resolution Photos**: Professional photos of the executives for media use.\n- **Contact Information**: For arranging interviews or additional inquiries.\n\nWe trust that this kit will assist you in your coverage. Should you need further information or additional resources, please feel free to contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "ExecutiveNames", "label": "Executive Names", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Media Kit for Upcoming Event": {
+    "subject": "Media Kit for Upcoming Event: {EventName}",
+    "template": "Dear {MediaContactName},\n\nWe are excited to provide you with the Media Kit for our upcoming event, **{EventName}**. This kit contains essential information and resources to help you cover the event effectively.\n\n**Media Kit Includes:**\n- **Event Overview**: Detailed information about {EventName}, including objectives and key highlights.\n- **Agenda**: Schedule of activities and important timings.\n- **Press Release**: Official announcement and key details about the event.\n- **High-Resolution Images**: Photos of the event venue and key participants.\n- **Contact Information**: For media inquiries and interviews.\n\nWe hope this media kit is useful for your coverage. If you require further details or have any questions, please do not hesitate to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "EventName", "label": "Event Name", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Press Release Media Kit": {
+    "subject": "Press Release Media Kit for {EventOrAnnouncement}",
+    "template": "Dear {MediaContactName},\n\nWe are pleased to provide you with the Press Release Media Kit for **{EventOrAnnouncement}**. This kit includes all the essential information and resources to support your coverage of our latest announcement.\n\n**Media Kit Includes:**\n- **Press Release**: Official announcement detailing {EventOrAnnouncement}.\n- **Background Information**: Context and background relevant to the announcement.\n- **High-Resolution Images**: Photos related to {EventOrAnnouncement}.\n- **Executive Quotes**: Statements from key executives.\n- **Contact Information**: For further inquiries or interview requests.\n\nWe hope this media kit supports your reporting. If you need additional information or have any questions, please feel free to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "EventOrAnnouncement", "label": "Event or Announcement", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Crisis Communication Media Kit": {
+    "subject": "Crisis Communication Media Kit for {CrisisEvent}",
+    "template": "Dear {MediaContactName},\n\nWe are providing you with the Crisis Communication Media Kit for **{CrisisEvent}**. This kit contains essential information to assist you in understanding and covering the current situation effectively.\n\n**Media Kit Includes:**\n- **Crisis Statement**: Official statement addressing {CrisisEvent}.\n- **Background Information**: Detailed background on the situation.\n- **FAQs**: Answers to common questions about {CrisisEvent}.\n- **Executive Quotes**: Comments from key executives regarding the crisis.\n- **High-Resolution Images**: Relevant images related to the crisis.\n- **Contact Information**: For further inquiries and interviews.\n\nWe aim to provide clarity and transparency. If you have any questions or need further information, please do not hesitate to contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Media Kit for Annual Report": {
+    "subject": "Media Kit for Annual Report {Year}",
+    "template": "Dear {MediaContactName},\n\nWe are excited to share with you the Media Kit for our Annual Report for **{Year}**. This kit includes comprehensive information and resources to support your coverage of our annual performance and achievements.\n\n**Media Kit Includes:**\n- **Annual Report**: Full report detailing our performance for {Year}.\n- **Executive Summary**: Key highlights and achievements from the report.\n- **High-Resolution Images**: Charts, graphs, and relevant images from the report.\n- **Financial Highlights**: Summary of key financial metrics.\n- **Contact Information**: For inquiries or interviews related to the annual report.\n\nWe trust that this media kit will provide valuable insights for your coverage. Should you need additional details or have any questions, please feel free to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
+      { "id": "Year", "label": "Year", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  }
+  },
+  "Public Statement Email":{
+    "Statement on Company Policy Change": {
+    "subject": "Statement on Recent Policy Change",
+    "template": "Dear {RecipientName},\n\nWe are writing to inform you about an important change to our company policy that will take effect on **{EffectiveDate}**. This update is part of our ongoing commitment to improve our services and align with best practices.\n\n**Details of the Policy Change:**\n- **Previous Policy:** {PreviousPolicyDescription}\n- **New Policy:** {NewPolicyDescription}\n- **Reason for Change:** {ReasonForChange}\n\nWe believe that this change will enhance our operations and better serve our customers. If you have any questions or need further clarification, please do not hesitate to contact us.\n\nThank you for your attention to this matter.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EffectiveDate", "label": "Effective Date", "type": "text" },
+      { "id": "PreviousPolicyDescription", "label": "Previous Policy Description", "type": "text" },
+      { "id": "NewPolicyDescription", "label": "New Policy Description", "type": "text" },
+      { "id": "ReasonForChange", "label": "Reason for Change", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Public Apology Statement": {
+    "subject": "Public Apology for {Issue}",
+    "template": "Dear {RecipientName},\n\nWe sincerely apologize for the recent issues regarding **{Issue}**. We understand that this has caused inconvenience and we deeply regret any negative impact it may have had.\n\n**Details of the Issue:**\n- **Description:** {IssueDescription}\n- **Impact:** {ImpactDetails}\n\n**Steps We Are Taking:**\n- **Immediate Actions:** {ImmediateActions}\n- **Long-Term Solutions:** {LongTermSolutions}\n\nWe are committed to addressing this issue and ensuring it does not happen again. We value your feedback and are here to answer any questions you may have.\n\nThank you for your understanding and patience.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "Issue", "label": "Issue", "type": "text" },
+      { "id": "IssueDescription", "label": "Issue Description", "type": "text" },
+      { "id": "ImpactDetails", "label": "Impact Details", "type": "text" },
+      { "id": "ImmediateActions", "label": "Immediate Actions", "type": "text" },
+      { "id": "LongTermSolutions", "label": "Long-Term Solutions", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Statement on Recent Controversy": {
+    "subject": "Statement on Recent Controversy",
+    "template": "Dear {RecipientName},\n\nWe would like to address the recent controversy surrounding **{ControversyTopic}**. We understand the concerns raised and want to clarify our position on the matter.\n\n**Details of the Controversy:**\n- **Description:** {ControversyDescription}\n- **Company's Position:** {CompanyPosition}\n- **Actions Taken:** {ActionsTaken}\n\n**Our Commitment:**\n- **Ongoing Efforts:** {OngoingEfforts}\n- **Future Plans:** {FuturePlans}\n\nWe are committed to transparency and open dialogue. Please feel free to reach out if you have any questions or need further information.\n\nThank you for your attention.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "ControversyTopic", "label": "Controversy Topic", "type": "text" },
+      { "id": "ControversyDescription", "label": "Controversy Description", "type": "text" },
+      { "id": "CompanyPosition", "label": "Company's Position", "type": "text" },
+      { "id": "ActionsTaken", "label": "Actions Taken", "type": "text" },
+      { "id": "OngoingEfforts", "label": "Ongoing Efforts", "type": "text" },
+      { "id": "FuturePlans", "label": "Future Plans", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Company Position on Industry Issue": {
+    "subject": "Company Position on {IndustryIssue}",
+    "template": "Dear {RecipientName},\n\nWe are reaching out to share our company's position on the current industry issue of **{IndustryIssue}**. This issue has garnered significant attention, and we want to provide our perspective.\n\n**Our Position:**\n- **Overview:** {IssueOverview}\n- **Company’s Stance:** {CompanyStance}\n- **Support for Industry Changes:** {SupportDetails}\n\n**Our Actions:**\n- **Current Initiatives:** {CurrentInitiatives}\n- **Future Plans:** {FuturePlans}\n\nWe believe in contributing positively to industry discussions and are committed to addressing this issue constructively. If you have any questions or would like to discuss this further, please do not hesitate to contact us.\n\nThank you for your attention.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "IndustryIssue", "label": "Industry Issue", "type": "text" },
+      { "id": "IssueOverview", "label": "Issue Overview", "type": "text" },
+      { "id": "CompanyStance", "label": "Company’s Stance", "type": "text" },
+      { "id": "SupportDetails", "label": "Support for Industry Changes", "type": "text" },
+      { "id": "CurrentInitiatives", "label": "Current Initiatives", "type": "text" },
+      { "id": "FuturePlans", "label": "Future Plans", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Statement Following Major News Event": {
+    "subject": "Statement Following Major News Event",
+    "template": "Dear {RecipientName},\n\nIn light of the recent major news event regarding **{NewsEvent}**, we want to address the situation and provide our perspective.\n\n**Details of the News Event:**\n- **Event Description:** {EventDescription}\n- **Impact on Our Organization:** {ImpactOnOrganization}\n\n**Our Response:**\n- **Immediate Actions:** {ImmediateActions}\n- **Ongoing Efforts:** {OngoingEfforts}\n- **Future Plans:** {FuturePlans}\n\nWe are committed to addressing the implications of this event and will keep you informed of any significant developments. Please feel free to contact us if you have any questions or need additional information.\n\nThank you for your attention and understanding.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "NewsEvent", "label": "News Event", "type": "text" },
+      { "id": "EventDescription", "label": "Event Description", "type": "text" },
+      { "id": "ImpactOnOrganization", "label": "Impact on Our Organization", "type": "text" },
+      { "id": "ImmediateActions", "label": "Immediate Actions", "type": "text" },
+      { "id": "OngoingEfforts", "label": "Ongoing Efforts", "type": "text" },
+      { "id": "FuturePlans", "label": "Future Plans", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Statement on Regulatory Changes": {
+    "subject": "Statement on Recent Regulatory Changes",
+    "template": "Dear {RecipientName},\n\nWe would like to inform you about recent regulatory changes affecting our industry and how these changes impact our organization.\n\n**Details of the Regulatory Changes:**\n- **Regulation Affected:** {RegulationAffected}\n- **Description of Changes:** {DescriptionOfChanges}\n- **Impact on Our Business:** {ImpactOnBusiness}\n\n**Our Response and Adaptation:**\n- **Compliance Measures:** {ComplianceMeasures}\n- **Future Adjustments:** {FutureAdjustments}\n\nWe are committed to ensuring full compliance with these changes and are proactively adjusting our practices to meet the new requirements. If you have any questions or need further details, please contact us.\n\nThank you for your continued support.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "RegulationAffected", "label": "Regulation Affected", "type": "text" },
+      { "id": "DescriptionOfChanges", "label": "Description of Changes", "type": "text" },
+      { "id": "ImpactOnBusiness", "label": "Impact on Our Business", "type": "text" },
+      { "id": "ComplianceMeasures", "label": "Compliance Measures", "type": "text" },
+      { "id": "FutureAdjustments", "label": "Future Adjustments", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Public Response to Community Feedback": {
+    "subject": "Public Response to Community Feedback",
+    "template": "Dear {RecipientName},\n\nWe appreciate the feedback received from our community regarding **{FeedbackTopic}**. We value your input and are committed to addressing the concerns and suggestions raised.\n\n**Summary of Feedback:**\n- **Key Points Raised:** {KeyPointsRaised}\n- **Community Concerns:** {CommunityConcerns}\n\n**Our Response:**\n- **Actions Taken:** {ActionsTaken}\n- **Planned Improvements:** {PlannedImprovements}\n\nWe are dedicated to continuous improvement and will keep you updated on our progress. Thank you for your engagement and support. Should you have any additional feedback or questions, please feel free to contact us.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "FeedbackTopic", "label": "Feedback Topic", "type": "text" },
+      { "id": "KeyPointsRaised", "label": "Key Points Raised", "type": "text" },
+      { "id": "CommunityConcerns", "label": "Community Concerns", "type": "text" },
+      { "id": "ActionsTaken", "label": "Actions Taken", "type": "text" },
+      { "id": "PlannedImprovements", "label": "Planned Improvements", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  }
+  },
+  "Media Invitation Email":{
+    "Invitation to Press Conference": {
+    "subject": "Invitation to Press Conference",
+    "template": "Dear {RecipientName},\n\nWe are pleased to invite you to our upcoming press conference on **{EventDate}** at **{EventTime}**. The event will take place at **{EventVenue}**.\n\n**Event Details:**\n- **Topic:** {ConferenceTopic}\n- **Key Speakers:** {KeySpeakers}\n- **Purpose:** {EventPurpose}\n\n**Agenda:**\n- {AgendaDetails}\n\n**RSVP:**\nPlease confirm your attendance by **{RSVPDeadline}** by replying to this email or contacting us at **{ContactEmail}**.\n\nWe look forward to your participation and valuable coverage.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventTime", "label": "Event Time", "type": "time" },
+      { "id": "EventVenue", "label": "Event Venue", "type": "text" },
+      { "id": "ConferenceTopic", "label": "Conference Topic", "type": "text" },
+      { "id": "KeySpeakers", "label": "Key Speakers", "type": "text" },
+      { "id": "EventPurpose", "label": "Event Purpose", "type": "text" },
+      { "id": "AgendaDetails", "label": "Agenda Details", "type": "text" },
+      { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
+      { "id": "ContactEmail", "label": "Contact Email", "type": "email" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Invitation to Media Briefing": {
+    "subject": "Invitation to Media Briefing",
+    "template": "Dear {RecipientName},\n\nWe are excited to invite you to our media briefing scheduled for **{EventDate}** at **{EventTime}**. The briefing will be held at **{EventVenue}**.\n\n**Briefing Overview:**\n- **Topic:** {BriefingTopic}\n- **Speakers:** {SpeakersList}\n- **Objective:** {BriefingObjective}\n\n**Agenda:**\n- {DetailedAgenda}\n\n**RSVP Information:**\nKindly confirm your attendance by **{RSVPDeadline}**. Please respond to this invitation or reach out to **{ContactEmail}** for any inquiries.\n\nWe look forward to your presence and engagement.\n\nWarm regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventTime", "label": "Event Time", "type": "time" },
+      { "id": "EventVenue", "label": "Event Venue", "type": "text" },
+      { "id": "BriefingTopic", "label": "Briefing Topic", "type": "text" },
+      { "id": "SpeakersList", "label": "Speakers List", "type": "text" },
+      { "id": "BriefingObjective", "label": "Briefing Objective", "type": "text" },
+      { "id": "DetailedAgenda", "label": "Detailed Agenda", "type": "text" },
+      { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
+      { "id": "ContactEmail", "label": "Contact Email", "type": "email" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Invitation to Product Launch Event": {
+    "subject": "Invitation to Product Launch Event",
+    "template": "Dear {RecipientName},\n\nWe are thrilled to invite you to the launch of our new product on **{EventDate}** at **{EventTime}**. The event will be hosted at **{EventVenue}**.\n\n**Event Details:**\n- **Product:** {ProductName}\n- **Highlights:** {ProductHighlights}\n- **Speakers/Presenters:** {SpeakersList}\n\n**Agenda:**\n- {EventAgenda}\n\n**RSVP:**\nPlease confirm your attendance by **{RSVPDeadline}** by replying to this email or contacting us at **{ContactEmail}**.\n\nWe are excited to share this milestone with you and look forward to your participation.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventTime", "label": "Event Time", "type": "time" },
+      { "id": "EventVenue", "label": "Event Venue", "type": "text" },
+      { "id": "ProductName", "label": "Product Name", "type": "text" },
+      { "id": "ProductHighlights", "label": "Product Highlights", "type": "text" },
+      { "id": "SpeakersList", "label": "Speakers List", "type": "text" },
+      { "id": "EventAgenda", "label": "Event Agenda", "type": "text" },
+      { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
+      { "id": "ContactEmail", "label": "Contact Email", "type": "email" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Invitation to Company Open House": {
+    "subject": "Invitation to Company Open House",
+    "template": "Dear {RecipientName},\n\nWe are excited to invite you to our Company Open House on **{EventDate}** from **{StartTime}** to **{EndTime}**. The event will take place at **{EventVenue}**.\n\n**Event Highlights:**\n- **Company Tour:** {TourDetails}\n- **Meet the Team:** {TeamIntroduction}\n- **Interactive Sessions:** {InteractiveSessions}\n\n**RSVP:**\nPlease let us know if you can attend by **{RSVPDeadline}**. Respond to this email or contact us at **{ContactEmail}**.\n\nWe look forward to welcoming you and showing you around our facilities.\n\nWarm regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "StartTime", "label": "Start Time", "type": "time" },
+      { "id": "EndTime", "label": "End Time", "type": "time" },
+      { "id": "EventVenue", "label": "Event Venue", "type": "text" },
+      { "id": "TourDetails", "label": "Tour Details", "type": "text" },
+      { "id": "TeamIntroduction", "label": "Team Introduction", "type": "text" },
+      { "id": "InteractiveSessions", "label": "Interactive Sessions", "type": "text" },
+      { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
+      { "id": "ContactEmail", "label": "Contact Email", "type": "email" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Invitation to Exclusive Media Event": {
+    "subject": "Invitation to Exclusive Media Event",
+    "template": "Dear {RecipientName},\n\nWe are honored to invite you to our exclusive media event taking place on **{EventDate}** at **{EventTime}**. The event will be held at **{EventVenue}**.\n\n**Event Highlights:**\n- **Purpose:** {EventPurpose}\n- **Special Guests:** {SpecialGuests}\n- **Highlights:** {EventHighlights}\n\n**Agenda:**\n- {AgendaDetails}\n\n**RSVP:**\nKindly confirm your attendance by **{RSVPDeadline}**. Please reply to this email or contact us at **{ContactEmail}** to secure your spot.\n\nWe look forward to sharing this special event with you.\n\nWarm regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventTime", "label": "Event Time", "type": "time" },
+      { "id": "EventVenue", "label": "Event Venue", "type": "text" },
+      { "id": "EventPurpose", "label": "Event Purpose", "type": "text" },
+      { "id": "SpecialGuests", "label": "Special Guests", "type": "text" },
+      { "id": "EventHighlights", "label": "Event Highlights", "type": "text" },
+      { "id": "AgendaDetails", "label": "Agenda Details", "type": "text" },
+      { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
+      { "id": "ContactEmail", "label": "Contact Email", "type": "email" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Invitation to Media Roundtable": {
+    "subject": "Invitation to Media Roundtable",
+    "template": "Dear {RecipientName},\n\nWe are pleased to invite you to our Media Roundtable scheduled for **{EventDate}** at **{EventTime}**. The roundtable will be held at **{EventVenue}**.\n\n**Roundtable Details:**\n- **Topic:** {DiscussionTopic}\n- **Participants:** {ParticipantsList}\n- **Objective:** {RoundtableObjective}\n\n**Agenda:**\n- {DetailedAgenda}\n\n**RSVP:**\nPlease confirm your attendance by **{RSVPDeadline}**. You can RSVP by replying to this email or contacting us at **{ContactEmail}**.\n\nWe look forward to your valuable contributions.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventTime", "label": "Event Time", "type": "time" },
+      { "id": "EventVenue", "label": "Event Venue", "type": "text" },
+      { "id": "DiscussionTopic", "label": "Discussion Topic", "type": "text" },
+      { "id": "ParticipantsList", "label": "Participants List", "type": "text" },
+      { "id": "RoundtableObjective", "label": "Roundtable Objective", "type": "text" },
+      { "id": "DetailedAgenda", "label": "Detailed Agenda", "type": "text" },
+      { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
+      { "id": "ContactEmail", "label": "Contact Email", "type": "email" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  },
+  "Invitation to Industry Awards Ceremony": {
+    "subject": "Invitation to Industry Awards Ceremony",
+    "template": "Dear {RecipientName},\n\nWe are delighted to invite you to our Industry Awards Ceremony on **{EventDate}** at **{EventTime}**. The ceremony will take place at **{EventVenue}**.\n\n**Ceremony Highlights:**\n- **Awards:** {AwardsCategories}\n- **Special Guests:** {SpecialGuests}\n- **Entertainment:** {EntertainmentDetails}\n\n**Agenda:**\n- {EventAgenda}\n\n**RSVP:**\nPlease confirm your attendance by **{RSVPDeadline}** by replying to this email or contacting us at **{ContactEmail}**.\n\nWe look forward to celebrating the achievements in our industry with you.\n\nWarm regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "EventDate", "label": "Event Date", "type": "date" },
+      { "id": "EventTime", "label": "Event Time", "type": "time" },
+      { "id": "EventVenue", "label": "Event Venue", "type": "text" },
+      { "id": "AwardsCategories", "label": "Awards Categories", "type": "text" },
+      { "id": "SpecialGuests", "label": "Special Guests", "type": "text" },
+      { "id": "EntertainmentDetails", "label": "Entertainment Details", "type": "text" },
+      { "id": "EventAgenda", "label": "Event Agenda", "type": "text" },
+      { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
+      { "id": "ContactEmail", "label": "Contact Email", "type": "email" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "YourPhone", "label": "Your Phone", "type": "text" },
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+    ]
+  }
+  },
+  "Op-Ed Submission Email":{
+    "Op-Ed on Industry Trends": {
+    "title": "Op-Ed on Industry Trends",
+    "template": "In recent years, {Industry} has undergone significant transformations, driven by advances in technology and shifts in consumer behavior. As {AuthorName}, a {Position} at {CompanyName}, I would like to share insights on how these trends are shaping the future of our industry.\n\n**Emerging Trends:**\n1. **{Trend1}**: {Description}\n2. **{Trend2}**: {Description}\n3. **{Trend3}**: {Description}\n\n**Impact on the Industry:**\nThese trends are reshaping the landscape of {Industry} by {ImpactDetails}. Companies that adapt to these changes are likely to gain a competitive advantage.\n\n**Future Outlook:**\nLooking ahead, we anticipate further developments in {Trend1} and {Trend2}, which will continue to influence {Industry}. Organizations must stay informed and agile to navigate this evolving environment.\n\n**Conclusion:**\nThe pace of change in {Industry} is accelerating. It is crucial for industry leaders to embrace innovation and anticipate future trends to remain relevant.\n\nBest regards,\n{AuthorName}\n{Position}\n{CompanyName}\n{ContactEmail}",
+    "fields": [
+      { "id": "AuthorName", "label": "Author Name", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "Industry", "label": "Industry", "type": "text" },
+      { "id": "Trend1", "label": "Trend 1", "type": "text" },
+      { "id": "Description", "label": "Description", "type": "text" },
+      { "id": "Trend2", "label": "Trend 2", "type": "text" },
+      { "id": "Trend3", "label": "Trend 3", "type": "text" },
+      { "id": "ImpactDetails", "label": "Impact Details", "type": "text" },
+      { "id": "ContactEmail", "label": "Contact Email", "type": "email" }
+    ]
+  },
+  "Op-Ed on Company Vision": {
+    "title": "Op-Ed on Company Vision",
+    "template": "At {CompanyName}, our vision is to {VisionStatement}. As {AuthorName}, {Position} at {CompanyName}, I am excited to share how we are working towards achieving this vision and the values that guide us.\n\n**Core Values:**\n1. **{Value1}**: {Explanation}\n2. **{Value2}**: {Explanation}\n3. **{Value3}**: {Explanation}\n\n**Strategic Goals:**\nOur strategic goals include {Goal1}, {Goal2}, and {Goal3}, which are designed to align with our vision and drive long-term success.\n\n**Future Plans:**\nWe are committed to {FuturePlans}, which will position us as a leader in our field and help us achieve our vision.\n\n**Conclusion:**\nThe journey towards our vision is a collaborative effort that requires dedication and innovation. We are excited about the future and remain focused on our goals.\n\nSincerely,\n{AuthorName}\n{Position}\n{CompanyName}\n{ContactEmail}",
+    "fields": [
+      { "id": "AuthorName", "label": "Author Name", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "VisionStatement", "label": "Vision Statement", "type": "text" },
+      { "id": "Value1", "label": "Core Value 1", "type": "text" },
+      { "id": "Explanation", "label": "Explanation", "type": "text" },
+      { "id": "Value2", "label": "Core Value 2", "type": "text" },
+      { "id": "Value3", "label": "Core Value 3", "type": "text" },
+      { "id": "Goal1", "label": "Strategic Goal 1", "type": "text" },
+      { "id": "Goal2", "label": "Strategic Goal 2", "type": "text" },
+      { "id": "Goal3", "label": "Strategic Goal 3", "type": "text" },
+      { "id": "FuturePlans", "label": "Future Plans", "type": "text" },
+      { "id": "ContactEmail", "label": "Contact Email", "type": "email" }
+    ]
+  },
+  "Op-Ed on Social Responsibility": {
+    "title": "Op-Ed on Social Responsibility",
+    "template": "Social responsibility is at the heart of {CompanyName}'s mission. As {AuthorName}, {Position} at {CompanyName}, I want to highlight our commitment to making a positive impact on society.\n\n**Key Initiatives:**\n1. **{Initiative1}**: {Description}\n2. **{Initiative2}**: {Description}\n3. **{Initiative3}**: {Description}\n\n**Impact on the Community:**\nOur initiatives have contributed to {CommunityImpact}, fostering positive change and supporting local communities.\n\n**Future Commitments:**\nWe are dedicated to enhancing our efforts in {FutureCommitments}, aiming to address pressing social issues and promote sustainability.\n\n**Conclusion:**\nOur commitment to social responsibility drives us to act ethically and contribute to the well-being of society. We invite others to join us in making a difference.\n\nSincerely,\n{AuthorName}\n{Position}\n{CompanyName}\n{ContactEmail}",
+    "fields": [
+      { "id": "AuthorName", "label": "Author Name", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "Initiative1", "label": "Initiative 1", "type": "text" },
+      { "id": "Initiative2", "label": "Initiative 2", "type": "text" },
+      { "id": "Initiative3", "label": "Initiative 3", "type": "text" },
+      { "id": "Description", "label": "Description", "type": "text" },
+      { "id": "CommunityImpact", "label": "Community Impact", "type": "text" },
+      { "id": "FutureCommitments", "label": "Future Commitments", "type": "text" },
+      { "id": "ContactEmail", "label": "Contact Email", "type": "email" }
+    ]
+  },
+  "Op-Ed on Regulatory Changes": {
+    "title": "Op-Ed on Regulatory Changes",
+    "template": "Recent regulatory changes in {Industry} have significant implications for businesses and consumers alike. As {AuthorName}, {Position} at {CompanyName}, I am writing to provide insights on these developments and their impact.\n\n**Overview of Changes:**\n1. **{Regulation1}**: {Details}\n2. **{Regulation2}**: {Details}\n3. **{Regulation3}**: {Details}\n\n**Implications for Businesses:**\nThese changes will affect {BusinessImplications}, requiring companies to {AdaptationStrategies}.\n\n**Impact on Consumers:**\nConsumers will experience {ConsumerImpact}, which may lead to {PotentialOutcomes}.\n\n**Conclusion:**\nNavigating these regulatory changes will be challenging but necessary for compliance and maintaining industry standards. It is crucial for stakeholders to stay informed and proactive.\n\nBest regards,\n{AuthorName}\n{Position}\n{CompanyName}\n{ContactEmail}",
+    "fields": [
+      { "id": "AuthorName", "label": "Author Name", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "Industry", "label": "Industry", "type": "text" },
+      { "id": "Regulation1", "label": "Regulation 1", "type": "text" },
+      { "id": "Details", "label": "Details", "type": "text" },
+      { "id": "Regulation2", "label": "Regulation 2", "type": "text" },
+      { "id": "Regulation3", "label": "Regulation 3", "type": "text" },
+      { "id": "BusinessImplications", "label": "Business Implications", "type": "text" },
+      { "id": "AdaptationStrategies", "label": "Adaptation Strategies", "type": "text" },
+      { "id": "ConsumerImpact", "label": "Consumer Impact", "type": "text" },
+      { "id": "PotentialOutcomes", "label": "Potential Outcomes", "type": "text" },
+      { "id": "ContactEmail", "label": "Contact Email", "type": "email" }
+    ]
+  },
+  "Op-Ed on Economic Impact": {
+    "title": "Op-Ed on Economic Impact",
+    "template": "The economic landscape is constantly evolving, influenced by various factors including policy changes, market trends, and global events. As {AuthorName}, {Position} at {CompanyName}, I would like to provide insights into the current economic impact and its implications for businesses and consumers.\n\n**Economic Trends:**\n1. **{Trend1}**: {Description}\n2. **{Trend2}**: {Description}\n3. **{Trend3}**: {Description}\n\n**Impact on Businesses:**\nBusinesses are experiencing {BusinessImpact}, which may lead to {PotentialChallenges} and {Opportunities}.\n\n**Impact on Consumers:**\nConsumers are facing {ConsumerImpact}, affecting {KeyAreas}.\n\n**Future Outlook:**\nLooking forward, {EconomicOutlook}, requiring {RecommendedActions} from both businesses and consumers.\n\n**Conclusion:**\nUnderstanding and adapting to these economic changes is crucial for long-term success and stability. We must stay informed and proactive to navigate these challenges effectively.\n\nSincerely,\n{AuthorName}\n{Position}\n{CompanyName}\n{ContactEmail}",
+    "fields": [
+      { "id": "AuthorName", "label": "Author Name", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "Trend1", "label": "Economic Trend 1", "type": "text" },
+      { "id": "Description", "label": "Description", "type": "text" },
+      { "id": "Trend2", "label": "Economic Trend 2", "type": "text" },
+      { "id": "Trend3", "label": "Economic Trend 3", "type": "text" },
+      { "id": "BusinessImpact", "label": "Impact on Businesses", "type": "text" },
+      { "id": "PotentialChallenges", "label": "Potential Challenges", "type": "text" },
+      { "id": "Opportunities", "label": "Opportunities", "type": "text" },
+      { "id": "ConsumerImpact", "label": "Impact on Consumers", "type": "text" },
+      { "id": "KeyAreas", "label": "Key Areas Affected", "type": "text" },
+      { "id": "EconomicOutlook", "label": "Future Economic Outlook", "type": "text" },
+      { "id": "RecommendedActions", "label": "Recommended Actions", "type": "text" },
+      { "id": "ContactEmail", "label": "Contact Email", "type": "email" }
+    ]
+  },
+  "Op-Ed on Technological Advancements": {
+    "title": "Op-Ed on Technological Advancements",
+    "template": "Technological advancements are rapidly transforming industries and reshaping our daily lives. As {AuthorName}, {Position} at {CompanyName}, I want to discuss the impact of these innovations and their implications for the future.\n\n**Key Advancements:**\n1. **{Advancement1}**: {Description}\n2. **{Advancement2}**: {Description}\n3. **{Advancement3}**: {Description}\n\n**Impact on Industries:**\nThese advancements are driving change in {Industries}, leading to {IndustryImpacts} and {NewOpportunities}.\n\n**Impact on Society:**\nFor society, these technologies are {SocietalImpacts}, influencing {KeyAreas}.\n\n**Future Prospects:**\nThe future promises further innovations in {FutureTrends}, with potential for {FutureOpportunities} and {Challenges}.\n\n**Conclusion:**\nEmbracing technological advancements is essential for staying competitive and addressing emerging challenges. It is crucial for stakeholders to remain adaptable and forward-thinking.\n\nBest regards,\n{AuthorName}\n{Position}\n{CompanyName}\n{ContactEmail}",
+    "fields": [
+      { "id": "AuthorName", "label": "Author Name", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "Advancement1", "label": "Technological Advancement 1", "type": "text" },
+      { "id": "Advancement2", "label": "Technological Advancement 2", "type": "text" },
+      { "id": "Advancement3", "label": "Technological Advancement 3", "type": "text" },
+      { "id": "Description", "label": "Description", "type": "text" },
+      { "id": "Industries", "label": "Industries Affected", "type": "text" },
+      { "id": "IndustryImpacts", "label": "Industry Impacts", "type": "text" },
+      { "id": "NewOpportunities", "label": "New Opportunities", "type": "text" },
+      { "id": "SocietalImpacts", "label": "Societal Impacts", "type": "text" },
+      { "id": "KeyAreas", "label": "Key Areas Affected", "type": "text" },
+      { "id": "FutureTrends", "label": "Future Trends", "type": "text" },
+      { "id": "FutureOpportunities", "label": "Future Opportunities", "type": "text" },
+      { "id": "Challenges", "label": "Challenges", "type": "text" },
+      { "id": "ContactEmail", "label": "Contact Email", "type": "email" }
+    ]
+  },
+  "Op-Ed on Community Engagement": {
+    "title": "Op-Ed on Community Engagement",
+    "template": "Community engagement is a fundamental aspect of building strong, resilient communities. As {AuthorName}, {Position} at {CompanyName}, I am writing to emphasize the importance of community involvement and the benefits it brings.\n\n**Key Engagement Strategies:**\n1. **{Strategy1}**: {Description}\n2. **{Strategy2}**: {Description}\n3. **{Strategy3}**: {Description}\n\n**Benefits for Communities:**\nEffective engagement results in {CommunityBenefits}, fostering {PositiveOutcomes} and {EnhancedRelations}.\n\n**Role of Organizations:**\nOrganizations play a crucial role in {OrganizationRole}, contributing to {ImpactDetails} and {SupportForInitiatives}.\n\n**Future Directions:**\nLooking ahead, {FutureDirections} will be essential for continuing to strengthen community ties and address emerging needs.\n\n**Conclusion:**\nCommunity engagement is not just a responsibility but an opportunity to drive positive change. We must continue to invest in and support initiatives that enhance our communities.\n\nSincerely,\n{AuthorName}\n{Position}\n{CompanyName}\n{ContactEmail}",
+    "fields": [
+      { "id": "AuthorName", "label": "Author Name", "type": "text" },
+      { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "Strategy1", "label": "Engagement Strategy 1", "type": "text" },
+      { "id": "Strategy2", "label": "Engagement Strategy 2", "type": "text" },
+      { "id": "Strategy3", "label": "Engagement Strategy 3", "type": "text" },
+      { "id": "Description", "label": "Description", "type": "text" },
+      { "id": "CommunityBenefits", "label": "Community Benefits", "type": "text" },
+      { "id": "PositiveOutcomes", "label": "Positive Outcomes", "type": "text" },
+      { "id": "EnhancedRelations", "label": "Enhanced Relations", "type": "text" },
+      { "id": "OrganizationRole", "label": "Role of Organizations", "type": "text" },
+      { "id": "ImpactDetails", "label": "Impact Details", "type": "text" },
+      { "id": "SupportForInitiatives", "label": "Support for Initiatives", "type": "text" },
+      { "id": "FutureDirections", "label": "Future Directions", "type": "text" },
+      { "id": "ContactEmail", "label": "Contact Email", "type": "email" }
+    ]
+  }
+  },
+  "Crisis Communication Email":{
+    "Initial Crisis Response Email": {
+    "title": "Initial Crisis Response Email",
+    "template": "Subject: Initial Response to [Crisis Event]\n\nDear [RecipientName],\n\nWe are writing to acknowledge the recent [Crisis Event] and to provide you with an initial response. We understand the seriousness of the situation and want to assure you that we are taking immediate action to address it.\n\n**Situation Overview:**\n- **Event:** [Brief Description of Crisis Event]\n- **Date and Time:** [Date and Time]\n- **Current Status:** [Current Status]\n\n**Immediate Actions Taken:**\n1. **[Action 1]**: [Description]\n2. **[Action 2]**: [Description]\n3. **[Action 3]**: [Description]\n\nWe are committed to keeping you informed as we continue to manage the situation. Please do not hesitate to reach out with any questions or concerns.\n\nSincerely,\n[Your Name]\n[Your Position]\n[Your Company]\n[Contact Information]",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
+      { "id": "DateTime", "label": "Date and Time", "type": "text" },
+      { "id": "CurrentStatus", "label": "Current Status", "type": "text" },
+      { "id": "Action1", "label": "Immediate Action 1", "type": "text" },
+      { "id": "Action2", "label": "Immediate Action 2", "type": "text" },
+      { "id": "Action3", "label": "Immediate Action 3", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "ContactInformation", "label": "Contact Information", "type": "text" }
+    ]
+  },
+  "Update on Crisis Situation": {
+    "title": "Update on Crisis Situation",
+    "template": "Subject: Update on [Crisis Event]\n\nDear [RecipientName],\n\nWe are providing you with an update on the ongoing [Crisis Event]. We want to keep you informed about the latest developments and the actions we are taking.\n\n**Current Situation:**\n- **Update:** [Current Situation]\n- **Timeline:** [Timeline of Events]\n- **Impact:** [Impact Details]\n\n**Ongoing Actions:**\n1. **[Action 1]**: [Description]\n2. **[Action 2]**: [Description]\n3. **[Action 3]**: [Description]\n\nWe appreciate your patience and understanding as we work through this issue. We will continue to provide updates as necessary.\n\nBest regards,\n[Your Name]\n[Your Position]\n[Your Company]\n[Contact Information]",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
+      { "id": "CurrentSituation", "label": "Current Situation", "type": "text" },
+      { "id": "Timeline", "label": "Timeline of Events", "type": "text" },
+      { "id": "ImpactDetails", "label": "Impact Details", "type": "text" },
+      { "id": "Action1", "label": "Ongoing Action 1", "type": "text" },
+      { "id": "Action2", "label": "Ongoing Action 2", "type": "text" },
+      { "id": "Action3", "label": "Ongoing Action 3", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "ContactInformation", "label": "Contact Information", "type": "text" }
+    ]
+  },
+  "Apology and Action Plan Email": {
+    "title": "Apology and Action Plan Email",
+    "template": "Subject: Apology and Action Plan for [Crisis Event]\n\nDear [RecipientName],\n\nWe want to express our sincere apologies for the recent [Crisis Event]. We understand the impact this has had on you and are committed to rectifying the situation.\n\n**Apology:**\nWe deeply regret [Specific Issue] and acknowledge the inconvenience it has caused.\n\n**Action Plan:**\n1. **[Action 1]**: [Description of Planned Action]\n2. **[Action 2]**: [Description of Planned Action]\n3. **[Action 3]**: [Description of Planned Action]\n\n**Timeline for Resolution:**\nWe expect to resolve these issues by [Resolution Timeline].\n\nWe value your feedback and will use it to improve our processes. Please feel free to contact us with any further concerns.\n\nSincerely,\n[Your Name]\n[Your Position]\n[Your Company]\n[Contact Information]",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
+      { "id": "SpecificIssue", "label": "Specific Issue", "type": "text" },
+      { "id": "Action1", "label": "Planned Action 1", "type": "text" },
+      { "id": "Action2", "label": "Planned Action 2", "type": "text" },
+      { "id": "Action3", "label": "Planned Action 3", "type": "text" },
+      { "id": "ResolutionTimeline", "label": "Resolution Timeline", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "ContactInformation", "label": "Contact Information", "type": "text" }
+    ]
+  },
+  "Crisis Resolution Communication": {
+    "title": "Crisis Resolution Communication",
+    "template": "Subject: Resolution of [Crisis Event]\n\nDear [RecipientName],\n\nWe are pleased to inform you that the [Crisis Event] has been resolved. We want to update you on the steps we have taken to address the situation and prevent future occurrences.\n\n**Resolution Summary:**\n- **Resolution Actions Taken:**\n  1. **[Action 1]**: [Description]\n  2. **[Action 2]**: [Description]\n  3. **[Action 3]**: [Description]\n- **Current Status:** [Current Status]\n- **Preventative Measures:** [Details of Measures]\n\n**Ongoing Support:**\nWe are committed to providing ongoing support and addressing any remaining concerns you may have.\n\nThank you for your understanding and patience during this time. Please do not hesitate to contact us if you need further information or assistance.\n\nBest regards,\n[Your Name]\n[Your Position]\n[Your Company]\n[Contact Information]",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
+      { "id": "Action1", "label": "Resolution Action 1", "type": "text" },
+      { "id": "Action2", "label": "Resolution Action 2", "type": "text" },
+      { "id": "Action3", "label": "Resolution Action 3", "type": "text" },
+      { "id": "CurrentStatus", "label": "Current Status", "type": "text" },
+      { "id": "PreventativeMeasures", "label": "Preventative Measures", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "ContactInformation", "label": "Contact Information", "type": "text" }
+    ]
+  },
+  "Customer Support during Crisis Email": {
+    "title": "Customer Support during Crisis Email",
+    "template": "Subject: Support and Assistance During [Crisis Event]\n\nDear [CustomerName],\n\nWe understand that the recent [Crisis Event] has created challenges, and we want to assure you that our customer support team is here to assist you. Your satisfaction and well-being are our top priorities during this time.\n\n**How We Are Supporting You:**\n- **Dedicated Support Line:** [Support Contact Information]\n- **Extended Support Hours:** [Details of Extended Hours]\n- **Additional Resources:** [Links to Resources or Help Center]\n\n**What You Can Expect:**\n1. **Timely Assistance:** We are prioritizing all requests and will respond as quickly as possible.\n2. **Updates and Information:** We will keep you informed about any changes or developments related to the crisis.\n3. **Feedback and Concerns:** Please let us know if you have any specific concerns or feedback.\n\nWe appreciate your patience and understanding. If you need immediate assistance, please do not hesitate to reach out to our support team.\n\nSincerely,\n[Your Name]\n[Your Position]\n[Your Company]\n[Contact Information]",
+    "fields": [
+      { "id": "CustomerName", "label": "Customer Name", "type": "text" },
+      { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
+      { "id": "SupportContactInformation", "label": "Support Contact Information", "type": "text" },
+      { "id": "ExtendedHours", "label": "Extended Support Hours", "type": "text" },
+      { "id": "Resources", "label": "Additional Resources", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "ContactInformation", "label": "Contact Information", "type": "text" }
+    ]
+  },
+  "Stakeholder Communication during Crisis": {
+    "title": "Stakeholder Communication during Crisis",
+    "template": "Subject: Update on [Crisis Event] - Stakeholder Communication\n\nDear [StakeholderName],\n\nWe are reaching out to update you on the recent [Crisis Event] and the steps we are taking to manage the situation. As a valued stakeholder, your insight and support are crucial to us during this time.\n\n**Current Situation:**\n- **Overview of the Crisis:** [Brief Description of the Crisis]\n- **Impact on Operations:** [Details on How the Crisis Affects Operations]\n- **Stakeholder Impact:** [Information on How Stakeholders are Affected]\n\n**Actions We Are Taking:**\n1. **[Action 1]**: [Description of Action]\n2. **[Action 2]**: [Description of Action]\n3. **[Action 3]**: [Description of Action]\n\n**Future Steps and Expectations:**\n- **[Upcoming Actions]**\n- **[Timeline for Resolution]**\n- **[Contact for Further Information]**\n\nWe value your continued support and will keep you informed with regular updates. Please feel free to reach out if you have any questions or need additional information.\n\nBest regards,\n[Your Name]\n[Your Position]\n[Your Company]\n[Contact Information]",
+    "fields": [
+      { "id": "StakeholderName", "label": "Stakeholder Name", "type": "text" },
+      { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
+      { "id": "CrisisOverview", "label": "Overview of the Crisis", "type": "text" },
+      { "id": "ImpactOnOperations", "label": "Impact on Operations", "type": "text" },
+      { "id": "StakeholderImpact", "label": "Stakeholder Impact", "type": "text" },
+      { "id": "Action1", "label": "Action 1", "type": "text" },
+      { "id": "Action2", "label": "Action 2", "type": "text" },
+      { "id": "Action3", "label": "Action 3", "type": "text" },
+      { "id": "UpcomingActions", "label": "Upcoming Actions", "type": "text" },
+      { "id": "TimelineForResolution", "label": "Timeline for Resolution", "type": "text" },
+      { "id": "ContactForInformation", "label": "Contact for Further Information", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "ContactInformation", "label": "Contact Information", "type": "text" }
+    ]
+  },
+  "Crisis Management Follow-Up Email": {
+    "title": "Crisis Management Follow-Up Email",
+    "template": "Subject: Follow-Up on [Crisis Event]\n\nDear [RecipientName],\n\nWe are following up on the recent [Crisis Event] to provide you with additional information and updates. We appreciate your patience and cooperation as we continue to address the situation.\n\n**Key Updates:**\n- **Resolution Status:** [Current Status and Resolution Progress]\n- **Remaining Issues:** [Any Outstanding Issues]\n- **Feedback and Actions Taken:** [Summary of Feedback Received and Actions Taken]\n\n**Next Steps:**\n1. **[Next Step 1]**: [Description]\n2. **[Next Step 2]**: [Description]\n3. **[Next Step 3]**: [Description]\n\n**Additional Support:**\nWe are available to assist with any further questions or concerns you may have. Please contact us at [Support Contact Information] for additional support.\n\nThank you for your continued support and understanding.\n\nSincerely,\n[Your Name]\n[Your Position]\n[Your Company]\n[Contact Information]",
+    "fields": [
+      { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
+      { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
+      { "id": "ResolutionStatus", "label": "Resolution Status", "type": "text" },
+      { "id": "RemainingIssues", "label": "Remaining Issues", "type": "text" },
+      { "id": "FeedbackActions", "label": "Feedback and Actions Taken", "type": "text" },
+      { "id": "NextStep1", "label": "Next Step 1", "type": "text" },
+      { "id": "NextStep2", "label": "Next Step 2", "type": "text" },
+      { "id": "NextStep3", "label": "Next Step 3", "type": "text" },
+      { "id": "SupportContactInformation", "label": "Support Contact Information", "type": "text" },
+      { "id": "YourName", "label": "Your Name", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "ContactInformation", "label": "Contact Information", "type": "text" }
+    ]
+  }
   }
 
   
