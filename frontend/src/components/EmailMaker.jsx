@@ -223,6 +223,16 @@ const EmailMaker = ({ selectedTemplate }) => {
               className="form-control"
             />
           )}
+           {field.type === 'tel' && (
+              <input
+                type="text"
+                id={field.id}
+                name={field.id}
+                value={formData[field.id] || ''}
+                onChange={handleChange}
+                className="form-control"
+              />
+            )}
           {field.type === 'date' && (
             <input
               type="date"

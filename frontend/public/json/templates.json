@@ -3650,7 +3650,7 @@
   },
   "Cancellation with Alternative Options": {
     "subject": "Event Cancellation and Alternative Options for {EventName}",
-    "template": "Dear {RecipientName},\n\nWe regret to inform you that the {EventName} scheduled for {EventDate} has been cancelled due to {ReasonForCancellation}. We understand the inconvenience this may cause and are offering alternative options to make up for this.\n\nYou may choose from the following alternatives:\n1. [Alternative Option 1]\n2. [Alternative Option 2]\n3. [Alternative Option 3]\n\nPlease let us know your preference or if there is anything else we can assist with. We appreciate your understanding and hope to see you at one of our future events.\n\nThank you for your support.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "template": "Dear {RecipientName},\n\nWe regret to inform you that the {EventName} scheduled for {EventDate} has been cancelled due to {ReasonForCancellation}. We understand the inconvenience this may cause and are offering alternative options to make up for this.\n\nYou may choose from the following alternatives:\n1. {Alternative Option 1}\n2. {Alternative Option 2}\n3. {Alternative Option 3}\n\nPlease let us know your preference or if there is anything else we can assist with. We appreciate your understanding and hope to see you at one of our future events.\n\nThank you for your support.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
     "fields": [
       { "id": "EventName", "label": "Event Name", "type": "text" },
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
@@ -3687,7 +3687,7 @@
   },
   "Feedback on Event Experience": {
     "subject": "Share Your Experience: Feedback on {EventName}",
-    "template": "Dear {RecipientName},\n\nThank you for participating in {EventName} held on {EventDate}. We hope you had a great experience.\n\nWe would love to hear about your experience at the event. Your feedback is crucial for us to ensure we continue to deliver high-quality events. Please take a moment to provide your comments and suggestions.\n\n[Feedback Form Link]\n\nThank you for your time and valuable insights.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "template": "Dear {RecipientName},\n\nThank you for participating in {EventName} held on {EventDate}. We hope you had a great experience.\n\nWe would love to hear about your experience at the event. Your feedback is crucial for us to ensure we continue to deliver high-quality events. Please take a moment to provide your comments and suggestions.\n\n{FeedbackFormLink}\n\nThank you for your time and valuable insights.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
     "fields": [
       { "id": "EventName", "label": "Event Name", "type": "text" },
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
@@ -3703,7 +3703,7 @@
   },
   "Request for Comments on Event Content": {
     "subject": "We’d Love Your Thoughts on {EventName} Content",
-    "template": "Dear {RecipientName},\n\nWe hope you enjoyed the content presented during {EventName} on {EventDate}.\n\nWe are eager to hear your thoughts on the event content, including topics covered and the relevance to your interests. Your feedback will help us tailor future content to better meet your needs.\n\n[Comments Form Link]\n\nThank you for sharing your views with us.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "template": "Dear {RecipientName},\n\nWe hope you enjoyed the content presented during {EventName} on {EventDate}.\n\nWe are eager to hear your thoughts on the event content, including topics covered and the relevance to your interests. Your feedback will help us tailor future content to better meet your needs.\n\n{CommentsFormLink}\n\nThank you for sharing your views with us.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
     "fields": [
       { "id": "EventName", "label": "Event Name", "type": "text" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
@@ -3719,7 +3719,7 @@
   },
   "Request for Feedback on Event Organization": {
     "subject": "Help Us Improve: Feedback on {EventName} Organization",
-    "template": "Dear {RecipientName},\n\nThank you for attending {EventName} on {EventDate}. We strive to organize events that are smooth and enjoyable.\n\nTo ensure we are meeting your expectations, we would appreciate your feedback on the organization of the event, including logistics, scheduling, and overall execution.\n\n[Feedback Form Link]\n\nYour insights are invaluable and will assist us in enhancing future events.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "template": "Dear {RecipientName},\n\nThank you for attending {EventName} on {EventDate}. We strive to organize events that are smooth and enjoyable.\n\nTo ensure we are meeting your expectations, we would appreciate your feedback on the organization of the event, including logistics, scheduling, and overall execution.\n\n{FeedbackFormLink}\n\nYour insights are invaluable and will assist us in enhancing future events.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
     "fields": [
       { "id": "EventName", "label": "Event Name", "type": "text" },
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
@@ -3735,7 +3735,7 @@
   },
   "Request for Suggestions for Improvement": {
     "subject": "We Value Your Input: Suggestions for Improvement on {EventName}",
-    "template": "Dear {RecipientName},\n\nThank you for attending {EventName} on {EventDate}. We continuously strive to enhance our events and provide the best experience for our attendees.\n\nTo achieve this, we are reaching out to gather your valuable suggestions for improvement. Please share any ideas or recommendations you have that could help us enhance future events.\n\n[Suggestions Form Link]\n\nYour feedback is crucial for us, and we appreciate your time and contribution.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "template": "Dear {RecipientName},\n\nThank you for attending {EventName} on {EventDate}. We continuously strive to enhance our events and provide the best experience for our attendees.\n\nTo achieve this, we are reaching out to gather your valuable suggestions for improvement. Please share any ideas or recommendations you have that could help us enhance future events.\n\n{SuggestionsFormLink}\n\nYour feedback is crucial for us, and we appreciate your time and contribution.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
     "fields": [
       { "id": "EventName", "label": "Event Name", "type": "text" },
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
@@ -3751,7 +3751,7 @@
   },
   "Request for Ratings on Event Aspects": {
     "subject": "Help Us Improve: Rate Your Experience at {EventName}",
-    "template": "Dear {RecipientName},\n\nWe hope you enjoyed {EventName} on {EventDate}. To help us understand your experience better and make improvements, we kindly ask you to rate various aspects of the event.\n\nPlease take a few moments to provide your ratings on the following areas:\n- Event organization\n- Speaker presentations\n- Venue and facilities\n- Overall satisfaction\n\n[Ratings Form Link]\n\nYour feedback is highly valuable to us. Thank you for your time and insights.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "template": "Dear {RecipientName},\n\nWe hope you enjoyed {EventName} on {EventDate}. To help us understand your experience better and make improvements, we kindly ask you to rate various aspects of the event.\n\nPlease take a few moments to provide your ratings on the following areas:\n- Event organization\n- Speaker presentations\n- Venue and facilities\n- Overall satisfaction\n\n{RatingsFormLink}\n\nYour feedback is highly valuable to us. Thank you for your time and insights.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
     "fields": [
       { "id": "EventName", "label": "Event Name", "type": "text" },
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
@@ -3784,7 +3784,7 @@
   "Event Promotion Email":{
     "Promotional Email for Upcoming Event": {
     "subject": "Don't Miss Out: Exciting Upcoming Event at {EventName}",
-    "template": "Dear {RecipientName},\n\nWe are thrilled to announce our upcoming event, {EventName}, scheduled for {EventDate}. This event promises to be an exciting opportunity to {brief description of event activities or purpose}.\n\nJoin us for an engaging experience featuring {key highlights or speakers}. Secure your spot now and be part of this memorable occasion.\n\n[Register Now Link]\n\nWe look forward to seeing you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "template": "Dear {RecipientName},\n\nWe are thrilled to announce our upcoming event, {EventName}, scheduled for {EventDate}. This event promises to be an exciting opportunity to {briefdescriptionofeventactivitiesorpurpose}.\n\nJoin us for an engaging experience featuring {keyhighlightsorspeakers}. Secure your spot now and be part of this memorable occasion.\n\n{RegisterNowLink}\n\nWe look forward to seeing you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
     "fields": [
       { "id": "EventName", "label": "Event Name", "type": "text" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
@@ -3793,14 +3793,16 @@
       { "id": "EventDate", "label": "Event Date", "type": "date" },
       { "id": "RegisterNowLink", "label": "Registration Link", "type": "url" },
       { "id": "YourName", "label": "Your Name", "type": "text" },
-      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" }, 
+      { "id": "keyhighlightsorspeakers", "label": "key highlights or speakers", "type": "textarea", "rows":4 },   
       { "id": "YourCompany", "label": "Your Company", "type": "text" },
-      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" },
+      { "id": "briefdescriptionofeventactivitiesorpurpose", "label": "Brief Discussion Of activites or purpose", "type": "textarea", "rows":4 }
     ]
   },
   "Early Bird Registration Promotion": {
     "subject": "Early Bird Special: Save on {EventName} Tickets!",
-    "template": "Dear {RecipientName},\n\nTake advantage of our Early Bird offer for {EventName}! Register before {EarlyBirdDeadline} and enjoy exclusive savings on your tickets.\n\nThis is a limited-time offer, so don’t miss your chance to secure your spot at a reduced rate. Experience {event highlights or special features} at {EventName} and make the most of this opportunity.\n\n[Claim Early Bird Discount Link]\n\nWe can’t wait to welcome you to {EventName}!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "template": "Dear {RecipientName},\n\nTake advantage of our Early Bird offer for {EventName}! Register before {EarlyBirdDeadline} and enjoy exclusive savings on your tickets.\n\nThis is a limited-time offer, so don’t miss your chance to secure your spot at a reduced rate. Experience {eventhighlightsorspecialfeatures} at {EventName} and make the most of this opportunity.\n\n{ClaimEarlyBirdDiscountLink}\n\nWe can’t wait to welcome you to {EventName}!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
     "fields": [
       { "id": "EventName", "label": "Event Name", "type": "text" },
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
@@ -3809,14 +3811,15 @@
       { "id": "EarlyBirdDeadline", "label": "Early Bird Deadline", "type": "date" },
       { "id": "ClaimEarlyBirdDiscountLink", "label": "Early Bird Discount Link", "type": "url" },
       { "id": "YourName", "label": "Your Name", "type": "text" },
-      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" },    
       { "id": "YourCompany", "label": "Your Company", "type": "text" },
-      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" },
+      { "id": "eventhighlightsorspecialfeatures", "label": "Event Highlights or Specialfeatures", "type": "textarea", "rows":4 }
     ]
   },
   "Special Offer for Event Tickets": {
     "subject": "Exclusive Offer: Special Discounts on {EventName} Tickets!",
-    "template": "Dear {RecipientName},\n\nWe’re excited to offer you a special discount on tickets for {EventName}! For a limited time, you can enjoy {discount details or percentage} off your ticket purchase.\n\nThis offer is available until {OfferEndDate}, so act fast to take advantage of this exclusive deal and join us for {event highlights or key attractions}.\n\n[Get Special Offer Link]\n\nWe look forward to seeing you at {EventName}!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "template": "Dear {RecipientName},\n\nWe’re excited to offer you a special discount on tickets for {EventName}! For a limited time, you can enjoy {DiscountDetails} off your ticket purchase.\n\nThis offer is available until {OfferEndDate}, so act fast to take advantage of this exclusive deal and join us for {eventhighlightsorkeyattractions}.\n\n{GetSpecialOfferLink}\n\nWe look forward to seeing you at {EventName}!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
     "fields": [
       { "id": "EventName", "label": "Event Name", "type": "text" },
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
@@ -3826,14 +3829,15 @@
       { "id": "OfferEndDate", "label": "Offer End Date", "type": "date" },
       { "id": "GetSpecialOfferLink", "label": "Special Offer Link", "type": "url" },
       { "id": "YourName", "label": "Your Name", "type": "text" },
-      { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "YourPosition", "label": "Your Position", "type": "text" }, 
       { "id": "YourCompany", "label": "Your Company", "type": "text" },
-      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" },
+      { "id": "eventhighlightsorkeyattractions", "label": "Event Highlights or Keyattractions", "type": "textarea", "rows":4 }
     ]
   },
   "Event Highlights Promotion": {
     "subject": "Discover the Highlights of {EventName}!",
-    "template": "Dear {RecipientName},\n\nWe’re excited to share the highlights of our upcoming event, {EventName}! Here’s what you can look forward to:\n\n- {Highlight 1}\n- {Highlight 2}\n- {Highlight 3}\n\nJoin us on {EventDate} for an unforgettable experience featuring {key attractions or guest speakers}. Don’t miss out on the chance to be part of this amazing event.\n\n[Learn More and Register Link]\n\nWe hope to see you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "template": "Dear {RecipientName},\n\nWe’re excited to share the highlights of our upcoming event, {EventName}! Here’s what you can look forward to:\n\n- {Highlight1}\n- {Highlight2}\n- {Highlight3}\n\nJoin us on {EventDate} for an unforgettable experience featuring {keyattractionsorguestspeakers}. Don’t miss out on the chance to be part of this amazing event.\n\n{LearnMoreandRegisterLink}\n\nWe hope to see you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
     "fields": [
       { "id": "EventName", "label": "Event Name", "type": "text" },
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
@@ -3846,13 +3850,14 @@
       { "id": "LearnMoreAndRegisterLink", "label": "Learn More and Register Link", "type": "url" },
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
-      { "id": "YourCompany", "label": "Your Company", "type": "text" },
-      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+      { "id": "YourCompany", "label": "Your Company", "type": "text" },     
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" },
+      { "id": "keyattractionsorguestspeakers", "label": "Key Attractions or Guestspeakers", "type": "textarea","rows":4 }
     ]
   },
   "Promotion for Event Speakers": {
     "subject": "Meet Our Exciting Speakers for {EventName}!",
-    "template": "Dear {RecipientName},\n\nWe are excited to introduce the remarkable lineup of speakers for {EventName}! Our event will feature:\n\n- **{Speaker1Name}**: {Speaker1Bio}\n- **{Speaker2Name}**: {Speaker2Bio}\n- **{Speaker3Name}**: {Speaker3Bio}\n\nEach speaker will provide unique insights and share their expertise on {relevant topics}. This is a fantastic opportunity to hear from industry leaders and gain valuable knowledge.\n\nDon't miss the chance to hear these inspiring talks. Register today and be part of an unforgettable event!\n\n[Register Now Link]\n\nWe look forward to seeing you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "template": "Dear {RecipientName},\n\nWe are excited to introduce the remarkable lineup of speakers for {EventName}! Our event will feature:\n\n- **{Speaker1Name}**: {Speaker1Bio}\n- **{Speaker2Name}**: {Speaker2Bio}\n- **{Speaker3Name}**: {Speaker3Bio}\n\nEach speaker will provide unique insights and share their expertise on {relevanttopics}. This is a fantastic opportunity to hear from industry leaders and gain valuable knowledge.\n\nDon't miss the chance to hear these inspiring talks. Register today and be part of an unforgettable event!\n\n{RegisterNowLink}\n\nWe look forward to seeing you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
     "fields": [
       { "id": "EventName", "label": "Event Name", "type": "text" },
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
@@ -3868,12 +3873,13 @@
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
       { "id": "YourCompany", "label": "Your Company", "type": "text" },
-      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }
+      { "id": "relevanttopics", "label": "Relevant Topics", "type": "textarea", "rows":4 },
+      { "id": "YourContactInfo", "label": "Your Contact Information", "type": "text" }    
     ]
   },
   "Promotion for Event Partners": {
     "subject": "Exciting Partnership Opportunities for {EventName}!",
-    "template": "Dear {RecipientName},\n\nWe are pleased to announce exciting partnership opportunities for our upcoming event, {EventName}. This is a chance for you to showcase your brand and engage with a highly targeted audience.\n\nAs a partner, you will benefit from:\n\n- **Exclusive Exposure**: Your brand will be featured prominently in our event materials and promotions.\n- **Engagement Opportunities**: Connect with attendees through our event platform and on-site activities.\n- **Networking**: Build valuable relationships with industry leaders and potential clients.\n\nLet’s collaborate to make {EventName} a great success. Reach out to us for more details on how to become a partner.\n\n[Partner Inquiry Link]\n\nLooking forward to a successful partnership!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "template": "Dear {RecipientName},\n\nWe are pleased to announce exciting partnership opportunities for our upcoming event, {EventName}. This is a chance for you to showcase your brand and engage with a highly targeted audience.\n\nAs a partner, you will benefit from:\n\n- **Exclusive Exposure**: Your brand will be featured prominently in our event materials and promotions.\n- **Engagement Opportunities**: Connect with attendees through our event platform and on-site activities.\n- **Networking**: Build valuable relationships with industry leaders and potential clients.\n\nLet’s collaborate to make {EventName} a great success. Reach out to us for more details on how to become a partner.\n\n{PartnerInquiryLink}\n\nLooking forward to a successful partnership!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
     "fields": [
       { "id": "EventName", "label": "Event Name", "type": "text" },
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
@@ -3888,7 +3894,7 @@
   },
   "Final Call for Event Registration": {
     "subject": "Last Chance to Register for {EventName}!",
-    "template": "Dear {RecipientName},\n\nThis is your final reminder to register for {EventName}, happening on {EventDate}. Don’t miss out on the opportunity to be part of this exciting event.\n\nWe have an incredible lineup of speakers, engaging sessions, and networking opportunities waiting for you. Register now to secure your place and make sure you don’t miss any of the action.\n\n[Register Now Link]\n\nThis is your last chance to join us for {EventName}. We hope to see you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
+    "template": "Dear {RecipientName},\n\nThis is your final reminder to register for {EventName}, happening on {EventDate}. Don’t miss out on the opportunity to be part of this exciting event.\n\nWe have an incredible lineup of speakers, engaging sessions, and networking opportunities waiting for you. Register now to secure your place and make sure you don’t miss any of the action.\n\n{RegisterNowLink}\n\nThis is your last chance to join us for {EventName}. We hope to see you there!\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{YourContactInfo}",
     "fields": [
       { "id": "EventName", "label": "Event Name", "type": "text" },
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },

@@ -517,9 +517,109 @@ class EmailSerializer(serializers.Serializer):
     MentorshipTopics = serializers.CharField(max_length=1000, required=False)
     SpecificCareerGoals = serializers.CharField(max_length=1000, required=False)
 
+    #Event invitation emails
+    RSVPDeadline = serializers.CharField(max_length=1000, required=False)
 
+    KeySessions = serializers.CharField(max_length=1000, required=False)
+    #Event remainder emails
+    EventHighlight1 = serializers.CharField(max_length=1000, required=False)
+    EventHighlight2 = serializers.CharField(max_length=1000, required=False)
+    EventHighlight3 = serializers.CharField(max_length=1000, required=False)
 
+    SpeakerTopic = serializers.CharField(max_length=1000, required=False)
+    EventTopics = serializers.CharField(max_length=1000, required=False)
 
+    Highlight1 = serializers.CharField(max_length=1000, required=False)
+    Highlight2 = serializers.CharField(max_length=1000, required=False)
+    Highlight3 = serializers.CharField(max_length=1000, required=False)
+
+    Highlight1 = serializers.CharField(max_length=1000, required=False)
+    Highlight2 = serializers.CharField(max_length=1000, required=False)
+    Highlight3 = serializers.CharField(max_length=1000, required=False)
+
+    ParkingInfo = serializers.CharField(max_length=1000, required=False)
+    TransportationInfo = serializers.CharField(max_length=1000, required=False)
+    VenueAddress = serializers.CharField(max_length=1000, required=False)
+
+    AgendaDetails = serializers.CharField(max_length=1000, required=False)
+
+    RegistrationDeadline = serializers.CharField(max_length=1000, required=False)
+    RegistrationLink = serializers.CharField(max_length=1000, required=False)
+
+    Instruction1 = serializers.CharField(max_length=1000, required=False)
+    Instruction2 = serializers.CharField(max_length=1000, required=False)
+    Instruction3 = serializers.CharField(max_length=1000, required=False)
+
+    EventVenue = serializers.CharField(max_length=1000, required=False)
+    SupportPhone = serializers.CharField(max_length=1000, required=False)
+    EventTime = serializers.CharField(max_length=1000, required=False)
+
+    #Event confirmation email
+    EventAgenda = serializers.CharField(max_length=1000, required=False)
+
+    SeatNumber = serializers.CharField(max_length=1000, required=False)
+
+    RequestDetails = serializers.CharField(max_length=1000, required=False)
+
+    #Event follow up email
+    FeedbackEmail = serializers.CharField(max_length=1000, required=False)
+
+    TopicsCovered = serializers.CharField(max_length=1000, required=False)
+    EventResourcesLink = serializers.CharField(max_length=1000, required=False)
+    NotableSessions = serializers.CharField(max_length=1000, required=False)
+    KeynoteSpeaker = serializers.CharField(max_length=1000, required=False)
+    Announcements = serializers.CharField(max_length=1000, required=False)
+
+    EventPhotosLink = serializers.CharField(max_length=1000, required=False)
+
+    DiscussedTopics = serializers.CharField(max_length=1000, required=False)
+
+    EventMaterialsLink = serializers.CharField(max_length=1000, required=False)
+
+    #Event cancellation email
+    NewEventDate = serializers.CharField(max_length=1000, required=False)
+    ReasonForPostponement = serializers.CharField(max_length=1000, required=False)
+
+    AlternativeOption1 = serializers.CharField(max_length=1000, required=False)
+    AlternativeOption2 = serializers.CharField(max_length=1000, required=False)
+    AlternativeOption3 = serializers.CharField(max_length=1000, required=False)
+
+    #Event Feedback mail
+    FeedbackFormLink = serializers.CharField(max_length=1000, required=False)
+
+    CommentsFormLink = serializers.CharField(max_length=1000, required=False)
+
+    SuggestionsFormLink = serializers.CharField(max_length=1000, required=False)
+
+    RatingsFormLink = serializers.CharField(max_length=1000, required=False)
+    #Event promotion email
+    RegisterNowLink = serializers.CharField(max_length=1000, required=False)
+    keyhighlightsorspeakers = serializers.CharField(max_length=1000, required=False)
+    briefdescriptionofeventactivitiesorpurpose = serializers.CharField(max_length=1000, required=False)
+
+    EarlyBirdDeadline = serializers.CharField(max_length=1000, required=False)
+    ClaimEarlyBirdDiscountLink = serializers.CharField(max_length=1000, required=False)
+    eventhighlightsorspecialfeatures = serializers.CharField(max_length=1000, required=False)
+
+    OfferEndDate = serializers.CharField(max_length=1000, required=False)
+    GetSpecialOfferLink = serializers.CharField(max_length=1000, required=False)
+    eventhighlightsorkeyattractions = serializers.CharField(max_length=1000, required=False)
+    DiscountDetails = serializers.CharField(max_length=1000, required=False)
+
+    keyattractionsorguestspeakers = serializers.CharField(max_length=1000, required=False)
+    LearnMoreAndRegisterLink = serializers.CharField(max_length=1000, required=False)
+
+    Speaker1Bio = serializers.CharField(max_length=1000, required=False)
+    relevanttopics = serializers.CharField(max_length=1000, required=False)
+    Speaker3Bio = serializers.CharField(max_length=1000, required=False)
+    Speaker2Name = serializers.CharField(max_length=1000, required=False)
+    Speaker3Name = serializers.CharField(max_length=1000, required=False)
+    Speaker1Name = serializers.CharField(max_length=1000, required=False)
+    Speaker2Bio = serializers.CharField(max_length=1000, required=False)
+
+    PartnerInquiryLink = serializers.CharField(max_length=1000, required=False)
+ 
+ 
     def validate(self, attrs):
         email_type = attrs.get('email_type')
 
