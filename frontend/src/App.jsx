@@ -4,7 +4,8 @@ import Navbar from './components/navbar';
 import HomeImageCarousel from './components/HomeImageCaurosel'; // Assuming this is correctly imported
 import CardArrange from './components/CardArrange'; // Assuming this is correctly imported
 import Process from './components/Process'; // Assuming this is correctly imported
-import FormatLetters from './components/FormatLetters'; // Assuming this is correctly imported
+import FormatLetters from './components/FormatLetters';
+import ImageView from './components/imageview'; // Assuming this is correctly imported
 import Feedback from './components/Feedback';
 import Endbar from './components/Endbar'; // Assuming this is correctly imported
 import Letter from './Letter'; // Make sure this is correctly imported
@@ -29,6 +30,7 @@ function MainContent() {
       <div className='FormatLettersSection bg-black'>
         <FormatLetters />
       </div>
+      <ImageView />
       <Feedback />
       <Endbar />
     </>

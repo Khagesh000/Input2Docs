@@ -185,7 +185,7 @@ const categories = {
     ],
     "Feedback Request Email":[
       "Post-Service Feedback Request",
-      "Product Review Request:",
+      "Product Review Request",
       "Survey Participation Request",
       "Customer Experience Improvement Request",
       "Feedback on Recent Interaction",

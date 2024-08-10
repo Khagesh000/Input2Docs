@@ -243,6 +243,16 @@ const EmailMaker = ({ selectedTemplate }) => {
                 className="form-control"
               />
             )}
+            {field.type === 'url' && (
+            <input
+             type="text"
+             id={field.id}
+             name={field.id}
+             value={formData[field.id] || ''}
+             onChange={handleChange}
+             className="form-control"
+             />
+             )}
             {field.type === 'quill' && (
               <ReactQuill
                 theme="snow"

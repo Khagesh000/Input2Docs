@@ -258,6 +258,266 @@ class EmailSerializer(serializers.Serializer):
     RequestedSalary = serializers.CharField(max_length=1000, required=False)
     OtherOfferSalary = serializers.CharField(max_length=1000, required=False)
     
+    #Customer support emails ---> detailed order confirmation
+    ItemName = serializers.CharField(max_length=1000, required=False)
+    ShippingAddress = serializers.CharField(max_length=1000, required=False)
+    ItemPrice = serializers.CharField(max_length=1000, required=False)
+    ItemQuantity = serializers.CharField(max_length=1000, required=False)
+
+    OrderTotal = serializers.CharField(max_length=1000, required=False)
+    PaymentMethod = serializers.CharField(max_length=1000, required=False)
+
+    TotalLoyaltyPoints = serializers.CharField(max_length=1000, required=False)
+    LoyaltyPoints = serializers.CharField(max_length=1000, required=False)
+
+    CustomerServiceContact = serializers.CharField(max_length=1000, required=False)
+    SpecialInstructions = serializers.CharField(max_length=1000, required=False)
+    CompanyContactInfo = serializers.CharField(max_length=1000, required=False)
+    DeliveryDate = serializers.CharField(max_length=1000, required=False)
+    DeliveryAddress = serializers.CharField(max_length=1000, required=False)
+
+    PersonalizedMessage = serializers.CharField(max_length=1000, required=False)
+    GiftReceiptOption = serializers.CharField(max_length=1000, required=False)
+    GiftWrapOption = serializers.CharField(max_length=1000, required=False)
+
+    ReturnWindow = serializers.CharField(max_length=1000, required=False)
+    ReturnProcess = serializers.CharField(max_length=1000, required=False)
+    ReturnShippingCosts = serializers.CharField(max_length=1000, required=False)
+    ReturnCondition = serializers.CharField(max_length=1000, required=False)
+
+    #Shipping notification emails
+    ShippingCarrier = serializers.CharField(max_length=1000, required=False)
+    ShippingMethod = serializers.CharField(max_length=1000, required=False)
+    ExpectedDeliveryTime = serializers.CharField(max_length=1000, required=False)
+
+    TrackingLink = serializers.CharField(max_length=1000, required=False)
+
+    ShippingStatus = serializers.CharField(max_length=1000, required=False)
+
+    DeliveryWindow = serializers.CharField(max_length=1000, required=False)
+
+
+    #Order cancellation email
+    RefundMethod = serializers.CharField(max_length=1000, required=False)
+    OrderAmount = serializers.CharField(max_length=1000, required=False)
+    RefundTimeframe = serializers.CharField(max_length=1000, required=False)
+
+    CancellationReason = serializers.CharField(max_length=1000, required=False)
+
+    ReorderLink = serializers.CharField(max_length=1000, required=False)
+
+    SupportContact = serializers.CharField(max_length=1000, required=False)
+    SupportHours = serializers.CharField(max_length=1000, required=False)
+
+    AccountLink = serializers.CharField(max_length=1000, required=False)
+
+    #Return and refund emails
+    ReturnReason = serializers.CharField(max_length=1000, required=False)
+    ReturnAuthorization = serializers.CharField(max_length=1000, required=False)
+    ReturnItems = serializers.CharField(max_length=1000, required=False)
+
+    ReturnDate = serializers.CharField(max_length=1000, required=False)
+
+    RefundDate = serializers.CharField(max_length=1000, required=False)
+
+    EstimatedTimeframe = serializers.CharField(max_length=1000, required=False)
+
+    ReturnStatus = serializers.CharField(max_length=1000, required=False)
+    ExpectedRefundDate = serializers.CharField(max_length=1000, required=False)
+
+    ReturnPolicyLink = serializers.CharField(max_length=1000, required=False)
+    RefundProcessingTime = serializers.CharField(max_length=1000, required=False)
+
+    CompensationDetails = serializers.CharField(max_length=1000, required=False)
+    IssueSummary = serializers.CharField(max_length=1000, required=False)
+
+    ExpectedResponseTime = serializers.CharField(max_length=1000, required=False)
+    TicketSummary = serializers.CharField(max_length=1000, required=False)
+    SupportContactInfo = serializers.CharField(max_length=1000, required=False)
+    
+    ResolutionSummary = serializers.CharField(max_length=1000, required=False)
+    ResolutionDate = serializers.CharField(max_length=1000, required=False)
+
+    DetailsRequired = serializers.CharField(max_length=1000, required=False)
+
+    CurrentStatus = serializers.CharField(max_length=1000, required=False)
+    EstimatedResolutionTime = serializers.CharField(max_length=1000, required=False)
+    ActionsTaken = serializers.CharField(max_length=1000, required=False)
+    NextSteps = serializers.CharField(max_length=1000, required=False)
+
+    EscalationReason = serializers.CharField(max_length=1000, required=False)
+    ExpectedResolutionTime = serializers.CharField(max_length=1000, required=False)
+    AdvancedSupportContact = serializers.CharField(max_length=1000, required=False)
+
+    InteractionDate = serializers.CharField(max_length=1000, required=False)
+
+    FeedbackLink = serializers.CharField(max_length=1000, required=False)
+    ClosureDate = serializers.CharField(max_length=1000, required=False)
+
+     #Feedback Request emails
+    ServiceDescription = serializers.CharField(max_length=1000, required=False)
+    ServiceDate = serializers.CharField(max_length=1000, required=False)
+
+    ReviewLink = serializers.CharField(max_length=1000, required=False)
+    PurchaseDate = serializers.CharField(max_length=1000, required=False)
+
+    CompletionTime = serializers.CharField(max_length=1000, required=False)
+    SurveyTopic = serializers.CharField(max_length=1000, required=False)
+
+    ExperienceSummary = serializers.CharField(max_length=1000, required=False)
+
+    FeatureDescription = serializers.CharField(max_length=1000, required=False)
+
+    # Apology email
+    CompensationOffer = serializers.CharField(max_length=1000, required=False)
+    YourTitle = serializers.CharField(max_length=1000, required=False)
+    FailureDate = serializers.CharField(max_length=1000, required=False)
+    ServiceIssue = serializers.CharField(max_length=1000, required=False)
+
+    DefectDescription = serializers.CharField(max_length=1000, required=False)
+
+    DiscountAmount = serializers.CharField(max_length=1000, required=False)
+    ErrorDescription = serializers.CharField(max_length=1000, required=False)
+
+    OriginalDeliveryDate = serializers.CharField(max_length=1000, required=False)
+    NewDeliveryDate = serializers.CharField(max_length=1000, required=False)
+ 
+    RepresentativeName = serializers.CharField(max_length=1000, required=False)
+    IssueDescription = serializers.CharField(max_length=1000, required=False)
+
+    AffectedInformation = serializers.CharField(max_length=1000, required=False)
+    BreachDate = serializers.CharField(max_length=1000, required=False)
+
+    CorrectiveActions = serializers.CharField(max_length=1000, required=False)
+    MiscommunicationNature = serializers.CharField(max_length=1000, required=False)
+    MiscommunicationDate = serializers.CharField(max_length=1000, required=False)
+
+    #NEwtworkin emails --->Network introduction
+    YourContactInfo = serializers.CharField(max_length=1000, required=False)
+    
+    RelevantInterest = serializers.CharField(max_length=1000, required=False)
+    Number = serializers.CharField(max_length=1000, required=False)
+    NotableAchievements = serializers.CharField(max_length=1000, required=False)
+    Specialization = serializers.CharField(max_length=1000, required=False)
+    PreviousRoles = serializers.CharField(max_length=1000, required=False)
+
+    ReasonForContact = serializers.CharField(max_length=1000, required=False)
+    SpecificIssueOrOpportunity = serializers.CharField(max_length=1000, required=False)
+    CollaborateDiscussSolve = serializers.CharField(max_length=1000, required=False)
+
+    RelatedActivityOrProject = serializers.CharField(max_length=1000, required=False)
+    CommonInterest = serializers.CharField(max_length=1000, required=False)
+    AspectOfCommonInterest = serializers.CharField(max_length=1000, required=False)
+
+    PurposeofRequest = serializers.CharField(max_length=1000, required=False)
+    RelevantField = serializers.CharField(max_length=1000, required=False)
+    SpecificAction = serializers.CharField(max_length=1000, required=False)
+    DetailedRequest = serializers.CharField(max_length=1000, required=False)
+
+    DaysTimes = serializers.CharField(max_length=1000, required=False)
+
+    MeetingDiscussion = serializers.CharField(max_length=1000, required=False)
+
+    #Follow UP emails
+    NextStepsorActions = serializers.CharField(max_length=1000, required=False)
+    KeyPointsorTopicsDiscussed = serializers.CharField(max_length=1000, required=False)
+
+    KeyTopicsorDiscussions = serializers.CharField(max_length=1000, required=False)
+    InterviewerName = serializers.CharField(max_length=1000, required=False)
+
+    ProjectOpportunity = serializers.CharField(max_length=1000, required=False)
+    DateOfSubmission = serializers.CharField(max_length=1000, required=False)
+
+    PreviousEmailDate = serializers.CharField(max_length=1000, required=False)
+    Subject = serializers.CharField(max_length=1000, required=False)
+
+    TopicofDiscussion = serializers.CharField(max_length=1000, required=False)
+
+    DetailsofAgreementorActionItems = serializers.CharField(max_length=1000, required=False)
+
+    DiscussionDate = serializers.CharField(max_length=1000, required=False)
+
+    #Thank you email
+    ReferrerName = serializers.CharField(max_length=1000, required=False)
+    ReferralName = serializers.CharField(max_length=1000, required=False)
+
+    FeedbackDate = serializers.CharField(max_length=1000, required=False)
+    
+    SpecificOutcomeResult = serializers.CharField(max_length=1000, required=False)
+    SpecificEventProject = serializers.CharField(max_length=1000, required=False)
+
+    HostName = serializers.CharField(max_length=1000, required=False)
+    SpecificDetail = serializers.CharField(max_length=1000, required=False)
+    Date = serializers.CharField(max_length=1000, required=False)
+    EventLocation = serializers.CharField(max_length=1000, required=False)
+
+    OutcomeResult = serializers.CharField(max_length=1000, required=False)
+    SpecificActionContribution = serializers.CharField(max_length=1000, required=False)
+    SpecificTaskProject = serializers.CharField(max_length=1000, required=False)
+
+    #Referal Request email
+    RelevantFieldIndustry = serializers.CharField(max_length=1000, required=False)
+
+    ReasonforIntroduction = serializers.CharField(max_length=1000, required=False)
+    TargetPersonOrganization = serializers.CharField(max_length=1000, required=False)
+    
+    TargetMarketIndustry = serializers.CharField(max_length=1000, required=False)
+
+    ServiceType = serializers.CharField(max_length=1000, required=False)
+    DesiredOutcomes = serializers.CharField(max_length=1000, required=False)
+
+    KeyFeatures = serializers.CharField(max_length=1000, required=False)
+
+    SpecificTopics = serializers.CharField(max_length=1000, required=False)
+
+    #Thank you for attending
+    PresentationDate = serializers.CharField(max_length=1000, required=False)
+    PresentationTopic = serializers.CharField(max_length=1000, required=False)
+  
+    SharedInterest = serializers.CharField(max_length=1000, required=False)
+ 
+    #Collabration proposal email
+    ProjectDescription = serializers.CharField(max_length=1000, required=False)
+    ExpectedOutcome = serializers.CharField(max_length=1000, required=False)
+    
+    ExpectedBenefits = serializers.CharField(max_length=1000, required=False)
+    PartnershipGoals = serializers.CharField(max_length=1000, required=False)
+
+    EventDescription = serializers.CharField(max_length=1000, required=False)
+    EventBenefits = serializers.CharField(max_length=1000, required=False)
+    
+    ContentArea = serializers.CharField(max_length=1000, required=False)
+    CollaborationDetails = serializers.CharField(max_length=1000, required=False)
+    ExpectedOutcomes = serializers.CharField(max_length=1000, required=False)
+
+    ResearchField = serializers.CharField(max_length=1000, required=False)
+    ResearchFocus = serializers.CharField(max_length=1000, required=False)
+
+    ProductArea = serializers.CharField(max_length=1000, required=False)
+    ProductDescription = serializers.CharField(max_length=1000, required=False)
+
+    PromotionDetails = serializers.CharField(max_length=1000, required=False)
+    ExpectedResults = serializers.CharField(max_length=1000, required=False)
+
+    #Career advice emails
+    SpecificCareerAspect = serializers.CharField(max_length=1000, required=False)
+    RelevantQuestions = serializers.CharField(max_length=1000, required=False)
+
+    SpecificTrendOrDevelopment = serializers.CharField(max_length=1000, required=False)
+    RelevantAspect = serializers.CharField(max_length=1000, required=False)
+
+    InterviewTips = serializers.CharField(max_length=1000, required=False)
+    PreparationAreas = serializers.CharField(max_length=1000, required=False)
+
+    SpecificJobMarketTrends = serializers.CharField(max_length=1000, required=False)
+    RelevantJobSearchAspect = serializers.CharField(max_length=1000, required=False)
+
+    TypeOfProfessionalsOrOrganizations = serializers.CharField(max_length=1000, required=False)
+
+    MentorshipTopics = serializers.CharField(max_length=1000, required=False)
+    SpecificCareerGoals = serializers.CharField(max_length=1000, required=False)
+
+
 
 
     def validate(self, attrs):

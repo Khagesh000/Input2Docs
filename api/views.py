@@ -13,9 +13,11 @@ import re
 logger = logging.getLogger(__name__)
 
 def load_email_templates():
+    # Path to your JSON file
     path = os.path.join(settings.BASE_DIR, 'api', 'data', 'templates.json')
     try:
-        with open(path, 'r') as file:
+        # Open the JSON file using UTF-8 encoding
+        with open(path, 'r', encoding='utf-8') as file:
             return json.load(file)
     except FileNotFoundError:
         logger.error("The email templates file was not found.")
@@ -24,7 +26,7 @@ def load_email_templates():
         logger.error("Error decoding the email templates file.")
         raise
 
-emailTemplates = load_email_templates() 
+emailTemplates = load_email_templates()
 
 def remove_html_tags(text):
     """Remove HTML tags from a string, replacing them with appropriate spaces."""
