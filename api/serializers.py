@@ -618,8 +618,138 @@ class EmailSerializer(serializers.Serializer):
     Speaker2Bio = serializers.CharField(max_length=1000, required=False)
 
     PartnerInquiryLink = serializers.CharField(max_length=1000, required=False)
+    #Press release email
+    MediaContactName = serializers.CharField(max_length=1000, required=False)
+    PressContactPhone = serializers.CharField(max_length=1000, required=False)
+    PressContactEmail = serializers.CharField(max_length=1000, required=False)
+    LaunchDate = serializers.CharField(max_length=1000, required=False)
+    PressContactName = serializers.CharField(max_length=1000, required=False)
+    PressContactPosition = serializers.CharField(max_length=1000, required=False)
+    industrysector = serializers.CharField(max_length=1000, required=False)
+    Feature1Description = serializers.CharField(max_length=1000, required=False)
+    ProductLink = serializers.CharField(max_length=1000, required=False)
+    MediaContactPosition = serializers.CharField(max_length=1000, required=False)
+    MediaContactEmail = serializers.CharField(max_length=1000, required=False)
+    Feature3Description = serializers.CharField(max_length=1000, required=False)
+    Feature2Description = serializers.CharField(max_length=1000, required=False)
+    briefdescriptionofthecompany = serializers.CharField(max_length=1000, required=False)
+    ProductCategory = serializers.CharField(max_length=1000, required=False)
+    MediaContactPhone = serializers.CharField(max_length=1000, required=False)
+    City = serializers.CharField(max_length=1000, required=False)
+    
+    briefcompanymissionorvalues = serializers.CharField(max_length=1000, required=False)
+    MilestoneDescription = serializers.CharField(max_length=1000, required=False)
+    YearEstablished = serializers.CharField(max_length=1000, required=False)
+
+    Action1Description = serializers.CharField(max_length=1000, required=False)
+    CrisisType = serializers.CharField(max_length=1000, required=False)
+    Action3Description = serializers.CharField(max_length=1000, required=False)
+    Action2Description = serializers.CharField(max_length=1000, required=False)
+
+    Activity1Description = serializers.CharField(max_length=1000, required=False)
+    Activity3Description = serializers.CharField(max_length=1000, required=False)
+    EventLink = serializers.CharField(max_length=1000, required=False)
+    Activity2Description = serializers.CharField(max_length=1000, required=False)
+    eventgoalsorobjectives = serializers.CharField(max_length=1000, required=False)
  
- 
+    SharedGoals = serializers.CharField(max_length=1000, required=False)
+    Outlinethebenefitsforbothcompaniesandcustomers = serializers.CharField(max_length=1000, required=False)
+    describethegoalofthepartnership = serializers.CharField(max_length=1000, required=False)
+    notableachievementsorstrengths = serializers.CharField(max_length=1000, required=False)
+    PartnerCompanyDescription = serializers.CharField(max_length=1000, required=False)
+    Listsharedgoalsorobjectives = serializers.CharField(max_length=1000, required=False)
+    JointInitiative = serializers.CharField(max_length=1000, required=False)
+    Benefits = serializers.CharField(max_length=1000, required=False)
+    Describethejointinitiativeorproject = serializers.CharField(max_length=1000, required=False)
+    PartnerCompany = serializers.CharField(max_length=1000, required=False)
+    ExecutiveName = serializers.CharField(max_length=1000, required=False)
+    industryfield = serializers.CharField(max_length=1000, required=False)
+    Responsibilities = serializers.CharField(max_length=1000, required=False)
+    PreviousCompanyNames = serializers.CharField(max_length=1000, required=False)
+    specificskillsorknowledgeareas = serializers.CharField(max_length=1000, required=False)
+    Quotefromtheexecutiveabouttheirnewroleandexcitement = serializers.CharField(max_length=1000, required=False)
+    briefoverviewofresponsibilitiesorgoalsfortheposition = serializers.CharField(max_length=1000, required=False)
+
+    SafetyIssueDescription = serializers.CharField(max_length=1000, required=False)
+    CustomerServiceName = serializers.CharField(max_length=1000, required=False)
+    Statementfromcompanyleadership = serializers.CharField(max_length=1000, required=False)
+    Describethesafetyissue = serializers.CharField(max_length=1000, required=False)
+    Instructionsforcustomers = serializers.CharField(max_length=1000, required=False)
+    ActionRequired = serializers.CharField(max_length=1000, required=False)
+    CustomerServiceEmail = serializers.CharField(max_length=1000, required=False)
+    CustomerServicePhone = serializers.CharField(max_length=1000, required=False)
+    CustomerServicePosition = serializers.CharField(max_length=1000, required=False)
+
+    BriefCompanyDescription = serializers.CharField(max_length=1000, required=False)
+    PreferredDateAndTime = serializers.CharField(max_length=1000, required=False)
+    LocationOrPlatform = serializers.CharField(max_length=1000, required=False)
+
+    DetailedInformation = serializers.CharField(max_length=1000, required=False)
+    
+    ResponseDetails = serializers.CharField(max_length=1000, required=False)
+
+    ClarificationDetails = serializers.CharField(max_length=1000, required=False)
+
+    InterviewTopic = serializers.CharField(max_length=1000, required=False)
+    InterviewLocation = serializers.CharField(max_length=1000, required=False)
+    InterviewDateTime = serializers.CharField(max_length=1000, required=False)
+
+    FactCheckedDetails = serializers.CharField(max_length=1000, required=False)
+    #Media kit
+    CoverageDetails = serializers.CharField(max_length=1000, required=False)
+    EventTopic = serializers.CharField(max_length=1000, required=False)
+
+    ExecutiveNames = serializers.CharField(max_length=1000, required=False)
+
+    EventOrAnnouncement = serializers.CharField(max_length=1000, required=False)
+
+    CrisisEvent = serializers.CharField(max_length=1000, required=False)
+
+    Year = serializers.CharField(max_length=1000, required=False)
+    #Public statement email
+    ReasonForChange = serializers.CharField(max_length=1000, required=False)
+    NewPolicyDescription = serializers.CharField(max_length=1000, required=False)
+    PreviousPolicyDescription = serializers.CharField(max_length=1000, required=False)
+
+    ImpactDetails = serializers.CharField(max_length=1000, required=False)
+    ImmediateActions = serializers.CharField(max_length=1000, required=False)
+    Issue = serializers.CharField(max_length=1000, required=False)
+    LongTermSolutions = serializers.CharField(max_length=1000, required=False)
+
+    FuturePlans = serializers.CharField(max_length=1000, required=False)
+    ControversyDescription = serializers.CharField(max_length=1000, required=False)
+    ControversyTopic = serializers.CharField(max_length=1000, required=False)
+    OngoingEfforts = serializers.CharField(max_length=1000, required=False)
+    CompanyPosition = serializers.CharField(max_length=1000, required=False)
+
+    CurrentInitiatives = serializers.CharField(max_length=1000, required=False)
+    SupportDetails = serializers.CharField(max_length=1000, required=False)
+    IssueOverview = serializers.CharField(max_length=1000, required=False)
+    IndustryIssue = serializers.CharField(max_length=1000, required=False)
+    CompanyStance = serializers.CharField(max_length=1000, required=False)
+
+    NewsEvent = serializers.CharField(max_length=1000, required=False)
+    ImpactOnOrganization = serializers.CharField(max_length=1000, required=False)
+
+    FutureAdjustments = serializers.CharField(max_length=1000, required=False)
+    ComplianceMeasures = serializers.CharField(max_length=1000, required=False)
+    DescriptionOfChanges = serializers.CharField(max_length=1000, required=False)
+    ImpactOnBusiness = serializers.CharField(max_length=1000, required=False)
+    RegulationAffected = serializers.CharField(max_length=1000, required=False)
+
+    YourEmail = serializers.CharField(max_length=1000, required=False)
+
+    KeyPointsRaised = serializers.CharField(max_length=1000, required=False)
+    CommunityConcerns = serializers.CharField(max_length=1000, required=False)
+    PlannedImprovements = serializers.CharField(max_length=1000, required=False)
+    #Media invitation email
+
+
+
+
+
+
+
     def validate(self, attrs):
         email_type = attrs.get('email_type')
 

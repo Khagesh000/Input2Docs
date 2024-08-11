@@ -3912,16 +3912,20 @@
   "Press Release Email":{
     "New Product Launch Press Release": {
     "subject": "Introducing Our Exciting New Product: {ProductName}!",
-    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Unveils {ProductName} - The Future of {ProductCategory}\n\n{City, Date} – {CompanyName}, a leader in {industry/sector}, is thrilled to announce the launch of its newest innovation, {ProductName}. Designed to revolutionize the {product category}, this cutting-edge product offers:\n\n- **Feature 1**: {Feature1Description}\n- **Feature 2**: {Feature2Description}\n- **Feature 3**: {Feature3Description}\n\n{ProductName} is set to hit the market on {LaunchDate}, promising unparalleled performance and quality. This launch represents a significant step forward for our company as we continue to push the boundaries of {industry/sector}.\n\nFor more information about {ProductName}, please visit {ProductLink} or contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {brief description of the company, including its mission and vision}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
+    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Unveils {ProductName} - The Future of {ProductCategory}\n\n{City} {Date} – {CompanyName}, a leader in {industrysector}, is thrilled to announce the launch of its newest innovation, {ProductName}. Designed to revolutionize the {ProductCategory}, this cutting-edge product offers:\n\n- **Feature 1**: {Feature1Description}\n- **Feature 2**: {Feature2Description}\n- **Feature 3**: {Feature3Description}\n\n{ProductName} is set to hit the market on {LaunchDate}, promising unparalleled performance and quality. This launch represents a significant step forward for our company as we continue to push the boundaries of {industrysector}.\n\nFor more information about {ProductName}, please visit {ProductLink} or contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {briefdescriptionofthecompany}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n",
     "fields": [
       { "id": "ProductName", "label": "Product Name", "type": "text" },
       { "id": "ProductCategory", "label": "Product Category", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "Date", "label": "Date", "type": "date" },
+      { "id": "industrysector", "label": "Industry/Sector", "type": "text" },
       { "id": "Feature1Description", "label": "Feature 1 Description", "type": "text" },
       { "id": "Feature2Description", "label": "Feature 2 Description", "type": "text" },
       { "id": "Feature3Description", "label": "Feature 3 Description", "type": "text" },
       { "id": "LaunchDate", "label": "Launch Date", "type": "date" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "briefdescriptionofthecompany", "label": "Brief Description of The Company", "type": "textarea","rows":4, "placeholder":"Brief description of the company, including its mission and vision" },
       { "id": "ProductLink", "label": "Product Link", "type": "url" },
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "MediaContactPosition", "label": "Media Contact Position", "type": "text" },
@@ -3936,18 +3940,23 @@
   },
   "Company Milestone Announcement": {
     "subject": "{CompanyName} Celebrates Major Milestone: {MilestoneDescription}",
-    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Celebrates a Significant Milestone – {MilestoneDescription}\n\n{City, Date} – {CompanyName}, a renowned leader in {industry/sector}, proudly announces the achievement of a major milestone: {MilestoneDescription}. This accomplishment underscores our commitment to {industry/sector} excellence and innovation.\n\nSince our inception in {YearEstablished}, {CompanyName} has been dedicated to {brief company mission or values}. Reaching this milestone is a testament to our team’s hard work and the unwavering support of our clients and partners.\n\nWe invite you to join us in celebrating this achievement and look forward to continued success and growth.\n\nFor more details, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {brief description of the company, including its mission and vision}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
+    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Celebrates a Significant Milestone – {MilestoneDescription}\n\n{City} {Date} – {CompanyName}, a renowned leader in {industrysector}, proudly announces the achievement of a major milestone: {MilestoneDescription}. This accomplishment underscores our commitment to {industrysector} excellence and innovation.\n\nSince our inception in {YearEstablished}, {CompanyName} has been dedicated to {briefcompanymissionorvalues}. Reaching this milestone is a testament to our team’s hard work and the unwavering support of our clients and partners.\n\nWe invite you to join us in celebrating this achievement and look forward to continued success and growth.\n\nFor more details, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {briefdescriptionofthecompany}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n",
     "fields": [
       { "id": "MilestoneDescription", "label": "Milestone Description", "type": "text" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
       { "id": "YearEstablished", "label": "Year Established", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "Date", "label": "Date", "type": "date" },
+      { "id": "industrysector", "label": "Industry/Sector", "type": "text" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
-      { "id": "MediaContactPosition", "label": "Media Contact Position", "type": "text" },
+      { "id": "MediaContactPosition", "label": "Media Contact Position", "type": "text" },   
       { "id": "MediaContactEmail", "label": "Media Contact Email", "type": "email" },
       { "id": "MediaContactPhone", "label": "Media Contact Phone", "type": "text" },
+      { "id": "briefdescriptionofthecompany", "label": "Brief Description of The Company", "type": "textarea","rows":4, "placeholder":"Brief description of the company, including its mission and vision" },
       { "id": "PressContactName", "label": "Press Contact Name", "type": "text" },
+      { "id": "briefcompanymissionorvalues", "label": "Brief Companymission or Values", "type": "textarea", "rows":4 },
       { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" },
       { "id": "PressContactEmail", "label": "Press Contact Email", "type": "email" },
       { "id": "PressContactPhone", "label": "Press Contact Phone", "type": "text" }
@@ -3955,17 +3964,20 @@
   },
   "Crisis Management Press Release": {
     "subject": "{CompanyName} Addresses Recent {CrisisType} Incident",
-    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Responds to {CrisisType} Incident with Full Transparency and Commitment to Resolution\n\n{City, Date} – In light of the recent {CrisisType} incident, {CompanyName} is committed to addressing the situation with the highest level of transparency and responsibility. We are taking immediate and comprehensive steps to resolve the issue and prevent future occurrences.\n\nOur actions include:\n\n- **Action 1**: {Action1Description}\n- **Action 2**: {Action2Description}\n- **Action 3**: {Action3Description}\n\nWe deeply regret any inconvenience this incident may have caused and are dedicated to maintaining the trust and confidence of our clients, partners, and stakeholders.\n\nFor further information, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {brief description of the company, including its mission and vision}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
+    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Responds to {CrisisType} Incident with Full Transparency and Commitment to Resolution\n\n{City} {Date} – In light of the recent {CrisisType} incident, {CompanyName} is committed to addressing the situation with the highest level of transparency and responsibility. We are taking immediate and comprehensive steps to resolve the issue and prevent future occurrences.\n\nOur actions include:\n\n- **Action 1**: {Action1Description}\n- **Action 2**: {Action2Description}\n- **Action 3**: {Action3Description}\n\nWe deeply regret any inconvenience this incident may have caused and are dedicated to maintaining the trust and confidence of our clients, partners, and stakeholders.\n\nFor further information, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {briefdescriptionofthecompany}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
     "fields": [
       { "id": "CrisisType", "label": "Crisis Type", "type": "text" },
       { "id": "Action1Description", "label": "Action 1 Description", "type": "text" },
       { "id": "Action2Description", "label": "Action 2 Description", "type": "text" },
       { "id": "Action3Description", "label": "Action 3 Description", "type": "text" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
-      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },               
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "Date", "label": "Date", "type": "date" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "MediaContactPosition", "label": "Media Contact Position", "type": "text" },
+      { "id": "briefdescriptionofthecompany", "label": "Brief Descriptionof the company", "type": "textarea", "rows":4, "placeholder":"Brief Descriptionof the company, including its mission and vision" },
       { "id": "MediaContactEmail", "label": "Media Contact Email", "type": "email" },
       { "id": "MediaContactPhone", "label": "Media Contact Phone", "type": "text" },
       { "id": "PressContactName", "label": "Press Contact Name", "type": "text" },
@@ -3976,11 +3988,12 @@
   },
   "Event Announcement Press Release": {
     "subject": "Announcing {EventName}: Join Us for an Unforgettable Experience!",
-    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Proudly Announces {EventName}\n\n{City, Date} – {CompanyName} is delighted to announce {EventName}, a premier event set to take place on {EventDate} at {EventLocation}. This event promises an engaging experience with a variety of activities, including:\n\n- **Activity 1**: {Activity1Description}\n- **Activity 2**: {Activity2Description}\n- **Activity 3**: {Activity3Description}\n\nJoin us for this exciting occasion and be part of an event designed to {event goals or objectives}. Tickets are now available for purchase at {EventLink}.\n\nFor additional details and media inquiries, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {brief description of the company, including its mission and vision}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
+    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Proudly Announces {EventName}\n\n{City} {EventDate} – {CompanyName} is delighted to announce {EventName}, a premier event set to take place on {EventDate} at {EventLocation}. This event promises an engaging experience with a variety of activities, including:\n\n- **Activity 1**: {Activity1Description}\n- **Activity 2**: {Activity2Description}\n- **Activity 3**: {Activity3Description}\n\nJoin us for this exciting occasion and be part of an event designed to {eventgoalsorobjectives}. Tickets are now available for purchase at {EventLink}.\n\nFor additional details and media inquiries, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {briefdescriptionofthecompany}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
     "fields": [
       { "id": "EventName", "label": "Event Name", "type": "text" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "City", "label": "City", "type": "text" },
       { "id": "EventDate", "label": "Event Date", "type": "date" },
       { "id": "EventLocation", "label": "Event Location", "type": "text" },
       { "id": "Activity1Description", "label": "Activity 1 Description", "type": "text" },
@@ -3990,26 +4003,36 @@
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "MediaContactPosition", "label": "Media Contact Position", "type": "text" },
+      { "id": "briefdescriptionofthecompany", "label": "Brief Descriptionof the company", "type": "textarea", "rows":4, "placeholder":"Brief Descriptionof the company, including its mission and vision" },
       { "id": "MediaContactEmail", "label": "Media Contact Email", "type": "email" },
       { "id": "MediaContactPhone", "label": "Media Contact Phone", "type": "text" },
       { "id": "PressContactName", "label": "Press Contact Name", "type": "text" },
-      { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" },
+      { "id": "eventgoalsorobjectives", "label": "Event Goals or Objectives", "type": "textarea", "rows":4 },
+      { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" },     
       { "id": "PressContactEmail", "label": "Press Contact Email", "type": "email" },
       { "id": "PressContactPhone", "label": "Press Contact Phone", "type": "text" }
     ]
   },
   "Partnership or Collaboration Press Release": {
     "subject": "{CompanyName} Announces Exciting Partnership with {PartnerCompany}",
-    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Announces Strategic Partnership with **{PartnerCompany}**\n\n{City, Date} – {CompanyName}, a leader in {industry/sector}, is thrilled to announce a new strategic partnership with **{PartnerCompany}**. This collaboration aims to leverage both companies’ strengths to {describe the goal of the partnership, e.g., “enhance technological innovation,” “expand market reach,” “develop new products,” etc.}.\n\nThe key aspects of this partnership include:\n\n- **Joint Initiative**: {Describe the joint initiative or project}\n- **Shared Goals**: {List shared goals or objectives}\n- **Benefits**: {Outline the benefits for both companies and their customers}\n\n**{PartnerCompany}** brings extensive experience in {PartnerCompany’s industry or field} and is renowned for {notable achievements or strengths}. Together, both companies are set to achieve remarkable outcomes.\n\nFor more information about this partnership, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {brief description of the company, including its mission and vision}.\n\n**About {PartnerCompany}:**\n{PartnerCompany} is a {brief description of the partner company, including its mission and vision}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
+    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Announces Strategic Partnership with **{PartnerCompany}**\n\n{City} {Date} – {CompanyName}, a leader in {industrysector}, is thrilled to announce a new strategic partnership with **{PartnerCompany}**. This collaboration aims to leverage both companies’ strengths to {describethegoalofthepartnership}.\n\nThe key aspects of this partnership include:\n\n- **Joint Initiative**: {Describethejointinitiativeorproject}\n- **Shared Goals**: {Listsharedgoalsorobjectives}\n- **Benefits**: {Outlinethebenefitsforbothcompaniesandcustomers}\n\n**{PartnerCompany}** brings extensive experience in  and is renowned for {notableachievementsorstrengths}. Together, both companies are set to achieve remarkable outcomes.\n\nFor more information about this partnership, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {briefdescriptionofthecompany}.\n\n**About {PartnerCompany}:**\n{PartnerCompany} is a {briefdescriptionofthecompany}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
     "fields": [
       { "id": "PartnerCompany", "label": "Partner Company", "type": "text" },
       { "id": "JointInitiative", "label": "Joint Initiative", "type": "text" },
       { "id": "SharedGoals", "label": "Shared Goals", "type": "text" },
-      { "id": "SenderEmail", "label": "Your Email", "type": "email" },
-      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
+      { "id": "SenderEmail", "label": "Your Email", "type": "email" },     
+      { "id": "City", "label": "City", "type": "text" },     
+      { "id": "Date", "label": "Date", "type": "date" },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },   
+      { "id": "industrysector", "label": "Industry Sector", "type": "text" },     
       { "id": "Benefits", "label": "Benefits", "type": "text" },
+      { "id": "notableachievementsorstrengths", "label": "Notable Achievements or Strengths", "type": "textarea", "rows" :4},
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
+      { "id": "Outlinethebenefitsforbothcompaniesandcustomers", "label": "Benefits for Both Companies/Customers", "type": "textarea", "rows" :4,"placeholder":"Outline The Benefits for both Companies And Customers"},
+      { "id": "Listsharedgoalsorobjectives", "label": "List Shared goals or Objectives", "type": "textarea", "rows" :4},
+      { "id": "Describethejointinitiativeorproject", "label": "Describe the Joint Initiative or Project", "type": "textarea", "rows" :4},
       { "id": "PartnerCompanyDescription", "label": "Partner Company Description", "type": "text" },
+      { "id": "describethegoalofthepartnership", "label": "Describe The goal of The Partnership", "type": "textarea", "rows":4, "placeholder":" describe the goal of the partnership, e.g., “enhance technological innovation,” “expand market reach,” “develop new products,” etc." },
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "MediaContactPosition", "label": "Media Contact Position", "type": "text" },
       { "id": "MediaContactEmail", "label": "Media Contact Email", "type": "email" },
@@ -4017,49 +4040,62 @@
       { "id": "PressContactName", "label": "Press Contact Name", "type": "text" },
       { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" },
       { "id": "PressContactEmail", "label": "Press Contact Email", "type": "email" },
-      { "id": "PressContactPhone", "label": "Press Contact Phone", "type": "text" }
+      { "id": "PressContactPhone", "label": "Press Contact Phone", "type": "text" },
+      { "id": "briefdescriptionofthecompany", "label": "Description Of The Company", "type": "textarea", "rows":4, "placeholder":"Description of thecompany including its mission and vision" }
     ]
   },
   "Executive Appointment Press Release": {
     "subject": "{CompanyName} Appoints {ExecutiveName} as New {Position}",
-    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Appoints **{ExecutiveName}** as New **{Position}**\n\n{City, Date} – {CompanyName} is pleased to announce the appointment of **{ExecutiveName}** as the new **{Position}**. In this role, **{ExecutiveName}** will be responsible for {brief overview of responsibilities or goals for the position}.\n\n**{ExecutiveName}** brings extensive experience in {industry/field} and has previously held positions at {PreviousCompanyNames} where they achieved {notable achievements}. Their expertise in {specific skills or knowledge areas} will be instrumental in driving {CompanyName}’s future success.\n\n**{ExecutiveName}** commented, “{Quote from the executive about their new role and excitement}.”\n\nFor further information about this appointment, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {brief description of the company, including its mission and vision}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
+    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Appoints **{ExecutiveName}** as New **{Position}**\n\n{City} {Date} – {CompanyName} is pleased to announce the appointment of **{ExecutiveName}** as the new **{Position}**. In this role, **{ExecutiveName}** will be responsible for {briefoverviewofresponsibilitiesorgoalsfortheposition}.\n\n**{ExecutiveName}** brings extensive experience in {industryfield} and has previously held positions at {PreviousCompanyNames} where they achieved {NotableAchievements}. Their expertise in {specificskillsorknowledgeareas} will be instrumental in driving {CompanyName}’s future success.\n\n**{ExecutiveName}** commented, “{Quotefromtheexecutiveabouttheirnewroleandexcitement}.”\n\nFor further information about this appointment, please contact:\n\n**Media Contact:**\n{MediaContactName}\n{MediaContactPosition}\n{MediaContactEmail}\n{MediaContactPhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {briefdescriptionofthecompany}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n",
     "fields": [
       { "id": "ExecutiveName", "label": "Executive Name", "type": "text" },
       { "id": "Position", "label": "Position", "type": "text" },
+      { "id": "City", "label": "City", "type": "text" },     
+      { "id": "Date", "label": "Date", "type": "date" },
       { "id": "Responsibilities", "label": "Responsibilities", "type": "text" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
-      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
-      { "id": "PreviousCompanyNames", "label": "Previous Company Names", "type": "text" },
-      { "id": "NotableAchievements", "label": "Notable Achievements", "type": "text" },
-      { "id": "Quote", "label": "Quote from Executive", "type": "text" },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },    
+      { "id": "PreviousCompanyNames", "label": "Previous Company Names", "type": "text" },   
+      { "id": "NotableAchievements", "label": "Notable Achievements", "type": "textarea", "rows":4 },
+      { "id": "briefdescriptionofthecompany", "label": "Description Of The Company", "type": "textarea", "rows":4, "placeholder":"Description of thecompany including its mission and vision" },
+      { "id": "specificskillsorknowledgeareas", "label": "Specific Skills Or Knowledge", "type": "textarea", "rows":4 },
+      { "id": "Quotefromtheexecutiveabouttheirnewroleandexcitement", "label": "Quote from Executive", "type": "textarea", "placeholder" :"Quote From The Executive About their new Role and excitement"},
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
-      { "id": "MediaContactPosition", "label": "Media Contact Position", "type": "text" },
+      { "id": "MediaContactPosition", "label": "Media Contact Position", "type": "text" },           
       { "id": "MediaContactEmail", "label": "Media Contact Email", "type": "email" },
+      { "id": "briefoverviewofresponsibilitiesorgoalsfortheposition", "label": "Responsibilities/Goals", "type": "textarea", "rows":4 ,"placeholder":"Brief overview of Responsibilities or Goalsfor theposition"},
       { "id": "MediaContactPhone", "label": "Media Contact Phone", "type": "text" },
       { "id": "PressContactName", "label": "Press Contact Name", "type": "text" },
-      { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" },
+      { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" },  
       { "id": "PressContactEmail", "label": "Press Contact Email", "type": "email" },
-      { "id": "PressContactPhone", "label": "Press Contact Phone", "type": "text" }
+      { "id": "PressContactPhone", "label": "Press Contact Phone", "type": "text" },
+      { "id": "industryfield", "label": "Press Contact Phone", "type": "text" }
     ]
   },
   "Product Recall or Safety Notice Press Release": {
     "subject": "{CompanyName} Announces Recall of {ProductName} Due to Safety Concerns",
-    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Announces Recall of **{ProductName}** Due to Safety Concerns\n\n{City, Date} – {CompanyName} is issuing a recall of **{ProductName}** following the discovery of potential safety issues. The company is committed to ensuring the safety of its customers and is taking immediate action to address the situation.\n\n**Details of the Recall:**\n- **Affected Product**: {ProductName}\n- **Reason for Recall**: {Describe the safety issue}\n- **Action Required**: {Instructions for customers, e.g., “Please stop using the product immediately and return it to the place of purchase.”}\n\n**Company Statement:**\n{Statement from company leadership about the recall and commitment to safety}\n\nFor further details, customers are encouraged to contact:\n\n**Customer Service Contact:**\n{CustomerServiceName}\n{CustomerServicePosition}\n{CustomerServiceEmail}\n{CustomerServicePhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {brief description of the company, including its mission and vision}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n###",
+    "template": "FOR IMMEDIATE RELEASE\n\n**{CompanyName}** Announces Recall of **{ProductName}** Due to Safety Concerns\n\n{City} {Date} – {CompanyName} is issuing a recall of **{ProductName}** following the discovery of potential safety issues. The company is committed to ensuring the safety of its customers and is taking immediate action to address the situation.\n\n**Details of the Recall:**\n- **Affected Product**: {ProductName}\n- **Reason for Recall**: {Describethesafetyissue}\n- **Action Required**: {Instructionsforcustomers}\n\n**Company Statement:**\n{Statementfromcompanyleadership}\n\nFor further details, customers are encouraged to contact:\n\n**Customer Service Contact:**\n{CustomerServiceName}\n{CustomerServicePosition}\n{CustomerServiceEmail}\n{CustomerServicePhone}\n\n**About {CompanyName}:**\n{CompanyName} is a {briefdescriptionofthecompany}.\n\n**Press Contact:**\n{PressContactName}\n{PressContactPosition}\n{PressContactEmail}\n{PressContactPhone}\n\n",
     "fields": [
       { "id": "ProductName", "label": "Product Name", "type": "text" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
+      { "id": "City", "label": "City", "type": "text" },
+      { "id": "Date", "label": "Date", "type": "date" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
-      { "id": "SafetyIssueDescription", "label": "Safety Issue Description", "type": "text" },
+      { "id": "SafetyIssueDescription", "label": "Safety Issue Description", "type": "text" },  
       { "id": "ActionRequired", "label": "Action Required", "type": "text" },
+      { "id": "briefdescriptionofthecompany", "label": "Brief Description of The Company", "type": "textarea","rows":4, "placeholder":"Brief description of the company, including its mission and vision" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
       { "id": "CustomerServiceName", "label": "Customer Service Name", "type": "text" },
-      { "id": "CustomerServicePosition", "label": "Customer Service Position", "type": "text" },
+      { "id": "CustomerServicePosition", "label": "Customer Service Position", "type": "text" },     
       { "id": "CustomerServiceEmail", "label": "Customer Service Email", "type": "email" },
-      { "id": "CustomerServicePhone", "label": "Customer Service Phone", "type": "text" },
+      { "id": "Statementfromcompanyleadership", "label": "Statement from Company Leadership", "type": "textarea","rows":4, "placeholder":"Statement from companyl eadership about the recall and commitment to safety" },
+      { "id": "CustomerServicePhone", "label": "Customer Service Phone", "type": "text" },   
       { "id": "PressContactName", "label": "Press Contact Name", "type": "text" },
-      { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" },
+      { "id": "Instructionsforcustomers", "label": "Instructions For Customers", "type": "textarea","rows":4, "placeholder":"Instructionsforcustomers, e.g., “Please stop using the product immediately and return it to the place of purchase" },
+      { "id": "PressContactPosition", "label": "Press Contact Position", "type": "text" }, 
       { "id": "PressContactEmail", "label": "Press Contact Email", "type": "email" },
+      { "id": "Describethesafetyissue", "label": "Describe the safety issue", "type": "textarea","rows":4, "placeholder":"Describe the safetyissue" },
       { "id": "PressContactPhone", "label": "Press Contact Phone", "type": "text" }
     ]
   }
@@ -4067,7 +4103,7 @@
   "Media Inquiry Response Email":{
     "Response to Media Interview Request": {
     "subject": "Re: Interview Request with {CompanyName}",
-    "template": "Dear {MediaContactName},\n\nThank you for reaching out to **{CompanyName}** regarding the interview request with **{ExecutiveName/Spokesperson}**. We are pleased to confirm our availability for the interview.\n\n**Details:**\n- **Interviewee**: {ExecutiveName/Spokesperson}\n- **Preferred Date and Time**: {PreferredDateAndTime}\n- **Location/Platform**: {LocationOrPlatform}\n\nPlease let us know if there are any specific topics or questions you would like to cover, or if there are any additional details we should prepare for the interview.\n\nWe look forward to the opportunity to speak with you.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {MediaContactName},\n\nThank you for reaching out to **{CompanyName}** regarding the interview request with **{ExecutiveName}**. We are pleased to confirm our availability for the interview.\n\n**Details:**\n- **Interviewee**: {ExecutiveName}\n- **Preferred Date and Time**: {PreferredDateAndTime}\n- **Location/Platform**: {LocationOrPlatform}\n\nPlease let us know if there are any specific topics or questions you would like to cover, or if there are any additional details we should prepare for the interview.\n\nWe look forward to the opportunity to speak with you.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "ExecutiveName", "label": "Executive Name/Spokesperson", "type": "text" },
@@ -4078,14 +4114,13 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
-
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
       { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
     ]
   },
   "Response to Media Information Request": {
     "subject": "Re: Request for Information about {Topic}",
-    "template": "Dear {MediaContactName},\n\nThank you for your request for information about **{Topic}**. We are happy to provide the following details:\n\n**Information:**\n{DetailedInformation}\n\nIf you have any further questions or need additional information, please feel free to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {MediaContactName},\n\nThank you for your request for information about **{Topic}**. We are happy to provide the following details:\n\n**Information:**\n{DetailedInformation}\n\nIf you have any further questions or need additional information, please feel free to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "Topic", "label": "Topic", "type": "text" },
@@ -4095,14 +4130,13 @@
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
-
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
       { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
     ]
   },
   "Response to Media Pitch or Query": {
     "subject": "Re: Media Pitch on {Subject}",
-    "template": "Dear {MediaContactName},\n\nThank you for your media pitch regarding **{Subject}**. We appreciate your interest in **{CompanyName}** and would like to provide the following response:\n\n**Response:**\n{ResponseDetails}\n\nWe are happy to provide additional information or arrange interviews if needed. Please let us know how we can assist further.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {MediaContactName},\n\nThank you for your media pitch regarding **{Subject}**. We appreciate your interest in **{CompanyName}** and would like to provide the following response:\n\n**Response:**\n{ResponseDetails}\n\nWe are happy to provide additional information or arrange interviews if needed. Please let us know how we can assist further.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "Subject", "label": "Subject", "type": "text" },
@@ -4119,7 +4153,7 @@
   },
   "Clarification on Recent News": {
     "subject": "Re: Clarification on Recent News about {Topic}",
-    "template": "Dear {MediaContactName},\n\nThank you for reaching out regarding the recent news about **{Topic}**. We would like to provide clarification on the following points:\n\n**Clarification:**\n{ClarificationDetails}\n\nWe hope this addresses your queries. Should you need any more information or have further questions, please do not hesitate to contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {MediaContactName},\n\nThank you for reaching out regarding the recent news about **{Topic}**. We would like to provide clarification on the following points:\n\n**Clarification:**\n{ClarificationDetails}\n\nWe hope this addresses your queries. Should you need any more information or have further questions, please do not hesitate to contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "Topic", "label": "Topic", "type": "text" },
@@ -4136,7 +4170,7 @@
   },
   "Confirmation of Media Interview Details": {
     "subject": "Confirmation of Media Interview with {ExecutiveName}",
-    "template": "Dear {MediaContactName},\n\nWe are pleased to confirm the details for the upcoming media interview with **{ExecutiveName}** from **{CompanyName}**.\n\n**Interview Details:**\n- **Date and Time**: {InterviewDateTime}\n- **Location/Platform**: {InterviewLocation}\n- **Interviewee**: {ExecutiveName}\n- **Topic**: {InterviewTopic}\n\nIf there are any changes or additional requirements, please let us know at your earliest convenience.\n\nWe look forward to the interview.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {MediaContactName},\n\nWe are pleased to confirm the details for the upcoming media interview with **{ExecutiveName}** from **{CompanyName}**.\n\n**Interview Details:**\n- **Date and Time**: {InterviewDateTime}\n- **Location/Platform**: {InterviewLocation}\n- **Interviewee**: {ExecutiveName}\n- **Topic**: {InterviewTopic}\n\nIf there are any changes or additional requirements, please let us know at your earliest convenience.\n\nWe look forward to the interview.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "ExecutiveName", "label": "Executive Name", "type": "text" },
@@ -4155,7 +4189,7 @@
   },
   "Response to Media Fact-Checking": {
     "subject": "Response to Media Fact-Checking Request",
-    "template": "Dear {MediaContactName},\n\nThank you for reaching out regarding the fact-checking of information about **{Topic}**. We appreciate your diligence and are pleased to provide the following details to clarify and confirm the facts:\n\n**Fact-Checked Information:**\n{FactCheckedDetails}\n\nIf you need any further information or have additional questions, please do not hesitate to contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {MediaContactName},\n\nThank you for reaching out regarding the fact-checking of information about **{Topic}**. We appreciate your diligence and are pleased to provide the following details to clarify and confirm the facts:\n\n**Fact-Checked Information:**\n{FactCheckedDetails}\n\nIf you need any further information or have additional questions, please do not hesitate to contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "Topic", "label": "Topic", "type": "text" },
@@ -4167,15 +4201,15 @@
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
 
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
-      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea", "rows":4 }
     ]
   },
   "Response to Media Coverage Request": {
-    "subject": "Response to Media Coverage Request for {Event/Topic}",
-    "template": "Dear {MediaContactName},\n\nThank you for your request for media coverage of **{Event/Topic}**. We are happy to provide the following details to facilitate your coverage:\n\n**Coverage Details:**\n{CoverageDetails}\n\nIf you need additional information or specific arrangements, please let us know. We are committed to assisting you with your media coverage needs.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "subject": "Response to Media Coverage Request for {EventTopic}",
+    "template": "Dear {MediaContactName},\n\nThank you for your request for media coverage of **{EventTopic}**. We are happy to provide the following details to facilitate your coverage:\n\n**Coverage Details:**\n{CoverageDetails}\n\nIf you need additional information or specific arrangements, please let us know. We are committed to assisting you with your media coverage needs.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
-      { "id": "Event/Topic", "label": "Event/Topic", "type": "text" },
+      { "id": "EventTopic", "label": "Event/Topic", "type": "text" },
       { "id": "CoverageDetails", "label": "Coverage Details", "type": "text" },
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
@@ -4191,7 +4225,7 @@
   "Media Kit Email":{
     "Press Kit for New Product Launch": {
     "subject": "Press Kit for New Product Launch of {ProductName}",
-    "template": "Dear {MediaContactName},\n\nWe are excited to share with you the press kit for our new product launch of **{ProductName}**. This comprehensive kit includes all the necessary information and resources to assist you in covering this exciting announcement.\n\n**Press Kit Includes:**\n- **Product Overview**: Detailed description of {ProductName}, including features and benefits.\n- **High-Resolution Images**: Professional photos of the product.\n- **Press Release**: Official announcement and key details about the launch.\n- **FAQs**: Commonly asked questions about {ProductName}.\n- **Contact Information**: For further inquiries or interviews.\n\nWe appreciate your interest and coverage. Should you need any additional information or resources, please do not hesitate to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {MediaContactName},\n\nWe are excited to share with you the press kit for our new product launch of **{ProductName}**. This comprehensive kit includes all the necessary information and resources to assist you in covering this exciting announcement.\n\n**Press Kit Includes:**\n- **Product Overview**: Detailed description of {ProductName}, including features and benefits.\n- **High-Resolution Images**: Professional photos of the product.\n- **Press Release**: Official announcement and key details about the launch.\n- **FAQs**: Commonly asked questions about {ProductName}.\n- **Contact Information**: For further inquiries or interviews.\n\nWe appreciate your interest and coverage. Should you need any additional information or resources, please do not hesitate to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "ProductName", "label": "Product Name", "type": "text" },
@@ -4207,7 +4241,7 @@
   },
   "Company Overview Media Kit": {
     "subject": "Company Overview Media Kit for {CompanyName}",
-    "template": "Dear {MediaContactName},\n\nWe are pleased to provide you with the Company Overview Media Kit for **{CompanyName}**. This kit offers a detailed look at our company and its key aspects, which will aid you in your coverage and reporting.\n\n**Media Kit Includes:**\n- **Company Profile**: Overview of {CompanyName}, including history, mission, and values.\n- **Executive Bios**: Background information on our key executives.\n- **High-Resolution Logos**: Company logos in various formats.\n- **Key Statistics**: Important company metrics and achievements.\n- **Contact Information**: For further inquiries or interviews.\n\nWe hope this media kit serves as a valuable resource. If you have any further questions or need additional materials, please contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {MediaContactName},\n\nWe are pleased to provide you with the Company Overview Media Kit for **{CompanyName}**. This kit offers a detailed look at our company and its key aspects, which will aid you in your coverage and reporting.\n\n**Media Kit Includes:**\n- **Company Profile**: Overview of {CompanyName}, including history, mission, and values.\n- **Executive Bios**: Background information on our key executives.\n- **High-Resolution Logos**: Company logos in various formats.\n- **Key Statistics**: Important company metrics and achievements.\n- **Contact Information**: For further inquiries or interviews.\n\nWe hope this media kit serves as a valuable resource. If you have any further questions or need additional materials, please contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
@@ -4222,7 +4256,7 @@
   },
   "Executive Bios and Photos Media Kit": {
     "subject": "Executive Bios and Photos Media Kit for {CompanyName}",
-    "template": "Dear {MediaContactName},\n\nWe are pleased to share the Executive Bios and Photos Media Kit for **{CompanyName}**. This kit includes detailed biographies and high-resolution photos of our key executives.\n\n**Media Kit Includes:**\n- **Executive Bios**: Detailed biographies of {ExecutiveNames}, including their roles and accomplishments.\n- **High-Resolution Photos**: Professional photos of the executives for media use.\n- **Contact Information**: For arranging interviews or additional inquiries.\n\nWe trust that this kit will assist you in your coverage. Should you need further information or additional resources, please feel free to contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {MediaContactName},\n\nWe are pleased to share the Executive Bios and Photos Media Kit for **{CompanyName}**. This kit includes detailed biographies and high-resolution photos of our key executives.\n\n**Media Kit Includes:**\n- **Executive Bios**: Detailed biographies of {ExecutiveNames}, including their roles and accomplishments.\n- **High-Resolution Photos**: Professional photos of the executives for media use.\n- **Contact Information**: For arranging interviews or additional inquiries.\n\nWe trust that this kit will assist you in your coverage. Should you need further information or additional resources, please feel free to contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
@@ -4237,7 +4271,7 @@
   },
   "Media Kit for Upcoming Event": {
     "subject": "Media Kit for Upcoming Event: {EventName}",
-    "template": "Dear {MediaContactName},\n\nWe are excited to provide you with the Media Kit for our upcoming event, **{EventName}**. This kit contains essential information and resources to help you cover the event effectively.\n\n**Media Kit Includes:**\n- **Event Overview**: Detailed information about {EventName}, including objectives and key highlights.\n- **Agenda**: Schedule of activities and important timings.\n- **Press Release**: Official announcement and key details about the event.\n- **High-Resolution Images**: Photos of the event venue and key participants.\n- **Contact Information**: For media inquiries and interviews.\n\nWe hope this media kit is useful for your coverage. If you require further details or have any questions, please do not hesitate to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {MediaContactName},\n\nWe are excited to provide you with the Media Kit for our upcoming event, **{EventName}**. This kit contains essential information and resources to help you cover the event effectively.\n\n**Media Kit Includes:**\n- **Event Overview**: Detailed information about {EventName}, including objectives and key highlights.\n- **Agenda**: Schedule of activities and important timings.\n- **Press Release**: Official announcement and key details about the event.\n- **High-Resolution Images**: Photos of the event venue and key participants.\n- **Contact Information**: For media inquiries and interviews.\n\nWe hope this media kit is useful for your coverage. If you require further details or have any questions, please do not hesitate to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "EventName", "label": "Event Name", "type": "text" },
@@ -4252,7 +4286,7 @@
   },
   "Press Release Media Kit": {
     "subject": "Press Release Media Kit for {EventOrAnnouncement}",
-    "template": "Dear {MediaContactName},\n\nWe are pleased to provide you with the Press Release Media Kit for **{EventOrAnnouncement}**. This kit includes all the essential information and resources to support your coverage of our latest announcement.\n\n**Media Kit Includes:**\n- **Press Release**: Official announcement detailing {EventOrAnnouncement}.\n- **Background Information**: Context and background relevant to the announcement.\n- **High-Resolution Images**: Photos related to {EventOrAnnouncement}.\n- **Executive Quotes**: Statements from key executives.\n- **Contact Information**: For further inquiries or interview requests.\n\nWe hope this media kit supports your reporting. If you need additional information or have any questions, please feel free to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {MediaContactName},\n\nWe are pleased to provide you with the Press Release Media Kit for **{EventOrAnnouncement}**. This kit includes all the essential information and resources to support your coverage of our latest announcement.\n\n**Media Kit Includes:**\n- **Press Release**: Official announcement detailing {EventOrAnnouncement}.\n- **Background Information**: Context and background relevant to the announcement.\n- **High-Resolution Images**: Photos related to {EventOrAnnouncement}.\n- **Executive Quotes**: Statements from key executives.\n- **Contact Information**: For further inquiries or interview requests.\n\nWe hope this media kit supports your reporting. If you need additional information or have any questions, please feel free to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "EventOrAnnouncement", "label": "Event or Announcement", "type": "text" },
@@ -4267,7 +4301,7 @@
   },
   "Crisis Communication Media Kit": {
     "subject": "Crisis Communication Media Kit for {CrisisEvent}",
-    "template": "Dear {MediaContactName},\n\nWe are providing you with the Crisis Communication Media Kit for **{CrisisEvent}**. This kit contains essential information to assist you in understanding and covering the current situation effectively.\n\n**Media Kit Includes:**\n- **Crisis Statement**: Official statement addressing {CrisisEvent}.\n- **Background Information**: Detailed background on the situation.\n- **FAQs**: Answers to common questions about {CrisisEvent}.\n- **Executive Quotes**: Comments from key executives regarding the crisis.\n- **High-Resolution Images**: Relevant images related to the crisis.\n- **Contact Information**: For further inquiries and interviews.\n\nWe aim to provide clarity and transparency. If you have any questions or need further information, please do not hesitate to contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {MediaContactName},\n\nWe are providing you with the Crisis Communication Media Kit for **{CrisisEvent}**. This kit contains essential information to assist you in understanding and covering the current situation effectively.\n\n**Media Kit Includes:**\n- **Crisis Statement**: Official statement addressing {CrisisEvent}.\n- **Background Information**: Detailed background on the situation.\n- **FAQs**: Answers to common questions about {CrisisEvent}.\n- **Executive Quotes**: Comments from key executives regarding the crisis.\n- **High-Resolution Images**: Relevant images related to the crisis.\n- **Contact Information**: For further inquiries and interviews.\n\nWe aim to provide clarity and transparency. If you have any questions or need further information, please do not hesitate to contact us.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
@@ -4282,7 +4316,7 @@
   },
   "Media Kit for Annual Report": {
     "subject": "Media Kit for Annual Report {Year}",
-    "template": "Dear {MediaContactName},\n\nWe are excited to share with you the Media Kit for our Annual Report for **{Year}**. This kit includes comprehensive information and resources to support your coverage of our annual performance and achievements.\n\n**Media Kit Includes:**\n- **Annual Report**: Full report detailing our performance for {Year}.\n- **Executive Summary**: Key highlights and achievements from the report.\n- **High-Resolution Images**: Charts, graphs, and relevant images from the report.\n- **Financial Highlights**: Summary of key financial metrics.\n- **Contact Information**: For inquiries or interviews related to the annual report.\n\nWe trust that this media kit will provide valuable insights for your coverage. Should you need additional details or have any questions, please feel free to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {MediaContactName},\n\nWe are excited to share with you the Media Kit for our Annual Report for **{Year}**. This kit includes comprehensive information and resources to support your coverage of our annual performance and achievements.\n\n**Media Kit Includes:**\n- **Annual Report**: Full report detailing our performance for {Year}.\n- **Executive Summary**: Key highlights and achievements from the report.\n- **High-Resolution Images**: Charts, graphs, and relevant images from the report.\n- **Financial Highlights**: Summary of key financial metrics.\n- **Contact Information**: For inquiries or interviews related to the annual report.\n\nWe trust that this media kit will provide valuable insights for your coverage. Should you need additional details or have any questions, please feel free to reach out.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "MediaContactName", "label": "Media Contact Name", "type": "text" },
       { "id": "Year", "label": "Year", "type": "text" },
@@ -4299,13 +4333,13 @@
   "Public Statement Email":{
     "Statement on Company Policy Change": {
     "subject": "Statement on Recent Policy Change",
-    "template": "Dear {RecipientName},\n\nWe are writing to inform you about an important change to our company policy that will take effect on **{EffectiveDate}**. This update is part of our ongoing commitment to improve our services and align with best practices.\n\n**Details of the Policy Change:**\n- **Previous Policy:** {PreviousPolicyDescription}\n- **New Policy:** {NewPolicyDescription}\n- **Reason for Change:** {ReasonForChange}\n\nWe believe that this change will enhance our operations and better serve our customers. If you have any questions or need further clarification, please do not hesitate to contact us.\n\nThank you for your attention to this matter.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {RecipientName},\n\nWe are writing to inform you about an important change to our company policy that will take effect on **{EffectiveDate}**. This update is part of our ongoing commitment to improve our services and align with best practices.\n\n**Details of the Policy Change:**\n- **Previous Policy:** {PreviousPolicyDescription}\n- **New Policy:** {NewPolicyDescription}\n- **Reason for Change:** {ReasonForChange}\n\nWe believe that this change will enhance our operations and better serve our customers. If you have any questions or need further clarification, please do not hesitate to contact us.\n\nThank you for your attention to this matter.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "EffectiveDate", "label": "Effective Date", "type": "text" },
-      { "id": "PreviousPolicyDescription", "label": "Previous Policy Description", "type": "text" },
-      { "id": "NewPolicyDescription", "label": "New Policy Description", "type": "text" },
-      { "id": "ReasonForChange", "label": "Reason for Change", "type": "text" },
+      { "id": "PreviousPolicyDescription", "label": "Previous Policy Description", "type": "textarea", "rows":4 },
+      { "id": "NewPolicyDescription", "label": "New Policy Description", "type": "textarea", "rows":4 },
+      { "id": "ReasonForChange", "label": "Reason for Change", "type": "textarea", "rows":4 },
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
@@ -4317,30 +4351,30 @@
   },
   "Public Apology Statement": {
     "subject": "Public Apology for {Issue}",
-    "template": "Dear {RecipientName},\n\nWe sincerely apologize for the recent issues regarding **{Issue}**. We understand that this has caused inconvenience and we deeply regret any negative impact it may have had.\n\n**Details of the Issue:**\n- **Description:** {IssueDescription}\n- **Impact:** {ImpactDetails}\n\n**Steps We Are Taking:**\n- **Immediate Actions:** {ImmediateActions}\n- **Long-Term Solutions:** {LongTermSolutions}\n\nWe are committed to addressing this issue and ensuring it does not happen again. We value your feedback and are here to answer any questions you may have.\n\nThank you for your understanding and patience.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {RecipientName},\n\nWe sincerely apologize for the recent issues regarding **{Issue}**. We understand that this has caused inconvenience and we deeply regret any negative impact it may have had.\n\n**Details of the Issue:**\n- **Description:** {IssueDescription}\n- **Impact:** {ImpactDetails}\n\n**Steps We Are Taking:**\n- **Immediate Actions:** {ImmediateActions}\n- **Long-Term Solutions:** {LongTermSolutions}\n\nWe are committed to addressing this issue and ensuring it does not happen again. We value your feedback and are here to answer any questions you may have.\n\nThank you for your understanding and patience.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "Issue", "label": "Issue", "type": "text" },
-      { "id": "IssueDescription", "label": "Issue Description", "type": "text" },
-      { "id": "ImpactDetails", "label": "Impact Details", "type": "text" },
-      { "id": "ImmediateActions", "label": "Immediate Actions", "type": "text" },
-      { "id": "LongTermSolutions", "label": "Long-Term Solutions", "type": "text" },
+      { "id": "IssueDescription", "label": "Issue Description", "type": "textarea" },
+      { "id": "ImpactDetails", "label": "Impact Details", "type": "textarea" },
+      { "id": "ImmediateActions", "label": "Immediate Actions", "type": "textarea" },
+      { "id": "LongTermSolutions", "label": "Long-Term Solutions", "type": "textarea" },
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
-      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea" }
     ]
   },
   "Statement on Recent Controversy": {
     "subject": "Statement on Recent Controversy",
-    "template": "Dear {RecipientName},\n\nWe would like to address the recent controversy surrounding **{ControversyTopic}**. We understand the concerns raised and want to clarify our position on the matter.\n\n**Details of the Controversy:**\n- **Description:** {ControversyDescription}\n- **Company's Position:** {CompanyPosition}\n- **Actions Taken:** {ActionsTaken}\n\n**Our Commitment:**\n- **Ongoing Efforts:** {OngoingEfforts}\n- **Future Plans:** {FuturePlans}\n\nWe are committed to transparency and open dialogue. Please feel free to reach out if you have any questions or need further information.\n\nThank you for your attention.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {RecipientName},\n\nWe would like to address the recent controversy surrounding **{ControversyTopic}**. We understand the concerns raised and want to clarify our position on the matter.\n\n**Details of the Controversy:**\n- **Description:** {ControversyDescription}\n- **Company's Position:** {CompanyPosition}\n- **Actions Taken:** {ActionsTaken}\n\n**Our Commitment:**\n- **Ongoing Efforts:** {OngoingEfforts}\n- **Future Plans:** {FuturePlans}\n\nWe are committed to transparency and open dialogue. Please feel free to reach out if you have any questions or need further information.\n\nThank you for your attention.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "ControversyTopic", "label": "Controversy Topic", "type": "text" },
-      { "id": "ControversyDescription", "label": "Controversy Description", "type": "text" },
+      { "id": "ControversyDescription", "label": "Controversy Description", "type": "textarea" },
       { "id": "CompanyPosition", "label": "Company's Position", "type": "text" },
       { "id": "ActionsTaken", "label": "Actions Taken", "type": "text" },
       { "id": "OngoingEfforts", "label": "Ongoing Efforts", "type": "text" },
@@ -4351,19 +4385,19 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
-      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea" }
     ]
   },
   "Company Position on Industry Issue": {
     "subject": "Company Position on {IndustryIssue}",
-    "template": "Dear {RecipientName},\n\nWe are reaching out to share our company's position on the current industry issue of **{IndustryIssue}**. This issue has garnered significant attention, and we want to provide our perspective.\n\n**Our Position:**\n- **Overview:** {IssueOverview}\n- **Company’s Stance:** {CompanyStance}\n- **Support for Industry Changes:** {SupportDetails}\n\n**Our Actions:**\n- **Current Initiatives:** {CurrentInitiatives}\n- **Future Plans:** {FuturePlans}\n\nWe believe in contributing positively to industry discussions and are committed to addressing this issue constructively. If you have any questions or would like to discuss this further, please do not hesitate to contact us.\n\nThank you for your attention.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {RecipientName},\n\nWe are reaching out to share our company's position on the current industry issue of **{IndustryIssue}**. This issue has garnered significant attention, and we want to provide our perspective.\n\n**Our Position:**\n- **Overview:** {IssueOverview}\n- **Company’s Stance:** {CompanyStance}\n- **Support for Industry Changes:** {SupportDetails}\n\n**Our Actions:**\n- **Current Initiatives:** {CurrentInitiatives}\n- **Future Plans:** {FuturePlans}\n\nWe believe in contributing positively to industry discussions and are committed to addressing this issue constructively. If you have any questions or would like to discuss this further, please do not hesitate to contact us.\n\nThank you for your attention.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "IndustryIssue", "label": "Industry Issue", "type": "text" },
-      { "id": "IssueOverview", "label": "Issue Overview", "type": "text" },
+      { "id": "IssueOverview", "label": "Issue Overview", "type": "textarea", "rows":4 },
       { "id": "CompanyStance", "label": "Company’s Stance", "type": "text" },
       { "id": "SupportDetails", "label": "Support for Industry Changes", "type": "text" },
-      { "id": "CurrentInitiatives", "label": "Current Initiatives", "type": "text" },
+      { "id": "CurrentInitiatives", "label": "Current Initiatives", "type": "textarea", "rows":4 },
       { "id": "FuturePlans", "label": "Future Plans", "type": "text" },
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
@@ -4371,17 +4405,17 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
-      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea", "rows":4 }
     ]
   },
   "Statement Following Major News Event": {
     "subject": "Statement Following Major News Event",
-    "template": "Dear {RecipientName},\n\nIn light of the recent major news event regarding **{NewsEvent}**, we want to address the situation and provide our perspective.\n\n**Details of the News Event:**\n- **Event Description:** {EventDescription}\n- **Impact on Our Organization:** {ImpactOnOrganization}\n\n**Our Response:**\n- **Immediate Actions:** {ImmediateActions}\n- **Ongoing Efforts:** {OngoingEfforts}\n- **Future Plans:** {FuturePlans}\n\nWe are committed to addressing the implications of this event and will keep you informed of any significant developments. Please feel free to contact us if you have any questions or need additional information.\n\nThank you for your attention and understanding.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {RecipientName},\n\nIn light of the recent major news event regarding **{NewsEvent}**, we want to address the situation and provide our perspective.\n\n**Details of the News Event:**\n- **Event Description:** {EventDescription}\n- **Impact on Our Organization:** {ImpactOnOrganization}\n\n**Our Response:**\n- **Immediate Actions:** {ImmediateActions}\n- **Ongoing Efforts:** {OngoingEfforts}\n- **Future Plans:** {FuturePlans}\n\nWe are committed to addressing the implications of this event and will keep you informed of any significant developments. Please feel free to contact us if you have any questions or need additional information.\n\nThank you for your attention and understanding.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "NewsEvent", "label": "News Event", "type": "text" },
-      { "id": "EventDescription", "label": "Event Description", "type": "text" },
-      { "id": "ImpactOnOrganization", "label": "Impact on Our Organization", "type": "text" },
+      { "id": "EventDescription", "label": "Event Description", "type": "textarea", "rows":4 },
+      { "id": "ImpactOnOrganization", "label": "Impact on Our Organization", "type": "textarea", "rows":4 },
       { "id": "ImmediateActions", "label": "Immediate Actions", "type": "text" },
       { "id": "OngoingEfforts", "label": "Ongoing Efforts", "type": "text" },
       { "id": "FuturePlans", "label": "Future Plans", "type": "text" },
@@ -4391,16 +4425,16 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
-      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea", "rows":4 }
     ]
   },
   "Statement on Regulatory Changes": {
     "subject": "Statement on Recent Regulatory Changes",
-    "template": "Dear {RecipientName},\n\nWe would like to inform you about recent regulatory changes affecting our industry and how these changes impact our organization.\n\n**Details of the Regulatory Changes:**\n- **Regulation Affected:** {RegulationAffected}\n- **Description of Changes:** {DescriptionOfChanges}\n- **Impact on Our Business:** {ImpactOnBusiness}\n\n**Our Response and Adaptation:**\n- **Compliance Measures:** {ComplianceMeasures}\n- **Future Adjustments:** {FutureAdjustments}\n\nWe are committed to ensuring full compliance with these changes and are proactively adjusting our practices to meet the new requirements. If you have any questions or need further details, please contact us.\n\nThank you for your continued support.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {RecipientName},\n\nWe would like to inform you about recent regulatory changes affecting our industry and how these changes impact our organization.\n\n**Details of the Regulatory Changes:**\n- **Regulation Affected:** {RegulationAffected}\n- **Description of Changes:** {DescriptionOfChanges}\n- **Impact on Our Business:** {ImpactOnBusiness}\n\n**Our Response and Adaptation:**\n- **Compliance Measures:** {ComplianceMeasures}\n- **Future Adjustments:** {FutureAdjustments}\n\nWe are committed to ensuring full compliance with these changes and are proactively adjusting our practices to meet the new requirements. If you have any questions or need further details, please contact us.\n\nThank you for your continued support.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "RegulationAffected", "label": "Regulation Affected", "type": "text" },
-      { "id": "DescriptionOfChanges", "label": "Description of Changes", "type": "text" },
+      { "id": "DescriptionOfChanges", "label": "Description of Changes", "type": "textarea", "rows":4 },
       { "id": "ImpactOnBusiness", "label": "Impact on Our Business", "type": "text" },
       { "id": "ComplianceMeasures", "label": "Compliance Measures", "type": "text" },
       { "id": "FutureAdjustments", "label": "Future Adjustments", "type": "text" },
@@ -4410,12 +4444,12 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },{ "id": "YourEmail", "label": "Your Email", "type": "email" },
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
-      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea", "rows":4 }
     ]
   },
   "Public Response to Community Feedback": {
     "subject": "Public Response to Community Feedback",
-    "template": "Dear {RecipientName},\n\nWe appreciate the feedback received from our community regarding **{FeedbackTopic}**. We value your input and are committed to addressing the concerns and suggestions raised.\n\n**Summary of Feedback:**\n- **Key Points Raised:** {KeyPointsRaised}\n- **Community Concerns:** {CommunityConcerns}\n\n**Our Response:**\n- **Actions Taken:** {ActionsTaken}\n- **Planned Improvements:** {PlannedImprovements}\n\nWe are dedicated to continuous improvement and will keep you updated on our progress. Thank you for your engagement and support. Should you have any additional feedback or questions, please feel free to contact us.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {RecipientName},\n\nWe appreciate the feedback received from our community regarding **{FeedbackTopic}**. We value your input and are committed to addressing the concerns and suggestions raised.\n\n**Summary of Feedback:**\n- **Key Points Raised:** {KeyPointsRaised}\n- **Community Concerns:** {CommunityConcerns}\n\n**Our Response:**\n- **Actions Taken:** {ActionsTaken}\n- **Planned Improvements:** {PlannedImprovements}\n\nWe are dedicated to continuous improvement and will keep you updated on our progress. Thank you for your engagement and support. Should you have any additional feedback or questions, please feel free to contact us.\n\nSincerely,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "FeedbackTopic", "label": "Feedback Topic", "type": "text" },
@@ -4436,7 +4470,7 @@
   "Media Invitation Email":{
     "Invitation to Press Conference": {
     "subject": "Invitation to Press Conference",
-    "template": "Dear {RecipientName},\n\nWe are pleased to invite you to our upcoming press conference on **{EventDate}** at **{EventTime}**. The event will take place at **{EventVenue}**.\n\n**Event Details:**\n- **Topic:** {ConferenceTopic}\n- **Key Speakers:** {KeySpeakers}\n- **Purpose:** {EventPurpose}\n\n**Agenda:**\n- {AgendaDetails}\n\n**RSVP:**\nPlease confirm your attendance by **{RSVPDeadline}** by replying to this email or contacting us at **{ContactEmail}**.\n\nWe look forward to your participation and valuable coverage.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {RecipientName},\n\nWe are pleased to invite you to our upcoming press conference on **{EventDate}** at **{EventTime}**. The event will take place at **{EventVenue}**.\n\n**Event Details:**\n- **Topic:** {ConferenceTopic}\n- **Key Speakers:** {KeySpeakers}\n- **Purpose:** {EventPurpose}\n\n**Agenda:**\n- {AgendaDetails}\n\n**RSVP:**\nPlease confirm your attendance by **{RSVPDeadline}** by replying to this email or contacting us at **{ContactEmail}**.\n\nWe look forward to your participation and valuable coverage.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "EventDate", "label": "Event Date", "type": "date" },
@@ -4459,7 +4493,7 @@
   },
   "Invitation to Media Briefing": {
     "subject": "Invitation to Media Briefing",
-    "template": "Dear {RecipientName},\n\nWe are excited to invite you to our media briefing scheduled for **{EventDate}** at **{EventTime}**. The briefing will be held at **{EventVenue}**.\n\n**Briefing Overview:**\n- **Topic:** {BriefingTopic}\n- **Speakers:** {SpeakersList}\n- **Objective:** {BriefingObjective}\n\n**Agenda:**\n- {DetailedAgenda}\n\n**RSVP Information:**\nKindly confirm your attendance by **{RSVPDeadline}**. Please respond to this invitation or reach out to **{ContactEmail}** for any inquiries.\n\nWe look forward to your presence and engagement.\n\nWarm regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {RecipientName},\n\nWe are excited to invite you to our media briefing scheduled for **{EventDate}** at **{EventTime}**. The briefing will be held at **{EventVenue}**.\n\n**Briefing Overview:**\n- **Topic:** {BriefingTopic}\n- **Speakers:** {SpeakersList}\n- **Objective:** {BriefingObjective}\n\n**Agenda:**\n- {DetailedAgenda}\n\n**RSVP Information:**\nKindly confirm your attendance by **{RSVPDeadline}**. Please respond to this invitation or reach out to **{ContactEmail}** for any inquiries.\n\nWe look forward to your presence and engagement.\n\nWarm regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "EventDate", "label": "Event Date", "type": "date" },
@@ -4482,7 +4516,7 @@
   },
   "Invitation to Product Launch Event": {
     "subject": "Invitation to Product Launch Event",
-    "template": "Dear {RecipientName},\n\nWe are thrilled to invite you to the launch of our new product on **{EventDate}** at **{EventTime}**. The event will be hosted at **{EventVenue}**.\n\n**Event Details:**\n- **Product:** {ProductName}\n- **Highlights:** {ProductHighlights}\n- **Speakers/Presenters:** {SpeakersList}\n\n**Agenda:**\n- {EventAgenda}\n\n**RSVP:**\nPlease confirm your attendance by **{RSVPDeadline}** by replying to this email or contacting us at **{ContactEmail}**.\n\nWe are excited to share this milestone with you and look forward to your participation.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {RecipientName},\n\nWe are thrilled to invite you to the launch of our new product on **{EventDate}** at **{EventTime}**. The event will be hosted at **{EventVenue}**.\n\n**Event Details:**\n- **Product:** {ProductName}\n- **Highlights:** {ProductHighlights}\n- **Speakers/Presenters:** {SpeakersList}\n\n**Agenda:**\n- {EventAgenda}\n\n**RSVP:**\nPlease confirm your attendance by **{RSVPDeadline}** by replying to this email or contacting us at **{ContactEmail}**.\n\nWe are excited to share this milestone with you and look forward to your participation.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "EventDate", "label": "Event Date", "type": "date" },
@@ -4505,7 +4539,7 @@
   },
   "Invitation to Company Open House": {
     "subject": "Invitation to Company Open House",
-    "template": "Dear {RecipientName},\n\nWe are excited to invite you to our Company Open House on **{EventDate}** from **{StartTime}** to **{EndTime}**. The event will take place at **{EventVenue}**.\n\n**Event Highlights:**\n- **Company Tour:** {TourDetails}\n- **Meet the Team:** {TeamIntroduction}\n- **Interactive Sessions:** {InteractiveSessions}\n\n**RSVP:**\nPlease let us know if you can attend by **{RSVPDeadline}**. Respond to this email or contact us at **{ContactEmail}**.\n\nWe look forward to welcoming you and showing you around our facilities.\n\nWarm regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {RecipientName},\n\nWe are excited to invite you to our Company Open House on **{EventDate}** from **{StartTime}** to **{EndTime}**. The event will take place at **{EventVenue}**.\n\n**Event Highlights:**\n- **Company Tour:** {TourDetails}\n- **Meet the Team:** {TeamIntroduction}\n- **Interactive Sessions:** {InteractiveSessions}\n\n**RSVP:**\nPlease let us know if you can attend by **{RSVPDeadline}**. Respond to this email or contact us at **{ContactEmail}**.\n\nWe look forward to welcoming you and showing you around our facilities.\n\nWarm regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "EventDate", "label": "Event Date", "type": "date" },
@@ -4528,7 +4562,7 @@
   },
   "Invitation to Exclusive Media Event": {
     "subject": "Invitation to Exclusive Media Event",
-    "template": "Dear {RecipientName},\n\nWe are honored to invite you to our exclusive media event taking place on **{EventDate}** at **{EventTime}**. The event will be held at **{EventVenue}**.\n\n**Event Highlights:**\n- **Purpose:** {EventPurpose}\n- **Special Guests:** {SpecialGuests}\n- **Highlights:** {EventHighlights}\n\n**Agenda:**\n- {AgendaDetails}\n\n**RSVP:**\nKindly confirm your attendance by **{RSVPDeadline}**. Please reply to this email or contact us at **{ContactEmail}** to secure your spot.\n\nWe look forward to sharing this special event with you.\n\nWarm regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {RecipientName},\n\nWe are honored to invite you to our exclusive media event taking place on **{EventDate}** at **{EventTime}**. The event will be held at **{EventVenue}**.\n\n**Event Highlights:**\n- **Purpose:** {EventPurpose}\n- **Special Guests:** {SpecialGuests}\n- **Highlights:** {EventHighlights}\n\n**Agenda:**\n- {AgendaDetails}\n\n**RSVP:**\nKindly confirm your attendance by **{RSVPDeadline}**. Please reply to this email or contact us at **{ContactEmail}** to secure your spot.\n\nWe look forward to sharing this special event with you.\n\nWarm regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "EventDate", "label": "Event Date", "type": "date" },
@@ -4551,7 +4585,7 @@
   },
   "Invitation to Media Roundtable": {
     "subject": "Invitation to Media Roundtable",
-    "template": "Dear {RecipientName},\n\nWe are pleased to invite you to our Media Roundtable scheduled for **{EventDate}** at **{EventTime}**. The roundtable will be held at **{EventVenue}**.\n\n**Roundtable Details:**\n- **Topic:** {DiscussionTopic}\n- **Participants:** {ParticipantsList}\n- **Objective:** {RoundtableObjective}\n\n**Agenda:**\n- {DetailedAgenda}\n\n**RSVP:**\nPlease confirm your attendance by **{RSVPDeadline}**. You can RSVP by replying to this email or contacting us at **{ContactEmail}**.\n\nWe look forward to your valuable contributions.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {RecipientName},\n\nWe are pleased to invite you to our Media Roundtable scheduled for **{EventDate}** at **{EventTime}**. The roundtable will be held at **{EventVenue}**.\n\n**Roundtable Details:**\n- **Topic:** {DiscussionTopic}\n- **Participants:** {ParticipantsList}\n- **Objective:** {RoundtableObjective}\n\n**Agenda:**\n- {DetailedAgenda}\n\n**RSVP:**\nPlease confirm your attendance by **{RSVPDeadline}**. You can RSVP by replying to this email or contacting us at **{ContactEmail}**.\n\nWe look forward to your valuable contributions.\n\nBest regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "EventDate", "label": "Event Date", "type": "date" },
@@ -4574,7 +4608,7 @@
   },
   "Invitation to Industry Awards Ceremony": {
     "subject": "Invitation to Industry Awards Ceremony",
-    "template": "Dear {RecipientName},\n\nWe are delighted to invite you to our Industry Awards Ceremony on **{EventDate}** at **{EventTime}**. The ceremony will take place at **{EventVenue}**.\n\n**Ceremony Highlights:**\n- **Awards:** {AwardsCategories}\n- **Special Guests:** {SpecialGuests}\n- **Entertainment:** {EntertainmentDetails}\n\n**Agenda:**\n- {EventAgenda}\n\n**RSVP:**\nPlease confirm your attendance by **{RSVPDeadline}** by replying to this email or contacting us at **{ContactEmail}**.\n\nWe look forward to celebrating the achievements in our industry with you.\n\nWarm regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{YourEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
+    "template": "Dear {RecipientName},\n\nWe are delighted to invite you to our Industry Awards Ceremony on **{EventDate}** at **{EventTime}**. The ceremony will take place at **{EventVenue}**.\n\n**Ceremony Highlights:**\n- **Awards:** {AwardsCategories}\n- **Special Guests:** {SpecialGuests}\n- **Entertainment:** {EntertainmentDetails}\n\n**Agenda:**\n- {EventAgenda}\n\n**RSVP:**\nPlease confirm your attendance by **{RSVPDeadline}** by replying to this email or contacting us at **{ContactEmail}**.\n\nWe look forward to celebrating the achievements in our industry with you.\n\nWarm regards,\n\n{YourName}\n{YourPosition}\n{CompanyName}\n{SenderEmail}\n{YourPhone}\n\n**About {CompanyName}:**\n{BriefCompanyDescription}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "EventDate", "label": "Event Date", "type": "date" },
@@ -4598,7 +4632,7 @@
   },
   "Op-Ed Submission Email":{
     "Op-Ed on Industry Trends": {
-    "title": "Op-Ed on Industry Trends",
+    "subject": "Op-Ed on Industry Trends",
     "template": "In recent years, {Industry} has undergone significant transformations, driven by advances in technology and shifts in consumer behavior. As {AuthorName}, a {Position} at {CompanyName}, I would like to share insights on how these trends are shaping the future of our industry.\n\n**Emerging Trends:**\n1. **{Trend1}**: {Description}\n2. **{Trend2}**: {Description}\n3. **{Trend3}**: {Description}\n\n**Impact on the Industry:**\nThese trends are reshaping the landscape of {Industry} by {ImpactDetails}. Companies that adapt to these changes are likely to gain a competitive advantage.\n\n**Future Outlook:**\nLooking ahead, we anticipate further developments in {Trend1} and {Trend2}, which will continue to influence {Industry}. Organizations must stay informed and agile to navigate this evolving environment.\n\n**Conclusion:**\nThe pace of change in {Industry} is accelerating. It is crucial for industry leaders to embrace innovation and anticipate future trends to remain relevant.\n\nBest regards,\n{AuthorName}\n{Position}\n{CompanyName}\n{ContactEmail}",
     "fields": [
       { "id": "AuthorName", "label": "Author Name", "type": "text" },
@@ -4616,7 +4650,7 @@
     ]
   },
   "Op-Ed on Company Vision": {
-    "title": "Op-Ed on Company Vision",
+    "subject": "Op-Ed on Company Vision",
     "template": "At {CompanyName}, our vision is to {VisionStatement}. As {AuthorName}, {Position} at {CompanyName}, I am excited to share how we are working towards achieving this vision and the values that guide us.\n\n**Core Values:**\n1. **{Value1}**: {Explanation}\n2. **{Value2}**: {Explanation}\n3. **{Value3}**: {Explanation}\n\n**Strategic Goals:**\nOur strategic goals include {Goal1}, {Goal2}, and {Goal3}, which are designed to align with our vision and drive long-term success.\n\n**Future Plans:**\nWe are committed to {FuturePlans}, which will position us as a leader in our field and help us achieve our vision.\n\n**Conclusion:**\nThe journey towards our vision is a collaborative effort that requires dedication and innovation. We are excited about the future and remain focused on our goals.\n\nSincerely,\n{AuthorName}\n{Position}\n{CompanyName}\n{ContactEmail}",
     "fields": [
       { "id": "AuthorName", "label": "Author Name", "type": "text" },
@@ -4637,7 +4671,7 @@
     ]
   },
   "Op-Ed on Social Responsibility": {
-    "title": "Op-Ed on Social Responsibility",
+    "subject": "Op-Ed on Social Responsibility",
     "template": "Social responsibility is at the heart of {CompanyName}'s mission. As {AuthorName}, {Position} at {CompanyName}, I want to highlight our commitment to making a positive impact on society.\n\n**Key Initiatives:**\n1. **{Initiative1}**: {Description}\n2. **{Initiative2}**: {Description}\n3. **{Initiative3}**: {Description}\n\n**Impact on the Community:**\nOur initiatives have contributed to {CommunityImpact}, fostering positive change and supporting local communities.\n\n**Future Commitments:**\nWe are dedicated to enhancing our efforts in {FutureCommitments}, aiming to address pressing social issues and promote sustainability.\n\n**Conclusion:**\nOur commitment to social responsibility drives us to act ethically and contribute to the well-being of society. We invite others to join us in making a difference.\n\nSincerely,\n{AuthorName}\n{Position}\n{CompanyName}\n{ContactEmail}",
     "fields": [
       { "id": "AuthorName", "label": "Author Name", "type": "text" },
@@ -4655,7 +4689,7 @@
     ]
   },
   "Op-Ed on Regulatory Changes": {
-    "title": "Op-Ed on Regulatory Changes",
+    "subject": "Op-Ed on Regulatory Changes",
     "template": "Recent regulatory changes in {Industry} have significant implications for businesses and consumers alike. As {AuthorName}, {Position} at {CompanyName}, I am writing to provide insights on these developments and their impact.\n\n**Overview of Changes:**\n1. **{Regulation1}**: {Details}\n2. **{Regulation2}**: {Details}\n3. **{Regulation3}**: {Details}\n\n**Implications for Businesses:**\nThese changes will affect {BusinessImplications}, requiring companies to {AdaptationStrategies}.\n\n**Impact on Consumers:**\nConsumers will experience {ConsumerImpact}, which may lead to {PotentialOutcomes}.\n\n**Conclusion:**\nNavigating these regulatory changes will be challenging but necessary for compliance and maintaining industry standards. It is crucial for stakeholders to stay informed and proactive.\n\nBest regards,\n{AuthorName}\n{Position}\n{CompanyName}\n{ContactEmail}",
     "fields": [
       { "id": "AuthorName", "label": "Author Name", "type": "text" },
@@ -4676,7 +4710,7 @@
     ]
   },
   "Op-Ed on Economic Impact": {
-    "title": "Op-Ed on Economic Impact",
+    "subject": "Op-Ed on Economic Impact",
     "template": "The economic landscape is constantly evolving, influenced by various factors including policy changes, market trends, and global events. As {AuthorName}, {Position} at {CompanyName}, I would like to provide insights into the current economic impact and its implications for businesses and consumers.\n\n**Economic Trends:**\n1. **{Trend1}**: {Description}\n2. **{Trend2}**: {Description}\n3. **{Trend3}**: {Description}\n\n**Impact on Businesses:**\nBusinesses are experiencing {BusinessImpact}, which may lead to {PotentialChallenges} and {Opportunities}.\n\n**Impact on Consumers:**\nConsumers are facing {ConsumerImpact}, affecting {KeyAreas}.\n\n**Future Outlook:**\nLooking forward, {EconomicOutlook}, requiring {RecommendedActions} from both businesses and consumers.\n\n**Conclusion:**\nUnderstanding and adapting to these economic changes is crucial for long-term success and stability. We must stay informed and proactive to navigate these challenges effectively.\n\nSincerely,\n{AuthorName}\n{Position}\n{CompanyName}\n{ContactEmail}",
     "fields": [
       { "id": "AuthorName", "label": "Author Name", "type": "text" },
@@ -4699,7 +4733,7 @@
     ]
   },
   "Op-Ed on Technological Advancements": {
-    "title": "Op-Ed on Technological Advancements",
+    "subject": "Op-Ed on Technological Advancements",
     "template": "Technological advancements are rapidly transforming industries and reshaping our daily lives. As {AuthorName}, {Position} at {CompanyName}, I want to discuss the impact of these innovations and their implications for the future.\n\n**Key Advancements:**\n1. **{Advancement1}**: {Description}\n2. **{Advancement2}**: {Description}\n3. **{Advancement3}**: {Description}\n\n**Impact on Industries:**\nThese advancements are driving change in {Industries}, leading to {IndustryImpacts} and {NewOpportunities}.\n\n**Impact on Society:**\nFor society, these technologies are {SocietalImpacts}, influencing {KeyAreas}.\n\n**Future Prospects:**\nThe future promises further innovations in {FutureTrends}, with potential for {FutureOpportunities} and {Challenges}.\n\n**Conclusion:**\nEmbracing technological advancements is essential for staying competitive and addressing emerging challenges. It is crucial for stakeholders to remain adaptable and forward-thinking.\n\nBest regards,\n{AuthorName}\n{Position}\n{CompanyName}\n{ContactEmail}",
     "fields": [
       { "id": "AuthorName", "label": "Author Name", "type": "text" },
@@ -4723,7 +4757,7 @@
     ]
   },
   "Op-Ed on Community Engagement": {
-    "title": "Op-Ed on Community Engagement",
+    "subject": "Op-Ed on Community Engagement",
     "template": "Community engagement is a fundamental aspect of building strong, resilient communities. As {AuthorName}, {Position} at {CompanyName}, I am writing to emphasize the importance of community involvement and the benefits it brings.\n\n**Key Engagement Strategies:**\n1. **{Strategy1}**: {Description}\n2. **{Strategy2}**: {Description}\n3. **{Strategy3}**: {Description}\n\n**Benefits for Communities:**\nEffective engagement results in {CommunityBenefits}, fostering {PositiveOutcomes} and {EnhancedRelations}.\n\n**Role of Organizations:**\nOrganizations play a crucial role in {OrganizationRole}, contributing to {ImpactDetails} and {SupportForInitiatives}.\n\n**Future Directions:**\nLooking ahead, {FutureDirections} will be essential for continuing to strengthen community ties and address emerging needs.\n\n**Conclusion:**\nCommunity engagement is not just a responsibility but an opportunity to drive positive change. We must continue to invest in and support initiatives that enhance our communities.\n\nSincerely,\n{AuthorName}\n{Position}\n{CompanyName}\n{ContactEmail}",
     "fields": [
       { "id": "AuthorName", "label": "Author Name", "type": "text" },
@@ -4748,8 +4782,8 @@
   },
   "Crisis Communication Email":{
     "Initial Crisis Response Email": {
-    "title": "Initial Crisis Response Email",
-    "template": "Subject: Initial Response to [Crisis Event]\n\nDear [RecipientName],\n\nWe are writing to acknowledge the recent [Crisis Event] and to provide you with an initial response. We understand the seriousness of the situation and want to assure you that we are taking immediate action to address it.\n\n**Situation Overview:**\n- **Event:** [Brief Description of Crisis Event]\n- **Date and Time:** [Date and Time]\n- **Current Status:** [Current Status]\n\n**Immediate Actions Taken:**\n1. **[Action 1]**: [Description]\n2. **[Action 2]**: [Description]\n3. **[Action 3]**: [Description]\n\nWe are committed to keeping you informed as we continue to manage the situation. Please do not hesitate to reach out with any questions or concerns.\n\nSincerely,\n[Your Name]\n[Your Position]\n[Your Company]\n[Contact Information]",
+    "subject": "Initial Response to {CrisisEvent}",
+    "template": "Subject: Initial Response to {CrisisEvent}\n\nDear {RecipientName},\n\nWe are writing to acknowledge the recent {CrisisEvent} and to provide you with an initial response. We understand the seriousness of the situation and want to assure you that we are taking immediate action to address it.\n\n**Situation Overview:**\n- **Event:** {BriefDescriptionOfCrisisEvent}\n- **Date and Time:** {DateTime}\n- **Current Status:** {CurrentStatus}\n\n**Immediate Actions Taken:**\n1. **{Action1}**: {Description1}\n2. **{Action2}**: {Description2}\n3. **{Action3}**: {Description3}\n\nWe are committed to keeping you informed as we continue to manage the situation. Please do not hesitate to reach out with any questions or concerns.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourCompany}\n{ContactInformation}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
@@ -4767,8 +4801,8 @@
     ]
   },
   "Update on Crisis Situation": {
-    "title": "Update on Crisis Situation",
-    "template": "Subject: Update on [Crisis Event]\n\nDear [RecipientName],\n\nWe are providing you with an update on the ongoing [Crisis Event]. We want to keep you informed about the latest developments and the actions we are taking.\n\n**Current Situation:**\n- **Update:** [Current Situation]\n- **Timeline:** [Timeline of Events]\n- **Impact:** [Impact Details]\n\n**Ongoing Actions:**\n1. **[Action 1]**: [Description]\n2. **[Action 2]**: [Description]\n3. **[Action 3]**: [Description]\n\nWe appreciate your patience and understanding as we work through this issue. We will continue to provide updates as necessary.\n\nBest regards,\n[Your Name]\n[Your Position]\n[Your Company]\n[Contact Information]",
+    "subject": "Update on {CrisisEvent}",
+    "template": "Subject: Update on {CrisisEvent}\n\nDear {RecipientName},\n\nWe are providing you with an update on the ongoing {CrisisEvent}. We want to keep you informed about the latest developments and the actions we are taking.\n\n**Current Situation:**\n- **Update:** {CurrentSituation}\n- **Timeline:** {TimelineOfEvents}\n- **Impact:** {ImpactDetails}\n\n**Ongoing Actions:**\n1. **{Action1}**: {Description1}\n2. **{Action2}**: {Description2}\n3. **{Action3}**: {Description3}\n\nWe appreciate your patience and understanding as we work through this issue. We will continue to provide updates as necessary.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{ContactInformation}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
@@ -4787,8 +4821,8 @@
     ]
   },
   "Apology and Action Plan Email": {
-    "title": "Apology and Action Plan Email",
-    "template": "Subject: Apology and Action Plan for [Crisis Event]\n\nDear [RecipientName],\n\nWe want to express our sincere apologies for the recent [Crisis Event]. We understand the impact this has had on you and are committed to rectifying the situation.\n\n**Apology:**\nWe deeply regret [Specific Issue] and acknowledge the inconvenience it has caused.\n\n**Action Plan:**\n1. **[Action 1]**: [Description of Planned Action]\n2. **[Action 2]**: [Description of Planned Action]\n3. **[Action 3]**: [Description of Planned Action]\n\n**Timeline for Resolution:**\nWe expect to resolve these issues by [Resolution Timeline].\n\nWe value your feedback and will use it to improve our processes. Please feel free to contact us with any further concerns.\n\nSincerely,\n[Your Name]\n[Your Position]\n[Your Company]\n[Contact Information]",
+    "subject": "Apology and Action Plan for {CrisisEvent}",
+    "template": "Subject: Apology and Action Plan for {CrisisEvent}\n\nDear {RecipientName},\n\nWe want to express our sincere apologies for the recent {CrisisEvent}. We understand the impact this has had on you and are committed to rectifying the situation.\n\n**Apology:**\nWe deeply regret {SpecificIssue} and acknowledge the inconvenience it has caused.\n\n**Action Plan:**\n1. **{Action1}**: {DescriptionOfPlannedAction1}\n2. **{Action2}**: {DescriptionOfPlannedAction2}\n3. **{Action3}**: {DescriptionOfPlannedAction3}\n\n**Timeline for Resolution:**\nWe expect to resolve these issues by {ResolutionTimeline}.\n\nWe value your feedback and will use it to improve our processes. Please feel free to contact us with any further concerns.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourCompany}\n{ContactInformation}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
@@ -4806,8 +4840,8 @@
     ]
   },
   "Crisis Resolution Communication": {
-    "title": "Crisis Resolution Communication",
-    "template": "Subject: Resolution of [Crisis Event]\n\nDear [RecipientName],\n\nWe are pleased to inform you that the [Crisis Event] has been resolved. We want to update you on the steps we have taken to address the situation and prevent future occurrences.\n\n**Resolution Summary:**\n- **Resolution Actions Taken:**\n  1. **[Action 1]**: [Description]\n  2. **[Action 2]**: [Description]\n  3. **[Action 3]**: [Description]\n- **Current Status:** [Current Status]\n- **Preventative Measures:** [Details of Measures]\n\n**Ongoing Support:**\nWe are committed to providing ongoing support and addressing any remaining concerns you may have.\n\nThank you for your understanding and patience during this time. Please do not hesitate to contact us if you need further information or assistance.\n\nBest regards,\n[Your Name]\n[Your Position]\n[Your Company]\n[Contact Information]",
+    "subject": "Resolution of {CrisisEvent}",
+    "template": "Subject: Resolution of {CrisisEvent}\n\nDear {RecipientName},\n\nWe are pleased to inform you that the {CrisisEvent} has been resolved. We want to update you on the steps we have taken to address the situation and prevent future occurrences.\n\n**Resolution Summary:**\n- **Resolution Actions Taken:**\n  1. **{Action1}**: {Description1}\n  2. **{Action2}**: {Description2}\n  3. **{Action3}**: {Description3}\n- **Current Status:** {CurrentStatus}\n- **Preventative Measures:** {DetailsOfMeasures}\n\n**Ongoing Support:**\nWe are committed to providing ongoing support and addressing any remaining concerns you may have.\n\nThank you for your understanding and patience during this time. Please do not hesitate to contact us if you need further information or assistance.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{ContactInformation}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
@@ -4817,7 +4851,7 @@
       { "id": "Action2", "label": "Resolution Action 2", "type": "text" },
       { "id": "Action3", "label": "Resolution Action 3", "type": "text" },
       { "id": "CurrentStatus", "label": "Current Status", "type": "text" },
-      { "id": "PreventativeMeasures", "label": "Preventative Measures", "type": "text" },
+      { "id": "DetailsOfMeasures", "label": "Preventative Measures", "type": "text" },
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
       { "id": "YourCompany", "label": "Your Company", "type": "text" },
@@ -4825,8 +4859,8 @@
     ]
   },
   "Customer Support during Crisis Email": {
-    "title": "Customer Support during Crisis Email",
-    "template": "Subject: Support and Assistance During [Crisis Event]\n\nDear [CustomerName],\n\nWe understand that the recent [Crisis Event] has created challenges, and we want to assure you that our customer support team is here to assist you. Your satisfaction and well-being are our top priorities during this time.\n\n**How We Are Supporting You:**\n- **Dedicated Support Line:** [Support Contact Information]\n- **Extended Support Hours:** [Details of Extended Hours]\n- **Additional Resources:** [Links to Resources or Help Center]\n\n**What You Can Expect:**\n1. **Timely Assistance:** We are prioritizing all requests and will respond as quickly as possible.\n2. **Updates and Information:** We will keep you informed about any changes or developments related to the crisis.\n3. **Feedback and Concerns:** Please let us know if you have any specific concerns or feedback.\n\nWe appreciate your patience and understanding. If you need immediate assistance, please do not hesitate to reach out to our support team.\n\nSincerely,\n[Your Name]\n[Your Position]\n[Your Company]\n[Contact Information]",
+    "subject": "Customer Support during Crisis Email",
+    "template": "Subject: Support and Assistance During {CrisisEvent}\n\nDear {CustomerName},\n\nWe understand that the recent {CrisisEvent} has created challenges, and we want to assure you that our customer support team is here to assist you. Your satisfaction and well-being are our top priorities during this time.\n\n**How We Are Supporting You:**\n- **Dedicated Support Line:** {SupportContactInformation}\n- **Extended Support Hours:** {ExtendedHours}\n- **Additional Resources:** {Resources}\n\n**What You Can Expect:**\n1. **Timely Assistance:** We are prioritizing all requests and will respond as quickly as possible.\n2. **Updates and Information:** We will keep you informed about any changes or developments related to the crisis.\n3. **Feedback and Concerns:** Please let us know if you have any specific concerns or feedback.\n\nWe appreciate your patience and understanding. If you need immediate assistance, please do not hesitate to reach out to our support team.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourCompany}\n{ContactInformation}",
     "fields": [
       { "id": "CustomerName", "label": "Customer Name", "type": "text" },
       { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
@@ -4842,8 +4876,8 @@
     ]
   },
   "Stakeholder Communication during Crisis": {
-    "title": "Stakeholder Communication during Crisis",
-    "template": "Subject: Update on [Crisis Event] - Stakeholder Communication\n\nDear [StakeholderName],\n\nWe are reaching out to update you on the recent [Crisis Event] and the steps we are taking to manage the situation. As a valued stakeholder, your insight and support are crucial to us during this time.\n\n**Current Situation:**\n- **Overview of the Crisis:** [Brief Description of the Crisis]\n- **Impact on Operations:** [Details on How the Crisis Affects Operations]\n- **Stakeholder Impact:** [Information on How Stakeholders are Affected]\n\n**Actions We Are Taking:**\n1. **[Action 1]**: [Description of Action]\n2. **[Action 2]**: [Description of Action]\n3. **[Action 3]**: [Description of Action]\n\n**Future Steps and Expectations:**\n- **[Upcoming Actions]**\n- **[Timeline for Resolution]**\n- **[Contact for Further Information]**\n\nWe value your continued support and will keep you informed with regular updates. Please feel free to reach out if you have any questions or need additional information.\n\nBest regards,\n[Your Name]\n[Your Position]\n[Your Company]\n[Contact Information]",
+    "subject": "Stakeholder Communication during Crisis",
+    "template": "Subject: Update on {CrisisEvent} - Stakeholder Communication\n\nDear {StakeholderName},\n\nWe are reaching out to update you on the recent {CrisisEvent} and the steps we are taking to manage the situation. As a valued stakeholder, your insight and support are crucial to us during this time.\n\n**Current Situation:**\n- **Overview of the Crisis:** {CrisisOverview}\n- **Impact on Operations:** {ImpactOnOperations}\n- **Stakeholder Impact:** {StakeholderImpact}\n\n**Actions We Are Taking:**\n1. **{Action1}**: {Action1}\n2. **{Action2}**: {Action2}\n3. **{Action3}**: {Action3}\n\n**Future Steps and Expectations:**\n- **{UpcomingActions}**\n- **{TimelineForResolution}**\n- **{ContactForInformation}**\n\nWe value your continued support and will keep you informed with regular updates. Please feel free to reach out if you have any questions or need additional information.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{ContactInformation}",
     "fields": [
       { "id": "StakeholderName", "label": "Stakeholder Name", "type": "text" },
       { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
@@ -4865,8 +4899,8 @@
     ]
   },
   "Crisis Management Follow-Up Email": {
-    "title": "Crisis Management Follow-Up Email",
-    "template": "Subject: Follow-Up on [Crisis Event]\n\nDear [RecipientName],\n\nWe are following up on the recent [Crisis Event] to provide you with additional information and updates. We appreciate your patience and cooperation as we continue to address the situation.\n\n**Key Updates:**\n- **Resolution Status:** [Current Status and Resolution Progress]\n- **Remaining Issues:** [Any Outstanding Issues]\n- **Feedback and Actions Taken:** [Summary of Feedback Received and Actions Taken]\n\n**Next Steps:**\n1. **[Next Step 1]**: [Description]\n2. **[Next Step 2]**: [Description]\n3. **[Next Step 3]**: [Description]\n\n**Additional Support:**\nWe are available to assist with any further questions or concerns you may have. Please contact us at [Support Contact Information] for additional support.\n\nThank you for your continued support and understanding.\n\nSincerely,\n[Your Name]\n[Your Position]\n[Your Company]\n[Contact Information]",
+    "subject": "Crisis Management Follow-Up Email",
+    "template": "Subject: Follow-Up on {CrisisEvent}\n\nDear {RecipientName},\n\nWe are following up on the recent {CrisisEvent} to provide you with additional information and updates. We appreciate your patience and cooperation as we continue to address the situation.\n\n**Key Updates:**\n- **Resolution Status:** {ResolutionStatus}\n- **Remaining Issues:** {RemainingIssues}\n- **Feedback and Actions Taken:** {FeedbackActions}\n\n**Next Steps:**\n1. **{NextStep1}**: {NextStep1}\n2. **{NextStep2}**: {NextStep2}\n3. **{NextStep3}**: {NextStep3}\n\n**Additional Support:**\nWe are available to assist with any further questions or concerns you may have. Please contact us at {SupportContactInformation} for additional support.\n\nThank you for your continued support and understanding.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourCompany}\n{ContactInformation}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },

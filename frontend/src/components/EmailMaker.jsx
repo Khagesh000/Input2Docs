@@ -155,10 +155,18 @@ const EmailMaker = ({ selectedTemplate }) => {
 
       if (!response.ok) {
         const errorData = await response.json();
-      console.error('Error sending email:', errorData);
+        console.error('Error sending email:', errorData);
+      
+      // Display an alert with the error message
       alert(`Error: ${errorData.message || 'Failed to send email'}`);
-      throw new Error(errorData.message || 'Failed to send email');
+
+      // If there are specific missing fields, display them in the alert as well
+      if (errorData.error) {
+        alert(`Missing required fields: ${errorData.error}`);
       }
+
+      throw new Error(errorData.message || 'Failed to send email');
+    }
 
       alert("Email Sent Successfully!!!");
       setShowSuccessMessage(true);
@@ -223,16 +231,16 @@ const EmailMaker = ({ selectedTemplate }) => {
               className="form-control"
             />
           )}
-           {field.type === 'tel' && (
-              <input
-                type="text"
-                id={field.id}
-                name={field.id}
-                value={formData[field.id] || ''}
-                onChange={handleChange}
-                className="form-control"
-              />
-            )}
+          {field.type === 'tel' && (
+            <tel
+            type="text"
+              id={field.id}
+              name={field.id}
+              value={formData[field.id] || ''}
+              onChange={handleChange}
+              className="form-control"
+            />
+          )}
           {field.type === 'date' && (
             <input
               type="date"
@@ -300,6 +308,12 @@ const EmailMaker = ({ selectedTemplate }) => {
       {showSuccessMessage && (
         <div className="success-message">
           <p>Email Sent Successfully!</p>
+        </div>
+      )}
+
+       {validationError && (
+        <div className="alert alert-danger" role="alert">
+          {validationError}
         </div>
       )}
 
