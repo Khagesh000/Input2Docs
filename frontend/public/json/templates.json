@@ -4442,7 +4442,7 @@
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
-      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },{ "id": "YourEmail", "label": "Your Email", "type": "email" },
+      { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
       { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea", "rows":4 }
     ]
@@ -4455,15 +4455,15 @@
       { "id": "FeedbackTopic", "label": "Feedback Topic", "type": "text" },
       { "id": "KeyPointsRaised", "label": "Key Points Raised", "type": "text" },
       { "id": "CommunityConcerns", "label": "Community Concerns", "type": "text" },
-      { "id": "ActionsTaken", "label": "Actions Taken", "type": "text" },
-      { "id": "PlannedImprovements", "label": "Planned Improvements", "type": "text" },
+      { "id": "ActionsTaken", "label": "Actions Taken", "type": "textarea", "rows":4 },
+      { "id": "PlannedImprovements", "label": "Planned Improvements", "type": "textarea", "rows" :4},
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
-      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea", "rows":4 }
     ]
   }
   },
@@ -4476,10 +4476,10 @@
       { "id": "EventDate", "label": "Event Date", "type": "date" },
       { "id": "EventTime", "label": "Event Time", "type": "time" },
       { "id": "EventVenue", "label": "Event Venue", "type": "text" },
-      { "id": "ConferenceTopic", "label": "Conference Topic", "type": "text" },
+      { "id": "ConferenceTopic", "label": "Conference Topic", "type": "textarea", "rows":4 },
       { "id": "KeySpeakers", "label": "Key Speakers", "type": "text" },
-      { "id": "EventPurpose", "label": "Event Purpose", "type": "text" },
-      { "id": "AgendaDetails", "label": "Agenda Details", "type": "text" },
+      { "id": "EventPurpose", "label": "Event Purpose", "type": "textarea", "rows":4 },
+      { "id": "AgendaDetails", "label": "Agenda Details", "type": "textarea", "rows":4 },
       { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
       { "id": "ContactEmail", "label": "Contact Email", "type": "email" },
       { "id": "YourName", "label": "Your Name", "type": "text" },
@@ -4488,7 +4488,7 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
-      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea", "rows":4 }
     ]
   },
   "Invitation to Media Briefing": {
@@ -4498,11 +4498,11 @@
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "EventDate", "label": "Event Date", "type": "date" },
       { "id": "EventTime", "label": "Event Time", "type": "time" },
-      { "id": "EventVenue", "label": "Event Venue", "type": "text" },
-      { "id": "BriefingTopic", "label": "Briefing Topic", "type": "text" },
+      { "id": "EventVenue", "label": "Event Venue", "type": "textarea", "rows":4 },
+      { "id": "BriefingTopic", "label": "Briefing Topic", "type": "textarea", "rows":4 },
       { "id": "SpeakersList", "label": "Speakers List", "type": "text" },
-      { "id": "BriefingObjective", "label": "Briefing Objective", "type": "text" },
-      { "id": "DetailedAgenda", "label": "Detailed Agenda", "type": "text" },
+      { "id": "BriefingObjective", "label": "Briefing Objective", "type": "textarea", "rows":4 },
+      { "id": "DetailedAgenda", "label": "Detailed Agenda", "type": "textarea", "rows":4 },
       { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
       { "id": "ContactEmail", "label": "Contact Email", "type": "email" },
       { "id": "YourName", "label": "Your Name", "type": "text" },
@@ -4511,7 +4511,7 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
-      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea", "rows":4 }
     ]
   },
   "Invitation to Product Launch Event": {
@@ -4525,7 +4525,7 @@
       { "id": "ProductName", "label": "Product Name", "type": "text" },
       { "id": "ProductHighlights", "label": "Product Highlights", "type": "text" },
       { "id": "SpeakersList", "label": "Speakers List", "type": "text" },
-      { "id": "EventAgenda", "label": "Event Agenda", "type": "text" },
+      { "id": "EventAgenda", "label": "Event Agenda", "type": "textarea", "rows":4 },
       { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
       { "id": "ContactEmail", "label": "Contact Email", "type": "email" },
       { "id": "YourName", "label": "Your Name", "type": "text" },
@@ -4534,7 +4534,7 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
-      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea", "rows":4 }
     ]
   },
   "Invitation to Company Open House": {
@@ -4546,8 +4546,8 @@
       { "id": "StartTime", "label": "Start Time", "type": "time" },
       { "id": "EndTime", "label": "End Time", "type": "time" },
       { "id": "EventVenue", "label": "Event Venue", "type": "text" },
-      { "id": "TourDetails", "label": "Tour Details", "type": "text" },
-      { "id": "TeamIntroduction", "label": "Team Introduction", "type": "text" },
+      { "id": "TourDetails", "label": "Tour Details", "type": "textarea", "rows":4 },
+      { "id": "TeamIntroduction", "label": "Team Introduction", "type": "textarea", "rows":4 },
       { "id": "InteractiveSessions", "label": "Interactive Sessions", "type": "text" },
       { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
       { "id": "ContactEmail", "label": "Contact Email", "type": "email" },
@@ -4557,7 +4557,7 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
-      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea", "rows":4 }
     ]
   },
   "Invitation to Exclusive Media Event": {
@@ -4568,10 +4568,10 @@
       { "id": "EventDate", "label": "Event Date", "type": "date" },
       { "id": "EventTime", "label": "Event Time", "type": "time" },
       { "id": "EventVenue", "label": "Event Venue", "type": "text" },
-      { "id": "EventPurpose", "label": "Event Purpose", "type": "text" },
+      { "id": "EventPurpose", "label": "Event Purpose", "type": "textarea", "rows":4 },
       { "id": "SpecialGuests", "label": "Special Guests", "type": "text" },
-      { "id": "EventHighlights", "label": "Event Highlights", "type": "text" },
-      { "id": "AgendaDetails", "label": "Agenda Details", "type": "text" },
+      { "id": "EventHighlights", "label": "Event Highlights", "type": "textarea", "rows":4 },
+      { "id": "AgendaDetails", "label": "Agenda Details", "type": "textarea", "rows":4 },
       { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
       { "id": "ContactEmail", "label": "Contact Email", "type": "email" },
       { "id": "YourName", "label": "Your Name", "type": "text" },
@@ -4580,7 +4580,7 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
-      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea", "rows":4 }
     ]
   },
   "Invitation to Media Roundtable": {
@@ -4591,9 +4591,9 @@
       { "id": "EventDate", "label": "Event Date", "type": "date" },
       { "id": "EventTime", "label": "Event Time", "type": "time" },
       { "id": "EventVenue", "label": "Event Venue", "type": "text" },
-      { "id": "DiscussionTopic", "label": "Discussion Topic", "type": "text" },
+      { "id": "DiscussionTopic", "label": "Discussion Topic", "type": "textarea", "rows":4 },
       { "id": "ParticipantsList", "label": "Participants List", "type": "text" },
-      { "id": "RoundtableObjective", "label": "Roundtable Objective", "type": "text" },
+      { "id": "RoundtableObjective", "label": "Roundtable Objective", "type": "textarea", "rows":4 },
       { "id": "DetailedAgenda", "label": "Detailed Agenda", "type": "text" },
       { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
       { "id": "ContactEmail", "label": "Contact Email", "type": "email" },
@@ -4603,7 +4603,7 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
-      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea", "rows":4 }
     ]
   },
   "Invitation to Industry Awards Ceremony": {
@@ -4614,9 +4614,9 @@
       { "id": "EventDate", "label": "Event Date", "type": "date" },
       { "id": "EventTime", "label": "Event Time", "type": "time" },
       { "id": "EventVenue", "label": "Event Venue", "type": "text" },
-      { "id": "AwardsCategories", "label": "Awards Categories", "type": "text" },
+      { "id": "AwardsCategories", "label": "Awards Categories", "type": "textarea", "rows":4 },
       { "id": "SpecialGuests", "label": "Special Guests", "type": "text" },
-      { "id": "EntertainmentDetails", "label": "Entertainment Details", "type": "text" },
+      { "id": "EntertainmentDetails", "label": "Entertainment Details", "type": "textarea", "rows":4 },
       { "id": "EventAgenda", "label": "Event Agenda", "type": "text" },
       { "id": "RSVPDeadline", "label": "RSVP Deadline", "type": "date" },
       { "id": "ContactEmail", "label": "Contact Email", "type": "email" },
@@ -4626,7 +4626,7 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "YourPhone", "label": "Your Phone", "type": "text" },
-      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "text" }
+      { "id": "BriefCompanyDescription", "label": "Brief Company Description", "type": "textarea", "rows":4 }
     ]
   }
   },
@@ -4642,7 +4642,7 @@
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "Industry", "label": "Industry", "type": "text" },
       { "id": "Trend1", "label": "Trend 1", "type": "text" },
-      { "id": "Description", "label": "Description", "type": "text" },
+      { "id": "Description", "label": "Description", "type": "textarea", "rows":4 },
       { "id": "Trend2", "label": "Trend 2", "type": "text" },
       { "id": "Trend3", "label": "Trend 3", "type": "text" },
       { "id": "ImpactDetails", "label": "Impact Details", "type": "text" },
@@ -4658,7 +4658,7 @@
       { "id": "CompanyName", "label": "Company Name", "type": "text" },
       { "id": "VisionStatement", "label": "Vision Statement", "type": "text" },
       { "id": "Value1", "label": "Core Value 1", "type": "text" },
-      { "id": "Explanation", "label": "Explanation", "type": "text" },
+      { "id": "Explanation", "label": "Explanation", "type": "textarea", "rows":4 },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "Value2", "label": "Core Value 2", "type": "text" },
@@ -4666,7 +4666,7 @@
       { "id": "Goal1", "label": "Strategic Goal 1", "type": "text" },
       { "id": "Goal2", "label": "Strategic Goal 2", "type": "text" },
       { "id": "Goal3", "label": "Strategic Goal 3", "type": "text" },
-      { "id": "FuturePlans", "label": "Future Plans", "type": "text" },
+      { "id": "FuturePlans", "label": "Future Plans", "type": "textarea", "rows":4 },
       { "id": "ContactEmail", "label": "Contact Email", "type": "email" }
     ]
   },
@@ -4683,8 +4683,8 @@
       { "id": "Initiative2", "label": "Initiative 2", "type": "text" },
       { "id": "Initiative3", "label": "Initiative 3", "type": "text" },
       { "id": "Description", "label": "Description", "type": "text" },
-      { "id": "CommunityImpact", "label": "Community Impact", "type": "text" },
-      { "id": "FutureCommitments", "label": "Future Commitments", "type": "text" },
+      { "id": "CommunityImpact", "label": "Community Impact", "type": "textarea", "rows":4 },
+      { "id": "FutureCommitments", "label": "Future Commitments", "type": "textarea", "rows":4 },
       { "id": "ContactEmail", "label": "Contact Email", "type": "email" }
     ]
   },
@@ -4702,10 +4702,10 @@
       { "id": "Details", "label": "Details", "type": "text" },
       { "id": "Regulation2", "label": "Regulation 2", "type": "text" },
       { "id": "Regulation3", "label": "Regulation 3", "type": "text" },
-      { "id": "BusinessImplications", "label": "Business Implications", "type": "text" },
-      { "id": "AdaptationStrategies", "label": "Adaptation Strategies", "type": "text" },
+      { "id": "BusinessImplications", "label": "Business Implications", "type": "textarea", "rows":4 },
+      { "id": "AdaptationStrategies", "label": "Adaptation Strategies", "type": "textarea", "rows":4 },
       { "id": "ConsumerImpact", "label": "Consumer Impact", "type": "text" },
-      { "id": "PotentialOutcomes", "label": "Potential Outcomes", "type": "text" },
+      { "id": "PotentialOutcomes", "label": "Potential Outcomes", "type": "textarea", "rows":4 },
       { "id": "ContactEmail", "label": "Contact Email", "type": "email" }
     ]
   },
@@ -4719,16 +4719,16 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "Trend1", "label": "Economic Trend 1", "type": "text" },
-      { "id": "Description", "label": "Description", "type": "text" },
+      { "id": "Description", "label": "Description", "type": "textarea", "rows":4 },
       { "id": "Trend2", "label": "Economic Trend 2", "type": "text" },
       { "id": "Trend3", "label": "Economic Trend 3", "type": "text" },
-      { "id": "BusinessImpact", "label": "Impact on Businesses", "type": "text" },
+      { "id": "BusinessImpact", "label": "Impact on Businesses", "type": "textarea", "rows":4 },
       { "id": "PotentialChallenges", "label": "Potential Challenges", "type": "text" },
       { "id": "Opportunities", "label": "Opportunities", "type": "text" },
       { "id": "ConsumerImpact", "label": "Impact on Consumers", "type": "text" },
       { "id": "KeyAreas", "label": "Key Areas Affected", "type": "text" },
-      { "id": "EconomicOutlook", "label": "Future Economic Outlook", "type": "text" },
-      { "id": "RecommendedActions", "label": "Recommended Actions", "type": "text" },
+      { "id": "EconomicOutlook", "label": "Future Economic Outlook", "type": "textarea", "rows":4 },
+      { "id": "RecommendedActions", "label": "Recommended Actions", "type": "textarea", "rows":4 },
       { "id": "ContactEmail", "label": "Contact Email", "type": "email" }
     ]
   },
@@ -4744,15 +4744,15 @@
       { "id": "Advancement1", "label": "Technological Advancement 1", "type": "text" },
       { "id": "Advancement2", "label": "Technological Advancement 2", "type": "text" },
       { "id": "Advancement3", "label": "Technological Advancement 3", "type": "text" },
-      { "id": "Description", "label": "Description", "type": "text" },
+      { "id": "Description", "label": "Description", "type": "textarea", "rows":4 },
       { "id": "Industries", "label": "Industries Affected", "type": "text" },
       { "id": "IndustryImpacts", "label": "Industry Impacts", "type": "text" },
       { "id": "NewOpportunities", "label": "New Opportunities", "type": "text" },
-      { "id": "SocietalImpacts", "label": "Societal Impacts", "type": "text" },
+      { "id": "SocietalImpacts", "label": "Societal Impacts", "type": "textarea", "rows":4 },
       { "id": "KeyAreas", "label": "Key Areas Affected", "type": "text" },
       { "id": "FutureTrends", "label": "Future Trends", "type": "text" },
-      { "id": "FutureOpportunities", "label": "Future Opportunities", "type": "text" },
-      { "id": "Challenges", "label": "Challenges", "type": "text" },
+      { "id": "FutureOpportunities", "label": "Future Opportunities", "type": "textarea", "rows":4 },
+      { "id": "Challenges", "label": "Challenges", "type": "textarea", "rows":4 },
       { "id": "ContactEmail", "label": "Contact Email", "type": "email" }
     ]
   },
@@ -4766,16 +4766,16 @@
       { "id": "Strategy1", "label": "Engagement Strategy 1", "type": "text" },
       { "id": "Strategy2", "label": "Engagement Strategy 2", "type": "text" },
       { "id": "Strategy3", "label": "Engagement Strategy 3", "type": "text" },
-      { "id": "Description", "label": "Description", "type": "text" },
+      { "id": "Description", "label": "Description", "type": "textarea", "rows":4 },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "CommunityBenefits", "label": "Community Benefits", "type": "text" },
       { "id": "PositiveOutcomes", "label": "Positive Outcomes", "type": "text" },
-      { "id": "EnhancedRelations", "label": "Enhanced Relations", "type": "text" },
+      { "id": "EnhancedRelations", "label": "Enhanced Relations", "type": "textarea", "rows":4 },
       { "id": "OrganizationRole", "label": "Role of Organizations", "type": "text" },
       { "id": "ImpactDetails", "label": "Impact Details", "type": "text" },
       { "id": "SupportForInitiatives", "label": "Support for Initiatives", "type": "text" },
-      { "id": "FutureDirections", "label": "Future Directions", "type": "text" },
+      { "id": "FutureDirections", "label": "Future Directions", "type": "textarea", "rows":4 },
       { "id": "ContactEmail", "label": "Contact Email", "type": "email" }
     ]
   }
@@ -4783,32 +4783,37 @@
   "Crisis Communication Email":{
     "Initial Crisis Response Email": {
     "subject": "Initial Response to {CrisisEvent}",
-    "template": "Subject: Initial Response to {CrisisEvent}\n\nDear {RecipientName},\n\nWe are writing to acknowledge the recent {CrisisEvent} and to provide you with an initial response. We understand the seriousness of the situation and want to assure you that we are taking immediate action to address it.\n\n**Situation Overview:**\n- **Event:** {BriefDescriptionOfCrisisEvent}\n- **Date and Time:** {DateTime}\n- **Current Status:** {CurrentStatus}\n\n**Immediate Actions Taken:**\n1. **{Action1}**: {Description1}\n2. **{Action2}**: {Description2}\n3. **{Action3}**: {Description3}\n\nWe are committed to keeping you informed as we continue to manage the situation. Please do not hesitate to reach out with any questions or concerns.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourCompany}\n{ContactInformation}",
+    "template": "Subject: Initial Response to {CrisisEvent}\n\nDear {RecipientName},\n\nWe are writing to acknowledge the recent {CrisisEvent} and to provide you with an initial response. We understand the seriousness of the situation and want to assure you that we are taking immediate action to address it.\n\n**Situation Overview:**\n- **Event:** {BriefDescriptionOfCrisisEvent}\n- **Date and Time:** {Date}{Time}\n- **Current Status:** {CurrentStatus}\n\n**Immediate Actions Taken:**\n1. **{Action1}**: {Description1}\n2. **{Action2}**: {Description2}\n3. **{Action3}**: {Description3}\n\nWe are committed to keeping you informed as we continue to manage the situation. Please do not hesitate to reach out with any questions or concerns.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourCompany}\n{ContactInformation}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
-      { "id": "DateTime", "label": "Date and Time", "type": "text" },
+      { "id": "Date", "label": "Date", "type": "date" },
+      { "id": "Time", "label": "Time", "type": "time" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "CurrentStatus", "label": "Current Status", "type": "text" },
       { "id": "Action1", "label": "Immediate Action 1", "type": "text" },
       { "id": "Action2", "label": "Immediate Action 2", "type": "text" },
       { "id": "Action3", "label": "Immediate Action 3", "type": "text" },
+      { "id": "Description1", "label": "Description 1", "type": "textarea", "rows":4  },
+      { "id": "Description2", "label": "Description 2", "type": "textarea", "rows":4  },
+      { "id": "Description3", "label": "Description 3", "type": "textarea", "rows":4  },
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
       { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "BriefDescriptionOfCrisisEvent", "label": "Your Position", "type": "textarea", "rows":4  },
       { "id": "ContactInformation", "label": "Contact Information", "type": "text" }
     ]
   },
   "Update on Crisis Situation": {
     "subject": "Update on {CrisisEvent}",
-    "template": "Subject: Update on {CrisisEvent}\n\nDear {RecipientName},\n\nWe are providing you with an update on the ongoing {CrisisEvent}. We want to keep you informed about the latest developments and the actions we are taking.\n\n**Current Situation:**\n- **Update:** {CurrentSituation}\n- **Timeline:** {TimelineOfEvents}\n- **Impact:** {ImpactDetails}\n\n**Ongoing Actions:**\n1. **{Action1}**: {Description1}\n2. **{Action2}**: {Description2}\n3. **{Action3}**: {Description3}\n\nWe appreciate your patience and understanding as we work through this issue. We will continue to provide updates as necessary.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{ContactInformation}",
+    "template": "Subject: Update on {CrisisEvent}\n\nDear {RecipientName},\n\nWe are providing you with an update on the ongoing {CrisisEvent}. We want to keep you informed about the latest developments and the actions we are taking.\n\n**Current Situation:**\n- **Update:** {CurrentSituation}\n- **Timeline:** {Timeline}\n- **Impact:** {ImpactDetails}\n\n**Ongoing Actions:**\n1. **{Action1}**: {Description1}\n2. **{Action2}**: {Description2}\n3. **{Action3}**: {Description3}\n\nWe appreciate your patience and understanding as we work through this issue. We will continue to provide updates as necessary.\n\nBest regards,\n{YourName}\n{YourPosition}\n{YourCompany}\n{ContactInformation}",
     "fields": [
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
       { "id": "CurrentSituation", "label": "Current Situation", "type": "text" },
       { "id": "Timeline", "label": "Timeline of Events", "type": "text" },
-      { "id": "ImpactDetails", "label": "Impact Details", "type": "text" },
+      { "id": "ImpactDetails", "label": "Impact Details", "type": "textarea", "rows":4  },
       { "id": "Action1", "label": "Ongoing Action 1", "type": "text" },
       { "id": "Action2", "label": "Ongoing Action 2", "type": "text" },
       { "id": "Action3", "label": "Ongoing Action 3", "type": "text" },
@@ -4817,6 +4822,9 @@
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
       { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "Description1", "label": "Description 1", "type": "textarea", "rows":4  },
+      { "id": "Description2", "label": "Description 2", "type": "textarea", "rows":4  },
+      { "id": "Description3", "label": "Description 3", "type": "textarea", "rows":4  },
       { "id": "ContactInformation", "label": "Contact Information", "type": "text" }
     ]
   },
@@ -4828,7 +4836,7 @@
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
-      { "id": "SpecificIssue", "label": "Specific Issue", "type": "text" },
+      { "id": "SpecificIssue", "label": "Specific Issue", "type": "textarea", "rows":4  },
       { "id": "Action1", "label": "Planned Action 1", "type": "text" },
       { "id": "Action2", "label": "Planned Action 2", "type": "text" },
       { "id": "Action3", "label": "Planned Action 3", "type": "text" },
@@ -4836,6 +4844,9 @@
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
       { "id": "YourCompany", "label": "Your Company", "type": "text" },
+      { "id": "DescriptionOfPlannedAction1", "label": "Description 1", "type": "textarea", "rows":4  },
+      { "id": "DescriptionOfPlannedAction2", "label": "Description 2", "type": "textarea", "rows":4  },
+      { "id": "DescriptionOfPlannedAction3", "label": "Description 3", "type": "textarea", "rows":4  },
       { "id": "ContactInformation", "label": "Contact Information", "type": "text" }
     ]
   },
@@ -4851,9 +4862,12 @@
       { "id": "Action2", "label": "Resolution Action 2", "type": "text" },
       { "id": "Action3", "label": "Resolution Action 3", "type": "text" },
       { "id": "CurrentStatus", "label": "Current Status", "type": "text" },
-      { "id": "DetailsOfMeasures", "label": "Preventative Measures", "type": "text" },
+      { "id": "DetailsOfMeasures", "label": "Preventative Measures", "type": "textarea", "rows":4  },
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
+      { "id": "Description1", "label": "Description 1", "type": "textarea", "rows":4  },
+      { "id": "Description2", "label": "Description 2", "type": "textarea", "rows":4  },
+      { "id": "Description3", "label": "Description 3", "type": "textarea", "rows":4  },
       { "id": "YourCompany", "label": "Your Company", "type": "text" },
       { "id": "ContactInformation", "label": "Contact Information", "type": "text" }
     ]
@@ -4868,7 +4882,7 @@
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "SupportContactInformation", "label": "Support Contact Information", "type": "text" },
       { "id": "ExtendedHours", "label": "Extended Support Hours", "type": "text" },
-      { "id": "Resources", "label": "Additional Resources", "type": "text" },
+      { "id": "Resources", "label": "Additional Resources", "type": "textarea", "rows":4  },
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
       { "id": "YourCompany", "label": "Your Company", "type": "text" },
@@ -4881,16 +4895,16 @@
     "fields": [
       { "id": "StakeholderName", "label": "Stakeholder Name", "type": "text" },
       { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
-      { "id": "CrisisOverview", "label": "Overview of the Crisis", "type": "text" },
-      { "id": "ImpactOnOperations", "label": "Impact on Operations", "type": "text" },
+      { "id": "CrisisOverview", "label": "Overview of the Crisis", "type": "textarea", "rows":4  },
+      { "id": "ImpactOnOperations", "label": "Impact on Operations", "type": "textarea", "rows":4  },
       { "id": "StakeholderImpact", "label": "Stakeholder Impact", "type": "text" },
       { "id": "Action1", "label": "Action 1", "type": "text" },
       { "id": "Action2", "label": "Action 2", "type": "text" },
       { "id": "SenderEmail", "label": "Your Email", "type": "email" },
       { "id": "RecipientEmail", "label": "Recipient Email", "type": "email" },
       { "id": "Action3", "label": "Action 3", "type": "text" },
-      { "id": "UpcomingActions", "label": "Upcoming Actions", "type": "text" },
-      { "id": "TimelineForResolution", "label": "Timeline for Resolution", "type": "text" },
+      { "id": "UpcomingActions", "label": "Upcoming Actions", "type": "textarea", "rows":4  },
+      { "id": "TimelineForResolution", "label": "Timeline for Resolution", "type": "textarea", "rows":4  },
       { "id": "ContactForInformation", "label": "Contact for Further Information", "type": "text" },
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
@@ -4905,8 +4919,8 @@
       { "id": "RecipientName", "label": "Recipient Name", "type": "text" },
       { "id": "CrisisEvent", "label": "Crisis Event", "type": "text" },
       { "id": "ResolutionStatus", "label": "Resolution Status", "type": "text" },
-      { "id": "RemainingIssues", "label": "Remaining Issues", "type": "text" },
-      { "id": "FeedbackActions", "label": "Feedback and Actions Taken", "type": "text" },
+      { "id": "RemainingIssues", "label": "Remaining Issues", "type": "textarea", "rows":4  },
+      { "id": "FeedbackActions", "label": "Feedback and Actions Taken", "type": "textarea", "rows":4  },
       { "id": "NextStep1", "label": "Next Step 1", "type": "text" },
       { "id": "NextStep2", "label": "Next Step 2", "type": "text" },
       { "id": "NextStep3", "label": "Next Step 3", "type": "text" },

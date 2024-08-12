@@ -142,7 +142,7 @@ const EmailMaker = ({ selectedTemplate }) => {
         controller.abort();
       }, 60000);
 
-      const response = await fetch('http://127.0.0.1:8000/api/send-email/', {
+      const response = await fetch('https://input2docs.onrender.com/api/send-email/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -232,8 +232,18 @@ const EmailMaker = ({ selectedTemplate }) => {
             />
           )}
           {field.type === 'tel' && (
-            <tel
-            type="text"
+            <input
+              type="text"
+              id={field.id}
+              name={field.id}
+              value={formData[field.id] || ''}
+              onChange={handleChange}
+              className="form-control"
+            />
+          )}
+          {field.type === 'time' && (
+            <input
+              type="time"
               id={field.id}
               name={field.id}
               value={formData[field.id] || ''}
