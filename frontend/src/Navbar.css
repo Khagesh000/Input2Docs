@@ -15,15 +15,6 @@
   color: inherit; /* Prevent color change on hover */
 }
 
-.brand-input {
-  color: wheat; /* Wheat color for Input */
-}
-
-.brand-2docs {
-  color: red; /* Red color for 2Docs */
-}
-
-/* Navbar fixed at the top */
 .navbar {
   position: fixed;
   width: 100%;
@@ -31,11 +22,10 @@
   background-color: #343a40; /* Dark background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a more attractive look */
   padding: 0.5rem 1rem; /* Adjust padding for better spacing */
-  overflow: hidden; /* Prevent content overflow */
   position: relative; /* Ensure positioning for pseudo-elements */
 }
 
-/* Curtain effect at the end of the navbar */
+
 .navbar::after {
   content: '';
   display: block;
@@ -49,13 +39,24 @@
   z-index: 1; /* Ensure it is above other content */
 }
 
+
+
+.brand-input {
+  color: wheat; /* Wheat color for Input */
+}
+
+.brand-2docs {
+  color: red; /* Red color for 2Docs */
+}
+
 /* Ensure the page content moves with the navbar */
 .content {
   transition: margin-top 0.5s ease-out;
 }
 
 .content-expanded {
-  margin-top: 60px; /* Adjust based on the navbar height */
+  margin-top: 60px;
+  margin-bottom: 20%; /* Adjust based on the navbar height */
 }
 
 /* Navbar items */
@@ -84,7 +85,8 @@
 }
 
 .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
-  background-color: #495057; /* Darker background on hover */
+  background-color: #495057; 
+  color: white;/* Darker background on hover */
 }
 
 /* Custom Menu Button */
@@ -186,3 +188,4 @@
     outline: none;
   }
 }
+

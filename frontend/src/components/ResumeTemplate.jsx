@@ -44,14 +44,14 @@ const templateInputFields = {
 const generateTemplateContent = (formData, templateType) => {
   if (templateType === 1) {
     return `
-      <div style="display: flex; height: 100%;">
+      <div style="display: flex; height: 100%; background-color: #f5f5f5; color: #000;">
         <div style="flex: 1; padding-left: 4px; background-color: wheat; min-height: 1120px;">
           <h1>${formData.name}</h1>
           <h2>${formData.jobTitle}</h2>
           <h3>Personal Info</h3>
-          <p>${formData.principal}<br>${formData.school}<br>${formData.address}</p>
+          <p style="color: #000;">${formData.principal}<br>${formData.school}<br>${formData.address}</p>
           <h3>Address</h3>
-          <p>${formData.address}</p>
+          <p style="color: #000;">${formData.address}</p>
           <p>Phone<br>${formData.phone}</p>
           <p>E-mail<br>${formData.email}</p>
           <p>LinkedIn<br>${formData.linkedin}</p>
@@ -67,8 +67,8 @@ const generateTemplateContent = (formData, templateType) => {
         <div style="flex: 1; padding: 20px; background-color: #ea0909; min-height: 1120px;">
           <h1>${formData.name}</h1>
           <h2>${formData.jobTitle}</h2>
-          <p><strong>Address:</strong><br>${formData.address}</p>
-          <p><strong>Phone:</strong> ${formData.phone}</p>
+          <p style="color: #f5e5e5;"><strong>Address:</strong><br>${formData.address}</p>
+          <p style="color: #f5e5e5;"><strong>Phone:</strong> ${formData.phone}</p>
           <p><strong>Email:</strong> ${formData.email}</p>
           <p><strong>LinkedIn:</strong> ${formData.linkedin}</p>
           <p><strong>Date:</strong> ${formData.date}</p>
@@ -242,7 +242,7 @@ const handleDownloadPNG = () => {
 
   // Apply global styles to ensure consistent appearance
   tempDiv.style.fontFamily = 'Arial, sans-serif';
-  tempDiv.style.color = '#000'; // Text color
+  
   // Background color
   tempDiv.style.width = '210mm';
   tempDiv.style.height = '296mm';
@@ -250,9 +250,7 @@ const handleDownloadPNG = () => {
 
   // Apply specific styles to all child elements
   tempDiv.querySelectorAll('*').forEach(element => {
-    element.style.color = '#000'; // Text color
-    // Background color
-   // Ensure consistent font size
+   
   });
 
   document.body.appendChild(tempDiv);
@@ -275,14 +273,11 @@ const handleDownloadPDF = () => {
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = content;
   tempDiv.style.fontFamily = 'Arial, sans-serif';
-  tempDiv.style.color = '#000'; // Ensure all text is black
- // Background color
+  
 
   // Apply specific styles to all child elements
   tempDiv.querySelectorAll('*').forEach(element => {
-    element.style.color = '#000'; // Text color
-    // Background color
-    // Ensure consistent font size
+   
   });
 
   document.body.appendChild(tempDiv);
