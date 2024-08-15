@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import '../Navbar.css'
+import '../Navbar.css';
 const Navbar = () => {
+  const [isNavbarOpen, setNavbarOpen] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -52,7 +53,7 @@ const Navbar = () => {
                 role="button"
                 onClick={toggleDropdown}
               >
-                Dropdown
+                DROPDOWN
               </a>
               <ul className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`} aria-labelledby="navbarDropdown">
                 <li><a className="dropdown-item" href="/cover">CoverLetter</a></li>

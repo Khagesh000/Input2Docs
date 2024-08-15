@@ -16,70 +16,8 @@ import img5 from '../assets/images/cover_letter1.png';
 import img6 from '../assets/images/cover_letter.png';
 import img7 from '../assets/images/cover_letter1.png';
 
-const templateInputFields = {
-  1: [
-    { label: 'Name', name: 'name', type: 'text' },
-    { label: 'Job Title', name: 'jobTitle', type: 'text' },
-    { label: 'Principal', name: 'principal', type: 'text' },
-    { label: 'School', name: 'school', type: 'text' },
-    { label: 'Address', name: 'address', type: 'text' },
-    { label: 'Phone', name: 'phone', type: 'text' },
-    { label: 'Email', name: 'email', type: 'email' },
-    { label: 'LinkedIn', name: 'linkedin', type: 'text' },
-    { label: 'Date', name: 'date', type: 'date' },
-    { label: 'Letter Content', name: 'letterContent', type: 'textarea' },
-  ],
-  2: [
-    { label: 'Name', name: 'name', type: 'text' },
-    { label: 'Job Title', name: 'jobTitle', type: 'text' },
-    { label: 'Address', name: 'address', type: 'text' },
-    { label: 'Phone', name: 'phone', type: 'text' },
-    { label: 'Email', name: 'email', type: 'email' },
-    { label: 'LinkedIn', name: 'linkedin', type: 'text' },
-    { label: 'Date', name: 'date', type: 'date' },
-    { label: 'Letter Content', name: 'letterContent', type: 'textarea' },
-  ],
-};
-
-const generateTemplateContent = (formData, templateType) => {
-  if (templateType === 1) {
-    return `
-      <div style="display: flex; height: 100%;">
-        <div style="flex: 1; padding-left: 4px; background-color: lightblue; min-height: 1120px;">
-          <h1>${formData.name}</h1>
-          <h2>${formData.jobTitle}</h2>
-          <h3>Personal Info</h3>
-          <p>${formData.principal}<br>${formData.school}<br>${formData.address}</p>
-          <h3>Address</h3>
-          <p>${formData.address}</p>
-          <p>Phone<br>${formData.phone}</p>
-          <p>E-mail<br>${formData.email}</p>
-          <p>LinkedIn<br>${formData.linkedin}</p>
-          <p>Date<br>${formData.date}</p>
-        </div>
-        <div style="flex: 2; padding: 10px;">
-          <p>${formData.letterContent}</p>
-        </div>
-      </div>`;
-  } else if (templateType === 2) {
-    return `
-      <div style="display: flex; height: 100%;">
-        <div style="flex: 1; padding: 20px; background-color: #ea0909; min-height: 1120px;">
-          <h1>${formData.name}</h1>
-          <h2>${formData.jobTitle}</h2>
-          <p><strong>Address:</strong><br>${formData.address}</p>
-          <p><strong>Phone:</strong> ${formData.phone}</p>
-          <p><strong>Email:</strong> ${formData.email}</p>
-          <p><strong>LinkedIn:</strong> ${formData.linkedin}</p>
-          <p><strong>Date:</strong> ${formData.date}</p>
-        </div>
-        <div style="flex: 2; padding: 20px;">
-          <p>${formData.letterContent}</p>
-        </div>
-      </div>`;
-  }
-  return '';
-};
+import { templateInputFields } from './CoverTemplateInputfields';
+import { generateTemplateContent } from './CoverGeneralTemplate';
 
 export default function CoverLetterTemplates() {
   const containerRef = useRef(null);

@@ -4337,7 +4337,7 @@
     ]
   },
   "Compliance Policy Implementation": {
-    "template": "{YourName}\n{YourPosition}\n{YourCompany}\n{YourAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\n{RecipientName}\n{RecipientPosition}\n{RecipientCompany}\n{RecipientAddress}\n{City}, {State}, {ZIPCode}\n\nDear {RecipientName},\n\nWe are pleased to inform you that our company has implemented new compliance policies in accordance with {SpecificRegulation}. These policies are designed to enhance our adherence to regulatory requirements and improve overall operational standards.\n\nWe encourage all employees and partners to review the attached policy documents and familiarize themselves with the new procedures. Should you have any questions, please contact the compliance department.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourCompany}",
+    "template": "{YourName}\n{YourPosition}\n{YourCompany}\n{YourAddress}\n{City}, {State}, {ZIPCode}\n{CurrentDate}\n\n{RecipientName}\n{RecipientPosition}\n{RecipientCompany}\n{RecipientAddress}\n{City}, {State}, {ZIPCode}\n\nDear {RecipientName},\n\nWe are pleased to inform you that our company has implemented new compliance policies in accordance with {SpecificRegulation}.\n These policies are designed to enhance our adherence to regulatory requirements and improve overall operational standards.\n\nWe encourage all employees and partners to review the attached policy documents and familiarize themselves with the new procedures.\n Should you have any questions, please contact the compliance department.\n\nSincerely,\n{YourName}\n{YourPosition}\n{YourCompany}",
     "fields": [
       { "id": "YourName", "label": "Your Name", "type": "text" },
       { "id": "YourPosition", "label": "Your Position", "type": "text" },
