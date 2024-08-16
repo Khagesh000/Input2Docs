@@ -9,7 +9,7 @@ import '../ResumeTemplate.css'; // Ensure this path is correct
 // Import images for templates
 import img from '../assets/images/cover_letter.png';
 import img1 from '../assets/images/cover_letter1.png';
-import img2 from '../assets/images/cover_letter.png';
+import img2 from '../assets/images/resumetemplates.png';
 import img3 from '../assets/images/cover_letter1.png';
 import img4 from '../assets/images/cover_letter.png';
 import img5 from '../assets/images/cover_letter1.png';
@@ -38,6 +38,12 @@ export default function ResumeTemplate() {
     linkedin: '',
     date: '',
     letterContent: '',
+    experience: [],  // Updated to an array
+    summary: '', 
+    education: [],    // Updated to an array
+    skills: [] 
+    
+
   });
   const [currentInputIndex, setCurrentInputIndex] = useState(0); // State for managing input index
   const [selectedTemplateType, setSelectedTemplateType] = useState(1); // Add state for template type
@@ -132,15 +138,19 @@ export default function ResumeTemplate() {
 
   const handleUseTemplate = (index) => {
     setSelectedImage(images[index]);
-    setSelectedTemplateType(index % 2 === 0 ? 1 : 2); // Toggle between template types
-    setContent(generateTemplateContent(formData, index % 2 === 0 ? 1 : 2));
-
+  
+    // Map index to template type, assuming each index corresponds to a specific template type.
+    const templateType = (index % 3) + 1; // Example: Mapping index to template type (1, 2, or 3)
+  
+    setSelectedTemplateType(templateType);
+    setContent(generateTemplateContent(formData, templateType));
+  
     // Force re-render of the editor
     setEditorKey(prevKey => prevKey + 1);
-
+  
     const selectedImageElement = containerRef.current.querySelector(`.template-card:nth-child(${index + 1})`);
     selectedImageRef.current = selectedImageElement;
-
+  
     setTimeout(() => {
       if (selectedImageElement) {
         selectedImageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -151,6 +161,7 @@ export default function ResumeTemplate() {
       });
     }, 300); // Delay to ensure content is updated
   };
+  
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -184,12 +195,10 @@ const handleDownloadPNG = () => {
   // Background color
   tempDiv.style.width = '210mm';
   tempDiv.style.height = '296mm';
+  
 
 
-  // Apply specific styles to all child elements
-  tempDiv.querySelectorAll('*').forEach(element => {
-   
-  });
+
 
   document.body.appendChild(tempDiv);
 
@@ -197,6 +206,7 @@ const handleDownloadPNG = () => {
   { scale: 2,
     width: tempDiv.clientWidth,
     height: tempDiv.clientHeight,
+    useCORS: true // To handle cross-origin issues with external resources
    }).then((canvas) => {
     const link = document.createElement('a');
     link.href = canvas.toDataURL('image/png');
@@ -213,10 +223,7 @@ const handleDownloadPDF = () => {
   tempDiv.style.fontFamily = 'Arial, sans-serif';
   
 
-  // Apply specific styles to all child elements
-  tempDiv.querySelectorAll('*').forEach(element => {
-   
-  });
+
 
   document.body.appendChild(tempDiv);
 

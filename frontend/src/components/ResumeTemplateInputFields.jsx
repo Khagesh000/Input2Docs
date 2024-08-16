@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const templateInputFields = {
   1: [
     { label: 'Name', name: 'name', type: 'text' },
@@ -22,5 +20,36 @@ export const templateInputFields = {
     { label: 'LinkedIn', name: 'linkedin', type: 'text' },
     { label: 'Date', name: 'date', type: 'date' },
     { label: 'Letter Content', name: 'letterContent', type: 'textarea' },
+  ],
+  3: [
+    { label: 'Name', name: 'name', type: 'text' },
+    { label: 'Job Title', name: 'jobTitle', type: 'text' },
+    { label: 'Summary', name: 'summary', type: 'textarea' },
+    {
+      label: 'Experience',
+      name: 'experience',
+      type: 'object',
+      fields: [
+        { label: 'Position', name: 'position', type: 'text' },
+        { label: 'Company', name: 'company', type: 'text' },
+        { label: 'Location', name: 'location', type: 'text' },
+        { label: 'Start Date', name: 'startDate', type: 'text' },
+        { label: 'End Date', name: 'endDate', type: 'text' },
+        { label: 'Responsibilities', name: 'responsibilities', type: 'textarea' },
+      ]
+    },
+    {
+      label: 'Education',
+      name: 'education',
+      type: 'object',
+      fields: [
+        { label: 'Degree', name: 'degree', type: 'text' },
+        { label: 'School', name: 'school', type: 'text' },
+        { label: 'Location', name: 'location', type: 'text' },
+        { label: 'Start Date', name: 'startDate', type: 'text' },
+        { label: 'End Date', name: 'endDate', type: 'text' },
+      ]
+    },
+    { label: 'Skills', name: 'skills', type: 'textarea' },
   ],
 };

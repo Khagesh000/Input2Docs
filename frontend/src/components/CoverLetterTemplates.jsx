@@ -132,8 +132,12 @@ export default function CoverLetterTemplates() {
 
   const handleUseTemplate = (index) => {
     setSelectedImage(images[index]);
-    setSelectedTemplateType(index % 2 === 0 ? 1 : 2); // Toggle between template types
-    setContent(generateTemplateContent(formData, index % 2 === 0 ? 1 : 2));
+    
+    // Map index to template type, assuming each index corresponds to a specific template type.
+    const templateType = (index % 3) + 1; // Example: Mapping index to template type (1, 2, or 3)
+  
+    setSelectedTemplateType(templateType);
+    setContent(generateTemplateContent(formData, templateType));
 
     // Force re-render of the editor
     setEditorKey(prevKey => prevKey + 1);
