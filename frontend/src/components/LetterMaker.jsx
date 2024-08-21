@@ -10,9 +10,8 @@ const LetterMaker = ({ selectedTemplate }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const generatedLetterRef = useRef(null);
   const [letterTemplates, setLetterTemplates] = useState({});
-  const [networkError, setNetworkError] = useState(false); // State to manage network error
+  const [networkError, setNetworkError] = useState(false);
 
-  // Fetch letter templates from JSON
   useEffect(() => {
     fetch('/json/LetterTemplates.json')
       .then(response => response.json())
@@ -28,7 +27,6 @@ const LetterMaker = ({ selectedTemplate }) => {
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
 
-    // Check initial status
     if (!navigator.onLine) {
       setNetworkError(true);
     }
@@ -44,7 +42,7 @@ const LetterMaker = ({ selectedTemplate }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleQuillChange = (content, delta, source, editor) => {
+  const handleQuillChange = (content) => {
     setFormData({ ...formData, letterBody: content });
   };
 
@@ -74,23 +72,22 @@ const LetterMaker = ({ selectedTemplate }) => {
   const downloadAsPDF = () => {
     const element = document.getElementById('generated-letter');
 
-    // Apply CSS styles to ensure proper wrapping and width constraints
-    element.style.width = '8.5in'; // Width of a standard letter
-    element.style.maxWidth = '8.5in'; // Max width should not exceed standard letter width
-    element.style.boxSizing = 'border-box'; // Include padding and border in the element's width
-    element.style.overflow = 'hidden'; // Prevent overflow
-    element.style.wordWrap = 'break-word'; // Ensure long words break into the next line
-    element.style.whiteSpace = 'pre-wrap'; // Preserve whitespace and ensure wrapping
-    element.style.lineHeight = '1.5'; // Set line height for better readability
+    element.style.width = '8.5in';
+    element.style.maxWidth = '8.5in';
+    element.style.boxSizing = 'border-box';
+    element.style.overflow = 'hidden';
+    element.style.wordWrap = 'break-word';
+    element.style.whiteSpace = 'pre-wrap';
+    element.style.lineHeight = '1.5';
 
     const opt = {
       margin: [0.5, 0.5, 0.5, 0.5],
       filename: `${selectedTemplate}.pdf`,
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { 
-        scale: 2, // Increase scale for better quality
-        logging: true, // Enable logging for debugging
-        useCORS: true, // Use CORS to load images
+        scale: 2,
+        logging: true,
+        useCORS: true,
       },
       jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
     };
@@ -112,41 +109,42 @@ const LetterMaker = ({ selectedTemplate }) => {
   return (
     <div className="container mt-4">
       <div className="row">
-        <div className="col-md-8">
-          <h3 className='selected-template'>Selected Template: {selectedTemplate}</h3>
+        <div className="col-md-12">
+          <h3 className="selected-template">Selected Template: {selectedTemplate}</h3>
           <div className="card">
             <div className="card-body generate">
               {!formSubmitted ? (
                 <form onSubmit={handleSubmit}>
-                  {fields.map((field, index) => (
-                    <div className="mb-3" key={field.id || index}>
-                      <label htmlFor={field.id} className="form-label">{field.label}</label>
-                      {field.type === 'quill' ? (
-                        <ReactQuill
-                          value={formData.letterBody || ''}
-                          onChange={handleQuillChange}
-                          modules={LetterMaker.modules}
-                          formats={LetterMaker.formats}
-                          className="quill-editor"
-                        />
-                      ) : (
-                        <input
-                          type={field.type}
-                          className="form-control"
-                          id={field.id}
-                          name={field.id}
-                          value={formData[field.id] || ''}
-                          onChange={handleChange}
-                          required
-                        />
-                      )}
-                    </div>
-                  ))}
-
+                  <div className="input-row">
+                    {fields.map((field, index) => (
+                      <div className="input-col" key={field.id || index}>
+                        <label htmlFor={field.id} className="form-label">{field.label}</label>
+                        {field.type === 'quill' ? (
+                          <ReactQuill
+                            value={formData.letterBody || ''}
+                            onChange={handleQuillChange}
+                            modules={LetterMaker.modules}
+                            formats={LetterMaker.formats}
+                            className="quill-editor"
+                          />
+                        ) : (
+                          <input
+                            type={field.type}
+                            className="form-control"
+                            id={field.id}
+                            name={field.id}
+                            value={formData[field.id] || ''}
+                            onChange={handleChange}
+                            required
+                          />
+                        )}
+                      </div>
+                    ))}
+                  </div>
                   <button type="submit" className="btn btn-primary generate-button">Generate Letter</button>
                 </form>
               ) : (
-                <div className='GenLetterSection'>
+                <div className="GenLetterSection">
                   <h5>Generated Letter</h5>
                   <div id="generated-letter" ref={generatedLetterRef}>
                     <pre>{stripHtmlTags(generatedLetter)}</pre>
@@ -173,8 +171,7 @@ LetterMaker.modules = {
     [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
     [{ size: [] }],
     ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-    [{ 'list': 'ordered' }, { 'list': 'bullet' },
-    { 'indent': '-1' }, { 'indent': '+1' }],
+    [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
     ['link', 'image', 'video'],
     ['clean']
   ],

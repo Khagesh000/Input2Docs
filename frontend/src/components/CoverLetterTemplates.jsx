@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+
 import html2pdf from 'html2pdf.js';
 
 import '../CoverLetterTemplates.css'; // Ensure this path is correct
@@ -9,7 +9,7 @@ import '../CoverLetterTemplates.css'; // Ensure this path is correct
 // Import images for templates
 import img from '../assets/images/cover_letter.png';
 import img1 from '../assets/images/cover_letter1.png';
-import img2 from '../assets/images/cover_letter.png';
+import img2 from '../assets/images/resumetemplates.png';
 import img3 from '../assets/images/cover_letter1.png';
 import img4 from '../assets/images/cover_letter.png';
 import img5 from '../assets/images/cover_letter1.png';
@@ -39,7 +39,7 @@ export default function CoverLetterTemplates() {
     date: '',
     letterContent: '',
   });
-  const [currentInputIndex, setCurrentInputIndex] = useState(0); // State for managing input index
+
   const [selectedTemplateType, setSelectedTemplateType] = useState(1); // Add state for template type
   const [networkError, setNetworkError] = useState(false); // State to manage network error
 
@@ -142,18 +142,17 @@ export default function CoverLetterTemplates() {
     // Force re-render of the editor
     setEditorKey(prevKey => prevKey + 1);
 
-    const selectedImageElement = containerRef.current.querySelector(`.template-card:nth-child(${index + 1})`);
-    selectedImageRef.current = selectedImageElement;
+    
 
     setTimeout(() => {
-      if (selectedImageElement) {
-        selectedImageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const editorSection = document.querySelector('.editor-section');
+      if (editorSection) {
+        window.scrollTo({
+          top: editorSection.offsetTop,
+          behavior: 'smooth',
+        });
       }
-      window.scrollTo({
-        top: document.querySelector('.selected-image-wrapper').offsetTop,
-        behavior: 'smooth'
-      });
-    }, 300); // Delay to ensure content is updated
+    }, 300);
   };
 
   const handleInputChange = (event) => {
@@ -164,17 +163,7 @@ export default function CoverLetterTemplates() {
     }));
   };
 
-  const handlePrev = () => {
-    if (currentInputIndex > 0) {
-      setCurrentInputIndex(prevIndex => prevIndex - 1);
-    }
-  };
 
-  const handleNext = () => {
-    if (currentInputIndex < templateInputFields[selectedTemplateType].length - 1) {
-      setCurrentInputIndex(prevIndex => prevIndex + 1);
-    }
-  };
 
 
 
@@ -291,55 +280,83 @@ const handleDownloadPDF = () => {
       </div>
     </div>
      
-      <section className="m-0">
+      <section className="m-0 editor-section">
       {selectedImage && (
         
         <div className="selected-image-wrapper" ref={editorRef}>
-          <div className="editor-container">
-            <div className="form-group template-input">
-              <label>{templateInputFields[selectedTemplateType][currentInputIndex].label}</label>
-              {templateInputFields[selectedTemplateType][currentInputIndex].type === 'textarea' ? (
-                <textarea
-                  className="form-control template-textarea"
-                  name={templateInputFields[selectedTemplateType][currentInputIndex].name}
-                  rows="6"
-                  value={formData[templateInputFields[selectedTemplateType][currentInputIndex].name]}
-                  onChange={handleInputChange}
-                ></textarea>
-              ) : (
-                <input
-                  type={templateInputFields[selectedTemplateType][currentInputIndex].type}
-                  className="form-control"
-                  name={templateInputFields[selectedTemplateType][currentInputIndex].name}
-                  value={formData[templateInputFields[selectedTemplateType][currentInputIndex].name]}
-                  onChange={handleInputChange}
-                />
-              )}
+             <div className="row">
+      {/* Resume Input Fields on the Left Side */}
+      <div className='col-lg-8 resume-input'>
+            <div className="form-group row">
+              
+              {templateInputFields[selectedTemplateType].map((field, index) => (
+                  <div key={index} className="form-group col-md-6">
+                    <label>{field.label}</label>
+                    {field.type === 'textarea' ? (
+                      <textarea
+                        className="form-control template-textarea"
+                        name={field.name}
+                        rows="6"
+                        value={formData[field.name]}
+                        onChange={handleInputChange}
+                      ></textarea>
+                    ) : (
+                      <input
+                        type={field.type}
+                        className="form-control"
+                        name={field.name}
+                        value={formData[field.name]}
+                        onChange={handleInputChange}
+                      />
+                    )}
+                  </div>
+                ))}
             </div>
-            <div className="form-navigation mb-5">
-              <button
-                type="button"
-                className="btn btn-nav btn-prev"
-                onClick={handlePrev}
-                disabled={currentInputIndex === 0}
-              >
-                <i className="fa fa-arrow-left"></i> Previous
-              </button>
-              <button
-                type="button"
-                className="btn btn-nav btn-next"
-                onClick={handleNext}
-                disabled={currentInputIndex === templateInputFields[selectedTemplateType].length - 1}
-              >
-                Next <i className="fa fa-arrow-right"></i>
-              </button>
-              {networkError && (
-        <div className="network-error">
-          Network issue detected. Some features may not work properly.
-        </div>
-      )}
             </div>
+            
 
+
+      {/* Suggestions content on the right side, visible only on large screens */}
+      <div className="resume-suggestions">
+      <h1>Cover Letter Writing Tips</h1>
+            <p>Crafting an effective cover letter is crucial for making a great first impression. Here are some tips to help you write a compelling cover letter:</p>
+            <h5>Cover Letter Writing Tips</h5>
+            <ul>
+                <li>
+                    <strong>1. Address the Hiring Manager by Name:</strong> If possible, find out the name of the person who will read your cover letter and address it directly to them.
+                </li>
+                <li>
+                    <strong>2. Start with a Strong Opening:</strong> Begin with a captivating opening that grabs the reader’s attention. Mention the position you’re applying for and why you’re excited about it.
+                </li>
+                <li>
+                    <strong>3. Showcase Your Skills and Achievements:</strong> Highlight your key skills and achievements that are relevant to the job. Use specific examples to demonstrate how you’ve successfully applied these skills in the past.
+                </li>
+                <li>
+                    <strong>4. Tailor Your Letter to the Job Description:</strong> Customize your cover letter to match the job description. Use keywords and phrases from the job listing to show that you’ve carefully read the requirements.
+                </li>
+                <li>
+                    <strong>5. Explain Why You’re a Good Fit:</strong> Clearly articulate why you’re the right fit for the role. Explain how your background aligns with the company’s needs and how you can contribute to their goals.
+                </li>
+                <li>
+                    <strong>6. Keep It Concise and Focused:</strong> Your cover letter should be no longer than one page. Be concise and focus on the most important aspects of your experience and qualifications.
+                </li>
+                <li>
+                    <strong>7. Show Enthusiasm:</strong> Demonstrate your enthusiasm for the position and the company. Employers appreciate candidates who are genuinely excited about the opportunity.
+                </li>
+                <li>
+                    <strong>8. Proofread Carefully:</strong> Check for spelling and grammatical errors. A well-written and error-free cover letter reflects professionalism and attention to detail.
+                </li>
+                <li>
+                    <strong>9. Include a Strong Closing:</strong> End with a strong closing statement that reiterates your interest in the role and expresses your eagerness to discuss your application in more detail.
+                </li>
+                <li>
+                    <strong>10. Use a Professional Format:</strong> Ensure that your cover letter follows a professional format with consistent font, margins, and spacing. A clean layout enhances readability and presentation.
+                </li>
+            </ul>
+        </div>
+        </div>
+            
+            <div className="editor-container">
             <Editor
               key={editorKey}
               apiKey="xvogh7180w9n8hd8zc53e6dwo44kau08xngyoqlr623byta9"
@@ -359,6 +376,7 @@ const handleDownloadPDF = () => {
               onEditorChange={(newContent) => setContent(newContent)}
             />
           </div>
+         
           {networkError && (
         <div className="network-error">
           Network issue detected. Some features may not work properly.

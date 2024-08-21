@@ -6,6 +6,7 @@ import experienceIcon from '../assets/images/experience.png';
 
 
 export const generateTemplateContent = (formData, templateType) => {
+  
   if (templateType === 1) {
     return `
       <div style="display: flex; height: 100%; background-color: #f5f5f5; color: #000;">
@@ -54,7 +55,7 @@ export const generateTemplateContent = (formData, templateType) => {
             <h2 style="margin: 0; font-size: 18px; color: #555;">${formData.jobTitle}</h2>
           </div>
         </div>
-
+  
         <!-- Summary -->
         <div style="margin-top: 30px;">
           <h3 style="font-size: 20px; display: flex; align-items: center;">
@@ -63,53 +64,32 @@ export const generateTemplateContent = (formData, templateType) => {
           </h3>
           <p style="font-size: 14px; color: #333;">${formData.summary}</p>
         </div>
-
+  
         <!-- Experience -->
         <div style="margin-top: 30px;">
           <h3 style="font-size: 20px; display: flex; align-items: center;">
             <img src="${experienceIcon}" alt="experience-icon" style="width: 24px; margin-right: 10px;">
             Experience
           </h3>
-          ${formData.experience.map((exp, index) => `
-            <div style="margin-top: 15px;">
-              <div style="display: flex; justify-content: space-between;">
-                <div style="font-size: 14px; font-weight: bold;">${exp.position}</div>
-                <div style="font-size: 14px; color: #777;">${exp.startDate} - ${exp.endDate}</div>
-              </div>
-              <div style="font-size: 14px; color: #555;">${exp.company}, ${exp.location}</div>
-              <ul style="font-size: 14px; color: #333; margin-top: 8px; list-style: disc; margin-left: 20px;">
-                ${exp.responsibilities.map(res => `<li>${res}</li>`).join('')}
-              </ul>
-            </div>
-          `).join('')}
+          <p style="font-size: 14px; color: #333;">${formData.experience}</p>
         </div>
-
+  
         <!-- Education -->
         <div style="margin-top: 30px;">
           <h3 style="font-size: 20px; display: flex; align-items: center;">
             <img src="${educationIcon}" alt="education-icon" style="width: 24px; margin-right: 10px;">
             Education
           </h3>
-          ${formData.education.map((edu, index) => `
-            <div style="margin-top: 15px;">
-              <div style="display: flex; justify-content: space-between;">
-                <div style="font-size: 14px; font-weight: bold;">${edu.degree}</div>
-                <div style="font-size: 14px; color: #777;">${edu.startDate} - ${edu.endDate}</div>
-              </div>
-              <div style="font-size: 14px; color: #555;">${edu.school}, ${edu.location}</div>
-            </div>
-          `).join('')}
+          <p style="font-size: 14px; color: #333;">${formData.education}</p>
         </div>
-
+  
         <!-- Skills -->
         <div style="margin-top: 30px;">
           <h3 style="font-size: 20px; display: flex; align-items: center;">
             <img src="${skillsIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
             Skills
           </h3>
-          <ul style="font-size: 14px; color: #333; margin-top: 8px; list-style: disc; margin-left: 20px;">
-            ${formData.skills.map(skill => `<li>${skill}</li>`).join('')}
-          </ul>
+          <p style="font-size: 14px; color: #333;">${formData.skills}</p>
         </div>
       </div>`;
   }

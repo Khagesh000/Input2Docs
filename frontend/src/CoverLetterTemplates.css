@@ -308,6 +308,70 @@ element.style {
   text-align: center;
 }
 
+/* Styling for the resume-input box */
+.resume-input {
+  background-color: lightyellow; /* Light grey background */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding for content spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  flex: 1; /* Take up available space */
+  max-width: 60%; /* Maximum width of 60% */
+  overflow-y: auto; /* Scroll if content overflows */
+}
+
+/* Styling for the suggestions box */
+.resume-suggestions {
+  background-color: #0e0e0e; /* Dark background */
+  border: 1px solid #ffeeba; /* Light yellow border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding for content spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+  flex: 0.35; /* Take up 35% of the space */
+  max-height: 100%; /* Full height to match the input box */
+  overflow-y: auto; /* Scroll if content overflows */
+  color: wheat; /* Default font color */
+  display: none; /* Initially hidden, only visible on large screens */
+}
+
+/* Heading styling */
+.resume-suggestions h5 {
+  font-size: 24px; /* Larger heading */
+  color: red; /* Red color for heading */
+  margin-bottom: 15px;
+  text-transform: uppercase; /* Capitalize heading */
+  font-weight: bold; /* Bold heading */
+}
+
+/* List styling */
+.resume-suggestions ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding-left: 0;
+}
+
+.resume-suggestions ul li {
+  margin-bottom: 12px; /* Increased spacing between items */
+  font-size: 18px; /* Larger font size */
+  position: relative; /* For custom bullet */
+  padding-left: 25px; /* Space for custom bullet */
+}
+
+/* Custom bullet point */
+.resume-suggestions ul li::before {
+  content: "•"; /* Custom bullet */
+  color: red; /* Red color for the bullet */
+  font-size: 20px; /* Larger bullet */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Hover effect */
+.resume-suggestions ul li:hover {
+  color: #ffeb3b; /* Light yellow on hover */
+  transition: color 0.3s ease; /* Smooth transition effect */
+}
+
 
 
 @media(min-width: 1100px) {
@@ -342,6 +406,9 @@ element.style {
   }
   .template-input{
     margin-bottom: 3%;
+  }
+  .resume-suggestions {
+    display: block; /* Display suggestions box */
   }
   
 }

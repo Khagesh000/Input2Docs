@@ -38,14 +38,14 @@ export default function ResumeTemplate() {
     linkedin: '',
     date: '',
     letterContent: '',
-    experience: [],  // Updated to an array
+    experience: '',  // Updated to an array
     summary: '', 
-    education: [],    // Updated to an array
-    skills: [] 
+    education: '',    // Updated to an array
+    skills: '' 
     
 
   });
-  const [currentInputIndex, setCurrentInputIndex] = useState(0); // State for managing input index
+
   const [selectedTemplateType, setSelectedTemplateType] = useState(1); // Add state for template type
   const [networkError, setNetworkError] = useState(false); // State to manage network error
 
@@ -92,12 +92,9 @@ export default function ResumeTemplate() {
     }
   }, [content]);
 
-  // Effect to update content when formData changes
   useEffect(() => {
     setContent(generateTemplateContent(formData, selectedTemplateType));
   }, [formData, selectedTemplateType]);
-
-
 
   useEffect(() => {
     const handleOnline = () => setNetworkError(false);
@@ -106,7 +103,6 @@ export default function ResumeTemplate() {
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
 
-    // Check initial status
     if (!navigator.onLine) {
       setNetworkError(true);
     }
@@ -138,28 +134,21 @@ export default function ResumeTemplate() {
 
   const handleUseTemplate = (index) => {
     setSelectedImage(images[index]);
-  
-    // Map index to template type, assuming each index corresponds to a specific template type.
-    const templateType = (index % 3) + 1; // Example: Mapping index to template type (1, 2, or 3)
-  
+    const templateType = (index % 3) + 1; 
     setSelectedTemplateType(templateType);
     setContent(generateTemplateContent(formData, templateType));
-  
-    // Force re-render of the editor
     setEditorKey(prevKey => prevKey + 1);
-  
-    const selectedImageElement = containerRef.current.querySelector(`.template-card:nth-child(${index + 1})`);
-    selectedImageRef.current = selectedImageElement;
-  
+
+    // Scroll to the input and editor section after selecting a template
     setTimeout(() => {
-      if (selectedImageElement) {
-        selectedImageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const editorSection = document.querySelector('.editor-section');
+      if (editorSection) {
+        window.scrollTo({
+          top: editorSection.offsetTop,
+          behavior: 'smooth',
+        });
       }
-      window.scrollTo({
-        top: document.querySelector('.selected-image-wrapper').offsetTop,
-        behavior: 'smooth'
-      });
-    }, 300); // Delay to ensure content is updated
+    }, 300);
   };
   
 
@@ -171,17 +160,7 @@ export default function ResumeTemplate() {
     }));
   };
 
-  const handlePrev = () => {
-    if (currentInputIndex > 0) {
-      setCurrentInputIndex(prevIndex => prevIndex - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (currentInputIndex < templateInputFields[selectedTemplateType].length - 1) {
-      setCurrentInputIndex(prevIndex => prevIndex + 1);
-    }
-  };
+ 
 
 
 
@@ -264,7 +243,7 @@ const handleDownloadPDF = () => {
               <div className="template-image-wrapper">
                 <img
                   src={image}
-                  alt={`Cover Letter Template ${index + 1}`}
+                  alt={`Resume Template ${index + 1}`}
                   className={`img-fluid sliding-image ${selectedImage === image ? 'selected' : ''}`}
                   ref={selectedImage === image ? selectedImageRef : null}
                 />
@@ -289,56 +268,80 @@ const handleDownloadPDF = () => {
       </div>
     </div>
      
-      <section className="m-0">
-      {selectedImage && (
-        
-        <div className="selected-image-wrapper" ref={editorRef}>
-          <div className="editor-container">
-            <div className="form-group template-input">
-              <label>{templateInputFields[selectedTemplateType][currentInputIndex].label}</label>
-              {templateInputFields[selectedTemplateType][currentInputIndex].type === 'textarea' ? (
+    <section className="m-0 editor-section">
+  {selectedImage && (
+    <div className="selected-image-wrapper" ref={editorRef}>
+      <div className="row">
+      {/* Resume Input Fields on the Left Side */}
+       <div className='col-lg-8 resume-input'>
+        <div className="form-group row">
+          {templateInputFields[selectedTemplateType].map((field, index) => (
+            <div key={index} className="form-group col-md-6">
+              <label>{field.label}</label>
+              {field.type === 'textarea' ? (
                 <textarea
                   className="form-control template-textarea"
-                  name={templateInputFields[selectedTemplateType][currentInputIndex].name}
+                  name={field.name}
                   rows="6"
-                  value={formData[templateInputFields[selectedTemplateType][currentInputIndex].name]}
+                  value={formData[field.name]}
                   onChange={handleInputChange}
                 ></textarea>
               ) : (
                 <input
-                  type={templateInputFields[selectedTemplateType][currentInputIndex].type}
+                  type={field.type}
                   className="form-control"
-                  name={templateInputFields[selectedTemplateType][currentInputIndex].name}
-                  value={formData[templateInputFields[selectedTemplateType][currentInputIndex].name]}
+                  name={field.name}
+                  value={formData[field.name]}
                   onChange={handleInputChange}
                 />
               )}
             </div>
-            <div className="form-navigation mb-5">
-              <button
-                type="button"
-                className="btn btn-nav btn-prev"
-                onClick={handlePrev}
-                disabled={currentInputIndex === 0}
-              >
-                <i className="fa fa-arrow-left"></i> Previous
-              </button>
-              <button
-                type="button"
-                className="btn btn-nav btn-next"
-                onClick={handleNext}
-                disabled={currentInputIndex === templateInputFields[selectedTemplateType].length - 1}
-              >
-                Next <i className="fa fa-arrow-right"></i>
-              </button>
-              {networkError && (
-        <div className="network-error">
-          Network issue detected. Some features may not work properly.
+          ))}
         </div>
-      )}
-            </div>
+        </div>
+ 
 
-            <Editor
+        {/* Suggestions content on the right side, visible only on large screens */}
+        <div className="resume-suggestions">
+        <h5>Resume Writing Tips</h5>
+  <ul>
+    <li>
+      <strong>1. Keep Your Resume Concise:</strong> Aim for a one-page resume if possible. Focus on the most relevant experiences and skills.
+    </li>
+    <li>
+      <strong>2. Highlight Relevant Skills:</strong> Tailor your skills to match the job description. Use keywords that are specific to the job you're applying for.
+    </li>
+    <li>
+      <strong>3. Use Action Verbs:</strong> Start each bullet point with an action verb like "Managed," "Developed," or "Led" to make your achievements stand out.
+    </li>
+    <li>
+      <strong>4. Customize for Each Job:</strong> Modify your resume for each application to include the most relevant experiences and achievements.
+    </li>
+    <li>
+      <strong>5. Proofread Thoroughly:</strong> Double-check for spelling and grammar errors. Consider having someone else review your resume as well.
+    </li>
+    <li>
+      <strong>6. Quantify Achievements:</strong> Whenever possible, include numbers to quantify your achievements, such as "Increased sales by 20%."
+    </li>
+    <li>
+      <strong>7. Include a Professional Summary:</strong> Start your resume with a brief summary that highlights your key skills and experiences.
+    </li>
+    <li>
+      <strong>8. Focus on Layout and Design:</strong> Use a clean and professional layout. Ensure consistent formatting, font sizes, and spacing.
+    </li>
+    <li>
+      <strong>9. Use White Space Wisely:</strong> Don’t overcrowd your resume. Use white space to make it easier to read and more visually appealing.
+    </li>
+    <li>
+      <strong>10. Save as PDF:</strong> Save your resume as a PDF to ensure that the formatting remains consistent across different devices and platforms.
+    </li>
+  </ul>
+        </div>
+        </div>
+
+        
+        <div className="editor-container">
+            <Editor className='key-editor'
               key={editorKey}
               apiKey="xvogh7180w9n8hd8zc53e6dwo44kau08xngyoqlr623byta9"
               init={{

@@ -208,8 +208,9 @@ const EmailMaker = ({ selectedTemplate }) => {
   return (
     <div className="email-maker">
       <form onSubmit={handleSubmit}>
+      <div className="input-row">
         {fields.map(field => (
-          <div key={field.id} className="form-group">
+          <div key={field.id} className="input-col form-group">
             <label htmlFor={field.id}>{field.label}</label>
             {field.type === 'text' && (
               <input
@@ -300,6 +301,7 @@ const EmailMaker = ({ selectedTemplate }) => {
             <p>{validationError}</p>
           </div>
         )}
+        </div>
       </form>
 
       {formSubmitted && (

@@ -63,6 +63,34 @@
     color: red;
   }
 
+  .email-maker .form-group {
+    margin-bottom: 20px;
+  }
+
+
+  
+  .input-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .input-col {
+    flex: 0 0 48%; /* Each input will take up about 48% of the row, with space in between */
+    margin-bottom: 20px; /* Add some space between rows */
+  }
+
+  .email-maker{
+    background-color: lightyellow;
+    padding: 10px;
+  }
+
+@media (max-width: 768px) {
+  .input-col {
+    flex: 0 0 100%; /* Full width on small screens */
+  }
+}
+
   @media (max-width: 575px){
     .select-temp{
       
