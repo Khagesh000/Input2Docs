@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import html2canvas from 'html2canvas';
+import YearPicker from './YearPicker';
 
 import html2pdf from 'html2pdf.js';
 
@@ -18,6 +19,8 @@ import img7 from '../assets/images/cover_letter1.png';
 
 import { templateInputFields } from './ResumeTemplateInputFields';
 import { generateTemplateContent } from './ResumeGeneralTemplateContent';
+
+
 
 export default function ResumeTemplate() {
   const containerRef = useRef(null);
@@ -38,13 +41,34 @@ export default function ResumeTemplate() {
     linkedin: '',
     date: '',
     letterContent: '',
-    experience: '',  // Updated to an array
-    summary: '', 
-    education: '',    // Updated to an array
-    skills: '' 
-    
-
+    experience: [
+      {
+        position: 'Senior Project Manager',
+        company: 'Seton Hospital, ME',
+        dates: '2006',
+        details: 'Oversaw all major hospital IT projects for 10+ years, focusing on cost reduction.'
+      }
+    ],
+    education: [
+      {
+        degree: 'Master of Computer Science',
+        institution: 'University of Maryland',
+        dates: '2012',
+        details: 'Andersen Postgraduate Fellowship to study advanced techniques.'
+      }
+    ],
+    skills: [
+      'Microsoft Project: Excellent'
+    ],
+    languages: [
+      {
+        language: 'English',
+        level: 'Intermediate'
+      }
+    ]
   });
+  
+  
 
   const [selectedTemplateType, setSelectedTemplateType] = useState(1); // Add state for template type
   const [networkError, setNetworkError] = useState(false); // State to manage network error
@@ -160,8 +184,92 @@ export default function ResumeTemplate() {
     }));
   };
 
- 
+  //Addskill Feature
+  const handleAddSkill = () => {
+    setFormData({
+      ...formData,
+      skills: [...formData.skills, ''],
+    });
+  };
 
+  const handleRemoveSkill = (index) => {
+    const newSkills = formData.skills.filter((_, i) => i !== index);
+    setFormData({
+      ...formData,
+      skills: newSkills,
+    });
+  };
+
+  const handleSkillChange = (index, value) => {
+    const newSkills = formData.skills.map((skill, i) =>
+      i === index ? value : skill
+    );
+    setFormData({
+      ...formData,
+      skills: newSkills,
+    });
+  };
+
+  //Experience Feature
+  const handleAddExperience = () => {
+    setFormData({
+      ...formData,
+      experience: [...formData.experience, { position: '', company: '', dates: '', details: '' }]
+    });
+  };
+  
+  const handleRemoveExperience = (index) => {
+    const newExperience = formData.experience.filter((_, i) => i !== index);
+    setFormData({ ...formData, experience: newExperience });
+  };
+  
+  const handleExperienceChange = (index, key, value) => {
+    const newExperience = [...formData.experience];
+    newExperience[index][key] = value || ''; // Ensure value is not null or undefined
+    setFormData({ ...formData, experience: newExperience });
+  };
+
+  //Education Feature
+  const handleAddEducation = () => {
+    setFormData({
+      ...formData,
+      education: [...formData.education, { degree: '', institution: '', dates: '', details: '' }]
+    });
+  };
+
+  const handleRemoveEducation = (index) => {
+    const newEducation = formData.education.filter((_, i) => i !== index);
+    setFormData({ ...formData, education: newEducation });
+  };
+  
+  const handleEducationChange = (index, key, value) => {
+    const newEducation = [...formData.education];
+    newEducation[index][key] = value || ''; // Ensure value is not null or undefined
+    setFormData({ ...formData, education: newEducation });
+  };
+  
+  //Handle Language
+  const handleLanguageChange = (index, field, value) => {
+    const newLanguages = formData.languages.map((language, i) => 
+      i === index ? { ...language, [field]: value } : language
+    );
+    setFormData({ ...formData, languages: newLanguages });
+  };
+
+  const handleAddLanguage = () => {
+    setFormData({
+      ...formData,
+      languages: [...formData.languages, { language: '', level: '' }]
+    });
+  };
+
+  const handleRemoveLanguage = (index) => {
+    setFormData({
+      ...formData,
+      languages: formData.languages.filter((_, i) => i !== index)
+    });
+  };
+  
 
 
 const handleDownloadPNG = () => {
@@ -282,7 +390,7 @@ const handleDownloadPDF = () => {
                 <textarea
                   className="form-control template-textarea"
                   name={field.name}
-                  rows="6"
+                  rows="4"
                   value={formData[field.name]}
                   onChange={handleInputChange}
                 ></textarea>
@@ -298,6 +406,184 @@ const handleDownloadPDF = () => {
             </div>
           ))}
         </div>
+          
+          {/* Skills Section */}
+<div className="form-group">
+  <label>Skills</label>
+  {formData.skills.map((skill, index) => (
+    <div key={index} className="form-group row">
+      <div className="col-md-10">
+        <input
+          type="text"
+          className="form-control"
+          value={skill || ''}
+          onChange={(e) => handleSkillChange(index, e.target.value)}
+        />
+      </div>
+      <div className="col-md-2 d-flex align-items-center">
+        <button
+          type="button"
+          className="btn icon-button btn-icon"
+          onClick={() => handleRemoveSkill(index)}
+        >
+          <i className="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  ))}
+  <div className="form-group row">
+    <div className="col-md-12">
+      <button
+        type="button"
+        className="btn icon-button"
+        onClick={handleAddSkill}
+      >
+        <i className="fas fa-plus"></i>Add Skills
+      </button>
+    </div>
+  </div>
+</div>
+
+{/* Experience Section */}
+<div className="form-group">
+  <label>Experience</label>
+  {formData.experience.map((exp, index) => (
+    
+    <div key={index} className="form-group">
+      <input
+        type="text"
+        className="form-control"
+        placeholder="Position"
+        value={exp.position}
+        onChange={(e) => handleExperienceChange(index, 'position', e.target.value)}
+      />
+      <input
+        type="text"
+        className="form-control"
+        placeholder="Company"
+        value={exp.company}
+        onChange={(e) => handleExperienceChange(index, 'company', e.target.value)}
+      />
+      <YearPicker
+        selectedYear={exp.dates}
+        onChange={(year) => handleExperienceChange(index, 'dates', year)}
+        placeholder="Select Year"
+        className="form-control"
+      />
+      <textarea
+        className="form-control"
+        placeholder="Details"
+        value={exp.details}
+        onChange={(e) => handleExperienceChange(index, 'details', e.target.value)}
+      ></textarea>
+      <button
+        type="button"
+        className="btn btn-danger icon-button"
+        onClick={() => handleRemoveExperience(index)}
+      >
+        <i className="fas fa-trash-alt"></i>
+      </button>
+    </div>
+  ))}
+
+
+  {/* Add Experience Button */}
+  <button
+    type="button"
+    className="btn btn-primary icon-button"
+    onClick={handleAddExperience}
+  >
+    <i className="fas fa-plus"></i> Add Experience
+  </button>
+</div>
+
+{/* Education Section */}
+<div className="form-group">
+  <label>Education</label>
+  {formData.education.map((edu, index) => (
+    <div key={index} className="form-group">
+      <input
+        type="text"
+        className="form-control"
+        placeholder="Degree"
+        value={edu.degree}
+        onChange={(e) => handleEducationChange(index, 'degree', e.target.value)}
+      />
+      <input
+        type="text"
+        className="form-control"
+        placeholder="Institution"
+        value={edu.institution}
+        onChange={(e) => handleEducationChange(index, 'institution', e.target.value)}
+      />
+      <YearPicker
+        selectedYear={edu.dates}
+        onChange={(year) => handleEducationChange(index, 'dates', year)}
+        placeholder="Select Year"
+        className="form-control"
+      />
+      <textarea
+        className="form-control"
+        placeholder="Details"
+        value={edu.details}
+        onChange={(e) => handleEducationChange(index, 'details', e.target.value)}
+      ></textarea>
+      <button
+        type="button"
+        className="btn btn-danger icon-button"
+        onClick={() => handleRemoveEducation(index)}
+      >
+        <i className="fas fa-trash-alt"></i>
+      </button>
+    </div>
+  ))}
+  {/* Add Education Button */}
+  <button
+    type="button"
+    className="btn btn-primary icon-button"
+    onClick={handleAddEducation}
+  >
+    <i className="fas fa-plus"></i> Add Education
+  </button>
+</div>
+
+{/* Handle languages */}
+<div className="form-group">
+    <label>Languages</label>
+    {formData.languages.map((lang, index) => (
+        <div key={index} className="form-group mb-3">
+            <input
+                type="text"
+                className="form-control mb-2"
+                placeholder="Language"
+                value={lang.language}
+                onChange={(e) => handleLanguageChange(index, 'language', e.target.value)}
+            />
+            <input
+                type="text"
+                className="form-control mb-2"
+                placeholder="Level"
+                value={lang.level}
+                onChange={(e) => handleLanguageChange(index, 'level', e.target.value)}
+            />
+            <button
+                type="button"
+                className="btn btn-danger icon-button"
+                onClick={() => handleRemoveLanguage(index)}
+            >
+                <i className="fas fa-trash-alt"></i>
+            </button>
+        </div>
+    ))}
+    <button
+        type="button"
+        className="btn btn-primary icon-button mt-3"
+        onClick={handleAddLanguage}
+    >
+        <i className="fas fa-plus icon-button"></i> Add Language
+    </button>
+</div>
+
         </div>
  
 
