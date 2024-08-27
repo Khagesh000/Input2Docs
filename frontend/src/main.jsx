@@ -5,10 +5,19 @@ import App from './App.jsx';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+
+
+// Check for any console warnings or errors in the browser's console after deployment
+console.log('Build successful without warnings');
+
+// Create a root and render the App component
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

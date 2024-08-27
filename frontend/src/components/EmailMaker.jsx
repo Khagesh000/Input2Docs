@@ -140,7 +140,7 @@ const EmailMaker = ({ selectedTemplate }) => {
       const controller = new AbortController();
       const timeout = setTimeout(() => {
         controller.abort();
-      }, 60000);
+      }, 90000);
 
       const response = await fetch('https://input2docs.onrender.com/api/send-email/', {
         method: 'POST',
@@ -190,6 +190,11 @@ const EmailMaker = ({ selectedTemplate }) => {
         alert('An error occurred while sending the email. Please try again.');
       }
       setIsSendingEmail(false);
+
+      // Retry logic
+      setTimeout(() => {
+        sendEmail(); // Retry sending the email after a short delay
+      }, 3000); // Retry after 3 seconds
     }
   };
 

@@ -22,7 +22,8 @@ export const templateInputFields = {
     { label: 'Letter Content', name: 'letterContent', type: 'textarea' },
   ],
   3: [
-    { label: 'Name', name: 'name', type: 'text' },
+    { label: 'First Name', name: 'firstName', type: 'text' },
+    { label: 'Last Name', name: 'lastName', type: 'text' },
     { label: 'Job Title', name: 'jobTitle', type: 'text' },
     { label: 'Summary', name: 'summary', type: 'textarea' },
     { label: 'Address', name: 'address', type: 'text' },

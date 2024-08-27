@@ -32,6 +32,8 @@ export default function ResumeTemplate() {
   const [editorKey, setEditorKey] = useState(0); // Add a key for editor
   const [formData, setFormData] = useState({
     name: '',
+    firstName: '',
+    lastName: '',
     jobTitle: '',
     principal: '',
     school: '',
@@ -51,10 +53,13 @@ export default function ResumeTemplate() {
     ],
     education: [
       {
-        degree: 'Master of Computer Science',
-        institution: 'University of Maryland',
-        dates: '2012',
-        details: 'Andersen Postgraduate Fellowship to study advanced techniques.'
+        level: '', // 'Postgraduate', 'Graduate', 'Class 12th', 'Class 10th'
+        course: '',
+        college: '',
+        board: '',
+        medium: '',
+        yearOfPassing: '',
+        percentage: '',
       }
     ],
     skills: [
@@ -497,37 +502,174 @@ const handleDownloadPDF = () => {
   </button>
 </div>
 
+
+
 {/* Education Section */}
 <div className="form-group">
   <label>Education</label>
   {formData.education.map((edu, index) => (
-    <div key={index} className="form-group">
-      <input
-        type="text"
+    <div key={index} className="form-group" style={{ marginBottom: '10px' }}>
+      {/* Education Level Selection */}
+      <select
         className="form-control"
-        placeholder="Degree"
-        value={edu.degree}
-        onChange={(e) => handleEducationChange(index, 'degree', e.target.value)}
-      />
-      <input
-        type="text"
-        className="form-control"
-        placeholder="Institution"
-        value={edu.institution}
-        onChange={(e) => handleEducationChange(index, 'institution', e.target.value)}
-      />
-      <YearPicker
-        selectedYear={edu.dates}
-        onChange={(year) => handleEducationChange(index, 'dates', year)}
-        placeholder="Select Year"
-        className="form-control"
-      />
-      <textarea
-        className="form-control"
-        placeholder="Details"
-        value={edu.details}
-        onChange={(e) => handleEducationChange(index, 'details', e.target.value)}
-      ></textarea>
+        value={edu.level}
+        onChange={(e) => handleEducationChange(index, 'level', e.target.value)}
+      >
+        <option value="">Select Education Level</option>
+        <option value="Postgraduate">Postgraduate</option>
+        <option value="Graduate">Graduate</option>
+        <option value="Class 12th">Class 12th</option>
+        <option value="Class 10th">Class 10th</option>
+      </select>
+
+      {/* Conditionally Render Fields Based on Level */}
+      {edu.level === 'Graduate' || edu.level === 'Postgraduate' ? (
+        <>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+            <label style={{ width: '100px' }}>Course:</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Course"
+              value={edu.course}
+              onChange={(e) => handleEducationChange(index, 'course', e.target.value)}
+            />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+            <label style={{ width: '100px' }}>College:</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="College"
+              value={edu.college}
+              onChange={(e) => handleEducationChange(index, 'college', e.target.value)}
+            />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+            <label style={{ width: '100px' }}>Start Year:</label>
+            <YearPicker
+              selectedYear={edu.startYear}
+              onChange={(year) => handleEducationChange(index, 'startYear', year)}
+              placeholder="Start Year"
+              className="form-control"
+            />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+            <label style={{ width: '100px' }}>End Year:</label>
+            <YearPicker
+              selectedYear={edu.endYear}
+              onChange={(year) => handleEducationChange(index, 'endYear', year)}
+              placeholder="End Year"
+              className="form-control"
+            />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+            <label style={{ width: '100px' }}>Percentage:</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Percentage"
+              value={edu.percentage}
+              onChange={(e) => handleEducationChange(index, 'percentage', e.target.value)}
+            />
+          </div>
+        </>
+      ) : edu.level === 'Class 12th' ? (
+        <>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+            <label style={{ width: '100px' }}>College:</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="College"
+              value={edu.college}
+              onChange={(e) => handleEducationChange(index, 'college', e.target.value)}
+            />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+            <label style={{ width: '100px' }}>Medium:</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Medium"
+              value={edu.medium}
+              onChange={(e) => handleEducationChange(index, 'medium', e.target.value)}
+            />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+            <label style={{ width: '100px' }}>Start Year:</label>
+            <YearPicker
+              selectedYear={edu.startYear}
+              onChange={(year) => handleEducationChange(index, 'startYear', year)}
+              placeholder="Start Year"
+              className="form-control"
+            />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+            <label style={{ width: '100px' }}>End Year:</label>
+            <YearPicker
+              selectedYear={edu.endYear}
+              onChange={(year) => handleEducationChange(index, 'endYear', year)}
+              placeholder="End Year"
+              className="form-control"
+            />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+            <label style={{ width: '100px' }}>Percentage:</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Percentage"
+              value={edu.percentage}
+              onChange={(e) => handleEducationChange(index, 'percentage', e.target.value)}
+            />
+          </div>
+        </>
+      ) : edu.level === 'Class 10th' ? (
+        <>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+            <label style={{ width: '100px' }}>School:</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="School Name"
+              value={edu.schoolName}
+              onChange={(e) => handleEducationChange(index, 'schoolName', e.target.value)}
+            />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+            <label style={{ width: '100px' }}>Medium:</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Medium"
+              value={edu.medium}
+              onChange={(e) => handleEducationChange(index, 'medium', e.target.value)}
+            />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+            <label style={{ width: '100px' }}>End Year:</label>
+            <YearPicker
+              selectedYear={edu.endYear}
+              onChange={(year) => handleEducationChange(index, 'endYear', year)}
+              placeholder="End Year"
+              className="form-control"
+            />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '5px' }}>
+            <label style={{ width: '100px' }}>Percentage:</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Percentage"
+              value={edu.percentage}
+              onChange={(e) => handleEducationChange(index, 'percentage', e.target.value)}
+            />
+          </div>
+        </>
+      ) : null}
+
+      {/* Remove Button */}
       <button
         type="button"
         className="btn btn-danger icon-button"
@@ -537,6 +679,7 @@ const handleDownloadPDF = () => {
       </button>
     </div>
   ))}
+
   {/* Add Education Button */}
   <button
     type="button"
@@ -547,24 +690,19 @@ const handleDownloadPDF = () => {
   </button>
 </div>
 
+
+
 {/* Handle languages */}
 <div className="form-group">
     <label>Languages</label>
     {formData.languages.map((lang, index) => (
-        <div key={index} className="form-group mb-3">
+        <div key={index} className="form-group mb-2">
             <input
                 type="text"
-                className="form-control mb-2"
+                className="form-control mb-1"
                 placeholder="Language"
                 value={lang.language}
                 onChange={(e) => handleLanguageChange(index, 'language', e.target.value)}
-            />
-            <input
-                type="text"
-                className="form-control mb-2"
-                placeholder="Level"
-                value={lang.level}
-                onChange={(e) => handleLanguageChange(index, 'level', e.target.value)}
             />
             <button
                 type="button"
