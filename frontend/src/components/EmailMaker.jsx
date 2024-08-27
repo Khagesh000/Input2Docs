@@ -190,11 +190,6 @@ const EmailMaker = ({ selectedTemplate }) => {
         alert('An error occurred while sending the email. Please try again.');
       }
       setIsSendingEmail(false);
-
-      // Retry logic
-      setTimeout(() => {
-        sendEmail(); // Retry sending the email after a short delay
-      }, 3000); // Retry after 3 seconds
     }
   };
 
