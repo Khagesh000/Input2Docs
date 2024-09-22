@@ -58,6 +58,35 @@
   margin-top: 60px; /* Adjust based on the navbar height */
 }
 
+.navbar-nav .nav-link {
+  position: relative;
+  padding-bottom: 8px;
+  font-size: 1rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Underline effect */
+.navbar-nav .nav-link::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%; /* Start the underline from the center */
+  background-color: wheat; /* Underline color */
+  transition: all 0.4s ease;
+}
+
+/* On hover, make the underline visible */
+.navbar-nav .nav-link:hover::before {
+  width: 100%; /* Expand underline to full width */
+  left: 0; /* Move it from the left */
+}
+
+
 /* Navbar items */
 .navbar-nav .nav-item .nav-link {
   color: white; /* White text */
@@ -70,6 +99,26 @@
   color: #f8f9fa; /* Lighter hover color */
   background-color: #495057; /* Darker background on hover */
   border-radius: 4px; /* Rounded corners */
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+  position: relative;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: wheat;
+  transition: all 0.4s ease;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover::before {
+  width: 100%;
+  left: 0;
 }
 
 /* Dropdown styling */

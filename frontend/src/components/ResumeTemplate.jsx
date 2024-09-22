@@ -10,7 +10,7 @@ import '../ResumeTemplate.css'; // Ensure this path is correct
 // Import images for templates
 import img from '../assets/images/cover_letter.png';
 import img1 from '../assets/images/cover_letter1.png';
-import img2 from '../assets/images/resumetemplates.png';
+import img2 from '../assets/images/ResumeTemplate3.png';
 import img3 from '../assets/images/cover_letter1.png';
 import img4 from '../assets/images/cover_letter.png';
 import img5 from '../assets/images/cover_letter1.png';
@@ -41,6 +41,7 @@ export default function ResumeTemplate() {
     phone: '',
     email: '',
     linkedin: '',
+    googleCloud: '',
     date: '',
     letterContent: '',
     experience: [
@@ -48,7 +49,7 @@ export default function ResumeTemplate() {
         position: 'Senior Project Manager',
         company: 'Seton Hospital, ME',
         dates: '2006',
-        details: 'Oversaw all major hospital IT projects for 10+ years, focusing on cost reduction.'
+        details: ['Led a team of 5 developers'] // Ensure this is an array
       }
     ],
     education: [
@@ -63,14 +64,34 @@ export default function ResumeTemplate() {
       }
     ],
     skills: [
-      'Microsoft Project: Excellent'
+      'Microsoft Project'
     ],
+    tools: [{ name: 'Jupyter' }],
     languages: [
       {
         language: 'English',
         level: 'Intermediate'
       }
-    ]
+    ],
+    projects: [ // Add the projects section
+      {
+        title: 'Project Alpha', // Project title
+        details: ['Developed a web application using React'] // Array for project details
+      }
+    ],
+    others: [
+      'Prompt design'
+    ],
+    softSkills: [
+      'Teamwork'
+    ],
+    certifications: [
+      { course: 'Artificial Intelligence', 
+        company: 'Yhills' }
+  ]
+
+    
+
   });
   
   
@@ -234,6 +255,26 @@ export default function ResumeTemplate() {
     setFormData({ ...formData, experience: newExperience });
   };
 
+  const handleRemovePoint = (experienceIndex, pointIndex) => {
+    const newExperience = [...formData.experience];
+    newExperience[experienceIndex].details = newExperience[experienceIndex].details.filter((_, i) => i !== pointIndex);
+    setFormData({ ...formData, experience: newExperience });
+  };
+  
+  const handleExperiencePointChange = (experienceIndex, pointIndex, value) => {
+    const newExperience = [...formData.experience];
+    newExperience[experienceIndex].details[pointIndex] = value || ''; // Ensure value is not null or undefined
+    setFormData({ ...formData, experience: newExperience });
+  };
+  
+
+  const handleAddPoint = (experienceIndex) => {
+    const newExperience = [...formData.experience];
+    newExperience[experienceIndex].details.push(''); // Add an empty string for the new point
+    setFormData({ ...formData, experience: newExperience });
+  };
+  
+
   //Education Feature
   const handleAddEducation = () => {
     setFormData({
@@ -252,6 +293,45 @@ export default function ResumeTemplate() {
     newEducation[index][key] = value || ''; // Ensure value is not null or undefined
     setFormData({ ...formData, education: newEducation });
   };
+
+  //Projects Feature 
+
+  const handleAddProject = () => {
+    setFormData({
+      ...formData,
+      projects: [...formData.projects, { title: '', details: [] }]
+    });
+  };
+  
+  const handleRemoveProject = (index) => {
+    const newProjects = formData.projects.filter((_, i) => i !== index);
+    setFormData({ ...formData, projects: newProjects });
+  };
+  
+  const handleProjectChange = (index, key, value) => {
+    const newProjects = [...formData.projects];
+    newProjects[index][key] = value || ''; // Ensure value is not null or undefined
+    setFormData({ ...formData, projects: newProjects });
+  };
+  
+  const handleAddProjectPoint = (index) => {
+    const newProjects = [...formData.projects];
+    newProjects[index].details.push(''); // Add an empty point
+    setFormData({ ...formData, projects: newProjects });
+  };
+  
+  const handleRemoveProjectPoint = (projectIndex, pointIndex) => {
+    const newProjects = [...formData.projects];
+    newProjects[projectIndex].details = newProjects[projectIndex].details.filter((_, i) => i !== pointIndex);
+    setFormData({ ...formData, projects: newProjects });
+  };
+  
+  const handleProjectPointChange = (projectIndex, pointIndex, value) => {
+    const newProjects = [...formData.projects];
+    newProjects[projectIndex].details[pointIndex] = value || ''; // Ensure value is not null or undefined
+    setFormData({ ...formData, projects: newProjects });
+  };
+  
   
   //Handle Language
   const handleLanguageChange = (index, field, value) => {
@@ -275,6 +355,109 @@ export default function ResumeTemplate() {
     });
   };
   
+
+  //Tools Section 
+
+  const handleAddTool = () => {
+    setFormData({
+      ...formData,
+      tools: [...formData.tools, { name: '', level: '' }]
+    });
+  };
+  
+  const handleRemoveTool = (index) => {
+    setFormData({
+      ...formData,
+      tools: formData.tools.filter((_, i) => i !== index)
+    });
+  };
+  
+  const handleToolChange = (index, field, value) => {
+    const updatedTools = formData.tools.map((tool, i) => 
+      i === index ? { ...tool, [field]: value } : tool
+    );
+    setFormData({ ...formData, tools: updatedTools });
+  };
+  
+  //Others section
+
+  const handleAddOther = () => {
+    setFormData({
+      ...formData,
+      others: [...formData.others, '']
+    });
+  };
+  
+  const handleRemoveOther = (index) => {
+    setFormData({
+      ...formData,
+      others: formData.others.filter((_, i) => i !== index)
+    });
+  };
+  
+  const handleOtherChange = (index, value) => {
+    const updatedOthers = [...formData.others];
+    updatedOthers[index] = value;
+    setFormData({
+      ...formData,
+      others: updatedOthers
+    });
+  };
+  
+//Softskills section
+
+const handleAddSoftSkill = () => {
+  setFormData({
+    ...formData,
+    softSkills: [...formData.softSkills, ''] // Add a new empty string for a new skill
+  });
+};
+
+const handleRemoveSoftSkill = (index) => {
+  setFormData({
+    ...formData,
+    softSkills: formData.softSkills.filter((_, i) => i !== index) // Remove the skill at the given index
+  });
+};
+
+const handleSoftSkillChange = (index, value) => {
+  const updatedSkills = [...formData.softSkills];
+  updatedSkills[index] = value; // Update the specific skill
+  setFormData({
+    ...formData,
+    softSkills: updatedSkills
+  });
+};
+
+
+//Certifications section
+
+const handleAddCertification = () => {
+  setFormData({
+      ...formData,
+      certifications: [...formData.certifications, { course: '', company: '' }]
+  });
+};
+
+const handleRemoveCertification = (index) => {
+  setFormData({
+      ...formData,
+      certifications: formData.certifications.filter((_, i) => i !== index)
+  });
+};
+
+const handleCertificationChange = (index, field, value) => {
+  const updatedCertifications = formData.certifications.map((cert, i) =>
+      i === index ? { ...cert, [field]: value } : cert
+  );
+  setFormData({
+      ...formData,
+      certifications: updatedCertifications
+  });
+};
+
+
+
 
 
 const handleDownloadPNG = () => {
@@ -453,7 +636,6 @@ const handleDownloadPDF = () => {
 <div className="form-group">
   <label>Experience</label>
   {formData.experience.map((exp, index) => (
-    
     <div key={index} className="form-group">
       <input
         type="text"
@@ -469,18 +651,50 @@ const handleDownloadPDF = () => {
         value={exp.company}
         onChange={(e) => handleExperienceChange(index, 'company', e.target.value)}
       />
+
+      {/* Points for Experience */}
+      <label>Details (Point by Point)</label>
+      {exp.details.map((point, pointIndex) => (
+        <div key={pointIndex} className="form-group">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Detail Point"
+            value={point}
+            onChange={(e) => handleExperiencePointChange(index, pointIndex, e.target.value)}
+          />
+          <button
+            type="button"
+            className="btn btn-danger icon-button mt-2" // Add margin for spacing
+            onClick={() => handleRemovePoint(index, pointIndex)}
+          >
+            <i className="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      ))}
+      
+      {/* Add Point Button */}
+      <button
+        type="button"
+        className="btn btn-secondary icon-button mt-2"
+        onClick={() => handleAddPoint(index)}
+      >
+        <i className="fas fa-plus"></i> Add Point
+      </button>
+      
+
+      {/* YearPicker below points */}
+      <label>Year</label>
       <YearPicker
         selectedYear={exp.dates}
         onChange={(year) => handleExperienceChange(index, 'dates', year)}
         placeholder="Select Year"
-        className="form-control"
+        className="form-control mt-2" // Add margin for spacing
+        style={{ width: '100%' }} // Ensures full width
       />
-      <textarea
-        className="form-control"
-        placeholder="Details"
-        value={exp.details}
-        onChange={(e) => handleExperienceChange(index, 'details', e.target.value)}
-      ></textarea>
+      
+      
+
       <button
         type="button"
         className="btn btn-danger icon-button"
@@ -491,7 +705,6 @@ const handleDownloadPDF = () => {
     </div>
   ))}
 
-
   {/* Add Experience Button */}
   <button
     type="button"
@@ -501,6 +714,8 @@ const handleDownloadPDF = () => {
     <i className="fas fa-plus"></i> Add Experience
   </button>
 </div>
+
+
 
 
 
@@ -689,6 +904,232 @@ const handleDownloadPDF = () => {
     <i className="fas fa-plus"></i> Add Education
   </button>
 </div>
+
+
+{/* Projects Section */}
+<div className="form-group">
+  <label>Projects</label>
+  {formData.projects.map((project, index) => (
+    <div key={index} className="form-group">
+      <input
+        type="text"
+        className="form-control"
+        placeholder="Project Title"
+        value={project.title}
+        onChange={(e) => handleProjectChange(index, 'title', e.target.value)}
+      />
+      
+      {/* Points for Project Details */}
+      <label>Details (Point by Point)</label>
+      {project.details.map((point, pointIndex) => (
+        <div key={pointIndex} className="form-group">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Detail Point"
+            value={point}
+            onChange={(e) => handleProjectPointChange(index, pointIndex, e.target.value)}
+          />
+          <button
+            type="button"
+            className="btn btn-danger icon-button mt-2"
+            onClick={() => handleRemoveProjectPoint(index, pointIndex)}
+          >
+            <i className="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      ))}
+
+      {/* Add Point Button */}
+      <button
+        type="button"
+        className="btn btn-secondary icon-button mt-2"
+        onClick={() => handleAddProjectPoint(index)}
+      >
+        <i className="fas fa-plus"></i> Add Point
+      </button>
+
+      <button
+        type="button"
+        className="btn btn-danger icon-button mt-2"
+        onClick={() => handleRemoveProject(index)}
+      >
+        <i className="fas fa-trash-alt"></i> Remove Project
+      </button>
+    </div>
+  ))}
+
+  {/* Add Project Button */}
+  <button
+    type="button"
+    className="btn btn-primary icon-button"
+    onClick={handleAddProject}
+  >
+    <i className="fas fa-plus"></i> Add Project
+  </button>
+</div>
+
+{/* Tools Section */}
+<div className="form-group">
+  <label>Tools</label>
+  {formData.tools.map((tool, index) => (
+    <div key={index} className="form-group row">
+      <div className="col-md-10">
+        <input
+          type="text"
+          className="form-control"
+          value={tool.name || ''} // Ensure that tool.name is properly initialized
+          placeholder="Tool name (e.g., Jupyter)"
+          onChange={(e) => handleToolChange(index, 'name', e.target.value)}
+        />
+      </div>
+      <div className="col-md-2 d-flex align-items-center">
+        <button
+          type="button"
+          className="btn icon-button btn-icon"
+          onClick={() => handleRemoveTool(index)}
+        >
+          <i className="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  ))}
+  <div className="form-group row">
+    <div className="col-md-12">
+      <button
+        type="button"
+        className="btn icon-button"
+        onClick={handleAddTool}
+      >
+        <i className="fas fa-plus"></i>Add Tools
+      </button>
+    </div>
+  </div>
+</div>
+
+{/* Others Section */}
+<div className="form-group">
+  <label>Others</label>
+  {formData.others.map((other, index) => (
+    <div key={index} className="form-group row">
+      <div className="col-md-10">
+        <input
+          type="text"
+          className="form-control"
+          value={other || ''}
+          onChange={(e) => handleOtherChange(index, e.target.value)}
+          placeholder="Enter other detail"
+        />
+      </div>
+      <div className="col-md-2 d-flex align-items-center">
+        <button
+          type="button"
+          className="btn icon-button btn-icon"
+          onClick={() => handleRemoveOther(index)}
+        >
+          <i className="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  ))}
+  <div className="form-group row">
+    <div className="col-md-12">
+      <button
+        type="button"
+        className="btn icon-button"
+        onClick={handleAddOther}
+      >
+        <i className="fas fa-plus"></i>Add Others
+      </button>
+    </div>
+  </div>
+</div>
+
+{/* Soft Skills Section */}
+<div className="form-group">
+  <label>Soft Skills</label>
+  {formData.softSkills.map((skill, index) => (
+    <div key={index} className="form-group row">
+      <div className="col-md-10">
+        <input
+          type="text"
+          className="form-control"
+          value={skill || ''}
+          onChange={(e) => handleSoftSkillChange(index, e.target.value)}
+          placeholder="Enter soft skill"
+        />
+      </div>
+      <div className="col-md-2 d-flex align-items-center">
+        <button
+          type="button"
+          className="btn icon-button btn-icon"
+          onClick={() => handleRemoveSoftSkill(index)}
+        >
+          <i className="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  ))}
+  <div className="form-group row">
+    <div className="col-md-12">
+      <button
+        type="button"
+        className="btn icon-button"
+        onClick={handleAddSoftSkill}
+      >
+        <i className="fas fa-plus"></i>Add Soft Skill
+      </button>
+    </div>
+  </div>
+</div>
+
+{/* Certifications Section */}
+<div className="form-group">
+  <label>Certifications</label>
+  {formData.certifications.map((certification, index) => (
+    <div key={index} className="form-group row">
+      <div className="col-md-5">
+        <input
+          type="text"
+          className="form-control"
+          value={certification.course || ''}
+          placeholder="Certificate Course"
+          onChange={(e) => handleCertificationChange(index, 'course', e.target.value)}
+        />
+      </div>
+      <div className="col-md-5">
+        <input
+          type="text"
+          className="form-control"
+          value={certification.company || ''}
+          placeholder="Company Name"
+          onChange={(e) => handleCertificationChange(index, 'company', e.target.value)}
+        />
+      </div>
+      <div className="col-md-2 d-flex align-items-center">
+        <button
+          type="button"
+          className="btn icon-button btn-icon"
+          onClick={() => handleRemoveCertification(index)}
+        >
+          <i className="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  ))}
+  <div className="form-group row">
+    <div className="col-md-12">
+      <button
+        type="button"
+        className="btn icon-button"
+        onClick={handleAddCertification}
+      >
+        <i className="fas fa-plus"></i>Add Certification
+      </button>
+    </div>
+  </div>
+</div>
+
 
 
 
