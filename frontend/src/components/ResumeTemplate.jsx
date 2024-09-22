@@ -44,61 +44,51 @@ export default function ResumeTemplate() {
     googleCloud: '',
     date: '',
     letterContent: '',
+    hobbies: ['cricket'],
     experience: [
-      {
-        position: 'Senior Project Manager',
-        company: 'Seton Hospital, ME',
-        dates: '2006',
-        details: ['Led a team of 5 developers'] // Ensure this is an array
-      }
+        {
+            position: 'Senior Project Manager',
+            company: 'Seton Hospital, ME',
+            dates: '2006',
+            details: ['Led a team of 5 developers'] // This is an array
+        }
     ],
     education: [
-      {
-        level: '', // 'Postgraduate', 'Graduate', 'Class 12th', 'Class 10th'
-        course: '',
-        college: '',
-        board: '',
-        medium: '',
-        yearOfPassing: '',
-        percentage: '',
-      }
+        {
+            level: '', // 'Postgraduate', 'Graduate', 'Class 12th', 'Class 10th'
+            course: '',
+            college: '',
+            board: '',
+            medium: '',
+            yearOfPassing: '',
+            percentage: '',
+        }
     ],
-    skills: [
-      'Microsoft Project'
-    ],
+    skills: ['Microsoft Project'],
     tools: [{ name: 'Jupyter' }],
-    languages: [
-      {
-        language: 'English',
-        level: 'Intermediate'
-      }
+    languages: ['English'],
+    projects: [
+        {
+            title: 'Project Alpha', // Project title
+            details: ['Developed a web application using React'] // This is an array
+        }
     ],
-    projects: [ // Add the projects section
-      {
-        title: 'Project Alpha', // Project title
-        details: ['Developed a web application using React'] // Array for project details
-      }
-    ],
-    others: [
-      'Prompt design'
-    ],
-    softSkills: [
-      'Teamwork'
-    ],
+    others: ['Prompt design'],
+    softSkills: ['Teamwork'],
     certifications: [
-      { course: 'Artificial Intelligence', 
-        company: 'Yhills' }
-  ]
+        { 
+            course: 'Artificial Intelligence', 
+            company: 'Yhills' 
+        }
+    ]
+});
 
-    
-
-  });
   
   
 
   const [selectedTemplateType, setSelectedTemplateType] = useState(1); // Add state for template type
   const [networkError, setNetworkError] = useState(false); // State to manage network error
-
+  
   const images = [img, img1, img2, img3, img4, img5, img6, img7];
 
   useEffect(() => {
@@ -236,13 +226,16 @@ export default function ResumeTemplate() {
     });
   };
 
-  //Experience Feature
   const handleAddExperience = () => {
     setFormData({
       ...formData,
-      experience: [...formData.experience, { position: '', company: '', dates: '', details: '' }]
+      experience: [
+        ...formData.experience, 
+        { position: '', company: '', dates: '', details: [] } // Initialize details as an array
+      ]
     });
   };
+  
   
   const handleRemoveExperience = (index) => {
     const newExperience = formData.experience.filter((_, i) => i !== index);
@@ -334,26 +327,25 @@ export default function ResumeTemplate() {
   
   
   //Handle Language
-  const handleLanguageChange = (index, field, value) => {
-    const newLanguages = formData.languages.map((language, i) => 
-      i === index ? { ...language, [field]: value } : language
-    );
-    setFormData({ ...formData, languages: newLanguages });
-  };
-
   const handleAddLanguage = () => {
     setFormData({
-      ...formData,
-      languages: [...formData.languages, { language: '', level: '' }]
+        ...formData,
+        languages: [...formData.languages, ''] // Add an empty string for the new language
     });
-  };
+};
 
-  const handleRemoveLanguage = (index) => {
-    setFormData({
-      ...formData,
-      languages: formData.languages.filter((_, i) => i !== index)
-    });
-  };
+const handleRemoveLanguage = (index) => {
+    const newLanguages = formData.languages.filter((_, i) => i !== index);
+    setFormData({ ...formData, languages: newLanguages });
+};
+
+const handleLanguageChange = (index, value) => {
+    const newLanguages = [...formData.languages];
+    newLanguages[index] = value; // Update the language string directly
+    setFormData({ ...formData, languages: newLanguages });
+};
+
+
   
 
   //Tools Section 
@@ -456,7 +448,25 @@ const handleCertificationChange = (index, field, value) => {
   });
 };
 
+//Hobbies Section
 
+// Function to handle hobbies changes
+const handleHobbyChange = (index, value) => {
+  const newHobbies = [...formData.hobbies];
+  newHobbies[index] = value;
+  setFormData({ ...formData, hobbies: newHobbies });
+};
+
+// Function to add a new hobby
+const handleAddHobby = () => {
+  setFormData({ ...formData, hobbies: [...formData.hobbies, ''] });
+};
+
+// Function to remove a hobby
+const handleRemoveHobby = (index) => {
+  const newHobbies = formData.hobbies.filter((_, i) => i !== index);
+  setFormData({ ...formData, hobbies: newHobbies });
+};
 
 
 
@@ -471,9 +481,6 @@ const handleDownloadPNG = () => {
   tempDiv.style.width = '210mm';
   tempDiv.style.height = '296mm';
   
-
-
-
 
   document.body.appendChild(tempDiv);
 
@@ -656,12 +663,13 @@ const handleDownloadPDF = () => {
       <label>Details (Point by Point)</label>
       {exp.details.map((point, pointIndex) => (
         <div key={pointIndex} className="form-group">
-          <input
-            type="text"
+          <textarea
             className="form-control"
             placeholder="Detail Point"
             value={point}
             onChange={(e) => handleExperiencePointChange(index, pointIndex, e.target.value)}
+            rows={3} // Controls the initial height of the textarea
+            style={{ resize: 'vertical', width: '100%' }} // Allows height to be adjustable, but width fixed
           />
           <button
             type="button"
@@ -682,7 +690,6 @@ const handleDownloadPDF = () => {
         <i className="fas fa-plus"></i> Add Point
       </button>
       
-
       {/* YearPicker below points */}
       <label>Year</label>
       <YearPicker
@@ -693,8 +700,6 @@ const handleDownloadPDF = () => {
         style={{ width: '100%' }} // Ensures full width
       />
       
-      
-
       <button
         type="button"
         className="btn btn-danger icon-button"
@@ -714,6 +719,7 @@ const handleDownloadPDF = () => {
     <i className="fas fa-plus"></i> Add Experience
   </button>
 </div>
+
 
 
 
@@ -923,12 +929,13 @@ const handleDownloadPDF = () => {
       <label>Details (Point by Point)</label>
       {project.details.map((point, pointIndex) => (
         <div key={pointIndex} className="form-group">
-          <input
-            type="text"
+          <textarea
             className="form-control"
             placeholder="Detail Point"
             value={point}
             onChange={(e) => handleProjectPointChange(index, pointIndex, e.target.value)}
+            rows={3} // Controls the initial height of the textarea
+            style={{ resize: 'vertical', width: '100%' }} // Allows height to be adjustable, but width fixed
           />
           <button
             type="button"
@@ -968,6 +975,7 @@ const handleDownloadPDF = () => {
     <i className="fas fa-plus"></i> Add Project
   </button>
 </div>
+
 
 {/* Tools Section */}
 <div className="form-group">
@@ -1131,9 +1139,51 @@ const handleDownloadPDF = () => {
 </div>
 
 
+{/* Conditionally render the Hobbies section only for Template 1 */}
+{selectedTemplateType === 1 && (
+          <div className="form-group">
+            <label>Hobbies</label>
+            {formData.hobbies.map((hobby, index) => (
+              <div key={index} className="form-group row">
+                <div className="col-md-10">
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={hobby || ''}
+                    onChange={(e) => handleHobbyChange(index, e.target.value)}
+                    placeholder="Enter hobby"
+                  />
+                </div>
+                <div className="col-md-2 d-flex align-items-center">
+                  <button
+                    type="button"
+                    className="btn icon-button btn-icon"
+                    onClick={() => handleRemoveHobby(index)}
+                  >
+                    <i className="fas fa-trash-alt"></i>
+                  </button>
+                </div>
+              </div>
+            ))}
+            <div className="form-group row">
+              <div className="col-md-12">
+                <button
+                  type="button"
+                  className="btn icon-button"
+                  onClick={handleAddHobby}
+                >
+                  <i className="fas fa-plus"></i>Add Hobby
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
 
-{/* Handle languages */}
+
+
+
+{/* Handle Languages */}
 <div className="form-group">
     <label>Languages</label>
     {formData.languages.map((lang, index) => (
@@ -1142,8 +1192,8 @@ const handleDownloadPDF = () => {
                 type="text"
                 className="form-control mb-1"
                 placeholder="Language"
-                value={lang.language}
-                onChange={(e) => handleLanguageChange(index, 'language', e.target.value)}
+                value={lang} // Directly use the string for value
+                onChange={(e) => handleLanguageChange(index, e.target.value)} // Adjust to handle only the language
             />
             <button
                 type="button"
@@ -1162,6 +1212,8 @@ const handleDownloadPDF = () => {
         <i className="fas fa-plus icon-button"></i> Add Language
     </button>
 </div>
+
+
 
         </div>
  
@@ -1231,12 +1283,25 @@ const handleDownloadPDF = () => {
         </div>
       )}
 
-          <button className="btn btn-secondary m-2 mb-2 down-temp" onClick={handleDownloadPNG}>
-            Download Template as PNG
-          </button>
-          <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPDF}>
-            Download Template as PDF
-          </button>
+<div>
+  <button className="btn btn-secondary m-2 mb-2 down-temp" onClick={handleDownloadPNG}>
+    Download Template as PNG
+  </button>
+  <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPDF}>
+    Download Template as PDF
+  </button>
+  
+
+  
+  {/* Alert message for large content */}
+  <div className="alert-container">
+  <div className="alert-message">
+    Content is too large to download as PNG. Please download it as a PDF.
+  </div>
+</div>
+
+
+        </div>
         </div>
       )}
       </section>
