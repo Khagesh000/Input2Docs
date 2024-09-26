@@ -4,9 +4,10 @@ import summaryIcon from '../assets/images/summary-icon.png';
 import experienceIcon from '../assets/images/experience.png';
 import personalInfoIcon from '../assets/images/experience.png';
 import languagesIcon from '../assets/images/summary-icon.png';
+import hobbiesIcon from '../assets/images/hobbies-icon.png'; // Replace this with the actual path to your hobbies icon
 
 
-export const generateTemplateContent = (formData, templateType) => {
+export const generateTemplateContent = (formData, templateType, croppedImage) => {
   const {
     name = 'John Smith',
     jobTitle = 'IT Project Manager',
@@ -183,40 +184,139 @@ export const generateTemplateContent = (formData, templateType) => {
             `).join('') : '<p style="color: black;">No certifications listed.</p>'}
           </div>
         </div>
-
-
-      <!-- Hobbies--> 
-<div style="margin-bottom: 5px; color: black;">
-  <h3 style="font-size: 18px; background-color: wheat; padding: 5px; margin: 0; color: black;">HOBBIES</h3>
-  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    ${formData.hobbies.length > 0 ? formData.hobbies.map(hobby => `
-      <p style="margin: 0; padding: 5px; border-radius: 5px; color: black;">${hobby || 'No hobby provided'}</p>
-    `).join('') : '<p style="color: black;">No hobbies listed.</p>'}
-  </div>
-</div>
-
-
-
-  
       </div>
     `;
 } else if (templateType === 2) {
-    return `
-      <div style="display: flex; height: 100%;">
-        <div style="flex: 1; padding: 20px; background-color: #ea0909; color: #f5e5e5; min-height: 1120px;">
-          <h1>${name || 'John Smith'}</h1>
-          <h2>${jobTitle || 'IT Project Manager'}</h2>
-          <p><strong>Address:</strong><br>${address || '123 Main St, City, State, ZIP'}</p>
-          <p><strong>Phone:</strong> ${phone || '(123) 456-7890'}</p>
-          <p><strong>Email:</strong> ${email || 'email@example.com'}</p>
-          <p><strong>LinkedIn:</strong> ${linkedin || 'linkedin.com/in/username'}</p>
-          <p><strong>Date:</strong> ${date || 'August 21, 2024'}</p>
+  // Use the cropped image URL if available, otherwise use the original image URL or placeholder.
+  const imageURL = croppedImage || (formData.image ? URL.createObjectURL(formData.image) : 'https://via.placeholder.com/140');
+   // Helper function to clean up the HTML string
+   const cleanHtml = (html) => {
+    return html.replace(/<br[^>]*data-mce-bogus="1"[^>]*>/g, ''); // Remove <br data-mce-bogus="1">
+  };
+  return `
+    <div style="display: flex; height: 100%; width: 100%; box-sizing: border-box; margin-left: 20px; margin-right: 20px;">
+      <div style="flex: 1; padding: 20px; background-color: #778eb8c4; color: #f5e5e5; min-height: 1120px; box-sizing: border-box;">
+        
+        <!-- Circular Image -->
+        <div style="display: inline-block; width: 140px; height: 140px; border-radius: 50%; overflow: hidden; margin-bottom: 10px;">
+          <img src="${imageURL}" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
         </div>
-        <div style="flex: 2; padding: 20px; background-color: #fff; color: #000;">
-          <p>${letterContent || 'Dear [Recipient],\n\nThis is a placeholder for your letter content.'}</p>
+
+        <!-- Personal Information -->
+        <div style="margin-top: 10px;">
+          <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">PERSONAL INFO</label>
+          <div style="margin: 5px 0;">
+            <strong style="color: #000;">Address:</strong><br>
+            <span style="font-size: 14px; color: #000;">${formData.address || '123 Main St, City, State, ZIP'}</span>
+          </div>
+          <div style="margin: 5px 0;">
+            <strong style="color: #000;">Phone:</strong><br>
+            <span style="font-size: 14px; color: #000;">${formData.phone || '(123) 456-7890'}</span>
+          </div>
+          <div style="margin: 5px 0;">
+            <strong style="color: #000;">Email:</strong><br>
+            <span style="font-size: 14px; color: #000;">${formData.email || 'email@example.com'}</span>
+          </div>
+          <div style="margin: 5px 0;">
+            <strong style="color: #000;">LinkedIn:</strong><br>
+            <span style="font-size: 14px; color: #000;">${formData.linkedin || 'linkedin.com/in/username'}</span>
+          </div>
         </div>
-      </div>`;  
-  } else if (templateType === 3) {
+
+        <!-- Education Section -->
+        <div style="margin-top: 20px;">
+          <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">EDUCATION</label>
+          ${formData.education.map(edu => `
+            <div style="margin: 10px 0; display: flex; justify-content: space-between; align-items: flex-start;">
+              <div style="flex: 1;">
+                <h4 style="color: #000; margin: 0;">${edu.level || 'Degree Level'}</h4>
+                ${edu.level === 'Class 10th' ? `
+                  <span style="font-size: 14px; color: #000;">${edu.schoolName || 'School Name'}</span><br>
+                  <span style="font-size: 14px; color: #000;"><strong>Medium: </strong>${edu.medium || 'Medium Not Provided'}</span><br>
+                  <span style="font-size: 14px; color: #000;"><strong>Duration: </strong>${edu.endYear || 'End Year'}</span><br>
+                  <span style="font-size: 14px; color: #000;"><strong>Percentage: </strong>${edu.percentage || 'Percentage Not Provided'}</span>
+                ` : ''}
+                ${edu.level === 'Class 12th' ? `
+                  <span style="font-size: 14px; color: #000;">${edu.college || 'College Name'}</span><br>
+                  <span style="font-size: 14px; color: #000;"><strong>Medium: </strong>${edu.medium || 'Medium Not Provided'}</span><br>
+                  <span style="font-size: 14px; color: #000;"><strong>Duration: </strong>${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}</span><br>
+                  <span style="font-size: 14px; color: #000;"><strong>Percentage: </strong>${edu.percentage || 'Percentage Not Provided'}</span>
+                ` : ''}
+                ${edu.level === 'Graduate' || edu.level === 'Postgraduate' ? `
+                  <span style="font-size: 14px; color: #000;">${edu.college || 'College Name'}</span><br>
+                  <span style="font-size: 14px; color: #000;"><strong>Course: </strong>${edu.course || 'Course Name'}</span><br>
+                  <span style="font-size: 14px; color: #000;"><strong>Duration: </strong>${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}</span><br>
+                  <span style="font-size: 14px; color: #000;"><strong>Percentage: </strong>${edu.percentage || 'Percentage Not Provided'}</span>
+                ` : ''}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+        <!-- Languages Section -->
+<div style="margin-top: 20px;">
+  <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">LANGUAGES</label>
+  ${formData.languages.map(lang => `
+    <div style="margin: 0px 0;">
+      <span style="font-size: 14px; color: #000;">${lang || 'Language Name'}</span>
+    </div>
+  `).join('')}
+</div>
+      </div>
+
+
+      
+      
+      <div style="flex: 2; padding: 20px; background-color: #fff; color: #000; display: flex; flex-direction: column; justify-content: flex-start;">
+        <h1 style="font-size: 28px; font-weight: bold; font-family: Arial, sans-serif; margin: 0; text-align: left; color: #0d0565c4;">
+          ${formData.firstName || 'JOHN'} ${formData.lastName || 'SMITH'}
+        </h1>
+        <h2 style="font-size: 20px; font-family: Arial, sans-serif; margin: 5px 0; text-align: left;">
+          ${formData.jobTitle || 'IT Project Manager'}
+        </h2>
+
+        <!-- Summary Section -->
+        <p style="font-size: 14px; line-height: 1.5; text-align: left; margin: 5px 0; margin-top: 35px;">
+          <strong style="color: #0d0565c4; font-size: 20px;">ABOUT ME</strong><br>
+          ${formData.summary || 'This is a placeholder for your summary content.'}
+        </p>
+
+        
+
+        <!-- Experience Section -->
+        <p style="font-size: 14px; line-height: 1.5; text-align: left; margin: 5px 0; margin-top: 25px;">
+          <strong style="color: #0d0565c4; font-size: 20px;">EXPERIENCE</strong><br>
+          ${formData.experience.map(exp => `
+            <div style="margin-bottom: 0px;">
+              <strong style="font-size: 16px; color: #000;">${exp.company || 'Company Name'}</strong><br>
+              <span style="font-size: 14px; color: #000; margin-right: 5px;">${exp.position || 'Position'}</span>
+              <span style="font-size: 14px; color: #000;">[${exp.dates || 'Year Range'}]</span>
+              <ul style="list-style-type: disc; margin: 3px 0 0 20px; padding-left: 20px; font-size: 14px;">
+                ${exp.details.map(detail => `<li>${detail || 'Responsibility/Achievement'}</li>`).join('')}
+              </ul>
+            </div>
+          `).join('')}
+        </p>
+
+
+        <!-- Skills Section -->
+        <p style="font-size: 14px; line-height: 1.5; text-align: left; margin: 5px 0; margin-top: 0px;">
+          <strong style="color: #0d0565c4; font-size: 20px;">SKILLS</strong><br>
+        </p>
+
+        <div style="display: flex; flex-wrap: wrap; margin-top: 0px;">
+          ${formData.skills.map(skill => `
+            <div style="flex: 1 1 50%; margin-bottom: 5px;">
+              <ul style="list-style-type: disc; margin: 0; padding-left: 20px; font-size: 14px;">
+                <li>${skill || 'Skill'}</li>
+              </ul>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      
+    </div>`;
+} else if (templateType === 3) {
     return `
     <div style="background-color: #ffffff; font-family: Arial, sans-serif; padding: 20px; max-width: 900px; margin: auto; display: flex;">
 
@@ -399,6 +499,17 @@ export const generateTemplateContent = (formData, templateType) => {
         </h3>
         <ul style="font-size: 14px; color: #333;">
           ${formData.skills.length > 0 ? formData.skills.map(skill => `<li>${skill}</li>`).join('') : '<li>No skills listed.</li>'}
+        </ul>
+      </div>
+
+      <!-- Hobbies Section -->
+      <div style="margin-top: 30px;">
+        <h3 style="font-size: 20px; display: flex; align-items: center;">
+          <img src="${hobbiesIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
+          Hobbies
+        </h3>
+        <ul style="font-size: 14px; color: #333;">
+          ${formData.hobbies.length > 0 ? formData.hobbies.map(hobbies => `<li>${hobbies}</li>`).join('') : '<li>No Hobbies listed.</li>'}
         </ul>
       </div>
       

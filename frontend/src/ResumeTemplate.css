@@ -53,9 +53,10 @@ body {
 
 .sliding-image {
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   object-fit: cover;
   animation: slideUpDown 5s infinite alternate;
+  
 }
 
 @keyframes slideUpDown {
@@ -537,6 +538,22 @@ element.style {
 
 .alert-message.bouncing {
   animation: bounce 1s infinite;
+}
+
+/* Custom Horizontal Line */
+.custom-line {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, #111112, #070707, #0c0c0c); /* Beautiful gradient effect */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+  color: #000;
+}
+
+/* Hover Effect */
+.custom-line:hover {
+  background: linear-gradient(to right, #28a745, #ffc107, #28a745); /* Changes to green and yellow on hover */
 }
 
 

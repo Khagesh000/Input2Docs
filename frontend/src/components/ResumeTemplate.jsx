@@ -1,14 +1,16 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useCallback  } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import html2canvas from 'html2canvas';
 import YearPicker from './YearPicker';
 
 import html2pdf from 'html2pdf.js';
+import Cropper from 'react-easy-crop';
+import getCroppedImg from './cropImage';
 
 import '../ResumeTemplate.css'; // Ensure this path is correct
 
 // Import images for templates
-import img from '../assets/images/cover_letter.png';
+import img from '../assets/images/ResumeTemplate1.png';
 import img1 from '../assets/images/cover_letter1.png';
 import img2 from '../assets/images/ResumeTemplate3.png';
 import img3 from '../assets/images/cover_letter1.png';
@@ -36,6 +38,7 @@ export default function ResumeTemplate() {
     lastName: '',
     jobTitle: '',
     principal: '',
+    image: null,
     school: '',
     address: '',
     phone: '',
@@ -64,7 +67,7 @@ export default function ResumeTemplate() {
             percentage: '',
         }
     ],
-    skills: ['Microsoft Project'],
+    skills: ['Python'],
     tools: [{ name: 'Jupyter' }],
     languages: ['English'],
     projects: [
@@ -88,6 +91,13 @@ export default function ResumeTemplate() {
 
   const [selectedTemplateType, setSelectedTemplateType] = useState(1); // Add state for template type
   const [networkError, setNetworkError] = useState(false); // State to manage network error
+
+  //Profile Image size adjust
+  const [crop, setCrop] = useState({ x: 0, y: 0 });
+  const [zoom, setZoom] = useState(1);
+  const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
+  const [croppedImage, setCroppedImage] = useState(null);
+  const [imageFile, setImageFile] = useState(null);
   
   const images = [img, img1, img2, img3, img4, img5, img6, img7];
 
@@ -133,8 +143,8 @@ export default function ResumeTemplate() {
   }, [content]);
 
   useEffect(() => {
-    setContent(generateTemplateContent(formData, selectedTemplateType));
-  }, [formData, selectedTemplateType]);
+    setContent(generateTemplateContent(formData, selectedTemplateType, croppedImage));
+  }, [formData, selectedTemplateType, croppedImage]);
 
   useEffect(() => {
     const handleOnline = () => setNetworkError(false);
@@ -176,7 +186,7 @@ export default function ResumeTemplate() {
     setSelectedImage(images[index]);
     const templateType = (index % 3) + 1; 
     setSelectedTemplateType(templateType);
-    setContent(generateTemplateContent(formData, templateType));
+    setContent(generateTemplateContent(formData, templateType, croppedImage));
     setEditorKey(prevKey => prevKey + 1);
 
     // Scroll to the input and editor section after selecting a template
@@ -187,7 +197,9 @@ export default function ResumeTemplate() {
           top: editorSection.offsetTop,
           behavior: 'smooth',
         });
-      }
+      } else {
+        console.warn('Editor section not found'); // Optional: log a warning if the section is missing
+    }
     }, 300);
   };
   
@@ -448,6 +460,59 @@ const handleCertificationChange = (index, field, value) => {
   });
 };
 
+
+// Existing handleImageUpload function
+// Inside your ResumeTemplate component
+
+const handleImageUpload = (e) => {
+  const file = e.target.files[0]; // Get the first file
+  if (file) {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImageFile(reader.result); // Set the image URL for cropping
+      setFormData((prevData) => ({
+        ...prevData,
+        image: file, // Update the image in the state
+      }));
+    };
+    reader.readAsDataURL(file); // Read the file as a data URL
+  } else {
+    console.warn("No file selected.");
+  }
+};
+
+
+
+// Handle cropping completion
+const handleCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
+  setCroppedAreaPixels(croppedAreaPixels);
+}, []);
+
+// Handle image cropping
+const handleCropImage = async () => {
+  try {
+    if (!imageFile || !croppedAreaPixels) {
+      console.warn("No image file or cropped area pixels defined.");
+      return;
+    }
+
+    const croppedImageUrl = await getCroppedImg(imageFile, croppedAreaPixels);
+    setCroppedImage(croppedImageUrl); // Set the cropped image URL
+    setFormData((prevData) => ({
+      ...prevData,
+      image: croppedImageUrl, // Update the formData with the cropped image URL
+    }));
+
+    // Ensure that the content updates with the new image
+    setContent(generateTemplateContent({ ...formData, image: croppedImageUrl }, selectedTemplateType));
+  } catch (error) {
+    console.error("Error during image cropping:", error);
+  }
+};
+
+
+
+
 //Hobbies Section
 
 // Function to handle hobbies changes
@@ -480,18 +545,20 @@ const handleDownloadPNG = () => {
   // Background color
   tempDiv.style.width = '210mm';
   tempDiv.style.height = '296mm';
+  tempDiv.style.boxSizing = 'border-box';
   
 
   document.body.appendChild(tempDiv);
 
   html2canvas(tempDiv, 
-  { scale: 2,
+  { scale: 3,
     width: tempDiv.clientWidth,
     height: tempDiv.clientHeight,
-    useCORS: true // To handle cross-origin issues with external resources
+    useCORS: true, // To handle cross-origin issues with external resources
+    allowTaint: true,
    }).then((canvas) => {
     const link = document.createElement('a');
-    link.href = canvas.toDataURL('image/png');
+    link.href = canvas.toDataURL('image/png', 1.0);
     link.download = 'cover-letter-template.png';
     link.click();
     document.body.removeChild(tempDiv);
@@ -503,7 +570,7 @@ const handleDownloadPDF = () => {
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = content;
   tempDiv.style.fontFamily = 'Arial, sans-serif';
-  
+  tempDiv.style.boxSizing = 'border-box';
 
 
 
@@ -520,7 +587,7 @@ const handleDownloadPDF = () => {
     margin: [10, 10, 10, 10], // Margins in mm
     filename: 'cover-letter-template.pdf',
     image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
+    html2canvas: { scale: 3, useCORS: true, allowTaint: true },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
   };
 
@@ -530,6 +597,8 @@ const handleDownloadPDF = () => {
     document.body.removeChild(tempDiv);
   });
 };
+
+
 
 
   return (
@@ -638,6 +707,71 @@ const handleDownloadPDF = () => {
     </div>
   </div>
 </div>
+<hr className='custom-line'></hr>  
+
+
+{selectedTemplateType === 2 && (
+  <>
+    {/* Profile Image Upload */}
+    <div className="form-group">
+            <label>Upload Profile Image</label>
+            <input
+              type="file"
+              accept="image/*"
+              className="form-control"
+              onChange={handleImageUpload}
+            />
+          </div>
+
+          {/* Image Cropper */}
+          {imageFile && (
+            <div style={{ position: 'relative', height: '300px' }}>
+              <Cropper
+                image={imageFile}
+                crop={crop}
+                zoom={zoom}
+                aspect={1} // Circular crop
+                onCropChange={setCrop}
+                onZoomChange={setZoom}
+                onCropComplete={handleCropComplete}
+              />
+            </div>
+          )}
+
+          {/* Cropped Image Preview */}
+          {croppedImage && (
+            <div style={{ textAlign: 'center', marginTop: '20px' }}>
+              <div
+                style={{
+                  width: '150px',
+                  height: '150px',
+                  borderRadius: '50%',
+                  overflow: 'hidden',
+                  border: '2px solid #1049b4',
+                  display: 'inline-block',
+                }}
+              >
+                <img
+                  src={croppedImage}
+                  alt="Profile Preview"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'top',
+                  }}
+                />
+              </div>
+            </div>
+          )}
+
+          <button onClick={handleCropImage} className='btn'>Crop Image</button>
+
+          <hr className="custom-line" />
+        </>
+      )}
+
+
 
 {/* Experience Section */}
 <div className="form-group">
@@ -719,6 +853,7 @@ const handleDownloadPDF = () => {
     <i className="fas fa-plus"></i> Add Experience
   </button>
 </div>
+<hr className='custom-line'></hr>
 
 
 
@@ -910,6 +1045,7 @@ const handleDownloadPDF = () => {
     <i className="fas fa-plus"></i> Add Education
   </button>
 </div>
+<hr className='custom-line'></hr>
 
 
 {/* Projects Section */}
@@ -975,6 +1111,7 @@ const handleDownloadPDF = () => {
     <i className="fas fa-plus"></i> Add Project
   </button>
 </div>
+<hr className='custom-line'></hr>
 
 
 {/* Tools Section */}
@@ -1014,6 +1151,7 @@ const handleDownloadPDF = () => {
     </div>
   </div>
 </div>
+<hr className='custom-line'></hr>
 
 {/* Others Section */}
 <div className="form-group">
@@ -1052,6 +1190,7 @@ const handleDownloadPDF = () => {
     </div>
   </div>
 </div>
+<hr className='custom-line'></hr>
 
 {/* Soft Skills Section */}
 <div className="form-group">
@@ -1090,6 +1229,7 @@ const handleDownloadPDF = () => {
     </div>
   </div>
 </div>
+<hr className='custom-line'></hr>
 
 {/* Certifications Section */}
 <div className="form-group">
@@ -1137,10 +1277,11 @@ const handleDownloadPDF = () => {
     </div>
   </div>
 </div>
+<hr className='custom-line'></hr>
 
 
 {/* Conditionally render the Hobbies section only for Template 1 */}
-{selectedTemplateType === 1 && (
+{selectedTemplateType === 3 && (
           <div className="form-group">
             <label>Hobbies</label>
             {formData.hobbies.map((hobby, index) => (
@@ -1176,7 +1317,9 @@ const handleDownloadPDF = () => {
                 </button>
               </div>
             </div>
+            <hr className='custom-line'></hr>
           </div>
+         
         )}
 
 
