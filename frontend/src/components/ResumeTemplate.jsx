@@ -11,7 +11,7 @@ import '../ResumeTemplate.css'; // Ensure this path is correct
 
 // Import images for templates
 import img from '../assets/images/ResumeTemplate1.png';
-import img1 from '../assets/images/cover_letter1.png';
+import img1 from '../assets/images/ResumeTemplate2.png';
 import img2 from '../assets/images/ResumeTemplate3.png';
 import img3 from '../assets/images/cover_letter1.png';
 import img4 from '../assets/images/cover_letter.png';
@@ -671,46 +671,10 @@ const handleDownloadPDF = () => {
           ))}
         </div>
           
-          {/* Skills Section */}
-<div className="form-group">
-  <label>Skills</label>
-  {formData.skills.map((skill, index) => (
-    <div key={index} className="form-group row">
-      <div className="col-md-10">
-        <input
-          type="text"
-          className="form-control"
-          value={skill || ''}
-          onChange={(e) => handleSkillChange(index, e.target.value)}
-        />
-      </div>
-      <div className="col-md-2 d-flex align-items-center">
-        <button
-          type="button"
-          className="btn icon-button btn-icon"
-          onClick={() => handleRemoveSkill(index)}
-        >
-          <i className="fas fa-trash-alt"></i>
-        </button>
-      </div>
-    </div>
-  ))}
-  <div className="form-group row">
-    <div className="col-md-12">
-      <button
-        type="button"
-        className="btn icon-button"
-        onClick={handleAddSkill}
-      >
-        <i className="fas fa-plus"></i>Add Skills
-      </button>
-    </div>
-  </div>
-</div>
-<hr className='custom-line'></hr>  
+           
 
 
-{selectedTemplateType === 2 && (
+{(selectedTemplateType === 1 || selectedTemplateType === 2) && (
   <>
     {/* Profile Image Upload */}
     <div className="form-group">
@@ -770,6 +734,9 @@ const handleDownloadPDF = () => {
           <hr className="custom-line" />
         </>
       )}
+
+
+ 
 
 
 
@@ -1048,7 +1015,48 @@ const handleDownloadPDF = () => {
 <hr className='custom-line'></hr>
 
 
+ {/* Skills Section */}
+ <div className="form-group">
+  <label>Skills</label>
+  {formData.skills.map((skill, index) => (
+    <div key={index} className="form-group row">
+      <div className="col-md-10">
+        <input
+          type="text"
+          className="form-control"
+          value={skill || ''}
+          onChange={(e) => handleSkillChange(index, e.target.value)}
+        />
+      </div>
+      <div className="col-md-2 d-flex align-items-center">
+        <button
+          type="button"
+          className="btn icon-button btn-icon"
+          onClick={() => handleRemoveSkill(index)}
+        >
+          <i className="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  ))}
+  <div className="form-group row">
+    <div className="col-md-12">
+      <button
+        type="button"
+        className="btn icon-button"
+        onClick={handleAddSkill}
+      >
+        <i className="fas fa-plus"></i>Add Skills
+      </button>
+    </div>
+  </div>
+</div>
+<hr className='custom-line'></hr> 
+
+
 {/* Projects Section */}
+{selectedTemplateType === 1 && (
+  <>
 <div className="form-group">
   <label>Projects</label>
   {formData.projects.map((project, index) => (
@@ -1112,9 +1120,14 @@ const handleDownloadPDF = () => {
   </button>
 </div>
 <hr className='custom-line'></hr>
+</>
+)}
+
 
 
 {/* Tools Section */}
+{selectedTemplateType === 1 && (
+  <>
 <div className="form-group">
   <label>Tools</label>
   {formData.tools.map((tool, index) => (
@@ -1152,8 +1165,13 @@ const handleDownloadPDF = () => {
   </div>
 </div>
 <hr className='custom-line'></hr>
+</>
+)}
+
 
 {/* Others Section */}
+{selectedTemplateType === 1 && (
+  <>
 <div className="form-group">
   <label>Others</label>
   {formData.others.map((other, index) => (
@@ -1191,8 +1209,13 @@ const handleDownloadPDF = () => {
   </div>
 </div>
 <hr className='custom-line'></hr>
+</>
+)}
+
 
 {/* Soft Skills Section */}
+{selectedTemplateType === 1 && (
+  <>
 <div className="form-group">
   <label>Soft Skills</label>
   {formData.softSkills.map((skill, index) => (
@@ -1230,8 +1253,13 @@ const handleDownloadPDF = () => {
   </div>
 </div>
 <hr className='custom-line'></hr>
+</>
+)}
+
 
 {/* Certifications Section */}
+{selectedTemplateType === 1 && (
+  <>
 <div className="form-group">
   <label>Certifications</label>
   {formData.certifications.map((certification, index) => (
@@ -1276,12 +1304,16 @@ const handleDownloadPDF = () => {
       </button>
     </div>
   </div>
+  
 </div>
 <hr className='custom-line'></hr>
+</>
+)}
 
 
 {/* Conditionally render the Hobbies section only for Template 1 */}
 {selectedTemplateType === 3 && (
+  <>
           <div className="form-group">
             <label>Hobbies</label>
             {formData.hobbies.map((hobby, index) => (
@@ -1317,9 +1349,10 @@ const handleDownloadPDF = () => {
                 </button>
               </div>
             </div>
-            <hr className='custom-line'></hr>
+            
           </div>
-         
+         <hr className='custom-line'></hr>
+         </>
         )}
 
 
@@ -1327,6 +1360,8 @@ const handleDownloadPDF = () => {
 
 
 {/* Handle Languages */}
+{(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType ===3 )&& (
+  <>
 <div className="form-group">
     <label>Languages</label>
     {formData.languages.map((lang, index) => (
@@ -1355,10 +1390,11 @@ const handleDownloadPDF = () => {
         <i className="fas fa-plus icon-button"></i> Add Language
     </button>
 </div>
-
-
+</>
+)}
 
         </div>
+        
  
 
         {/* Suggestions content on the right side, visible only on large screens */}

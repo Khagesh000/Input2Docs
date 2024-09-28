@@ -10,7 +10,7 @@ export default defineConfig(({mode}) => {
     rollupOptions: {
       // Ensure that CSS files are included correctly
       external: [
-        'react-quill/dist/quill.snow.css',
+        'emailjs-com'
       ],
     },
 

@@ -1,13 +1,11 @@
 import React from 'react';
- // Import custom CSS for styling
-
-import img3 from '../assets/images/lettermaker.png';
+// Import custom CSS for styling
+import '../importanceLetter.css';
+import img3 from '../assets/images/Suggestions.jpg';
 
 export default function ImportanceLetter() {
   return (
-    <div>
-      
-
+    <div className="importance-letter-container">
       <section className="points-section">
         <div className="row">
           <div className="col-lg-6">
@@ -38,7 +36,7 @@ export default function ImportanceLetter() {
               </div>
             </div>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-6 image-wrapper">
             <img src={img3} alt="Illustration" className="img-fluid point-image" />
           </div>
         </div>

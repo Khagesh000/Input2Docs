@@ -58,6 +58,9 @@
   .heading-subtitle {
     font-size: 1.5rem; /* Smaller font size for subtitle */
   }
+  .resume {
+    padding-top: 18%;/* Ensure text is readable on dark background */
+  }
 }
 
 /* For mobile devices (up to 576px) */
@@ -68,5 +71,8 @@
 
   .heading-subtitle {
     font-size: 1.25rem; /* Even smaller font size for subtitle */
+  }
+  .resume {
+    padding-top: 18%;/* Ensure text is readable on dark background */
   }
 }

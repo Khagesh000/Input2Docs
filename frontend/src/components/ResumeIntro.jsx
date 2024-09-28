@@ -1,6 +1,6 @@
 import React from 'react';
 import '../ResumeIntro.css'; // Make sure you have a CSS file for ResumeIntro styling
-import img2 from '../assets/images/adsplace2.jpg'; 
+import img2 from '../assets/images/Resume.jpg'; 
 
 export default function ResumeIntro() {
   return (

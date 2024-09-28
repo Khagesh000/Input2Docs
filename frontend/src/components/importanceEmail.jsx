@@ -1,14 +1,12 @@
 import React from 'react';
 import '../importanceEmail.css'; // Import custom CSS for styling
-import img2 from '../assets/images/adsplace.jpg';
-import img3 from '../assets/images/lettermaker.png';
+import img3 from '../assets/images/Suggestions1.jpg';
 
-export default function ImportanceLetter() {
+export default function ImportanceEmail() {
   return (
     <div>
-      
       <section className="points-section">
-        <div className="row">
+        <div className="row align-items-stretch"> {/* Ensures equal height */}
           <div className="col-lg-6">
             <div className="point-container">
               <div className="point-content point-content-1">
@@ -38,7 +36,7 @@ export default function ImportanceLetter() {
             </div>
           </div>
           <div className="col-lg-6">
-            <img src={img3} alt="Illustration" className="img-fluid point-image" />
+            <img src={img3} alt="Illustration" className="img-fluid point-image"/>
           </div>
         </div>
       </section>

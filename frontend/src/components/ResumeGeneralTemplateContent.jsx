@@ -158,7 +158,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
             </div>
 
             <div style="display: flex; margin-bottom: 6px;">
-              <strong style="margin-right: 5px;">Soft Skills:</strong>
+              <strong style="margin-right: 5px;">Languages:</strong>
               <div style="color: black;">
                 ${formData.languages.length > 0 ? formData.languages.join(', ') : 'No soft skills listed.'}
               </div>
@@ -275,7 +275,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         </h2>
 
         <!-- Summary Section -->
-        <p style="font-size: 14px; line-height: 1.5; text-align: left; margin: 5px 0; margin-top: 35px;">
+        <p style="font-size: 14px; line-height: 1.5; text-align: left; margin: 5px 0; margin-top: 35px; color: #000;">
           <strong style="color: #0d0565c4; font-size: 20px;">ABOUT ME</strong><br>
           ${formData.summary || 'This is a placeholder for your summary content.'}
         </p>
