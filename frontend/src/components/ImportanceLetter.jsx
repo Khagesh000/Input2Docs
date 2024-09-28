@@ -1,6 +1,6 @@
 import React from 'react';
 // Import custom CSS for styling
-import '../importanceLetter.css';
+import '../ImportanceLetter.css';
 import img3 from '../assets/images/Suggestions.jpg';
 
 export default function ImportanceLetter() {
