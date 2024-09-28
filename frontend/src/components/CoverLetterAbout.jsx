@@ -1,6 +1,6 @@
 import React from 'react'
 import '../AboutChoose.css'
-import img from '../assets/images/adsplace1.jpg'
+import img from '../assets/images/importanceofcv.jpg'
 
 
 export default function CoverLetterAbout() {

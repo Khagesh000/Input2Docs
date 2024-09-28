@@ -7,7 +7,7 @@
 
 /* Styling the images with border-radius for a cylindrical effect */
 .importance-image img {
-  width: 70%;
+  width: 80%;
   height: 250px;
   display: block;
   border-radius: 25%; /* Circular shape */
@@ -59,11 +59,10 @@
   .importance-image, .importance-content {
       order: initial !important;
   }
-  
-}
 
-@media (min-width: 767px){
   .importance-image img {
-    width: 100%;
+    width: 90%;
+    height: 200px;
   }
+  
 }

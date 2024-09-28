@@ -1,6 +1,6 @@
 import React from 'react';
 import '../CoverLetterIntro.css'; // Import your external CSS file
-import img2 from '../assets/images/adsplace2.jpg'; 
+import img2 from '../assets/images/cv.jpg'; 
 
 
 
