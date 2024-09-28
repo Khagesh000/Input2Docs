@@ -7,12 +7,6 @@ export default defineConfig(({mode}) => {
   plugins: [react()],
   build: {
     chunkSizeWarningLimit: mode === 'production' ? 2000 : 600,},
-    rollupOptions: {
-      // Ensure that CSS files are included correctly
-      external: [
-        'emailjs-com'
-      ],
-    },
 
   resolve: {
     alias: {
