@@ -8,6 +8,7 @@ import Cropper from 'react-easy-crop';
 import getCroppedImg from './cropImage';
 
 import '../ResumeTemplate.css'; // Ensure this path is correct
+import '../ResumeTemplate-new.css';
 
 // Import images for templates
 import img from '../assets/images/ResumeTemplate1.png';
@@ -24,12 +25,14 @@ import { generateTemplateContent } from './ResumeGeneralTemplateContent';
 
 
 
-export default function ResumeTemplate() {
+export default function ResumeTemplate({ images: imgList }) {
   const containerRef = useRef(null);
   const selectedImageRef = useRef(null);
   const editorRef = useRef(null); // Define the editorRef
   const [cardWidth, setCardWidth] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [visibleRows, setVisibleRows] = useState(1);
+  const [loading, setLoading] = useState(false);
   const [content, setContent] = useState('');
   const [editorKey, setEditorKey] = useState(0); // Add a key for editor
   const [formData, setFormData] = useState({
@@ -202,6 +205,17 @@ export default function ResumeTemplate() {
     }
     }, 300);
   };
+
+
+  // Handle show more images in the second section
+  const handleShowMore = () => {
+    setLoading(true); // Set loading to true when showing more images
+    setTimeout(() => {
+      setVisibleRows((prev) => prev + 1); // Show 1 more row of images
+      setLoading(false); // Reset loading after adding more images
+    }, 500); // Simulate loading time, adjust as necessary
+  };
+
   
 
   const handleInputChange = (event) => {
@@ -639,6 +653,50 @@ const handleDownloadPDF = () => {
         
       </div>
     </div>
+
+
+   {/* Second Template Section */}
+   <div className="resume-template-section">
+        <div className="container template-container mb-5">
+          <h2 className="text-center heading-title resume-title">
+            Explore More <span>Templates</span>
+          </h2>
+          <div className="template-wrapper">
+           
+            <div className="row template-gallery">
+              {images.slice(0, visibleRows * 3).map((image, index) => (
+                <div className="col-lg-4 col-md-6 col-sm-12 template-column" key={index}>
+                  <div className="template-card">
+                    <div className="template-image-container">
+                      <img
+                        src={image}
+                        alt={`Resume Template ${index + 1}`}
+                        className={`img-fluid template-image ${selectedImage === image ? 'selected' : ''}`}
+                      />
+                      <div className="template-overlay second-temp">
+                        <button className="custom-use-template-button" onClick={() => handleUseTemplate(index)}>
+                          Use Template
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {visibleRows * 3 < images.length && (
+              <div className="text-center mt-3">
+                <button className="btn btn-secondary show-more" onClick={handleShowMore}  disabled={loading}>
+                  {loading ? 'Loading...' : 'Show More'}
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    
+
+    
      
     <section className="m-0 editor-section">
   {selectedImage && (

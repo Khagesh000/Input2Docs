@@ -6,7 +6,7 @@ body {
 }
 
 .resume-template{
-  padding-top: 8%;
+  padding-top: 3%;
   
 }
 
@@ -558,6 +558,13 @@ element.style {
 
 
 
+.template-row-wrapper .col-12 {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+
 
 @media(min-width: 960px) {
   .editor-container {
@@ -580,6 +587,17 @@ element.style {
   }
   .resume-suggestions {
     display: block; /* Display suggestions box */
+  }
+
+  .template-row-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .template-row-wrapper .col-lg-4 {
+    width: 30%; /* Three items per row, with a little margin */
+    margin-bottom: 20px; /* Spacing between the rows */
   }
  
   
