@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import html2pdf from 'html2pdf.js';
 import '../Letter.css';
 
