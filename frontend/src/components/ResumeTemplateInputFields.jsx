@@ -29,4 +29,13 @@ export const templateInputFields = {
     { label: 'Email', name: 'email', type: 'email' },
     { label: 'LinkedIn', name: 'linkedin', type: 'text' }, 
   ],
+  4: [
+    { label: 'First Name', name: 'firstName', type: 'text' },
+    { label: 'Last Name', name: 'lastName', type: 'text' },
+    { label: 'Phone', name: 'phone', type: 'text' },
+    { label: 'Email', name: 'email', type: 'email' },
+    { label: 'LinkedIn', name: 'linkedin', type: 'text' },
+    { label: 'Github', name: 'Github', type: 'text' },
+    { label: 'Summary', name: 'summary', type: 'textarea' }
+  ],
 };

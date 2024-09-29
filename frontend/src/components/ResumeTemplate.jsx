@@ -14,7 +14,7 @@ import '../ResumeTemplate-new.css';
 import img from '../assets/images/ResumeTemplate1.png';
 import img1 from '../assets/images/ResumeTemplate2.png';
 import img2 from '../assets/images/ResumeTemplate3.png';
-import img3 from '../assets/images/cover_letter1.png';
+import img3 from '../assets/images/ResumeTemplate4.png';
 import img4 from '../assets/images/cover_letter.png';
 import img5 from '../assets/images/cover_letter1.png';
 import img6 from '../assets/images/cover_letter.png';
@@ -47,6 +47,7 @@ export default function ResumeTemplate({ images: imgList }) {
     phone: '',
     email: '',
     linkedin: '',
+    Github: 'GithubName',
     googleCloud: '',
     date: '',
     letterContent: '',
@@ -54,7 +55,7 @@ export default function ResumeTemplate({ images: imgList }) {
     experience: [
         {
             position: 'Senior Project Manager',
-            company: 'Seton Hospital, ME',
+            company: 'Infrawide',
             dates: '2006',
             details: ['Led a team of 5 developers'] // This is an array
         }
@@ -84,7 +85,8 @@ export default function ResumeTemplate({ images: imgList }) {
     certifications: [
         { 
             course: 'Artificial Intelligence', 
-            company: 'Yhills' 
+            company: 'Yhills',
+            details: ['Developed a web application using React'] 
         }
     ]
 });
@@ -187,7 +189,7 @@ export default function ResumeTemplate({ images: imgList }) {
 
   const handleUseTemplate = (index) => {
     setSelectedImage(images[index]);
-    const templateType = (index % 3) + 1; 
+    const templateType = (index % 4) + 1; 
     setSelectedTemplateType(templateType);
     setContent(generateTemplateContent(formData, templateType, croppedImage));
     setEditorKey(prevKey => prevKey + 1);
@@ -452,26 +454,59 @@ const handleSoftSkillChange = (index, value) => {
 
 const handleAddCertification = () => {
   setFormData({
-      ...formData,
-      certifications: [...formData.certifications, { course: '', company: '' }]
+    ...formData,
+    certifications: [...formData.certifications, { course: '', company: '', details: [] }]
   });
 };
 
+// Function to remove a certification
 const handleRemoveCertification = (index) => {
   setFormData({
-      ...formData,
-      certifications: formData.certifications.filter((_, i) => i !== index)
+    ...formData,
+    certifications: formData.certifications.filter((_, i) => i !== index)
   });
 };
 
+// Function to handle changes in certification fields
 const handleCertificationChange = (index, field, value) => {
   const updatedCertifications = formData.certifications.map((cert, i) =>
-      i === index ? { ...cert, [field]: value } : cert
+    i === index ? { ...cert, [field]: value } : cert
   );
   setFormData({
-      ...formData,
-      certifications: updatedCertifications
+    ...formData,
+    certifications: updatedCertifications
   });
+};
+
+
+// Function to handle adding a detail point to a certification
+const handleAddCertificationPoint = (index) => {
+  const updatedCertifications = [...formData.certifications];
+  updatedCertifications[index].details.push(''); // Add an empty string for the new point
+  setFormData({ ...formData, certifications: updatedCertifications });
+};
+
+// Function to handle changes in certification detail points
+const handleCertificationPointChange = (certIndex, pointIndex, value) => {
+  const updatedCertifications = formData.certifications.map((cert, i) => {
+    if (i === certIndex) {
+      const updatedDetails = cert.details.map((point, j) => (j === pointIndex ? value : point));
+      return { ...cert, details: updatedDetails };
+    }
+    return cert;
+  });
+  setFormData({ ...formData, certifications: updatedCertifications });
+};
+
+// Function to remove a specific detail point
+const handleRemoveCertificationPoint = (certIndex, pointIndex) => {
+  const updatedCertifications = formData.certifications.map((cert, i) => {
+    if (i === certIndex) {
+      return { ...cert, details: cert.details.filter((_, j) => j !== pointIndex) };
+    }
+    return cert;
+  });
+  setFormData({ ...formData, certifications: updatedCertifications });
 };
 
 
@@ -555,6 +590,7 @@ const handleDownloadPNG = () => {
 
   // Apply global styles to ensure consistent appearance
   tempDiv.style.fontFamily = 'Arial, sans-serif';
+  tempDiv.style.color = '#000'; // Set default text color
   
   // Background color
   tempDiv.style.width = '210mm';
@@ -732,7 +768,7 @@ const handleDownloadPDF = () => {
            
 
 
-{(selectedTemplateType === 1 || selectedTemplateType === 2) && (
+{selectedTemplateType === 2 && (
   <>
     {/* Profile Image Upload */}
     <div className="form-group">
@@ -1113,7 +1149,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Projects Section */}
-{selectedTemplateType === 1 && (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 )&& (
   <>
 <div className="form-group">
   <label>Projects</label>
@@ -1184,7 +1220,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Tools Section */}
-{selectedTemplateType === 1 && (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 )&& (
   <>
 <div className="form-group">
   <label>Tools</label>
@@ -1228,7 +1264,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Others Section */}
-{selectedTemplateType === 1 && (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 )&& (
   <>
 <div className="form-group">
   <label>Others</label>
@@ -1272,7 +1308,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Soft Skills Section */}
-{selectedTemplateType === 1 && (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 )&& (
   <>
 <div className="form-group">
   <label>Soft Skills</label>
@@ -1316,57 +1352,96 @@ const handleDownloadPDF = () => {
 
 
 {/* Certifications Section */}
-{selectedTemplateType === 1 && (
+{(selectedTemplateType === 1 || selectedTemplateType === 4) && (
   <>
-<div className="form-group">
-  <label>Certifications</label>
-  {formData.certifications.map((certification, index) => (
-    <div key={index} className="form-group row">
-      <div className="col-md-5">
-        <input
-          type="text"
-          className="form-control"
-          value={certification.course || ''}
-          placeholder="Certificate Course"
-          onChange={(e) => handleCertificationChange(index, 'course', e.target.value)}
-        />
-      </div>
-      <div className="col-md-5">
-        <input
-          type="text"
-          className="form-control"
-          value={certification.company || ''}
-          placeholder="Company Name"
-          onChange={(e) => handleCertificationChange(index, 'company', e.target.value)}
-        />
-      </div>
-      <div className="col-md-2 d-flex align-items-center">
-        <button
-          type="button"
-          className="btn icon-button btn-icon"
-          onClick={() => handleRemoveCertification(index)}
-        >
-          <i className="fas fa-trash-alt"></i>
-        </button>
+    <div className="form-group">
+      <label>Certifications</label>
+      {formData.certifications.map((certification, index) => (
+        <div key={index} className="form-group">
+          <div className="row">
+            <div className="col-md-5">
+              <input
+                type="text"
+                className="form-control"
+                value={certification.course || ''}
+                placeholder="Certificate Course"
+                onChange={(e) => handleCertificationChange(index, 'course', e.target.value)}
+              />
+            </div>
+            <div className="col-md-5">
+              <input
+                type="text"
+                className="form-control"
+                value={certification.company || ''}
+                placeholder="Company Name"
+                onChange={(e) => handleCertificationChange(index, 'company', e.target.value)}
+              />
+            </div>
+            <div className="col-md-2 d-flex align-items-center">
+              <button
+                type="button"
+                className="btn icon-button btn-icon"
+                onClick={() => handleRemoveCertification(index)}
+              >
+                <i className="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          </div>
+
+          {/* Only show details points input field for templateType 4 */}
+          {selectedTemplateType === 4 && (
+            <>
+              <label>Details (Point by Point)</label>
+              {certification.details.map((point, pointIndex) => (
+                <div key={pointIndex} className="form-group">
+                  <textarea
+                    className="form-control"
+                    placeholder="Detail Point"
+                    value={point}
+                    onChange={(e) => handleCertificationPointChange(index, pointIndex, e.target.value)}
+                    rows={3} // Controls the initial height of the textarea
+                    style={{ resize: 'vertical', width: '100%' }} // Allows height to be adjustable, but width fixed
+                  />
+                  <button
+                    type="button"
+                    className="btn btn-danger icon-button mt-2"
+                    onClick={() => handleRemoveCertificationPoint(index, pointIndex)}
+                  >
+                    <i className="fas fa-trash-alt"></i>
+                  </button>
+                </div>
+              ))}
+
+              {/* Add Certification Point Button */}
+              <button
+                type="button"
+                className="btn btn-secondary icon-button mt-2"
+                onClick={() => handleAddCertificationPoint(index)}
+              >
+                <i className="fas fa-plus"></i> Add Certification Point
+              </button>
+            </>
+          )}
+        </div>
+      ))}
+
+      {/* Add Certification Button */}
+      <div className="form-group row">
+        <div className="col-md-12">
+          <button
+            type="button"
+            className="btn icon-button"
+            onClick={handleAddCertification}
+          >
+            <i className="fas fa-plus"></i> Add Certification
+          </button>
+        </div>
       </div>
     </div>
-  ))}
-  <div className="form-group row">
-    <div className="col-md-12">
-      <button
-        type="button"
-        className="btn icon-button"
-        onClick={handleAddCertification}
-      >
-        <i className="fas fa-plus"></i>Add Certification
-      </button>
-    </div>
-  </div>
-  
-</div>
-<hr className='custom-line'></hr>
-</>
+    <hr className="custom-line" />
+  </>
 )}
+
 
 
 {/* Conditionally render the Hobbies section only for Template 1 */}
@@ -1418,7 +1493,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Handle Languages */}
-{(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType ===3 )&& (
+{(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType ===3 || selectedTemplateType ===4 )&& (
   <>
 <div className="form-group">
     <label>Languages</label>
