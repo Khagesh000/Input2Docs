@@ -189,7 +189,7 @@ export default function ResumeTemplate({ images: imgList }) {
 
   const handleUseTemplate = (index) => {
     setSelectedImage(images[index]);
-    const templateType = (index % 4) + 1; 
+    const templateType = (index % 5) + 1; 
     setSelectedTemplateType(templateType);
     setContent(generateTemplateContent(formData, templateType, croppedImage));
     setEditorKey(prevKey => prevKey + 1);
@@ -1149,7 +1149,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Projects Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 )&& (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5 )&& (
   <>
 <div className="form-group">
   <label>Projects</label>
@@ -1352,7 +1352,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Certifications Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4) && (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5) && (
   <>
     <div className="form-group">
       <label>Certifications</label>
@@ -1389,7 +1389,7 @@ const handleDownloadPDF = () => {
           </div>
 
           {/* Only show details points input field for templateType 4 */}
-          {selectedTemplateType === 4 && (
+          {(selectedTemplateType === 4 || selectedTemplateType === 5)&& (
             <>
               <label>Details (Point by Point)</label>
               {certification.details.map((point, pointIndex) => (
@@ -1445,7 +1445,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Conditionally render the Hobbies section only for Template 1 */}
-{selectedTemplateType === 3 && (
+{(selectedTemplateType === 3 || selectedTemplateType === 5)&& (
   <>
           <div className="form-group">
             <label>Hobbies</label>
@@ -1493,7 +1493,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Handle Languages */}
-{(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType ===3 || selectedTemplateType ===4 )&& (
+{(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType ===3 || selectedTemplateType ===4 || selectedTemplateType === 5)&& (
   <>
 <div className="form-group">
     <label>Languages</label>
