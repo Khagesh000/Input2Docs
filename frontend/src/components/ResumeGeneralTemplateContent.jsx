@@ -800,7 +800,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
     
     <!-- Education Section -->
     <div style="margin-top: 20px; padding-left: 20px;">
-      <h3 style="font-size: 22px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">EDUCATION</h3>
+      <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">EDUCATION</h3>
       ${(formData.education || []).map(edu => `
         <div style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin: 5px 0; background-color: #f9f9f9;">
           <div style="font-size: 16px; font-weight: bold; color: #333;">
@@ -817,7 +817,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
     <!-- Experience Section -->
     <div style="margin-top: 0px; padding-left: 20px;">
-      <h3 style="font-size: 22px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">EXPERIENCE</h3>
+      <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">EXPERIENCE</h3>
       ${(formData.experience || []).map(exp => `
         <div style="margin: 10px 0; font-size: 14px; color: black;">
           <strong>${exp.company || 'Company Name'}</strong><br>
@@ -831,7 +831,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
     <!-- Projects Section -->
 <div style="margin-top: 0px; padding-left: 20px;">
-  <h3 style="font-size: 22px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">PROJECTS</h3>
+  <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">PROJECTS</h3>
    ${formData.projects.length > 0 ? formData.projects.map(project => `
               <div style="margin-bottom: 10px;">
                 <strong style="color: black;">${project.title || 'Project title not provided'}</strong>
@@ -846,7 +846,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 <!-- Certificates Section -->
 <div style="margin-top: 0px; padding-left: 20px;">
-  <h3 style="font-size: 22px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">CERTIFICATES</h3>
+  <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">CERTIFICATES</h3>
   ${formData.certifications.length > 0 ? formData.certifications.map(certification => `
     <div style="margin-bottom: 1px;">
       <!-- Certification Course and Company on Same Line -->
