@@ -48,4 +48,11 @@ export const templateInputFields = {
     { label: 'LinkedIn', name: 'linkedin', type: 'text' },
     { label: 'Summary', name: 'summary', type: 'textarea' }
   ],
+  6: [
+    { label: 'First Name', name: 'firstName', type: 'text' },
+    { label: 'Last Name', name: 'lastName', type: 'text' },
+    { label: 'Email', name: 'email', type: 'email' },
+    { label: 'Phone', name: 'phone', type: 'text' },
+    { label: 'Summary', name: 'summary', type: 'textarea' }
+  ],
 };

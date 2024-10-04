@@ -189,7 +189,7 @@ export default function ResumeTemplate({ images: imgList }) {
 
   const handleUseTemplate = (index) => {
     setSelectedImage(images[index]);
-    const templateType = (index % 5) + 1; 
+    const templateType = (index % 6) + 1; 
     setSelectedTemplateType(templateType);
     setContent(generateTemplateContent(formData, templateType, croppedImage));
     setEditorKey(prevKey => prevKey + 1);
@@ -1149,7 +1149,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Projects Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5 )&& (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 6 )&& (
   <>
 <div className="form-group">
   <label>Projects</label>
@@ -1220,7 +1220,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Tools Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 )&& (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 )&& (
   <>
 <div className="form-group">
   <label>Tools</label>
@@ -1264,7 +1264,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Others Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 )&& (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 )&& (
   <>
 <div className="form-group">
   <label>Others</label>
@@ -1308,7 +1308,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Soft Skills Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 )&& (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 )&& (
   <>
 <div className="form-group">
   <label>Soft Skills</label>
@@ -1352,7 +1352,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Certifications Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5) && (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 6) && (
   <>
     <div className="form-group">
       <label>Certifications</label>
@@ -1493,7 +1493,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Handle Languages */}
-{(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType ===3 || selectedTemplateType ===4 || selectedTemplateType === 5)&& (
+{(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType ===3 || selectedTemplateType ===4 || selectedTemplateType === 5 || selectedTemplateType === 6)&& (
   <>
 <div className="form-group">
     <label>Languages</label>
