@@ -15,9 +15,9 @@ import img from '../assets/images/ResumeTemplate1.png';
 import img1 from '../assets/images/ResumeTemplate2.png';
 import img2 from '../assets/images/ResumeTemplate3.png';
 import img3 from '../assets/images/ResumeTemplate4.png';
-import img4 from '../assets/images/cover_letter.png';
-import img5 from '../assets/images/cover_letter1.png';
-import img6 from '../assets/images/cover_letter.png';
+import img4 from '../assets/images/ResumeTemplate5.png';
+import img5 from '../assets/images/ResumeTemplate6.png';
+import img6 from '../assets/images/ResumeTemplate7.png';
 import img7 from '../assets/images/cover_letter1.png';
 
 import { templateInputFields } from './ResumeTemplateInputFields';
@@ -189,7 +189,7 @@ export default function ResumeTemplate({ images: imgList }) {
 
   const handleUseTemplate = (index) => {
     setSelectedImage(images[index]);
-    const templateType = (index % 6) + 1; 
+    const templateType = (index % 8) + 1; 
     setSelectedTemplateType(templateType);
     setContent(generateTemplateContent(formData, templateType, croppedImage));
     setEditorKey(prevKey => prevKey + 1);
@@ -591,29 +591,29 @@ const handleDownloadPNG = () => {
   // Apply global styles to ensure consistent appearance
   tempDiv.style.fontFamily = 'Arial, sans-serif';
   tempDiv.style.color = '#000'; // Set default text color
-  
-  // Background color
-  tempDiv.style.width = '210mm';
-  tempDiv.style.height = '296mm';
+  tempDiv.style.backgroundColor = '#fff'; // Set background color if needed
+  tempDiv.style.width = '210mm'; // A4 size width
+  tempDiv.style.height = '297mm'; // A4 size height
   tempDiv.style.boxSizing = 'border-box';
-  
+  tempDiv.style.padding = '10px'; // Add some padding if necessary
 
+  // Append the temp div to the body
   document.body.appendChild(tempDiv);
 
-  html2canvas(tempDiv, 
-  { scale: 3,
-    width: tempDiv.clientWidth,
-    height: tempDiv.clientHeight,
+  // Use html2canvas to capture the content
+  html2canvas(tempDiv, {
+    scale: 3, // Increase scale for better quality
     useCORS: true, // To handle cross-origin issues with external resources
     allowTaint: true,
-   }).then((canvas) => {
+  }).then((canvas) => {
     const link = document.createElement('a');
-    link.href = canvas.toDataURL('image/png', 1.0);
-    link.download = 'cover-letter-template.png';
-    link.click();
-    document.body.removeChild(tempDiv);
+    link.href = canvas.toDataURL('image/png', 1.0); // Get PNG data URL
+    link.download = 'cover-letter-template.png'; // Name of the downloaded file
+    link.click(); // Trigger the download
+    document.body.removeChild(tempDiv); // Clean up
   });
 };
+
 
 
 const handleDownloadPDF = () => {
@@ -768,7 +768,7 @@ const handleDownloadPDF = () => {
            
 
 
-{selectedTemplateType === 2 && (
+{(selectedTemplateType === 2 || selectedTemplateType === 7 )&& (
   <>
     {/* Profile Image Upload */}
     <div className="form-group">
@@ -1149,7 +1149,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Projects Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 6 )&& (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 6 || selectedTemplateType === 7 || selectedTemplateType === 8 )&& (
   <>
 <div className="form-group">
   <label>Projects</label>
@@ -1352,7 +1352,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Certifications Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 6) && (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 6 || selectedTemplateType === 7 || selectedTemplateType === 8) && (
   <>
     <div className="form-group">
       <label>Certifications</label>
