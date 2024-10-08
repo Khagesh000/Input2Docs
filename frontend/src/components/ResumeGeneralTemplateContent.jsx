@@ -1345,6 +1345,291 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
       </div>
     </div>
   `;
+} else if (templateType === 9) {
+  return `
+    <!-- Modern Resume Template -->
+    <div style="width: 100%; padding: 15px; box-sizing: border-box;">
+
+      <!-- Main Container -->
+      <div style="max-width: 850px; background-color: #fff; font-family: 'Helvetica', sans-serif; padding: 0px; margin: 0px;">
+
+        <!-- Header -->
+        <header style="display: flex; align-items: center; justify-content: space-between; border-bottom: 3px solid #00aaff; padding-bottom: 5px; margin: 0px;">
+          <div style="flex: 1;">
+            <h1 style="font-size: 34px; color: #333; margin: 0;">${formData.firstName || 'Jane'} ${formData.lastName || 'Doe'}</h1>
+            <h2 style="font-size: 18px; color: #777; margin: 5px 0;">${formData.jobTitle || 'UX/UI Designer'}</h2>
+          </div>
+          <div style="text-align: right; color: #555; flex: 1;">
+            <p style="margin: 0; color: #333;">${formData.email || 'janedoe@example.com'}</p>
+            <p style="margin: 0; color: #333;">${formData.phone || '(123) 456-7890'}</p>
+            <p style="margin: 0; color: #333;">${formData.linkedin || 'linkedin.com/in/janedoe'}</p>
+          </div>
+        </header>
+
+        <!-- Section: Profile -->
+        <section style="margin-top: 20px; margin: 0px;">
+          <h3 style="font-size: 20px; color: #00aaff; border-bottom: 1px solid #ddd; padding-bottom: 0px; margin: 0px; margin-top: 4px;">About Me</h3>
+          <p style="font-size: 16px; color: #555; margin: 0px;">${formData.summary || 'Creative and detail-oriented professional with 5+ years of experience in designing and improving user experiences across various platforms.'}</p>
+        </section>
+
+        <!-- Section: Skills -->
+<section style="margin-bottom: 0px; margin: 0px;">
+  
+
+  <!-- Technical Skills -->
+  <div style="margin-bottom: 5px; color: black;">
+    <h3 style="font-size: 20px; color: #00aaff; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin: 0px; margin-top: 4px;">Technical Skills</h3>
+    <div style="display: flex; flex-direction: column; margin-top: 5px;">
+
+      <!-- Programming Languages -->
+      <div style="display: flex; margin-bottom: 6px;">
+        <strong style="margin-right: 5px; color: #333;">Programming Languages: </strong>
+        <div style="color: #555;">
+          ${formData.skills.length > 0 ? formData.skills.join(', ') : 'No skills listed.'}
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div style="display: flex; margin-bottom: 6px;">
+        <strong style="margin-right: 5px; color: #333;">Tools:</strong>
+        <div style="color: #555;">
+          ${formData.tools.length > 0 ? formData.tools.map(tool => tool.name).join(', ') : 'No tools listed.'}
+        </div>
+      </div>
+
+      <!-- Others -->
+      <div style="display: flex; margin-bottom: 6px;">
+        <strong style="margin-right: 5px; color: #333;">Others: </strong>
+        <div style="color: #555;">
+          ${formData.others.length > 0 ? formData.others.join(', ') : 'No skills listed.'}
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div style="display: flex; margin-bottom: 6px;">
+        <strong style="margin-right: 5px; color: #333;">Soft Skills:</strong>
+        <div style="color: #555;">
+          ${formData.softSkills.length > 0 ? formData.softSkills.join(', ') : 'No soft skills listed.'}
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div style="display: flex; margin-bottom: 6px;">
+        <strong style="margin-right: 5px; color: #333;">Languages:</strong>
+        <div style="color: #555;">
+          ${formData.languages.length > 0 ? formData.languages.join(', ') : 'No languages listed.'}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+        <!-- Section: Experience -->
+        <section style="margin-top: 20px;">
+          <h3 style="font-size: 20px; color: #00aaff; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin: 0px; margin-top: 4px;">Experience</h3>
+          ${(formData.experience || []).map(exp => `
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 18px; color: #333; margin: 0;">${exp.position || 'Position'} @ ${exp.company || 'Company'}</h4>
+              <p style="font-size: 14px; color: #777; margin: 0px;">${exp.dates || 'Date Range'}</p>
+              <p style="font-size: 16px; color: #555; margin: 0px;">${exp.details.join(', ') || 'Responsibilities and achievements'}</p>
+            </div>
+          `).join('') || '<p style="font-size: 16px; color: #555; margin: 0px;">No experience listed.</p>'}
+        </section>
+
+        <!-- Section: Education -->
+<section style="margin-top: 0px; margin: 0; padding: 0;">
+  <h3 style="font-size: 20px; color: #00aaff; border-bottom: 1px solid #ddd; padding-bottom: 0px; margin-top: 0; margin-bottom: 5px; margin: 0px;">Education</h3>
+  ${(formData.education || []).map(edu => `
+    <div style="margin-bottom: 5px; margin: 0px;">
+      <!-- Class 10th -->
+      ${edu.level === 'Class 10th' ? `
+        <h4 style="font-size: 18px; color: #333; margin: 0;">${edu.level || 'Class 10th'} @ ${edu.schoolName || 'School Name'}</h4>
+        <p style="font-size: 14px; color: #777; margin: 0px;">Year: ${edu.endYear || 'Year not provided'}</p>
+        <p style="font-size: 16px; color: #555; margin: 0px;">Percentage: ${edu.percentage || 'Not provided'}</p>
+      ` : ''}
+
+      <!-- Class 12th -->
+      ${edu.level === 'Class 12th' ? `
+        <h4 style="font-size: 18px; color: #333; margin: 0;">${edu.level || 'Class 12th'} @ ${edu.college || 'School Name'}</h4>
+        <p style="font-size: 14px; color: #777; margin: 0px;">Year:  ${edu.startYear || 'Year not provided'} - ${edu.endYear || 'Year not provided'}</p>
+        <p style="font-size: 16px; color: #555; margin: 0px;">Percentage: ${edu.percentage || 'Not provided'}</p>
+      ` : ''}
+
+      <!-- Graduate -->
+      ${edu.level === 'Graduate' ? `
+        <h4 style="font-size: 18px; color: #333; margin: 0;">${edu.level || 'Graduate'} in ${edu.course || 'Course'} @ ${edu.college || 'Institution'}</h4>
+        <p style="font-size: 14px; color: #777; margin: 0px;">Year:  ${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}</p>
+        <p style="font-size: 16px; color: #555; margin: 0px;">Percentage: ${edu.percentage || 'Not provided'}</p>
+      ` : ''}
+
+      <!-- Postgraduate -->
+      ${edu.level === 'Postgraduate' ? `
+        <h4 style="font-size: 18px; color: #333; margin: 0;">${edu.level || 'Postgraduate'} in ${edu.course || 'Course'} @ ${edu.institution || 'Institution'}</h4>
+        <p style="font-size: 14px; color: #777; margin: 0px;">${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}</p>
+        <p style="font-size: 16px; color: #555; margin: 0px;">Percentage: ${edu.percentage || 'Not provided'}</p>
+      ` : ''}
+
+      <!-- Other Education Levels -->
+      ${edu.level !== 'Class 10th' && edu.level !== 'Class 12th' && edu.level !== 'Graduate' && edu.level !== 'Postgraduate' ? `
+        <h4 style="font-size: 18px; color: #333; margin: 0;">${edu.degree || 'Degree'} in ${edu.field || 'Field of Study'} @ ${edu.institution || 'Institution'}</h4>
+        <p style="font-size: 14px; color: #777; margin: 0px;">${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}</p>
+        <p style="font-size: 16px; color: #555; margin: 0px;">${edu.details || 'Details about education'}</p>
+      ` : ''}
+    </div>
+  `).join('') || '<p style="font-size: 16px; color: #555;">No education listed.</p>'}
+</section>
+
+       <!-- Projects: -->
+        <section style="margin-top: 10px;">
+          <h3 style="font-size: 20px; color: #00aaff; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin: 0px;">Projects</h3>
+          ${(formData.projects || []).map(project => `
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 18px; color: #333; margin: 0;">${project.title || 'Certification Title'}</h4>
+              <p style="font-size: 16px; color: #555; margin: 0px;">${project.details || 'Certification details'}</p>
+            </div>
+          `).join('') || '<p style="font-size: 16px; color: #555; margin: 0px;">No certifications listed.</p>'}
+        </section>
+
+
+        <!-- Section: Certifications -->
+        <section style="margin-top: 10px;">
+          <h3 style="font-size: 20px; color: #00aaff; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin: 0px;">Certifications</h3>
+          ${(formData.certifications || []).map(cert => `
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 18px; color: #333; margin: 0;">${cert.course || 'Certification Title'} @ ${cert.company || 'Issuing Organization'}</h4>
+              <p style="font-size: 16px; color: #555; margin: 0px;">${cert.details || 'Certification details'}</p>
+            </div>
+          `).join('') || '<p style="font-size: 16px; color: #555; margin: 0px;">No certifications listed.</p>'}
+        </section>
+
+      </div>
+    </div>
+  `;
+} else if (templateType === 10) {
+  // Use the cropped image URL if available, otherwise use the original image URL or placeholder.
+  const imageURL = croppedImage || (formData.image ? URL.createObjectURL(formData.image) : 'https://via.placeholder.com/140');
+
+  // Helper function to clean up the HTML string
+  const cleanHtml = (html) => {
+    return html.replace(/<br[^>]*data-mce-bogus="1"[^>]*>/g, ''); // Remove <br data-mce-bogus="1">
+  };
+
+  return `
+    <div style="display: flex; height: 100%; width: 100%; box-sizing: border-box; margin: 20px;">
+      <!-- Left Side: Profile Picture, Personal Info, Skills, Languages -->
+      <div style="flex: 1; padding: 20px; background-color: #a8a89c; color: #f5e5e5; min-height: 1120px; box-sizing: border-box;">
+        <!-- Circular Image -->
+        <div style="display: inline-block; width: 140px; height: 140px; border-radius: 50%; overflow: hidden; margin-bottom: 10px;">
+          <img src="${imageURL}" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+        </div>
+
+        <!-- Personal Information -->
+        <div style="margin-top: 10px;">
+          <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">PERSONAL INFO</label>
+          <div style="margin: 5px 0;">
+            <strong style="color: #000;">Address:</strong><br>
+            <span style="font-size: 14px; color: #000;">${formData.address || '123 Main St, City, State, ZIP'}</span>
+          </div>
+          <div style="margin: 5px 0;">
+            <strong style="color: #000;">Phone:</strong><br>
+            <span style="font-size: 14px; color: #000;">${formData.phone || '(123) 456-7890'}</span>
+          </div>
+          <div style="margin: 5px 0;">
+            <strong style="color: #000;">Email:</strong><br>
+            <span style="font-size: 14px; color: #000;">${formData.email || 'email@example.com'}</span>
+          </div>
+          <div style="margin: 5px 0;">
+            <strong style="color: #000;">LinkedIn:</strong><br>
+            <span style="font-size: 14px; color: #000;">${formData.linkedin || 'linkedin.com/in/username'}</span>
+          </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div style="margin-top: 20px;">
+          <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">SKILLS</label>
+          <div style="display: flex; flex-wrap: wrap;">
+            ${(formData.skills || []).map(skill => `
+              <div style="flex: 1 1 50%; margin-bottom: 5px;">
+                <ul style="list-style-type: disc; margin: 0; padding-left: 20px; font-size: 14px; color: black;">
+                  <li>${skill || 'Skill'}</li>
+                </ul>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Languages Section -->
+        <div style="margin-top: 20px;">
+          <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">LANGUAGES</label>
+          ${(formData.languages || []).map(lang => `
+            <div style="margin: 0px 0;">
+              <span style="font-size: 14px; color: #000;">${lang || 'Language Name'}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <!-- Right Side: Name, Job Title, Education, Experience, Projects, Certificates -->
+      <div style="flex: 2; padding: 20px; background-color: #fff; color: #000; display: flex; flex-direction: column; justify-content: flex-start;">
+        <h1 style="font-size: 28px; font-weight: bold; font-family: Arial, sans-serif; margin: 0; text-align: left; color: #0d0565c4;">
+          ${formData.firstName || 'JOHN'} ${formData.lastName || 'SMITH'}
+        </h1>
+        <h2 style="font-size: 20px; font-family: Arial, sans-serif; margin: 5px 0; text-align: left;">
+          ${formData.jobTitle || 'IT Project Manager'}
+        </h2>
+
+        <!-- Education Section -->
+        <div style="margin-top: 20px;">
+          <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">EDUCATION</label>
+          ${(formData.education || []).map(edu => `
+            <div style="margin: 10px 0;">
+              <strong style="color: #000;">${edu.level || 'Degree Level'}</strong><br>
+              <span style="font-size: 14px; color: #000;">${edu.schoolName || 'School Name'}</span><br>
+              <span style="font-size: 14px; color: #000;"><strong>Duration:</strong> ${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}</span><br>
+              <span style="font-size: 14px; color: #000;"><strong>Percentage:</strong> ${edu.percentage || 'Percentage Not Provided'}</span>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Experience Section -->
+        <div style="margin-top: 20px;">
+          <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">EXPERIENCE</label>
+          ${(formData.experience || []).map(exp => `
+            <div style="margin-bottom: 10px;">
+              <strong style="font-size: 16px; color: #000;">${exp.company || 'Company Name'}</strong><br>
+              <span style="font-size: 14px; color: #000; margin-right: 5px;">${exp.position || 'Position'}</span>
+              <span style="font-size: 14px; color: #000;">[${exp.dates || 'Year Range'}]</span>
+              <ul style="list-style-type: disc; margin: 3px 0 0 20px; padding-left: 20px; font-size: 14px;">
+                ${(exp.details || []).map(detail => `<li>${detail || 'Responsibility/Achievement'}</li>`).join('')}
+              </ul>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Projects Section -->
+        <div style="margin-top: 20px;">
+          <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">PROJECTS</label>
+          ${(formData.projects || []).map(project => `
+            <div style="margin-bottom: 10px;">
+              <strong style="font-size: 16px; color: #000;">${project.title || 'Project Title'}</strong><br>
+              <span style="font-size: 14px; color: #000;">${project.description || 'Project Description'}</span>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Certificates Section -->
+        <div style="margin-top: 20px;">
+          <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">CERTIFICATES</label>
+          ${(formData.certificates || []).map(certificate => `
+            <div style="margin-bottom: 10px;">
+              <strong style="font-size: 16px; color: #000;">${certificate.name || 'Certificate Name'}</strong><br>
+              <span style="font-size: 14px; color: #000;">${certificate.issuingOrganization || 'Issuing Organization'}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>`;
 }
 
 
@@ -1354,20 +1639,11 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 
 
-  
 
 
 
+  
 
-
-  
-  
-  
-  
-  
-  
-  
-  
 
   return '';
 };
