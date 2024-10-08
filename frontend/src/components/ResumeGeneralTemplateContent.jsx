@@ -56,7 +56,6 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
             <p style="margin: 0; color: black;">${email || 'email@example.com'}</p>
             <p style="margin: 0; color: black;">${phone || '(123) 456-7890'}</p>
             <p style="margin: 0; color: black;">${linkedin || 'linkedin.com/in/username'}</p>
-            <p style="margin: 0; color: black;">Google Cloud: ${googleCloud || 'googlecloud.com/user'}</p>
           </div>
         </div>
   
@@ -1583,14 +1582,55 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         <div style="margin-top: 20px;">
           <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">EDUCATION</label>
           ${(formData.education || []).map(edu => `
-            <div style="margin: 10px 0;">
-              <strong style="color: #000;">${edu.level || 'Degree Level'}</strong><br>
-              <span style="font-size: 14px; color: #000;">${edu.schoolName || 'School Name'}</span><br>
-              <span style="font-size: 14px; color: #000;"><strong>Duration:</strong> ${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}</span><br>
-              <span style="font-size: 14px; color: #000;"><strong>Percentage:</strong> ${edu.percentage || 'Percentage Not Provided'}</span>
+            <div>
+              <!-- Class 10th -->
+              ${edu.level === 'Class 10th' ? `
+                <strong style="color: #000;">${edu.level || 'Class 10th'}</strong><br>
+                <span style="font-size: 14px; color: #777;">${edu.schoolName || 'School Name'}</span><br>
+                <span style="font-size: 14px; color: #777;"><strong>Duration:</strong> ${edu.endYear || 'Year not provided'}</span><br>
+                <span style="font-size: 14px; color: #777;"><strong>Percentage:</strong> ${edu.percentage || 'Percentage Not Provided'}</span>
+              ` : ''}
+        
+              <!-- Class 12th -->
+              ${edu.level === 'Class 12th' ? `
+                <strong style="color: #000;">${edu.level || 'Class 12th'} </strong><br>
+                <span style="font-size: 14px; color: #777;">${edu.college || 'College Name'}</span><br>
+                <span style="font-size: 14px; color: #777;"><strong>Duration:</strong> ${edu.startYear || 'Year not provided'} - ${edu.endYear || 'Year not provided'}</span><br>
+                <span style="font-size: 14px; color: #777;"><strong>Percentage:</strong> ${edu.percentage || 'Not provided'}</span>
+              ` : ''}
+        
+              <!-- Graduate -->
+              ${edu.level === 'Graduate' ? `
+                <strong style="color: #000;">${edu.level || 'Graduate'} in ${edu.course || 'Course'}</strong><br>
+                <span style="font-size: 14px; color: #777;">${edu.college || 'College Name'}</span><br>
+                <span style="font-size: 14px; color: #777;"><strong>Duration:</strong> ${edu.startYear || 'Year not provided'} - ${edu.endYear || 'Year not provided'}</span><br>
+                <span style="font-size: 14px; color: #777;"><strong>Percentage:</strong> ${edu.percentage || 'Not provided'}</span>
+              ` : ''}
+        
+              <!-- Postgraduate -->
+              ${edu.level === 'Postgraduate' ? `
+                <strong style="color: #000;">${edu.level || 'Graduate'} in ${edu.course || 'Course'}</strong><br>
+                <span style="font-size: 14px; color: #777;">${edu.college || 'College Name'}</span><br>
+                <span style="font-size: 14px; color: #777;"><strong>Duration:</strong> ${edu.startYear || 'Year not provided'} - ${edu.endYear || 'Year not provided'}</span><br>
+                <span style="font-size: 14px; color: #777;"><strong>Percentage:</strong> ${edu.percentage || 'Not provided'}</span>
+              ` : ''}
+        
+              <!-- Other Education Levels -->
+              ${edu.level !== 'Class 10th' && edu.level !== 'Class 12th' && edu.level !== 'Graduate' && edu.level !== 'Postgraduate' ? `
+                <strong style="color: #000;">${edu.level || 'Graduate'} in ${edu.course || 'Course'}</strong><br>
+                <span style="font-size: 14px; color: #777;">${edu.college || 'College Name'}</span><br>
+                <span style="font-size: 14px; color: #777;"><strong>Duration:</strong> ${edu.startYear || 'Year not provided'} - ${edu.endYear || 'Year not provided'}</span><br>
+                <span style="font-size: 14px; color: #777;"><strong>Percentage:</strong> ${edu.percentage || 'Not provided'}</span>
+              ` : ''}
             </div>
-          `).join('')}
+          `).join('') || '<p style="font-size: 16px; color: #555;">No education listed.</p>'}
         </div>
+
+
+
+       
+
+
 
         <!-- Experience Section -->
         <div style="margin-top: 20px;">
@@ -1613,7 +1653,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
           ${(formData.projects || []).map(project => `
             <div style="margin-bottom: 10px;">
               <strong style="font-size: 16px; color: #000;">${project.title || 'Project Title'}</strong><br>
-              <span style="font-size: 14px; color: #000;">${project.description || 'Project Description'}</span>
+              <span style="font-size: 14px; color: #000;">${project.details || 'Project Description'}</span>
             </div>
           `).join('')}
         </div>
@@ -1621,16 +1661,585 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         <!-- Certificates Section -->
         <div style="margin-top: 20px;">
           <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">CERTIFICATES</label>
-          ${(formData.certificates || []).map(certificate => `
+          ${(formData.certifications || []).map(cert => `
             <div style="margin-bottom: 10px;">
-              <strong style="font-size: 16px; color: #000;">${certificate.name || 'Certificate Name'}</strong><br>
-              <span style="font-size: 14px; color: #000;">${certificate.issuingOrganization || 'Issuing Organization'}</span>
+              <strong style="font-size: 16px; color: #000;">${cert.course || 'Certificate Name'}</strong><br>
+              <span style="font-size: 14px; color: #000;">${cert.details || 'Issuing Organization'}</span>
             </div>
           `).join('')}
         </div>
       </div>
     </div>`;
+} else if (templateType === 11) {
+  return `
+    <div style="display: flex; flex-direction: column; height: 100%; color: #000; margin-left: 20px; margin-right: 20px;">
+
+      <!-- Name Section -->
+      <div style="display: flex; justify-content: center; background-color: #fff; margin-bottom: 5px;">
+        <h1 style="text-align: center; margin: 0; color: black;">${formData.firstName || 'John'} ${formData.lastName || 'Smith'}</h1>
+      </div>
+
+      <!-- Contact Information Section -->
+      <div style="background-color: #fff; margin-bottom: 5px; color: black;">
+        <div style="display: flex; justify-content: space-between; padding: 5px 0;">
+          <p style="margin: 0; color: black;">${email || 'email@example.com'}</p>
+          <p style="margin: 0; color: black;">${phone || '(123) 456-7890'}</p>
+          <p style="margin: 0; color: black;">${linkedin || 'linkedin.com/in/username'}</p>
+          
+        </div>
+      </div>
+
+      <!-- Summary Section -->
+      <div style="color: #000; margin-bottom: 5px;">
+        <h3 style="font-size: 18px; background-color: #a8a89c; padding: 5px; margin: 0; color: black;">OBJECTIVE</h3>
+        <p style="margin: 0; color: black;">${summary || 'This is a summary of the applicant’s experience, skills, and other key information.'}</p>
+      </div>
+
+      <!-- Education Section -->
+      <div style="margin-bottom: 5px;">
+        <h3 style="font-size: 18px; background-color: #a8a89c; padding: 5px; margin: 0; color: black;">EDUCATION</h3>
+        <hr style="border: 1px solid black; margin: 5px 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; color: black;">
+          <p style="flex: 1; margin: 0; color: black;"><strong>Degree</strong></p>
+          <p style="flex: 1; margin: 0; color: black;"><strong>Institute</strong></p>
+          <p style="flex: 1; margin: 0; color: black;"><strong>Year</strong></p>
+          <p style="flex: 1; margin: 0; color: black;"><strong>CPI</strong></p>
+        </div>
+
+        <!-- Education Fields -->
+        <div style="display: flex; flex-direction: column; gap: 5px;">
+          ${formData.education.length > 0 ? formData.education.map(edu => `
+            <div style="display: flex; justify-content: space-between; align-items: center; color: black;">
+              <p style="flex: 1; margin: 0; color: black;">${edu.level || 'Degree not provided'}</p>
+              <p style="flex: 1; margin: 0; color: black;">${edu.level === 'Class 10th' ? edu.schoolName : edu.college || 'Institute not provided'}</p>
+              <p style="flex: 1; margin: 0; color: black;">${edu.level === 'Class 10th' ? edu.endYear : `${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}`}</p>
+              <p style="flex: 1; margin: 0; color: black;">${edu.percentage || 'Percentage not provided'}</p>
+            </div>
+          `).join('') : '<p style="margin: 0; color: black;">No education listed.</p>'}
+        </div>
+        <hr style="border: 1px solid black; margin: 5px 0;">
+      </div>
+
+      <!-- Experience Section -->
+      <div style="margin-bottom: 5px; color: black;">
+        <h3 style="font-size: 18px; background-color: #a8a89c; padding: 5px; margin: 0; color: black;">INTERNSHIP</h3>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+        ${formData.experience.length > 0 ? formData.experience.map(exp => `
+          <div style="margin-bottom: 10px;">
+            <p style="margin: 0; color: black;"><strong>${exp.position || 'Position not provided'}</strong> [${exp.company || 'Company not provided'}]</p>
+            <ul style="margin: 0; padding-left: 20px;">
+              ${Array.isArray(exp.details) && exp.details.length > 0 ? exp.details.map(point => `
+                <li style="margin: 0; color: black;">${point || 'Detail point not provided'}</li>
+              `).join('') : '<li style="color: black;">No details listed.</li>'}
+            </ul>
+          </div>
+        `).join('') : '<p style="color: black;">No experience listed.</p>'}
+        
+        </div>
+      </div>
+
+      <!-- Projects Section -->
+      <div style="margin-bottom: 5px; color: black;">
+        <h3 style="font-size: 18px; background-color: #a8a89c; padding: 5px; margin: 0; color: black;">PROJECTS</h3>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          ${formData.projects.length > 0 ? formData.projects.map(project => `
+            <div style="margin-bottom: 10px;">
+              <strong style="color: black;">${project.title || 'Project title not provided'}</strong>
+              <ul style="margin: 0; padding-left: 20px;">
+                ${project.details.length > 0 ? project.details.map(detail => `
+                  <li style="margin: 0; color: black;">${detail || 'Detail point not provided'}</li>
+                `).join('') : '<li style="color: black;">No details listed.</li>'}
+              </ul>
+            </div>
+          `).join('') : '<p style="color: black;">No projects listed.</p>'}
+        </div>
+      </div>
+
+      <!-- Technical Skills -->
+      <div style="margin-bottom: 5px; color: black;">
+        <h3 style="font-size: 18px; background-color: #a8a89c; padding: 5px; margin: 0; color: black;">TECHNICAL SKILLS</h3>
+        <div style="display: flex; flex-direction: column; margin-top: 5px;">
+          <div style="display: flex; margin-bottom: 6px;">
+            <strong style="margin-right: 5px;">Programming Languages: </strong>
+            <div style="color: black;">
+              ${formData.skills.length > 0 ? formData.skills.join(', ') : 'No skills listed.'}
+            </div>
+          </div>
+          
+          <div style="display: flex; margin-bottom: 6px;">
+            <strong style="margin-right: 5px;">Tools:</strong>
+            <div style="color: black;">
+              ${formData.tools.length > 0 ? formData.tools.map(tool => tool.name).join(', ') : 'No tools listed.'}
+            </div>
+          </div>
+
+          <div style="display: flex; margin-bottom: 6px;">
+            <strong style="margin-right: 5px;">Others: </strong>
+            <div style="color: black;">
+              ${formData.others.length > 0 ? formData.others.join(', ') : 'No skills listed.'}
+            </div>
+          </div>
+
+          <div style="display: flex; margin-bottom: 6px;">
+            <strong style="margin-right: 5px;">Soft Skills:</strong>
+            <div style="color: black;">
+              ${formData.softSkills.length > 0 ? formData.softSkills.join(', ') : 'No soft skills listed.'}
+            </div>
+          </div>
+
+          <div style="display: flex; margin-bottom: 6px;">
+            <strong style="margin-right: 5px;">Languages:</strong>
+            <div style="color: black;">
+              ${formData.languages.length > 0 ? formData.languages.join(', ') : 'No soft skills listed.'}
+            </div>
+          </div>
+
+          
+
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div style="margin-bottom: 5px; color: black;">
+        <h3 style="font-size: 18px; background-color: #a8a89c; padding: 5px; margin: 0; color: black;">CERTIFICATIONS</h3>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          ${formData.certifications.length > 0 ? formData.certifications.map(certification => `
+            <div style="margin-bottom: 1px; display: flex;">
+              <strong style="margin-right: 70px;">${certification.course || 'Course not provided'}</strong>
+              <div style="flex: 1;">
+                <span style="margin-right: 5px;">by</span>
+                <span>${certification.company || 'Company not provided'}</span>
+              </div>
+            </div>
+          `).join('') : '<p style="color: black;">No certifications listed.</p>'}
+        </div>
+      </div>
+    </div>
+  `;
+} else if (templateType === 12) {
+  return `
+  <div style="font-family: Arial, sans-serif; line-height: 1.5; color: #2b2b2b; padding: 20px; background-color: #f4f4f4;">
+    <!-- Header Section (Name + Job Title) -->
+    <div style="display: flex; justify-content: space-between; align-items: center; background-color: #2d4059; color: white; padding: 20px; margin-bottom: 15px;">
+      <div>
+        <h1 style="font-size: 28px; margin: 0;">${formData.firstName || 'John'} ${formData.lastName || 'Doe'}</h1>
+        <p style="font-size: 18px; font-weight: normal; margin: 5px 0;">${formData.jobTitle || 'Full Stack Developer'}</p>
+      </div>
+      <div style="text-align: right;">
+        <p style="margin: 0; font-weight: 500;">${email || 'email@example.com'}</p>
+        <p style="margin: 0;">${phone || '(123) 456-7890'}</p>
+      </div>
+    </div>
+
+    <!-- Profile Summary -->
+    <div style="background-color: white; padding: 0px; padding-left: 10px;  margin-bottom: 10px; border-left: 5px solid #ea5455;">
+      <h2 style="font-size: 22px; margin-bottom: 0px; color: #2d4059;">Profile Summary</h2>
+      <p style="margin: 0; color: #000;">${formData.summary || 'Dynamic and detail-oriented software engineer with 5+ years of experience...'}</p>
+    </div>
+
+    <!-- Education Section -->
+    <div style="background-color: white; padding: 0px; margin-bottom: 10px; padding-left: 10px;  margin-bottom: 10px; border-left: 5px solid #f07b3f;">
+      <h2 style="font-size: 22px; margin-bottom: 2px; color: #2d4059;">Education</h2>
+      <div style="display: flex; flex-direction: column; gap: 10px; margin: 0px;">
+        ${formData.education.length > 0 ? formData.education.map(edu => `
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin: 0px;">
+            <div style="flex: 1; margin: 0;">
+              <p style="margin: 0; color: #ea5455; font-size: 20px; font-weight: 550;">${edu.level || 'Degree not provided'}</p>
+              <p style="margin: 0; color: #000;">${edu.level === 'Class 10th' ? edu.schoolName || 'School Name not provided' : edu.college || 'College/University not provided'} - [${edu.percentage || 'Percentage not provided'}%]</p>
+            </div>
+            <div style="text-align: right; color: #7a7a7a;">
+              <p style="margin: 0; color: #000;">${edu.level === 'Class 10th' ? edu.endYear || 'Year not provided' : `${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}`}</p>
+            </div>
+          </div>
+        `).join('') : '<p>No education information provided.</p>'}
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div style="background-color: white; padding: 0px; padding-left: 10px;  margin-bottom: 8px; border-left: 5px solid #46b3e6;">
+      <h2 style="font-size: 22px; margin-bottom: 10px; color: #2d4059;">Skills</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+        ${formData.skills.length > 0 ? formData.skills.map(skill => `
+          <span style="padding: 8px 12px; background-color: #ea5455; color: white; border-radius: 5px; margin-bottom: 5px;">${skill}</span>
+        `).join('') : '<p>No skills listed.</p>'}
+      </div>
+    </div>
+
+    <!-- Experience Section -->
+    <div style="background-color: white; padding: 0px; padding-left: 10px;  margin-bottom: 8px; border-left: 5px solid #1b9cfc;">
+      <h2 style="font-size: 22px; margin-bottom: 0px; color: #2d4059;">Work Experience</h2>
+      ${formData.experience.length > 0 ? formData.experience.map(exp => `
+        <div style="margin-bottom: 0px; margin: 0;">
+          <p style="margin: 0; color: #ea5455; margin-bottom: 0px; font-size: 20px; font-weight: 550;">${exp.position || 'Software Engineer'}</p>
+          <p style="margin: 0px 0; color: #000;">${exp.company || 'Tech Company'}</p>
+          <p style="margin: 0; color: #000;">${exp.startYear || '2021'} - ${exp.endYear || 'Present'}</p>
+          <ul style="margin-top: 0px; padding-left: 20px;">
+            ${exp.details.length > 0 ? exp.details.map(detail => `
+              <li>${detail}</li>
+            `).join('') : '<li>No details provided.</li>'}
+          </ul>
+        </div>
+      `).join('') : '<p>No experience listed.</p>'}
+    </div>
+
+    <!-- Certifications Section -->
+    <div style="background-color: white; padding: 0px; padding-left: 10px;  margin-bottom: 8px; border-left: 5px solid #28a745;">
+      <h2 style="font-size: 22px; margin-bottom: 0px; color: #2d4059;">Certifications</h2>
+      ${formData.certifications.length > 0 ? formData.certifications.map(cert => `
+        <div style="margin-bottom: 0px;">
+          <p style="margin: 0; color: #ea5455; font-size: 20px; font-weight: 550;">${cert.course || 'Course Name'}</p>
+          <p style="margin: 0px 0; color: #000;">${cert.company || 'Certification Company'}</p>
+          <ul style="padding-left: 20px; margin: 0;">
+            ${cert.details.map(detail => `<li>${detail}</li>`).join('')}
+          </ul>
+        </div>
+      `).join('') : '<p>No certifications listed.</p>'}
+    </div>
+
+    <!-- Footer with LinkedIn & GitHub -->
+    <div style="background-color: #2d4059; color: white; padding: 15px;">
+      <p style="margin: 0;">LinkedIn: ${linkedin || 'linkedin.com/in/username'}</p>
+      <p style="margin: 0;">GitHub: ${Github || 'github.com/username'}</p>
+    </div>
+  </div>
+  `;
+} else if (templateType === 13) {
+  return `
+  <div style="background-color: #f4f7f6; font-family: Arial, sans-serif; padding: 20px; max-width: 850px; margin: auto; border: 1px solid #dcdcdc; border-radius: 10px;">
+
+      <!-- Header: Name, Job Title, Contact Info -->
+      <div style="background-color: #2c3e50; color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
+          <h1 style="margin: 0; font-size: 28px; letter-spacing: 1px;">${formData.firstName || 'John'} ${formData.lastName || 'Doe'}</h1>
+          <p style="font-size: 18px; margin: 5px 0;">${formData.jobTitle || 'Full Stack Developer'}</p>
+          <div style="font-size: 14px; margin-top: 10px; display: flex; justify-content: center; gap: 20px;">
+              <span>${formData.phone || '123-456-7890'}</span>
+              <span>${formData.email || 'john.doe@example.com'}</span>
+              <span><a href="${formData.linkedin ? `https://${formData.linkedin}` : 'https://linkedin.com/in/johndoe'}" target="_blank" style="color: white; text-decoration: none;">LinkedIn</a></span>
+          </div>
+      </div>
+
+      <!-- Main Content: Two Columns -->
+      <div style="display: flex; margin-top: 20px;">
+
+          <!-- Left Column: Professional Summary, Experience, Education -->
+          <div style="width: 65%; padding-right: 20px;">
+              
+              <!-- Professional Summary -->
+              <section style="margin-bottom: 30px;">
+                  <h2 style="font-size: 20px; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 0px;">Professional Summary</h2>
+                  <p style="font-size: 14px; color: #333;">${formData.summary || 'Experienced developer with a passion for coding, skilled in both front-end and back-end technologies. Strong background in building scalable web applications.'}</p>
+              </section>
+
+              <!-- Experience Section -->
+              <section style="margin-bottom: 0px;">
+                  <h2 style="font-size: 20px; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px;">Experience</h2>
+                  ${formData.experience && formData.experience.length > 0 ? formData.experience.map(exp => `
+                      <div style="margin-bottom: 0px; margin: 0;">
+                          <strong style="font-size: 16px; color: #2c3e50; margin: 0;">${exp.position || 'Job Title'} - ${exp.company || 'Company Name'}</strong>
+                          <p style="font-size: 12px; color: #666; margin: 0; margin-bottom: 2px;">${exp.dates || 'Jan 2020 - Present'}</p>
+                          <ul style="font-size: 14px; margin: 0; margin-bottom: 2px; color: #333; padding-left: 20px;">
+                              ${Array.isArray(exp.details) && exp.details.length > 0 ? exp.details.map(detail => `<li>${detail}</li>`).join('') : '<li>No details provided</li>'}
+                          </ul>
+                      </div>
+                  `).join('') : '<p style="font-size: 14px; color: #777;">No experience listed.</p>'}
+              </section>
+
+              <!-- Education Section -->
+<section style="margin-bottom: 0px;">
+    <h2 style="font-size: 20px; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; margin: 0; margin-bottom: 5px; margin-top: 10px;">Education</h2>
+    ${formData.education && formData.education.length > 0 ? formData.education.map(edu => `
+        <div style="margin-bottom: 0px; margin: 0;">
+            <!-- Handle Class 10th differently -->
+            ${edu.level === 'Class 10th' ? `
+                <strong style="font-size: 16px; color: #2c3e50; margin: 0;">${edu.level || 'Degree Name'}</strong>- ${edu.schoolName || 'Institution Name'}
+                <p style="font-size: 12px; color: #666; margin: 0; margin-bottom: 5px;">${edu.endYear || 'End Year'} - (${edu.percentage ? `${edu.percentage}%` : ''})</p>
+            ` : `
+                <strong style="font-size: 16px; color: #2c3e50;">${edu.level || 'Degree Name'}</strong> - ${edu.college || 'Institution Name'}
+                <p style="font-size: 12px; color: #666; margin: 0; margin-bottom: 5px;">
+                    ${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'} 
+                    ${edu.percentage ? `(${edu.percentage}%)` : ''}
+                </p>
+            `}
+        </div>
+    `).join('') : '<p style="font-size: 14px; color: #777;">No education listed.</p>'}
+</section>
+
+
+
+              <!-- Projects Section -->
+              <section style="margin-bottom: 0px;">
+                  <h2 style="font-size: 20px; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px;">Projects</h2>
+                  ${formData.projects.length > 0 ? formData.projects.map(project => `
+                      <div style="margin-bottom: 20px;">
+                          <strong style="font-size: 16px; color: #2c3e50;">${project.title || 'Degree Name'}</strong>
+                          <ul style="margin: 0; padding-left: 20px;">
+                    ${project.details.length > 0 ? project.details.map(detail => `
+                      <li style="margin: 0; color: black;">${detail || 'Detail point not provided'}</li>
+                    `).join('') : '<li style="color: black;">No details listed.</li>'}
+                  </ul>
+                      </div>
+                  `).join('') : '<p style="font-size: 14px; color: #777;">No education listed.</p>'}
+              </section>
+
+             
+
+          </div>
+
+          <!-- Right Column: Skills, Languages, Personal Info -->
+          <div style="width: 35%; background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
+
+              <!-- Skills Section -->
+              <section style="margin-bottom: 0px; margin: 0;">
+                  <h2 style="font-size: 20px; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; margin: 0; margin-bottom: 2px;">Skills</h2>
+                  <ul style="font-size: 14px; color: #333; padding-left: 20px; margin: 0; margin-bottom: 5px;">
+                      ${formData.skills && formData.skills.length > 0 ? formData.skills.map(skill => `<li>${skill}</li>`).join('') : '<li>No skills listed</li>'}
+                  </ul>
+              </section>
+
+              <!-- Languages Section -->
+              <section style="margin-bottom: 0px;">
+                  <h2 style="font-size: 20px; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; margin: 0; margin-top: 15px;">Languages</h2>
+                  <ul style="font-size: 14px; color: #333; padding-left: 20px; margin: 0; margin-bottom: 5px;">
+                      ${formData.languages && formData.languages.length > 0 ? formData.languages.map(language => `<li>${language}</li>`).join('') : '<li>No languages listed</li>'}
+                  </ul>
+              </section>
+
+              <!-- Personal Info Section -->
+              <section>
+                  <h2 style="font-size: 20px; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px;">Personal Info</h2>
+                  <p style="font-size: 14px; color: #333; margin: 0; margin-bottom: 5px;"><strong>Address:</strong> ${formData.address || '123 Main St, City, Country'}</p>
+                  <p style="font-size: 14px; color: #333; margin: 0; margin-bottom: 5px;"><strong>Phone:</strong> ${formData.phone || '123-456-7890'}</p>
+                  <p style="font-size: 14px; color: #333; margin: 0; margin-bottom: 5px;"><strong>Email:</strong> ${formData.email || 'john.doe@example.com'}</p>
+              </section>
+
+
+              <!-- Certification Section -->
+<section style="margin-top: 30px;">
+    <h2 style="font-size: 20px; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px;">CERTIFICATIONS</h2>
+    ${formData.certifications && formData.certifications.length > 0 ? formData.certifications.map(cert => `
+        <div style="margin-bottom: 20px;">
+            <strong style="font-size: 16px; color: #2c3e50; margin: 0;">${cert.course || 'Course Name'}</strong>
+            <p style="font-size: 14px; color: #666; margin: 0; padding-left: 15px;">@${cert.company || 'Company Name'}</p>
+        </div>
+    `).join('') : '<p style="font-size: 14px; color: #777;">No certifications listed.</p>'}
+</section>
+
+          </div>
+
+      </div>
+
+  </div>
+  `;
+} else if (templateType === 14) {
+  // Use the cropped image URL if available, otherwise use the original image URL or placeholder.
+  const imageURL = croppedImage || (formData.image ? URL.createObjectURL(formData.image) : 'https://via.placeholder.com/140');
+
+  return `
+    <!-- Creative Resume Template -->
+    <div style="width: 100%; padding: 15px; box-sizing: border-box;">
+
+      <!-- Main Container -->
+      <div style="max-width: 850px; background-color: #fff; font-family: 'Helvetica', sans-serif; padding: 20px; margin: 0; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+
+        <!-- Header -->
+        <header style="display: flex; align-items: center; border-bottom: 3px solid #00aaff; padding-bottom: 15px;">
+          <img src="${imageURL}" alt="Profile Image" style="width: 140px; height: 140px; border-radius: 70px; margin-right: 20px; border: 2px solid #00aaff;">
+          <div style="flex: 1;">
+            <h1 style="font-size: 34px; color: #333; margin: 0;">${formData.firstName || 'John'} ${formData.lastName || 'Doe'}</h1>
+            <h2 style="font-size: 20px; color: #777; margin: 5px 0;">${formData.jobTitle || 'Software Developer'}</h2>
+          </div>
+        </header>
+
+        <!-- Section: Profile Summary -->
+        <section style="margin-top: 20px;">
+          <h3 style="font-size: 20px; color: #00aaff; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin: 0;">Profile Summary</h3>
+          <p style="font-size: 16px; color: #555;">${formData.summary || 'Results-driven software developer with expertise in modern web technologies and a passion for creating user-centric applications.'}</p>
+        </section>
+
+        <!-- Section: Experience -->
+        <section style="margin-top: 20px;">
+          <h3 style="font-size: 20px; color: #00aaff; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin: 0;">Experience</h3>
+          ${(formData.experience || []).map(exp => `
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 18px; color: #333; margin: 0;">${exp.position || 'Position'} @ ${exp.company || 'Company'}</h4>
+              <p style="font-size: 14px; color: #777; margin: 0;">${exp.dates || 'Date Range'}</p>
+              <p style="font-size: 16px; color: #555; margin: 0;">${exp.details.join(', ') || 'Responsibilities and achievements'}</p>
+            </div>
+          `).join('') || '<p style="font-size: 16px; color: #555;">No experience listed.</p>'}
+        </section>
+
+        <!-- Section: Education -->
+        <section style="margin-top: 20px;">
+          <h3 style="font-size: 20px; color: #00aaff; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin: 0;">Education</h3>
+          ${(formData.education || []).map(edu => `
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 18px; color: #333; margin: 0;">${edu.degree || 'Degree'} in ${edu.field || 'Field of Study'} @ ${edu.institution || 'Institution'}</h4>
+              <p style="font-size: 14px; color: #777; margin: 0;">${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}</p>
+              <p style="font-size: 16px; color: #555; margin: 0;">Percentage: ${edu.percentage || 'Not provided'}</p>
+            </div>
+          `).join('') || '<p style="font-size: 16px; color: #555;">No education listed.</p>'}
+        </section>
+
+        <!-- Section: Projects -->
+        <section style="margin-top: 20px;">
+          <h3 style="font-size: 20px; color: #00aaff; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin: 0;">Projects</h3>
+          ${(formData.projects || []).map(project => `
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 18px; color: #333; margin: 0;">${project.title || 'Project Title'}</h4>
+              <p style="font-size: 16px; color: #555; margin: 0;">${project.details || 'Project details'}</p>
+            </div>
+          `).join('') || '<p style="font-size: 16px; color: #555;">No projects listed.</p>'}
+        </section>
+
+        <!-- Section: Certifications -->
+        <section style="margin-top: 20px;">
+          <h3 style="font-size: 20px; color: #00aaff; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin: 0;">Certifications</h3>
+          ${(formData.certifications || []).map(cert => `
+            <div style="margin-bottom: 15px;">
+              <h4 style="font-size: 18px; color: #333; margin: 0;">${cert.course || 'Certification Title'} @ ${cert.company || 'Issuing Organization'}</h4>
+              <p style="font-size: 16px; color: #555; margin: 0;">${cert.details || 'Certification details'}</p>
+            </div>
+          `).join('') || '<p style="font-size: 16px; color: #555;">No certifications listed.</p>'}
+        </section>
+
+      </div>
+    </div>
+  `;
+} else if (templateType === 15) {
+  const imageURL = croppedImage || (formData.image ? URL.createObjectURL(formData.image) : 'https://via.placeholder.com/140');
+
+  return `
+    <!-- Top Flex: Name, Profile, and Job Title -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; height: auto; width: 100%; padding: 10px; box-sizing: border-box; margin-right: 40px; background-color: #778eb8c4; border-radius: 15px;">
+      
+      <!-- Left Side: Name and Job Title -->
+      <div style="flex: 0 0 60%; display: flex; flex-direction: column;">
+        <h1 style="font-size: 32px; font-weight: bold; font-family: Arial, sans-serif; margin: 0; letter-spacing: 4px; padding-left: 30px; padding-top: 20px;">
+          ${formData.firstName || 'JOHN'} ${formData.lastName || 'SMITH'}
+        </h1>
+        <h2 style="font-size: 22px; font-family: Arial, sans-serif; margin: 0; letter-spacing: 2px; padding-bottom: 9px; padding-left: 30px;">
+          ${formData.jobTitle || 'IT Project Manager'}
+        </h2>
+      </div>
+
+      <!-- Right Side: Profile Picture -->
+      <div style="flex: 0 0 40%; display: flex; justify-content: flex-end; padding-right: 30px;">
+        <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; background-color: #ddd;">
+          <img src="${imageURL}" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Flex: Content Section -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%; padding: 20px 10px; box-sizing: border-box;">
+      
+      <!-- Left Side: Personal Information, Skills, and Education -->
+      <div style="flex: 0 0 50%; padding-right: 20px;">
+        
+        <!-- Personal Information -->
+        <div style="margin-bottom: 20px;">
+          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">PERSONAL INFORMATION</h3>
+          <p style="font-size: 14px; margin: 0; color:black;">${formData.address || '123 Main St, City, State, ZIP'}</p>
+          <p style="font-size: 14px; margin: 0; color:black;">${formData.phone || '(123) 456-7890'}</p>
+          <p style="font-size: 14px; margin: 0; color:black;">${formData.email || 'email@example.com'}</p>
+          <p style="font-size: 14px; margin: 0; color:black;">${formData.linkedin || 'linkedin.com/in/username'}</p>
+        </div>
+
+        <!-- Skills Section -->
+        <div style="margin-bottom: 20px;">
+          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">SKILLS</h3>
+          ${(formData.skills || []).map(skill => `
+            <p style="font-size: 14px; margin: 0; color:black;">&#8226; ${skill || 'Skill'}</p>
+          `).join('')}
+        </div>
+
+        <!-- Education Section -->
+        <div>
+          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">EDUCATION</h3>
+          ${formData.education.length > 0 ? formData.education.map(edu => `
+            <div style="margin-bottom: 10px;">
+              <p style="font-size: 14px; margin: 0; color:black;">
+                <strong>${edu.level || 'Level not provided'}</strong> - ${edu.college || edu.schoolName || 'Institution not provided'}
+              </p>
+              
+              ${edu.level === 'Class 10th' ? `
+                <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Medium: ${edu.medium || 'Medium not provided'}</p>
+                <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Year: ${edu.endYear || 'End Year not provided'}</p>
+                <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
+              ` : edu.level === 'Class 12th' ? `
+                <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Medium: ${edu.medium || 'Course not provided'}</p>
+                <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Year: ${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
+                <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
+              ` : (edu.level === 'Graduate' || edu.level === 'Postgraduate') ? `
+                <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Course: ${edu.course || 'Course not provided'}</p>
+                <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">College: ${edu.college || 'College not provided'}</p>
+                <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Year: ${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
+                <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
+              ` : `
+                <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Year: ${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
+              `}
+            </div>
+          `).join('') : '<p style="font-size: 14px; margin: 0;">No education details provided.</p>'}
+        </div>
+      </div>
+
+      <!-- Right Side: About Me, Experience, and Projects -->
+      <div style="flex: 0 0 50%; padding-left: 20px;">
+
+        <!-- About Me Section -->
+        <div style="margin-bottom: 20px;">
+          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">ABOUT ME</h3>
+          <p style="font-size: 14px; line-height: 1.5; margin: 0; color:black;">${formData.summary || 'This is a placeholder for your summary content.'}</p>
+        </div>
+
+        <!-- Experience Section -->
+        <div style="margin-bottom: 20px;">
+          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">EXPERIENCE</h3>
+          ${(formData.experience || []).map(exp => `
+            <div style="margin-bottom: 10px;">
+              <p style="font-size: 14px; margin: 0; color:black;"><strong>${exp.company || 'Company Name'}</strong> - ${exp.position || 'Position'} (${exp.dates || 'Year Range'})</p>
+              <ul style="margin: 0; padding-left: 20px;">
+                ${(exp.details || []).map(detail => `<li style="font-size: 14px; margin: 0; color:black;">${detail || 'Responsibility/Achievement'}</li>`).join('')}
+              </ul>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Projects Section -->
+        <div>
+          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">PROJECTS</h3>
+          ${formData.projects.length > 0 ? formData.projects.map(project => `
+            <div style="margin-bottom: 10px;">
+              <p style="font-size: 14px; margin: 0; color:black;"><strong>${project.title || 'Project Title'}</strong></p>
+              <ul style="margin: 0; padding-left: 20px; color:black;">
+                ${project.details.length > 0 ? project.details.map(detail => `<li style="font-size: 14px; margin: 0; color:black;">${detail || 'Project Detail'}</li>`).join('') : '<li style="font-size: 14px; margin: 0;">No details provided.</li>'}
+              </ul>
+            </div>
+          `).join('') : '<p style="font-size: 14px; margin: 0;">No projects listed.</p>'}
+        </div>
+
+        <!-- Certifications Section -->
+        <div>
+          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">CERTIFICATIONS</h3>
+          ${formData.certifications.length > 0 ? formData.certifications.map(certification => `
+            <div style="margin-bottom: 10px;">
+              <p style="font-size: 14px; margin: 0; color:black;"><strong>${certification.course || 'Certification Course'} | ${certification.company || 'Issuing Company'}</strong></p>
+              <ul style="margin: 0; padding-left: 20px; color:black;">
+                ${certification.details.length > 0 ? certification.details.map(detail => `<li style="font-size: 14px; margin: 0; color:black;">${detail || 'Project Detail'}</li>`).join('') : '<li style="font-size: 14px; margin: 0;">No details provided.</li>'}
+              </ul>
+            </div>
+          `).join('') : '<p style="font-size: 14px; margin: 0;">No certification listed.</p>'}
+        </div>
+
+
+
+      </div>
+    </div>
+  `;
 }
+
+
+
 
 
 

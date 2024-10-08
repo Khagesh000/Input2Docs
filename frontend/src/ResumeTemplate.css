@@ -56,7 +56,6 @@ body {
   height: 60vh;
   object-fit: cover;
   animation: slideUpDown 5s infinite alternate;
-  padding: 7px;
   
 }
 

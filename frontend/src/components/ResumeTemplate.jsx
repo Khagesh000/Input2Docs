@@ -20,10 +20,20 @@ import img5 from '../assets/images/ResumeTemplate6.png';
 import img6 from '../assets/images/ResumeTemplate7.png';
 import img7 from '../assets/images/ResumeTemplate8.png';
 import img8 from '../assets/images/ResumeTemplate9.png';
-import img9 from '../assets/images/ResumeTemplate9.png';
+import img9 from '../assets/images/ResumeTemplate10.png';
+import img10 from '../assets/images/ResumeTemplate11.png';
+import img11 from '../assets/images/ResumeTemplate12.png';
+import img12 from '../assets/images/ResumeTemplate13.png';
+import img13 from '../assets/images/ResumeTemplate14.png';
+import img14 from '../assets/images/ResumeTemplate15.png';
+
+
+
+
 
 import { templateInputFields } from './ResumeTemplateInputFields';
 import { generateTemplateContent } from './ResumeGeneralTemplateContent';
+
 
 
 
@@ -106,7 +116,9 @@ export default function ResumeTemplate({ images: imgList }) {
   const [croppedImage, setCroppedImage] = useState(null);
   const [imageFile, setImageFile] = useState(null);
   
-  const images = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9];
+  const images = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
+    img11, img12, img13, img14
+  ];
 
   useEffect(() => {
     const updateCardWidth = () => {
@@ -191,7 +203,7 @@ export default function ResumeTemplate({ images: imgList }) {
 
   const handleUseTemplate = (index) => {
     setSelectedImage(images[index]);
-    const templateType = (index % 10) + 1; 
+    const templateType = (index % 15) + 1; 
     setSelectedTemplateType(templateType);
     setContent(generateTemplateContent(formData, templateType, croppedImage));
     setEditorKey(prevKey => prevKey + 1);
@@ -610,7 +622,7 @@ const handleDownloadPNG = () => {
   }).then((canvas) => {
     const link = document.createElement('a');
     link.href = canvas.toDataURL('image/png', 1.0); // Get PNG data URL
-    link.download = 'cover-letter-template.png'; // Name of the downloaded file
+    link.download = 'ResumeTemplate.png'; // Name of the downloaded file
     link.click(); // Trigger the download
     document.body.removeChild(tempDiv); // Clean up
   });
@@ -637,14 +649,14 @@ const handleDownloadPDF = () => {
   // Set up options for html2pdf
   const options = {
     margin: [10, 10, 10, 10], // Margins in mm
-    filename: 'cover-letter-template.pdf',
+    filename: 'ResumeTemplate.pdf',
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 3, useCORS: true, allowTaint: true },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
   };
 
   html2pdf().from(tempDiv).set(options).toPdf().get('pdf').then((pdf) => {
-    pdf.save('cover-letter-template.pdf');
+    pdf.save('ResumeTemplate.pdf');
   }).finally(() => {
     document.body.removeChild(tempDiv);
   });
@@ -709,7 +721,7 @@ const handleDownloadPDF = () => {
                       <img
                         src={image}
                         alt={`Resume Template ${index + 1}`}
-                        className={`img-fluid template-image ${selectedImage === image ? 'selected' : ''}`}
+                        className={`img-fluid template-image second-temp-img ${selectedImage === image ? 'selected' : ''}`}
                       />
                       <div className="template-overlay second-temp">
                         <button className="custom-use-template-button" onClick={() => handleUseTemplate(index)}>
@@ -770,7 +782,9 @@ const handleDownloadPDF = () => {
            
 
 
-{(selectedTemplateType === 2 || selectedTemplateType === 7 )&& (
+{(selectedTemplateType === 2 || selectedTemplateType === 7 || selectedTemplateType === 10 || selectedTemplateType === 14 ||
+  selectedTemplateType === 15
+ )&& (
   <>
     {/* Profile Image Upload */}
     <div className="form-group">
@@ -1151,7 +1165,9 @@ const handleDownloadPDF = () => {
 
 
 {/* Projects Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 6 || selectedTemplateType === 7 || selectedTemplateType === 8 || selectedTemplateType === 9 )&& (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 6 || selectedTemplateType === 7 || selectedTemplateType === 8 || selectedTemplateType === 9 || selectedTemplateType === 10 || 
+  selectedTemplateType === 11 || selectedTemplateType === 13 || selectedTemplateType === 14 || selectedTemplateType === 15
+ )&& (
   <>
 <div className="form-group">
   <label>Projects</label>
@@ -1222,7 +1238,9 @@ const handleDownloadPDF = () => {
 
 
 {/* Tools Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 )&& (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 ||
+  selectedTemplateType === 11
+)&& (
   <>
 <div className="form-group">
   <label>Tools</label>
@@ -1266,7 +1284,9 @@ const handleDownloadPDF = () => {
 
 
 {/* Others Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 )&& (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 || 
+  selectedTemplateType === 11
+)&& (
   <>
 <div className="form-group">
   <label>Others</label>
@@ -1310,7 +1330,9 @@ const handleDownloadPDF = () => {
 
 
 {/* Soft Skills Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 )&& (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 || 
+  selectedTemplateType === 11
+)&& (
   <>
 <div className="form-group">
   <label>Soft Skills</label>
@@ -1354,7 +1376,9 @@ const handleDownloadPDF = () => {
 
 
 {/* Certifications Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 6 || selectedTemplateType === 7 || selectedTemplateType === 8 || selectedTemplateType === 9) && (
+{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 6 || selectedTemplateType === 7 || selectedTemplateType === 8 || selectedTemplateType === 9 || selectedTemplateType === 10 || 
+  selectedTemplateType === 11 || selectedTemplateType === 12 || selectedTemplateType === 13 || selectedTemplateType === 14 || selectedTemplateType === 15
+) && (
   <>
     <div className="form-group">
       <label>Certifications</label>
@@ -1391,7 +1415,9 @@ const handleDownloadPDF = () => {
           </div>
 
           {/* Only show details points input field for templateType 4 */}
-          {(selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 8 || selectedTemplateType === 9)&& (
+          {(selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 8 || selectedTemplateType === 9 || selectedTemplateType === 10 ||
+            selectedTemplateType === 12 || selectedTemplateType === 14 || selectedTemplateType === 15
+          )&& (
             <>
               <label>Details (Point by Point)</label>
               {certification.details.map((point, pointIndex) => (
@@ -1495,7 +1521,9 @@ const handleDownloadPDF = () => {
 
 
 {/* Handle Languages */}
-{(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType ===3 || selectedTemplateType ===4 || selectedTemplateType === 5 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9)&& (
+{(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType ===3 || selectedTemplateType ===4 || selectedTemplateType === 5 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 || selectedTemplateType === 10 || 
+  selectedTemplateType === 11
+)&& (
   <>
 <div className="form-group">
     <label>Languages</label>
