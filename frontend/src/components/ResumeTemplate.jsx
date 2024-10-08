@@ -18,7 +18,7 @@ import img3 from '../assets/images/ResumeTemplate4.png';
 import img4 from '../assets/images/ResumeTemplate5.png';
 import img5 from '../assets/images/ResumeTemplate6.png';
 import img6 from '../assets/images/ResumeTemplate7.png';
-import img7 from '../assets/images/cover_letter1.png';
+import img7 from '../assets/images/ResumeTemplate8.png';
 
 import { templateInputFields } from './ResumeTemplateInputFields';
 import { generateTemplateContent } from './ResumeGeneralTemplateContent';

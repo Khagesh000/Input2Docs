@@ -1191,14 +1191,59 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         </section>
 
         <!-- Section: Skills -->
-        <section style="margin-bottom: 0px; margin: 0px;">
-          <h3 style="font-size: 22px; color: #007bff; margin-bottom: 4px; margin-top: 10px;">Skills</h3>
-          <ul style="list-style-type: none; padding: 0;  margin: 0px;">
-            ${(formData.skills || []).map(skill => `
-              <li style="font-size: 15px; color: #555; margin-bottom: 5px;">- ${skill || 'Skill'}</li>
-            `).join('')}
-          </ul>
-        </section>
+<section style="margin-bottom: 0px; margin: 0px;">
+  
+
+  <!-- Technical Skills -->
+  <div style="margin-bottom: 5px; color: black;">
+    <h3 style="font-size: 22px; color: #007bff; margin-bottom: 4px; margin-top: 10px;">Technical Skills</h3>
+    <div style="display: flex; flex-direction: column; margin-top: 5px;">
+
+      <!-- Programming Languages -->
+      <div style="display: flex; margin-bottom: 6px;">
+        <strong style="margin-right: 5px;">Programming Languages: </strong>
+        <div style="color: #555;">
+          ${formData.skills.length > 0 ? formData.skills.join(', ') : 'No skills listed.'}
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div style="display: flex; margin-bottom: 6px;">
+        <strong style="margin-right: 5px;">Tools:</strong>
+        <div style="color: #555;">
+          ${formData.tools.length > 0 ? formData.tools.map(tool => tool.name).join(', ') : 'No tools listed.'}
+        </div>
+      </div>
+
+      <!-- Others -->
+      <div style="display: flex; margin-bottom: 6px;">
+        <strong style="margin-right: 5px;">Others: </strong>
+        <div style="color: #555;">
+          ${formData.others.length > 0 ? formData.others.join(', ') : 'No skills listed.'}
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div style="display: flex; margin-bottom: 6px;">
+        <strong style="margin-right: 5px;">Soft Skills:</strong>
+        <div style="color: #555;">
+          ${formData.softSkills.length > 0 ? formData.softSkills.join(', ') : 'No soft skills listed.'}
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div style="display: flex; margin-bottom: 6px;">
+        <strong style="margin-right: 5px;">Languages:</strong>
+        <div style="color: #555;">
+          ${formData.languages.length > 0 ? formData.languages.join(', ') : 'No languages listed.'}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
         <!-- Section: Experience -->
         <section style="margin-bottom: 0px;">
@@ -1211,16 +1256,67 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
           `).join('')}
         </section>
 
+
+
         <!-- Section: Education -->
-        <section style="margin-bottom: 30px;  margin: 0px;">
-          <h3 style="font-size: 22px; color: #007bff; margin-bottom: 10px;  margin: 0px;">Education</h3>
-          ${(formData.education || []).map(edu => `
-            <div style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;  margin: 0px;">
-              <h4 style="font-size: 17px; color: #333;  margin: 0px; margin-bottom: 4px;">${edu.level || 'Degree'} in ${edu.field || 'Field of Study'} @ ${edu.institution || 'Institution Name'} <span style="font-size: 14px; color: #aaa;">(${edu.startYear || 'Year'} - ${edu.endYear || 'Year'})</span></h4>
-              <p style="font-size: 15px; color: #555;  margin: 0px;">CPI: ${edu.percentage || 'CPI Not Provided'}</p>
-            </div>
-          `).join('')}
-        </section>
+<section style="margin-bottom: 30px; margin: 0px;">
+  <h3 style="font-size: 22px; color: #007bff; margin-bottom: 10px; margin: 0px;">Education</h3>
+  
+  ${formData.education.length > 0 ? formData.education.map(edu => `
+    <div style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px; margin: 0px;">
+      
+      <!-- Class 10th -->
+      ${edu.level === 'Class 10th' ? `
+        <h4 style="font-size: 17px; color: #333; margin: 0px; margin-bottom: 4px;">
+          ${edu.level || 'Class 10th'} @ ${edu.schoolName || 'School Name not provided'} 
+          <span style="font-size: 14px; color: #aaa;">(${edu.endYear || 'Year'})</span>
+        </h4>
+        <p style="font-size: 15px; color: #555; margin: 0px;">Medium: ${edu.medium || 'Medium not provided'}</p>
+        <p style="font-size: 15px; color: #555; margin: 0px;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
+      ` : ''}
+
+      <!-- Class 12th -->
+      ${edu.level === 'Class 12th' ? `
+        <h4 style="font-size: 17px; color: #333; margin: 0px; margin-bottom: 4px;">
+          ${edu.level || 'Class 12th'} @ ${edu.college || 'School Name not provided'} 
+          <span style="font-size: 14px; color: #aaa;">(${edu.startYear || 'Year'} - ${edu.endYear || 'Year'})</span>
+        </h4>
+        <p style="font-size: 15px; color: #555; margin: 0px;">Medium: ${edu.medium || 'Course not provided'}</p>
+        <p style="font-size: 15px; color: #555; margin: 0px;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
+      ` : ''}
+
+      <!-- Graduate -->
+      ${edu.level === 'Graduate' ? `
+        <h4 style="font-size: 17px; color: #333; margin: 0px; margin-bottom: 4px;">
+          ${edu.level || 'Graduate'} in ${edu.course || 'Course not provided'} @ ${edu.college || 'College Name not provided'} 
+          <span style="font-size: 14px; color: #aaa;">(${edu.startYear || 'Year'} - ${edu.endYear || 'Year'})</span>
+        </h4>
+        <p style="font-size: 15px; color: #555; margin: 0px;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
+      ` : ''}
+
+      <!-- Postgraduate -->
+      ${edu.level === 'Postgraduate' ? `
+        <h4 style="font-size: 17px; color: #333; margin: 0px; margin-bottom: 4px;">
+          ${edu.level || 'Postgraduate'} in ${edu.course || 'Course not provided'} @ ${edu.college || 'College Name not provided'} 
+          <span style="font-size: 14px; color: #aaa;">(${edu.startYear || 'Year'} - ${edu.endYear || 'Year'})</span>
+        </h4>
+        <p style="font-size: 15px; color: #555; margin: 0px;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
+      ` : ''}
+
+      <!-- Other Levels -->
+      ${edu.level !== 'Class 10th' && edu.level !== 'Class 12th' && edu.level !== 'Graduate' && edu.level !== 'Postgraduate' ? `
+        <h4 style="font-size: 17px; color: #333; margin: 0px; margin-bottom: 4px;">
+          ${edu.level || 'Degree'} in ${edu.field || 'Field of Study'} @ ${edu.college || edu.schoolName || 'Institution Name not provided'} 
+          <span style="font-size: 14px; color: #aaa;">(${edu.startYear || 'Year'} - ${edu.endYear || 'Year'})</span>
+        </h4>
+        <p style="font-size: 15px; color: #555; margin: 0px;">CPI: ${edu.percentage || 'CPI Not Provided'}</p>
+      ` : ''}
+      
+    </div>
+  `).join('') : '<p style="font-size: 14px; margin: 0;">No education details provided.</p>'}
+</section>
+
+
 
         <!-- Section: Projects -->
         <section style="margin-bottom: 0px; margin: 0px;">
