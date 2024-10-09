@@ -26,6 +26,9 @@ import img11 from '../assets/images/ResumeTemplate12.png';
 import img12 from '../assets/images/ResumeTemplate13.png';
 import img13 from '../assets/images/ResumeTemplate14.png';
 import img14 from '../assets/images/ResumeTemplate15.png';
+import img15 from '../assets/images/ResumeTemplate16.png';
+import img16 from '../assets/images/ResumeTemplate17.png';
+import img17 from '../assets/images/ResumeTemplate18.png';
 
 
 
@@ -117,7 +120,7 @@ export default function ResumeTemplate({ images: imgList }) {
   const [imageFile, setImageFile] = useState(null);
   
   const images = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
-    img11, img12, img13, img14
+    img11, img12, img13, img14, img15, img16, img17
   ];
 
   useEffect(() => {
@@ -203,7 +206,7 @@ export default function ResumeTemplate({ images: imgList }) {
 
   const handleUseTemplate = (index) => {
     setSelectedImage(images[index]);
-    const templateType = (index % 15) + 1; 
+    const templateType = (index % 18) + 1; 
     setSelectedTemplateType(templateType);
     setContent(generateTemplateContent(formData, templateType, croppedImage));
     setEditorKey(prevKey => prevKey + 1);
@@ -1166,7 +1169,7 @@ const handleDownloadPDF = () => {
 
 {/* Projects Section */}
 {(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 6 || selectedTemplateType === 7 || selectedTemplateType === 8 || selectedTemplateType === 9 || selectedTemplateType === 10 || 
-  selectedTemplateType === 11 || selectedTemplateType === 13 || selectedTemplateType === 14 || selectedTemplateType === 15
+  selectedTemplateType === 11 || selectedTemplateType === 13 || selectedTemplateType === 14 || selectedTemplateType === 15 || selectedTemplateType === 16 || selectedTemplateType === 17 || selectedTemplateType === 18
  )&& (
   <>
 <div className="form-group">
@@ -1239,7 +1242,7 @@ const handleDownloadPDF = () => {
 
 {/* Tools Section */}
 {(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 ||
-  selectedTemplateType === 11
+  selectedTemplateType === 11 || selectedTemplateType === 16 || selectedTemplateType === 17
 )&& (
   <>
 <div className="form-group">
@@ -1285,7 +1288,7 @@ const handleDownloadPDF = () => {
 
 {/* Others Section */}
 {(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 || 
-  selectedTemplateType === 11
+  selectedTemplateType === 11 || selectedTemplateType === 16 || selectedTemplateType === 17
 )&& (
   <>
 <div className="form-group">
@@ -1331,7 +1334,7 @@ const handleDownloadPDF = () => {
 
 {/* Soft Skills Section */}
 {(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 || 
-  selectedTemplateType === 11
+  selectedTemplateType === 11 || selectedTemplateType === 16 
 )&& (
   <>
 <div className="form-group">
@@ -1377,7 +1380,7 @@ const handleDownloadPDF = () => {
 
 {/* Certifications Section */}
 {(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 6 || selectedTemplateType === 7 || selectedTemplateType === 8 || selectedTemplateType === 9 || selectedTemplateType === 10 || 
-  selectedTemplateType === 11 || selectedTemplateType === 12 || selectedTemplateType === 13 || selectedTemplateType === 14 || selectedTemplateType === 15
+  selectedTemplateType === 11 || selectedTemplateType === 12 || selectedTemplateType === 13 || selectedTemplateType === 14 || selectedTemplateType === 15 || selectedTemplateType === 16 || selectedTemplateType === 17 || selectedTemplateType === 18
 ) && (
   <>
     <div className="form-group">
@@ -1416,7 +1419,7 @@ const handleDownloadPDF = () => {
 
           {/* Only show details points input field for templateType 4 */}
           {(selectedTemplateType === 4 || selectedTemplateType === 5 || selectedTemplateType === 8 || selectedTemplateType === 9 || selectedTemplateType === 10 ||
-            selectedTemplateType === 12 || selectedTemplateType === 14 || selectedTemplateType === 15
+            selectedTemplateType === 12 || selectedTemplateType === 14 || selectedTemplateType === 15 || selectedTemplateType === 18
           )&& (
             <>
               <label>Details (Point by Point)</label>
@@ -1473,7 +1476,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Conditionally render the Hobbies section only for Template 1 */}
-{(selectedTemplateType === 3 || selectedTemplateType === 5)&& (
+{(selectedTemplateType === 2 || selectedTemplateType === 3 || selectedTemplateType === 5 || selectedTemplateType === 10 || selectedTemplateType === 18)&& (
   <>
           <div className="form-group">
             <label>Hobbies</label>
@@ -1522,7 +1525,7 @@ const handleDownloadPDF = () => {
 
 {/* Handle Languages */}
 {(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType ===3 || selectedTemplateType ===4 || selectedTemplateType === 5 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 || selectedTemplateType === 10 || 
-  selectedTemplateType === 11
+  selectedTemplateType === 11 || selectedTemplateType === 16 || selectedTemplateType === 18
 )&& (
   <>
 <div className="form-group">
