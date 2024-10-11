@@ -29,6 +29,7 @@ import img14 from '../assets/images/ResumeTemplate15.png';
 import img15 from '../assets/images/ResumeTemplate16.png';
 import img16 from '../assets/images/ResumeTemplate17.png';
 import img17 from '../assets/images/ResumeTemplate18.png';
+import img18 from '../assets/images/ResumeTemplate19.png';
 
 
 
@@ -120,7 +121,7 @@ export default function ResumeTemplate({ images: imgList }) {
   const [imageFile, setImageFile] = useState(null);
   
   const images = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
-    img11, img12, img13, img14, img15, img16, img17
+    img11, img12, img13, img14, img15, img16, img17, img18
   ];
 
   useEffect(() => {
@@ -206,7 +207,7 @@ export default function ResumeTemplate({ images: imgList }) {
 
   const handleUseTemplate = (index) => {
     setSelectedImage(images[index]);
-    const templateType = (index % 18) + 1; 
+    const templateType = (index % 19) + 1; 
     setSelectedTemplateType(templateType);
     setContent(generateTemplateContent(formData, templateType, croppedImage));
     setEditorKey(prevKey => prevKey + 1);
@@ -1476,7 +1477,9 @@ const handleDownloadPDF = () => {
 
 
 {/* Conditionally render the Hobbies section only for Template 1 */}
-{(selectedTemplateType === 2 || selectedTemplateType === 3 || selectedTemplateType === 5 || selectedTemplateType === 10 || selectedTemplateType === 18)&& (
+{(selectedTemplateType === 2 || selectedTemplateType === 3 || selectedTemplateType === 5 || selectedTemplateType === 10 || selectedTemplateType === 18 || 
+  selectedTemplateType === 19
+)&& (
   <>
           <div className="form-group">
             <label>Hobbies</label>
@@ -1525,7 +1528,7 @@ const handleDownloadPDF = () => {
 
 {/* Handle Languages */}
 {(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType ===3 || selectedTemplateType ===4 || selectedTemplateType === 5 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 || selectedTemplateType === 10 || 
-  selectedTemplateType === 11 || selectedTemplateType === 16 || selectedTemplateType === 18
+  selectedTemplateType === 11 || selectedTemplateType === 16 || selectedTemplateType === 18 || selectedTemplateType === 19
 )&& (
   <>
 <div className="form-group">
