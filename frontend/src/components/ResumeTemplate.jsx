@@ -31,7 +31,7 @@ import img16 from '../assets/images/ResumeTemplate17.png';
 import img17 from '../assets/images/ResumeTemplate18.png';
 import img18 from '../assets/images/ResumeTemplate19.png';
 import img19 from '../assets/images/ResumeTemplate20.png';
-import img20 from '../assets/images/ResumeTemplate20.png';
+import img20 from '../assets/images/ResumeTemplate21.png';
 
 
 

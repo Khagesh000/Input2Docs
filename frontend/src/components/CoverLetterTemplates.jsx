@@ -4,6 +4,8 @@ import html2canvas from 'html2canvas';
 
 import html2pdf from 'html2pdf.js';
 
+
+import '../Coverlettertemplate-new.css';
 import '../CoverLetterTemplates.css'; // Ensure this path is correct
 
 // Import images for templates
@@ -295,7 +297,7 @@ const handleDownloadPDF = () => {
 
 
 
-    {/* Second Template Section */}
+   {/* Second Template Section */}
    <div className="resume-template-section">
         <div className="container template-container mb-5">
           <h2 className="text-center heading-title resume-title">
@@ -306,12 +308,12 @@ const handleDownloadPDF = () => {
             <div className="row template-gallery">
               {images.slice(0, visibleRows * 3).map((image, index) => (
                 <div className="col-lg-4 col-md-6 col-sm-12 template-column" key={index}>
-                  <div className="template-card">
+                  <div className="template-card second-template-card">
                     <div className="template-image-container">
                       <img
                         src={image}
                         alt={`Resume Template ${index + 1}`}
-                        className={`img-fluid template-image ${selectedImage === image ? 'selected' : ''}`}
+                        className={`img-fluid template-image second-temp-img ${selectedImage === image ? 'selected' : ''}`}
                       />
                       <div className="template-overlay second-temp">
                         <button className="custom-use-template-button" onClick={() => handleUseTemplate(index)}>
