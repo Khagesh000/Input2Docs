@@ -1608,25 +1608,27 @@ const handleDownloadPDF = () => {
 
         
         <div className="editor-container">
-            <Editor className='key-editor'
-              key={editorKey}
-              apiKey="xvogh7180w9n8hd8zc53e6dwo44kau08xngyoqlr623byta9"
-              init={{
-                height: '296mm',
-                width: '210mm',
-                menubar: false,
-                plugins: [
-                  'advlist autolink lists link image charmap print preview anchor',
-                  'searchreplace visualblocks code fullscreen',
-                  'insertdatetime media table paste code help wordcount',
-                ],
-                toolbar:
-                  'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
-              }}
-              value={content}
-              onEditorChange={(newContent) => setContent(newContent)}
-            />
-          </div>
+  <Editor
+    className='key-editor'
+    key={editorKey}
+    apiKey="xvogh7180w9n8hd8zc53e6dwo44kau08xngyoqlr623byta9"
+    init={{
+      height: '296mm',
+      width: '210mm',
+      menubar: false,
+      plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table paste code help wordcount',
+        'textcolor' // Add textcolor plugin
+      ],
+      toolbar:
+        'undo redo | formatselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+    }}
+    value={content}
+    onEditorChange={(newContent) => setContent(newContent)}
+  />
+</div>
           {networkError && (
         <div className="network-error">
           Network issue detected. Some features may not work properly.
