@@ -257,7 +257,7 @@ const handleDownloadPDF = () => {
 
   return (
     
-    <div className="bg-black">
+    <div className="bg-black cov-lettemp">
     <div className="container cov-temp template-container bg-black mb-xxl-5">
       <h2 className="text-center heading-title resume-title">Choose a <span>Cover Letter Template</span></h2>
       <div className="template-row-wrapper">

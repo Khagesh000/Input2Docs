@@ -493,6 +493,9 @@ element.style {
   margin-right: 10%;
   margin-bottom: 5%;
 }
+.bg-black{
+    padding-top: 17px;
+  }
 }
 
 @media (max-width: 576px) {
