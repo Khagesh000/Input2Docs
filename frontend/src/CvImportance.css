@@ -1,0 +1,114 @@
+.cv-importance-container {
+    width: 80%; /* Set width to 80% */
+    margin: 0 auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5deb3, #ffe4e1); /* Wheat and Light Red gradient */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in;
+    position: relative;
+    overflow: hidden; /* To create a nice overflow effect */
+}
+
+.cv-title {
+    text-align: center;
+    color: #b22222; /* Firebrick (darker shade of light red) */
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.cv-importance-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.importance-item {
+    background: #ffffff; /* Keep white for contrast */
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex; /* Align icon and text side by side */
+    align-items: center; /* Center align vertically */
+}
+
+.importance-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.importance-icon {
+    font-size: 2rem; /* Adjust the icon size */
+    color: #b22222; /* Firebrick (darker shade of light red) */
+    margin-right: 1rem; /* Space between icon and text */
+}
+
+.importance-heading {
+    font-size: 1.5rem;
+    color: #b22222; /* Firebrick for headings */
+    margin-bottom: 0.5rem;
+}
+
+.importance-text {
+    font-size: 1rem;
+    color: #555555; /* Keep dark grey for text */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .cv-title {
+        font-size: 2rem; /* Reduce title size on smaller screens */
+    }
+
+    .importance-item {
+        flex-direction: column; /* Change layout to column for small screens */
+        align-items: flex-start; /* Align items to start */
+    }
+
+    .importance-icon {
+        margin-bottom: 0.5rem; /* Add space between icon and heading */
+    }
+
+    .importance-heading {
+        font-size: 1.3rem; /* Reduce heading size on smaller screens */
+    }
+
+    .importance-text {
+        font-size: 0.9rem; /* Reduce text size on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .cv-title {
+        font-size: 1.8rem; /* Further reduce title size for very small screens */
+    }
+
+    .importance-heading {
+        font-size: 1.2rem; /* Further reduce heading size for very small screens */
+    }
+
+    .importance-text {
+        font-size: 0.85rem; /* Further reduce text size for very small screens */
+    }
+
+    .importance-icon {
+        font-size: 1.5rem; /* Further reduce icon size for very small screens */
+    }
+
+    .cv-importance-container {
+        padding: 1.5rem; /* Reduce padding on smaller screens */
+    }
+}

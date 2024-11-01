@@ -13,6 +13,7 @@ import Email from './Email'; // Make sure this is correctly imported
 import About from './About';
 import CoverLetter from './CoverLetter';
 import Resume from './Resume'
+import Cv from './Cv';
 
 
 
@@ -40,7 +41,7 @@ function MainContent() {
 function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
-  const isSpecialPage = ['/letter', '/email', '/about', '/cover', '/resume'].includes(location.pathname);
+  const isSpecialPage = ['/letter', '/email', '/about', '/cover', '/resume', '/cv'].includes(location.pathname);
 
   useEffect(() => {
     // Simulate loading delay
@@ -57,6 +58,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/cover" element={<CoverLetter />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/cv" element={<Cv />} />
       </Routes>
     </div>
   );
