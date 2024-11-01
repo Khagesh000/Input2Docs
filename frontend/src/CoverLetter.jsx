@@ -6,9 +6,8 @@ import React from 'react'
 import Navbar from './components/navbar'
 import Feedback from './components/Feedback'
 import Endbar from './components/Endbar'
-
-import CoverLetterIntro from './components/CoverLetterIntro'
 import CoverLetterTemplates from './components/CoverLetterTemplates'
+import CoverLetterIntro from './components/CoverLetterIntro'
 import CoverLetterImportance from './components/CoverLetterImportance'
 import CoverLetterAbout from './components/CoverLetterAbout'
 
@@ -18,6 +17,7 @@ export default function CoverLetter() {
       <Navbar />
       <CoverLetterIntro />
       <CoverLetterImportance />
+      <CoverLetterTemplates />
       <CoverLetterAbout />
       <div>
       <Feedback />

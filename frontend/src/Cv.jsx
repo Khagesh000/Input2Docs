@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './components/navbar'
 import CvDescription from './components/CvDescription'
 import CvImportance from './components/CvImportance'
-import CoverLetterTemplates from './components/CoverLetterTemplates'
+import CvTemplates from './components/CvTemplates'
 import Endbar from './components/Endbar'
 
 import CvAbout from './components/CvAbout'
@@ -14,7 +14,7 @@ export default function Cv() {
     <div>
       <Navbar />
       <CvDescription />
-      <CoverLetterTemplates />
+      <CvTemplates />
       <CvImportance />
       <CvAbout />
       <Feedback />

@@ -21,7 +21,7 @@ import img7 from '../assets/images/cover_letter1.png';
 import { templateInputFields } from './CoverTemplateInputfields';
 import { generateTemplateContent } from './CoverGeneralTemplate';
 
-export default function CoverLetterTemplates({ images: imgList }) {
+export default function CvTemplates({ images: imgList }) {
   const containerRef = useRef(null);
   const selectedImageRef = useRef(null);
   const editorRef = useRef(null); // Define the editorRef
@@ -375,41 +375,41 @@ const handleDownloadPDF = () => {
 
       {/* Suggestions content on the right side, visible only on large screens */}
       <div className="resume-suggestions">
-      <h1>Cover Letter Writing Tips</h1>
-            <p>Crafting an effective cover letter is crucial for making a great first impression. Here are some tips to help you write a compelling cover letter:</p>
-            <h5>Cover Letter Writing Tips</h5>
-            <ul>
-                <li>
-                    <strong>1. Address the Hiring Manager by Name:</strong> If possible, find out the name of the person who will read your cover letter and address it directly to them.
-                </li>
-                <li>
-                    <strong>2. Start with a Strong Opening:</strong> Begin with a captivating opening that grabs the reader’s attention. Mention the position you’re applying for and why you’re excited about it.
-                </li>
-                <li>
-                    <strong>3. Showcase Your Skills and Achievements:</strong> Highlight your key skills and achievements that are relevant to the job. Use specific examples to demonstrate how you’ve successfully applied these skills in the past.
-                </li>
-                <li>
-                    <strong>4. Tailor Your Letter to the Job Description:</strong> Customize your cover letter to match the job description. Use keywords and phrases from the job listing to show that you’ve carefully read the requirements.
-                </li>
-                <li>
-                    <strong>5. Explain Why You’re a Good Fit:</strong> Clearly articulate why you’re the right fit for the role. Explain how your background aligns with the company’s needs and how you can contribute to their goals.
-                </li>
-                <li>
-                    <strong>6. Keep It Concise and Focused:</strong> Your cover letter should be no longer than one page. Be concise and focus on the most important aspects of your experience and qualifications.
-                </li>
-                <li>
-                    <strong>7. Show Enthusiasm:</strong> Demonstrate your enthusiasm for the position and the company. Employers appreciate candidates who are genuinely excited about the opportunity.
-                </li>
-                <li>
-                    <strong>8. Proofread Carefully:</strong> Check for spelling and grammatical errors. A well-written and error-free cover letter reflects professionalism and attention to detail.
-                </li>
-                <li>
-                    <strong>9. Include a Strong Closing:</strong> End with a strong closing statement that reiterates your interest in the role and expresses your eagerness to discuss your application in more detail.
-                </li>
-                <li>
-                    <strong>10. Use a Professional Format:</strong> Ensure that your cover letter follows a professional format with consistent font, margins, and spacing. A clean layout enhances readability and presentation.
-                </li>
-            </ul>
+      <h1>CV Writing Tips</h1>
+    <p>Creating an effective CV is essential for making a positive first impression. Here are some tips to help you write a compelling CV:</p>
+    <h5>CV Writing Tips</h5>
+    <ul>
+        <li>
+            <strong>1. Tailor Your CV to the Job:</strong> Customize your CV for each application to highlight relevant experience and skills that match the job description.
+        </li>
+        <li>
+            <strong>2. Start with a Strong Personal Statement:</strong> Begin with a personal statement that summarizes your skills and career goals, tailored to the specific job you are applying for.
+        </li>
+        <li>
+            <strong>3. Highlight Key Skills:</strong> Include a skills section that showcases your key competencies relevant to the position, ensuring to use keywords from the job listing.
+        </li>
+        <li>
+            <strong>4. List Relevant Work Experience:</strong> Provide detailed information about your work history, focusing on achievements and contributions in previous roles.
+        </li>
+        <li>
+            <strong>5. Include Education and Certifications:</strong> Clearly list your educational background, along with any relevant certifications or training that enhance your qualifications.
+        </li>
+        <li>
+            <strong>6. Use Clear and Professional Formatting:</strong> Ensure your CV has a clean layout with consistent font sizes, bullet points, and spacing for easy readability.
+        </li>
+        <li>
+            <strong>7. Proofread for Errors:</strong> Carefully proofread your CV for spelling and grammatical errors. A polished document reflects your attention to detail.
+        </li>
+        <li>
+            <strong>8. Keep It Concise:</strong> Aim for a maximum of two pages. Be concise and focus on the most relevant and impressive information.
+        </li>
+        <li>
+            <strong>9. Add Volunteer Experience:</strong> If applicable, include any volunteer work that demonstrates your skills, dedication, and involvement in the community.
+        </li>
+        <li>
+            <strong>10. Use Action Verbs:</strong> Start each bullet point in your work experience section with action verbs to convey a sense of accomplishment and impact.
+        </li>
+    </ul>
         </div>
         </div>
             
