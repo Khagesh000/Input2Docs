@@ -90,7 +90,7 @@ export default function ResumeTemplate({ images: imgList }) {
         }
     ],
     skills: ['Python'],
-    tools: [{ name: 'Jupyter' }],
+    tools: ['Jupyter' ],
     languages: ['English'],
     projects: [
         {
@@ -248,7 +248,7 @@ export default function ResumeTemplate({ images: imgList }) {
     }));
   };
 
-  //Addskill Feature
+  //skill Feature
   const handleAddSkill = () => {
     setFormData({
       ...formData,
@@ -273,6 +273,8 @@ export default function ResumeTemplate({ images: imgList }) {
       skills: newSkills,
     });
   };
+
+  //Experience section
 
   const handleAddExperience = () => {
     setFormData({
