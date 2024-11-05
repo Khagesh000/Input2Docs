@@ -5,6 +5,16 @@ import experienceIcon from '../assets/images/experience.png';
 import personalInfoIcon from '../assets/images/experience.png';
 import languagesIcon from '../assets/images/summary-icon.png';
 import hobbiesIcon from '../assets/images/hobbies-icon.png'; // Replace this with the actual path to your hobbies icon
+import projectsIcon from '../assets/images/projects-icon.png';
+import certificateIcon from '../assets/images/certificate-icon.png'
+import publicationsIcon from '../assets/images/publication-icon.png'
+import awardsIcon from '../assets/images/awards-icon.png';
+import membershipsIcon from '../assets/images/profession-icon.png';
+import toolsIcon from '../assets/images/tools-icon.png';
+import othersIcon from '../assets/images/others-icon.png';
+import softskillsIcon from '../assets/images/softskills-icon.png';
+
+
 
 export const generateTemplateContent = (formData, templateType, croppedImage) => {
 
@@ -1664,6 +1674,877 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 
 `;
+}else if (templateType === 6) {
+  return `
+    <!-- Resume Template -->
+<div style="display: flex; height: 100%; width: 100%; box-sizing: border-box; margin-left: 20px; margin-right: 20px;">
+
+<!-- Left side content -->
+<div style="flex: 1; padding: 20px; background-color: #4b5d67; color: white; min-height: 1120px; box-sizing: border-box;">
+  
+  <!-- Full Name and Job Title -->
+<h1 style="font-size: 32px; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 30px; margin-bottom: 3px; color: white; text-align: left;">
+${formData.firstName || 'JOHN'} ${formData.lastName || 'SMITH'}
+</h1>
+<h2 style="font-size: 24px; font-weight: 400; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 5px 0; color: white; text-align: left;">
+${formData.jobTitle || 'IT Project Manager'}
+</h2>
+
+
+  <!-- Personal Information -->
+  <div style="margin-top: 20px;">
+    <label style="font-weight: bold; font-size: 16px; color: lightwhite; padding: 0px;">PERSONAL INFO</label>
+    <div style="margin: 0;">
+      <strong style="color: white;">Address:</strong><br>
+      <span style="font-size: 14px; color: white;">${formData.address || '123 Main St, City, State, ZIP'}</span>
+    </div>
+    <div style="margin: 0;">
+      <strong style="color: white;">Phone:</strong><br>
+      <span style="font-size: 14px; color: white;">${formData.phone || '(123) 456-7890'}</span>
+    </div>
+    <div style="margin: 0;">
+      <strong style="color: white;">Email:</strong><br>
+      <span style="font-size: 14px; color: white;">${formData.email || 'email@example.com'}</span>
+    </div>
+    <div style="margin: 0;">
+      <strong style="color: white;">LinkedIn:</strong><br>
+      <span style="font-size: 14px; color: white;">${formData.linkedin || 'linkedin.com/in/username'}</span>
+    </div>
+  </div>
+
+  <!-- Skills Section -->
+  <div style="margin-top: 20px;">
+    <label style="font-weight: bold; font-size: 16px; color: white;">SKILLS</label>
+    <div style="margin-top: 10px;">
+      ${(formData.skills || []).map(skill => `
+        <div style="font-size: 14px; color: white;">
+          - ${skill || 'Skill'}
+        </div>
+      `).join('')}
+    </div>
+  </div>
+
+  <!-- Languages Section -->
+  <div style="margin-top: 20px;">
+    <label style="font-weight: bold; font-size: 16px; color: white;">LANGUAGES</label>
+    <div style="margin-top: 10px;">
+      ${(formData.languages || []).map(lang => `
+        <div style="font-size: 14px; color: white;">
+          - ${lang || 'Language'}
+        </div>
+      `).join('')}
+    </div>
+  </div>
+
+
+  <!-- Hobbies Section -->
+  <div style="margin-top: 20px;">
+    <label style="font-weight: bold; font-size: 16px; color: white;">HOBBIES</label>
+    <div style="margin-top: 10px;">
+      ${(formData.hobbies || []).map(hobbies => `
+        <div style="font-size: 14px; color: white;">
+          - ${hobbies || 'Cricket'}
+        </div>
+      `).join('')}
+    </div>
+  </div>
+
+  <!-- Tools Section -->
+  <div style="margin-top: 20px;">
+    <label style="font-weight: bold; font-size: 16px; color: white;">TOOLS</label>
+    <div style="margin-top: 10px;">
+      ${(formData.tools || []).map(tool => `
+        <div style="font-size: 14px; color: white;">
+          - ${tool || 'Cricket'}
+        </div>
+      `).join('')}
+    </div>
+  </div>
+
+  <!-- OTHERS Section -->
+  <div style="margin-top: 20px;">
+    <label style="font-weight: bold; font-size: 16px; color: white;">OTHERS</label>
+    <div style="margin-top: 10px;">
+      ${(formData.others || []).map(other => `
+        <div style="font-size: 14px; color: white;">
+          - ${other || 'Prompt design'}
+        </div>
+      `).join('')}
+    </div>
+  </div>
+
+  <!-- SOFTSKILLS Section -->
+  <div style="margin-top: 20px;">
+    <label style="font-weight: bold; font-size: 16px; color: white;">SOFT SKILLS</label>
+    <div style="margin-top: 10px;">
+      ${(formData.softSkills || []).map(softSkill => `
+        <div style="font-size: 14px; color: white;">
+          - ${softSkill || 'Prompt design'}
+        </div>
+      `).join('')}
+    </div>
+  </div>
+
+</div>
+
+<!-- Right side content -->
+<div style="flex: 2; padding: 0; background-color: white; color: black;">
+  
+<!-- Education Section -->
+<div style="margin-top: 20px; padding-left: 20px;">
+  <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">EDUCATION</h3>
+  ${formData.education.map(edu => `
+    <div style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin: 5px 0; background-color: #f9f9f9;">
+      <div style="font-size: 16px; font-weight: bold; color: #333;">
+        ${edu.level || 'Degree Level'}
+      </div>
+      <div style="font-size: 14px; color: #555;">
+        <strong>Institute:</strong> ${edu.institution || 'Institution Name'}<br>
+        <strong>Location:</strong> ${edu.location || 'Location (City, Country)'}<br>
+        <strong>Duration:</strong> ${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}<br>
+        <strong>CPI:</strong> ${edu.percentage || 'CPI Not Provided'}<br>
+        ${edu.level === 'Postgraduate' || edu.level === 'Graduate' ? `
+          <strong>Degree:</strong> ${edu.course || 'Degree'}<br>
+          <strong>Thesis Topic:</strong> ${edu.thesis || 'Thesis/Dissertation Topic'}
+        ` : ''}
+        ${edu.level === 'Class 12th' ? `
+          <strong>Board:</strong> ${edu.board || 'Board'}<br>
+          <strong>Medium:</strong> ${edu.medium || 'Medium'}
+        ` : ''}
+        ${edu.level === 'Class 10th' ? `
+          <strong>Medium:</strong> ${edu.medium || 'Medium'}
+        ` : ''}
+      </div>
+    </div>
+  `).join('')}
+</div>
+
+<!-- Experience Section -->
+<div style="margin-top: 10px; padding-left: 20px;">
+  <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">EXPERIENCE</h3>
+  ${formData.experience.map(exp => `
+    <div style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin: 5px 0; background-color: #f9f9f9;">
+      <div style="font-size: 16px; font-weight: bold; color: #333;">
+        ${exp.jobTitle || 'Job Title'}
+      </div>
+      <div style="font-size: 14px; color: #555;">
+        <strong>Organization:</strong> ${exp.organization || 'Organization Name'}<br>
+        <strong>Location:</strong> ${exp.location || 'Location (City, Country)'}<br>
+        <strong>Employment Dates:</strong> ${exp.dates || 'Month, Year – Month, Year'}<br>
+      </div>
+      <div style="margin: 0;">
+        <strong style="margin: 0;">Key Responsibilities and Achievements:</strong>
+        <ul style="list-style-type: disc; padding-left: 20px; margin: 0;">
+          ${exp.responsibilities.map(responsibility => `
+            <li style="font-size: 14px; color: #555; margin: 0;">${responsibility || 'Responsibility or Achievement'}</li>
+          `).join('')}
+        </ul>
+      </div>
+      <div style="margin: 0;">
+        <strong style="margin: 0;">Relevant Projects/Contributions:</strong>
+        <ul style="list-style-type: disc; padding-left: 20px; margin: 0;">
+          ${exp.projects.map(project => `
+            <li style="font-size: 14px; color: #555; margin: 0;">${project || 'Project or Contribution'}</li>
+          `).join('')}
+        </ul>
+      </div>
+    </div>
+  `).join('')}
+</div>
+
+<!-- Research and Projects Section -->
+<div style="margin-top: 10px; padding-left: 20px;">
+  <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">RESEARCH AND PROJECTS</h3>
+  
+  ${formData.projects.map(project => `
+    <div style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin: 5px 0; background-color: #f9f9f9;">
+      <div style="font-size: 16px; font-weight: bold; color: #333;">
+        ${project.title || 'Project Title'}
+      </div>
+      <div style="font-size: 14px; color: #555;">
+        <strong>Brief Description:</strong> ${project.description || 'Description of the project, focusing on scope and impact.'}<br>
+        <strong>Role in Project:</strong> ${project.role || 'Role in the project (e.g., Lead Researcher)'}<br>
+        <strong>Tools/Technologies Used:</strong> ${project.tools || 'List of tools or technologies used'}<br>
+        <strong>Link to Project:</strong> <a href="${project.link || '#'}" style="color: blue;">${project.link ? project.link : 'Link not provided'}</a>
+      </div>
+    </div>
+  `).join('')}
+</div>
+
+<!-- Certifications & Licenses Section -->
+<div style="margin-top: 10px; padding-left: 20px;">
+  <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">CERTIFICATIONS & LICENSES</h3>
+  
+  ${formData.certifications.map(certification => `
+    <div style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin: 5px 0; background-color: #f9f9f9;">
+      <div style="font-size: 16px; font-weight: bold; color: #333;">
+        ${certification.name || 'Certification Name'}
+      </div>
+      <div style="font-size: 14px; color: #555;">
+        <strong>Issuing Organization:</strong> ${certification.organization || 'Organization Name'}<br>
+        <strong>Issued Date:</strong> ${certification.issuedDate || 'Date of Issue'}<br>
+        <strong>Expiration Date:</strong> ${certification.expirationDate || 'Expiration Date (if applicable)'}
+      </div>
+    </div>
+  `).join('')}
+</div>
+
+<!-- Publications Section -->
+<div style="margin-top: 10px; padding-left: 20px;">
+  <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">PUBLICATIONS</h3>
+  
+  ${formData.publications.map(pub => `
+    <div style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin: 5px 0; background-color: #f9f9f9;">
+      <div style="font-size: 16px; font-weight: bold; color: #333;">
+        ${pub.title || 'Title of Publication'}
+      </div>
+      <div style="font-size: 14px; color: #555;">
+        <strong>Authors:</strong> ${pub.authors || 'Author(s) Name'}<br>
+        <strong>Publication Date:</strong> ${pub.date || 'Publication Date'}<br>
+        <strong>Journal/Conference Name:</strong> ${pub.journal || 'Journal/Conference Name'}<br>
+        <strong>Link to Publication:</strong> <a href="${pub.link || '#'}" style="color: blue;">${pub.link ? pub.link : 'Link not provided'}</a>
+      </div>
+    </div>
+  `).join('')}
+</div>
+
+<!-- Awards & Honors Section -->
+<div style="margin-top: 10px; padding-left: 20px;">
+  <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">AWARDS & HONORS</h3>
+  
+  ${formData.awards.map(award => `
+    <div style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin: 5px 0; background-color: #f9f9f9;">
+      <div style="font-size: 16px; font-weight: bold; color: #333;">
+        ${award.title || 'Award Title'}
+      </div>
+      <div style="font-size: 14px; color: #555;">
+        <strong>Awarding Body:</strong> ${award.body || 'Awarding Body Name'}<br>
+        <strong>Date Received:</strong> ${award.dateReceived || 'Date Received'}<br>
+        <strong>Description/Critera:</strong> ${award.description || 'Description not provided'}
+      </div>
+    </div>
+  `).join('')}
+</div>
+
+<!-- Professional Memberships Section -->
+<div style="margin-top: 10px; padding-left: 20px;">
+  <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">PROFESSIONAL MEMBERSHIPS</h3>
+  
+  ${formData.memberships.map(membership => `
+    <div style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin: 5px 0; background-color: #f9f9f9;">
+      <div style="font-size: 16px; font-weight: bold; color: #333;">
+        ${membership.organization || 'Organization Name (e.g., IEEE, ACM)'}
+      </div>
+      <div style="font-size: 14px; color: #555;">
+        <strong>Membership Role:</strong> ${membership.role || 'Membership Role (e.g., Member, Board Member)'}<br>
+        <strong>Membership Dates:</strong> ${membership.dates || 'Membership Dates (e.g., Jan 2020 - Present)'}
+      </div>
+    </div>
+  `).join('')}
+</div>
+
+
+
+</div>
+</div>
+
+    `;
+}else if (templateType === 7) {
+  return `
+    <div style="display: flex; flex-direction: column; height: 100%; color: #000; margin-left: 20px; margin-right: 20px;">
+
+      <!-- Name Section (Left-Aligned, Large Font) -->
+      <div style="display: flex; justify-content: flex-start; align-items: center; background-color: #fff; margin-bottom: 5px; padding-top: 15px;">
+        <h1 style="text-align: left; margin: 0; color: #003366;" font-size: 32px; flex: 1;">${formData.firstName || 'John'} ${formData.lastName || 'Smith'}</h1>
+      </div>
+
+      <!-- Contact Information Section -->
+      <div style="background-color: #fff; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-start; color: black;">
+
+        <!-- Left Side (LinkedIn, GitHub) -->
+        <div style="display: flex; flex-direction: column; flex: 1; padding: 5px 0;">
+          <p style="margin: 0; color: #333; font-weight: 500;">${linkedin || 'linkedin.com/in/username'}|Linkedin</p>
+          <p style="margin: 0; color: #333; font-weight: 500;">${Github || 'github.com/username'}|Github</p>
+        </div>
+
+        <!-- Right Side (Email and Mobile Aligned Left) -->
+        <div style="display: flex; flex-direction: column; flex: 1; padding: 0;">
+          <div style="display: flex; justify-content: flex-start;">
+            <p style="margin: 0; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">Email:</span></p>
+            <p style="margin: 0; color: #333; font-weight: 500;">${email || 'email@example.com'}</p>
+          </div>
+          <div style="display: flex; justify-content: flex-start;">
+            <p style="margin: 0; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">Mobile:</span></p>
+            <p style="margin: 0; color: #333; font-weight: 500;">${phone || '(123) 456-7890'}</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Horizontal Line -->
+        <hr style="border: 0; height: 2px; background-color: #121111; margin: 10px 0;" />
+  
+        <!-- SUMMARY Section -->
+        <div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
+          OBJECTIVE
+        </div>
+        <p style="margin: 0; color: black;">${summary || 'This is a summary of the applicant’s experience, skills, and other key information.'}</p>
+
+      <!-- Horizontal Line -->
+      <hr style="border: 0; height: 2px; background-color: #121111; margin: 10px 0;" />
+
+      <!-- Education Heading Section -->
+      <div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
+        EDUCATION
+      </div>
+
+      <!-- Education Section -->
+      <div style="background-color: #fff; padding: 10px; color: black;">
+
+
+        <!-- Top Education Headings -->
+<div style="margin-bottom: 0px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; color: black;">
+    <p style="flex: 1; margin: 0; color: black;"><strong>Degree</strong></p>
+    <p style="flex: 1; margin: 0; color: black;"><strong>Institute</strong></p>
+    <p style="flex: 1; margin: 0; color: black;"><strong>Year</strong></p>
+    <p style="flex: 1; margin: 0; color: black;"><strong>Percentage</strong></p>
+  </div>
+
+  <!-- Education Fields -->
+  <div style="display: flex; flex-direction: column; gap: 5px;">
+    ${formData.education.length > 0 ? formData.education.map(edu => `
+      <div style="display: flex; justify-content: space-between; align-items: center; color: black;">
+        <p style="flex: 1; margin: 0; color: black;">${edu.level || 'Degree not provided'}</p>
+        <p style="flex: 1; margin: 0; color: black;">${edu.level === 'Class 10th' ? edu.institution || 'School not provided' : edu.institution || 'Institute not provided'}</p>
+        <p style="flex: 1; margin: 0; color: black;">${edu.level === 'Class 10th' ? edu.endYear : `${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}`}</p>
+        <p style="flex: 1; margin: 0; color: black;">${edu.percentage || 'Percentage not provided'}</p>
+      </div>
+    `).join('') : '<p style="margin: 0; color: black;">No education listed.</p>'}
+  </div>
+</div>
+
+      </div>
+
+      
+
+      <!-- Horizontal Line -->
+      <hr style="border: 0; height: 2.5px; background-color: #121111; margin: 10px 0; color: #000" />
+
+      <!-- Skills Heading Section -->
+      <div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
+        SKILLS SUMMARY
+      </div>
+
+      <!-- Skills Section -->
+      <div style="background-color: #fff; padding-left: 10px; padding-top: 3px; color: black;">
+
+      <div style="display: flex; flex-direction: column; margin-top: 0px;">
+          <div style="display: flex; margin-bottom: 6px;">
+            <strong style="margin-right: 5px;">Programming Languages: </strong>
+            <div style="color: black;">
+              ${formData.skills.length > 0 ? formData.skills.join(', ') : 'No skills listed.'}
+            </div>
+          </div>
+          
+          <div style="display: flex; margin-bottom: 6px;">
+            <strong style="margin-right: 5px;">Tools:</strong>
+            <div style="color: black;">
+              ${formData.tools.length > 0 ? formData.tools.map(tool => tool.name).join(', ') : 'No tools listed.'}
+            </div>
+          </div>
+
+          <div style="display: flex; margin-bottom: 6px;">
+            <strong style="margin-right: 5px;">Others: </strong>
+            <div style="color: black;">
+              ${formData.others.length > 0 ? formData.others.join(', ') : 'No skills listed.'}
+            </div>
+          </div>
+
+          <div style="display: flex; margin-bottom: 6px;">
+            <strong style="margin-right: 5px;">Soft Skills:</strong>
+            <div style="color: black;">
+              ${formData.softSkills.length > 0 ? formData.softSkills.join(', ') : 'No soft skills listed.'}
+            </div>
+          </div>
+
+          <div style="display: flex; margin-bottom: 6px;">
+            <strong style="margin-right: 5px;">Languages:</strong>
+            <div style="color: black;">
+              ${formData.languages.length > 0 ? formData.languages.join(', ') : 'No soft skills listed.'}
+            </div>
+          </div>
+
+      </div>
+
+      
+
+     
+    </div>
+    
+  `;
+}else if (templateType === 8) {
+  return `
+  <div style="background-color: #ffffff; font-family: Arial, sans-serif; padding: 20px; max-width: 900px; margin: auto; display: flex;">
+
+  <!-- Left Section: Name, Summary, Experience, Education -->
+  <div style="width: 60%; padding-right: 20px;">
+
+      <!-- Name and Circle Section -->
+<div style="display: flex; align-items: center; margin-bottom: 20px; margin-left: 15px;">
+  <div style="background-color: #2c3e50; color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px;">
+      ${formData.firstName ? formData.firstName[0] : 'J'}${formData.lastName ? formData.lastName[0] : 'S'}
+  </div>
+  <div style="margin-left: 20px;">
+      <h1 style="margin: 0; font-size: 22px;">${formData.firstName} ${formData.lastName || 'Smith'}</h1>
+      <h2 style="margin: 0; font-size: 18px; color: #555;">${formData.jobTitle || 'IT Project Manager'}</h2>
+  </div>
+</div>
+
+      <!-- Summary Section -->
+      <div style="margin-top: 20px; margin-left: 55px; border-bottom: 4px solid lightblue;">
+          <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0;">
+              <img src="${summaryIcon}" alt="summary-icon" style="width: 24px; margin-right: 10px;">
+              Summary
+          </h3>
+          <p style="font-size: 14px; color: #333; margin-left: 20px; display: flex; align-items: center;">
+              <span style="background-color: #2c3e50; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
+              ${formData.summary || 'Oversaw all major hospital IT projects for 10+ years, focusing on cost reduction.'}
+          </p>
+      </div>
+
+      <!-- Experience Section -->
+      <div style="margin-left: 55px; border-bottom: 4px solid lightblue;">
+  <h3 style="font-size: 20px; display: flex; align-items: center;">
+    <img src="${experienceIcon}" alt="experience-icon" style="width: 24px; margin-right: 10px;">
+    Experience
+  </h3>
+
+  ${formData.experience && formData.experience.length > 0 ? formData.experience.map(exp => `
+    <div style="margin-left: 20px; position: relative;">
+      <!-- Employment Dates -->
+      <p style="font-size: 12px; color: #555; position: absolute; left: -75px; top: 0;">
+        ${exp.dates || 'Date not provided'}
+      </p>
+
+      <!-- Job Title -->
+      <strong style="font-size: 16px; color: #003366;">
+        ${exp.jobTitle || 'Job Title not provided'}
+      </strong>
+
+      <!-- Organization Name and Location -->
+      <p style="font-size: 14px; font-weight: bold; color: #333; display: flex; align-items: center; margin: 0; margin-bottom: 3px;">
+        <span style="background-color: #2c3e50; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
+        ${exp.organization || 'Organization not provided'}${exp.location ? `, ${exp.location}` : ''}
+      </p>
+
+      <!-- Key Responsibilities and Achievements -->
+      ${Array.isArray(exp.responsibilities) && exp.responsibilities.length > 0 ? `
+        <h6 style="font-size: 14px; color: #003366; margin: 0;">Key Responsibilities and Achievements:</h6>
+        <ul style="list-style-type: disc; margin-left: 0px; color: #333; margin-top: 0; margin-bottom: 0;">
+          ${exp.responsibilities.map(responsibility => `
+            <li style="margin: 0;">${responsibility || 'Responsibility not provided'}</li>
+          `).join('')}
+        </ul>
+      ` : ''}
+
+      <!-- Relevant Projects or Contributions -->
+      ${Array.isArray(exp.projects) && exp.projects.length > 0 ? `
+        <h6 style="font-size: 14px; color: #003366; margin: 0;">Relevant Projects/Contributions:</h6>
+        <ul style="list-style-type: disc; margin-left: 0px; color: #333; margin-top: 0;">
+          ${exp.projects.map(project => `
+            <li style="margin: 0;">${project || 'Project not provided'}</li>
+          `).join('')}
+        </ul>
+      ` : ''}
+    </div>
+  `).join('<br>') : '<p style="font-size: 14px; color: #777;">No experience listed.</p>'}
+</div>
+
+    <!-- Education Section -->
+<div style="margin-top: 10px; margin-left: 55px; border-bottom: 4px solid lightblue; margin-bottom: 2px;">
+  <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 5px;">
+    <img src="${educationIcon}" alt="education-icon" style="width: 24px; margin-right: 10px;">
+    Education
+  </h3>
+  ${formData.education.length > 0 ? formData.education.map(edu => `
+    <div style="margin-left: 20px; margin-bottom: 10px;">
+      <div style="display: flex; flex-direction: column; margin-bottom: 5px;">
+        <div style="display: flex; align-items: center; margin-bottom: 5px;">
+          <strong>${edu.level || 'Level not provided'}</strong>
+        </div>
+
+        <!-- Conditional Fields Based on Education Level -->
+        ${edu.level === 'Graduate' || edu.level === 'Postgraduate' ? `
+          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Course:</p>
+            <p style="margin: 0; font-size: 14px; color: #333;">${edu.course || 'Course not provided'}</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Institution:</p>
+            <p style="margin: 0; font-size: 14px; color: #333;">${edu.institution || 'Institution not provided'}</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Location:</p>
+            <p style="margin: 0; font-size: 14px; color: #333;">${edu.location || 'Location not provided'}</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Year:</p>
+            <p style="margin: 0; font-size: 14px; color: #333;">${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Percentage:</p>
+            <p style="margin: 0; font-size: 14px; color: #333;">${edu.percentage || 'Not provided'}</p>
+          </div>
+        ` : edu.level === 'Class 12th' ? `
+          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Institution:</p>
+            <p style="margin: 0; font-size: 14px; color: #333;">${edu.institution || 'Institution not provided'}</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Location:</p>
+            <p style="margin: 0; font-size: 14px; color: #333;">${edu.location || 'Location not provided'}</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Medium:</p>
+            <p style="margin: 0; font-size: 14px; color: #333;">${edu.medium || 'Medium not provided'}</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Year:</p>
+            <p style="margin: 0; font-size: 14px; color: #333;">${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Percentage:</p>
+            <p style="margin: 0; font-size: 14px; color: #333;">${edu.percentage || 'Not provided'}</p>
+          </div>
+        ` : edu.level === 'Class 10th' ? `
+          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">School:</p>
+            <p style="margin: 0; font-size: 14px; color: #333;">${edu.institution || 'School not provided'}</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Medium:</p>
+            <p style="margin: 0; font-size: 14px; color: #333;">${edu.medium || 'Medium not provided'}</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">End Year:</p>
+            <p style="margin: 0; font-size: 14px; color: #333;">${edu.endYear || 'End Year not provided'}</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+            <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Percentage:</p>
+            <p style="margin: 0; font-size: 14px; color: #333;">${edu.percentage || 'Not provided'}</p>
+          </div>
+        ` : ''}
+      </div>
+    </div>
+  `).join('') : '<p>No education records available.</p>'}
+</div>
+
+<!-- Research and Projects Section -->
+<div style="margin-top: 10px; margin-left: 55px; border-bottom: 4px solid lightblue; margin-bottom: 10px;">
+  <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 5px;">
+    <img src="${projectsIcon}" alt="projects-icon" style="width: 24px; margin-right: 10px;">
+    Research and Projects
+  </h3>
+
+  ${formData.projects.length > 0 ? formData.projects.map(project => `
+    <div style="margin-left: 20px; margin-bottom: 15px;">
+      <!-- Project Title -->
+      <div style="display: flex; align-items: center; margin-bottom: 5px;">
+        <strong style="font-size: 16px; color: #333;">${project.title || 'Project Title Not Provided'}</strong>
+      </div>
+
+      <!-- Project Description -->
+      <div style="margin-bottom: 5px;">
+        <p style="font-size: 14px; color: #333; margin: 0;">${project.description || 'Description not provided.'}</p>
+      </div>
+
+      <!-- Role in Project -->
+      <div style="display: flex; align-items: center; margin-bottom: 2px;">
+        <p style="width: 120px; margin: 0; font-size: 14px; color: #333;">Role:</p>
+        <p style="margin: 0; font-size: 14px; color: #333;">${project.role || 'Role not specified'}</p>
+      </div>
+
+      <!-- Tools/Technologies Used -->
+      <div style="display: flex; align-items: center; margin-bottom: 2px;">
+        <p style="width: 120px; margin: 0; font-size: 14px; color: #333;">Technologies:</p>
+        <p style="margin: 0; font-size: 14px; color: #333;">${project.tools || 'Technologies not specified'}</p>
+      </div>
+
+      <!-- Link to Project -->
+      ${project.link ? `
+        <div style="display: flex; align-items: center; margin-bottom: 2px;">
+          <p style="width: 120px; margin: 0; font-size: 14px; color: #333;">Project Link:</p>
+          <a href="${project.link}" target="_blank" style="font-size: 14px; color: blue; text-decoration: underline;">${project.link}</a>
+        </div>
+      ` : ''}
+    </div>
+  `).join('') : '<p>No project records available.</p>'}
+</div>
+
+
+<!-- Certifications & Licenses Section -->
+<div style="margin-top: 10px; margin-left: 55px; border-bottom: 4px solid lightblue; margin-bottom: 10px;">
+  <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 5px;">
+    <img src="${certificateIcon}" alt="certifications-icon" style="width: 24px; margin-right: 10px;">
+    Certifications & Licenses
+  </h3>
+
+  ${formData.certifications.length > 0 ? formData.certifications.map(certification => `
+    <div style="margin-left: 20px; margin-bottom: 15px;">
+      <!-- Certification Name -->
+      <div style="display: flex; align-items: center; margin-bottom: 5px;">
+        <strong style="font-size: 16px; color: #333;">Certification Name:</strong>
+        <span style="margin-left: 5px;">${certification.name || 'Certification Name Not Provided'}</span>
+      </div>
+
+      <!-- Issuing Organization -->
+      <div style="margin-bottom: 5px;">
+        <p style="font-size: 14px; color: #333; margin: 0;">
+          <strong>Issuing Organization:</strong> ${certification.organization || 'Organization not provided.'}
+        </p>
+      </div>
+
+      <!-- Issued Date -->
+      <div style="display: flex; align-items: center; margin-bottom: 2px;">
+        <p style="width: 150px; margin: 0; font-size: 14px; color: #333;"><strong>Issued Date:</strong></p>
+        <p style="margin: 0; font-size: 14px; color: #333;">${certification.issuedDate || 'Issued Date not specified'}</p>
+      </div>
+
+      <!-- Expiration Date -->
+      <div style="display: flex; align-items: center; margin-bottom: 2px;">
+        <p style="width: 150px; margin: 0; font-size: 14px; color: #333;"><strong>Expiration Date:</strong></p>
+        <p style="margin: 0; font-size: 14px; color: #333;">${certification.expirationDate || 'Expiration Date not specified'}</p>
+      </div>
+    </div>
+  `).join('') : '<p>No certification records available.</p>'}
+</div>
+
+
+  <!-- Publications Section -->
+<div style="margin-top: 10px; margin-left: 55px; border-bottom: 4px solid lightblue; margin-bottom: 10px;">
+  <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 5px;">
+    <img src="${publicationsIcon}" alt="publications-icon" style="width: 24px; margin-right: 10px;">
+    Publications
+  </h3>
+
+  ${formData.publications.length > 0 ? formData.publications.map(publication => `
+    <div style="margin-left: 20px; margin-bottom: 15px;">
+      <!-- Title of Publication -->
+      <div style="display: flex; align-items: center; margin-bottom: 5px;">
+        <strong style="font-size: 16px; color: #333;">Title of Publication:</strong>
+        <span style="margin-left: 5px;">${publication.title || 'Title Not Provided'}</span>
+      </div>
+
+      <!-- Authors -->
+      <div style="margin-bottom: 5px;">
+        <p style="font-size: 14px; color: #333; margin: 0;">
+          <strong>Authors:</strong> ${publication.authors || 'Authors not provided.'}
+        </p>
+      </div>
+
+      <!-- Publication Date -->
+      <div style="display: flex; align-items: center; margin-bottom: 2px;">
+        <p style="width: 150px; margin: 0; font-size: 14px; color: #333;"><strong>Publication Date:</strong></p>
+        <p style="margin: 0; font-size: 14px; color: #333;">${publication.date || 'Publication Date not specified'}</p>
+      </div>
+
+      <!-- Journal/Conference Name -->
+      <div style="display: flex; align-items: center; margin-bottom: 2px;">
+        <p style="width: 150px; margin: 0; font-size: 14px; color: #333;"><strong>Journal Name:</strong></p>
+        <p style="margin: 0; font-size: 14px; color: #333;">${publication.journal || 'Journal/Conference Name not specified'}</p>
+      </div>
+
+      <!-- Link to Publication -->
+      <div style="display: flex; align-items: center; margin-bottom: 2px;">
+        <p style="width: 150px; margin: 0; font-size: 14px; color: #333;"><strong>Link to Publication:</strong></p>
+        <p style="margin: 0; font-size: 14px; color: #333;"><a href="${publication.link}" target="_blank">${publication.link || 'Link not provided'}</a></p>
+      </div>
+    </div>
+  `).join('') : '<p>No publication records available.</p>'}
+</div>
+
+<!-- Awards & Honors Section -->
+<div style="margin-top: 10px; margin-left: 55px; border-bottom: 4px solid lightblue; margin-bottom: 10px;">
+  <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 5px;">
+    <img src="${awardsIcon}" alt="awards-icon" style="width: 24px; margin-right: 10px;">
+    Awards & Honors
+  </h3>
+
+  ${formData.awards.length > 0 ? formData.awards.map(award => `
+    <div style="margin-left: 20px; margin-bottom: 15px;">
+      <!-- Award Title -->
+      <div style="display: flex; align-items: center; margin-bottom: 5px;">
+        <strong style="font-size: 16px; color: #333;">Award Title:</strong>
+        <span style="margin-left: 5px;">${award.title || 'Award Title Not Provided'}</span>
+      </div>
+
+      <!-- Awarding Body -->
+      <div style="margin-bottom: 5px;">
+        <p style="font-size: 14px; color: #333; margin: 0;">
+          <strong>Awarding Body:</strong> ${award.body || 'Awarding Body not provided.'}
+        </p>
+      </div>
+
+      <!-- Date Received -->
+      <div style="display: flex; align-items: center; margin-bottom: 2px;">
+        <p style="width: 150px; margin: 0; font-size: 14px; color: #333;"><strong>Date Received:</strong></p>
+        <p style="margin: 0; font-size: 14px; color: #333;">${award.dateReceived || 'Date Received not specified'}</p>
+      </div>
+
+      <!-- Description or Criteria -->
+      <div style="margin-bottom: 5px;">
+        <p style="font-size: 14px; color: #333; margin: 0;">
+          <strong>Description or Criteria:</strong> ${award.description || 'Description not provided.'}
+        </p>
+      </div>
+    </div>
+  `).join('') : '<p>No award records available.</p>'}
+</div>
+
+<!-- Professional Memberships Section -->
+<div style="margin-top: 10px; margin-left: 55px; border-bottom: 4px solid lightblue; margin-bottom: 10px;">
+  <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 5px;">
+    <img src="${membershipsIcon}" alt="memberships-icon" style="width: 24px; margin-right: 10px;">
+    Professional Memberships
+  </h3>
+
+  ${formData.memberships.length > 0 ? formData.memberships.map(membership => `
+    <div style="margin-left: 20px; margin-bottom: 15px;">
+      <!-- Organization Name -->
+      <div style="display: flex; align-items: center; margin-bottom: 5px;">
+        <strong style="font-size: 16px; color: #333;">Organization Name:</strong>
+        <span style="margin-left: 5px;">${membership.organization || 'Organization Name Not Provided'}</span>
+      </div>
+
+      <!-- Membership Role -->
+      <div style="margin-bottom: 5px;">
+        <p style="font-size: 14px; color: #333; margin: 0;">
+          <strong>Membership Role:</strong> ${membership.role || 'Membership Role not provided.'}
+        </p>
+      </div>
+
+      <!-- Membership Dates -->
+      <div style="display: flex; align-items: center; margin-bottom: 2px;">
+        <p style="width: 150px; margin: 0; font-size: 14px; color: #333;"><strong>Membership Dates:</strong></p>
+        <p style="margin: 0; font-size: 14px; color: #333;">${membership.dates || 'Membership Dates not specified'}</p>
+      </div>
+    </div>
+  `).join('') : '<p>No membership records available.</p>'}
+</div>
+
+
+
+      
+  </div>
+
+  <!-- Right Section: Personal Info, Software, Languages, Skills -->
+  <div style="width: 32%; padding-left: 20px; padding: 0px;">
+      
+    <!-- Personal Info Section -->
+    <h3 style="font-size: 20px; margin-bottom: 20px; display: flex; align-items: center;">
+        <img src="${personalInfoIcon}" alt="personal-info-icon" style="width: 24px; margin-right: 10px;">
+        Personal Info
+    </h3>
+    <div style="font-size: 14px; color: #333;">
+        <div style="margin-bottom: 10px;">
+            <strong style="display: block; margin-left: 20px;">Address:</strong>
+            <div style="margin-left: 20px;">${formData.address || '134 Rightward Way, Portland, ME, 04019'}</div>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <strong style="display: block; margin-left: 20px;">Phone:</strong>
+            <div style="margin-left: 20px;">${formData.phone || '774-987-4009'}</div>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <strong style="display: block; margin-left: 20px;">E-mail:</strong>
+            <div style="margin-left: 20px;">${formData.email || 'j.smith@zety.com'}</div>
+        </div>
+       <div style="margin-bottom: 10px;">
+      <strong style="display: block; margin-left: 20px;">LinkedIn:</strong>
+      <div style="margin-left: 20px;">
+          <a
+              href="${formData.linkedin ? `https://${formData.linkedin}` : 'https://linkedin.com/in/johnutw'}"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="color: inherit; text-decoration: none;"
+          >
+              ${formData.linkedin || 'linkedin.com/in/johnutw'}
+          </a>
+      </div>
+  </div>
+    </div>
+
+    <!-- Languages Section -->
+    <div style="margin-top: 20px; margin-bottom: 0;">
+      <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0;">
+        <img src="${languagesIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
+        Languages
+      </h3>
+      <ul style="font-size: 14px; color: #333;">
+        ${formData.languages.length > 0 ? formData.languages.map(language => `<li>${language}</li>`).join('') : '<li>No skills listed.</li>'}
+      </ul>
+    </div>
+
+    <!-- Skills Section -->
+    <div style="margin-top: 20px; margin-bottom: 0;">
+      <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0;">
+        <img src="${skillsIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
+        Skills
+      </h3>
+      <ul style="font-size: 14px; color: #333;">
+        ${formData.skills.length > 0 ? formData.skills.map(skill => `<li>${skill}</li>`).join('') : '<li>No skills listed.</li>'}
+      </ul>
+    </div>
+
+    <!-- Tools Section -->
+    <div style="margin-top: 20px;">
+      <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0;">
+        <img src="${toolsIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
+        Tools
+      </h3>
+      <ul style="font-size: 14px; color: #333;">
+        ${formData.tools.length > 0 ? formData.tools.map(tools => `<li>${tools}</li>`).join('') : '<li>No Hobbies listed.</li>'}
+      </ul>
+    </div>
+
+    <!-- Others Section -->
+    <div style="margin-top: 20px;">
+      <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0;">
+        <img src="${othersIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
+        Others
+      </h3>
+      <ul style="font-size: 14px; color: #333;">
+        ${formData.others.length > 0 ? formData.others.map(others => `<li>${others}</li>`).join('') : '<li>No Hobbies listed.</li>'}
+      </ul>
+    </div>
+
+
+    <!-- Softskills Section -->
+    <div style="margin-top: 20px;">
+      <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0;">
+        <img src="${softskillsIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
+        Soft Skills
+      </h3>
+      <ul style="font-size: 14px; color: #333;">
+        ${formData.softSkills.length > 0 ? formData.softSkills.map(softSkills => `<li>${softSkills}</li>`).join('') : '<li>No Hobbies listed.</li>'}
+      </ul>
+    </div>
+
+    <!-- Hobbies Section -->
+    <div style="margin-top: 20px;">
+      <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0;">
+        <img src="${hobbiesIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
+        Hobbies
+      </h3>
+      <ul style="font-size: 14px; color: #333;">
+        ${formData.hobbies.length > 0 ? formData.hobbies.map(hobbies => `<li>${hobbies}</li>`).join('') : '<li>No Hobbies listed.</li>'}
+      </ul>
+    </div>
+    
+  </div>
+</div>
+
+  `;
 }
 
 

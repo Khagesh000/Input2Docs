@@ -47,5 +47,34 @@ const templateInputFields = {
       { label: 'Phone', name: 'phone', type: 'text' },
       { label: 'Summary', name: 'summary', type: 'textarea' }
     ],
+    6: [
+      { label: 'First Name', name: 'firstName', type: 'text' },
+      { label: 'Last Name', name: 'lastName', type: 'text' },
+      { label: 'Job Title', name: 'jobTitle', type: 'text' },
+      { label: 'Address', name: 'address', type: 'text' },
+      { label: 'Phone', name: 'phone', type: 'text' },
+      { label: 'Email', name: 'email', type: 'email' },
+      { label: 'LinkedIn', name: 'linkedin', type: 'text' },
+      { label: 'Summary', name: 'summary', type: 'textarea' }
+    ],
+    7: [
+      { label: 'First Name', name: 'firstName', type: 'text' },
+      { label: 'Last Name', name: 'lastName', type: 'text' },
+      { label: 'Phone', name: 'phone', type: 'text' },
+      { label: 'Email', name: 'email', type: 'email' },
+      { label: 'LinkedIn', name: 'linkedin', type: 'text' },
+      { label: 'Github', name: 'Github', type: 'text' },
+      { label: 'Summary', name: 'summary', type: 'textarea' }
+    ],
+    8: [
+      { label: 'First Name', name: 'firstName', type: 'text' },
+      { label: 'Last Name', name: 'lastName', type: 'text' },
+      { label: 'Job Title', name: 'jobTitle', type: 'text' },
+      { label: 'Summary', name: 'summary', type: 'textarea' },
+      { label: 'Address', name: 'address', type: 'text' },
+      { label: 'Phone', name: 'phone', type: 'text' },
+      { label: 'Email', name: 'email', type: 'email' },
+      { label: 'LinkedIn', name: 'linkedin', type: 'text' }, 
+    ],
   };
   export { templateInputFields };

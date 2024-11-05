@@ -856,7 +856,7 @@ const handleDownloadPDF = () => {
                 ))}
             </div>
 
-            {(selectedTemplateType === 1 
+            {(selectedTemplateType === 1 || selectedTemplateType === 4
  )&& (
   <>
     {/* Profile Image Upload */}

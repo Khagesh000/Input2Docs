@@ -566,6 +566,15 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
           </div>
   
         </div>
+
+        <!-- Horizontal Line -->
+        <hr style="border: 0; height: 2px; background-color: #121111; margin: 10px 0;" />
+  
+        <!-- SUMMARY Section -->
+        <div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
+          OBJECTIVE
+        </div>
+        <p style="margin: 0; color: black;">${summary || 'This is a summary of the applicant’s experience, skills, and other key information.'}</p>
   
         <!-- Horizontal Line -->
         <hr style="border: 0; height: 2px; background-color: #121111; margin: 10px 0;" />
@@ -613,7 +622,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
         <!-- Skills Section -->
         <div style="background-color: #fff; padding-left: 10px; padding-top: 3px; color: black;">
-
+           
         <div style="display: flex; flex-direction: column; margin-top: 0px;">
             <div style="display: flex; margin-bottom: 6px;">
               <strong style="margin-right: 5px;">Programming Languages: </strong>
