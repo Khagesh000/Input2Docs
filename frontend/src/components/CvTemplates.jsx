@@ -20,6 +20,8 @@ import img4 from '../assets/images/cover_letter.png';
 import img5 from '../assets/images/cover_letter1.png';
 import img6 from '../assets/images/cover_letter.png';
 import img7 from '../assets/images/cover_letter1.png';
+import img8 from '../assets/images/cover_letter.png';
+import img9 from '../assets/images/cover_letter1.png';
 
 import { templateInputFields } from './CoverTemplateInputfields';
 import { generateTemplateContent } from './CoverGeneralTemplate';
@@ -133,7 +135,7 @@ export default function CvTemplates({ images: imgList }) {
 
 
 
-  const images = [img, img1, img2, img3, img4, img5, img6, img7];
+  const images = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
   useEffect(() => {
     const updateCardWidth = () => {
@@ -856,7 +858,7 @@ const handleDownloadPDF = () => {
                 ))}
             </div>
 
-            {(selectedTemplateType === 1 || selectedTemplateType === 4
+            {(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 9
  )&& (
   <>
     {/* Profile Image Upload */}
