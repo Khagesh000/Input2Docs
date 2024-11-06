@@ -643,15 +643,22 @@ const handleDownloadPDF = () => {
   tempDiv.innerHTML = content;
   tempDiv.style.fontFamily = 'Arial, sans-serif';
   tempDiv.style.boxSizing = 'border-box';
+  tempDiv.style.margin = 0;  // Ensuring no margin at the top or around content
+  tempDiv.style.padding = 0; // Ensuring no padding around content
 
-
+  // Add styles to avoid page breaks inside the elements
+  tempDiv.style.pageBreakInside = 'avoid'; // Prevent content from breaking within an element
+  const children = tempDiv.querySelectorAll('*');
+  children.forEach((child) => {
+    child.style.pageBreakInside = 'avoid'; // Apply this to every child element
+  });
 
   document.body.appendChild(tempDiv);
 
   // Add TinyMCE styles if necessary
   const styleSheet = document.createElement('link');
   styleSheet.rel = 'stylesheet';
-  styleSheet.href = 'path/to/tinymce-custom-styles.css';
+  styleSheet.href = '/styles/tinymce-custom-styles.css';  // Ensure the path is correct for your CSS
   document.head.appendChild(styleSheet);
 
   // Set up options for html2pdf
@@ -660,15 +667,19 @@ const handleDownloadPDF = () => {
     filename: 'ResumeTemplate.pdf',
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 3, useCORS: true, allowTaint: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: 'css' } // Let html2pdf manage page breaks automatically based on CSS
   };
 
+  // Let html2pdf handle the page splitting automatically
   html2pdf().from(tempDiv).set(options).toPdf().get('pdf').then((pdf) => {
-    pdf.save('ResumeTemplate.pdf');
+    pdf.save('ResumeTemplate.pdf'); // Save the PDF file
   }).finally(() => {
-    document.body.removeChild(tempDiv);
+    document.body.removeChild(tempDiv); // Clean up by removing the temporary div
   });
 };
+
+
 
 
 
@@ -1625,7 +1636,7 @@ const handleDownloadPDF = () => {
         'textcolor' // Add textcolor plugin
       ],
       toolbar:
-        'undo redo | formatselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+        'undo redo | formatselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat  | help',
     }}
     value={content}
     onEditorChange={(newContent) => setContent(newContent)}

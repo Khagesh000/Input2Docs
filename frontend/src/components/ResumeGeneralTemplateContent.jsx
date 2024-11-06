@@ -2639,7 +2639,7 @@ ${formData.jobTitle || 'IT Project Manager'}
   <div style="margin-top: 0px; padding-left: 20px;">
     <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">EXPERIENCE</h3>
     ${(formData.experience || []).map(exp => `
-      <div style="margin: 10px 0; font-size: 14px; color: black;">
+      <div style="margin: 10px 0; font-size: 14px; color: black; border: 1px solid #ccc; border-radius: 5px; padding: 10px; background-color: #f9f9f9;">
         <strong>${exp.company || 'Company Name'}</strong><br>
         <span>${exp.position || 'Position'}</span> (${exp.dates || 'Year Range'})<br>
         <ul style="list-style-type: disc; margin-left: 20px; padding: 0; margin-bottom: 0; margin-top: 0;">
@@ -2653,7 +2653,7 @@ ${formData.jobTitle || 'IT Project Manager'}
 <div style="margin-top: 0px; padding-left: 20px;">
 <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">PROJECTS</h3>
  ${formData.projects.length > 0 ? formData.projects.map(project => `
-            <div style="margin-bottom: 10px;">
+            <div style="margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px; padding: 10px; background-color: #f9f9f9;">
               <strong style="color: black;">${project.title || 'Project title not provided'}</strong>
               <ul style="margin: 0; padding-left: 20px;">
                 ${project.details.length > 0 ? project.details.map(detail => `
@@ -2668,7 +2668,7 @@ ${formData.jobTitle || 'IT Project Manager'}
 <div style="margin-top: 0px; padding-left: 20px;">
 <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">CERTIFICATES</h3>
 ${formData.certifications.length > 0 ? formData.certifications.map(certification => `
-  <div style="margin-bottom: 1px;">
+  <div style="margin-bottom: 1px; border: 1px solid #ccc; border-radius: 5px; padding: 10px; background-color: #f9f9f9;">
     <!-- Certification Course and Company on Same Line -->
     <strong style="margin-right: 10px;">${certification.course || 'Course not provided'}</strong>
     <strong> | ${certification.company || 'Company not provided'}</strong>

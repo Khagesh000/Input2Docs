@@ -22,6 +22,18 @@ import img6 from '../assets/images/cover_letter.png';
 import img7 from '../assets/images/cover_letter1.png';
 import img8 from '../assets/images/cover_letter.png';
 import img9 from '../assets/images/cover_letter1.png';
+import img10 from '../assets/images/cover_letter1.png';
+import img11 from '../assets/images/cover_letter.png';
+import img12 from '../assets/images/cover_letter1.png';
+import img13 from '../assets/images/cover_letter.png';
+import img14 from '../assets/images/cover_letter.png';
+import img15 from '../assets/images/cover_letter1.png';
+import img16 from '../assets/images/cover_letter.png';
+import img17 from '../assets/images/cover_letter.png';
+import img18 from '../assets/images/cover_letter1.png';
+import img19 from '../assets/images/cover_letter.png';
+import img20 from '../assets/images/cover_letter.png';
+
 
 import { templateInputFields } from './CoverTemplateInputfields';
 import { generateTemplateContent } from './CoverGeneralTemplate';
@@ -135,7 +147,9 @@ export default function CvTemplates({ images: imgList }) {
 
 
 
-  const images = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9];
+  const images = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
+                  img11, img12, img13, img14, img15, img16, img17, img18, img19, img20
+  ];
 
   useEffect(() => {
     const updateCardWidth = () => {
@@ -226,7 +240,7 @@ export default function CvTemplates({ images: imgList }) {
     setSelectedImage(images[index]);
     
     // Map index to template type, assuming each index corresponds to a specific template type.
-    const templateType = (index % 10) + 1; // Example: Mapping index to template type (1, 2, or 3)
+    const templateType = (index % 20) + 1; // Example: Mapping index to template type (1, 2, or 3)
   
     setSelectedTemplateType(templateType);
     setContent(generateTemplateContent(formData, templateType));
@@ -678,35 +692,7 @@ const handleLanguageChange = (index, value) => {
   setFormData({ ...formData, languages: newLanguages });
 };
 
-const handleDownloadPNG = () => {
-  const tempDiv = document.createElement('div');
-  tempDiv.innerHTML = content;
 
-  // Apply global styles to ensure consistent appearance
-  tempDiv.style.fontFamily = 'Arial, sans-serif';
-  tempDiv.style.color = '#000'; // Set default text color
-  tempDiv.style.backgroundColor = '#fff'; // Set background color if needed
-  tempDiv.style.width = '210mm'; // A4 size width
-  tempDiv.style.height = '297mm'; // A4 size height
-  tempDiv.style.boxSizing = 'border-box';
-  tempDiv.style.padding = '10px'; // Add some padding if necessary
-
-  // Append the temp div to the body
-  document.body.appendChild(tempDiv);
-
-  // Use html2canvas to capture the content
-  html2canvas(tempDiv, {
-    scale: 3, // Increase scale for better quality
-    useCORS: true, // To handle cross-origin issues with external resources
-    allowTaint: true,
-  }).then((canvas) => {
-    const link = document.createElement('a');
-    link.href = canvas.toDataURL('image/png', 1.0); // Get PNG data URL
-    link.download = 'ResumeTemplate.png'; // Name of the downloaded file
-    link.click(); // Trigger the download
-    document.body.removeChild(tempDiv); // Clean up
-  });
-};
 
 
 
@@ -715,15 +701,22 @@ const handleDownloadPDF = () => {
   tempDiv.innerHTML = content;
   tempDiv.style.fontFamily = 'Arial, sans-serif';
   tempDiv.style.boxSizing = 'border-box';
+  tempDiv.style.margin = 0;  // Ensuring no margin at the top or around content
+  tempDiv.style.padding = 0; // Ensuring no padding around content
 
-
+  // Add styles to avoid page breaks inside the elements
+  tempDiv.style.pageBreakInside = 'avoid'; // Prevent content from breaking within an element
+  const children = tempDiv.querySelectorAll('*');
+  children.forEach((child) => {
+    child.style.pageBreakInside = 'avoid'; // Apply this to every child element
+  });
 
   document.body.appendChild(tempDiv);
 
   // Add TinyMCE styles if necessary
   const styleSheet = document.createElement('link');
   styleSheet.rel = 'stylesheet';
-  styleSheet.href = 'path/to/tinymce-custom-styles.css';
+  styleSheet.href = '/styles/tinymce-custom-styles.css';  // Ensure the path is correct for your CSS
   document.head.appendChild(styleSheet);
 
   // Set up options for html2pdf
@@ -732,15 +725,20 @@ const handleDownloadPDF = () => {
     filename: 'ResumeTemplate.pdf',
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 3, useCORS: true, allowTaint: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: 'css' } // Let html2pdf manage page breaks automatically based on CSS
   };
 
+  // Let html2pdf handle the page splitting automatically
   html2pdf().from(tempDiv).set(options).toPdf().get('pdf').then((pdf) => {
-    pdf.save('ResumeTemplate.pdf');
+    pdf.save('CvTemplate.pdf'); // Save the PDF file
   }).finally(() => {
-    document.body.removeChild(tempDiv);
+    document.body.removeChild(tempDiv); // Clean up by removing the temporary div
   });
 };
+
+
+
 
 
   return (
@@ -1919,9 +1917,6 @@ const handleDownloadPDF = () => {
         </div>
       )}
 
-          <button className="btn btn-secondary m-2 mb-2 down-temp" onClick={handleDownloadPNG}>
-            Download Template as PNG
-          </button>
           <button className="btn btn-secondary mb-2 down-temp" onClick={handleDownloadPDF}>
             Download Template as PDF
           </button>
