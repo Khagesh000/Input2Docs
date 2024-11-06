@@ -3617,7 +3617,7 @@ ${formData.jobTitle || 'IT Project Manager'}
 </div>
 
 <!-- Experience Section -->
-<div style="background-color: white; padding: 10px; border-left: 5px solid #f07b3f; margin: 0;">
+<div style="background-color: white; padding: 10px; border-left: 5px solid orange; margin: 0; padding-left: 10px;  margin-bottom: 10px; ">
   <h2 style="font-size: 22px; color: #2d4059; margin: 0;">Experience</h2>
   <div style="display: flex; flex-direction: column; gap: 10px; margin: 0; margin-bottom: 1px;">
     ${
@@ -3664,14 +3664,16 @@ ${formData.jobTitle || 'IT Project Manager'}
   </div>
 </div>
 
+
+
 <!-- Research and projects Section -->
-<div style="background-color: white; padding: 10px; border-left: 5px solid #f07b3f;">
+<div style="background-color: white; padding: 10px; border-left: 5px solid #f12c66; padding-left: 10px;  margin-bottom: 10px;">
   <h2 style="font-size: 22px; color: #2d4059; margin: 0;">Research and Projects</h2>
-  <div style="display: flex; flex-direction: column;">
+  <div style="display: flex; flex-direction: column; gap: 2px; margin: 0; margin-bottom: 1px;>
     ${
       formData.projects.length > 0
         ? formData.projects.map(project => `
-          <div style="display: flex; flex-direction: column;">
+          <div style="display: flex; flex-direction: column; gap: 5px;">
             <div style="color: #ea5455; font-size: 20px; font-weight: 550;">
               ${project.title || 'Project Title not provided'}
             </div>
@@ -3696,12 +3698,11 @@ ${formData.jobTitle || 'IT Project Manager'}
         : '<p>No research or project information provided.</p>'
     }
   </div>
-</div>
 
-<!-- Certifications & Licenses Section -->
-<div style="background-color: white; padding: 10px; border-left: 5px solid #f07b3f;">
+  <!-- Certifications & Licenses Section -->
+<div style="background-color: white; padding: 10px; border-left: 5px solid blue; padding-left: 10px;  margin-bottom: 10px;">
   <h2 style="font-size: 22px; color: #2d4059; margin: 0;">Certifications & Licenses</h2>
-  <div style="display: flex; flex-direction: column;">
+  <div style="display: flex; flex-direction: column; gap: 2px; margin: 0; margin-bottom: 1px;">
     ${
       formData.certifications.length > 0
         ? formData.certifications.map(certification => `
@@ -3727,9 +3728,189 @@ ${formData.jobTitle || 'IT Project Manager'}
   </div>
 </div>
 
+<!-- Publications Section -->
+<div style="background-color: white; padding: 10px; border-left: 5px solid darkcyan; padding-left: 10px; margin-bottom: 10px;">
+  <h2 style="font-size: 22px; color: #2d4059; margin: 0;">Publications</h2>
+  <div style="display: flex; flex-direction: column;">
+    ${
+      formData.publications.length > 0
+        ? formData.publications.map(publication => `
+          <div style="display: flex; flex-direction: column; gap: 0px; margin-bottom: 15px;">
+            <div style="color: #ea5455; font-size: 20px; font-weight: 550;">
+              ${publication.title || 'Title of Publication not provided'}
+            </div>
+            <div style="color: #000; font-size: 16px;">
+              Authors: ${publication.authors || 'Authors not provided'}
+            </div>
+            <div style="color: #7a7a7a;">
+              Date Published: ${publication.date || 'Publication date not provided'}
+            </div>
+            <div style="color: #555;">
+              Published In: ${publication.journal || 'Journal/Conference not provided'}
+            </div>
+            ${
+              publication.link
+                ? `<div style="color: #007bff;">
+                    <a href="${publication.link}" target="_blank" style="color: inherit; text-decoration: none;">
+                      View Publication
+                    </a>
+                  </div>`
+                : ''
+            }
+          </div>
+        `).join('')
+        : '<p>No publications provided.</p>'
+    }
+  </div>
+</div>
+
+<!-- Awards & Honors Section -->
+<div style="background-color: white; padding: 10px; border-left: 5px solid #f07b3f; margin-bottom: 10px;">
+  <h2 style="font-size: 22px; color: #2d4059; margin: 0;">Awards & Honors</h2>
+  <div style="display: flex; flex-direction: column;">
+    ${
+      formData.awards.length > 0
+        ? formData.awards.map(award => `
+          <div style="display: flex; flex-direction: column; gap: 1px; margin-bottom: 1px;">
+            <div style="color: #ea5455; font-size: 20px; font-weight: 550;">
+              ${award.title || 'Award Title not provided'}
+            </div>
+            <div style="color: #000; font-size: 16px;">
+              Awarding Body: ${award.body || 'Awarding Body not provided'}
+            </div>
+            <div style="color: #7a7a7a;">
+              Date Received: ${award.dateReceived || 'Date not provided'}
+            </div>
+            <div style="color: #555;">
+              ${award.description || 'Description not provided'}
+            </div>
+          </div>
+        `).join('')
+        : '<p>No awards or honors provided.</p>'
+    }
+  </div>
+</div>
+
+<!-- Proffessional Membership Section -->
+<div style="background-color: white; padding: 10px; border-left: 5px solid green; margin-bottom: 10px;">
+  <h2 style="font-size: 22px; color: #2d4059; margin: 0;">Professional Memberships</h2>
+  <div style="display: flex; flex-direction: column; margin-top: 2px;">
+    ${
+      formData.memberships.length > 0
+        ? formData.memberships.map(membership => `
+          <div style="display: flex; flex-direction: column; gap: 5px; margin-bottom: 0px;">
+            <div style="color: #ea5455; font-size: 20px; font-weight: 550; margin: 0;">
+              ${membership.organization || 'Organization Name not provided'}
+            </div>
+            <div style="color: #000; font-size: 16px; margin: 0;">
+              Role: ${membership.role || 'Role not provided'}
+            </div>
+            <div style="color: #7a7a7a; margin: 0;">
+              Membership Dates: ${membership.dates || 'Dates not provided'}
+            </div>
+          </div>
+        `).join('')
+        : '<p>No professional memberships provided.</p>'
+    }
+  </div>
+</div>
 
 
 
+
+<div style="background-color: white; padding: 10px; border-left: 5px solid hotpink; margin-bottom: 10px;">
+  <h2 style="font-size: 22px; color: #2d4059; margin: 0;">Skills Summary</h2>
+  <div style="display: flex; flex-direction: column; margin-top: 0px;">
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0px;">
+      <h4 style="color: #2d4059; font-weight: 600; margin: 0;">Technical  Skills:</h4>
+      <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+        ${
+          formData.skills.length > 0
+            ? formData.skills.map(skills => `
+                <span style="color: #2d4059; font-size: 15px;">${skills || 'Skill name not provided'}</span>
+              `).join('')
+            : '<p>No tools provided.</p>'
+        }
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0px;">
+      <h4 style="color: #2d4059; font-weight: 600; margin: 0;">Tools:</h4>
+      <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+        ${
+          formData.tools.length > 0
+            ? formData.tools.map(tool => `
+                <span style="color: #2d4059; font-size: 15px;">${tool.name || 'Tool name not provided'}</span>
+              `).join('')
+            : '<p>No tools provided.</p>'
+        }
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0px;">
+      <h4 style="color: #2d4059; font-weight: 600; margin: 0;">Others:</h4>
+      <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+        ${
+          formData.others.length > 0
+            ? formData.others.map(others => `
+                <span style="color: #2d4059; font-size: 15px;">${others || 'others name not provided'}</span>
+              `).join('')
+            : '<p>No tools provided.</p>'
+        }
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0px;">
+      <h4 style="color: #2d4059; font-weight: 600; margin: 0;">Soft  Skills:</h4>
+      <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+        ${
+          formData.softSkills.length > 0
+            ? formData.softSkills.map(softSkills => `
+                <span style="color: #2d4059; font-size: 15px;">${softSkills || 'Skill name not provided'}</span>
+              `).join('')
+            : '<p>No tools provided.</p>'
+        }
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0px;">
+      <h4 style="color: #2d4059; font-weight: 600; margin: 0;">Languages:</h4>
+      <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+        ${
+          formData.languages.length > 0
+            ? formData.languages.map(languages => `
+                <span style="color: #2d4059; font-size: 15px;">${languages || 'Languages are not provided'}</span>
+              `).join('')
+            : '<p>No tools provided.</p>'
+        }
+      </div>
+    </div>
+
+  </div>
+</div>
+ 
+<div style="background-color: white; padding: 10px; border-left: 5px solid red; padding-left: 10px; margin-bottom: 10px;">
+  <h2 style="font-size: 22px; color: #2d4059; margin: 0;">Hobbies & Interests</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px;">
+    ${
+      formData.hobbies.length > 0
+        ? formData.hobbies.map((hobby, index) => `
+          <div key="${index}" style="flex: 0 0 30%; margin-bottom: 10px;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <span style="color: #2d4059; font-size: 18px;">${hobby || 'Hobby not provided'}</span>
+              <button type="button" style="background-color: transparent; border: none; color: #ea5455; font-size: 20px;">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          </div>
+        `).join('')
+        : '<p>No hobbies provided.</p>'
+    }
+  </div>
+</div>
+
+</div>
+</div>
     <!-- Footer with LinkedIn & GitHub -->
     <div style="background-color: #2d4059; color: white; padding: 15px;">
       <p style="margin: 0;">LinkedIn: ${linkedin || 'linkedin.com/in/username'}</p>

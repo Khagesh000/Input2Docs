@@ -1797,7 +1797,7 @@ const handleDownloadPDF = () => {
         <i className="fas fa-plus icon-button"></i> Add Language
     </button>
 </div>
-
+<hr className="custom-line" />
 
 
 {/* Conditionally render the Hobbies section only for Template 1 */}
