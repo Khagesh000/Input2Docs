@@ -33,8 +33,8 @@ import img17 from '../assets/images/cover_letter.png';
 
 
 
-import { templateInputFields } from './CoverTemplateInputfields';
-import { generateTemplateContent } from './CoverGeneralTemplate';
+import { templateInputFields } from './CvTemplateInputfields';
+import { generateTemplateContent } from './CvGeneralTemplate';
 
 export default function CvTemplates({ images: imgList }) {
   const containerRef = useRef(null);

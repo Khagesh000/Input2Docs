@@ -1,6 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import html2canvas from 'html2canvas';
+import Select from 'react-select';
+import DatePicker from 'react-datepicker'; // Import DatePicker
+import "react-datepicker/dist/react-datepicker.css"; // Import the necessary CSS for styling the calendar
 
 import html2pdf from 'html2pdf.js';
 
@@ -18,8 +21,8 @@ import img5 from '../assets/images/cover_letter1.png';
 import img6 from '../assets/images/cover_letter.png';
 import img7 from '../assets/images/cover_letter1.png';
 
-import { templateInputFields } from './CoverTemplateInputfields';
-import { generateTemplateContent } from './CoverGeneralTemplate';
+import { templateInputFields } from './CoverLetterTemplateInputfields';
+import { generateTemplateContent } from './CoverLetterGeneralTemplates';
 
 export default function CoverLetterTemplates({ images: imgList }) {
   const containerRef = useRef(null);
@@ -32,20 +35,164 @@ export default function CoverLetterTemplates({ images: imgList }) {
   const [content, setContent] = useState('');
   const [editorKey, setEditorKey] = useState(0); // Add a key for editor
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     jobTitle: '',
-    principal: '',
-    school: '',
-    address: '',
-    phone: '',
-    email: '',
-    linkedin: '',
+    companyName: '',
+    hiringManagerName: '',
+    position: '',
+    introduction: '',
+    experience: '',
+    skills: [],
+    strengths: [],
     date: '',
-    letterContent: '',
+    gap: "",
+    desiredRole: "",
+    previousJobTitle: "",
+    workingStyle: "",
+    closing: '',
+    contactInfo: '',
   });
 
   const [selectedTemplateType, setSelectedTemplateType] = useState(1); // Add state for template type
   const [networkError, setNetworkError] = useState(false); // State to manage network error
+
+  const handleMultiChange = (selectedOptions, fieldName) => {
+    setFormData({
+      ...formData,
+      [fieldName]: selectedOptions ? selectedOptions.map(option => option.value) : [],
+    });
+  };
+
+  const handleSingleChange = (selectedOption, fieldName) => {
+    setFormData({
+      ...formData,
+      [fieldName]: selectedOption ? selectedOption.value : "",
+    });
+  };
+
+
+
+  const skillOptions = [
+    { value: "Programming", label: "Programming" },
+    { value: "Web Analytics", label: "Web Analytics" },
+    { value: "Data Analysis", label: "Data Analysis" },
+    { value: "Technical Analysis", label: "Technical Analysis" },
+    { value: "Script Development", label: "Script Development" },
+    { value: "Technical Support", label: "Technical Support" },
+    { value: "Data Collection", label: "Data Collection" },
+    { value: "Software Testing", label: "Software Testing" },
+    { value: "Layout Design", label: "Layout Design" },
+    { value: "Web Development", label: "Web Development" },
+    { value: "Quality Control", label: "Quality Control" },
+    { value: "Network Administration", label: "Network Administration" },
+    { value: "Project Management", label: "Project Management" },
+    { value: "Business Analysis", label: "Business Analysis" },
+    { value: "Technical Writing", label: "Technical Writing" },
+  ];
+
+  const strengthOptions = [
+    { value: "Collaboration", label: "Collaboration" },
+    { value: "Critical Thinking", label: "Critical Thinking" },
+    { value: "Decision Making", label: "Decision Making" },
+    { value: "Problem Solving", label: "Problem Solving" },
+    { value: "Creativity", label: "Creativity" },
+    // Add more strengths options as needed
+  ];
+  
+  const experienceOptions = [
+    { value: "Less than 1 year", label: "Less than 1 year" },
+    { value: "1-3 years", label: "1-3 years" },
+    { value: "3-5 years", label: "3-5 years" },
+    { value: "5-10 years", label: "5-10 years" },
+    { value: "10+ years", label: "10+ years" },
+  ];
+  
+  const gapOptions = [
+    { value: "No Gap", label: "No Gap" },
+    { value: "Less than 6 months", label: "Less than 6 months" },
+    { value: "6 months - 1 year", label: "6 months - 1 year" },
+    { value: "1-2 years", label: "1-2 years" },
+    { value: "More than 2 years", label: "More than 2 years" },
+  ];
+
+  const workingStyleOptions = [
+    { value: "Collaborative", label: "Collaborative" },
+    { value: "Independent", label: "Independent" },
+    { value: "Team-oriented", label: "Team-oriented" },
+    { value: "Flexible", label: "Flexible" },
+    { value: "Structured", label: "Structured" },
+    { value: "Creative", label: "Creative" },
+    { value: "Analytical", label: "Analytical" },
+    { value: "Detail-oriented", label: "Detail-oriented" },
+  ];
+  
+
+  
+  const handleSkillsChange = (selectedOptions) => {
+    setFormData({
+      ...formData,
+      skills: selectedOptions ? selectedOptions.map(option => option.value) : [],
+    });
+  };
+
+  // Custom styles for react-select component
+  const customStyles = {
+    
+    option: (provided, state) => ({
+      ...provided,
+      color: '#333', // Dark color for better readability
+      backgroundColor: state.isSelected ? '#dce8f1' : 'white', // Light blue background when selected
+      border: '1px solid #ccc', // Subtle border around each option
+      borderRadius: '8px', // Rounded corners for options
+      padding: '10px 15px',
+      margin: '5px', // Space between options
+      width: '100%', // Make each option 1/3rd of the width of the container (three items per row)
+      boxSizing: 'border-box', // Ensure padding and borders are included in the width
+      ':hover': {
+        backgroundColor: '#b8d4f2', // Light blue on hover
+        cursor: 'pointer',
+        transform: 'scale(1.05)', // Slightly increase size on hover for animation
+        transition: 'background-color 0.3s ease, transform 0.3s ease', // Smooth background and scale transition
+      },
+    }),
+    multiValueLabel: (provided) => ({
+      ...provided,
+      color: '#333', // Dark color for the selected label
+      backgroundColor: '#f1f8ff', // Soft light blue background for multi-value labels
+      borderRadius: '4px', // Rounded corners
+      padding: '5px 10px',
+    }),
+    multiValueRemove: (provided) => ({
+      ...provided,
+      color: '#007bff', // Blue color for remove icon
+      ':hover': {
+        backgroundColor: '#007bff', // Blue background when hovering over remove icon
+        color: 'white', // White text when hovering
+        transition: 'background-color 0.3s ease', // Smooth transition on hover
+      },
+    }),
+    container: (provided) => ({
+      ...provided,
+      width: '100%', // Ensure the container takes full width
+    }),
+    menu: (provided) => ({
+      ...provided,
+      borderRadius: '8px', // Rounded corners for the dropdown menu
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // Soft shadow to make it pop
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      color: '#333', // Keep the selected value text color consistent
+    }),
+    control: (provided) => ({
+      ...provided,
+      padding: '6px', // Adjust padding as needed
+      minHeight: '50px', // Increase the height of the control (the input area)
+      fontSize: '16px', // Increase font size
+      border: '1px solid grey',
+    }),
+  };
 
   const images = [img, img1, img2, img3, img4, img5, img6, img7];
 
@@ -175,6 +322,14 @@ export default function CoverLetterTemplates({ images: imgList }) {
       ...prevFormData,
       [name]: value
     }));
+    if (value) {
+      const filteredSuggestions = workingStyleOptions.filter(option =>
+        option.toLowerCase().includes(value.toLowerCase())
+      );
+      setSuggestions(filteredSuggestions);
+    } else {
+      setSuggestions([]);
+    }
   };
 
 
@@ -220,14 +375,15 @@ const handleDownloadPDF = () => {
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = content;
   tempDiv.style.fontFamily = 'Arial, sans-serif';
-  tempDiv.style.color = '#000'; // Ensure all text is black
- // Background color
+  tempDiv.style.boxSizing = 'border-box';
+  tempDiv.style.margin = 0;  // Ensuring no margin at the top or around content
+  tempDiv.style.padding = 0; // Ensuring no padding around content
 
-  // Apply specific styles to all child elements
-  tempDiv.querySelectorAll('*').forEach(element => {
-    element.style.color = '#000'; // Text color
-    // Background color
-    // Ensure consistent font size
+  // Add styles to avoid page breaks inside the elements
+  tempDiv.style.pageBreakInside = 'avoid'; // Prevent content from breaking within an element
+  const children = tempDiv.querySelectorAll('*');
+  children.forEach((child) => {
+    child.style.pageBreakInside = 'avoid'; // Apply this to every child element
   });
 
   document.body.appendChild(tempDiv);
@@ -235,22 +391,24 @@ const handleDownloadPDF = () => {
   // Add TinyMCE styles if necessary
   const styleSheet = document.createElement('link');
   styleSheet.rel = 'stylesheet';
-  styleSheet.href = 'path/to/tinymce-custom-styles.css';
+  styleSheet.href = '/styles/tinymce-custom-styles.css';  // Ensure the path is correct for your CSS
   document.head.appendChild(styleSheet);
 
   // Set up options for html2pdf
   const options = {
     margin: [10, 10, 10, 10], // Margins in mm
-    filename: 'cover-letter-template.pdf',
+    filename: 'ResumeTemplate.pdf',
     image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    html2canvas: { scale: 3, useCORS: true, allowTaint: true },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: 'css' } // Let html2pdf manage page breaks automatically based on CSS
   };
 
+  // Let html2pdf handle the page splitting automatically
   html2pdf().from(tempDiv).set(options).toPdf().get('pdf').then((pdf) => {
-    pdf.save('cover-letter-template.pdf');
+    pdf.save('CoverLetterTemplate.pdf'); // Save the PDF file
   }).finally(() => {
-    document.body.removeChild(tempDiv);
+    document.body.removeChild(tempDiv); // Clean up by removing the temporary div
   });
 };
 
@@ -339,37 +497,142 @@ const handleDownloadPDF = () => {
      
       <section className="m-0 editor-section">
       {selectedImage && (
-        
-        <div className="selected-image-wrapper" ref={editorRef}>
-             <div className="row">
-      {/* Resume Input Fields on the Left Side */}
-      <div className='col-lg-8 resume-input'>
-            <div className="form-group row">
-              
-              {templateInputFields[selectedTemplateType].map((field, index) => (
-                  <div key={index} className="form-group col-md-6">
-                    <label>{field.label}</label>
-                    {field.type === 'textarea' ? (
-                      <textarea
-                        className="form-control template-textarea"
-                        name={field.name}
-                        rows="6"
-                        value={formData[field.name]}
-                        onChange={handleInputChange}
-                      ></textarea>
-                    ) : (
-                      <input
-                        type={field.type}
-                        className="form-control"
-                        name={field.name}
-                        value={formData[field.name]}
-                        onChange={handleInputChange}
-                      />
+    <div className="selected-image-wrapper" ref={editorRef}>
+      <div className="row">
+        {/* Resume Input Fields on the Left Side */}
+        <div className="col-lg-8 resume-input">
+          <div className="form-group row">
+            {/* Render template input fields */}
+            {templateInputFields[selectedTemplateType].map((field, index) => (
+              <div key={index} className="form-group col-md-6">
+                <label>{field.label}</label>
+                {field.type === 'textarea' ? (
+                  <textarea
+                    className="form-control template-textarea"
+                    name={field.name}
+                    rows="6"
+                    value={formData[field.name] || ''}
+                    onChange={handleInputChange}
+                    placeholder={field.placeholder}
+                  ></textarea>
+                ) :
+                 field.type === 'date' ? (
+                  <DatePicker
+                    selected={formData[field.name] ? new Date(formData[field.name]) : null}
+                    onChange={(date) => handleInputChange({ target: { name: field.name, value: date } })}
+                    className="form-control"
+                    placeholderText="Select Date"
+                    dateFormat="MMMM d, yyyy"
+                  />
+                ) : (
+                  <input
+                    type={field.type}
+                    className="form-control"
+                    name={field.name}
+                    value={formData[field.name] || ''}
+                    onChange={handleInputChange}
+                    placeholder={field.placeholder}
+                  />
+                )}
+              </div>
+            ))}
+
+
+
+            {/* Skills Section */}
+            <div className="col-12 form-group">
+                  <label>Skills</label>
+                  <Select
+                    isMulti
+                    options={skillOptions}
+                    value={skillOptions.filter(option =>
+                      formData.skills.includes(option.value)
                     )}
-                  </div>
-                ))}
-            </div>
-            </div>
+                    onChange={handleSkillsChange}
+                    styles={customStyles}
+                    className="basic-multi-select"
+                    classNamePrefix="select"
+                    placeholder="Select your skills"
+                  />
+                </div>
+
+                 {/* Top Strengths (Multi-Select) */}
+      <div className="col-12 mt-3 mb-2 form-group">
+        <label>Top Strengths</label>
+        <Select
+          isMulti
+          options={strengthOptions}
+          value={strengthOptions.filter(option => formData.strengths.includes(option.value))}
+          onChange={(selectedOptions) => handleMultiChange(selectedOptions, "strengths")}
+          styles={customStyles}
+          placeholder="Select your top strengths"
+          className="basic-multi-select"
+          classNamePrefix="select"
+        />
+      </div>
+
+     {/* Years of Experience */}
+  <div className="col-12 mt-3 mb-2 form-group">
+    <label>Years of Experience</label>
+    <Select
+      options={experienceOptions}
+      value={experienceOptions.find(option => option.value === formData.experience)}
+      onChange={(selectedOption) => handleSingleChange(selectedOption, "experience")}
+      placeholder="Select years of experience"
+      className="basic-single select" 
+      styles={customStyles} 
+      classNamePrefix="select"
+    />
+  </div>
+
+  {/* Conditionally render Previous Job Title based on Experience */}
+  {formData.experience !== "Less than 1 year" && (
+    <div className="col-12 mt-3 mb-2 form-group">
+      <label>Previous Job Title</label>
+      <input
+        type="text"
+        className="form-control"
+        name="previousJobTitle"
+        value={formData.previousJobTitle}
+        onChange={handleInputChange}
+        placeholder="Enter your previous job title"
+      />
+    </div>
+  )}
+
+
+
+      {/* Gaps in Work History */}
+      <div className="col-12 mt-3 mb-2 form-group">
+        <label>Gaps In Work History</label>
+        <Select
+          options={gapOptions}
+          value={gapOptions.find(option => option.value === formData.gap)}
+          onChange={(selectedOption) => handleSingleChange(selectedOption, "gap")}
+          styles={customStyles}
+          placeholder="Select gap duration"
+          classNamePrefix="select"
+        />
+      </div>
+
+      <div className="form-group">
+      <label>Working Style</label>
+      <Select
+        isMulti
+        options={workingStyleOptions}
+        value={workingStyleOptions.find(option => option.value === formData.workingStyle)}
+        onChange={(selectedOption) => handleSingleChange(selectedOption, "workingStyle")}
+        styles={customStyles}
+        placeholder="Select your working style"
+        classNamePrefix="select"
+        className="basic-multi-select"
+      />
+    </div>
+
+          </div>
+        </div>
+      
+
             
 
 
