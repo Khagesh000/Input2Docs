@@ -30,9 +30,7 @@ import img14 from '../assets/images/cover_letter.png';
 import img15 from '../assets/images/cover_letter1.png';
 import img16 from '../assets/images/cover_letter.png';
 import img17 from '../assets/images/cover_letter.png';
-import img18 from '../assets/images/cover_letter1.png';
-import img19 from '../assets/images/cover_letter.png';
-import img20 from '../assets/images/cover_letter.png';
+
 
 
 import { templateInputFields } from './CoverTemplateInputfields';
@@ -136,7 +134,7 @@ export default function CvTemplates({ images: imgList }) {
 
   const [selectedTemplateType, setSelectedTemplateType] = useState(1); // Add state for template type
   const [networkError, setNetworkError] = useState(false); // State to manage network error
-
+  
 
   //Profile Image size adjust
   const [crop, setCrop] = useState({ x: 0, y: 0 });
@@ -148,7 +146,7 @@ export default function CvTemplates({ images: imgList }) {
 
 
   const images = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
-                  img11, img12, img13, img14, img15, img16, img17, img18, img19, img20
+                  img11, img12, img13, img14, img15, img16, img17
   ];
 
   useEffect(() => {
@@ -240,7 +238,7 @@ export default function CvTemplates({ images: imgList }) {
     setSelectedImage(images[index]);
     
     // Map index to template type, assuming each index corresponds to a specific template type.
-    const templateType = (index % 20) + 1; // Example: Mapping index to template type (1, 2, or 3)
+    const templateType = (index % 18) + 1; // Example: Mapping index to template type (1, 2, or 3)
   
     setSelectedTemplateType(templateType);
     setContent(generateTemplateContent(formData, templateType));
@@ -856,7 +854,7 @@ const handleDownloadPDF = () => {
                 ))}
             </div>
 
-            {(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 9
+            {(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 9 || selectedTemplateType === 13
  )&& (
   <>
     {/* Profile Image Upload */}
@@ -919,122 +917,7 @@ const handleDownloadPDF = () => {
       )}
 
 
-      {/* Experience Section */}
-<div className="form-group">
-  <label>Experience</label>
-  {formData.experience.map((exp, index) => (
-    <div key={index} className="form-group mb-4">
-      <input
-        type="text"
-        className="form-control mb-2"
-        placeholder="Job Title"
-        value={exp.jobTitle}
-        onChange={(e) => handleExperienceChange(index, 'jobTitle', e.target.value)}
-      />
-      <input
-        type="text"
-        className="form-control mb-2"
-        placeholder="Organization Name"
-        value={exp.organization}
-        onChange={(e) => handleExperienceChange(index, 'organization', e.target.value)}
-      />
-      <input
-        type="text"
-        className="form-control mb-2"
-        placeholder="Location (City, Country)"
-        value={exp.location}
-        onChange={(e) => handleExperienceChange(index, 'location', e.target.value)}
-      />
-      <label style={{ fontSize: '0.9rem'}}>Employment Dates (Month, Year – Month, Year)</label>
-      <input
-        type="text"
-        className="form-control mb-2"
-        placeholder="e.g., Jan 2020 – Dec 2022"
-        value={exp.dates}
-        onChange={(e) => handleExperienceChange(index, 'dates', e.target.value)}
-      />
-      
-      {/* Responsibilities */}
-      <label style={{ fontSize: '0.9rem'}}>Key Responsibilities and Achievements</label>
-      {exp.responsibilities.map((responsibility, respIndex) => (
-        <div key={respIndex} className="form-group">
-          <textarea
-            className="form-control mb-2"
-            placeholder="Responsibility or Achievement"
-            value={responsibility}
-            onChange={(e) => handleResponsibilityChange(index, respIndex, e.target.value)}
-            rows={3}
-          />
-          <button
-            type="button"
-            className="btn btn-danger icon-button mb-2"
-            onClick={() => handleRemoveResponsibility(index, respIndex)}
-          >
-            <i className="fas fa-trash-alt"></i> Remove
-          </button>
-        </div>
-      ))}
-      <button
-        type="button"
-        className="btn btn-secondary icon-button mb-3"
-        onClick={() => handleAddResponsibility(index)}
-      >
-        <i className="fas fa-plus"></i> Add Responsibility
-      </button>
-
-      {/* Projects (optional) */}
-      <label style={{ fontSize: '0.9rem'}}>Relevant Projects/Contributions</label>
-      {exp.projects.map((project, projIndex) => (
-        <div key={projIndex} className="form-group">
-          <textarea
-            className="form-control mb-2"
-            placeholder="Project or Contribution"
-            value={project}
-            onChange={(e) => handleExpProjectChange(index, projIndex, e.target.value)}
-            rows={3}
-          />
-          <button
-            type="button"
-            className="btn btn-danger icon-button mb-2"
-            onClick={() => handleExpRemoveProject(index, projIndex)}
-          >
-            <i className="fas fa-trash-alt"></i> Remove
-          </button>
-        </div>
-      ))}
-      <button
-        type="button"
-        className="btn btn-secondary icon-button mb-3"
-        onClick={() => handleExpAddProject(index)}
-      >
-        <i className="fas fa-plus"></i> Add Project
-      </button>
-
-      {/* Remove Experience Button */}
-      <button
-        type="button"
-        className="btn btn-danger icon-button"
-        onClick={() => handleRemoveExperience(index)}
-      >
-        <i className="fas fa-trash-alt"></i> Remove Experience
-      </button>
-    </div>
-  ))}
-
-  {/* Add Experience Button */}
-  <button
-    type="button"
-    className="btn btn-primary icon-button"
-    onClick={handleAddExperience}
-  >
-    <i className="fas fa-plus"></i> Add Experience
-  </button>
-</div>
-<hr className='custom-line'></hr>
-
-
-
-{/* Education Section */}
+  {/* Education Section */}
 <div className="form-group">
   <label>Education</label>
   {formData.education.map((edu, index) => (
@@ -1227,47 +1110,120 @@ const handleDownloadPDF = () => {
 
 
 
- 
-
-
-
-{/* Skills Section */}
+      {/* Experience Section */}
 <div className="form-group">
-  <label>Skills</label>
-  {formData.skills.map((skill, index) => (
-    <div key={index} className="form-group row">
-      <div className="col-md-10">
-        <input
-          type="text"
-          className="form-control"
-          value={skill || ''}
-          onChange={(e) => handleSkillChange(index, e.target.value)}
-        />
-      </div>
-      <div className="col-md-2 d-flex align-items-center">
-        <button
-          type="button"
-          className="btn icon-button btn-icon"
-          onClick={() => handleRemoveSkill(index)}
-        >
-          <i className="fas fa-trash-alt"></i>
-        </button>
-      </div>
-    </div>
-  ))}
-  <div className="form-group row">
-    <div className="col-md-12">
+  <label>Experience</label>
+  {formData.experience.map((exp, index) => (
+    <div key={index} className="form-group mb-4">
+      <input
+        type="text"
+        className="form-control mb-2"
+        placeholder="Job Title"
+        value={exp.jobTitle}
+        onChange={(e) => handleExperienceChange(index, 'jobTitle', e.target.value)}
+      />
+      <input
+        type="text"
+        className="form-control mb-2"
+        placeholder="Organization Name"
+        value={exp.organization}
+        onChange={(e) => handleExperienceChange(index, 'organization', e.target.value)}
+      />
+      <input
+        type="text"
+        className="form-control mb-2"
+        placeholder="Location (City, Country)"
+        value={exp.location}
+        onChange={(e) => handleExperienceChange(index, 'location', e.target.value)}
+      />
+      <label style={{ fontSize: '0.9rem'}}>Employment Dates (Month, Year – Month, Year)</label>
+      <input
+        type="text"
+        className="form-control mb-2"
+        placeholder="e.g., Jan 2020 – Dec 2022"
+        value={exp.dates}
+        onChange={(e) => handleExperienceChange(index, 'dates', e.target.value)}
+      />
+      
+      {/* Responsibilities */}
+      <label style={{ fontSize: '0.9rem'}}>Key Responsibilities and Achievements</label>
+      {exp.responsibilities.map((responsibility, respIndex) => (
+        <div key={respIndex} className="form-group">
+          <textarea
+            className="form-control mb-2"
+            placeholder="Responsibility or Achievement"
+            value={responsibility}
+            onChange={(e) => handleResponsibilityChange(index, respIndex, e.target.value)}
+            rows={3}
+          />
+          <button
+            type="button"
+            className="btn btn-danger icon-button mb-2"
+            onClick={() => handleRemoveResponsibility(index, respIndex)}
+          >
+            <i className="fas fa-trash-alt"></i> Remove
+          </button>
+        </div>
+      ))}
       <button
         type="button"
-        className="btn icon-button"
-        onClick={handleAddSkill}
+        className="btn btn-secondary icon-button mb-3"
+        onClick={() => handleAddResponsibility(index)}
       >
-        <i className="fas fa-plus"></i>Add Skills
+        <i className="fas fa-plus"></i> Add Responsibility
+      </button>
+
+      {/* Projects (optional) */}
+      <label style={{ fontSize: '0.9rem'}}>Relevant Projects/Contributions</label>
+      {exp.projects.map((project, projIndex) => (
+        <div key={projIndex} className="form-group">
+          <textarea
+            className="form-control mb-2"
+            placeholder="Project or Contribution"
+            value={project}
+            onChange={(e) => handleExpProjectChange(index, projIndex, e.target.value)}
+            rows={3}
+          />
+          <button
+            type="button"
+            className="btn btn-danger icon-button mb-2"
+            onClick={() => handleExpRemoveProject(index, projIndex)}
+          >
+            <i className="fas fa-trash-alt"></i> Remove
+          </button>
+        </div>
+      ))}
+      <button
+        type="button"
+        className="btn btn-secondary icon-button mb-3"
+        onClick={() => handleExpAddProject(index)}
+      >
+        <i className="fas fa-plus"></i> Add Project
+      </button>
+
+      {/* Remove Experience Button */}
+      <button
+        type="button"
+        className="btn btn-danger icon-button"
+        onClick={() => handleRemoveExperience(index)}
+      >
+        <i className="fas fa-trash-alt"></i> Remove Experience
       </button>
     </div>
-  </div>
+  ))}
+
+  {/* Add Experience Button */}
+  <button
+    type="button"
+    className="btn btn-primary icon-button"
+    onClick={handleAddExperience}
+  >
+    <i className="fas fa-plus"></i> Add Experience
+  </button>
 </div>
-<hr className='custom-line'></hr> 
+<hr className='custom-line'></hr>
+
+
 
 
 {/* Research and Projects Section */}
@@ -1642,6 +1598,45 @@ const handleDownloadPDF = () => {
       </div>
 <hr className="custom-line" />
 
+
+
+{/* Skills Section */}
+<div className="form-group">
+  <label>Skills</label>
+  {formData.skills.map((skill, index) => (
+    <div key={index} className="form-group row">
+      <div className="col-md-10">
+        <input
+          type="text"
+          className="form-control"
+          value={skill || ''}
+          onChange={(e) => handleSkillChange(index, e.target.value)}
+        />
+      </div>
+      <div className="col-md-2 d-flex align-items-center">
+        <button
+          type="button"
+          className="btn icon-button btn-icon"
+          onClick={() => handleRemoveSkill(index)}
+        >
+          <i className="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  ))}
+  <div className="form-group row">
+    <div className="col-md-12">
+      <button
+        type="button"
+        className="btn icon-button"
+        onClick={handleAddSkill}
+      >
+        <i className="fas fa-plus"></i>Add Skills
+      </button>
+    </div>
+  </div>
+</div>
+<hr className='custom-line'></hr> 
 
 
 

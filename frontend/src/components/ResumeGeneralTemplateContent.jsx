@@ -2032,6 +2032,14 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
           <!-- Right Column: Skills, Languages, Personal Info -->
           <div style="width: 35%; background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
 
+                 <!-- Personal Info Section -->
+              <section>
+                  <h2 style="font-size: 20px; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px;">Personal Info</h2>
+                  <p style="font-size: 14px; color: #333; margin: 0; margin-bottom: 5px;"><strong>Address:</strong> ${formData.address || '123 Main St, City, Country'}</p>
+                  <p style="font-size: 14px; color: #333; margin: 0; margin-bottom: 5px;"><strong>Phone:</strong> ${formData.phone || '123-456-7890'}</p>
+                  <p style="font-size: 14px; color: #333; margin: 0; margin-bottom: 5px;"><strong>Email:</strong> ${formData.email || 'john.doe@example.com'}</p>
+              </section>
+              
               <!-- Skills Section -->
               <section style="margin-bottom: 0px; margin: 0;">
                   <h2 style="font-size: 20px; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; margin: 0; margin-bottom: 2px;">Skills</h2>
@@ -2048,13 +2056,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
                   </ul>
               </section>
 
-              <!-- Personal Info Section -->
-              <section>
-                  <h2 style="font-size: 20px; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px;">Personal Info</h2>
-                  <p style="font-size: 14px; color: #333; margin: 0; margin-bottom: 5px;"><strong>Address:</strong> ${formData.address || '123 Main St, City, Country'}</p>
-                  <p style="font-size: 14px; color: #333; margin: 0; margin-bottom: 5px;"><strong>Phone:</strong> ${formData.phone || '123-456-7890'}</p>
-                  <p style="font-size: 14px; color: #333; margin: 0; margin-bottom: 5px;"><strong>Email:</strong> ${formData.email || 'john.doe@example.com'}</p>
-              </section>
+              
 
 
               <!-- Certification Section -->
