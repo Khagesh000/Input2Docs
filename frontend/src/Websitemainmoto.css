@@ -1,0 +1,158 @@
+/* Websitemainmoto.css */
+
+body {
+    background-color: #f3f4f6;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  .main-container {
+    background: linear-gradient(135deg, #ffffff, #e9ecf3);
+    padding: 60px 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .moto-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background-color: rgb(252, 3, 3);
+    background-clip: text;
+    -webkit-background-clip: text; /* For Safari compatibility */
+    color: transparent;
+    animation: fadeInDown 1s ease-in-out;
+  }
+  
+  .moto-subheading {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #e93515;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-in-out 0.5s;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Services Row */
+  .services-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .service-card {
+    flex: 1 1 calc(20% - 20px);
+    max-width: 200px;
+    background: linear-gradient(135deg, #ffffff, #f0f0f5);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .service-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+  }
+  
+  .card-content {
+    padding: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+  }
+  
+  .service-card:hover .card-content {
+    background-color: #ffe5b4;
+    transform: scale(1.05);
+  }
+  
+  .card-content h3 {
+    font-size: 1.6rem;
+    color: #8B0000;
+    margin-bottom: 10px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .card-content:hover h3 {
+    color: #b22222;
+  }
+  
+  .card-content p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+  }
+  
+  .card-content:hover p {
+    color: #8b4513;
+  }
+  
+  /* Hover Animations */
+  @keyframes popUp {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Fade-in animations */
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .service-card {
+      flex: 1 1 calc(33.33% - 20px); /* Three cards in the first row */
+    }
+  
+    .services-row {
+      justify-content: space-evenly; /* Center cards */
+    }
+  
+    .moto-heading {
+      font-size: 2.5rem;
+    }
+  
+    .moto-subheading {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .service-card {
+      flex: 1 1 calc(50% - 20px); /* Two cards in the second row */
+    }
+  
+    .moto-heading {
+      font-size: 2rem;
+    }
+  
+    .moto-subheading {
+      font-size: 1rem;
+    }
+  }
+  

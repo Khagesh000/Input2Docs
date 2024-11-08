@@ -7,6 +7,7 @@ import img3 from '../assets/images/BankLetter.jpg';
 import img4 from '../assets/images/LegalLetter.jpg';
 import img5 from '../assets/images/GovernmentLetter.jpg';
 import '../App.css';
+import '../Cardarrange.css'
 
 const CardArrange = () => {
   const containerRef = useRef(null);
@@ -55,7 +56,6 @@ const CardArrange = () => {
 
   return (
     <div className='cardHeading'>
-      <h1>{styledHeading}</h1>
       <div className="position-relative">
         <div className="template-row" ref={containerRef}>
           <div className="col-md-4 col-sm-12 card-temp">

@@ -124,10 +124,10 @@ a.btn-primary::before {
 }
 
 .CardSection{
-   background-color: black;
+  background-color: aliceblue;
    padding-left: 5%;
    padding-right: 5%;
-   padding-top: 8%;
+   padding-top: 3%;
 }
 
 .ProcessSection{
@@ -142,10 +142,7 @@ a.btn-primary::before {
 }
 
 
-.cardHeading {
-  text-align: center;
-  
-}
+
 
 
 
