@@ -20,7 +20,9 @@ export default function CoverLetter() {
       <CoverLetterTemplates />
       <CoverLetterAbout />
       <div>
+      <div style={{ backgroundColor: 'black'}}>
       <Feedback />
+      </div>
       </div>
       
       <Endbar />

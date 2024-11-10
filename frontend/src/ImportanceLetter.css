@@ -1,17 +1,21 @@
 /* Container styling */
 .importance-letter-container {
-  background-color: wheat; /* Background color */
-  border-radius: 10px;
+  background-color: #f3f4f6;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  color: #000;
+  padding: 40px;
+  color: #333;
+  max-width: 1360px;
+
+}
+
+.intro-text{
+   color: gray;
+   margin: 0;;
 }
 
 /* Points section styling */
 .points-section {
-  background-color: black;
-  color: red;
   padding: 20px;
-  padding-bottom: 10%;
 }
 
 /* Point container styling */
@@ -21,82 +25,86 @@
 
 /* Individual point content styling */
 .point-content {
-  background-color: #1e1e1e;
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
-  color: red;
   margin-bottom: 20px;
-  max-height: 80px; /* Set maximum height */
-  overflow: hidden; /* Hide overflow */
-  opacity: 0; /* Start hidden for animation */
-  animation: fadeIn 1s forwards; /* Fade in animation */
-  transition: transform 0.3s, box-shadow 0.3s; /* Add transition for hover effects */
+  max-height: 100px;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+  transform: translateY(20px);
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: #fff;
 }
 
-/* Specific point colors */
+/* Specific colors for each point */
 .point-content-1 { background-color: #ff5733; } /* Red */
 .point-content-2 { background-color: #33c1ff; } /* Blue */
 .point-content-3 { background-color: #33ff57; } /* Green */
 .point-content-4 { background-color: #ff33a1; } /* Pink */
 .point-content-5 { background-color: #ffc733; } /* Yellow */
+.point-content-6 { background-color: #ff8c33; } /* Orange */
+.point-content-7 { background-color: #a1ff33; } /* Lime Green */
 
-/* Headings and paragraph styling */
-.point-content h4 { color: white; }
-.point-content p { color: white; }
+/* Point content heading and paragraph styling */
+.point-content h4 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+.point-content p {
+  font-size: 0.9em;
+  color: #f7f7f7;
+}
 
 /* Image styling */
 .point-image {
-  width: 100%; /* Ensure image is responsive */
-  height: auto; /* Maintain aspect ratio */
-  transition: transform 0.3s; /* Add transition for image hover */
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  transition: transform 0.3s ease;
 }
 
-/* Specific image wrapper styling */
+/* Image wrapper styling */
 .image-wrapper {
   display: flex;
-  justify-content: center; /* Center the image */
-  align-items: center; /* Center the image vertically */
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1s ease-in-out 0.5s forwards;
+  opacity: 0;
 }
 
-/* Fade in animation */
+/* Fade-in animation */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Hover effects */
 .point-content:hover {
-  transform: scale(1.05); /* Slightly increase size on hover */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .image-wrapper:hover .point-image {
-  transform: scale(1.02); /* Slight zoom effect on image hover */
+  transform: scale(1.05);
 }
 
 /* Responsive adjustments */
 @media (min-width: 768px) {
   .point-image {
-    width: 800px; /* Set image width for large screens */
-    height: auto; /* Maintain aspect ratio */
-  }
-
-  .point-container {
-    height: 300px; /* Adjust container height for larger screens */
+    max-width: 400px;
   }
 }
 
 @media (max-width: 768px) {
-  .importance-letter-container .row {
-    display: flex;
-    flex-direction: column;
-  }
+  
   
   .col-lg-6 {
     width: 100%;
   }
 
   .point-image {
-    width: 100%; /* Ensure the image takes full width on small screens */
+    width: 100%;
+    max-width: 100%;
   }
 }

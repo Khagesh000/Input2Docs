@@ -9,6 +9,7 @@ import EmailImageCaurosel from './components/EmailImageCaurosel'; // Importing E
 import EmailSearchCategory from './components/EmailSearchCategory'; // Importing EmailSearchCategory component
 import EmailMaker from './components/EmailMaker'; // Importing EmailMaker component
 import Feedback from './components/Feedback'; // Importing Feedback component
+import EmailMainMoto from './components/EmailMainMoto';
 
 const Email = () => {
   const [selectedSubcategory, setSelectedSubcategory] = useState('');
@@ -19,7 +20,9 @@ const Email = () => {
   };
 
   return (
+    <div style={{ backgroundColor: 'black'}}>
     <div>
+      
       {/* Navbar component */}
       <Navbar />
       
@@ -42,18 +45,23 @@ const Email = () => {
       )}
 
       {/* EmailProcess component */}
-      <div className='ProcessSection'>
+      <div className='ProcessSection' style={{ backgroundColor: '#f3f4f6'}}>
         <EmailProcess />
       </div>
 
       {/* ImportanceEmail component */}
-      <ImportanceEmail />
-
-      {/* Feedback component */}
+      <div className='ProcessSection' style={{ backgroundColor: '#f3f4f6'}}><ImportanceEmail /></div>
+      
+      <EmailMainMoto />
+      
+      <div className='ProcessSection' style={{ backgroundColor: '#f3f4f6'}}>
+        {/* Feedback component */}
       <Feedback/>
-
+      </div>
+      
       {/* Endbar component */}
       <Endbar />
+      </div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../SearchCategory.css';
+import '../Searchcategory-new.css';
 import EmailMaker from './EmailMaker';
 
 const categories = {
@@ -415,6 +416,24 @@ const EmailSearchCategory = () => {
   const [selectedSubcategory, setSelectedSubcategory] = useState('');
   const [selectedTemplate, setSelectedTemplate] = useState('');
 
+  const categoryRef = useRef(null);
+  const subcategoryRef = useRef(null);
+  const templateRef = useRef(null);
+
+  useEffect(() => {
+    // Ensure the ref is not null before calling scrollIntoView
+    if (selectedCategory && subcategoryRef.current) {
+      subcategoryRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [selectedCategory]);
+
+  useEffect(() => {
+    // Ensure the ref is not null before calling scrollIntoView
+    if (selectedSubcategory && templateRef.current) {
+      templateRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [selectedSubcategory]);
+
   useEffect(() => {
     if (selectedTemplate && emailGenerationSectionRef.current) {
       emailGenerationSectionRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -438,18 +457,11 @@ const EmailSearchCategory = () => {
 
   return (
     <div className="container">
-      <div>
-        <h1 style={{ paddingTop: '8%', color: 'wheat', fontWeight: 'bold', textAlign: 'center' }}>
-          View And Generate <span style={{ fontFamily: 'cursive', color: 'red' }}>Emails</span>
-        </h1>
-      </div>
-      <p className="view-download-instructions">
-        You can view and generate emails for various purposes below.
-      </p>
 
-      <div className="input-group mb-3">
+<div className="input-group mb-3">
         {/* Main Category Dropdown */}
-        <div className="btn-group">
+        <div className="btn-group " 
+        >
           <button
             className="btn btn-outline-secondary dropdown-toggle custom-dropdown"
             type="button"
@@ -509,6 +521,63 @@ const EmailSearchCategory = () => {
           value={`${selectedCategory} ${selectedSubcategory} ${selectedTemplate}`.trim()}
           readOnly
         />
+      </div>
+
+      <div>
+        <h1 style={{ paddingTop: '3%', color: 'wheat', fontWeight: 'bold', textAlign: 'center' }}>
+          View And Generate <span style={{ fontFamily: 'cursive', color: 'red' }}>Emails</span>
+        </h1>
+      </div>
+      <p className="view-download-instructions">
+        You can view and generate emails for various purposes below.
+      </p>
+
+      
+
+      {/* Second Section: Card-Style Category Selector */}
+      <div className="secondsearch-card-selector-container">
+        <h3 style={{ marginTop: 0, color: '#9B2D20', fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>Select Category</h3>
+        <div className="secondsearch-card-category-list">
+          {Object.keys(categories).map((category) => (
+            <div
+              key={category}
+              className={`secondsearch-card secondsearch-category-card ${selectedCategory === category ? 'active' : ''}`}
+              onClick={() => handleCategorySelection(category)}
+            >
+              {category}
+            </div>
+          ))}
+        </div>
+
+        {selectedCategory && (
+          <div className="secondsearch-card-subcategory-list" ref={subcategoryRef}>
+            <h4 style={{ marginTop: 0, color: '#9B2D20', fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>{selectedCategory} - Select Subcategory</h4>
+            {Object.keys(categories[selectedCategory]).map((subcategory) => (
+              <div
+                key={subcategory}
+                className={`secondsearch-card secondsearch-subcategory-card ${selectedSubcategory === subcategory ? 'active' : ''}`}
+                onClick={() => handleSubcategorySelection(subcategory)}
+              >
+                {subcategory}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {selectedSubcategory && (
+          <div className="secondsearch-card-template-list" ref={templateRef}>
+            <h4 style={{ marginTop: 0, color: '#9B2D20', fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>{selectedSubcategory} - Select Template</h4>
+            {categories[selectedCategory][selectedSubcategory]?.map((template) => (
+              <div
+                key={template}
+                className={`secondsearch-card secondsearch-template-card ${selectedTemplate === template ? 'active' : ''}`}
+                onClick={() => handleTemplateSelection(template)}
+              >
+                {template}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Email Generation Section */}

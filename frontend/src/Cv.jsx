@@ -11,14 +11,26 @@ import Feedback from './components/Feedback'
 
 export default function Cv() {
   return (
+    <div style={{ backgroundColor: 'black'}}>
     <div>
       <Navbar />
+      <div style={{ backgroundColor: 'black'}}>
       <CvDescription />
+      </div>
+      <div style={{ backgroundColor: 'black'}}>
       <CvTemplates />
+      </div>
+      <div style={{ backgroundColor: 'black'}}>
       <CvImportance />
+      </div>
+      <div style={{ backgroundColor: 'black'}}>
       <CvAbout />
+      </div>
+      <div style={{ backgroundColor: 'black'}}>
       <Feedback />
+      </div>
       <Endbar />
+      </div>
     </div>
   )
 }

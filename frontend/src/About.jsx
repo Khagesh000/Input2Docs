@@ -10,12 +10,14 @@ export default function About() {
   
 
   return (
+    <div style={{ backgroundColor: 'black'}}>
     <div>
       <Navbar />
       <AboutImage />
       <AboutChoose />
       <Feedback />
       <Endbar />
+      </div>
     </div>
   );
 }

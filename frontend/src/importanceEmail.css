@@ -1,52 +1,92 @@
-.points-section {
-  padding: 70px; /* Reduced padding */
-/* Light background color */
+/* Container styling */
+.importance-email-container {
+  padding: 40px;
+  background: #f3f4f6;
+  max-width: 1360px;
+  margin: auto;
+  margin-top: 1%;
+}
+.email-intro-text{
+  color: grey;
+  margin: 0;
 }
 
-.point-container {
-/* White background for the content */
-  border-radius: 8px; /* Rounded corners */
-  padding: 15px; /* Reduced padding around the content */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Reduced shadow for depth */
-  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+/* Points section styling */
+.email-points-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.point-container:hover {
-  transform: translateY(-3px); /* Slight lift effect on hover */
+/* Image container and styling */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
-.point-content {
-  margin-bottom: 15px; /* Reduced space between each point */
+.email-image {
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-.point-content h4 {
-  color: #007bff; /* Bootstrap primary color for headings */
+.email-image:hover {
+  transform: scale(1.02);
 }
 
-.point-image {
-  width: 100%; /* Make image responsive */
-  max-width: 450px; /* Set maximum width for image */
-  height: 400px; /* Maintain aspect ratio */
-  object-fit: cover;
-  border-radius: 8px; /* Rounded corners for the image */
+/* Individual point styling */
+.email-point-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
-@media (min-width: 768px) {
-  .point-content {
-    height: 100%; /* Ensures equal height for content on large screens */
-  }
+.email-point-container {
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.email-point-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Alternate colors for each point */
+.email-point-1 { border-left: 5px solid #4a90e2; } /* Light blue */
+.email-point-2 { border-left: 5px solid #50b85a; } /* Green */
+.email-point-3 { border-left: 5px solid #ff6b6b; } /* Coral */
+.email-point-4 { border-left: 5px solid #ffa726; } /* Orange */
+.email-point-5 { border-left: 5px solid #7e57c2; } /* Purple */
+
+/* Headings and paragraph styling */
+.email-point-container h4 {
+  font-size: 1.25em;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.email-point-container p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .point-image {
-    display: none; /* Hide image on small screens */
-  }
   
-  .point-container {
-    padding: 10px; /* Adjust padding for smaller screens */
+
+  .email-point-list {
+    grid-template-columns: 1fr;
   }
-  .points-section {
-    padding: 5px; /* Reduced padding */
-  /* Light background color */
+
+  .email-image {
+    max-width: 100%;
+    margin-bottom: 20px;
   }
 }

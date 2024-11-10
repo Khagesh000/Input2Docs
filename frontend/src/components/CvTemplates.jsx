@@ -761,6 +761,13 @@ const handleDownloadPDF = () => {
                   <button 
                     className="btn btn-primary" 
                     onClick={() => handleUseTemplate(index)}
+                    style={{
+                      backgroundColor: '#ff6600',
+                      marginBottom: '15%',
+                      cursor: 'pointer',
+                      transition: 'background-color 0.3s ease, transform 0.2s ease',
+                      fontWeight: 'bold'
+                    }}
                   >
                     Use Template
                   </button>
@@ -812,7 +819,17 @@ const handleDownloadPDF = () => {
             
             {visibleRows * 3 < images.length && (
               <div className="text-center mt-3">
-                <button className="btn btn-secondary show-more" onClick={handleShowMore}  disabled={loading}>
+                <button className="btn btn-secondary show-more" onClick={handleShowMore}  disabled={loading}
+                style={{
+                  backgroundColor: '#ff6600',
+                  color: 'white',
+                  padding: '12px 24px',
+                  fontWeight: 'bold',
+                  borderRadius: '15px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'background-color 0.3s ease, transform 0.2s ease',
+                }}>
                   {loading ? 'Loading...' : 'Show More'}
                 </button>
               </div>
@@ -827,7 +844,7 @@ const handleDownloadPDF = () => {
         <div className="selected-image-wrapper" ref={editorRef}>
              <div className="row">
       {/* Resume Input Fields on the Left Side */}
-      <div className='col-lg-8 resume-input'>
+      <div className='resume-input m-2'>
             <div className="form-group row">
               
               {templateInputFields[selectedTemplateType].map((field, index) => (

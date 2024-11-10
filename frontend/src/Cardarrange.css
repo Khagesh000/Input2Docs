@@ -19,22 +19,13 @@
     margin: 0 auto;
 }
 
-.template-row {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 20px;
-}
+
 
 .template-row::-webkit-scrollbar {
     display: none; /* Hide scrollbar */
 }
 
-.card-temp {
-    flex: 0 0 auto;
-    margin: 0 15px;
-    transition: transform 0.3s ease;
-}
+
 
 .card {
     border-radius: 15px;

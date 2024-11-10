@@ -6,13 +6,16 @@ import ImageCarousel from './components/ImageCaurosel';
 import Endbar from './components/Endbar';
 import LetterMaker from './components/LetterMaker';
 import Process from './components/Process';
+
 import Feedback from './components/Feedback';
 import ImportanceLetter from './components/ImportanceLetter';
+import LetterMainMoto from './components/Lettermainmoto';
 
 export default function Letter() {
   const [selectedSubcategory, setSelectedSubcategory] = useState('');
 
   return (
+    <div style={{ backgroundColor: 'black'}}>
     <div>
       <Navbar />
       <ImageCarousel />
@@ -27,13 +30,20 @@ export default function Letter() {
         <LetterMaker selectedTemplate={selectedSubcategory} />
       </div>
 
-      <div className='ProcessSection'>
+      <div className='ProcessSection' style={{ backgroundColor: '#f3f4f6'}}>
         <Process />
       </div>
-
-      <ImportanceLetter />
+      
+      <div className='ProcessSection' style={{ backgroundColor: '#f3f4f6'}}><ImportanceLetter /></div>
+      
+      <div  style={{ backgroundColor: '#f3f4f6'}}><LetterMainMoto /></div>
+      
+      <div style={{ backgroundColor: '#f3f4f6'}}>
       <Feedback />
+      </div>
+     
       <Endbar />
+      </div>
     </div>
   );
 }

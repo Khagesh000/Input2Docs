@@ -1,0 +1,138 @@
+/* General container styles */
+.secondsearch-search-category-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #FAF3E0; /* Wheat background for the container */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Card-based Selector Styles */
+.secondsearch-card-selector-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #FFF8F0; /* Lighter wheat background for the selector */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Category, Subcategory, and Template Cards */
+.secondsearch-card-category-list, .secondsearch-card-subcategory-list, .secondsearch-card-template-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Card Styles */
+.secondsearch-card {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #FFF; /* White background for cards */
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Active Card Style */
+.secondsearch-card.active {
+  background-color: #9B2D20; /* Red background when active */
+  color: #FFF; /* White text on active card */
+  border-color: #9B2D20; /* Border color matches the red theme */
+}
+
+/* Specific Card Types */
+.secondsearch-category-card {
+  width: 100%;
+  background-color: #FFEBE6;
+  color: red;
+  font-size: large;
+  font-weight: 700; /* Light wheat color for category cards */
+}
+
+
+
+.secondsearch-subcategory-card, .secondsearch-template-card {
+  width: 45%;
+  background-color: #FFE0C4;
+  color: rgb(58, 58, 104);
+  font-size: large;
+  font-weight: 700; /* Soft wheat color for subcategory and template cards */
+}
+
+/* Hover Effect for Cards */
+.secondsearch-card:hover {
+  background-color: #F7D4C7; /* Subtle wheat color on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Slight elevation effect */
+}
+
+/* Selected Template Info */
+.secondsearch-selected-template-info {
+  margin-top: 15px;
+  font-size: 1em;
+  color: #9B2D20; /* Red color for selected template info */
+  font-family: 'Inter', sans-serif;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .secondsearch-card {
+    width: 100%; /* Ensure cards fill width on smaller screens */
+  }
+}
+
+/* Input field style */
+input.form-control {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #FFF8F0; /* Wheat background for input */
+  border: 1px solid #FFB6A4; /* Light red border for inputs */
+  font-family: 'Inter', sans-serif;
+}
+
+input.form-control:focus {
+  border-color: #9B2D20; /* Red border on focus */
+  box-shadow: 0 0 5px rgba(155, 45, 32, 0.5);
+}
+
+
+.secondsearch-dropdown-toggle {
+  background-color: #FFEBE6; /* Wheat background for dropdown button */
+  color: #9B2D20; /* Red text for dropdown button */
+  border: 1px solid #FFB6A4;
+}
+
+.secondsearch-dropdown-menu {
+  background-color: #FFF8F0; /* Wheat background for dropdown menu */
+  border: 1px solid #FFB6A4;
+}
+
+.secondsearch-dropdown-item {
+  color: #9B2D20; /* Red text for dropdown items */
+}
+
+.secondsearch-dropdown-item:hover {
+  background-color: #FFE0C4; /* Soft wheat color on hover */
+  color: #FFF;
+}
+
+/* Buttons */
+button.btn {
+  background-color: #9B2D20; /* Red background for buttons */
+  color: #FFF; /* White text on buttons */
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+button.btn:hover {
+  background-color: #D14938; /* Darker red on hover */
+}

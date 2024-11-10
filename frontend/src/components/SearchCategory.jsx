@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../SearchCategory.css'; // Import custom CSS for styling
+import '../SearchCategory.css';
+import '../Searchcategory-new.css'; // Import custom CSS for styling
 import LetterMaker from './LetterMaker'; // Assuming this is where your LetterMaker component resides
 
 const categories = {
@@ -414,6 +415,22 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
   const [selectedSubcategory, setSelectedSubcategory] = useState('');
   const [selectedTemplate, setSelectedTemplate] = useState('');
 
+  const categoryRef = useRef(null);
+  const subcategoryRef = useRef(null);
+  const templateRef = useRef(null);
+
+  useEffect(() => {
+    if (selectedCategory) {
+      subcategoryRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [selectedCategory]);
+
+  useEffect(() => {
+    if (selectedSubcategory) {
+      templateRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [selectedSubcategory]);
+
   useEffect(() => {
     if (selectedTemplate) {
       letterGenerationSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -429,7 +446,7 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
   const handleSubcategorySelection = (subcategory) => {
     setSelectedSubcategory(subcategory);
     setSelectedTemplate(categories[subcategory]?.[Object.keys(categories[subcategory])[0]]); // Select the first template automatically
-   
+  
     handleSubcategoryClick(subcategory);
   };
 
@@ -439,16 +456,9 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
 
   return (
     <div className="container">
-      <div>
-        <h1 style={{ paddingTop: '8%', color: 'wheat', fontWeight: 'bold', textAlign: 'center' }}>
-          View And Download <span style={{ fontFamily: 'cursive', color: 'red' }}>Letters</span>
-        </h1>
-      </div>
-      <p className="view-download-instructions">
-        You can view and download letters for various purposes below.
-      </p>
 
-      <div className="input-group">
+      {/*  first one search category Dropdown */}
+      <div className="input-group ">
         {/* Main Category Dropdown */}
         <div className="btn-group">
           <button
@@ -502,7 +512,7 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
           </ul>
         </div>
 
-        {/* Input box to display selected category, subcategory, and template */}
+          {/* Input Box to display selected category, subcategory, and template */}
         <input
           type="text"
           className="form-control"
@@ -510,6 +520,64 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
           value={`${selectedCategory} ${selectedSubcategory} ${selectedTemplate}`.trim()}
           readOnly
         />
+      </div>
+      
+      <div>
+        <h1 style={{ paddingTop: '8%', color: 'wheat', fontWeight: 'bold', textAlign: 'center' }}>
+          View And Download <span style={{ fontFamily: 'cursive', color: 'red' }}>Letters</span>
+        </h1>
+      </div>
+
+      
+      <p className="view-download-instructions">
+        You can view and download letters for various purposes below.
+      </p>
+      
+
+      {/* Second Section: Card-Style Category Selector */}
+      <div className="secondsearch-card-selector-container">
+        <h3 style={{ marginTop: 0, color: '#9B2D20', fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>Select Category</h3>
+        <div className="secondsearch-card-category-list">
+          {Object.keys(categories).map((category) => (
+            <div
+              key={category}
+              className={`secondsearch-card secondsearch-category-card ${selectedCategory === category ? 'active' : ''}`}
+              onClick={() => handleCategorySelection(category)}
+            >
+              {category}
+            </div>
+          ))}
+        </div>
+
+        {selectedCategory && (
+          <div className="secondsearch-card-subcategory-list" ref={subcategoryRef}>
+            <h4 style={{ marginTop: 0, color: '#9B2D20', fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>{selectedCategory} - Select Subcategory</h4>
+            {Object.keys(categories[selectedCategory]).map((subcategory) => (
+              <div
+                key={subcategory}
+                className={`secondsearch-card secondsearch-subcategory-card ${selectedSubcategory === subcategory ? 'active' : ''}`}
+                onClick={() => handleSubcategorySelection(subcategory)}
+              >
+                {subcategory}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {selectedSubcategory && (
+          <div className="secondsearch-card-template-list" ref={templateRef}>
+            <h4 style={{ marginTop: 0, color: '#9B2D20', fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>{selectedSubcategory} - Select Template</h4>
+            {categories[selectedCategory][selectedSubcategory]?.map((template) => (
+              <div
+                key={template}
+                className={`secondsearch-card secondsearch-template-card ${selectedTemplate === template ? 'active' : ''}`}
+                onClick={() => handleTemplateSelection(template)}
+              >
+                {template}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Letter Generation Section */}

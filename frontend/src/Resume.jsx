@@ -9,13 +9,23 @@ import Endbar from './components/Endbar'
 
 export default function Resume() {
   return (
+    <div style={{ backgroundColor: 'black'}}>
     <div>
       <Navbar />
-      <ResumeIntro />
-      <ResumeTemplate/>
-      <ResumeImportance />
-      <Feedback />
+      <div style={{ backgroundColor: 'black' }}>
+        <ResumeIntro />
+      </div>
+      <div style={{ backgroundColor: 'black'}}>
+        <ResumeTemplate />
+      </div>
+      <div style={{ backgroundColor: 'black'}}>
+        <ResumeImportance />
+      </div>
+      <div style={{ backgroundColor: 'black'}}>
+        <Feedback />
+      </div>
       <Endbar />
+      </div>
     </div>
   )
 }

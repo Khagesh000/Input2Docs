@@ -5,7 +5,7 @@ import HomeImageCarousel from './components/HomeImageCaurosel'; // Assuming this
 import CardArrange from './components/CardArrange'; // Assuming this is correctly imported
 import Websitemainmoto from './components/Websitemainmoto';
 import Process from './components/Process'; // Assuming this is correctly imported
-import FormatLetters from './components/FormatLetters';
+
 import ImageView from './components/imageview'; // Assuming this is correctly imported
 import Feedback from './components/Feedback';
 import Endbar from './components/Endbar'; // Assuming this is correctly imported
@@ -23,6 +23,7 @@ import Cv from './Cv';
 function MainContent() {
   return (
     <>
+    <div style={{ backgroundColor: 'white'}}>
       <Navbar />
       <HomeImageCarousel />
       <Websitemainmoto />
@@ -30,15 +31,16 @@ function MainContent() {
         <CardArrange />
       </div>
       
-      <div className='ProcessSection'>
+      <div>
         <Process />
       </div>
-      <div className='FormatLettersSection bg-black'>
-        <FormatLetters />
+      <div>
+  
       </div>
       <ImageView />
       <Feedback />
       <Endbar />
+      </div>
     </>
   );
 }

@@ -1,14 +1,17 @@
+/* Set overall container styles */
 .image-view-container {
     display: grid;
     grid-template-columns: 1fr 2fr; /* 1/3 for icons, 2/3 for content */
-    gap: 20px;
-    padding: 50px 20px;
+    gap: 20px; /* Increased space between boxes for a cleaner look */
+    padding: 40px 20px; /* Padding for the overall container */
     position: relative;
-    color: white;
+    color: #333; /* Dark text color for better contrast */
     min-height: 100vh;
+    background-color: #f3f4f6; /* Light grey background */
     animation: fadeIn 2s ease-in-out;
 }
 
+/* Add background image to the bottom */
 .image-view-container::before {
     content: '';
     position: absolute;
@@ -24,62 +27,82 @@
     opacity: 0.7; /* Adjust opacity as needed */
 }
 
+/* Styling for icon section */
 .icon-section1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    gap: 20px; /* Increased gap between icons for better spacing */
 }
 
+/* Styling for icons */
 .icon1 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+    font-size: 3rem; /* Slightly larger icon size for better visibility */
+    margin-bottom: 20px;
     background: linear-gradient(to bottom, #ffdd99, #ff6347); /* Gradient color for icons */
     -webkit-background-clip: text; /* Vendor prefix for WebKit browsers */
     background-clip: text; /* Standard property */
     -webkit-text-fill-color: transparent; /* Vendor prefix for WebKit browsers */
-    filter: drop-shadow(1px 1px 1px yellow); /* Yellow drop-shadow filter */
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Transition for hover effect */
+    filter: drop-shadow(2px 2px 3px #ff6347); /* Slightly more intense drop-shadow */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+/* Hover effect for icons */
 .icon1:hover {
-    transform: scale(1.2); /* Slightly enlarge the icon on hover */
-    filter: drop-shadow(2px 2px 2px yellow); /* More intense drop-shadow on hover */
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+    filter: drop-shadow(3px 3px 4px #ff6347); /* Stronger drop-shadow on hover */
+    color: #ff6347; /* Change icon color on hover */
 }
 
+/* Styling for content sections */
 .content-section {
-    padding: 20px 30px;
-    background: rgba(0, 0, 0, 0.7); /* Darker transparent background */
-    border-radius: 10px;
+    padding: 25px 10px; /* Added more padding inside content sections */
+    background: rgba(0, 0, 0, 0.8); /* Darker transparent background */
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     animation: slideUp 1.5s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-bottom: 3%;
 }
 
+/* Hover effect for content sections */
+.content-section:hover {
+    background: rgba(0, 0, 0, 0.6); /* Slightly lighten on hover */
+    transform: scale(1.03); /* Enlarge content sections slightly on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Increased shadow for a floating effect */
+}
+
+/* Main heading styling */
 .main-heading {
-    font-size: 2.8rem;
+    font-size: 2.6rem; /* Larger font size for the main heading */
     font-weight: bold;
     color: #ffdd99;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #ffdd99 0%, #b22222 100%);
+    background: linear-gradient(to bottom, #ffdd99 0%, #ff6347 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    transition: color 0.3s ease-in-out;
 }
 
+/* Content paragraph styling */
 .content {
-    font-size: 1.4rem;
-    margin: 20px 0;
-    line-height: 1.8;
+    font-size: 1.2rem; /* Increased font size for more readable text */
+    margin: 20px 0; /* More margin for better spacing between paragraphs */
+    line-height: 1.7; /* Increased line height for readability */
     color: #ffdd99;
     font-family: 'Roboto', sans-serif;
 }
 
+/* Keyframe for fade-in animation */
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
+/* Keyframe for slide-up animation */
 @keyframes slideUp {
     0% { transform: translateY(50px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
@@ -90,36 +113,41 @@
     .image-view-container {
         grid-template-columns: 1fr; /* Stack columns on top of each other */
     }
-    
+
     .icon-section1 {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
     }
-    
+
     .icon1 {
+        font-size: 2.5rem; /* Slightly smaller icon size on smaller screens */
         margin-bottom: 20px;
     }
-    
+
     .content-section {
-        padding: 15px;
+        padding: 20px 25px; /* Adjust padding for better spacing on smaller screens */
     }
 }
 
+/* Adjustments for very small screens */
 @media (max-width: 480px) {
     .main-heading {
-        font-size: 2rem; /* Smaller heading on very small screens */
+        font-size: 2.1rem; /* Smaller heading on very small screens */
     }
-    
+
     .content {
-        font-size: 1rem; /* Smaller content text on very small screens */
+        font-size: 1.0rem; /* Slightly smaller content text on very small screens */
+    }
+
+    .icon1 {
+        font-size: 2.0rem; /* Smaller icons on very small screens */
     }
 }
 
-/* Increase icon size for large screens */
+/* Increase icon size for very large screens */
 @media (min-width: 1200px) {
     .icon1 {
-        font-size: 5rem; 
-       
+        font-size: 3.3rem; /* Larger icons on very large screens */
     }
 }

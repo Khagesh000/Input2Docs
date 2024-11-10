@@ -20,6 +20,7 @@ import img4 from '../assets/images/cover_letter.png';
 import img5 from '../assets/images/cover_letter1.png';
 import img6 from '../assets/images/cover_letter.png';
 import img7 from '../assets/images/cover_letter1.png';
+import img8 from '../assets/images/cover_letter1.png';
 
 import { templateInputFields } from './CoverLetterTemplateInputfields';
 import { generateTemplateContent } from './CoverLetterGeneralTemplates';
@@ -45,17 +46,20 @@ export default function CoverLetterTemplates({ images: imgList }) {
     experience: '',
     skills: [],
     strengths: [],
-    date: '',
+    date: 'August 21, 2024',
     gap: "",
     desiredRole: "",
     previousJobTitle: "",
-    workingStyle: "",
+    workingStyle: [],
     closing: '',
     contactInfo: '',
   });
 
   const [selectedTemplateType, setSelectedTemplateType] = useState(1); // Add state for template type
   const [networkError, setNetworkError] = useState(false); // State to manage network error
+  const [showContent, setShowContent] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(""); // State to store error message
+  const images = [img, img1, img2, img3, img4, img5, img6, img7, img8];
 
   const handleMultiChange = (selectedOptions, fieldName) => {
     setFormData({
@@ -194,7 +198,7 @@ export default function CoverLetterTemplates({ images: imgList }) {
     }),
   };
 
-  const images = [img, img1, img2, img3, img4, img5, img6, img7];
+
 
   useEffect(() => {
     const updateCardWidth = () => {
@@ -285,7 +289,7 @@ export default function CoverLetterTemplates({ images: imgList }) {
     setSelectedImage(images[index]);
     
     // Map index to template type, assuming each index corresponds to a specific template type.
-    const templateType = (index % 3) + 1; // Example: Mapping index to template type (1, 2, or 3)
+    const templateType = (index % 9) + 1; // Example: Mapping index to template type (1, 2, or 3)
   
     setSelectedTemplateType(templateType);
     setContent(generateTemplateContent(formData, templateType));
@@ -322,53 +326,74 @@ export default function CoverLetterTemplates({ images: imgList }) {
       ...prevFormData,
       [name]: value
     }));
-    if (value) {
-      const filteredSuggestions = workingStyleOptions.filter(option =>
-        option.toLowerCase().includes(value.toLowerCase())
-      );
-      setSuggestions(filteredSuggestions);
+    
+  };
+
+   // Check if all required fields are filled
+   const areAllFieldsFilled = () => {
+    const requiredFields = [
+      'firstName',
+      'lastName',
+      'jobTitle',
+      'companyName',
+      'hiringManagerName',
+      'experience',
+      'skills',
+      'strengths',
+      'gap',
+    ];
+
+  
+    for (let field of requiredFields) {
+      if (!formData[field] || (Array.isArray(formData[field]) && formData[field].length === 0)) {
+        console.error(`Error: The field "${field}" is missing or empty.`);
+        return false;
+      }
+    }
+
+    return true;
+  };
+
+
+  const handleGenerateCoverLetter = () => {
+    if (areAllFieldsFilled()) {
+      setShowContent(true);
+      setErrorMessage(""); // Clear any previous error message
     } else {
-      setSuggestions([]);
+      setErrorMessage("Please fill in all the required fields before generating the cover letter.");
     }
   };
 
 
-
-
-
-const handleDownloadPNG = () => {
-  const tempDiv = document.createElement('div');
-  tempDiv.innerHTML = content;
-
-  // Apply global styles to ensure consistent appearance
-  tempDiv.style.fontFamily = 'Arial, sans-serif';
-  tempDiv.style.color = '#000'; // Text color
-  // Background color
-  tempDiv.style.width = '210mm';
-  tempDiv.style.height = '296mm';
-
-
-  // Apply specific styles to all child elements
-  tempDiv.querySelectorAll('*').forEach(element => {
-    element.style.color = '#000'; // Text color
-    // Background color
-   // Ensure consistent font size
-  });
-
-  document.body.appendChild(tempDiv);
-
-  html2canvas(tempDiv, 
-  { scale: 2,
-    width: tempDiv.clientWidth,
-    height: tempDiv.clientHeight,
-   }).then((canvas) => {
-    const link = document.createElement('a');
-    link.href = canvas.toDataURL('image/png');
-    link.download = 'cover-letter-template.png';
-    link.click();
-    document.body.removeChild(tempDiv);
-  });
-};
+  const handleDownloadPNG = () => {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = content;
+  
+    // Apply global styles to ensure consistent appearance
+    tempDiv.style.fontFamily = 'Arial, sans-serif';
+    tempDiv.style.color = '#000'; // Set default text color
+    tempDiv.style.backgroundColor = '#fff'; // Set background color if needed
+    tempDiv.style.width = '210mm'; // A4 size width
+    tempDiv.style.height = '297mm'; // A4 size height
+    tempDiv.style.boxSizing = 'border-box';
+    tempDiv.style.padding = '10px'; // Add some padding if necessary
+  
+    // Append the temp div to the body
+    document.body.appendChild(tempDiv);
+  
+    // Use html2canvas to capture the content
+    html2canvas(tempDiv, {
+      scale: 3, // Increase scale for better quality
+      useCORS: true, // To handle cross-origin issues with external resources
+      allowTaint: true,
+    }).then((canvas) => {
+      const link = document.createElement('a');
+      link.href = canvas.toDataURL('image/png', 1.0); // Get PNG data URL
+      link.download = 'CoverLetterTemplate.png'; // Name of the downloaded file
+      link.click(); // Trigger the download
+      document.body.removeChild(tempDiv); // Clean up
+    });
+  };
 
 
 const handleDownloadPDF = () => {
@@ -435,6 +460,13 @@ const handleDownloadPDF = () => {
                   <button 
                     className="btn btn-primary" 
                     onClick={() => handleUseTemplate(index)}
+                    style={{
+                      backgroundColor: '#ff6600',
+                      marginBottom: '15%',
+                      cursor: 'pointer',
+                      transition: 'background-color 0.3s ease, transform 0.2s ease',
+                      fontWeight: 'bold'
+                    }}
                   >
                     Use Template
                   </button>
@@ -486,7 +518,17 @@ const handleDownloadPDF = () => {
             
             {visibleRows * 3 < images.length && (
               <div className="text-center mt-3">
-                <button className="btn btn-secondary show-more" onClick={handleShowMore}  disabled={loading}>
+                <button className="btn btn-secondary show-more" onClick={handleShowMore}  disabled={loading}
+                style={{
+                  backgroundColor: '#ff6600',
+                  color: 'white',
+                  padding: '12px 24px',
+                  fontWeight: 'bold',
+                  borderRadius: '15px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'background-color 0.3s ease, transform 0.2s ease',
+                }}>
                   {loading ? 'Loading...' : 'Show More'}
                 </button>
               </div>
@@ -500,7 +542,7 @@ const handleDownloadPDF = () => {
     <div className="selected-image-wrapper" ref={editorRef}>
       <div className="row">
         {/* Resume Input Fields on the Left Side */}
-        <div className="col-lg-8 resume-input">
+        <div className="resume-input m-2">
           <div className="form-group row">
             {/* Render template input fields */}
             {templateInputFields[selectedTemplateType].map((field, index) => (
@@ -620,7 +662,7 @@ const handleDownloadPDF = () => {
       <Select
         isMulti
         options={workingStyleOptions}
-        value={workingStyleOptions.find(option => option.value === formData.workingStyle)}
+        value={formData.workingStyle} // This will bind the selected options to formData
         onChange={(selectedOption) => handleSingleChange(selectedOption, "workingStyle")}
         styles={customStyles}
         placeholder="Select your working style"
@@ -630,6 +672,17 @@ const handleDownloadPDF = () => {
     </div>
 
           </div>
+          {errorMessage && (
+      <div className="alert alert-danger" role="alert">
+        {errorMessage}
+      </div>
+    )}
+
+          {!showContent || (showContent && !loading) ? (
+  <button className="btn btn-primary" onClick={handleGenerateCoverLetter}>
+    Generate Cover Letter
+  </button>
+) : null}
         </div>
       
 
@@ -676,6 +729,8 @@ const handleDownloadPDF = () => {
         </div>
         </div>
             
+
+        {showContent && (
         <div className="editor-container">
   <Editor
     className='key-editor'
@@ -698,7 +753,7 @@ const handleDownloadPDF = () => {
     onEditorChange={(newContent) => setContent(newContent)}
   />
 </div>
-         
+        )}     
           {networkError && (
         <div className="network-error">
           Network issue detected. Some features may not work properly.
@@ -714,7 +769,11 @@ const handleDownloadPDF = () => {
         </div>
       )}
       </section>
+      
     </div>
+
+
+    
     
   );
 }

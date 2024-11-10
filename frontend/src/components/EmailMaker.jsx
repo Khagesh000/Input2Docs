@@ -3,6 +3,7 @@ import ReactQuill from 'react-quill';
 import '../EmailMaker.css'
 import 'react-quill/dist/quill.snow.css';
 
+
 const EmailMaker = ({ selectedTemplate }) => {
   const [emailTemplates, setEmailTemplates] = useState({});
   const [formData, setFormData] = useState({});
