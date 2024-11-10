@@ -15,6 +15,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    align-items: stretch;
   }
   
   .emailmain-card {
@@ -28,11 +29,17 @@
     justify-content: center;
     text-align: center;
     min-height: 180px;
+    position: relative;
   }
   
   .emailmain-card:hover {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     transform: translateY(-6px);
+  }
+  
+  /* Alternate layout effect */
+  .alt-layout {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 193, 7, 0.2));
   }
   
   .emailmain-card-title {
@@ -45,6 +52,75 @@
   .emailmain-card-description {
     font-size: 1rem;
     color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Styling for special cards */
+  .emailmain-card:nth-child(7) .emailmain-card-title {
+    color: #ff6347; /* Distinct color for "Artificial Intelligence" card */
+  }
+  
+  .emailmain-card:nth-child(8) {
+    background: linear-gradient(135deg, #ddd, #eee);
+    border: 1px dashed #999;
+    color: #999;
+  }
+  
+  .emailmain-card:nth-child(8) .emailmain-card-title,
+  .emailmain-card:nth-child(8) .emailmain-card-description {
+    color: #666;
+  }
+  
+
+
+  .emailmain-bottom-content {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: left;
+  }
+  
+  .bottom-heading {
+    font-size: 2rem;
+    color: #1a73e8;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .bottom-intro {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .bottom-subheading {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .benefits-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .benefits-list li {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+  }
+  
+  .closing-remark {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
     line-height: 1.6;
   }
   
