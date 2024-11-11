@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../SearchCategory.css';
 import '../Searchcategory-new.css'; // Import custom CSS for styling
 import LetterMaker from './LetterMaker'; // Assuming this is where your LetterMaker component resides
+import { FaBriefcase, FaClock, FaStar } from 'react-icons/fa';
 
 const categories = {
   "School Letters": {
@@ -419,6 +420,9 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
   const subcategoryRef = useRef(null);
   const templateRef = useRef(null);
 
+
+ 
+
   useEffect(() => {
     if (selectedCategory) {
       subcategoryRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -455,10 +459,41 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
   };
 
   return (
-    <div className="container">
+    <div className="container" style={{paddingTop: '3%'}}>
+
+<div className="lettermaker-container">
+      <div className="lettermaker-content">
+        <div className="ProcessHeading">
+          <h1 className="lettermaker-title animate-slow">
+            Craft Your Letters, <span>Professionally and Effortlessly</span>
+          </h1>
+        </div>
+        <p className="lettermaker-subtitle animate-fadein" style={{color: 'grey'}}>
+          Discover professionally designed templates that simplify your communication and make a lasting impression.
+        </p>
+
+        
+
+        <div className="lettermaker-feature-grid" >
+
+          <div className="lettermaker-feature-card animate-slideup delay-200">
+            <div className="lettermaker-icon-circle">
+              <FaStar className="lettermaker-icon" />
+            </div>
+            <h2 className="lettermaker-feature-title">Make a Lasting Impression</h2>
+    <p className="lettermaker-feature-description">
+      Our Letter Maker helps you craft polished, compelling letters that reflect your message with clarity and professionalism.
+    </p>
+            <div className="lettermaker-card-accent"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
 
       {/*  first one search category Dropdown */}
-      <div className="input-group ">
+      <div className="input-group">
         {/* Main Category Dropdown */}
         <div className="btn-group">
           <button
@@ -522,14 +557,14 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
         />
       </div>
       
-      <div>
-        <h1 style={{ paddingTop: '8%', color: 'wheat', fontWeight: 'bold', textAlign: 'center' }}>
-          View And Download <span style={{ fontFamily: 'cursive', color: 'red' }}>Letters</span>
+      <div className='ProcessHeading mt-5'>
+        <h1 >
+          View And Download <span>Letters</span>
         </h1>
       </div>
 
       
-      <p className="view-download-instructions">
+      <p className="view-download-instructions" style={{color: 'grey', fontWeight: 'bolder'}}>
         You can view and download letters for various purposes below.
       </p>
       
@@ -583,8 +618,8 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
       {/* Letter Generation Section */}
       <div ref={letterGenerationSectionRef} className="letter-generation-section">
         {selectedTemplate && (
-          <div>
-            <h2 className='Generate-your'>Generate Your Letter</h2>
+          <div className='ProcessHeading mt-5'>
+            <h1 >Generate Your <span>Letter</span></h1>
             <LetterMaker selectedTemplate={selectedTemplate} />
           </div>
         )}

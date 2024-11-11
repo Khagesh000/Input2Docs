@@ -456,7 +456,7 @@ const EmailSearchCategory = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container" style={{backgroundColor: '#f3f4f6', paddingTop: '3%', maxWidth: '100%'}}>
 
 <div className="input-group mb-3">
         {/* Main Category Dropdown */}
@@ -523,19 +523,19 @@ const EmailSearchCategory = () => {
         />
       </div>
 
-      <div>
-        <h1 style={{ paddingTop: '3%', color: 'wheat', fontWeight: 'bold', textAlign: 'center' }}>
-          View And Generate <span style={{ fontFamily: 'cursive', color: 'red' }}>Emails</span>
+      <div className='ProcessHeading'>
+        <h1 style={{ paddingTop: '3%',fontWeight: 'bold', textAlign: 'center' }}>
+          View And Generate <span>Emails</span>
         </h1>
       </div>
-      <p className="view-download-instructions">
+      <p className="view-download-instructions" style={{color: 'grey'}}>
         You can view and generate emails for various purposes below.
       </p>
 
       
 
       {/* Second Section: Card-Style Category Selector */}
-      <div className="secondsearch-card-selector-container">
+      <div className="secondsearch-card-selector-container container">
         <h3 style={{ marginTop: 0, color: '#9B2D20', fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>Select Category</h3>
         <div className="secondsearch-card-category-list">
           {Object.keys(categories).map((category) => (
@@ -581,10 +581,10 @@ const EmailSearchCategory = () => {
       </div>
 
       {/* Email Generation Section */}
-      <div ref={emailGenerationSectionRef} className="email-generation-section pt-5">
+      <div ref={emailGenerationSectionRef} className="email-generation-section pt-5 container">
         {selectedTemplate && (
           <div>
-            <h2 className='text-center Generate-your'>Generate Your Email</h2>
+            <div className='ProcessHeading'><h1 className='text-center '>Generate Your <span>Email</span></h1></div>
             <p className='select-temp'>Selected Template:<span>{selectedTemplate}</span></p> {/* Display selected template */}
             <EmailMaker selectedCategory={selectedCategory} selectedSubcategory={selectedSubcategory} selectedTemplate={selectedTemplate} />
            

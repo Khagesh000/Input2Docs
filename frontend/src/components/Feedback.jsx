@@ -51,8 +51,8 @@ export default function Feedback() {
   
 
   return (
-    <div className='feedback-bg'>
-      <div className="container py-5 mt-1 bg-wheat text-black">
+    <div className='feedback-bg pb-5'>
+      <div className="container py-5 bg-wheat text-black" style={{marginTop: '0'}}>
         <div className="row">
           <div className="col-md-6 d-flex">
             <div className="feedback-content p-4 shadow bg-wheat rounded d-flex flex-column justify-content-between w-100">

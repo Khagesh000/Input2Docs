@@ -6,7 +6,9 @@ export default function LetterMainMoto() {
     <div className="letter-container">
       <div className="ProcessHeading">
         <h1>Discover a Wide Range of <span>Letter Templates</span></h1>
-        <p className="subtitle">Whether you need a professional business letter, a heartfelt apology, or a formal application, we’ve got you covered. Browse through our extensive categories to find the perfect template for your needs.</p>
+        <p className="subtitle">
+          Whether you need a professional business letter, a heartfelt apology, or a formal application, we’ve got you covered. Browse through our extensive categories to find the perfect template for your needs.
+        </p>
       </div>
 
       <div className="letter-categories">

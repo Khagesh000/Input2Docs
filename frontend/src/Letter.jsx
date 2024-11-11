@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './components/navbar';
 import './Letter.css';
 import SearchCategory from './components/SearchCategory';
-import ImageCarousel from './components/ImageCaurosel';
+
 import Endbar from './components/Endbar';
 import LetterMaker from './components/LetterMaker';
 import Process from './components/Process';
@@ -15,18 +15,18 @@ export default function Letter() {
   const [selectedSubcategory, setSelectedSubcategory] = useState('');
 
   return (
-    <div style={{ backgroundColor: 'black'}}>
+    <div style={{ backgroundColor: '#f3f4f6'}}>
     <div>
       <Navbar />
-      <ImageCarousel />
-      <div className='SearchCategorySection bg-black text-light'>
+
+      <div style={{ backgroundColor: '#f3f4f6'}}>
         <SearchCategory
           handleSubcategoryClick={(subcategory) => setSelectedSubcategory(subcategory)}
           selectedSubcategory={selectedSubcategory}
         />
       </div>
 
-      <div className='LetterMakerSection'>
+      <div>
         <LetterMaker selectedTemplate={selectedSubcategory} />
       </div>
 

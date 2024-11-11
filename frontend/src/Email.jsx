@@ -20,8 +20,8 @@ const Email = () => {
   };
 
   return (
-    <div style={{ backgroundColor: 'black'}}>
-    <div>
+    
+    <div style={{ backgroundColor: 'f3f4f6'}}>
       
       {/* Navbar component */}
       <Navbar />
@@ -29,7 +29,7 @@ const Email = () => {
       {/* EmailImageCaurosel component */}
       <EmailImageCaurosel />
 
-      <div className='SearchCategorySection bg-black text-light'>
+      <div style={{backgroundColor: 'f3f4f6'}}>
         {/* EmailSearchCategory component */}
         <EmailSearchCategory
           handleSubcategoryClick={handleSubcategoryClick}
@@ -45,16 +45,16 @@ const Email = () => {
       )}
 
       {/* EmailProcess component */}
-      <div className='ProcessSection' style={{ backgroundColor: '#f3f4f6'}}>
+      <div style={{ backgroundColor: '#f3f4f6'}}>
         <EmailProcess />
       </div>
 
       {/* ImportanceEmail component */}
-      <div className='ProcessSection' style={{ backgroundColor: '#f3f4f6'}}><ImportanceEmail /></div>
+      <div  style={{ backgroundColor: '#f3f4f6'}}><ImportanceEmail /></div>
       
       <EmailMainMoto />
       
-      <div className='ProcessSection' style={{ backgroundColor: '#f3f4f6'}}>
+      <div style={{ backgroundColor: '#f3f4f6'}}>
         {/* Feedback component */}
       <Feedback/>
       </div>
@@ -62,7 +62,7 @@ const Email = () => {
       {/* Endbar component */}
       <Endbar />
       </div>
-    </div>
+ 
   );
 };
 

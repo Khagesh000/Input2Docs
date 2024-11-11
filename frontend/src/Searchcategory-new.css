@@ -14,7 +14,7 @@
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  background-color: #FFF8F0; /* Lighter wheat background for the selector */
+  background-color: #eba657; /* Lighter wheat background for the selector */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -82,6 +82,147 @@
   font-family: 'Inter', sans-serif;
 }
 
+
+/*Content Section */
+.lettermaker-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #f1f5f8, #f3f4f6);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.lettermaker-content {
+  max-width: 800px;
+}
+
+.lettermaker-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: red;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.lettermaker-subtitle {
+  font-size: 1.3rem;
+  color: #f8f8f8;
+  margin-top: 1rem;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.lettermaker-feature-grid {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.lettermaker-feature-card {
+  flex: 1;
+  min-width: 250px;
+  padding: 2rem;
+  background-color: #f1f1f1;
+  border: 2px solid #d32f2f;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.lettermaker-feature-card:hover {
+  background: wheat;
+  border-color: #d32f2f;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-6px);
+}
+
+.lettermaker-icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #d32f2f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  transition: background 0.3s ease;
+}
+
+.lettermaker-feature-card:hover .lettermaker-icon-circle {
+  background: #1c1c1c;
+}
+
+.lettermaker-icon {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.lettermaker-feature-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.lettermaker-feature-card:hover .lettermaker-feature-title {
+  color: #d32f2f;
+}
+
+.lettermaker-feature-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.lettermaker-card-accent {
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background-color: #d32f2f;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.lettermaker-feature-card:hover .lettermaker-card-accent {
+  width: 80%;
+}
+
+.animate-slow {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.animate-fadein {
+  opacity: 1;
+}
+
+.animate-slideup {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-100 {
+  transition-delay: 0.2s;
+}
+
+.delay-200 {
+  transition-delay: 0.4s;
+}
+
+
+
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .secondsearch-card {
@@ -135,4 +276,41 @@ button.btn {
 
 button.btn:hover {
   background-color: #D14938; /* Darker red on hover */
+}
+
+.lettermaker-feature-grid {
+  display: flex;
+  overflow-x: scroll;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.lettermaker-feature-card {
+  flex: 0 0 100%;
+  min-width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  scroll-snap-align: center;
+}
+
+/* Add left and right navigation buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-button.left {
+  left: 10px;
+}
+
+.carousel-button.right {
+  right: 10px;
 }
