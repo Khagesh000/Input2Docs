@@ -15,7 +15,7 @@ import CoverLetter from './CoverLetter';
 import Resume from './Resume'
 import Cv from './Cv';
 import Contact from './Contact';
-import SignupModal from './components/SignupModal'; // Import the Signup Modal
+ // Import the Signup Modal
 
 function MainContent() {
   return (
@@ -48,21 +48,13 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const signedUp = localStorage.getItem('signedUp');
-    if (!signedUp) {
-      setShowSignup(true); // Show signup if the user has not signed up
-    }
-  }, []);
+  
 
-  const closeSignupModal = () => {
-    setShowSignup(false);
-  };
-
+ 
   return (
     <div>
       {!isSpecialPage && <MainContent />}
-      {showSignup && <SignupModal onClose={closeSignupModal} />} {/* Show signup modal */}
+
       <Routes>
         <Route path="/letter" element={<Letter />} />
         <Route path="/email" element={<Email />} />
