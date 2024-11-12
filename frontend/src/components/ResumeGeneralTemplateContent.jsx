@@ -56,7 +56,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
             <p style="margin: 0; color: black;">${email || 'email@example.com'}</p>
             <p style="margin: 0; color: black;">${phone || '(123) 456-7890'}</p>
             <p style="margin: 0; color: black;">${linkedin || 'linkedin.com/in/username'}</p>
-            <p style="margin: 0; color: black;">${Github || 'Github.com/in/username'}</p>
+            
           </div>
         </div>
   
@@ -911,20 +911,35 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         <div style="background-color: #fff; margin-bottom: 7px;  justify-content: space-between; align-items: flex-start; color: black;">
   
           <!-- Left Side (LinkedIn, GitHub) -->
-          <div style="display: flex; flex-direction: column; flex: 1; padding: 5px 0;">
-            <div style="display: flex; justify-content: flex-start;">
-              <p style="margin: 0; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">Email:</span></p>
-              <p style="margin: 0; color: #3a4f74c4; font-weight: 500;">${email || 'email@example.com'}</p>
-            </div>
-            <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
-              <p style="margin: 0; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">Mobile:</span></p>
-              <p style="margin: 0; color: #333; font-weight: 500;">${phone || '(123) 456-7890'}</p>
-            </div>
-            <!-- Horizontal Line -->
-        <hr style="border: 0; height: 2px; background-color: #121111; margin: 2px 0; margin-left: 12px; margin-right: 12px;" />
-        <!-- Horizontal Line -->
-        <hr style="border: 0; height: 2px; background-color: #121111; margin: 0px 0; margin-left: 12px; margin-right: 12px;" />
-          </div>
+          <div style="display: flex; justify-content: space-between; padding: 10px;">
+
+  <!-- Left Side (Email, Mobile) -->
+  <div style="display: flex; flex-direction: column; flex: 1; padding-right: 20px;">
+    <div style="display: flex; justify-content: flex-start;">
+      <p style="margin: 0; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">Email:</span></p>
+      <p style="margin: 0; color: #3a4f74c4; font-weight: 500; margin-left: 8px;">${email || 'email@example.com'}</p>
+    </div>
+    <div style="display: flex; justify-content: flex-start; margin-top: 5px;">
+      <p style="margin: 0; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">Mobile:</span></p>
+      <p style="margin: 0; color: #333; font-weight: 500; margin-left: 8px;">${phone || '(123) 456-7890'}</p>
+    </div>
+  </div>
+
+  <!-- Right Side (LinkedIn, GitHub) -->
+  <div style="display: flex; flex-direction: column; flex: 1; padding-left: 20px;">
+    <div style="display: flex; justify-content: flex-start;">
+      <p style="margin: 0; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">LinkedIn:</span></p>
+      <p style="margin: 0; color: #3a4f74c4; font-weight: 500; margin-left: 8px;">${linkedin || 'linkedin.com/in/username'}</p>
+    </div>
+    <div style="display: flex; justify-content: flex-start; margin-top: 5px;">
+      <p style="margin: 0; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">GitHub:</span></p>
+      <p style="margin: 0; color: #333; font-weight: 500; margin-left: 8px;">${Github || 'github.com/username'}</p>
+    </div>
+  </div>
+
+</div>
+
+
   
           <!-- Summary Section -->
         <div style="color: #000; margin-bottom: 5px;">
@@ -2459,7 +2474,6 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         <p style="margin: 0; color: #333;">${email || 'email@example.com'}</p>
         <p style="margin: 0; color: #333;">${phone || '(123) 456-7890'}</p>
         <p style="margin: 0; color: #333;">${linkedin || 'linkedin.com/in/username'}</p>
-        <p style="margin: 0; color: #333;">${Github || 'github.com/username'}</p>
       </div>
 
       <!-- Objective Section -->

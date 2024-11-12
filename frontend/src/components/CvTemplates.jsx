@@ -1129,7 +1129,7 @@ const handleDownloadPDF = () => {
 
       {/* Experience Section */}
 <div className="form-group">
-  <label>Experience</label>
+  <label>Experience/Internship</label>
   {formData.experience.map((exp, index) => (
     <div key={index} className="form-group mb-4">
       <input

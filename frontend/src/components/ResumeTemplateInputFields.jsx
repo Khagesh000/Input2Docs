@@ -4,7 +4,6 @@ export const templateInputFields = {
     { label: 'Last Name', name: 'lastName', type: 'text' },
     { label: 'Phone', name: 'phone', type: 'text' },
     { label: 'Email', name: 'email', type: 'email' },
-    { label: 'Github', name: 'Github', type: 'text' },
     { label: 'LinkedIn', name: 'linkedin', type: 'text' },
     { label: 'Summary', name: 'summary', type: 'textarea' }
   ],
@@ -53,6 +52,8 @@ export const templateInputFields = {
     { label: 'Last Name', name: 'lastName', type: 'text' },
     { label: 'Email', name: 'email', type: 'email' },
     { label: 'Phone', name: 'phone', type: 'text' },
+    { label: 'LinkedIn', name: 'linkedin', type: 'text' },
+    { label: 'Github', name: 'Github', type: 'text' },
     { label: 'Summary', name: 'summary', type: 'textarea' }
   ],
   7: [
@@ -146,7 +147,6 @@ export const templateInputFields = {
     { label: 'Last Name', name: 'lastName', type: 'text' },
     { label: 'Email', name: 'email', type: 'email' },
     { label: 'LinkedIn', name: 'linkedin', type: 'text' },
-    { label: 'Github', name: 'Github', type: 'text' },
     { label: 'Phone', name: 'phone', type: 'text' },
     { label: 'Summary', name: 'summary', type: 'textarea' }
   ],

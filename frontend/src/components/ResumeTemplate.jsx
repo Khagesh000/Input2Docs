@@ -622,16 +622,23 @@ const handleDownloadPNG = () => {
   // Append the temp div to the body
   document.body.appendChild(tempDiv);
 
-  // Use html2canvas to capture the content
+  // Calculate scaling factor to fit the content within A4 height
+  const actualHeight = tempDiv.offsetHeight;
+  const a4Height = 297 * 3; // A4 page height in pixels at 3x scale
+  const scale = a4Height / actualHeight; // Scale down if needed
+
+
   html2canvas(tempDiv, {
-    scale: 3, // Increase scale for better quality
-    useCORS: true, // To handle cross-origin issues with external resources
+    scale: Math.min(3, scale), // Use scale factor, max at 3 for quality
+    width: tempDiv.offsetWidth,
+    height: actualHeight,
+    useCORS: true,
     allowTaint: true,
   }).then((canvas) => {
     const link = document.createElement('a');
-    link.href = canvas.toDataURL('image/png', 1.0); // Get PNG data URL
-    link.download = 'ResumeTemplate.png'; // Name of the downloaded file
-    link.click(); // Trigger the download
+    link.href = canvas.toDataURL('image/png', 1.0); // PNG data URL
+    link.download = 'ResumeTemplate.png'; // File name
+    link.click();
     document.body.removeChild(tempDiv); // Clean up
   });
 };
@@ -893,7 +900,7 @@ const handleDownloadPDF = () => {
 
 {/* Experience Section */}
 <div className="form-group">
-  <label>Experience</label>
+  <label>Experience/Internship</label>
   {formData.experience.map((exp, index) => (
     <div key={index} className="form-group">
       <input
