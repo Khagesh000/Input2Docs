@@ -4,7 +4,7 @@ import React from 'react'
 
 
 import Navbar from './components/navbar'
-import Feedback from './components/Feedback'
+
 import Endbar from './components/Endbar'
 import CoverLetterTemplates from './components/CoverLetterTemplates'
 import CoverLetterIntro from './components/CoverLetterIntro'
@@ -22,9 +22,7 @@ export default function CoverLetter() {
       <CoverLetterAbout />
       <div>
         <CoverletterMainMoto />
-      <div style={{ backgroundColor: 'black'}}>
-      <Feedback />
-      </div>
+      
       </div>
       
       <Endbar />

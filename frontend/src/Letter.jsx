@@ -7,7 +7,6 @@ import Endbar from './components/Endbar';
 import LetterMaker from './components/LetterMaker';
 import Process from './components/Process';
 
-import Feedback from './components/Feedback';
 import ImportanceLetter from './components/ImportanceLetter';
 import LetterMainMoto from './components/Lettermainmoto';
 
@@ -38,9 +37,7 @@ export default function Letter() {
       
       <div  style={{ backgroundColor: '#f3f4f6'}}><LetterMainMoto /></div>
       
-      <div style={{ backgroundColor: '#f3f4f6'}}>
-      <Feedback />
-      </div>
+
      
       <Endbar />
       </div>

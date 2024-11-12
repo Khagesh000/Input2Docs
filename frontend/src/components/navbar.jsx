@@ -1,12 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import '../Navbar.css';
 const Navbar = () => {
   const [isNavbarOpen, setNavbarOpen] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null); // Reference to the dropdown menu
+
+  const toggleNavbar = () => {
+    setNavbarOpen(!isNavbarOpen);
+  };
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false); // Close dropdown if clicked outside
+      }
+    };
+
+    // Attach event listener on mount
+    document.addEventListener('click', handleClickOutside);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top p-2">
@@ -52,8 +73,27 @@ const Navbar = () => {
               <a className="nav-link" href="/cover">COVER LETTER</a>
             </li>
             
-            <li className="nav-item">
-              <a className="nav-link" href="/about">ABOUT US</a>
+           
+
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded={isDropdownOpen ? 'true' : 'false'}
+                onClick={toggleDropdown}
+              >
+                EXPLORE MORE
+              </a>
+              <ul className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`} aria-labelledby="navbarDropdown">
+              <li><a className="dropdown-item" href="/contact-us">Contact Us</a></li>
+                <li><a className="dropdown-item" href="/about-us">About Us</a></li>
+                <li><a className="dropdown-item" href="/privacy-policy">Privacy Policy</a></li>
+                <li><a className="dropdown-item" href="/terms-and-conditions">Terms and Conditions</a></li>
+                
+              </ul>
             </li>
            
           </ul>

@@ -1,0 +1,171 @@
+/* Overall background color */
+.contactform-bg {
+    background-color: #f3f4f6;
+    padding: 2rem 0;
+}
+
+/* Container */
+.contactform-container {
+    animation: fadeIn 1s ease-in-out;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff; /* White background for form */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+}
+
+/* Header */
+.contactform-header h2 {
+    padding-top: 5%;
+    font-size: 2.5rem;
+    color: rgb(229, 66, 66); /* Premium gold accent */
+    margin-bottom: 1rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle text shadow for depth */
+}
+
+.contactform-header p {
+    color: #777; /* Lighter grey */
+    font-size: 1.125rem;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Input Fields */
+.contactform-field {
+    margin-bottom: 1.5rem;
+}
+
+.contactform-label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #555;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Input fields design */
+.contactform-input {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.2s ease;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9; /* Slight background for inputs */
+}
+
+.contactform-input:focus {
+    border-color: #007bff; /* Blue focus color */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    background-color: #fff; /* White background on focus */
+}
+
+/* Hover effect for labels */
+.contactform-label:hover {
+    color: #007bff; /* Blue hover color for labels */
+}
+
+/* Button */
+.contactform-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.125rem;
+    background-color: #1295f3; /* Premium gold button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contactform-btn:hover {
+    background-color: #5308d6; /* Darker gold on hover */
+    transform: scale(1.05); /* Slight scaling effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contactform-btn:active {
+    transform: scale(1);
+    background-color: #bf7b07; /* Slightly darker gold on click */
+}
+
+/* Success/Failure Alerts */
+.alert {
+    font-weight: bold;
+}
+
+.network-error {
+    color: #e74c3c; /* Red for error */
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contactform-header h2 {
+        font-size: 2rem;
+    }
+
+    .contactform-header p {
+        font-size: 1rem;
+    }
+
+    .contactform-container {
+        padding: 1.5rem;
+    }
+
+    .contactform-label {
+        font-size: 1rem;
+    }
+
+    .contactform-input {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    .contactform-btn {
+        font-size: 1rem;
+    }
+
+    .contactform-field {
+        margin-bottom: 1rem;
+    }
+
+    .network-error {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactform-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .contactform-header p {
+        font-size: 0.9rem;
+    }
+
+    .contactform-btn {
+        font-size: 0.95rem;
+    }
+
+    .contactform-input {
+        font-size: 0.9rem;
+    }
+}

@@ -7,7 +7,7 @@ import Endbar from './components/Endbar'
 
 import CvAbout from './components/CvAbout'
 import CvMainMoto from './components/CvMainMoto'
-import Feedback from './components/Feedback'
+
 
 
 export default function Cv() {
@@ -28,9 +28,7 @@ export default function Cv() {
       <CvAbout />
       </div>
       <CvMainMoto />
-      <div style={{ backgroundColor: 'black'}}>
-      <Feedback />
-      </div>
+      
       <Endbar />
       </div>
     </div>

@@ -8,7 +8,7 @@ import EmailProcess from './components/EmailProcess'; // Importing EmailProcess 
 import EmailImageCaurosel from './components/EmailImageCaurosel'; // Importing EmailImageCaurosel component
 import EmailSearchCategory from './components/EmailSearchCategory'; // Importing EmailSearchCategory component
 import EmailMaker from './components/EmailMaker'; // Importing EmailMaker component
-import Feedback from './components/Feedback'; // Importing Feedback component
+
 import EmailMainMoto from './components/EmailMainMoto';
 
 const Email = () => {
@@ -54,10 +54,7 @@ const Email = () => {
       
       <EmailMainMoto />
       
-      <div style={{ backgroundColor: '#f3f4f6'}}>
-        {/* Feedback component */}
-      <Feedback/>
-      </div>
+
       
       {/* Endbar component */}
       <Endbar />

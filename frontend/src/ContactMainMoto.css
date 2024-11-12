@@ -1,0 +1,161 @@
+/* Overall section styling */
+.trust-section {
+    background-color: #fafafa; /* Light gray background */
+    padding: 4rem 2rem;
+    animation: fadeIn 2s ease-out;
+  }
+  
+  /* Heading style */
+  .trust-heading {
+    font-size: 2.75rem;
+    color: rgb(229, 66, 66); /* Refined yellow */
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+  }
+  
+  /* Trust List Styling */
+  .trust-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); /* Adjusted for better spacing */
+    gap: 2rem;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Individual Trust Item */
+  .trust-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(30px);
+    opacity: 0;
+    animation: slideUp 1s forwards;
+  }
+  
+  /* Animation delay for each item */
+  .trust-item:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .trust-item:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .trust-item:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .trust-item:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  .trust-item:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  .trust-item:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+  .trust-item:nth-child(7) {
+    animation-delay: 0.7s;
+  }
+  .trust-item:nth-child(8) {
+    animation-delay: 0.8s;
+  }
+  .trust-item:nth-child(9) {
+    animation-delay: 0.9s;
+  }
+  .trust-item:nth-child(10) {
+    animation-delay: 1s;
+  }
+  
+  /* Icon Styling */
+  .trust-icon {
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+    color: #e26111; /* Refined yellow */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .trust-item:hover .trust-icon {
+    transform: scale(1.2);
+    color: #e67e22; /* Hover effect with a darker orange-yellow */
+  }
+  
+  /* Point Text Styling */
+  .trust-point {
+    font-size: 1.25rem;
+    color: #333; /* Dark gray color */
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .trust-item:hover .trust-point {
+    color: #e67e22; /* Hover effect with a matching darker orange-yellow */
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .trust-heading {
+      font-size: 2.25rem;
+      margin-bottom: 2rem;
+    }
+  
+    .trust-list {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+  
+    .trust-item {
+      padding: 1rem;
+    }
+  
+    .trust-point {
+      font-size: 1.125rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .trust-heading {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .trust-list {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+  
+    .trust-point {
+      font-size: 1rem;
+    }
+  
+    .trust-item {
+      padding: 1rem;
+    }
+  }
+  
