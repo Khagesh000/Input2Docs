@@ -14,6 +14,7 @@ export default function EmailMainMoto() {
   ];
 
   return (
+    <div>
     <div className="emailmain-section">
       <div className='ProcessHeading'><h1 className="emailmain-title">Explore Our <span>Email Templates</span></h1></div>
       <div className="emailmain-grid">
@@ -23,6 +24,7 @@ export default function EmailMainMoto() {
             <p className="emailmain-card-description">{type.description}</p>
           </div>
         ))}
+      </div>
       </div>
       {/* Bottom content section */}
       <div className="emailmain-bottom-content">
@@ -44,7 +46,7 @@ export default function EmailMainMoto() {
           Ready to elevate your communication? Explore our templates to find the perfect match for your needs and make every email count!
         </p>
       </div>
-      
-    </div>
+      </div>
+    
   );
 }

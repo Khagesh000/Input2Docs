@@ -1,24 +1,23 @@
 /* General styles */
 .importance-section {
-  margin-bottom: 2rem;
-  padding-left: 4%;
-  padding-top: 3%; /* Add space between sections */
+  margin-bottom: 1.5rem;
+  padding: 2% 3%;
 }
 
-/* Styling the images with border-radius for a cylindrical effect */
+/* Styling images with subtle border-radius and hover effect */
 .importance-image img {
-  width: 80%;
-  height: 250px;
-  display: block;
-  border-radius: 25%; /* Circular shape */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation on hover */
-  object-fit: cover; /* Ensures the image covers the entire area */
+  width: 95%;
+  height: auto;
+  max-height: 220px;
+  border-radius: 8%; /* Slight rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
 }
 
 /* Hover effect for images */
 .importance-image img:hover {
-  transform: scale(1.05); /* Slightly scale up the image */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow effect */
 }
 
 /* Layout order for left and right sections */
@@ -39,30 +38,40 @@
 }
 
 /* Content styling */
+.importance-content {
+  line-height: 1.6; /* Increase line spacing */
+  max-width: 90%; /* Increase content line width */
+}
+
 .importance-content h2 {
-  font-size: 1.75rem;
-  color: wheat; /* Title color */
-  margin-bottom: 1rem;
+  font-size: 1.85rem;
+  color: #f39c12; /* Subtle golden color */
+  margin-bottom: 0.8rem;
+  font-weight: 600;
 }
 
 .importance-content ul {
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
 }
 
 .importance-content ul li {
-  margin-bottom: 0.5rem;
-  color: white; /* List item color */
+  margin-bottom: 0.4rem;
+  color: #f0f0f0;
+  font-size: 1.05rem;
 }
 
 /* Responsive adjustments for mobile screens */
 @media (max-width: 767px) {
   .importance-image, .importance-content {
-      order: initial !important;
+    order: initial !important;
   }
 
   .importance-image img {
     width: 90%;
-    height: 200px;
+    max-height: 200px;
   }
-  
+
+  .importance-content ul {
+    max-width: 100%;
+  }
 }

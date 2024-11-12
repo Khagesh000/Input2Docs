@@ -6,7 +6,7 @@ import '../Process.css';
 export default class Process extends Component {
   render() {
     return (
-      <div className="process-container">
+      <div className="process-container container">
     <div className='ProcessHeading'> <h1>Process We <span>Follow</span></h1></div>
      
 

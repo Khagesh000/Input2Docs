@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/navbar';
 import AboutImage from './components/AboutImage';
+import AboutMainMoto from './components/AboutMainMoto';
 import Feedback from './components/Feedback';
 import Endbar from './components/Endbar';
 import AboutChoose from './components/AboutChoose';
@@ -15,6 +16,7 @@ export default function About() {
       <Navbar />
       <AboutImage />
       <AboutChoose />
+      <AboutMainMoto />
       <Feedback />
       <Endbar />
       </div>

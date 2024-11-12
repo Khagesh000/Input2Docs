@@ -1,0 +1,114 @@
+/* Container styling */
+.coverletter-container {
+    background-color: #000;
+    color: #fff;
+    padding: 3rem 1.5rem;
+    max-width: 1360px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Heading styling with animation */
+  .coverletter-heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1a73e8;
+    margin-bottom: 2.5rem;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  /* Section styling */
+  .coverletter-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #222; /* Dark gray background for contrast */
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .coverletter-section:hover {
+    transform: scale(1.03);
+    background-color: #333;
+  }
+  
+  /* Subheading styling */
+  .coverletter-subheading {
+    font-size: 2rem;
+    color: #f39712;
+    margin-bottom: 1rem;
+    animation: slideIn 1.2s ease;
+  }
+  
+  /* Description styling */
+  .coverletter-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ddd;
+  }
+  
+  /* List styling */
+  .coverletter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* List items */
+  .coverletter-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #ddd;
+    margin: 0.8rem 0;
+    transition: color 0.3s ease;
+  }
+  
+  .coverletter-item:hover {
+    color: #1a73e8;
+  }
+  
+  /* Icons for list items */
+  .coverletter-icon {
+    margin-right: 0.8rem;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .coverletter-item:hover .coverletter-icon {
+    transform: rotate(15deg);
+  }
+  
+  /* Keyframe animations */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-10px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .coverletter-container {
+      padding: 2rem 1rem;
+    }
+  
+    .coverletter-section {
+      padding: 1rem;
+    }
+  
+    .coverletter-heading {
+      font-size: 2.2rem;
+    }
+  
+    .coverletter-subheading {
+      font-size: 1.8rem;
+    }
+  
+    .coverletter-item {
+      font-size: 1rem;
+    }
+  }
+  

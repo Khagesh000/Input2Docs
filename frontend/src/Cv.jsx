@@ -6,6 +6,7 @@ import CvTemplates from './components/CvTemplates'
 import Endbar from './components/Endbar'
 
 import CvAbout from './components/CvAbout'
+import CvMainMoto from './components/CvMainMoto'
 import Feedback from './components/Feedback'
 
 
@@ -26,6 +27,7 @@ export default function Cv() {
       <div style={{ backgroundColor: 'black'}}>
       <CvAbout />
       </div>
+      <CvMainMoto />
       <div style={{ backgroundColor: 'black'}}>
       <Feedback />
       </div>

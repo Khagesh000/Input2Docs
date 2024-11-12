@@ -1,0 +1,105 @@
+/* Container styling */
+.cvmain-container {
+    background-color: #000; /* Black background */
+    color: #fff;
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Heading styling with animation */
+  .cvmain-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a73e8;
+    margin-bottom: 2.5rem;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  /* Section styling */
+  .cvmain-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  /* Pros and cons sections */
+  .cvmain-section {
+    width: 45%;
+    background-color: #222; /* Dark gray background for contrast */
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .cvmain-section:hover {
+    transform: scale(1.03);
+    background-color: #333;
+  }
+  
+  /* Subheading styling */
+  .cvmain-subheading {
+    font-size: 2rem;
+    color: #f39712;
+    margin-bottom: 1.5rem;
+    animation: slideIn 1.2s ease;
+  }
+  
+  /* List styling */
+  .cvmain-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.8;
+  }
+  
+  /* List items */
+  .cvmain-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #ddd;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+  }
+  
+  .cvmain-item:hover {
+    color: #1a73e8;
+  }
+  
+  /* Icons for pros and cons */
+  .cvmain-icon {
+    margin-right: 0.8rem;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .cvmain-item:hover .cvmain-icon {
+    transform: rotate(20deg); /* Slight rotation on hover */
+  }
+  
+  /* Keyframe animations */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-10px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .cvmain-content {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  
+    .cvmain-section {
+      width: 100%;
+    }
+  }
+  

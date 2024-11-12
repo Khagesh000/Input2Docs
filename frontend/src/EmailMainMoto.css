@@ -74,10 +74,9 @@
 
 
   .emailmain-bottom-content {
-    margin-top: 3rem;
-    padding: 2.5rem;
+    padding-top: 3rem;
+    padding: 6.5rem;
     background-color: #f3f4f6;
-    border-radius: 12px;
     text-align: left;
     font-family: 'Arial', sans-serif;
     margin-bottom: 0;
@@ -144,3 +143,58 @@
     text-align: center;
   }
   
+  /* Media Queries for Small Screen Sizes */
+
+/* Mobile Devices (up to 576px) */
+@media (max-width: 576px) {
+  .emailmain-bottom-content {
+    padding: 1.5rem; /* Reduce padding for smaller screens */
+  }
+
+  .bottom-heading {
+    font-size: 1.8rem; /* Reduce font size for smaller screens */
+  }
+
+  .bottom-intro {
+    font-size: 1rem; /* Reduce font size for intro paragraph */
+  }
+
+  .bottom-subheading {
+    font-size: 1.3rem; /* Reduce font size for subheading */
+  }
+
+  .benefits-list li {
+    font-size: 1rem; /* Reduce font size for list items */
+  }
+
+  .closing-remark {
+    font-size: 1rem; /* Reduce font size for closing remark */
+  }
+}
+
+/* Tablets (up to 768px) */
+@media (max-width: 768px) {
+  .emailmain-bottom-content {
+    padding: 2rem; /* Slightly reduce padding for tablet screens */
+  }
+
+  .bottom-heading {
+    font-size: 2rem; /* Slightly reduce font size for tablet screens */
+  }
+
+  .bottom-intro {
+    font-size: 1.1rem; /* Slightly reduce font size for intro paragraph */
+  }
+
+  .bottom-subheading {
+    font-size: 1.4rem; /* Slightly reduce font size for subheading */
+  }
+
+  .benefits-list li {
+    font-size: 1.1rem; /* Slightly reduce font size for list items */
+  }
+
+  .closing-remark {
+    font-size: 1.1rem; /* Slightly reduce font size for closing remark */
+  }
+}

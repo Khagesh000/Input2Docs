@@ -1,70 +1,110 @@
-/* CoverLetterIntro.css */
-
+/* Base background and font styling */
 .bg-black {
-    background-color: #000;
-    color: #fff; /* Ensure text is readable on dark background */
-  }
-  
-  .cov-intro {
-    padding: 20px;
-    padding-top: 7%;
-    padding-bottom: 5%;
-  }
-  
-  .heading-title {
-    color: #ff6600; /* Vibrant orange color */
-    font-size: 3rem; /* Larger heading size */
-    font-weight: 700; /* Bold heading */
-    text-align: left; /* Align text to the left */
-    line-height: 1.2; /* Adjust line height for spacing */
-  }
-  
-  .heading-subtitle {
-    font-size: 2rem; /* Slightly smaller font size for subtitle */
-    color: #ff6600; /* Same orange color for consistency */
-    display: block; /* Make subtitle appear on a new line */
-  }
-  
-  .lead {
-    font-size: 1.25rem;
-    font-weight: 300;
-    color: #f0f0f0; /* Light gray color for text */
-    margin-bottom: 1.5rem; /* Space below the paragraph */
-  }
-  
-  p {
-    color: #dcdcdc; /* Slightly lighter gray for other text */
-  }
-  
-  .img-fluid {
-    max-width: 100%;
-    height: auto; /* Adjust image height to maintain aspect ratio */
-    border-radius: 10px; /* Rounded corners for the image */
-    /* Orange border around the image */
-  }
-  
+  background-color: #000;
+  color: #fff;
+}
 
+/* Main container for the cover letter intro section */
+.cov-intro {
+  padding: 40px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-family: 'Roboto', sans-serif;
+}
 
-  /* Media Queries for Responsive Design */
+/* Animated fade-in effect for a smooth visibility transition */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+}
 
-/* For tablets and smaller devices (up to 768px) */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Heading styling with vibrant color and font family */
+.heading-title {
+  color: #ff6600;
+  font-size: 3.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  text-align: left;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.heading-subtitle {
+  font-size: 2.25rem;
+  color: #ff6600;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+}
+
+/* Text styling for professional tone */
+.lead {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #f0f0f0;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  color: #dcdcdc;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Image styling with rounded corners and hover effect */
+.cover-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.cover-img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Media Queries for Responsive Design */
+
+/* Tablets (up to 768px) */
 @media (max-width: 768px) {
   .heading-title {
-    font-size: 2.5rem; /* Smaller heading size */
+    font-size: 2.8rem;
   }
 
   .heading-subtitle {
-    font-size: 1.5rem; /* Smaller font size for subtitle */
+    font-size: 1.75rem;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 1rem;
   }
 }
 
-/* For mobile devices (up to 576px) */
+/* Mobile Devices (up to 576px) */
 @media (max-width: 576px) {
   .heading-title {
-    font-size: 2rem; /* Even smaller heading size */
+    font-size: 2.3rem;
   }
 
   .heading-subtitle {
-    font-size: 1.25rem; /* Even smaller font size for subtitle */
+    font-size: 1.4rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.95rem;
   }
 }

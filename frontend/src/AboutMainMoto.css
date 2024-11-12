@@ -1,0 +1,108 @@
+/* Base background and font styling */
+.about-section {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Section title styling */
+  .section-title {
+    font-size: 2.5rem;
+    color: #ff6600;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeInTitle 1.5s ease-out forwards;
+  }
+  
+  @keyframes fadeInTitle {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Feature box styling */
+  .feature-box {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  .feature-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 8px 15px rgba(255, 102, 0, 0.2);
+  }
+  
+  /* Icon styling */
+  .icon {
+    font-size: 2.5rem;
+    color: #ff6600;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .feature-box:hover .icon {
+    color: #ffa500;
+  }
+  
+  /* Heading and paragraph styling */
+  h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    color: #dcdcdc;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Fade-in animation for each feature box */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Media Queries for Responsive Design */
+  
+  /* Tablets (up to 768px) */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+  
+    h3 {
+      font-size: 1.3rem;
+    }
+  
+    p {
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Mobile Devices (up to 576px) */
+  @media (max-width: 576px) {
+    .section-title {
+      font-size: 1.8rem;
+    }
+  
+    h3 {
+      font-size: 1.2rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  }
+  

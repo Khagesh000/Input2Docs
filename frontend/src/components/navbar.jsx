@@ -48,23 +48,10 @@ const Navbar = () => {
             <li className="nav-item">
               <a className="nav-link" href="/cv">CV TEMPLATES</a>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                onClick={toggleDropdown}
-              >
-                DROPDOWN
-              </a>
-              <ul className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`} aria-labelledby="navbarDropdown">
-                <li><a className="dropdown-item" href="/cover">CoverLetter</a></li>
-                <li><a className="dropdown-item" href="/email">Email</a></li>
-                <li><hr className="dropdown-divider" /></li>
-                <li><span className="dropdown-item-text">Resume Maker</span></li>
-              </ul>
+            <li className="nav-item">
+              <a className="nav-link" href="/cover">COVER LETTER</a>
             </li>
+            
             <li className="nav-item">
               <a className="nav-link" href="/about">ABOUT US</a>
             </li>

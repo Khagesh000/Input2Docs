@@ -4,7 +4,7 @@ import { FaEnvelope, FaFileAlt, FaRegAddressCard, FaTools } from 'react-icons/fa
 
 export default function ImageView() {
   return (
-    <div className="image-view-container">
+    <div className="image-view-container container">
       <div className="icon-section1">
         <FaEnvelope className="icon1" />
         <FaFileAlt className="icon1" />

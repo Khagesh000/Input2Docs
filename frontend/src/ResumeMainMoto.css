@@ -1,0 +1,104 @@
+/* Container styling */
+.resumemain-container {
+    text-align: center;
+    padding: 4.5rem;
+    max-width: 1360px;
+    margin: 0 auto;
+    line-height: 1.8; /* Increased line spacing */
+  }
+  
+  /* Heading with animation */
+  .resumemain-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a73e8;
+    margin-bottom: 2rem;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  /* Key points styling */
+  .resumemain-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Point items with hover effect */
+  .resumemain-point {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    color: #333;
+    margin: 1.2rem 0;
+    padding: 0.6rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    line-height: 1.6;
+  }
+  
+  /* Hover effect on each point */
+  .resumemain-point:hover {
+    transform: scale(1.05);
+    background-color: #e6f4ff;
+    color: #1a73e8;
+  }
+  
+  /* Icon styling with animation */
+  .resumemain-icon {
+    color: #1a73e8;
+    font-size: 1.6rem;
+    margin-right: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Slow-motion hover effect for icon */
+  .resumemain-point:hover .resumemain-icon {
+    transform: rotate(15deg);
+  }
+  
+  /* Fade-in animation for heading */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .resumemain-container {
+      padding: 2rem;
+    }
+  
+    .resumemain-heading {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .resumemain-point {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+      padding: 0.5rem;
+    }
+  
+    .resumemain-icon {
+      font-size: 1.4rem;
+      margin-right: 0.8rem;
+    }
+  }
+  
+  /* Extra small screens */
+  @media (max-width: 480px) {
+    .resumemain-heading {
+      font-size: 1.8rem;
+    }
+  
+    .resumemain-point {
+      font-size: 1rem;
+      padding: 0.4rem;
+    }
+  
+    .resumemain-icon {
+      font-size: 1.2rem;
+    }
+  }
+  

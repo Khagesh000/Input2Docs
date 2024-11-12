@@ -9,11 +9,11 @@ export default function ResumeImportance() {
   return (
     <div className="container mt-5">
       <div className="importance-section section-left">
-        <div className="row">
-          <div className="col-md-6 importance-image">
+        <div className="row align-items-center">
+          <div className="col-md-5 importance-image">
             <img src={img1} alt="Professional Presentation" className="img-fluid"/>
           </div>
-          <div className="col-md-6 importance-content">
+          <div className="col-md-7 importance-content">
             <h2>Professional Presentation</h2>
             <ul>
               <li>Enhances the overall look of your resume.</li>
@@ -26,8 +26,8 @@ export default function ResumeImportance() {
         </div>
       </div>
       <div className="importance-section section-right">
-        <div className="row">
-          <div className="col-md-6 importance-content">
+        <div className="row align-items-center">
+          <div className="col-md-7 importance-content">
             <h2>Time Efficiency</h2>
             <ul>
               <li>Reduces the time needed to create a resume.</li>
@@ -37,17 +37,17 @@ export default function ResumeImportance() {
               <li>Streamlines the application process.</li>
             </ul>
           </div>
-          <div className="col-md-6 importance-image">
+          <div className="col-md-5 importance-image">
             <img src={img2} alt="Time Efficiency" className="img-fluid"/>
           </div>
         </div>
       </div>
       <div className="importance-section section-left">
-        <div className="row">
-          <div className="col-md-6 importance-image">
+        <div className="row align-items-center">
+          <div className="col-md-5 importance-image">
             <img src={img3} alt="Customization" className="img-fluid"/>
           </div>
-          <div className="col-md-6 importance-content">
+          <div className="col-md-7 importance-content">
             <h2>Customization</h2>
             <ul>
               <li>Tailor your resume to specific job roles.</li>
@@ -60,8 +60,8 @@ export default function ResumeImportance() {
         </div>
       </div>
       <div className="importance-section section-right">
-        <div className="row">
-          <div className="col-md-6 importance-content">
+        <div className="row align-items-center">
+          <div className="col-md-7 importance-content">
             <h2>Consistency</h2>
             <ul>
               <li>Ensures uniform formatting across all sections.</li>
@@ -71,7 +71,7 @@ export default function ResumeImportance() {
               <li>Reduces the risk of formatting errors.</li>
             </ul>
           </div>
-          <div className="col-md-6 importance-image">
+          <div className="col-md-5 importance-image">
             <img src={img4} alt="Consistency" className="img-fluid"/>
           </div>
         </div>
