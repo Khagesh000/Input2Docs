@@ -5,7 +5,9 @@ import experienceIcon from '../assets/images/experience.png';
 import personalInfoIcon from '../assets/images/experience.png';
 import languagesIcon from '../assets/images/summary-icon.png';
 import hobbiesIcon from '../assets/images/hobbies-icon.png'; // Replace this with the actual path to your hobbies icon
-
+import toolsIcon from '../assets/images/tools-icon.png';
+import othersIcon from '../assets/images/others-icon.png';
+import softskillsIcon from '../assets/images/softskills-icon.png';
 
 export const generateTemplateContent = (formData, templateType, croppedImage) => {
   const {
@@ -47,7 +49,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
   
         <!-- Name Section -->
         <div style="display: flex; justify-content: center; background-color: #fff; margin-bottom: 5px;">
-          <h1 style="text-align: center; margin: 0; color: black;">${formData.firstName || 'John'} ${formData.lastName || 'Smith'}</h1>
+          <h2 style="text-align: center; margin: 0; color: black; font-size: 24px; font-weight: bolder;">${formData.firstName || 'John'} ${formData.lastName || 'Smith'}</h2>
         </div>
   
         <!-- Contact Information Section -->
@@ -61,44 +63,47 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         </div>
   
         <!-- Summary Section -->
-        <div style="color: #000; margin-bottom: 5px;">
-          <h3 style="font-size: 18px; background-color: wheat; padding: 5px; margin: 0; color: black;">OBJECTIVE</h3>
-          <p style="margin: 0; color: black;">${summary || 'This is a summary of the applicant’s experience, skills, and other key information.'}</p>
+        <div style="color: #000; margin-bottom: 5px; line-height: 1.4;">
+          <h3 style="font-size: 16px; background-color: wheat; padding: 5px; margin: 0; color: black;">OBJECTIVE</h3>
+          <p style="margin: 0; color: black; font-size: 16px;">${summary || 'This is a summary of the applicant’s experience, skills, and other key information.'}</p>
         </div>
   
         <!-- Education Section -->
-        <div style="margin-bottom: 5px;">
-          <h3 style="font-size: 18px; background-color: wheat; padding: 5px; margin: 0; color: black;">EDUCATION</h3>
-          <hr style="border: 1px solid black; margin: 5px 0;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; color: black;">
-            <p style="flex: 1; margin: 0; color: black;"><strong>Degree</strong></p>
-            <p style="flex: 1; margin: 0; color: black;"><strong>Institute</strong></p>
-            <p style="flex: 1; margin: 0; color: black;"><strong>Year</strong></p>
-            <p style="flex: 1; margin: 0; color: black;"><strong>CPI</strong></p>
-          </div>
+<div style="margin-bottom: 2px; line-height: 1.3;">
+  <h3 style="font-size: 16px; background-color: wheat; padding: 3px; margin: 0; color: black;">EDUCATION</h3>
+  <hr style="border: 1px solid black; margin: 4px 0;">
   
-          <!-- Education Fields -->
-          <div style="display: flex; flex-direction: column; gap: 5px;">
-            ${formData.education.length > 0 ? formData.education.map(edu => `
-              <div style="display: flex; justify-content: space-between; align-items: center; color: black;">
-                <p style="flex: 1; margin: 0; color: black;">${edu.level || 'Degree not provided'}</p>
-                <p style="flex: 1; margin: 0; color: black;">${edu.level === 'Class 10th' ? edu.schoolName : edu.college || 'Institute not provided'}</p>
-                <p style="flex: 1; margin: 0; color: black;">${edu.level === 'Class 10th' ? edu.endYear : `${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}`}</p>
-                <p style="flex: 1; margin: 0; color: black;">${edu.percentage || 'Percentage not provided'}</p>
-              </div>
-            `).join('') : '<p style="margin: 0; color: black;">No education listed.</p>'}
-          </div>
-          <hr style="border: 1px solid black; margin: 5px 0;">
-        </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; color: black;">
+    <p style="flex: 0.8; margin: 0; color: black; font-size: 14px;"><strong>Degree</strong></p>
+    <p style="flex: 2; margin: 0; color: black; font-size: 16px;"><strong>Institute</strong></p>
+    <p style="flex: 0.9; margin: 0; color: black; font-size: 14px;"><strong>Year</strong></p>
+    <p style="flex: 0.5; margin: 0; color: black; font-size: 14px;"><strong>CPI</strong></p>
+  </div>
+
+  <!-- Education Fields -->
+  <div style="display: flex; flex-direction: column; gap: 0px; line-height: 1.3; margin: 0;">
+    ${formData.education.length > 0 ? formData.education.map(edu => `
+      <div style="display: flex; justify-content: space-between; align-items: center; color: black; margin: 0;">
+        <p style="flex: 0.8; margin: 0; color: black; font-size: 16px;">${edu.level || 'Degree not provided'}</p>
+        <p style="flex: 2; margin: 0; color: black; font-size: 16px; min-width: 120px;">${edu.level === 'Class 10th' ? edu.schoolName : edu.college || 'Institute not provided'}</p>
+        <p style="flex: 0.9; margin: 0; color: black; font-size: 16px;">${edu.level === 'Class 10th' ? edu.endYear : `${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}`}</p>
+        <p style="flex: 0.5; margin: 0; color: black; font-size: 16px;">${edu.percentage || 'Percentage not provided'}</p>
+      </div>
+    `).join('') : '<p style="margin: 0; color: black;">No education listed.</p>'}
+  </div>
+  
+  <hr style="border: 1px solid black; margin: 4px 0;">
+</div>
+
 
         <!-- Experience Section -->
-        <div style="margin-bottom: 5px; color: black;">
-          <h3 style="font-size: 18px; background-color: wheat; padding: 5px; margin: 0; color: black;">INTERNSHIP</h3>
-          <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="margin-bottom: 5px; color: black; line-height: 1.4;">
+          <h3 style="font-size: 16px; background-color: wheat; padding: 5px; margin: 0; color: black;">INTERNSHIP</h3>
+          <div style="display: flex; flex-direction: column; gap: 5px; margin: 0; margin-bottom: 3px;">
           ${formData.experience.length > 0 ? formData.experience.map(exp => `
-            <div style="margin-bottom: 10px;">
-              <p style="margin: 0; color: black;"><strong>${exp.position || 'Position not provided'}</strong> [${exp.company || 'Company not provided'}]</p>
-              <ul style="margin: 0; padding-left: 20px;">
+            <div style="margin-bottom: 5px; margin: 0; margin-top: 3px;">
+              <p style="margin: 0; color: black; font-size: 16px;"><strong>${exp.position || 'Position not provided'}</strong> [${exp.company || 'Company not provided'}]</p>
+              <ul style="margin: 0; padding-left: 20px; font-size: 16px;">
                 ${Array.isArray(exp.details) && exp.details.length > 0 ? exp.details.map(point => `
                   <li style="margin: 0; color: black;">${point || 'Detail point not provided'}</li>
                 `).join('') : '<li style="color: black;">No details listed.</li>'}
@@ -110,13 +115,13 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         </div>
 
         <!-- Projects Section -->
-        <div style="margin-bottom: 5px; color: black;">
-          <h3 style="font-size: 18px; background-color: wheat; padding: 5px; margin: 0; color: black;">PROJECTS</h3>
-          <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="margin-bottom: 5px; color: black; line-height: 1.4;">
+          <h3 style="font-size: 16px; background-color: wheat; padding: 5px; margin: 0; margin-bottom: 3px; color: black;">PROJECTS</h3>
+          <div style="display: flex; flex-direction: column; gap: 5px; margin: 0;">
             ${formData.projects.length > 0 ? formData.projects.map(project => `
-              <div style="margin-bottom: 10px;">
-                <strong style="color: black;">${project.title || 'Project title not provided'}</strong>
-                <ul style="margin: 0; padding-left: 20px;">
+              <div style="margin-bottom: 5px;">
+                <strong style="color: black; font-size: 16px;">${project.title || 'Project title not provided'}</strong>
+                <ul style="margin: 0; padding-left: 20px; font-size: 16px;">
                   ${project.details.length > 0 ? project.details.map(detail => `
                     <li style="margin: 0; color: black;">${detail || 'Detail point not provided'}</li>
                   `).join('') : '<li style="color: black;">No details listed.</li>'}
@@ -127,40 +132,40 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         </div>
 
         <!-- Technical Skills -->
-        <div style="margin-bottom: 5px; color: black;">
-          <h3 style="font-size: 18px; background-color: wheat; padding: 5px; margin: 0; color: black;">TECHNICAL SKILLS</h3>
+        <div style="margin-bottom: 5px; color: black; line-height: 1.4;">
+          <h3 style="font-size: 16px; background-color: wheat; padding: 5px; margin: 0; color: black;">TECHNICAL SKILLS</h3>
           <div style="display: flex; flex-direction: column; margin-top: 5px;">
-            <div style="display: flex; margin-bottom: 6px;">
-              <strong style="margin-right: 5px;">Programming Languages: </strong>
-              <div style="color: black;">
+            <div style="display: flex; margin-bottom: 6px; margin-top: 2px;">
+              <strong style="margin-right: 5px; font-size: 16px; ">Programming Languages: </strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.skills.length > 0 ? formData.skills.join(', ') : 'No skills listed.'}
               </div>
             </div>
             
             <div style="display: flex; margin-bottom: 6px;">
-              <strong style="margin-right: 5px;">Tools:</strong>
-              <div style="color: black;">
+              <strong style="margin-right: 5px; font-size: 16px;">Tools:</strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.tools.length > 0 ? formData.tools.map(tool => tool.name).join(', ') : 'No tools listed.'}
               </div>
             </div>
 
             <div style="display: flex; margin-bottom: 6px;">
-              <strong style="margin-right: 5px;">Others: </strong>
-              <div style="color: black;">
+              <strong style="margin-right: 5px; font-size: 16px;">Others: </strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.others.length > 0 ? formData.others.join(', ') : 'No skills listed.'}
               </div>
             </div>
 
             <div style="display: flex; margin-bottom: 6px;">
-              <strong style="margin-right: 5px;">Soft Skills:</strong>
-              <div style="color: black;">
+              <strong style="margin-right: 5px; font-size: 16px;">Soft Skills:</strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.softSkills.length > 0 ? formData.softSkills.join(', ') : 'No soft skills listed.'}
               </div>
             </div>
 
             <div style="display: flex; margin-bottom: 6px;">
-              <strong style="margin-right: 5px;">Languages:</strong>
-              <div style="color: black;">
+              <strong style="margin-right: 5px; font-size: 16px;">Languages:</strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.languages.length > 0 ? formData.languages.join(', ') : 'No soft skills listed.'}
               </div>
             </div>
@@ -172,14 +177,14 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
         <!-- CERTIFICATIONS -->
         <div style="margin-bottom: 5px; color: black;">
-          <h3 style="font-size: 18px; background-color: wheat; padding: 5px; margin: 0; color: black;">CERTIFICATIONS</h3>
-          <div style="display: flex; flex-direction: column; gap: 10px;">
+          <h3 style="font-size: 16px; background-color: wheat; padding: 5px; margin: 0; color: black; font-size: 16px;">CERTIFICATIONS</h3>
+          <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 3px;">
             ${formData.certifications.length > 0 ? formData.certifications.map(certification => `
               <div style="margin-bottom: 1px; display: flex;">
-                <strong style="margin-right: 70px;">${certification.course || 'Course not provided'}</strong>
+                <strong style="margin-right: 70px; font-size: 16px;">${certification.course || 'Course not provided'}</strong>
                 <div style="flex: 1;">
-                  <span style="margin-right: 5px;">by</span>
-                  <span>${certification.company || 'Company not provided'}</span>
+                  <span style="margin-right: 5px; font-size: 16px;">by</span>
+                  <span style="font-size: 16px;">${certification.company || 'Company not provided'}</span>
                 </div>
               </div>
             `).join('') : '<p style="color: black;">No certifications listed.</p>'}
@@ -230,7 +235,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
           ${formData.education.map(edu => `
             <div style="margin: 10px 0; display: flex; justify-content: space-between; align-items: flex-start;">
               <div style="flex: 1;">
-                <h4 style="color: #000; margin: 0;">${edu.level || 'Degree Level'}</h4>
+                <h4 style="color: #000; margin: 0; font-size: 16px; font-weight: bolder; border-bottom: 2px solid grey;">${edu.level || 'Degree Level'}</h4>
                 ${edu.level === 'Class 10th' ? `
                   <span style="font-size: 14px; color: #000;">${edu.schoolName || 'School Name'}</span><br>
                   <span style="font-size: 14px; color: #000;"><strong>Medium: </strong>${edu.medium || 'Medium Not Provided'}</span><br>
@@ -253,6 +258,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
             </div>
           `).join('')}
         </div>
+
         <!-- Languages Section -->
 <div style="margin-top: 20px;">
   <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">LANGUAGES</label>
@@ -284,10 +290,10 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         
 
         <!-- Experience Section -->
-        <p style="font-size: 14px; line-height: 1.5; text-align: left; margin: 5px 0; margin-top: 25px;">
-          <strong style="color: #0d0565c4; font-size: 20px;">EXPERIENCE</strong><br>
+        <p style="font-size: 14px; line-height: 1.5; text-align: left; margin: 5px 0; margin-top: 10px; margin: 0;">
+          <strong style="color: #0d0565c4; font-size: 17px;">EXPERIENCE</strong><br>
           ${formData.experience.map(exp => `
-            <div style="margin-bottom: 0px;">
+            <div style="margin-bottom: 0px; margin: 0;">
               <strong style="font-size: 16px; color: #000;">${exp.company || 'Company Name'}</strong><br>
               <span style="font-size: 14px; color: #000; margin-right: 5px;">${exp.position || 'Position'}</span>
               <span style="font-size: 14px; color: #000;">[${exp.dates || 'Year Range'}]</span>
@@ -300,8 +306,8 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 
         <!-- Skills Section -->
-        <p style="font-size: 14px; line-height: 1.5; text-align: left; margin: 5px 0; margin-top: 0px;">
-          <strong style="color: #0d0565c4; font-size: 20px;">SKILLS</strong><br>
+        <p style="font-size: 14px; line-height: 1.5; text-align: left; margin: 5px 0; margin-top: 0px; margin: 0;">
+          <strong style="color: #0d0565c4; font-size: 17px;">SKILLS</strong><br>
         </p>
 
         <div style="display: flex; flex-wrap: wrap; margin-top: 0px;">
@@ -314,9 +320,56 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
           `).join('')}
         </div>
 
+        <!-- softSkills Section -->
+        <p style="font-size: 14px; line-height: 1.5; text-align: left; margin: 5px 0; margin-top: 2px; margin: 0;">
+          <strong style="color: #0d0565c4; font-size: 17px;">SOFT SKILLS</strong><br>
+        </p>
+
+        <div style="display: flex; flex-wrap: wrap; margin-top: 0px;">
+          ${formData.softSkills.map(softSkill => `
+            <div style="flex: 1 1 50%; margin-bottom: 5px;">
+              <ul style="list-style-type: disc; margin: 0; padding-left: 20px; font-size: 14px;">
+                <li>${softSkill || 'Skill'}</li>
+              </ul>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Tools Section -->
+        <p style="font-size: 14px; line-height: 1.5; text-align: left; margin: 5px 0; margin-top: 2px; margin: 0;">
+          <strong style="color: #0d0565c4; font-size: 17px;">TOOLS</strong><br>
+        </p>
+
+        <div style="display: flex; flex-wrap: wrap; margin-top: 0px;">
+          ${formData.tools.map(tool => `
+            <div style="flex: 1 1 50%; margin-bottom: 5px;">
+              <ul style="list-style-type: disc; margin: 0; padding-left: 20px; font-size: 14px;">
+                <li>${tool || 'Skill'}</li>
+              </ul>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Others Section -->
+        <p style="font-size: 14px; line-height: 1.5; text-align: left; margin: 5px 0; margin-top: 2px; margin: 0;">
+          <strong style="color: #0d0565c4; font-size: 17px;">OTHERS</strong><br>
+        </p>
+
+        <div style="display: flex; flex-wrap: wrap; margin-top: 0px;">
+          ${formData.others.map(other => `
+            <div style="flex: 1 1 50%; margin-bottom: 5px;">
+              <ul style="list-style-type: disc; margin: 0; padding-left: 20px; font-size: 14px;">
+                <li>${other || 'Skill'}</li>
+              </ul>
+            </div>
+          `).join('')}
+        </div>
+
+        
+
         <!-- Hobbies Section -->
         <p style="font-size: 14px; line-height: 1.5; text-align: left; margin: 5px 0; margin-top: 0px;">
-          <strong style="color: #0d0565c4; font-size: 20px;">HOBBIES</strong><br>
+          <strong style="color: #0d0565c4; font-size: 17px;">HOBBIES</strong><br>
         </p>
 
         <div style="display: flex; flex-wrap: wrap; margin-top: 0px;">
@@ -342,114 +395,117 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
     <div style="width: 60%; padding-right: 20px;">
 
         <!-- Name and Circle Section -->
-<div style="display: flex; align-items: center; margin-bottom: 20px; margin-left: 15px;">
-    <div style="background-color: #2c3e50; color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px;">
+<div style="display: flex; align-items: center; margin-bottom: 7px; margin-left: 15px;">
+    <div style="background-color: #2c3e50; color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: bolder;">
         ${formData.firstName ? formData.firstName[0] : 'J'}${formData.lastName ? formData.lastName[0] : 'S'}
     </div>
     <div style="margin-left: 20px;">
-        <h1 style="margin: 0; font-size: 22px;">${formData.firstName} ${formData.lastName || 'Smith'}</h1>
+        <h1 style="margin: 0; font-size: 22px; font-weight: bolder;">${formData.firstName} ${formData.lastName || 'Smith'}</h1>
         <h2 style="margin: 0; font-size: 18px; color: #555;">${formData.jobTitle || 'IT Project Manager'}</h2>
     </div>
 </div>
 
         <!-- Summary Section -->
-        <div style="margin-top: 30px; margin-left: 55px;">
-            <h3 style="font-size: 20px; display: flex; align-items: center;">
+        <div style="margin-top: 0px; margin-left: 55px; line-height: 1.4; margin-bottom: 0px;">
+            <h3 style="font-size: 18px; display: flex; font-weight: bold; color: black; align-items: center; margin-top: 2px; margin: 0;">
                 <img src="${summaryIcon}" alt="summary-icon" style="width: 24px; margin-right: 10px;">
                 Summary
             </h3>
-            <p style="font-size: 14px; color: #333; margin-left: 20px; display: flex; align-items: center;">
+            <p style="font-size: 14px; color: #333; margin-left: 20px; display: flex; align-items: center; margin-top: 1px;">
                 <span style="background-color: #2c3e50; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
                 ${formData.summary || 'Oversaw all major hospital IT projects for 10+ years, focusing on cost reduction.'}
             </p>
         </div>
 
         <!-- Experience Section -->
-        <div style="margin-top: 30px; margin-left: 55px;">
-            <h3 style="font-size: 20px; display: flex; align-items: center;">
-                <img src="${experienceIcon}" alt="experience-icon" style="width: 24px; margin-right: 10px;">
-                Experience
-            </h3>
-            ${formData.experience && formData.experience.length > 0 ? formData.experience.map(exp => `
-                <div style="margin-left: 20px; margin-bottom: 15px; position: relative;">
-                    <p style="font-size: 12px; color: #555; position: absolute; left: -75px; top: 0;">${exp.dates || 'Date not provided'}</p>
-                    <strong>${exp.position || 'Position not provided'}</strong>  
-                    <p style="font-size: 14px; font-weight: bold; color: #333; display: flex; align-items: center;">
-                        <span style="background-color: #2c3e50; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
-                        ${exp.company || 'Company not provided'}
-                    </p>
-                    <p style="font-size: 14px; color: #333;">
-                        <span style="background-color: #2c3e50; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
-                        ${Array.isArray(exp.details) && exp.details.length > 0 
-                            ? exp.details.join(', ') 
-                            : 'Details not provided'}
-                    </p>
-                </div>
-            `).join('<br>') : '<p style="font-size: 14px; color: #777;">No experience listed.</p>'}
+<div style="margin-left: 55px; line-height: 1.4;">
+    <h3 style="font-size: 18px; font-weight: bold; color: black; display: flex; align-items: center; margin: 0;">
+        <img src="${experienceIcon}" alt="experience-icon" style="width: 24px; margin-right: 10px;">
+        Experience
+    </h3>
+    ${formData.experience && formData.experience.length > 0 ? formData.experience.map(exp => `
+        <div style="margin-left: 20px; padding-bottom: 8px; position: relative;">
+            <p style="font-size: 12px; color: #555; position: absolute; left: -75px; top: 0;">
+                ${exp.dates || 'Date not provided'}
+            </p>
+            <strong>${exp.position || 'Position not provided'}</strong>  
+            <p style="font-size: 14px; font-weight: bold; color: #333; display: flex; align-items: center; margin: 4px 0;">
+                <span style="background-color: #2c3e50; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
+                ${exp.company || 'Company not provided'}
+            </p>
+            <p style="font-size: 14px; color: #333; margin: 4px 0;">
+                <span style="background-color: #2c3e50; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 10px;"></span>
+                ${Array.isArray(exp.details) && exp.details.length > 0 
+                    ? exp.details.join(', ') 
+                    : 'Details not provided'}
+            </p>
         </div>
+    `).join('') : '<p style="font-size: 14px; color: #777;">No experience listed.</p>'}
+</div>
+
 
       <!-- Education Section -->
-<div style="margin-top: 30px; margin-left: 55px;">
-  <h3 style="font-size: 20px; display: flex; align-items: center;">
+<div style="margin-top: 0px; margin-left: 55px; line-height: 1.4;">
+  <h3 style="font-size: 18px; font-weight: bold; color: black; display: flex; align-items: center; margin-bottom: 2px;">
     <img src="${educationIcon}" alt="education-icon" style="width: 24px; margin-right: 10px;">
     Education
   </h3>
   ${formData.education.length > 0 ? formData.education.map(edu => `
-    <div style="margin-left: 20px; margin-bottom: 10px;">
+    <div style="margin-left: 20px; margin-bottom: 0px;">
       <div style="display: flex; flex-direction: column; margin-bottom: 5px;">
-        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+        <div style="display: flex; align-items: center; margin-bottom: 5px;">
           <strong>${edu.level || 'Level not provided'}</strong>
         </div>
 
         <!-- Conditional Fields Based on Education Level -->
         ${edu.level === 'Graduate' || edu.level === 'Postgraduate' ? `
-          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; margin-bottom: 0px;">
             <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Course:</p>
             <p style="margin: 0; font-size: 14px; color: #333;">${edu.course || 'Course not provided'}</p>
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; margin-bottom: 0px;">
             <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">College:</p>
             <p style="margin: 0; font-size: 14px; color: #333;">${edu.college || 'College not provided'}</p>
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; margin-bottom: 0px;">
             <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Year:</p>
             <p style="margin: 0; font-size: 14px; color: #333;">${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; margin-bottom: 0px;">
             <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Percentage:</p>
             <p style="margin: 0; font-size: 14px; color: #333;">${edu.percentage || 'Not provided'}</p>
           </div>
         ` : edu.level === 'Class 12th' ? `
-          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; margin-bottom: 0px;">
             <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">College:</p>
             <p style="margin: 0; font-size: 14px; color: #333;">${edu.college || 'College not provided'}</p>
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; margin-bottom: 0px;">
             <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Medium:</p>
             <p style="margin: 0; font-size: 14px; color: #333;">${edu.medium || 'Medium not provided'}</p>
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; margin-bottom: 0px;">
             <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Year:</p>
             <p style="margin: 0; font-size: 14px; color: #333;">${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; margin-bottom: 0px;">
             <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Percentage:</p>
             <p style="margin: 0; font-size: 14px; color: #333;">${edu.percentage || 'Not provided'}</p>
           </div>
         ` : edu.level === 'Class 10th' ? `
-          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; margin-bottom: 0px;">
             <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">School Name:</p>
             <p style="margin: 0; font-size: 14px; color: #333;">${edu.schoolName || 'School Name not provided'}</p>
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; margin-bottom: 0px;">
             <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Medium:</p>
             <p style="margin: 0; font-size: 14px; color: #333;">${edu.medium || 'Medium not provided'}</p>
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; margin-bottom: 0px;">
             <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Year:</p>
             <p style="margin: 0; font-size: 14px; color: #333;">${edu.endYear || 'End Year not provided'}</p>
           </div>
-          <div style="display: flex; align-items: center; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; margin-bottom: 0px;">
             <p style="width: 100px; margin: 0; font-size: 14px; color: #333;">Percentage:</p>
             <p style="margin: 0; font-size: 14px; color: #333;">${edu.percentage || 'Not provided'}</p>
           </div>
@@ -466,24 +522,24 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
     <div style="width: 32%; padding-left: 20px; padding: 0px;">
         
       <!-- Personal Info Section -->
-      <h3 style="font-size: 20px; margin-bottom: 20px; display: flex; align-items: center;">
+      <h3 style="font-size: 18px; font-weight: bold; color: black; margin-bottom: 10px; display: flex; align-items: center;">
           <img src="${personalInfoIcon}" alt="personal-info-icon" style="width: 24px; margin-right: 10px;">
           Personal Info
       </h3>
-      <div style="font-size: 14px; color: #333;">
-          <div style="margin-bottom: 10px;">
+      <div style="font-size: 14px; color: #333; line-height: 1.4;">
+          <div style="margin-bottom: 3px;">
               <strong style="display: block; margin-left: 20px;">Address:</strong>
               <div style="margin-left: 20px;">${formData.address || '134 Rightward Way, Portland, ME, 04019'}</div>
           </div>
-          <div style="margin-bottom: 10px;">
+          <div style="margin-bottom: 3px;">
               <strong style="display: block; margin-left: 20px;">Phone:</strong>
               <div style="margin-left: 20px;">${formData.phone || '774-987-4009'}</div>
           </div>
-          <div style="margin-bottom: 10px;">
+          <div style="margin-bottom: 3px;">
               <strong style="display: block; margin-left: 20px;">E-mail:</strong>
               <div style="margin-left: 20px;">${formData.email || 'j.smith@zety.com'}</div>
           </div>
-         <div style="margin-bottom: 10px;">
+         <div style="margin-bottom: 3px;">
         <strong style="display: block; margin-left: 20px;">LinkedIn:</strong>
         <div style="margin-left: 20px;">
             <a
@@ -499,34 +555,68 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
       </div>
 
       <!-- Languages Section -->
-<h3 style="font-size: 20px; margin-top: 30px; margin-bottom: 10px; display: flex; align-items: center;">
+<h3 style="font-size: 18px; font-weight: bold; color: black; margin-top: 25px; margin-bottom: 3px; display: flex; align-items: center;">
     <img src="${languagesIcon}" alt="languages-icon" style="width: 24px; margin-right: 10px;">
     Languages
 </h3>
 <div style="font-size: 14px; color: #333; margin-left: 30px;">
-    ${formData.languages.length > 0 ? formData.languages.map((lang, index) => `
-        <p style="margin: 0; padding: 0; line-height: 1.5; color: #333;">${lang.language || 'Language not provided'}</p>
+    ${formData.languages.length > 0 ? formData.languages.map((language, index) => `
+        <ul style="margin: 0; padding: 0; font-size: 14px; line-height: 1.5; color: #333;">${language || 'Language not provided'}</ul>
     `).join('') : '<p style="font-size: 14px; color: #777; margin: 0;">No languages listed.</p>'}
 </div>
 
       <!-- Skills Section -->
-      <div style="margin-top: 30px;">
-        <h3 style="font-size: 20px; display: flex; align-items: center;">
+      <div style="margin-top: 15px;">
+        <h3 style="font-size: 18px; font-weight: bold; color: black; display: flex; align-items: center; margin: 0; margin-top: 5px;">
           <img src="${skillsIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
           Skills
         </h3>
-        <ul style="font-size: 14px; color: #333;">
+        <ul style="font-size: 14px; color: #333; margin: 0;">
           ${formData.skills.length > 0 ? formData.skills.map(skill => `<li>${skill}</li>`).join('') : '<li>No skills listed.</li>'}
         </ul>
       </div>
 
+      <!-- Softskills Section -->
+<h3 style="font-size: 18px; font-weight: bold; color: black; margin-top: 25px; margin-bottom: 3px; display: flex; align-items: center;">
+    <img src="${softskillsIcon}" alt="languages-icon" style="width: 24px; margin-right: 10px;">
+    Softskills
+</h3>
+<div style="font-size: 14px; color: #333; margin-left: 30px;">
+    ${formData.softSkills.length > 0 ? formData.softSkills.map((softSkill, index) => `
+        <ul style="margin: 0; padding: 0; font-size: 14px; line-height: 1.5; color: #333;">${softSkill || 'Language not provided'}</ul>
+    `).join('') : '<p style="font-size: 14px; color: #777; margin: 0;">No languages listed.</p>'}
+</div>
+
+<!-- Tools Section -->
+<h3 style="font-size: 18px; font-weight: bold; color: black; margin-top: 25px; margin-bottom: 3px; display: flex; align-items: center;">
+    <img src="${toolsIcon}" alt="languages-icon" style="width: 24px; margin-right: 10px;">
+    Tools
+</h3>
+<div style="font-size: 14px; color: #333; margin-left: 30px;">
+    ${formData.tools.length > 0 ? formData.tools.map((tool, index) => `
+        <ul style="margin: 0; padding: 0; font-size: 14px; line-height: 1.5; color: #333;">${tool.name || 'Language not provided'}</ul>
+    `).join('') : '<p style="font-size: 14px; color: #777; margin: 0;">No languages listed.</p>'}
+</div>
+
+
+<!-- Others Section -->
+<h3 style="font-size: 18px; font-weight: bold; color: black; margin-top: 25px; margin-bottom: 3px; display: flex; align-items: center;">
+    <img src="${othersIcon}" alt="languages-icon" style="width: 24px; margin-right: 10px;">
+    Others
+</h3>
+<div style="font-size: 14px; color: #333; margin-left: 30px;">
+    ${formData.others.length > 0 ? formData.others.map((other, index) => `
+        <ul style="margin: 0; padding: 0; font-size: 14px; line-height: 1.5; color: #333;">${other || 'Language not provided'}</ul>
+    `).join('') : '<p style="font-size: 14px; color: #777; margin: 0;">No languages listed.</p>'}
+</div>
+
       <!-- Hobbies Section -->
-      <div style="margin-top: 30px;">
-        <h3 style="font-size: 20px; display: flex; align-items: center;">
+      <div style="margin-top: 25px;">
+        <h3 style="font-size: 18px; font-weight: bold; color: black; display: flex; align-items: center; margin: 0; margin-top: 5px;">
           <img src="${hobbiesIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
           Hobbies
         </h3>
-        <ul style="font-size: 14px; color: #333;">
+        <ul style="font-size: 14px; color: #333; margin: 0;">
           ${formData.hobbies.length > 0 ? formData.hobbies.map(hobbies => `<li>${hobbies}</li>`).join('') : '<li>No Hobbies listed.</li>'}
         </ul>
       </div>
@@ -537,47 +627,47 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
     `;
   } else if (templateType === 4) {
     return `
-      <div style="display: flex; flex-direction: column; height: 100%; color: #000; margin-left: 20px; margin-right: 20px;">
+      <div style="display: flex; flex-direction: column; height: 100%; color: #000; margin-left: 20px; margin-right: 20px; line-height: 1.4;">
   
         <!-- Name Section (Left-Aligned, Large Font) -->
         <div style="display: flex; justify-content: flex-start; align-items: center; background-color: #fff; margin-bottom: 5px; padding-top: 15px;">
-          <h1 style="text-align: left; margin: 0; color: #003366;" font-size: 32px; flex: 1;">${formData.firstName || 'John'} ${formData.lastName || 'Smith'}</h1>
+          <h1 style="text-align: left; margin: 0; color: #003366;" font-width: bolder; font-size: 24px; flex: 1;">${formData.firstName || 'John'} ${formData.lastName || 'Smith'}</h1>
         </div>
   
         <!-- Contact Information Section -->
-        <div style="background-color: #fff; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-start; color: black;">
+        <div style="background-color: #fff; margin-bottom: 2px; display: flex; justify-content: space-between; align-items: flex-start; color: black;">
   
           <!-- Left Side (LinkedIn, GitHub) -->
           <div style="display: flex; flex-direction: column; flex: 1; padding: 5px 0;">
-            <p style="margin: 0; color: #333; font-weight: 500;">${linkedin || 'linkedin.com/in/username'}|Linkedin</p>
-            <p style="margin: 0; color: #333; font-weight: 500;">${Github || 'github.com/username'}|Github</p>
+            <p style="margin: 0; font-size: 16px; color: #333; font-weight: 500;">${linkedin || 'linkedin.com/in/username'}|Linkedin</p>
+            <p style="margin: 0; font-size: 16px; color: #333; font-weight: 500;">${Github || 'github.com/username'}|Github</p>
           </div>
   
           <!-- Right Side (Email and Mobile Aligned Left) -->
           <div style="display: flex; flex-direction: column; flex: 1; padding: 0;">
             <div style="display: flex; justify-content: flex-start;">
-              <p style="margin: 0; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">Email:</span></p>
-              <p style="margin: 0; color: #333; font-weight: 500;">${email || 'email@example.com'}</p>
+              <p style="margin: 0; font-size: 16px; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">Email:</span></p>
+              <p style="margin: 0; font-size: 16px; color: #333; font-weight: 500;">${email || 'email@example.com'}</p>
             </div>
             <div style="display: flex; justify-content: flex-start;">
-              <p style="margin: 0; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">Mobile:</span></p>
-              <p style="margin: 0; color: #333; font-weight: 500;">${phone || '(123) 456-7890'}</p>
+              <p style="margin: 0; font-size: 16px; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">Mobile:</span></p>
+              <p style="margin: 0; font-size: 16px; color: #333; font-weight: 500;">${phone || '(123) 456-7890'}</p>
             </div>
           </div>
   
         </div>
 
         <!-- Horizontal Line -->
-        <hr style="border: 0; height: 2px; background-color: #121111; margin: 10px 0;" />
+        <hr style="border: 0; height: 2px; background-color: #121111; margin: 0px 0;" />
   
         <!-- SUMMARY Section -->
         <div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
           OBJECTIVE
         </div>
-        <p style="margin: 0; color: black;">${summary || 'This is a summary of the applicant’s experience, skills, and other key information.'}</p>
+        <p style="margin: 0; font-size: 16px; line-height: 1.4; color: black;">${summary || 'This is a summary of the applicant’s experience, skills, and other key information.'}</p>
   
         <!-- Horizontal Line -->
-        <hr style="border: 0; height: 2px; background-color: #121111; margin: 10px 0;" />
+        <hr style="border: 0; height: 2px; background-color: #121111; margin: 5px 0;" />
   
         <!-- Education Heading Section -->
         <div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
@@ -585,26 +675,26 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         </div>
   
         <!-- Education Section -->
-        <div style="background-color: #fff; padding: 10px; color: black;">
+        <div style="background-color: #fff; padding: 10px; color: black; margin: 0; line-height: 1.4;">
 
 
           <!-- Top Education Headings -->
-        <div style="margin-bottom: 0px;">
+        <div style="margin-bottom: 0px; margin: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; color: black;">
-            <p style="flex: 1; margin: 0; color: black;"><strong>Degree</strong></p>
-            <p style="flex: 1; margin: 0; color: black;"><strong>Institute</strong></p>
-            <p style="flex: 1; margin: 0; color: black;"><strong>Year</strong></p>
-            <p style="flex: 1; margin: 0; color: black;"><strong>CPI</strong></p>
+            <p style="flex: 0.9; font-size: 16px; margin: 0; color: black;"><strong>Degree</strong></p>
+            <p style="flex: 2.5; font-size: 16px; margin: 0; color: black;"><strong>Institute</strong></p>
+            <p style="flex: 1; font-size: 16px; margin: 0; color: black;"><strong>Year</strong></p>
+            <p style="flex: 1; font-size: 16px; margin: 0; color: black;"><strong>CPI</strong></p>
           </div>
   
           <!-- Education Fields -->
-          <div style="display: flex; flex-direction: column; gap: 5px;">
+          <div style="display: flex; flex-direction: column; gap: 2px;">
             ${formData.education.length > 0 ? formData.education.map(edu => `
               <div style="display: flex; justify-content: space-between; align-items: center; color: black;">
-                <p style="flex: 1; margin: 0; color: black;">${edu.level || 'Degree not provided'}</p>
-                <p style="flex: 1; margin: 0; color: black;">${edu.level === 'Class 10th' ? edu.schoolName : edu.college || 'Institute not provided'}</p>
-                <p style="flex: 1; margin: 0; color: black;">${edu.level === 'Class 10th' ? edu.endYear : `${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}`}</p>
-                <p style="flex: 1; margin: 0; color: black;">${edu.percentage || 'Percentage not provided'}</p>
+                <p style="flex: 0.9; font-size: 16px; margin: 0; color: black;">${edu.level || 'Degree not provided'}</p>
+                <p style="flex: 2.5; font-size: 16px; margin: 0; color: black;">${edu.level === 'Class 10th' ? edu.schoolName : edu.college || 'Institute not provided'}</p>
+                <p style="flex: 1; font-size: 16px; margin: 0; color: black;">${edu.level === 'Class 10th' ? edu.endYear : `${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}`}</p>
+                <p style="flex: 1; font-size: 16px; margin: 0; color: black;">${edu.percentage || 'Percentage not provided'}</p>
               </div>
             `).join('') : '<p style="margin: 0; color: black;">No education listed.</p>'}
           </div>
@@ -613,7 +703,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         </div>
 
         <!-- Horizontal Line -->
-        <hr style="border: 0; height: 2.5px; background-color: #121111; margin: 10px 0; color: #000" />
+        <hr style="border: 0; height: 2.5px; background-color: #121111; margin: 3px 0; color: #000" />
   
         <!-- Skills Heading Section -->
         <div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
@@ -621,40 +711,40 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         </div>
 
         <!-- Skills Section -->
-        <div style="background-color: #fff; padding-left: 10px; padding-top: 3px; color: black;">
+        <div style="background-color: #fff; padding-left: 10px; padding-top: 3px; color: black; line-height: 1.4;">
            
         <div style="display: flex; flex-direction: column; margin-top: 0px;">
-            <div style="display: flex; margin-bottom: 6px;">
-              <strong style="margin-right: 5px;">Programming Languages: </strong>
-              <div style="color: black;">
+            <div style="display: flex; margin-bottom: 3px;">
+              <strong style="margin-right: 5px; font-size: 16px;">Programming Languages: </strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.skills.length > 0 ? formData.skills.join(', ') : 'No skills listed.'}
               </div>
             </div>
             
-            <div style="display: flex; margin-bottom: 6px;">
-              <strong style="margin-right: 5px;">Tools:</strong>
-              <div style="color: black;">
+            <div style="display: flex; margin-bottom: 3px;">
+              <strong style="margin-right: 5px; font-size: 16px;">Tools:</strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.tools.length > 0 ? formData.tools.map(tool => tool.name).join(', ') : 'No tools listed.'}
               </div>
             </div>
 
-            <div style="display: flex; margin-bottom: 6px;">
-              <strong style="margin-right: 5px;">Others: </strong>
-              <div style="color: black;">
+            <div style="display: flex; margin-bottom: 3px;">
+              <strong style="margin-right: 5px; font-size: 16px;">Others: </strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.others.length > 0 ? formData.others.join(', ') : 'No skills listed.'}
               </div>
             </div>
 
-            <div style="display: flex; margin-bottom: 6px;">
-              <strong style="margin-right: 5px;">Soft Skills:</strong>
-              <div style="color: black;">
+            <div style="display: flex; margin-bottom: 3px;">
+              <strong style="margin-right: 5px; font-size: 16px;">Soft Skills:</strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.softSkills.length > 0 ? formData.softSkills.join(', ') : 'No soft skills listed.'}
               </div>
             </div>
 
-            <div style="display: flex; margin-bottom: 6px;">
-              <strong style="margin-right: 5px;">Languages:</strong>
-              <div style="color: black;">
+            <div style="display: flex; margin-bottom: 7px;">
+              <strong style="margin-right: 5px; font-size: 16px;">Languages:</strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.languages.length > 0 ? formData.languages.join(', ') : 'No soft skills listed.'}
               </div>
             </div>
@@ -662,7 +752,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         </div>
 
         <!-- Horizontal Line -->
-        <hr style="border: 0; height: 2.5px; background-color: #121111; margin: 10px 0;" />
+        <hr style="border: 0; height: 2.5px; background-color: #121111; margin: 3px 0;" />
   
         <!-- Experience Heading Section -->
           <div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
@@ -670,12 +760,12 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
           </div>
 
         <!-- Experience Section -->
-        <div style="background-color: #fff; padding-left: 0px; padding-top: 3px; color: black;"> 
-        <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="background-color: #fff; padding-left: 0px; padding-top: 3px; color: black; line-height: 1.4;"> 
+        <div style="display: flex; flex-direction: column; gap: 3px;">
           ${formData.experience.length > 0 ? formData.experience.map(exp => `
-            <div style="margin-bottom: 10px;">
-              <p style="margin: 0; color: black;"><strong>${exp.position || 'Position not provided'}</strong><strong>  |  ${exp.company || 'Company not provided'}</strong></p>
-              <ul style="margin: 0; padding-left: 20px;">
+            <div style="margin-bottom: 5px;">
+              <p style="margin: 0; font-size: 16px; color: black;"><strong>${exp.position || 'Position not provided'}</strong><strong>  |  ${exp.company || 'Company not provided'}</strong></p>
+              <ul style="margin: 0; font-size: 16px; padding-left: 20px;">
                 ${Array.isArray(exp.details) && exp.details.length > 0 ? exp.details.map(point => `
                   <li style="margin: 0; color: black;">${point || 'Detail point not provided'}</li>
                 `).join('') : '<li style="color: black;">No details listed.</li>'}
@@ -686,7 +776,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
           </div>
 
            <!-- Horizontal Line -->
-        <hr style="border: 0; height: 2.5px; background-color: #121111; margin: 10px 0;" />
+        <hr style="border: 0; height: 2.5px; background-color: #121111; margin: 3px 0;" />
   
         <!-- Projects Heading Section -->
           <div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
@@ -694,12 +784,12 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
           </div>
 
         <!-- Projects Section -->
-        <div style="background-color: #fff; padding-left: 0px; padding-top: 3px; color: black;"> 
-          <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="background-color: #fff; padding-left: 0px; padding-top: 1px; color: black; margin: 0; line-height: 1.4;"> 
+          <div style="display: flex; flex-direction: column; gap: 3px;">
             ${formData.projects.length > 0 ? formData.projects.map(project => `
-              <div style="margin-bottom: 10px;">
-                <strong style="color: black;">${project.title || 'Project title not provided'}</strong>
-                <ul style="margin: 0; padding-left: 20px;">
+              <div style="margin-bottom: 5px;">
+                <strong style="color: black; font-size: 16px;">${project.title || 'Project title not provided'}</strong>
+                <ul style="margin: 0; padding-left: 20px; font-size: 16px;">
                   ${project.details.length > 0 ? project.details.map(detail => `
                     <li style="margin: 0; color: black;">${detail || 'Detail point not provided'}</li>
                   `).join('') : '<li style="color: black;">No details listed.</li>'}
@@ -711,7 +801,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 
          <!-- Horizontal Line -->
-        <hr style="border: 0; height: 2.5px; background-color: #121111; margin: 10px 0;" />
+        <hr style="border: 0; height: 2.5px; background-color: #121111; margin: 3px 0;" />
   
         <!-- Certificate Heading Section -->
           <div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
@@ -719,19 +809,19 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
           </div>
 
         <!-- Certificates Section -->
-    <div style="background-color: #fff; padding-left: 0px; padding-top: 3px; color: black;">
-      <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div style="background-color: #fff; padding-left: 0px; padding-top: 1px; color: black;">
+      <div style="display: flex; flex-direction: column; gap: 3px; margin: 0;">
         ${formData.certifications.length > 0 ? formData.certifications.map(certification => `
           <div style="margin-bottom: 1px;">
             <!-- Certification Course and Company on Same Line -->
-            <strong style="margin-right: 10px;">${certification.course || 'Course not provided'}</strong>
-            <strong> | ${certification.company || 'Company not provided'}</strong>
+            <strong style="margin-right: 10px; font-size: 16px;">${certification.course || 'Course not provided'}</strong>
+            <strong style="font-size: 16px;"> | ${certification.company || 'Company not provided'}</strong>
 
             <!-- Certification Details as Bullet Points -->
-            <div style="margin-top: 5px; margin-bottom: 10px;">
+            <div style="margin-top: 1px; margin-bottom: 1px;">
               <ul style="margin: 0; padding-left: 20px; list-style-type: disc;">
                 ${certification.details.length > 0 ? certification.details.map(detail => `
-                  <li style="margin: 0 0 5px 0; color: black;">${detail || 'Detail point not provided'}</li>
+                  <li style="margin: 0 0 5px 0; color: black; font-size: 16px; line-height: 1.4;">${detail || 'Detail point not provided'}</li>
                 `).join('') : '<li style="color: black;">No details listed.</li>'}
               </ul>
             </div>
@@ -753,39 +843,39 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
   <div style="flex: 1; padding: 20px; background-color: #4b5d67; color: white; min-height: 1120px; box-sizing: border-box;">
     
     <!-- Full Name and Job Title -->
-<h1 style="font-size: 32px; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 30px; margin-bottom: 3px; color: white; text-align: left;">
+<h1 style="font-size: 26px; font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 30px; margin-bottom: 3px; color: white; text-align: left;">
   ${formData.firstName || 'JOHN'} ${formData.lastName || 'SMITH'}
 </h1>
-<h2 style="font-size: 24px; font-weight: 400; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 5px 0; color: white; text-align: left;">
+<h2 style="font-size: 20px; font-weight: 400; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 5px 0; color: white; text-align: left;">
   ${formData.jobTitle || 'IT Project Manager'}
 </h2>
 
 
     <!-- Personal Information -->
-    <div style="margin-top: 20px;">
-      <label style="font-weight: bold; font-size: 16px; color: lightwhite; padding: 0px;">PERSONAL INFO</label>
+    <div style="margin-top: 15px;">
+      <label style="font-weight: bold; font-size: 16px; color: lightwhite; border-bottom: 2px solid #888; padding: 0px;">PERSONAL INFO</label>
       <div style="margin: 0;">
-        <strong style="color: white;">Address:</strong><br>
+        <strong style="color: white; font-size: 16px;">Address:</strong><br>
         <span style="font-size: 14px; color: white;">${formData.address || '123 Main St, City, State, ZIP'}</span>
       </div>
       <div style="margin: 0;">
-        <strong style="color: white;">Phone:</strong><br>
+        <strong style="color: white; font-size: 16px;">Phone:</strong><br>
         <span style="font-size: 14px; color: white;">${formData.phone || '(123) 456-7890'}</span>
       </div>
       <div style="margin: 0;">
-        <strong style="color: white;">Email:</strong><br>
+        <strong style="color: white; font-size: 16px;">Email:</strong><br>
         <span style="font-size: 14px; color: white;">${formData.email || 'email@example.com'}</span>
       </div>
       <div style="margin: 0;">
-        <strong style="color: white;">LinkedIn:</strong><br>
+        <strong style="color: white; font-size: 16px;">LinkedIn:</strong><br>
         <span style="font-size: 14px; color: white;">${formData.linkedin || 'linkedin.com/in/username'}</span>
       </div>
     </div>
 
     <!-- Skills Section -->
-    <div style="margin-top: 20px;">
-      <label style="font-weight: bold; font-size: 16px; color: white;">SKILLS</label>
-      <div style="margin-top: 10px;">
+    <div style="margin-top: 15px;">
+      <label style="font-weight: bold; font-size: 16px; color: white; border-bottom: 2px solid #888;">SKILLS</label>
+      <div style="margin-top: 6px;">
         ${(formData.skills || []).map(skill => `
           <div style="font-size: 14px; color: white;">
             - ${skill || 'Skill'}
@@ -795,9 +885,9 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
     </div>
 
     <!-- Languages Section -->
-    <div style="margin-top: 20px;">
-      <label style="font-weight: bold; font-size: 16px; color: white;">LANGUAGES</label>
-      <div style="margin-top: 10px;">
+    <div style="margin-top: 15px;">
+      <label style="font-weight: bold; font-size: 16px; color: white; border-bottom: 2px solid #888;">LANGUAGES</label>
+      <div style="margin-top: 6px;">
         ${(formData.languages || []).map(lang => `
           <div style="font-size: 14px; color: white;">
             - ${lang || 'Language'}
@@ -806,11 +896,48 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
       </div>
     </div>
 
+    <!-- Softskills Section -->
+    <div style="margin-top: 15px;">
+      <label style="font-weight: bold; font-size: 16px; color: white; border-bottom: 2px solid #888;">SOFTSKILLS</label>
+      <div style="margin-top: 6px;">
+        ${(formData.softSkills || []).map(softSkill => `
+          <div style="font-size: 14px; color: white;">
+            - ${softSkill || 'Language'}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- Tools Section -->
+    <div style="margin-top: 15px;">
+      <label style="font-weight: bold; font-size: 16px; color: white; border-bottom: 2px solid #888;">TOOLS</label>
+      <div style="margin-top: 6px;">
+        ${(formData.tools || []).map(tool => `
+          <div style="font-size: 14px; color: white;">
+            - ${tool || 'Language'}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+
+    <!-- others Section -->
+    <div style="margin-top: 15px;">
+      <label style="font-weight: bold; font-size: 16px; color: white; border-bottom: 2px solid #888;">OTHERS</label>
+      <div style="margin-top: 6px;">
+        ${(formData.others || []).map(other => `
+          <div style="font-size: 14px; color: white;">
+            - ${other || 'Language'}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
 
     <!-- Hobbies Section -->
-    <div style="margin-top: 20px;">
-      <label style="font-weight: bold; font-size: 16px; color: white;">HOBBIES</label>
-      <div style="margin-top: 10px;">
+    <div style="margin-top: 15px;">
+      <label style="font-weight: bold; font-size: 16px; color: white; border-bottom: 2px solid #888;">HOBBIES</label>
+      <div style="margin-top: 6px;">
         ${(formData.hobbies || []).map(hobbies => `
           <div style="font-size: 14px; color: white;">
             - ${hobbies || 'Cricket'}
@@ -826,7 +953,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
     
     <!-- Education Section -->
     <div style="margin-top: 20px; padding-left: 20px;">
-      <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">EDUCATION</h3>
+      <h3 style="font-size: 17px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">EDUCATION</h3>
       ${(formData.education || []).map(edu => `
         <div style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; margin: 5px 0; background-color: #f9f9f9;">
           <div style="font-size: 16px; font-weight: bold; color: #333;">
@@ -843,13 +970,13 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
     <!-- Experience Section -->
     <div style="margin-top: 0px; padding-left: 20px;">
-      <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">EXPERIENCE</h3>
+      <h3 style="font-size: 17px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">EXPERIENCE</h3>
       ${(formData.experience || []).map(exp => `
         <div style="margin: 10px 0; font-size: 14px; color: black;">
-          <strong>${exp.company || 'Company Name'}</strong><br>
+          <strong style="font-size: 16px;">${exp.company || 'Company Name'}</strong><br>
           <span>${exp.position || 'Position'}</span> (${exp.dates || 'Year Range'})<br>
           <ul style="list-style-type: disc; margin-left: 20px; padding: 0; margin-bottom: 0; margin-top: 0;">
-            ${(exp.details || []).map(detail => `<li style="margin: 0;">${detail || 'Responsibility/Achievement'}</li>`).join('')}
+            ${(exp.details || []).map(detail => `<li style="margin: 0; font-size: 16px;">${detail || 'Responsibility/Achievement'}</li>`).join('')}
           </ul>
         </div>
       `).join('')}
@@ -857,13 +984,13 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
     <!-- Projects Section -->
 <div style="margin-top: 0px; padding-left: 20px;">
-  <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">PROJECTS</h3>
+  <h3 style="font-size: 17px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">PROJECTS</h3>
    ${formData.projects.length > 0 ? formData.projects.map(project => `
               <div style="margin-bottom: 10px;">
                 <strong style="color: black;">${project.title || 'Project title not provided'}</strong>
-                <ul style="margin: 0; padding-left: 20px;">
+                <ul style="margin: 0; padding-left: 20px; font-size: 16px;">
                   ${project.details.length > 0 ? project.details.map(detail => `
-                    <li style="margin: 0; color: black;">${detail || 'Detail point not provided'}</li>
+                    <li style="margin: 0; color: black; font-size: 16px;">${detail || 'Detail point not provided'}</li>
                   `).join('') : '<li style="color: black;">No details listed.</li>'}
                 </ul>
               </div>
@@ -872,18 +999,18 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 <!-- Certificates Section -->
 <div style="margin-top: 0px; padding-left: 20px;">
-  <h3 style="font-size: 20px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">CERTIFICATES</h3>
+  <h3 style="font-size: 17px; font-weight: bold; text-align: center; color: black; margin-bottom: 5px;">CERTIFICATES</h3>
   ${formData.certifications.length > 0 ? formData.certifications.map(certification => `
     <div style="margin-bottom: 1px;">
       <!-- Certification Course and Company on Same Line -->
-      <strong style="margin-right: 10px;">${certification.course || 'Course not provided'}</strong>
-      <strong> | ${certification.company || 'Company not provided'}</strong>
+      <strong style="margin-right: 10px; font-size: 16px;">${certification.course || 'Course not provided'}</strong>
+      <strong style="font-size: 16px;"> | ${certification.company || 'Company not provided'}</strong>
 
       <!-- Certification Details as Bullet Points -->
       <div style="margin-top: 5px; margin-bottom: 10px;">
         <ul style="margin: 0; padding-left: 20px; list-style-type: disc;">
           ${certification.details.length > 0 ? certification.details.map(detail => `
-            <li style="margin: 0 0 5px 0; color: black;">${detail || 'Detail point not provided'}</li>
+            <li style="margin: 0 0 5px 0; color: black; font-size: 16px;">${detail || 'Detail point not provided'}</li>
           `).join('') : '<li style="color: black;">No details listed.</li>'}
         </ul>
       </div>
@@ -903,35 +1030,35 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
       <div style="display: flex; flex-direction: column; height: 100%; color: #000; margin-left: 20px; margin-right: 20px;">
   
         <!-- Name Section (Left-Aligned, Large Font) -->
-        <div style="display: flex; justify-content: flex-start; align-items: center; background-color: #778eb8c4 margin-bottom: 5px; padding-top: 15px;">
-          <h1 style="text-align: left; margin: 0; color: #000;" font-size: 32px; flex: 1;">${formData.firstName || 'John'} ${formData.lastName || 'Smith'}</h1>
+        <div style="display: flex; justify-content: flex-start; align-items: center; text-align: center; background-color: #778eb8c4 margin-bottom: 2px; padding-top: 7px; margin: 0;">
+          <h2 style="text-align: left; margin: 0; color: #000;" font-size: 24px; font-weight: 900; text-align: center; flex: 1;">${formData.firstName || 'John'} ${formData.lastName || 'Smith'}</h2>
         </div>
   
         <!-- Contact Information Section -->
-        <div style="background-color: #fff; margin-bottom: 7px;  justify-content: space-between; align-items: flex-start; color: black;">
+        <div style="background-color: #fff; margin-bottom: 3px;  justify-content: space-between; align-items: flex-start; color: black;">
   
           <!-- Left Side (LinkedIn, GitHub) -->
-          <div style="display: flex; justify-content: space-between; padding: 10px;">
+          <div style="display: flex; justify-content: space-between; padding: 1px;">
 
   <!-- Left Side (Email, Mobile) -->
-  <div style="display: flex; flex-direction: column; flex: 1; padding-right: 20px;">
+  <div style="display: flex; flex-direction: column; flex: 1; padding-right: 20px; margin: 0;">
     <div style="display: flex; justify-content: flex-start;">
       <p style="margin: 0; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">Email:</span></p>
       <p style="margin: 0; color: #3a4f74c4; font-weight: 500; margin-left: 8px;">${email || 'email@example.com'}</p>
     </div>
-    <div style="display: flex; justify-content: flex-start; margin-top: 5px;">
+    <div style="display: flex; justify-content: flex-start; margin-top: 2px;">
       <p style="margin: 0; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">Mobile:</span></p>
       <p style="margin: 0; color: #333; font-weight: 500; margin-left: 8px;">${phone || '(123) 456-7890'}</p>
     </div>
   </div>
 
   <!-- Right Side (LinkedIn, GitHub) -->
-  <div style="display: flex; flex-direction: column; flex: 1; padding-left: 20px;">
+  <div style="display: flex; flex-direction: column; flex: 1; padding-left: 20px; margin: 0;">
     <div style="display: flex; justify-content: flex-start;">
       <p style="margin: 0; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">LinkedIn:</span></p>
       <p style="margin: 0; color: #3a4f74c4; font-weight: 500; margin-left: 8px;">${linkedin || 'linkedin.com/in/username'}</p>
     </div>
-    <div style="display: flex; justify-content: flex-start; margin-top: 5px;">
+    <div style="display: flex; justify-content: flex-start; margin-top: 2px;">
       <p style="margin: 0; color: #333; font-weight: 500; min-width: 70px;"><span style="color: #000;">GitHub:</span></p>
       <p style="margin: 0; color: #333; font-weight: 500; margin-left: 8px;">${Github || 'github.com/username'}</p>
     </div>
@@ -941,25 +1068,26 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 
   
-          <!-- Summary Section -->
-        <div style="color: #000; margin-bottom: 5px;">
-          <h3 style="font-size: 18px; background-color: #778eb8c4; padding: 5px; margin: 0; color: black;">OBJECTIVE :</h3>
-          <p style="margin: 0; color: black;">${summary || 'This is a summary of the applicant’s experience, skills, and other key information.'}</p>
-        </div>
+          
+  <!-- Summary Section -->
+  <div style="color: #000; margin-bottom: 5px;">
+    <h3 style="font-size: 16px; background-color: #778eb8c4; padding: 5px; margin: 0; color: black;">OBJECTIVE :</h3>
+    <p style="margin: 0; color: black; line-height: 1.4; font-size: 16px;">${summary || 'This is a summary of the applicant’s experience, skills, and other key information.'}</p>
+  </div>
 
         <!-- Education Section -->
 <div style="margin-bottom: 15px;">
-  <h3 style="font-size: 18px; background-color: #778eb8c4; padding: 5px; margin: 0; margin-bottom: 10px; color: black;">EDUCATION DETAILS :</h3>
+  <h3 style="font-size: 16px; background-color: #778eb8c4; padding: 5px; margin: 0; margin-bottom: 10px; color: black;">EDUCATION DETAILS :</h3>
 
   <!-- Table for Education -->
-  <table style="width: 100%; border-collapse: collapse; color: black;">
+  <table style="width: 100%; border-collapse: collapse; color: black; font-size: 16px;">
     <!-- Table Header -->
     <thead>
       <tr style="border: 1px solid black;">
-        <th style="padding: 8px; border: 1px solid black;">Qualification / Board</th>
-        <th style="padding: 8px; border: 1px solid black;">Institute</th>
-        <th style="padding: 8px; border: 1px solid black;">Percentage</th>
-        <th style="padding: 8px; border: 1px solid black;">Year Of Passing</th>
+        <th style="padding: 4px; border: 1px solid black;">Qualification / Board</th>
+        <th style="padding: 4px; border: 1px solid black;">Institute</th>
+        <th style="padding: 4px; border: 1px solid black;">Percentage</th>
+        <th style="padding: 4px; border: 1px solid black;">Year Of Passing</th>
       </tr>
     </thead>
 
@@ -967,10 +1095,10 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
     <tbody>
       ${formData.education.length > 0 ? formData.education.map(edu => `
         <tr style="border: 1px solid black;">
-          <td style="padding: 8px; border: 1px solid black;">${edu.level || 'Degree not provided'}</td>
-          <td style="padding: 8px; border: 1px solid black;">${edu.level === 'Class 10th' ? edu.schoolName : edu.college || 'Institute not provided'}</td>
-          <td style="padding: 8px; border: 1px solid black;">${edu.percentage || 'Percentage not provided'}</td>
-          <td style="padding: 8px; border: 1px solid black;">${edu.level === 'Class 10th' ? edu.endYear : `${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}`}</td>
+          <td style="padding: 4px; border: 1px solid black;">${edu.level || 'Degree not provided'}</td>
+          <td style="padding: 4px; border: 1px solid black;">${edu.level === 'Class 10th' ? edu.schoolName : edu.college || 'Institute not provided'}</td>
+          <td style="padding: 4px; border: 1px solid black;">${edu.percentage || 'Percentage not provided'}</td>
+          <td style="padding: 4px; border: 1px solid black;">${edu.level === 'Class 10th' ? edu.endYear : `${edu.startYear || 'Start Year'} - ${edu.endYear || 'End Year'}`}</td>
         </tr>
       `).join('') : '<tr><td colspan="4" style="padding: 8px; text-align: center; border: 1px solid black;">No education listed.</td></tr>'}
     </tbody>
@@ -978,58 +1106,57 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 </div>
 
        <!-- Experience Section -->
-        <div style="margin-bottom: 5px; color: black;">
-          <h3 style="font-size: 18px; background-color: #778eb8c4; padding: 5px; margin: 0; color: black;">INTERNSHIP :</h3>
-          <div style="display: flex; flex-direction: column; gap: 10px;">
-          ${formData.experience.length > 0 ? formData.experience.map(exp => `
-            <div style="margin-bottom: 10px;">
-              <p style="margin: 0; color: black;"><strong>${exp.position || 'Position not provided'}</strong> | ${exp.company || 'Company not provided'}</p>
-              <ul style="margin: 0; padding-left: 20px;">
-                ${Array.isArray(exp.details) && exp.details.length > 0 ? exp.details.map(point => `
-                  <li style="margin: 0; color: black;">${point || 'Detail point not provided'}</li>
-                `).join('') : '<li style="color: black;">No details listed.</li>'}
-              </ul>
-            </div>
-          `).join('') : '<p style="color: black;">No experience listed.</p>'}
-          
-          </div>
+  <div style="margin-bottom: 5px; color: black;">
+    <h3 style="font-size: 16px; background-color: #778eb8c4; padding: 5px; margin: 0; color: black;">INTERNSHIP :</h3>
+    <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 2px;">
+      ${formData.experience.length > 0 ? formData.experience.map(exp => `
+        <div style="margin-bottom: 5px;">
+          <p style="margin: 0; font-size: 16px; color: black; line-height: 1.4;"><strong>${exp.position || 'Position not provided'}</strong> | ${exp.company || 'Company not provided'}</p>
+          <ul style="margin: 0; padding-left: 20px; line-height: 1.4; font-size: 16px;">
+            ${Array.isArray(exp.details) && exp.details.length > 0 ? exp.details.map(point => `
+              <li style="margin: 0; color: black;">${point || 'Detail point not provided'}</li>
+            `).join('') : '<li style="color: black;">No details listed.</li>'}
+          </ul>
         </div>
+      `).join('') : '<p style="color: black; line-height: 1.4;">No experience listed.</p>'}
+    </div>
+  </div>
 
         <!-- Technical Skills -->
-        <div style="margin-bottom: 10px; color: black;">
-          <h3 style="font-size: 18px; background-color: #778eb8c4; padding: 5px; margin: 0; color: black;">TECHNICAL SKILLS :</h3>
-          <div style="display: flex; flex-direction: column; margin-top: 5px;">
-            <div style="display: flex; margin-bottom: 6px; margin-left: 30px;">
-              <strong style="margin-right: 8px;">Programming Languages: </strong>
-              <div style="color: black;">
+        <div style="margin-bottom: 3px; color: black;">
+          <h3 style="font-size: 16px; background-color: #778eb8c4; padding: 5px; margin: 0; color: black;">TECHNICAL SKILLS :</h3>
+          <div style="display: flex; flex-direction: column; margin-top: 3px;">
+            <div style="display: flex; margin-bottom: 3px; margin-left: 2px;">
+              <strong style="margin-right: 8px; font-size: 16px;">Programming Languages: </strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.skills.length > 0 ? formData.skills.join(', ') : 'No skills listed.'}
               </div>
             </div>
             
-            <div style="display: flex; margin-bottom: 6px; margin-left: 30px;">
-              <strong style="margin-right: 8px;">Tools:</strong>
-              <div style="color: black;">
+            <div style="display: flex; margin-bottom: 3px; margin-left: 2px;">
+              <strong style="margin-right: 8px; font-size: 16px;">Tools:</strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.tools.length > 0 ? formData.tools.map(tool => tool.name).join(', ') : 'No tools listed.'}
               </div>
             </div>
 
-            <div style="display: flex; margin-bottom: 6px; margin-left: 30px;">
-              <strong style="margin-right: 8px;">Others: </strong>
-              <div style="color: black;">
+            <div style="display: flex; margin-bottom: 3px; margin-left: 2px;">
+              <strong style="margin-right: 8px; font-size: 16px;">Others: </strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.others.length > 0 ? formData.others.join(', ') : 'No skills listed.'}
               </div>
             </div>
 
-            <div style="display: flex; margin-bottom: 6px; margin-left: 30px;">
-              <strong style="margin-right: 8px;">Soft Skills:</strong>
-              <div style="color: black;">
+            <div style="display: flex; margin-bottom: 3px; margin-left: 2px;">
+              <strong style="margin-right: 8px; font-size: 16px;">Soft Skills:</strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.softSkills.length > 0 ? formData.softSkills.join(', ') : 'No soft skills listed.'}
               </div>
             </div>
 
-            <div style="display: flex; margin-bottom: 6px; margin-left: 30px;">
-              <strong style="margin-right: 8px;">Languages:</strong>
-              <div style="color: black;">
+            <div style="display: flex; margin-bottom: 3px; margin-left: 2px;">
+              <strong style="margin-right: 8px; font-size: 16px;">Languages:</strong>
+              <div style="color: black; font-size: 16px;">
                 ${formData.languages.length > 0 ? formData.languages.join(', ') : 'No soft skills listed.'}
               </div>
             </div>
@@ -1038,14 +1165,14 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
         <!-- CERTIFICATIONS -->
 <div style="margin-bottom: 5px; color: black;">
-  <h3 style="font-size: 18px; background-color: #778eb8c4; padding: 5px; margin: 0; color: black;">CERTIFICATIONS :</h3>
-  <div style="display: flex; flex-direction: column; gap: 0px;"> <!-- Removed gap between certifications -->
+  <h3 style="font-size: 16px; background-color: #778eb8c4; padding: 5px; margin: 0; color: black;">CERTIFICATIONS :</h3>
+  <div style="display: flex; flex-direction: column; gap: 3px;"> <!-- Removed gap between certifications -->
     ${formData.certifications.length > 0 ? formData.certifications.map(certification => `
-      <div style="display: flex; margin-left: 30px;"> <!-- Removed margin-bottom -->
-        <strong style="margin-right: 10px;">${certification.course || 'Course not provided'}</strong>
+      <div style="display: flex; margin-left: 2px;"> <!-- Removed margin-bottom -->
+        <strong style="margin-right: 10px; font-size: 16px;">${certification.course || 'Course not provided'}</strong>
         <div style="flex: 1;">
-          <span style="margin-right: 3px;">by</span>
-          <span>${certification.company || 'Company not provided'}</span>
+          <span style="margin-right: 3px; font-size: 16px;">by</span>
+          <span style='font-size: 16px;'>${certification.company || 'Company not provided'}</span>
         </div>
       </div>
     `).join('') : '<p style="color: black;">No certifications listed.</p>'}
@@ -1053,13 +1180,13 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 </div>
 
      <!-- Projects Section -->
-        <div style="margin-bottom: 5px; color: black;">
-          <h3 style="font-size: 18px; background-color: #778eb8c4; padding: 5px; margin: 0; color: black;">PROJECTS :</h3>
-          <div style="display: flex; flex-direction: column; gap: 10px; margin-left: 30px;">
+        <div style="margin-bottom: 1px; color: black;">
+          <h3 style="font-size: 16px; background-color: #778eb8c4; padding: 5px; margin: 0; color: black;">PROJECTS :</h3>
+          <div style="display: flex; flex-direction: column;  margin-left: 3px; margin-top: 2px;">
             ${formData.projects.length > 0 ? formData.projects.map(project => `
-              <div style="margin-bottom: 10px;">
-                <strong style="color: black;">${project.title || 'Project title not provided'}</strong>
-                <ul style="margin: 0; padding-left: 20px;">
+              <div style="margin-bottom: 3px;">
+                <strong style="color: black; font-size: 16px;">${project.title || 'Project title not provided'}</strong>
+                <ul style="margin: 0; padding-left: 20px; font-size: 16px;">
                   ${project.details.length > 0 ? project.details.map(detail => `
                     <li style="margin: 0; color: black;">${detail || 'Detail point not provided'}</li>
                   `).join('') : '<li style="color: black;">No details listed.</li>'}
@@ -1081,131 +1208,136 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
     return `
       <!-- Top Flex: Name, Profile, and Job Title -->
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; height: auto; width: 100%; padding: 10px; box-sizing: border-box; margin-right: 40px; background-color: #ddd; border-radius: 15px;">
-        
-        <!-- Left Side: Name and Job Title -->
-        <div style="flex: 0 0 60%; display: flex; flex-direction: column;">
-          <h1 style="font-size: 36px; font-weight: bold; font-family: Arial, sans-serif; margin: 0; letter-spacing: 4px; padding-left: 30px; padding-top: 20px;">
-            ${formData.firstName || 'JOHN'} ${formData.lastName || 'SMITH'}
-          </h1>
-          <h2 style="font-size: 22px; font-family: Arial, sans-serif; margin: 0; letter-spacing: 2px; padding-bottom: 9px; padding-left: 30px;">
-            ${formData.jobTitle || 'IT Project Manager'}
-          </h2>
+      <!-- Top Flex: Name, Profile, and Job Title -->
+<div style="display: flex; justify-content: space-between; align-items: flex-start; height: auto; width: 100%; padding: 10px; box-sizing: border-box; margin-right: 40px; background-color: #ddd; border-radius: 15px;">
+  
+  <!-- Left Side: Name and Job Title -->
+  <div style="flex: 0 0 60%; display: flex; flex-direction: column;">
+    <h1 style="font-size: 25px; font-weight: bolder; font-family: Arial, sans-serif; margin: 0; letter-spacing: 4px; padding-left: 30px; padding-top: 20px;">
+      ${formData.firstName || 'JOHN'} ${formData.lastName || 'SMITH'}
+    </h1>
+    <h2 style="font-size: 22px; font-family: Arial, sans-serif; margin: 0; letter-spacing: 2px; padding-bottom: 9px; padding-left: 30px;">
+      ${formData.jobTitle || 'IT Project Manager'}
+    </h2>
+  </div>
+
+  <!-- Right Side: Profile Picture -->
+  <div style="flex: 0 0 40%; display: flex; justify-content: flex-end; padding-right: 30px;">
+    <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; background-color: #ddd;">
+      <img src="${imageURL}" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+    </div>
+  </div>
+</div>
+
+<!-- Main Flex: Content Section -->
+<div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%; padding: 20px 10px; box-sizing: border-box;">
+  
+  <!-- Left Side: Personal Information, Skills, and Education (40% width) -->
+  <div style="flex: 0 0 40%; padding-right: 20px;">
+    <!-- Personal Information -->
+    <div style="margin-bottom: 20px;">
+      <h3 style="font-size: 18px; color: black; font-weight: bold; margin-bottom: 10px;">PERSONAL INFORMATION</h3>
+      <p style="font-size: 14px; margin: 0; color:black;">${formData.address || '123 Main St, City, State, ZIP'}</p>
+      <p style="font-size: 14px; margin: 0; color:black;">${formData.phone || '(123) 456-7890'}</p>
+      <p style="font-size: 14px; margin: 0; color:black;">${formData.email || 'email@example.com'}</p>
+      <p style="font-size: 14px; margin: 0; color:black;">${formData.linkedin || 'linkedin.com/in/username'}</p>
+    </div>
+
+    <!-- Education Section -->
+    <div>
+      <h3 style="font-size: 18px; color: black; font-weight: bold; margin-bottom: 10px;">EDUCATION</h3>
+      ${formData.education.length > 0 ? formData.education.map(edu => `
+        <div style="margin-bottom: 10px;">
+          <p style="font-size: 14px; margin: 0; color:black;">
+            <strong>${edu.level || 'Level not provided'}</strong> - ${edu.college || edu.schoolName || 'Institution not provided'}
+          </p>
+          ${edu.level === 'Class 10th' ? `
+            <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Medium: ${edu.medium || 'Medium not provided'}</p>
+            <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Year: ${edu.endYear || 'End Year not provided'}</p>
+            <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
+          ` : edu.level === 'Class 12th' ? `
+            <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Medium: ${edu.medium || 'Course not provided'}</p>
+            <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Year: ${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
+            <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
+          ` : (edu.level === 'Graduate' || edu.level === 'Postgraduate') ? `
+            <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Course: ${edu.course || 'Course not provided'}</p>
+            <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">College: ${edu.college || 'College not provided'}</p>
+            <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Year: ${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
+            <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
+          ` : `
+            <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Year: ${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
+          `}
         </div>
+      `).join('') : '<p style="font-size: 14px; margin: 0;">No education details provided.</p>'}
+    </div>
 
-        <!-- Right Side: Profile Picture -->
-        <div style="flex: 0 0 40%; display: flex; justify-content: flex-end; padding-right: 30px;">
-          <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; background-color: #ddd;">
-            <img src="${imageURL}" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
-          </div>
+    <!-- Skills Section -->
+    <div style="margin-bottom: 20px;">
+      <h3 style="font-size: 18px; color: black; font-weight: bold; margin-bottom: 10px;">SKILLS</h3>
+      ${(formData.skills || []).map(skill => `
+        <p style="font-size: 14px; margin: 0; color:black;">&#8226; ${skill || 'Skill'}</p>
+      `).join('')}
+    </div>
+
+    <!-- Languages Section -->
+    <div style="margin-bottom: 20px;">
+      <h3 style="font-size: 18px; color: black; font-weight: bold; margin-bottom: 10px;">LANGUAGES</h3>
+      ${(formData.languages || []).map(language => `
+        <p style="font-size: 14px; margin: 0; color:black;">&#8226; ${language || 'Skill'}</p>
+      `).join('')}
+    </div>
+  </div>
+
+  <!-- Right Side: About Me, Experience, and Projects (60% width) -->
+  <div style="flex: 0 0 60%; padding-left: 20px;">
+
+    <!-- About Me Section -->
+    <div style="margin-bottom: 15px;">
+      <h3 style="font-size: 18px; color: black; font-weight: bold; margin-bottom: 10px;">ABOUT ME</h3>
+      <p style="font-size: 14px; line-height: 1.5; margin: 0; color:black;">${formData.summary || 'This is a placeholder for your summary content.'}</p>
+    </div>
+
+    <!-- Experience Section -->
+    <div style="margin-bottom: 15px;">
+      <h3 style="font-size: 18px; color: black; font-weight: bold; margin-bottom: 10px;">EXPERIENCE</h3>
+      ${(formData.experience || []).map(exp => `
+        <div style="margin-bottom: 10px;">
+          <p style="font-size: 14px; margin: 0; color:black;"><strong>${exp.company || 'Company Name'}</strong> - ${exp.position || 'Position'} (${exp.dates || 'Year Range'})</p>
+          <ul style="margin: 0; padding-left: 20px;">
+            ${(exp.details || []).map(detail => `<li style="font-size: 14px; margin: 0; color:black;">${detail || 'Responsibility/Achievement'}</li>`).join('')}
+          </ul>
         </div>
-      </div>
+      `).join('')}
+    </div>
 
-      <!-- Main Flex: Content Section -->
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%; padding: 20px 10px; box-sizing: border-box;">
-        
-        <!-- Left Side: Personal Information, Skills, and Education -->
-        <div style="flex: 0 0 50%; padding-right: 20px;">
-          
-          <!-- Personal Information -->
-          <div style="margin-bottom: 20px;">
-            <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">PERSONAL INFORMATION</h3>
-            <p style="font-size: 14px; margin: 0; color:black;">${formData.address || '123 Main St, City, State, ZIP'}</p>
-            <p style="font-size: 14px; margin: 0; color:black;">${formData.phone || '(123) 456-7890'}</p>
-            <p style="font-size: 14px; margin: 0; color:black;">${formData.email || 'email@example.com'}</p>
-            <p style="font-size: 14px; margin: 0; color:black;">${formData.linkedin || 'linkedin.com/in/username'}</p>
-          </div>
+    <!-- Projects Section -->
+<div style="margin-bottom: 15px;">
+  <h3 style="font-size: 18px; color: black; font-weight: bold; margin-bottom: 10px;">PROJECTS</h3>
+  ${(formData.projects || []).map(project => `
+    <div style="margin-bottom: 10px;">
+      <p style="font-size: 14px; margin: 0; color:black;"><strong>${project.title || 'Project Title'}</strong></p>
+      <ul style="margin: 0; padding-left: 20px; color:black;">
+        ${(project.details || []).map(detail => `<li style="font-size: 14px; margin: 0; color:black;">${detail || 'Project Detail'}</li>`).join('')}
+      </ul>
+    </div>
+  `).join('') || '<p style="font-size: 14px; margin: 0;">No projects listed.</p>'}
+</div>
 
-          <!-- Skills Section -->
-          <div style="margin-bottom: 20px;">
-            <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">SKILLS</h3>
-            ${(formData.skills || []).map(skill => `
-              <p style="font-size: 14px; margin: 0; color:black;">&#8226; ${skill || 'Skill'}</p>
-            `).join('')}
-          </div>
+<!-- Certifications Section -->
+<div style="margin-bottom: 15px;">
+  <h3 style="font-size: 18px; color: black; font-weight: bold; margin-bottom: 10px;">CERTIFICATIONS</h3>
+  ${(formData.certifications || []).map(certification => `
+    <div style="margin-bottom: 10px;">
+      <p style="font-size: 14px; margin: 0; color:black;"><strong>${certification.course || 'Certification Course'}</strong> | ${certification.company || 'Issuing Company'}</p>
+      <ul style="margin: 0; padding-left: 20px; color:black;">
+        ${(certification.details || []).map(detail => `<li style="font-size: 14px; margin: 0; color:black;">${detail || 'Certification Detail'}</li>`).join('')}
+      </ul>
+    </div>
+  `).join('') || '<p style="font-size: 14px; margin: 0;">No certifications listed.</p>'}
+</div>
 
-          <!-- Education Section -->
-          <div>
-            <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">EDUCATION</h3>
-            ${formData.education.length > 0 ? formData.education.map(edu => `
-              <div style="margin-bottom: 10px;">
-                <p style="font-size: 14px; margin: 0; color:black;">
-                  <strong>${edu.level || 'Level not provided'}</strong> - ${edu.college || edu.schoolName || 'Institution not provided'}
-                </p>
-                
-                ${edu.level === 'Class 10th' ? `
-                  <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Medium: ${edu.medium || 'Medium not provided'}</p>
-                  <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Year: ${edu.endYear || 'End Year not provided'}</p>
-                  <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
-                ` : edu.level === 'Class 12th' ? `
-                  <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Medium: ${edu.medium || 'Course not provided'}</p>
-                  <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Year: ${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
-                  <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
-                ` : (edu.level === 'Graduate' || edu.level === 'Postgraduate') ? `
-                  <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Course: ${edu.course || 'Course not provided'}</p>
-                  <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">College: ${edu.college || 'College not provided'}</p>
-                  <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Year: ${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
-                  <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
-                ` : `
-                  <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Year: ${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
-                `}
-              </div>
-            `).join('') : '<p style="font-size: 14px; margin: 0;">No education details provided.</p>'}
-          </div>
-        </div>
+</div>
 
-        <!-- Right Side: About Me, Experience, and Projects -->
-        <div style="flex: 0 0 50%; padding-left: 20px;">
-
-          <!-- About Me Section -->
-          <div style="margin-bottom: 20px;">
-            <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">ABOUT ME</h3>
-            <p style="font-size: 14px; line-height: 1.5; margin: 0; color:black;">${formData.summary || 'This is a placeholder for your summary content.'}</p>
-          </div>
-
-          <!-- Experience Section -->
-          <div style="margin-bottom: 20px;">
-            <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">EXPERIENCE</h3>
-            ${(formData.experience || []).map(exp => `
-              <div style="margin-bottom: 10px;">
-                <p style="font-size: 14px; margin: 0; color:black;"><strong>${exp.company || 'Company Name'}</strong> - ${exp.position || 'Position'} (${exp.dates || 'Year Range'})</p>
-                <ul style="margin: 0; padding-left: 20px;">
-                  ${(exp.details || []).map(detail => `<li style="font-size: 14px; margin: 0; color:black;">${detail || 'Responsibility/Achievement'}</li>`).join('')}
-                </ul>
-              </div>
-            `).join('')}
-          </div>
-
-          <!-- Projects Section -->
-          <div>
-            <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">PROJECTS</h3>
-            ${formData.projects.length > 0 ? formData.projects.map(project => `
-              <div style="margin-bottom: 10px;">
-                <p style="font-size: 14px; margin: 0; color:black;"><strong>${project.title || 'Project Title'}</strong></p>
-                <ul style="margin: 0; padding-left: 20px; color:black;">
-                  ${project.details.length > 0 ? project.details.map(detail => `<li style="font-size: 14px; margin: 0; color:black;">${detail || 'Project Detail'}</li>`).join('') : '<li style="font-size: 14px; margin: 0;">No details provided.</li>'}
-                </ul>
-              </div>
-            `).join('') : '<p style="font-size: 14px; margin: 0;">No projects listed.</p>'}
-          </div>
-
-          <!-- Certifications Section -->
-          <div>
-            <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">CERTIFICATIONS</h3>
-            ${formData.certifications.length > 0 ? formData.certifications.map(certification => `
-              <div style="margin-bottom: 10px;">
-                <p style="font-size: 14px; margin: 0; color:black;"><strong>${certification.course || 'Certification Course'} | ${certification.company || 'Issuing Company'}</strong></p>
-                <ul style="margin: 0; padding-left: 20px; color:black;">
-                  ${certification.details.length > 0 ? certification.details.map(detail => `<li style="font-size: 14px; margin: 0; color:black;">${detail || 'Project Detail'}</li>`).join('') : '<li style="font-size: 14px; margin: 0;">No details provided.</li>'}
-                </ul>
-              </div>
-            `).join('') : '<p style="font-size: 14px; margin: 0;">No certification listed.</p>'}
-          </div>
-
-
-
-        </div>
-      </div>
     `;
 } else if (templateType === 8) {
   return `
@@ -1217,7 +1349,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
         <!-- Header -->
         <header style="text-align: center; margin-bottom: 0px;">
-          <h1 style="font-size: 38px; color: #007bff; margin: 0px;">${formData.firstName || 'John'} ${formData.lastName || 'Doe'}</h1>
+          <h1 style="font-size: 38px; font-weight: color: #007bff; margin: 0px;">${formData.firstName || 'John'} ${formData.lastName || 'Doe'}</h1>
           <h2 style="font-size: 24px; color: #555; margin: 0px;">${formData.jobTitle || 'Web Developer'}</h2>
           <p style="font-size: 16px; color: #777; margin: 0px;">${formData.email || 'email@example.com'} | ${formData.phone || '(123) 456-7890'} | ${formData.linkedin || 'linkedin.com/in/username'}</p>
         </header>

@@ -610,38 +610,42 @@ const handleDownloadPNG = () => {
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = content;
 
-  // Apply global styles to ensure consistent appearance
+  // Set up basic styling to control appearance and A4 dimensions
   tempDiv.style.fontFamily = 'Arial, sans-serif';
-  tempDiv.style.color = '#000'; // Set default text color
-  tempDiv.style.backgroundColor = '#fff'; // Set background color if needed
-  tempDiv.style.width = '210mm'; // A4 size width
-  tempDiv.style.height = '297mm'; // A4 size height
+  tempDiv.style.color = '#000';
+  tempDiv.style.backgroundColor = '#fff';
+  tempDiv.style.width = '210mm'; // Set width for A4 page
+  tempDiv.style.height = '310mm'; // Set height for A4 page
+  tempDiv.style.padding = '10px';
   tempDiv.style.boxSizing = 'border-box';
-  tempDiv.style.padding = '10px'; // Add some padding if necessary
 
-  // Append the temp div to the body
+  // Temporarily append to body to calculate dimensions
   document.body.appendChild(tempDiv);
 
-  // Calculate scaling factor to fit the content within A4 height
-  const actualHeight = tempDiv.offsetHeight;
-  const a4Height = 297 * 3; // A4 page height in pixels at 3x scale
-  const scale = a4Height / actualHeight; // Scale down if needed
-
-
+  // Use html2canvas to capture the content as a scaled PNG
   html2canvas(tempDiv, {
-    scale: Math.min(3, scale), // Use scale factor, max at 3 for quality
-    width: tempDiv.offsetWidth,
-    height: actualHeight,
+    scale: 3, // High-quality scale
     useCORS: true,
     allowTaint: true,
+    width: tempDiv.offsetWidth,
+    height: tempDiv.offsetHeight,
+    windowWidth: tempDiv.scrollWidth,
+    windowHeight: tempDiv.scrollHeight
   }).then((canvas) => {
+    // Create a download link for the PNG file
     const link = document.createElement('a');
-    link.href = canvas.toDataURL('image/png', 1.0); // PNG data URL
-    link.download = 'ResumeTemplate.png'; // File name
-    link.click();
-    document.body.removeChild(tempDiv); // Clean up
+    link.href = canvas.toDataURL('image/png', 1.0); // Generate PNG data URL
+    link.download = 'Content_A4.png'; // Set the file name
+    link.click(); // Trigger the download
+
+    // Clean up by removing the temporary div from the DOM
+    document.body.removeChild(tempDiv);
+  }).catch(error => {
+    console.error("Error capturing content as PNG:", error);
   });
 };
+
+
 
 
 
@@ -1286,7 +1290,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Tools Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 ||
+{(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType === 3 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 ||
   selectedTemplateType === 11 || selectedTemplateType === 16 || selectedTemplateType === 17
 )&& (
   <>
@@ -1332,7 +1336,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Others Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 || 
+{(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType === 3 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 || 
   selectedTemplateType === 11 || selectedTemplateType === 16 || selectedTemplateType === 17
 )&& (
   <>
@@ -1378,7 +1382,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Soft Skills Section */}
-{(selectedTemplateType === 1 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 || 
+{(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType === 3 || selectedTemplateType === 4 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 || 
   selectedTemplateType === 11 || selectedTemplateType === 16 
 )&& (
   <>
@@ -1571,7 +1575,7 @@ const handleDownloadPDF = () => {
 
 
 {/* Handle Languages */}
-{(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType ===3 || selectedTemplateType ===4 || selectedTemplateType === 5 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 || selectedTemplateType === 10 || 
+{(selectedTemplateType === 1 || selectedTemplateType === 2 || selectedTemplateType ===3 || selectedTemplateType ===4 || selectedTemplateType === 5 || selectedTemplateType === 7 || selectedTemplateType === 6 || selectedTemplateType === 8 || selectedTemplateType === 9 || selectedTemplateType === 10 || 
   selectedTemplateType === 11 || selectedTemplateType === 16 || selectedTemplateType === 18 || selectedTemplateType === 19 || selectedTemplateType === 20
 )&& (
   <>
