@@ -1959,39 +1959,43 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 
         <!-- Experience Section -->
-        <div style="margin-bottom: 5px; color: black; line-height: 1.4;">
-          <h3 style="font-size: 16px; background-color: #a8a89c; padding: 5px; margin: 0; color: black;">INTERNSHIP</h3>
-          <div style="display: flex; flex-direction: column; gap: 5px; margin: 0; margin-bottom: 3px;">
-          ${formData.experience.length > 0 ? formData.experience.map(exp => `
-            <div style="margin-bottom: 5px; margin: 0; margin-top: 3px;">
-              <p style="margin: 0; color: black; font-size: 16px;"><strong>${exp.position || 'Position not provided'}</strong> [${exp.company || 'Company not provided'}]</p>
-              <ul style="margin: 0; padding-left: 20px; font-size: 16px;">
-                ${Array.isArray(exp.details) && exp.details.length > 0 ? exp.details.map(point => `
-                  <li style="margin: 0; color: black;">${point || 'Detail point not provided'}</li>
-                `).join('') : '<li style="color: black;">No details listed.</li>'}
-              </ul>
-            </div>
-          `).join('') : '<p style="color: black;">No experience listed.</p>'}
-          
-          </div>
-        </div>
+<div style="margin-bottom: 5px; color: black; line-height: 1.4;">
+  <h3 style="font-size: 16px; background-color: #a8a89c; padding: 5px; margin: 0; color: black;">INTERNSHIP</h3>
+  <div style="display: block; gap: 5px; margin: 0; margin-bottom: 3px;">
+    ${formData.experience.length > 0 ? formData.experience.map(exp => `
+      <div style="margin-bottom: 5px; margin-top: 3px; text-align: left;">
+        <p style="margin: 0; color: black; font-size: 16px; text-align: left;">
+          <strong>${exp.position || 'Position not provided'}</strong> [${exp.company || 'Company not provided'}]
+        </p>
+        <ul style="margin: 0; font-size: 16px; padding-left: 20px;">
+          ${Array.isArray(exp.details) && exp.details.length > 0 ? exp.details.map(point => `
+            <li style="margin: 0; color: black;">${point || 'Detail point not provided'}</li>
+          `).join('') : '<li style="color: black;">No details listed.</li>'}
+        </ul>
+      </div>
+    `).join('') : '<p style="color: black;">No experience listed.</p>'}
+  </div>
+</div>
+
+
 
         <!-- Projects Section -->
-        <div style="margin-bottom: 5px; color: black; line-height: 1.4;">
-          <h3 style="font-size: 16px; background-color: #a8a89c; padding: 5px; margin: 0; margin-bottom: 3px; color: black;">PROJECTS</h3>
-          <div style="display: flex; flex-direction: column; gap: 5px; margin: 0;">
-            ${formData.projects.length > 0 ? formData.projects.map(project => `
-              <div style="margin-bottom: 5px;">
-                <strong style="color: black; font-size: 16px;">${project.title || 'Project title not provided'}</strong>
-                <ul style="margin: 0; padding-left: 20px; font-size: 16px;">
-                  ${project.details.length > 0 ? project.details.map(detail => `
-                    <li style="margin: 0; color: black;">${detail || 'Detail point not provided'}</li>
-                  `).join('') : '<li style="color: black;">No details listed.</li>'}
-                </ul>
-              </div>
-            `).join('') : '<p style="color: black;">No projects listed.</p>'}
-          </div>
-        </div>
+<div style="margin-bottom: 5px; color: black; line-height: 1.4;">
+  <h3 style="font-size: 16px; background-color: #a8a89c; padding: 5px; margin: 0; margin-bottom: 3px; color: black;">PROJECTS</h3>
+  <div style="display: flex; flex-direction: column; gap: 5px; margin: 0;">
+    ${formData.projects.length > 0 ? formData.projects.map(project => `
+      <div style="margin-bottom: 5px;">
+        <strong style="color: black; font-size: 16px;">${project.title || 'Project title not provided'}</strong>
+        <ul style="margin: 0; padding-left: 0; font-size: 16px; ">
+          ${project.details.length > 0 ? project.details.map(detail => `
+            <span style="margin: 0; color: black;  padding-left: 0;">${detail || 'Detail point not provided'}</span>
+          `).join('') : '<li style="color: black;">No details listed.</li>'}
+        </ul>
+      </div>
+    `).join('') : '<p style="color: black;">No projects listed.</p>'}
+  </div>
+</div>
+
 
         <!-- Technical Skills -->
         <div style="margin-bottom: 5px; color: black; line-height: 1.4;">

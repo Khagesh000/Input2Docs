@@ -1,164 +1,153 @@
 /* General Footer Styles */
 .endbar {
-    background-color: #2e2e2e;
-    color: #eaeaea;
-    padding: 2rem 0;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .section-title {
-    font-size: 1.5rem;
-    font-weight: bolder;
-    font-family: 'Times New Roman', Times, serif;
-    margin-bottom: 1rem;
-    color: #f05454;
-    text-align: center; /* Ensures headings are centered on all screens */
-  }
-  
-  .input-text {
-    color: wheat; /* Wheat color for "Input" */
-  }
-  
-  .docs-text {
-    color: red; /* Red color for "2Docs" */
+  background-color: #2e2e2e;
+  color: #eaeaea;
+  padding: 2rem 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.endbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Large Screen Layout Adjustments */
+@media (min-width: 992px) {
+  .endbar .row {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to ensure proper alignment */
+    justify-content: space-between;
+    gap: 2rem; /* Add consistent spacing between columns */
   }
 
-  
-  p, ul {
-    font-size: 1rem;
-    line-height: 1.6;
-    text-align: center; /* Centers text on all screens */
+  .endbar .col-md-3 {
+    flex: 0 0 23%; /* Make each column take up 23% of the width */
+    max-width: 23%;
   }
-  
-  /* Style all anchor tags globally within the footer */
-  .endbar a {
-    color: inherit; /* Inherits text color from the parent */
-    text-decoration: none; /* Removes underline */
+}
+
+/* Section Titles */
+.endbar-section-title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 1rem;
+  color: #f05454;
+}
+
+.endbar p,
+.endbar ul {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Features Section */
+.endbar-features-list {
+  padding-left: 0;
+}
+
+.endbar-features-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.endbar-features-list li i {
+  color: red;
+  margin-right: 0.5rem;
+}
+
+.endbar-features-list li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.endbar-features-list li a:hover {
+  color: #f05454;
+}
+
+/* Quick Links */
+.endbar-quick-links {
+  padding-left: 0;
+}
+
+.endbar-quick-links a {
+  font-size: 1rem;
+  display: inline-block;
+  margin: 0.3rem 0;
+}
+
+/* Contact Info */
+.endbar-contact-info {
+  padding-left: 0;
+}
+
+.endbar-contact-info li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  list-style: none;
+}
+
+.endbar-contact-info li i {
+  margin-right: 0.5rem;
+  color: #f05454;
+}
+
+/* Branding Column */
+.endbar-brand-description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Contact Us Button */
+.endbar-contact-us-btn {
+  display: inline-block;
+  background-color: #f05454;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.endbar-contact-us-btn:hover {
+  background-color: #d94343;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  .row {
+    display: block;
   }
-  
-  .endbar a:hover {
-    color: #f05454; /* Highlight color on hover */
-    text-decoration: none; /* Ensures no underline */
+
+  .col-md-3 {
+    width: 100%;
   }
-  
-  .endbar a:focus {
-    outline: none;
-    color: #f05454;
+
+  .endbar-section-title {
+    text-align: center;
   }
-  
-  /* Features Section */
-  .features-list {
-    padding-left: 0; /* Removes default list padding */
+
+  .endbar-features-list li {
+    justify-content: center;
   }
-  
-  .features-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    justify-content: center; /* Centers icons and text */
+
+  .endbar-quick-links a {
+    display: block;
   }
-  
-  .features-list li i {
-    color: #f05454;
-    margin-right: 0.5rem;
+
+  .endbar-contact-info li {
+    text-align: center;
   }
-  
-  /* Quick Links */
-  .quick-links {
-    padding-left: 0; /* Removes default list padding */
-    text-align: center; /* Centers the list items */
+
+  .endbar-brand-description {
+    text-align: center;
   }
-  
-  .quick-links a {
-    font-size: 1rem;
-    display: inline-block; /* Centers inline links */
-    margin: 0.3rem 0;
-    display: block; 
+
+  .endbar-contact-us-btn {
+    display: block;
+    margin: 0 auto;
   }
-  
-  /* Contact Info */
-  .contact-info {
-    padding-left: 0; /* Removes default list padding */
-    text-align: center; /* Centers the list */
-  }
-  
-  .contact-info li {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    list-style: none; /* Removes default list bullets */
-  }
-  
-  .contact-info li i {
-    margin-right: 0.5rem;
-    color: #f05454;
-  }
-  
-  /* Branding Column */
-  .brand-description {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    text-align: center; /* Centers description text */
-  }
-  
-  .contact-us-btn {
-    display: block; /* Ensures the button takes full width in small screens */
-    margin: 0 auto; /* Centers the button */
-    background-color: #f05454;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .contact-us-btn:hover {
-    background-color: #d94343;
-  }
-  
-  /* Bottom Footer */
-  .bottom-footer {
-    border-top: 1px solid #444;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    text-align: center; /* Centers footer text */
-  }
-  
-  .bottom-footer p {
-    font-size: 0.9rem;
-    color: #aaa;
-  }
-  
-  /* Responsive Design for Small Screens */
-  @media (max-width: 768px) {
-    .row {
-      flex-direction: column; /* Stacks sections vertically */
-      text-align: center; /* Centers all row content */
-    }
-  
-    .col-md-3 {
-      margin-bottom: 1.5rem; /* Adds spacing between sections */
-    }
-  
-    .features-list li {
-      justify-content: center; /* Centers features list items */
-    }
-  
-    .quick-links a {
-      display: block; /* Ensures links appear stacked */
-    }
-  
-    .contact-info li {
-      text-align: center; /* Centers each contact info item */
-    }
-  
-    .brand-description {
-      text-align: center; /* Ensures branding text is centered */
-    }
-  }
-  
+}
