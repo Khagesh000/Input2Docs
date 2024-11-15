@@ -14,7 +14,7 @@ import '../CoverLetterTemplates.css'; // Ensure this path is correct
 // Import images for templates
 import img from '../assets/images/cover_letter.png';
 import img1 from '../assets/images/cover_letter1.png';
-import img2 from '../assets/images/resumetemplates.png';
+import img2 from '../assets/images/cover_letter1.png';
 import img3 from '../assets/images/cover_letter1.png';
 import img4 from '../assets/images/cover_letter.png';
 import img5 from '../assets/images/cover_letter1.png';
