@@ -1,0 +1,164 @@
+/* General Footer Styles */
+.endbar {
+    background-color: #2e2e2e;
+    color: #eaeaea;
+    padding: 2rem 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 1rem;
+    color: #f05454;
+    text-align: center; /* Ensures headings are centered on all screens */
+  }
+  
+  .input-text {
+    color: wheat; /* Wheat color for "Input" */
+  }
+  
+  .docs-text {
+    color: red; /* Red color for "2Docs" */
+  }
+
+  
+  p, ul {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center; /* Centers text on all screens */
+  }
+  
+  /* Style all anchor tags globally within the footer */
+  .endbar a {
+    color: inherit; /* Inherits text color from the parent */
+    text-decoration: none; /* Removes underline */
+  }
+  
+  .endbar a:hover {
+    color: #f05454; /* Highlight color on hover */
+    text-decoration: none; /* Ensures no underline */
+  }
+  
+  .endbar a:focus {
+    outline: none;
+    color: #f05454;
+  }
+  
+  /* Features Section */
+  .features-list {
+    padding-left: 0; /* Removes default list padding */
+  }
+  
+  .features-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    justify-content: center; /* Centers icons and text */
+  }
+  
+  .features-list li i {
+    color: #f05454;
+    margin-right: 0.5rem;
+  }
+  
+  /* Quick Links */
+  .quick-links {
+    padding-left: 0; /* Removes default list padding */
+    text-align: center; /* Centers the list items */
+  }
+  
+  .quick-links a {
+    font-size: 1rem;
+    display: inline-block; /* Centers inline links */
+    margin: 0.3rem 0;
+    display: block; 
+  }
+  
+  /* Contact Info */
+  .contact-info {
+    padding-left: 0; /* Removes default list padding */
+    text-align: center; /* Centers the list */
+  }
+  
+  .contact-info li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    list-style: none; /* Removes default list bullets */
+  }
+  
+  .contact-info li i {
+    margin-right: 0.5rem;
+    color: #f05454;
+  }
+  
+  /* Branding Column */
+  .brand-description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center; /* Centers description text */
+  }
+  
+  .contact-us-btn {
+    display: block; /* Ensures the button takes full width in small screens */
+    margin: 0 auto; /* Centers the button */
+    background-color: #f05454;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-us-btn:hover {
+    background-color: #d94343;
+  }
+  
+  /* Bottom Footer */
+  .bottom-footer {
+    border-top: 1px solid #444;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    text-align: center; /* Centers footer text */
+  }
+  
+  .bottom-footer p {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+  
+  /* Responsive Design for Small Screens */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column; /* Stacks sections vertically */
+      text-align: center; /* Centers all row content */
+    }
+  
+    .col-md-3 {
+      margin-bottom: 1.5rem; /* Adds spacing between sections */
+    }
+  
+    .features-list li {
+      justify-content: center; /* Centers features list items */
+    }
+  
+    .quick-links a {
+      display: block; /* Ensures links appear stacked */
+    }
+  
+    .contact-info li {
+      text-align: center; /* Centers each contact info item */
+    }
+  
+    .brand-description {
+      text-align: center; /* Ensures branding text is centered */
+    }
+  }
+  
