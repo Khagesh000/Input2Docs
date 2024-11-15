@@ -133,10 +133,10 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
           <div style="margin-top: 20px;">
             <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">TOOLS</label>
             <div style="display: flex; flex-wrap: wrap;">
-              ${(formData.tools || []).map(tools => `
+              ${(formData.tools || []).map(tool => `
                 <div style="flex: 1 1 50%; margin-bottom: 5px;">
                   <ul style="list-style-type: disc; margin: 0; padding-left: 20px; font-size: 14px; color: black;">
-                    <li>${tools || 'MS EXCEL'}</li>
+                    <li>${tool.name || 'MS EXCEL'}</li>
                   </ul>
                 </div>
               `).join('')}
@@ -187,10 +187,10 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
           </h2>
   
           <!-- Education Section -->
-<div style="margin-top: 20px;">
+<div style="margin-top: 10px;">
   <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">EDUCATION</label>
   ${(formData.education || []).map(edu => `
-    <div style="margin-bottom: 15px;">
+    <div style="margin-bottom: 5px;">
       <!-- Postgraduate -->
       ${edu.level === 'Postgraduate' ? `
         <strong style="color: #000;">${edu.level || 'Postgraduate'} in ${edu.course || 'Course'}</strong><br>
@@ -243,10 +243,10 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
   
      <!-- Experience Section -->      
-<div style="margin-top: 20px;">
+<div style="margin-top: 10px;">
   <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">EXPERIENCE</label>
   ${(formData.experience || []).map(exp => `
-    <div style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
+    <div style="margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
       <strong style="font-size: 16px; color: #000;">${exp.jobTitle || 'Job Title'}</strong> at 
       <span style="font-size: 16px; color: #333;">${exp.organization || 'Organization Name'}</span>
       <br>
@@ -274,10 +274,10 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
   
    
-<div style="margin-top: 20px;">
+<div style="margin-top: 10px;">
   <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">PROJECTS</label>
   ${(formData.projects || []).map(project => `
-    <div style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
+    <div style="margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
 
       <strong style="font-size: 16px; color: #000;">${project.title || 'Project Title'}</strong><br>
 
@@ -312,10 +312,10 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
   
           <!-- Certificates Section -->
-          <div style="margin-top: 20px;">
+          <div style="margin-top: 10px;">
   <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">CERTIFICATES</label>
   ${(formData.certifications || []).map(cert => `
-    <div style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
+    <div style="margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
       <strong style="font-size: 16px; color: #000;">${cert.name || 'Certification Name'}</strong><br>
 
       <span style="font-size: 14px; color: #555; display: block; margin-top: 5px;">
@@ -340,10 +340,10 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 </div>
 
      <!-- Publications  Section -->
-          <div style="margin-top: 20px;">
+          <div style="margin-top: 10px;">
   <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">PUBLICATIONS</label>
   ${(formData.publications || []).map(pub => `
-    <div style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
+    <div style="margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
       
       <strong style="font-size: 16px; color: #000;">${pub.title || 'Title of Publication'}</strong><br>
 
@@ -375,11 +375,11 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 </div>
 
        <!-- Awards & Honors Section -->
-<div style="margin-top: 20px;">
+<div style="margin-top: 10px;">
   <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">AWARDS & HONORS</label>
 <div className="form-group">
   ${(formData.awards || []).map((award, index) => `
-    <div key="${index}" className="form-group" style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
+    <div key="${index}" className="form-group" style="margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
       <div className="row">
         <div className="col-md-6">
           <strong style="font-size: 16px; color: #000;">${award.title || 'Award Title'}</strong>
@@ -401,12 +401,12 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 </div>
    
         <!-- Professional Memberships Section -->
-<div style="margin-top: 20px;">
+<div style="margin-top: 10px;">
   <label style="font-weight: bold; font-size: 16px; color: #0d0565c4;">PROFESSIONAL MEMBERSHIPS</label>
 </div>
 <div className="form-group">
   ${(formData.memberships || []).map((membership, index) => `
-    <div key="${index}" className="form-group" style="margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
+    <div key="${index}" className="form-group" style="margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 15px;">
       <div className="row">
         <div className="col-md-6">
           <strong style="font-size: 16px; color: #000;">${membership.organization || 'Organization Name'}</strong>
@@ -1041,34 +1041,34 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         
         <!-- Personal Information -->
         <div style="margin-bottom: 20px;">
-          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">PERSONAL INFORMATION</h3>
-          <p style="font-size: 14px; margin: 0; color:black;">${formData.address || '123 Main St, City, State, ZIP'}</p>
-          <p style="font-size: 14px; margin: 0; color:black;">${formData.phone || '(123) 456-7890'}</p>
-          <p style="font-size: 14px; margin: 0; color:black;">${formData.email || 'email@example.com'}</p>
-          <p style="font-size: 14px; margin: 0; color:black;">${formData.linkedin || 'linkedin.com/in/username'}</p>
+          <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #333;">PERSONAL INFORMATION</h3>
+          <p style="font-size: 16px; margin: 0; color:black;">${formData.address || '123 Main St, City, State, ZIP'}</p>
+          <p style="font-size: 16px; margin: 0; color:black;">${formData.phone || '(123) 456-7890'}</p>
+          <p style="font-size: 16px; margin: 0; color:black;">${formData.email || 'email@example.com'}</p>
+          <p style="font-size: 16px; margin: 0; color:black;">${formData.linkedin || 'linkedin.com/in/username'}</p>
         </div>
 
 
   <!-- Education Section -->
 <div>
-  <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">EDUCATION</h3>
+  <h3 style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 10px;">EDUCATION</h3>
   ${formData.education.length > 0 ? formData.education.map(edu => `
     <div style="margin-bottom: 10px;">
-      <p style="font-size: 14px; margin: 0; color:black;">
+      <p style="font-size: 16px; margin: 0; color:black;">
         <strong>${edu.level || 'Level not provided'}</strong> - ${edu.institution || 'Institution not provided'}
       </p>
       ${edu.level === 'Class 10th' ? `
-        <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Medium: ${edu.medium || 'Medium not provided'}</p>
-        <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Year: ${edu.endYear || 'End Year not provided'}</p>
-        <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
+        <p style="font-size: 16px; margin: 0; margin-bottom:2px; color:black;">Medium: ${edu.medium || 'Medium not provided'}</p>
+        <p style="font-size: 16px; margin: 0; margin-bottom:2px; color:black;">Year: ${edu.endYear || 'End Year not provided'}</p>
+        <p style="font-size: 16px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
       ` : edu.level === 'Class 12th' ? `
-        <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Board: ${edu.board || 'Board not provided'}</p>
-        <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Medium: ${edu.medium || 'Medium not provided'}</p>
-        <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Years: ${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
-        <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
+        <p style="font-size: 16px; margin: 0; margin-bottom:2px; color:black;">Board: ${edu.board || 'Board not provided'}</p>
+        <p style="font-size: 16px; margin: 0; margin-bottom:2px; color:black;">Medium: ${edu.medium || 'Medium not provided'}</p>
+        <p style="font-size: 16px; margin: 0; margin-bottom:2px; color:black;">Years: ${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
+        <p style="font-size: 16px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
       ` : `
-        <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Years: ${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
-        <p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
+        <p style="font-size: 16px; margin: 0; margin-bottom:2px; color:black;">Years: ${edu.startYear || 'Start Year not provided'} - ${edu.endYear || 'End Year not provided'}</p>
+        <p style="font-size: 16px; margin: 0; margin-bottom:2px; color:black;">Percentage: ${edu.percentage || 'Percentage not provided'}</p>
         ${edu.level === 'Postgraduate' || edu.level === 'Graduate' ? `<p style="font-size: 14px; margin: 0; margin-bottom:2px; color:black;">Thesis: ${edu.thesis || 'Thesis not provided'}</p>` : ''}
       `}
     </div>
@@ -1080,49 +1080,49 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
         <!-- Skills Section -->
         <div style="margin-bottom: 10px;">
-          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">SKILLS</h3>
+          <h3 style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 10px;">SKILLS</h3>
           ${(formData.skills || []).map(skill => `
-            <p style="font-size: 14px; margin: 0; color:black;">&#8226; ${skill || 'Skill'}</p>
+            <p style="font-size: 16px; margin: 0; color:black;">&#8226; ${skill || 'Skill'}</p>
           `).join('')}
         </div>
 
         <!-- Tools Section -->
         <div style="margin-bottom: 10px;">
-          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">TOOLS</h3>
+          <h3 style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 10px;">TOOLS</h3>
           ${(formData.tools || []).map(tool => `
-            <p style="font-size: 14px; margin: 0; color:black;">&#8226; ${tool.name || 'tools'}</p>
+            <p style="font-size: 16px; margin: 0; color:black;">&#8226; ${tool.name || 'tools'}</p>
           `).join('')}
         </div>
 
         <!-- Others Section -->
         <div style="margin-bottom: 10px;">
-          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">OTHERS</h3>
+          <h3 style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 10px;">OTHERS</h3>
           ${(formData.others || []).map(other => `
-            <p style="font-size: 14px; margin: 0; color:black;">&#8226; ${other || 'Prompt Design'}</p>
+            <p style="font-size: 16px; margin: 0; color:black;">&#8226; ${other || 'Prompt Design'}</p>
           `).join('')}
         </div>
 
         <!-- SOFTSKILLS Section -->
         <div style="margin-bottom: 10px;">
-          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">SOFT SKILLS</h3>
+          <h3 style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 10px;">SOFT SKILLS</h3>
           ${(formData.softSkills || []).map(softSkill => `
-            <p style="font-size: 14px; margin: 0; color:black;">&#8226; ${softSkill || 'tools'}</p>
+            <p style="font-size: 16px; margin: 0; color:black;">&#8226; ${softSkill || 'tools'}</p>
           `).join('')}
         </div>
 
         <!-- Languages Section -->
         <div style="margin-bottom: 10px;">
-          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">LANGUAGES</h3>
+          <h3 style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 10px;">LANGUAGES</h3>
           ${(formData.languages || []).map(language => `
-            <p style="font-size: 14px; margin: 0; color:black;">&#8226; ${language || 'tools'}</p>
+            <p style="font-size: 16px; margin: 0; color:black;">&#8226; ${language || 'tools'}</p>
           `).join('')}
         </div>
 
         <!-- Languages Section -->
         <div style="margin-bottom: 10px;">
-          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">HOBBIES</h3>
+          <h3 style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 10px;">HOBBIES</h3>
           ${(formData.hobbies || []).map(hobbie => `
-            <p style="font-size: 14px; margin: 0; color:black;">&#8226; ${hobbie || 'tools'}</p>
+            <p style="font-size: 16px; margin: 0; color:black;">&#8226; ${hobbie || 'tools'}</p>
           `).join('')}
         </div>
 
@@ -1134,28 +1134,28 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
         <!-- About Me Section -->
         <div style="margin-bottom: 20px;">
-          <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">ABOUT ME</h3>
-          <p style="font-size: 14px; line-height: 1.5; margin: 0; color:black;">${formData.summary || 'This is a placeholder for your summary content.'}</p>
+          <h3 style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 10px;">ABOUT ME</h3>
+          <p style="font-size: 16px; line-height: 1.5; margin: 0; color:black;">${formData.summary || 'This is a placeholder for your summary content.'}</p>
         </div>
 
       
 <!-- Experience Section -->
 <div style="margin-bottom: 20px;">
-  <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">EXPERIENCE</h3>
+  <h3 style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 10px;">EXPERIENCE</h3>
   ${(formData.experience || []).map(exp => `
     <div style="margin-bottom: 10px;">
-      <p style="font-size: 14px; margin: 0; color: black;">
+      <p style="font-size: 16px; margin: 0; color: black;">
         <strong>${exp.jobTitle || 'Job Title'}</strong> - ${exp.organization || 'Organization Name'}
         (${exp.dates || 'Year Range'})
       </p>
-      <p style="font-size: 14px; margin: 0; color: black;">
+      <p style="font-size: 16px; margin: 0; color: black;">
         Location: ${exp.location || 'Location'}
       </p>
       
       <!-- Responsibilities -->
       <ul style="margin: 0; padding-left: 20px;">
         ${(exp.responsibilities || []).map(responsibility => `
-          <li style="font-size: 14px; margin: 0; color: black;">
+          <li style="font-size: 16px; margin: 0; color: black;">
             ${responsibility || 'Responsibility/Achievement'}
           </li>
         `).join('')}
@@ -1164,7 +1164,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
       <!-- Projects -->
       <ul style="margin: 0; padding-left: 20px;">
         ${(exp.projects || []).map(project => `
-          <li style="font-size: 14px; margin: 0; color: black;">
+          <li style="font-size: 16px; margin: 0; color: black;">
             ${project || 'Project or Contribution'}
           </li>
         `).join('')}
@@ -1175,7 +1175,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 <!-- Research and Projects Section -->
 <div style="margin-bottom: 20px;">
-  <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">RESEARCH AND PROJECTS</h3>
+  <h3 style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 10px;">RESEARCH AND PROJECTS</h3>
   ${(formData.projects || []).map(project => `
     <div style="margin-bottom: 10px;">
       <!-- Project Title -->
@@ -1184,23 +1184,23 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
       </p>
       
       <!-- Brief Description -->
-      <p style="font-size: 14px; color: black; margin: 5px 0;">
+      <p style="font-size: 16px; color: black; margin: 5px 0;">
         ${project.description || 'Brief Description (focus on scope and impact)'}
       </p>
       
       <!-- Role in Project -->
-      <p style="font-size: 14px; color: black; margin: 5px 0;">
+      <p style="font-size: 16px; color: black; margin: 5px 0;">
         <strong>Role:</strong> ${project.role || 'Role in Project (e.g., Lead Researcher)'}
       </p>
       
       <!-- Tools/Technologies Used -->
-      <p style="font-size: 14px; color: black; margin: 5px 0;">
+      <p style="font-size: 16px; color: black; margin: 5px 0;">
         <strong>Tools/Technologies:</strong> ${project.tools || 'Tools/Technologies Used'}
       </p>
       
       <!-- Link to Project (if applicable) -->
       ${project.link ? `
-        <p style="font-size: 14px; color: black; margin: 5px 0;">
+        <p style="font-size: 16px; color: black; margin: 5px 0;">
           <strong>Link:</strong> <a href="${project.link}" style="color: blue;" target="_blank">${project.link}</a>
         </p>
       ` : ''}
@@ -1210,7 +1210,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 <!-- Certifications Section -->
 <div style="margin-bottom: 20px;">
-  <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">CERTIFICATIONS & LICENSES</h3>
+  <h3 style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 10px;">CERTIFICATIONS & LICENSES</h3>
   ${(formData.certifications || []).map(certification => `
     <div style="margin-bottom: 10px;">
       <!-- Certification Name -->
@@ -1219,18 +1219,18 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
       </p>
       
       <!-- Issuing Organization -->
-      <p style="font-size: 14px; color: black; margin: 5px 0;">
+      <p style="font-size: 16px; color: black; margin: 5px 0;">
         <strong>Issuing Organization:</strong> ${certification.organization || 'Issuing Organization'}
       </p>
       
       <!-- Issued Date -->
-      <p style="font-size: 14px; color: black; margin: 5px 0;">
+      <p style="font-size: 16px; color: black; margin: 5px 0;">
         <strong>Issued Date:</strong> ${certification.issuedDate || 'Issued Date'}
       </p>
       
       <!-- Expiration Date (if applicable) -->
       ${certification.expirationDate ? `
-        <p style="font-size: 14px; color: black; margin: 5px 0;">
+        <p style="font-size: 16px; color: black; margin: 5px 0;">
           <strong>Expiration Date:</strong> ${certification.expirationDate}
         </p>
       ` : ''}
@@ -1240,7 +1240,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 <!-- Publications Section -->
 <div style="margin-bottom: 20px;">
-  <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">PUBLICATIONS</h3>
+  <h3 style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 10px;">PUBLICATIONS</h3>
   ${(formData.publications || []).map(publication => `
     <div style="margin-bottom: 10px;">
       <!-- Title of Publication -->
@@ -1250,24 +1250,24 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
       
       <!-- Authors (optional) -->
       ${publication.authors ? `
-        <p style="font-size: 14px; color: black; margin: 5px 0;">
+        <p style="font-size: 16px; color: black; margin: 5px 0;">
           <strong>Authors:</strong> ${publication.authors}
         </p>
       ` : ''}
 
       <!-- Publication Date -->
-      <p style="font-size: 14px; color: black; margin: 5px 0;">
+      <p style="font-size: 16px; color: black; margin: 5px 0;">
         <strong>Publication Date:</strong> ${publication.date || 'Publication Date'}
       </p>
       
       <!-- Journal/Conference Name -->
-      <p style="font-size: 14px; color: black; margin: 5px 0;">
+      <p style="font-size: 16px; color: black; margin: 5px 0;">
         <strong>Journal/Conference Name:</strong> ${publication.journal || 'Journal/Conference Name'}
       </p>
       
       <!-- Link to Publication (if applicable) -->
       ${publication.link ? `
-        <p style="font-size: 14px; color: blue; margin: 5px 0;">
+        <p style="font-size: 16px; color: blue; margin: 5px 0;">
           <strong>Link:</strong> <a href="${publication.link}" style="color: blue;" target="_blank">${publication.link}</a>
         </p>
       ` : ''}
@@ -1277,7 +1277,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 <!-- Awards & Honors Section -->
 <div style="margin-bottom: 20px;">
-  <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">AWARDS & HONORS</h3>
+  <h3 style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 10px;">AWARDS & HONORS</h3>
   ${(formData.awards || []).map(award => `
     <div style="margin-bottom: 10px;">
       <!-- Award Title -->
@@ -1286,18 +1286,18 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
       </p>
       
       <!-- Awarding Body -->
-      <p style="font-size: 14px; color: black; margin: 5px 0;">
+      <p style="font-size: 16px; color: black; margin: 5px 0;">
         <strong>Awarding Body:</strong> ${award.body || 'Awarding Body'}
       </p>
       
       <!-- Date Received -->
-      <p style="font-size: 14px; color: black; margin: 5px 0;">
+      <p style="font-size: 16px; color: black; margin: 5px 0;">
         <strong>Date Received:</strong> ${award.dateReceived || 'Date Received'}
       </p>
       
       <!-- Description (optional) -->
       ${award.description ? `
-        <p style="font-size: 14px; color: black; margin: 5px 0;">
+        <p style="font-size: 16px; color: black; margin: 5px 0;">
           <strong>Description:</strong> ${award.description}
         </p>
       ` : ''}
@@ -1307,7 +1307,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
  <!-- Professional Memberships Section -->
 <div style="margin-bottom: 20px;">
-  <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">PROFESSIONAL MEMBERSHIPS</h3>
+  <h3 style="font-size: 18px; color: #333; font-weight: bold; margin-bottom: 10px;">PROFESSIONAL MEMBERSHIPS</h3>
   ${(formData.memberships || []).map(membership => `
     <div style="margin-bottom: 10px;">
       <!-- Organization Name -->
@@ -1316,12 +1316,12 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
       </p>
       
       <!-- Membership Role -->
-      <p style="font-size: 14px; color: black; margin: 5px 0;">
+      <p style="font-size: 16px; color: black; margin: 5px 0;">
         <strong>Role:</strong> ${membership.role || 'Membership Role (e.g., Member, Board Member)'}
       </p>
       
       <!-- Membership Dates -->
-      <p style="font-size: 14px; color: black; margin: 5px 0;">
+      <p style="font-size: 16px; color: black; margin: 5px 0;">
         <strong>Membership Dates:</strong> ${membership.dates || 'Dates (e.g., Jan 2020 - Present)'}
       </p>
     </div>
@@ -2084,11 +2084,226 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
       </div>
 
-      
+      <!-- Experience Heading Section -->
+<div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
+  WORK EXPERIENCE
+</div>
 
-     
-    </div>
-    
+<!-- Experience Section -->
+<div style="background-color: #fff; padding-left: 0px; padding-top: 3px; color: black; line-height: 1.4;"> 
+  <div style="display: flex; flex-direction: column; gap: 3px;">
+    ${formData.experience?.length > 0 ? formData.experience.map(exp => `
+      <div style="margin-bottom: 5px;">
+        <p style="margin: 0; font-size: 16px; color: black;">
+          <strong>${exp?.jobTitle || 'Job Title not provided'}</strong> 
+          <strong> | ${exp?.organization || 'Organization not provided'}</strong> 
+          <strong> | ${exp?.location || 'Location not provided'}</strong> 
+          <strong> | ${exp?.dates || 'Dates not provided'}</strong>
+        </p>
+        <ul style="margin: 0; font-size: 16px; padding-left: 20px;">
+          ${Array.isArray(exp?.responsibilities) && exp.responsibilities?.length > 0 ? exp.responsibilities.map(point => `
+            <li style="margin: 0; color: black;">${point || 'Responsibility not provided'}</li>
+          `).join('') : '<li style="color: black;">No responsibilities listed.</li>'}
+        </ul>
+        <ul style="margin: 0; font-size: 16px; padding-left: 20px;">
+          ${Array.isArray(exp?.projects) && exp.projects?.length > 0 ? exp.projects.map(project => `
+            <li style="margin: 0; color: black;">${project || 'Project not provided'}</li>
+          `).join('') : '<li style="color: black;">No projects listed.</li>'}
+        </ul>
+      </div>
+    `).join('') : '<p style="color: black;">No experience listed.</p>'}
+  </div>
+</div>
+
+
+  <!-- Horizontal Line -->
+  <hr style="border: 0; height: 2.5px; background-color: #121111; margin: 3px 0;" />
+
+  <!-- Projects Heading Section -->
+  <div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
+    PROJECTS
+  </div>
+
+  <!-- Research and Projects Section -->
+<div style="background-color: #fff; padding-left: 0px; padding-top: 3px; color: black; line-height: 1.4;">
+  <div style="display: flex; flex-direction: column; gap: 3px;">
+    ${formData.projects?.length > 0 ? formData.projects.map(project => `
+      <div style="margin-bottom: 5px;">
+        <!-- Project Title -->
+        <strong style="color: black; font-size: 16px;">${project?.title || 'Project title not provided'}</strong>
+        
+        <!-- Brief Description -->
+        <p style="margin: 0; padding-top: 5px; color: black; font-size: 16px;">
+          ${project?.description || 'No description provided'}
+        </p>
+
+        <!-- Role in Project -->
+        <p style="margin: 0; color: black; font-size: 16px;">
+          <strong>Role:</strong> ${project?.role || 'Role not provided'}
+        </p>
+
+        <!-- Tools/Technologies Used -->
+        <p style="margin: 0; color: black; font-size: 16px;">
+          <strong>Tools/Technologies:</strong> ${project?.tools || 'No tools or technologies listed'}
+        </p>
+
+        <!-- Project Link (if applicable) -->
+        ${project?.link ? `
+          <p style="margin: 0; color: black; font-size: 16px;">
+            <a href="${project.link}" target="_blank" style="color: #0066cc;">View Project</a>
+          </p>
+        ` : ''}
+      </div>
+    `).join('') : '<p style="color: black;">No research or projects listed.</p>'}
+  </div>
+</div>
+
+  <!-- Horizontal Line -->
+  <hr style="border: 0; height: 2.5px; background-color: #121111; margin: 3px 0;" />
+
+  <!-- Certificate Heading Section -->
+  <div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
+    CERTIFICATES
+  </div>
+
+  <!-- Certifications & Licenses Section -->
+<div style="background-color: #fff; padding-left: 0px; padding-top: 3px; color: black; line-height: 1.4;">
+  <div style="display: flex; flex-direction: column; gap: 3px;">
+    ${formData.certifications?.length > 0 ? formData.certifications.map(certification => `
+      <div style="margin-bottom: 5px;">
+        <!-- Certification Name -->
+        <strong style="color: black; font-size: 16px;">${certification?.name || 'Certification name not provided'}</strong>
+
+        <!-- Issuing Organization -->
+        <p style="margin: 0; color: black; font-size: 14px;">
+          <strong>Issuing Organization:</strong> ${certification?.organization || 'No organization provided'}
+        </p>
+
+        <!-- Issued Date -->
+        <p style="margin: 0; color: black; font-size: 14px;">
+          <strong>Issued Date:</strong> ${certification?.issuedDate || 'No issued date provided'}
+        </p>
+
+        <!-- Expiration Date -->
+        <p style="margin: 0; color: black; font-size: 14px;">
+          <strong>Expiration Date:</strong> ${certification?.expirationDate || 'No expiration date provided'}
+        </p>
+      </div>
+    `).join('') : '<p style="color: black;">No certifications or licenses listed.</p>'}
+  </div>
+</div>
+
+    <!-- Horizontal Line -->
+  <hr style="border: 0; height: 2.5px; background-color: #121111; margin: 3px 0;" />
+
+  <!-- Publications Heading Section -->
+<div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
+  PUBLICATIONS
+</div>
+
+<!-- Publications Section -->
+<div style="background-color: #fff; padding-left: 0px; padding-top: 3px; color: black; line-height: 1.4;">
+  <div style="display: flex; flex-direction: column; gap: 3px;">
+    ${formData.publications?.length > 0 ? formData.publications.map(publication => `
+      <div style="margin-bottom: 5px;">
+        <!-- Title of Publication -->
+        <strong style="color: black; font-size: 16px;">${publication?.title || 'Publication title not provided'}</strong>
+
+        <!-- Authors -->
+        <p style="margin: 0; color: black; font-size: 14px;">
+          <strong>Authors:</strong> ${publication?.authors || 'Authors not provided'}
+        </p>
+
+        <!-- Publication Date -->
+        <p style="margin: 0; color: black; font-size: 14px;">
+          <strong>Publication Date:</strong> ${publication?.date || 'Publication date not provided'}
+        </p>
+
+        <!-- Journal/Conference Name -->
+        <p style="margin: 0; color: black; font-size: 14px;">
+          <strong>Journal/Conference:</strong> ${publication?.journal || 'Journal/Conference name not provided'}
+        </p>
+
+        <!-- Link to Publication (if available) -->
+        ${publication?.link ? `
+          <p style="margin: 0; color: black; font-size: 14px;">
+            <a href="${publication.link}" target="_blank" style="color: #0066cc;">View Publication</a>
+          </p>
+        ` : ''}
+      </div>
+    `).join('') : '<p style="color: black;">No publications listed.</p>'}
+  </div>
+</div>
+
+<!-- Horizontal Line -->
+  <hr style="border: 0; height: 2.5px; background-color: #121111; margin: 3px 0;" />
+
+<!-- Awards & Honors Heading Section -->
+<div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
+  AWARDS & HONORS
+</div>
+
+<!-- Awards & Honors Section -->
+<div style="background-color: #fff; padding-left: 0px; padding-top: 3px; color: black; line-height: 1.4;">
+  <div style="display: flex; flex-direction: column; gap: 3px;">
+    ${formData.awards?.length > 0 ? formData.awards.map(award => `
+      <div style="margin-bottom: 5px;">
+        <!-- Award Title -->
+        <strong style="color: black; font-size: 16px;">${award?.title || 'Award title not provided'}</strong>
+
+        <!-- Awarding Body -->
+        <p style="margin: 0; color: black; font-size: 14px;">
+          <strong>Awarding Body:</strong> ${award?.body || 'Awarding body not provided'}
+        </p>
+
+        <!-- Date Received -->
+        <p style="margin: 0; color: black; font-size: 14px;">
+          <strong>Date Received:</strong> ${award?.dateReceived || 'Date not provided'}
+        </p>
+
+        <!-- Description or Criteria -->
+        ${award?.description ? `
+          <p style="margin: 0; color: black; font-size: 14px;">
+            <strong>Description:</strong> ${award.description}
+          </p>
+        ` : ''}
+      </div>
+    `).join('') : '<p style="color: black;">No awards or honors listed.</p>'}
+  </div>
+</div>
+
+<!-- Horizontal Line -->
+  <hr style="border: 0; height: 2.5px; background-color: #121111; margin: 3px 0;" />
+
+<!-- Professional Memberships Heading Section -->
+<div style="text-align: center; margin-bottom: 1px; font-size: 18px; font-weight: bold; color: #003366;">
+  PROFESSIONAL MEMBERSHIPS
+</div>
+
+<!-- Professional Memberships Section -->
+<div style="background-color: #fff; padding-left: 0px; padding-top: 3px; color: black; line-height: 1.4;">
+  <div style="display: flex; flex-direction: column; gap: 3px;">
+    ${formData.memberships?.length > 0 ? formData.memberships.map(membership => `
+      <div style="margin-bottom: 5px;">
+        <!-- Organization Name -->
+        <strong style="color: black; font-size: 16px;">${membership?.organization || 'Organization name not provided'}</strong>
+
+        <!-- Membership Role -->
+        <p style="margin: 0; color: black; font-size: 14px;">
+          <strong>Role:</strong> ${membership?.role || 'Role not provided'}
+        </p>
+
+        <!-- Membership Dates -->
+        <p style="margin: 0; color: black; font-size: 14px;">
+          <strong>Membership Dates:</strong> ${membership?.dates || 'Membership dates not provided'}
+        </p>
+      </div>
+    `).join('') : '<p style="color: black;">No professional memberships listed.</p>'}
+  </div>
+</div>
+
+
+
   `;
 }else if (templateType === 8) {
   return `
@@ -2110,7 +2325,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
       <!-- Summary Section -->
       <div style="margin-top: 20px; margin-left: 55px; border-bottom: 4px solid lightblue;">
-          <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0;">
+          <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0; color: #333;">
               <img src="${summaryIcon}" alt="summary-icon" style="width: 24px; margin-right: 10px;">
               Summary
           </h3>
@@ -2122,7 +2337,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
       <!-- Experience Section -->
       <div style="margin-left: 55px; border-bottom: 4px solid lightblue;">
-  <h3 style="font-size: 20px; display: flex; align-items: center;">
+  <h3 style="font-size: 20px; color: #333; display: flex; align-items: center;">
     <img src="${experienceIcon}" alt="experience-icon" style="width: 24px; margin-right: 10px;">
     Experience
   </h3>
@@ -2170,7 +2385,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
     <!-- Education Section -->
 <div style="margin-top: 10px; margin-left: 55px; border-bottom: 4px solid lightblue; margin-bottom: 2px;">
-  <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 5px;">
+  <h3 style="font-size: 20px; color: #333; display: flex; align-items: center; margin-bottom: 5px;">
     <img src="${educationIcon}" alt="education-icon" style="width: 24px; margin-right: 10px;">
     Education
   </h3>
@@ -2249,7 +2464,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 <!-- Research and Projects Section -->
 <div style="margin-top: 10px; margin-left: 55px; border-bottom: 4px solid lightblue; margin-bottom: 10px;">
-  <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 5px;">
+  <h3 style="font-size: 20px; color: #333; display: flex; align-items: center; margin-bottom: 5px;">
     <img src="${projectsIcon}" alt="projects-icon" style="width: 24px; margin-right: 10px;">
     Research and Projects
   </h3>
@@ -2292,7 +2507,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 <!-- Certifications & Licenses Section -->
 <div style="margin-top: 10px; margin-left: 55px; border-bottom: 4px solid lightblue; margin-bottom: 10px;">
-  <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 5px;">
+  <h3 style="font-size: 20px; color: #333; display: flex; align-items: center; margin-bottom: 5px;">
     <img src="${certificateIcon}" alt="certifications-icon" style="width: 24px; margin-right: 10px;">
     Certifications & Licenses
   </h3>
@@ -2330,7 +2545,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
   <!-- Publications Section -->
 <div style="margin-top: 10px; margin-left: 55px; border-bottom: 4px solid lightblue; margin-bottom: 10px;">
-  <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 5px;">
+  <h3 style="font-size: 20px; color: #333; display: flex; align-items: center; margin-bottom: 5px;">
     <img src="${publicationsIcon}" alt="publications-icon" style="width: 24px; margin-right: 10px;">
     Publications
   </h3>
@@ -2373,7 +2588,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 <!-- Awards & Honors Section -->
 <div style="margin-top: 10px; margin-left: 55px; border-bottom: 4px solid lightblue; margin-bottom: 10px;">
-  <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 5px;">
+  <h3 style="font-size: 20px; color: #333; display: flex; align-items: center; margin-bottom: 5px;">
     <img src="${awardsIcon}" alt="awards-icon" style="width: 24px; margin-right: 10px;">
     Awards & Honors
   </h3>
@@ -2411,7 +2626,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
 <!-- Professional Memberships Section -->
 <div style="margin-top: 10px; margin-left: 55px; border-bottom: 4px solid lightblue; margin-bottom: 10px;">
-  <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 5px;">
+  <h3 style="font-size: 20px; color: #333; display: flex; align-items: center; margin-bottom: 5px;">
     <img src="${membershipsIcon}" alt="memberships-icon" style="width: 24px; margin-right: 10px;">
     Professional Memberships
   </h3>
@@ -2449,7 +2664,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
   <div style="width: 32%; padding-left: 20px; padding: 0px;">
       
     <!-- Personal Info Section -->
-    <h3 style="font-size: 20px; margin-bottom: 20px; display: flex; align-items: center;">
+    <h3 style="font-size: 20px; color: #333; margin-bottom: 20px; display: flex; align-items: center;">
         <img src="${personalInfoIcon}" alt="personal-info-icon" style="width: 24px; margin-right: 10px;">
         Personal Info
     </h3>
@@ -2483,7 +2698,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
     <!-- Languages Section -->
     <div style="margin-top: 20px; margin-bottom: 0;">
-      <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0;">
+      <h3 style="font-size: 20px; color: #333; display: flex; align-items: center; margin-bottom: 0;">
         <img src="${languagesIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
         Languages
       </h3>
@@ -2494,7 +2709,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
     <!-- Skills Section -->
     <div style="margin-top: 20px; margin-bottom: 0;">
-      <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0;">
+      <h3 style="font-size: 20px; color: #333; display: flex; align-items: center; margin-bottom: 0;">
         <img src="${skillsIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
         Skills
       </h3>
@@ -2505,7 +2720,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
     <!-- Tools Section -->
     <div style="margin-top: 20px;">
-      <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0;">
+      <h3 style="font-size: 20px; color: #333; display: flex; align-items: center; margin-bottom: 0;">
         <img src="${toolsIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
         Tools
       </h3>
@@ -2516,7 +2731,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
     <!-- Others Section -->
     <div style="margin-top: 20px;">
-      <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0;">
+      <h3 style="font-size: 20px; color: #333; display: flex; align-items: center; margin-bottom: 0;">
         <img src="${othersIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
         Others
       </h3>
@@ -2528,7 +2743,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
     <!-- Softskills Section -->
     <div style="margin-top: 20px;">
-      <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0;">
+      <h3 style="font-size: 20px; color: #333; display: flex; align-items: center; margin-bottom: 0;">
         <img src="${softskillsIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
         Soft Skills
       </h3>
@@ -2539,7 +2754,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
 
     <!-- Hobbies Section -->
     <div style="margin-top: 20px;">
-      <h3 style="font-size: 20px; display: flex; align-items: center; margin-bottom: 0;">
+      <h3 style="font-size: 20px; color: #333; display: flex; align-items: center; margin-bottom: 0;">
         <img src="${hobbiesIcon}" alt="skills-icon" style="width: 24px; margin-right: 10px;">
         Hobbies
       </h3>

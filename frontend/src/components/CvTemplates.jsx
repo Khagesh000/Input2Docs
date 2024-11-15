@@ -12,24 +12,24 @@ import '../Coverlettertemplate-new.css';
 import '../CoverLetterTemplates.css'; // Ensure this path is correct
 
 // Import images for templates
-import img from '../assets/images/cover_letter.png';
-import img1 from '../assets/images/cover_letter1.png';
-import img2 from '../assets/images/cover_letter1.png';
-import img3 from '../assets/images/cover_letter1.png';
-import img4 from '../assets/images/cover_letter.png';
-import img5 from '../assets/images/cover_letter1.png';
-import img6 from '../assets/images/cover_letter.png';
-import img7 from '../assets/images/cover_letter1.png';
-import img8 from '../assets/images/cover_letter.png';
-import img9 from '../assets/images/cover_letter1.png';
-import img10 from '../assets/images/cover_letter1.png';
-import img11 from '../assets/images/cover_letter.png';
-import img12 from '../assets/images/cover_letter1.png';
-import img13 from '../assets/images/cover_letter.png';
-import img14 from '../assets/images/cover_letter.png';
-import img15 from '../assets/images/cover_letter1.png';
-import img16 from '../assets/images/cover_letter.png';
-import img17 from '../assets/images/cover_letter.png';
+import img from '../assets/images/CvTemplate1.png';
+import img1 from '../assets/images/CvTemplate2.png';
+import img2 from '../assets/images/CvTemplate3.png';
+import img3 from '../assets/images/CvTemplate4.png';
+import img4 from '../assets/images/CvTemplate5.png';
+import img5 from '../assets/images/CvTemplate6.png';
+import img6 from '../assets/images/CvTemplate7.png';
+import img7 from '../assets/images/CvTemplate8.png';
+import img8 from '../assets/images/CvTemplate9.png';
+import img9 from '../assets/images/CvTemplate10.png';
+import img10 from '../assets/images/CvTemplate11.png';
+import img11 from '../assets/images/CvTemplate12.png';
+import img12 from '../assets/images/CvTemplate13.png';
+import img13 from '../assets/images/CvTemplate14.png';
+import img14 from '../assets/images/CvTemplate15.png';
+import img15 from '../assets/images/CvTemplate16.png';
+import img16 from '../assets/images/CvTemplate17.png';
+import img17 from '../assets/images/CvTemplate18.png';
 
 
 
@@ -702,12 +702,7 @@ const handleDownloadPDF = () => {
   tempDiv.style.margin = 0;  // Ensuring no margin at the top or around content
   tempDiv.style.padding = 0; // Ensuring no padding around content
 
-  // Add styles to avoid page breaks inside the elements
-  tempDiv.style.pageBreakInside = 'avoid'; // Prevent content from breaking within an element
-  const children = tempDiv.querySelectorAll('*');
-  children.forEach((child) => {
-    child.style.pageBreakInside = 'avoid'; // Apply this to every child element
-  });
+  
 
   document.body.appendChild(tempDiv);
 

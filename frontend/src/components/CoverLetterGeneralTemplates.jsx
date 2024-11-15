@@ -541,6 +541,9 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         <p style="font-size: 15px; line-height: 1.6; color: #444;">Sincerely,</p>
         <h3 style="color: #ff6f61; font-family: 'Brush Script MT', cursive; font-size: 26px; margin-top: 8px;">${formData.firstName || 'John'} ${formData.lastName || 'Doe'}</h3>
       </div>
+
+
+      
     </div>
   `;
 }else if (templateType === 8) {
@@ -651,7 +654,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
     ">
 
       <!-- Top Section -->
-      <div style="background-color: #00796b; padding: 10px; border-radius: 8px 8px 0 0; margin: 0;">
+      <div style="background-color: #00796b; padding: 5px; border-radius: 8px 8px 0 0; margin: 0;">
         <h2 style="color: white; text-align: center; font-size: 24px;">
           Application for the ${formData.jobTitle || 'Senior Developer'} Role
         </h2>
@@ -660,7 +663,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
       <!-- Main Section (Personal Info + Content) -->
       <div style="padding: 20px; background-color: #ffffff; border-radius: 0 0 8px 8px; margin: 0;">
         <!-- Personal Info Section -->
-        <div style="margin-bottom: 20px; border-bottom: 2px solid #00796b; padding-bottom: 20px;">
+        <div style="margin-bottom: 10px; border-bottom: 2px solid #00796b; padding-bottom: 5px;">
           <p style="font-size: 14px; color: #333; margin: 0;">
             ${formattedDate}
           </p>
@@ -738,7 +741,7 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
       </div>
 
       <!-- Bottom Section -->
-      <div style="background-color: #00796b; padding: 10px; border-radius: 0 0 8px 8px; margin: 0;">
+      <div style="background-color: #00796b; padding: 5px; border-radius: 0 0 8px 8px; margin: 0;">
         <p style="color: white; text-align: center; font-size: 14px;">
           Thank you for your time and consideration.
         </p>

@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect, useCallback  } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import html2canvas from 'html2canvas';
 import YearPicker from './YearPicker';
+import { jsPDF } from 'jspdf';
 
 import html2pdf from 'html2pdf.js';
 import Cropper from 'react-easy-crop';
@@ -632,11 +633,16 @@ const handleDownloadPNG = () => {
     windowWidth: tempDiv.scrollWidth,
     windowHeight: tempDiv.scrollHeight
   }).then((canvas) => {
+
+    const pngDataURL = canvas.toDataURL('image/png');
+    convertPNGToPDF(pngDataURL);
+
     // Create a download link for the PNG file
     const link = document.createElement('a');
-    link.href = canvas.toDataURL('image/png', 1.0); // Generate PNG data URL
-    link.download = 'ResumeTemplate1.png'; // Set the file name
-    link.click(); // Trigger the download
+    link.href = pngDataURL; // Use the PNG data URL directly
+    link.download = 'ResumeTemplate1.png';
+    link.click();
+   
 
     // Clean up by removing the temporary div from the DOM
     document.body.removeChild(tempDiv);
@@ -652,43 +658,97 @@ const handleDownloadPNG = () => {
 const handleDownloadPDF = () => {
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = content;
-  tempDiv.style.fontFamily = 'Arial, sans-serif';
-  tempDiv.style.boxSizing = 'border-box';
-  tempDiv.style.margin = 0;  // Ensuring no margin at the top or around content
-  tempDiv.style.padding = 0; // Ensuring no padding around content
 
-  // Add styles to avoid page breaks inside the elements
-  tempDiv.style.pageBreakInside = 'avoid'; // Prevent content from breaking within an element
+  // Set styling for A4 dimensions and single-page layout
+  tempDiv.style.fontFamily = 'Arial, sans-serif';
+  tempDiv.style.color = '#000';
+  tempDiv.style.backgroundColor = '#fff';
+  tempDiv.style.width = '210mm'; // A4 width
+  tempDiv.style.height = '310mm'; // A4 height (strict)
+  tempDiv.style.padding = '10px';
+  tempDiv.style.boxSizing = 'border-box';
+  tempDiv.style.margin = '0';
+
+  // Add styling to avoid page breaks within elements if possible
   const children = tempDiv.querySelectorAll('*');
   children.forEach((child) => {
-    child.style.pageBreakInside = 'avoid'; // Apply this to every child element
+    child.style.pageBreakInside = 'avoid';
   });
 
+  // Temporarily add to body for layout calculation
   document.body.appendChild(tempDiv);
 
-  // Add TinyMCE styles if necessary
-  const styleSheet = document.createElement('link');
-  styleSheet.rel = 'stylesheet';
-  styleSheet.href = '/styles/tinymce-custom-styles.css';  // Ensure the path is correct for your CSS
-  document.head.appendChild(styleSheet);
-
-  // Set up options for html2pdf
+  // Configure html2pdf options for tight fit within a single page
   const options = {
-    margin: [10, 10, 10, 10], // Margins in mm
+    margin: 0, // Remove margins to fit content fully
     filename: 'ResumeTemplate.pdf',
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 3, useCORS: true, allowTaint: true },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: 'css' } // Let html2pdf manage page breaks automatically based on CSS
+    pagebreak: { mode: ['avoid-all'] } // Avoid breaking elements if possible
   };
 
-  // Let html2pdf handle the page splitting automatically
-  html2pdf().from(tempDiv).set(options).toPdf().get('pdf').then((pdf) => {
-    pdf.save('ResumeTemplate.pdf'); // Save the PDF file
-  }).finally(() => {
-    document.body.removeChild(tempDiv); // Clean up by removing the temporary div
-  });
+  // Check content height and fit within one page if possible
+  html2pdf()
+    .from(tempDiv)
+    .set(options)
+    .toPdf()
+    .get('pdf')
+    .then((pdf) => {
+      const pdfPageHeight = pdf.internal.pageSize.height;
+      const contentHeight = tempDiv.offsetHeight * (25.4 / 96); // Convert px to mm
+
+      // Adjust to fit content to one page if it slightly exceeds the page size
+      if (contentHeight > pdfPageHeight) {
+        pdf.internal.scaleFactor = pdfPageHeight / contentHeight;
+      }
+      pdf.save('ResumeTemplate.pdf');
+    })
+    .finally(() => {
+      document.body.removeChild(tempDiv); // Clean up temp div
+    });
 };
+
+
+const convertPNGToPDF = (pngDataURL) => {
+  // Check if pngDataURL is valid
+  if (!pngDataURL) {
+    console.error('Invalid PNG data URL');
+    alert('Invalid PNG data URL.');
+    return;
+  }
+
+  // Create a new jsPDF instance
+  const pdf = new jsPDF({
+    orientation: 'portrait',
+    unit: 'mm',
+    format: 'a4'
+  });
+
+  const img = new Image();
+  img.onload = () => {
+    // Image is successfully loaded, now we can add it to the PDF
+    const imgWidth = 210;  // A4 width in mm
+    const imgHeight = (img.height * imgWidth) / img.width;  // Scale height based on aspect ratio
+
+    // Add the image to the PDF
+    pdf.addImage(img, 'PNG', 0, 0, imgWidth, imgHeight);
+
+    // Save the PDF
+    pdf.save('ConvertedFromPNG.pdf');
+  };
+
+  img.onerror = (err) => {
+    console.error('Error loading image for PDF:', err);
+    alert('There was an issue loading the image. Please check the image source.');
+  };
+
+  // Set the image source to the PNG data URL
+  img.src = pngDataURL;
+};
+
+
+
 
 
 
@@ -1691,12 +1751,7 @@ const handleDownloadPDF = () => {
   
 
   
-  {/* Alert message for large content */}
-  <div className="alert-container">
-  <div className="alert-message">
-    Content is too large to download as PNG. Please download it as a PDF.
-  </div>
-</div>
+ 
 
 
         </div>

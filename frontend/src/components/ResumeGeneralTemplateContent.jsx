@@ -178,9 +178,9 @@ export const generateTemplateContent = (formData, templateType, croppedImage) =>
         <!-- CERTIFICATIONS -->
         <div style="margin-bottom: 5px; color: black;">
           <h3 style="font-size: 16px; background-color: wheat; padding: 5px; margin: 0; color: black; font-size: 16px;">CERTIFICATIONS</h3>
-          <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 3px;">
+          <div style="display: flex; flex-direction: column; gap: 2px; margin-top: 3px;">
             ${formData.certifications.length > 0 ? formData.certifications.map(certification => `
-              <div style="margin-bottom: 1px; display: flex;">
+              <div style="margin-bottom: 0px; display: flex;">
                 <strong style="margin-right: 70px; font-size: 16px;">${certification.course || 'Course not provided'}</strong>
                 <div style="flex: 1;">
                   <span style="margin-right: 5px; font-size: 16px;">by</span>

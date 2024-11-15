@@ -12,7 +12,8 @@ const templateInputFields = {
     { label: 'LinkedIn', name: 'linkedin', type: 'text' },
   ],
   2: [
-      { label: 'Name', name: 'name', type: 'text' },
+    { label: 'First Name', name: 'firstName', type: 'text' },
+    { label: 'Last Name', name: 'lastName', type: 'text' },
       { label: 'Job Title', name: 'jobTitle', type: 'text' },
       { label: 'Address', name: 'address', type: 'text' },
       { label: 'Phone', name: 'phone', type: 'text' },

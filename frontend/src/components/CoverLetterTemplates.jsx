@@ -12,15 +12,15 @@ import '../Coverlettertemplate-new.css';
 import '../CoverLetterTemplates.css'; // Ensure this path is correct
 
 // Import images for templates
-import img from '../assets/images/cover_letter.png';
-import img1 from '../assets/images/cover_letter1.png';
-import img2 from '../assets/images/cover_letter1.png';
-import img3 from '../assets/images/cover_letter1.png';
-import img4 from '../assets/images/cover_letter.png';
-import img5 from '../assets/images/cover_letter1.png';
-import img6 from '../assets/images/cover_letter.png';
-import img7 from '../assets/images/cover_letter1.png';
-import img8 from '../assets/images/cover_letter1.png';
+import img from '../assets/images/CoverLetterTemplate.png';
+import img1 from '../assets/images/CoverLetterTemplate1.png';
+import img2 from '../assets/images/CoverLetterTemplate2.png';
+import img3 from '../assets/images/CoverLetterTemplate3.png';
+import img4 from '../assets/images/CoverLetterTemplate4.png';
+import img5 from '../assets/images/CoverLetterTemplate5.png';
+import img6 from '../assets/images/CoverLetterTemplate6.png';
+import img7 from '../assets/images/CoverLetterTemplate7.png';
+import img8 from '../assets/images/CoverLetterTemplate8.png';
 
 import { templateInputFields } from './CoverLetterTemplateInputfields';
 import { generateTemplateContent } from './CoverLetterGeneralTemplates';
