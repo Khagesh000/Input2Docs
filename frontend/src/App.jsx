@@ -15,6 +15,8 @@ import CoverLetter from './CoverLetter';
 import Resume from './Resume'
 import Cv from './Cv';
 import Contact from './Contact';
+import PrivacyPolicy from './PrivacyPolicy'
+import TermsAndConditions from './TermsAndConditions'
  // Import the Signup Modal
 
 function MainContent() {
@@ -41,7 +43,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [showSignup, setShowSignup] = useState(false);
 
-  const isSpecialPage = ['/letter', '/email', '/about-us', '/cover', '/resume', '/cv', '/contact-us'].includes(location.pathname);
+  const isSpecialPage = ['/letter', '/email', '/about-us', '/cover', '/resume', '/cv', '/contact-us', '/privacy-policy', '/terms-and-conditions' ].includes(location.pathname);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000);
@@ -63,6 +65,8 @@ function App() {
         <Route path="/resume" element={<Resume />} />
         <Route path="/cv" element={<Cv />} />
         <Route path="/contact-us" element={<Contact />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       </Routes>
     </div>
   );

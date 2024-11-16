@@ -1,0 +1,75 @@
+/* General container styling */
+.privacy-container {
+    background-color: black;
+    color: wheat;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 5%;
+  }
+  
+  .privacy-content {
+    max-width: 1100px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+  }
+  
+  /* Headings */
+  .privacy-heading {
+    font-size: 2.5rem;
+    color: wheat;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .privacy-subheading {
+    font-size: 1.5rem;
+    color: red;
+    margin: 20px 0 10px;
+  }
+  
+  /* Text and highlights */
+  .privacy-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+  
+  .privacy-highlight {
+    color: red;
+    font-weight: bold;
+  }
+  
+  /* List styling */
+  .privacy-list {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .privacy-list li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Responsive design for small screens */
+  @media (max-width: 768px) {
+    .privacy-heading {
+      font-size: 2rem;
+    }
+  
+    .privacy-subheading {
+      font-size: 1.3rem;
+    }
+  
+    .privacy-text {
+      font-size: 0.9rem;
+    }
+  }
+  
