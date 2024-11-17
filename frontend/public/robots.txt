@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://input2docs.com/sitemap.xml

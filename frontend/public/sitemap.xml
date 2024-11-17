@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
+  <url>
+    <loc>https://input2docs.com/</loc>
+    <lastmod>2024-11-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Resume Maker -->
+  <url>
+    <loc>https://input2docs.com/resume</loc>
+    <lastmod>2024-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Letter Maker -->
+  <url>
+    <loc>https://input2docs.com/letter</loc>
+    <lastmod>2024-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Resume Page -->
+  <url>
+    <loc>https://input2docs.com/resume-maker</loc>
+    <lastmod>2024-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Letter Page -->
+  <url>
+    <loc>https://input2docs.com/letter-maker</loc>
+    <lastmod>2024-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Cover Letter -->
+  <url>
+    <loc>https://input2docs.com/cover</loc>
+    <lastmod>2024-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- CV Templates -->
+  <url>
+    <loc>https://input2docs.com/cv</loc>
+    <lastmod>2024-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- About Us -->
+  <url>
+    <loc>https://input2docs.com/about-us</loc>
+    <lastmod>2024-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://input2docs.com/privacy-policy</loc>
+    <lastmod>2024-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Terms and Conditions -->
+  <url>
+    <loc>https://input2docs.com/terms-and-conditions</loc>
+    <lastmod>2024-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Contact Us -->
+  <url>
+    <loc>https://input2docs.com/contact-us</loc>
+    <lastmod>2024-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
