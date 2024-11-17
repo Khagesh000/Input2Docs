@@ -9,10 +9,10 @@ export default function Endbar() {
         <div className="row">
           {/* Branding Column */}
           <div className="col-md-3 col-12 mb-3">
-            <h5 className="endbar-section-title">
-              <h2 className="endbar-input-text" style={{color:'wheat'}}>INPUT<span className="endbar-docs-text" style={{color: 'red'}}>2DOCS</span></h2>
+            <h2 className="endbar-section-title">
+              <p className="endbar-input-text" style={{color:'wheat', fontSize: '30px'}}>INPUT<span className="endbar-docs-text" style={{color: 'red'}}>2DOCS</span></p>
               
-            </h5>
+            </h2>
             <p className="endbar-brand-description">
               Input2Docs is your one-stop solution for generating professional letters, emails, resumes, and more. Simplify your documentation needs with just a few clicks!
             </p>

@@ -7,7 +7,6 @@ export default function AboutChoose() {
     <div className="container mt-5">
       <div className="row">
         <div className="col-md-12 mb-4">
-          <h2 className="text-center">Why Choose Us</h2>
         </div>
       </div>
       <div className="row position-relative">

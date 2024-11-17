@@ -6,7 +6,7 @@ export default function AboutMainMoto() {
   return (
     <div className="about-section bg-black">
       <div className="container about-container mt-5">
-        <div className='ProcessHeading'><h1>Discover Our Suite of <span>Professional Makers</span></h1></div>
+        <div className='ProcessHeading'><h2>Discover Our Suite of <span>Professional Makers</span></h2></div>
         <div className="row">
           <div className="col-md-6 col-lg-4 fade-in">
             <div className="feature-box">

@@ -24,6 +24,9 @@ function MainContent() {
     <div style={{ backgroundColor: 'white' }}>
       <Navbar />
       <HomeImageCarousel />
+      <div>
+        <h1 className="responsive-heading">Welcome to Our Template Generator</h1>
+      </div>
       <Websitemainmoto />
       <div className='CardSection'>
         <CardArrange />
@@ -54,7 +57,10 @@ function App() {
 
  
   return (
-    <div>
+    <div >
+     
+
+
       {!isSpecialPage && <MainContent />}
 
       <Routes>

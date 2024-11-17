@@ -111,7 +111,7 @@ const LetterMaker = ({ selectedTemplate }) => {
     <div className="container mt-4">
       <div className="row">
         <div className="col-md-12">
-          <h3 className="selected-template">Selected Template: {selectedTemplate}</h3>
+          <h2 className="selected-template">Selected Template: {selectedTemplate}</h2>
           <div className="card">
             <div className="card-body generate">
               {!formSubmitted ? (

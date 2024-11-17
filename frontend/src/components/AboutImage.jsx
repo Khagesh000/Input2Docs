@@ -10,7 +10,7 @@ export default function AboutImage() {
     <div>
       <div className="about-image-container" style={{ backgroundImage: `url(${img2})` }}>
         <div className="about-image-text">
-          <h1>About Us</h1>
+          <h2 className='ProcessHeading'>About Us</h2>
           <p className='abouti-p'>We are committed to delivering the best services...</p>
         </div>
       </div>

@@ -1857,7 +1857,7 @@ const handleDownloadPDF = () => {
 
       {/* Suggestions content on the right side, visible only on large screens */}
       <div className="resume-suggestions">
-      <h1>CV Writing Tips</h1>
+      <h2>CV Writing Tips</h2>
     <p>Creating an effective CV is essential for making a positive first impression. Here are some tips to help you write a compelling CV:</p>
     <h5>CV Writing Tips</h5>
     <ul>

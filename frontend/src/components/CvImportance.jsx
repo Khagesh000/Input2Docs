@@ -6,7 +6,7 @@ import '../CvImportance.css'; // Ensure you have this CSS file in the same direc
 export default function CvImportance() {
   return (
     <div className="cv-importance-container">
-      <h1 className="cv-title">Why a Great CV Matters</h1>
+      <h2 className="cv-title">Why a Great CV Matters</h2>
       <div className="cv-importance-content">
         <div className="importance-item">
           <i className="fas fa-thumbs-up importance-icon"></i>

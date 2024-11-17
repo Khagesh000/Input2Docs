@@ -34,6 +34,9 @@ export default function Letter() {
       </div>
       
       <div className='ProcessSection' style={{ backgroundColor: '#f3f4f6'}}><ImportanceLetter /></div>
+
+      <h1 className="responsive-heading">Comprehensive Letter Templates for All Occasions</h1>
+
       
       <div  style={{ backgroundColor: '#f3f4f6'}}><LetterMainMoto /></div>
       

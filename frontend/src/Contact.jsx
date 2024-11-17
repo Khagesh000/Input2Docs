@@ -10,6 +10,10 @@ export default function Cv() {
   
     <div>
       <Navbar />
+      <div>
+        <h1 className="responsive-heading">Get In Touch Us</h1>
+      </div>
+
       <Contactform />
       <ContactMainMoto />
       <Endbar />

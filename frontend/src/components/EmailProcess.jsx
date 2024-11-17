@@ -6,7 +6,7 @@ export default class EmailProcess extends Component {
   render() {
     return (
       <div className="process-container">
-        <div className='ProcessHeading'> <h1>Process We <span>Follow</span></h1></div>
+        <div className='ProcessHeading'> <h2 style={{textAlign: 'center'}}>Process We <span>Follow</span></h2></div>
         
         <div className="process-step">
           <div className="icon-container">

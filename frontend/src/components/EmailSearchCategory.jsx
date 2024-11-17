@@ -524,9 +524,9 @@ const EmailSearchCategory = () => {
       </div>
 
       <div className='ProcessHeading'>
-        <h1 style={{ paddingTop: '3%',fontWeight: 'bold', textAlign: 'center' }}>
+        <h2 style={{ paddingTop: '3%',fontWeight: 'bold', textAlign: 'center' }}>
           View And Generate <span>Emails</span>
-        </h1>
+        </h2>
       </div>
       <p className="view-download-instructions" style={{color: 'grey'}}>
         You can view and generate emails for various purposes below.

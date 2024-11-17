@@ -15,12 +15,15 @@ export default function Cv() {
     <div style={{ backgroundColor: 'black'}}>
     <div>
       <Navbar />
+      
       <div style={{ backgroundColor: 'black'}}>
+        
       <CvDescription />
       </div>
       <div style={{ backgroundColor: 'black'}}>
       <CvTemplates />
       </div>
+      <h1 className="responsive-heading-black" style={{paddingTop: '10%', margin: '0'}}>Professional CV Templates</h1>
       <div style={{ backgroundColor: 'black'}}>
       <CvImportance />
       </div>

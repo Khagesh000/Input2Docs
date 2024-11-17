@@ -9,13 +9,13 @@
 
 }
 
-.ProcessHeading h1 {
+.ProcessHeading h2 {
   font-size: 2.8rem;
   color: #d32f2f;
 
 }
 
-.ProcessHeading h1 span {
+.ProcessHeading h2 span {
   color: #f1c40f;
 }
 
@@ -77,7 +77,7 @@
 }
 
 @media (max-width: 768px) {
-  .ProcessHeading h1 {
+  .ProcessHeading h2 {
     font-size: 2rem;
   }
 

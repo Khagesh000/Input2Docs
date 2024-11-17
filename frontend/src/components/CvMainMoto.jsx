@@ -4,7 +4,7 @@ import '../CvMainMoto.css'; // Ensure this path is correct
 export default function CvMainMoto() {
   return (
     <div className="cvmain-container">
-      <div className='ProcessHeading'><h1 className="cvmain-heading">Pros and Cons of a <span>CV</span></h1></div>
+      <div className='ProcessHeading'><h2 className="cvmain-heading">Pros and Cons of a <span>CV</span></h2></div>
       <div className="cvmain-content">
         <div className="cvmain-section pros">
           <h2 className="cvmain-subheading">Pros of a CV</h2>

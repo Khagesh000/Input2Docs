@@ -4,7 +4,7 @@ import '../CoverletterMainMoto.css';
 export default function CoverletterMainMoto() {
   return (
     <div className="coverletter-container">
-      <div className='ProcessHeading'><h1 className="coverletter-heading">The Importance of a <span>Cover Letter</span></h1></div>
+      <div className='ProcessHeading'><h2 className="coverletter-heading">The Importance of a <span>Cover Letter</span></h2></div>
       <div className="coverletter-content">
         <div className="coverletter-section">
           <h2 className="coverletter-subheading">What is a Cover Letter?</h2>

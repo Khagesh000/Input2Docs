@@ -28,14 +28,20 @@ const Email = () => {
       
       {/* EmailImageCaurosel component */}
       <EmailImageCaurosel />
+      
 
       <div style={{backgroundColor: 'f3f4f6'}}>
+        
         {/* EmailSearchCategory component */}
+        
         <EmailSearchCategory
           handleSubcategoryClick={handleSubcategoryClick}
           selectedSubcategory={selectedSubcategory}
         />
+        
       </div>
+
+
 
       {/* Conditional rendering of EmailMaker component */}
       {selectedSubcategory && (
@@ -46,12 +52,13 @@ const Email = () => {
 
       {/* EmailProcess component */}
       <div style={{ backgroundColor: '#f3f4f6'}}>
+        
         <EmailProcess />
       </div>
 
       {/* ImportanceEmail component */}
       <div  style={{ backgroundColor: '#f3f4f6'}}><ImportanceEmail /></div>
-      
+      <h1 className="responsive-heading">Professional Email Templates</h1>
       <EmailMainMoto />
       
 

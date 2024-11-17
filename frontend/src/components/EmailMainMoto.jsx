@@ -16,7 +16,7 @@ export default function EmailMainMoto() {
   return (
     <div>
     <div className="emailmain-section">
-      <div className='ProcessHeading'><h1 className="emailmain-title">Explore Our <span>Email Templates</span></h1></div>
+      
       <div className="emailmain-grid">
         {emailTypes.map((type, index) => (
           <div key={index} className={`emailmain-card ${index % 2 === 0 ? 'alt-layout' : ''}`}>
@@ -28,7 +28,7 @@ export default function EmailMainMoto() {
       </div>
       {/* Bottom content section */}
       <div className="emailmain-bottom-content">
-        <div className='ProcessHeading'><h1 className="bottom-heading">Why Choose Our <span>Email Templates?</span></h1></div>
+        <div className='ProcessHeading'><h2 className="bottom-heading">Why Choose Our <span>Email Templates?</span></h2></div>
         <p className="bottom-intro">
           Save time and ensure professionalism with our expertly crafted email templates. Whether you’re connecting with a new client, following up with a customer, or sending an event invitation, we have a range of templates designed to meet your needs.
         </p>

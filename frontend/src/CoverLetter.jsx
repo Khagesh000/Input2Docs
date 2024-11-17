@@ -17,6 +17,7 @@ export default function CoverLetter() {
     <div className='bg-black'>
       <Navbar />
       <CoverLetterIntro />
+      <h1 className="responsive-heading-black"> Cover Letter Templates</h1>
       <CoverLetterImportance />
       <CoverLetterTemplates />
       <CoverLetterAbout />

@@ -8,11 +8,11 @@ export default function CoverLetterIntro() {
       <div className="container cov-intro mt-5">
         <div className="row align-items-stretch">
           <div className="col-md-6 d-flex flex-column justify-content-center fade-in">
-            <h1 className="heading-title">
+            <h2 className="heading-title">
               Free Cover Letter <br />
               <span className="heading-subtitle">Generator: Build a Cover</span>
               <span className="heading-subtitle mb-2">Letter Online in Minutes</span>
-            </h1>
+            </h2>
             <p className="lead">
               Build a professional cover letter online in just a few steps. Our free cover letter generator helps you create a polished cover letter that stands out to employers and enhances your job application.
             </p>

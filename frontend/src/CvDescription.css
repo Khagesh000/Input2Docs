@@ -2,6 +2,8 @@
     background-color: transparent;
     padding: 2rem;
     border-radius: 8px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .cv-heading {
@@ -11,7 +13,6 @@
     text-transform: uppercase;
     border-bottom: 3px solid #ff6347; /* Red border */
     padding-bottom: 10px;
-    padding-top: 6%;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 

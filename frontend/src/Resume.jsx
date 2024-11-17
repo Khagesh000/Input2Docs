@@ -22,6 +22,8 @@ export default function Resume() {
       <div style={{ backgroundColor: 'black'}}>
         <ResumeImportance />
       </div>
+      <h1 className='responsive-heading-black' style={{margin: '0'}}> Our Easy-To-Use Templates</h1>
+
       <ResumeMainMoto />
 
       <Endbar />

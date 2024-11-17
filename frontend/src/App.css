@@ -21,7 +21,7 @@
     padding-left: 50%;
   }
 
-  .carousel-caption h1{
+  .carousel-caption h2{
     text-shadow: 4cm;
     color: crimson;
     font-weight: 700;
@@ -59,7 +59,7 @@ a.btn-primary:hover {
 
 
 
-.cardHeading h1{
+.cardHeading h2{
   color: wheat;
   text-align: center;
   padding-bottom: 4%;

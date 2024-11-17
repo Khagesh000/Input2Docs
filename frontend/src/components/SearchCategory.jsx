@@ -464,9 +464,9 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
 <div className="lettermaker-container">
       <div className="lettermaker-content">
         <div className="ProcessHeading">
-          <h1 className="lettermaker-title animate-slow">
+          <h2 className="lettermaker-title animate-slow">
             Craft Your Letters, <span>Professionally and Effortlessly</span>
-          </h1>
+          </h2>
         </div>
         <p className="lettermaker-subtitle animate-fadein" style={{color: 'grey'}}>
           Discover professionally designed templates that simplify your communication and make a lasting impression.
@@ -558,9 +558,9 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
       </div>
       
       <div className='ProcessHeading mt-5'>
-        <h1 >
+        <h2 style={{textAlign: 'center'}}>
           View And Download <span>Letters</span>
-        </h1>
+        </h2>
       </div>
 
       
@@ -619,7 +619,7 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
       <div ref={letterGenerationSectionRef} className="letter-generation-section">
         {selectedTemplate && (
           <div className='ProcessHeading mt-5'>
-            <h1 >Generate Your <span>Letter</span></h1>
+            <h2 >Generate Your <span>Letter</span></h2>
             <LetterMaker selectedTemplate={selectedTemplate} />
           </div>
         )}

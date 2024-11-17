@@ -15,6 +15,9 @@ export default function About() {
     <div>
       <Navbar />
       <AboutImage />
+   
+        <h1 className="responsive-heading-black">ABOUT US</h1>
+      
       <AboutChoose />
       <AboutMainMoto />
       <Feedback />

@@ -6,7 +6,7 @@ export default function ImportanceLetter() {
   return (
     <div className="importance-letter-container m-0">
       <section className="intro-section text-center">
-        <div className="ProcessHeading"><h1 >The Importance of <span>Formal Letters</span></h1></div>
+        <div className="ProcessHeading"><h2>The Importance of <span>Formal Letters</span></h2></div>
         
         <p className="intro-text">
           In today’s fast-paced digital world, formal letters still hold significant value.

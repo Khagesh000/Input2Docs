@@ -5,7 +5,6 @@ import '../ResumeMainMoto.css';
 export default function ResumeMainMoto() {
   return (
     <div className="resumemain-container">
-      <div className='ProcessHeading'><h1>The Importance of a <span>Professional Resume</span></h1></div>
       <ul className="resumemain-points">
         <li className="resumemain-point">
           <FaUserTie className="resumemain-icon" />

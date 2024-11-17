@@ -76,7 +76,7 @@ export default function Contactform() {
         <div className="row justify-content-center">
           <div className="col-12 col-md-8">
             <div className="contactform-header text-center">
-              <h2>Contact Our Team</h2>
+              <h2 className='ProcessHeading'>Contact Our Team</h2>
               <p>We'd love to hear from you! Please fill out the form below.</p>
             </div>
             <div className="contactform-form-container p-4 shadow bg-light rounded">

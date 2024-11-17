@@ -1,0 +1,44 @@
+.responsive-heading {
+    text-align: center;
+    font-size: 2.5rem; /* Large screens */
+    font-weight: bold;
+    color: red; /* Text color */
+    background-color: #f3f4f6; /* Background color */
+    padding-top: 5%;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+
+  .responsive-heading-black {
+    text-align: center;
+    font-size: 2.5rem; /* Large screens */
+    font-weight: bold;
+    color: red; /* Text color */
+    background-color: black; /* Background color */
+    padding-top: 15%;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .responsive-heading {
+      font-size: 2rem; /* Medium screens */
+      padding-top: 20%;
+    }
+    .responsive-heading-black {
+        font-size: 2rem; /* Medium screens */
+        padding-top: 20%;
+      }
+  }
+  
+  @media (max-width: 480px) {
+    .responsive-heading {
+      font-size: 1.5rem; /* Small screens */
+      padding-top: 20%;
+    }
+    .responsive-heading-black {
+        font-size: 1.5rem; /* Small screens */
+        padding-top: 20%;
+      }
+  }
+  

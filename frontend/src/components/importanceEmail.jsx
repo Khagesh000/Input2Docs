@@ -6,7 +6,7 @@ export default function ImportanceEmail() {
   return (
     <div className="importance-email-container">
       <section className="email-intro-section text-center">
-      <div className="ProcessHeading"><h1>The Importance of Emails in <span>Modern Communication</span></h1></div>
+      <div className="ProcessHeading"><h2>The Importance of Emails in <span>Modern Communication</span></h2></div>
         <p className="email-intro-text">
           In today’s digital age, emails are essential for effective communication. They provide a quick,
           convenient, and professional way to convey messages, formalize agreements, and maintain records.

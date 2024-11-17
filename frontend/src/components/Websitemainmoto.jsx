@@ -4,7 +4,6 @@ import '../Websitemainmoto.css';
 export default function Websitemainmoto() {
   return (
     <div className="main-container">
-      <h1 className="moto-heading">Explore Our Services</h1>
       <p className="moto-subheading">Your ultimate toolset for crafting professional letters, emails, resumes, CVs, and cover letters.</p>
       
       <div className="services-row">
