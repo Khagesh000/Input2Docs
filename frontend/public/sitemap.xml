@@ -24,21 +24,17 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Resume Page -->
+  <!-- Email Maker -->
   <url>
-    <loc>https://input2docs.com/resume-maker</loc>
+    <loc>https://input2docs.com/email</loc>
     <lastmod>2024-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Letter Page -->
-  <url>
-    <loc>https://input2docs.com/letter-maker</loc>
-    <lastmod>2024-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+
+
 
   <!-- Cover Letter -->
   <url>
