@@ -57,7 +57,7 @@ const CardArrange = () => {
   return (
     <div className='cardHeading'>
       <div className="position-relative">
-      <h2 className='ProcessHeading' style={{color:'#333', fontWeight:'bolder'}}>Types Of Letters</h2>
+      <h2 className='ProcessHeading' style={{color:'red', fontWeight:'bolder'}}>Types Of Letters</h2>
         <div className="template-row" ref={containerRef}>
           <div className="col-md-4 col-sm-12 card-temp">
             <div className="card h-100">
