@@ -28,6 +28,7 @@ export default function CoverLetterIntro() {
               src={img2}
               alt="Cover Letter Generator"
               className="img-fluid bg-black cover-img"
+              loading="lazy"
             />
           </div>
         </div>

@@ -50,7 +50,7 @@ export default function CvAbout() {
       </div>
     </div>
     <div className="col-md-4 d-flex align-items-center justify-content-center position-relative">
-      <img src={img} alt="CV Overview" className="img-fluid" />
+      <img src={img} alt="CV Overview" className="img-fluid" loading="lazy" />
       <div className="bullet-line"></div>
     </div>
   </div>

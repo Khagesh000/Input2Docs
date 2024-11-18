@@ -11,7 +11,7 @@ export default function ResumeImportance() {
       <div className="importance-section section-left">
         <div className="row align-items-center">
           <div className="col-md-5 importance-image">
-            <img src={img1} alt="Professional Presentation" className="img-fluid"/>
+            <img src={img1} alt="Professional Presentation" className="img-fluid" loading="lazy"/>
           </div>
           <div className="col-md-7 importance-content">
             <h2>Professional Presentation</h2>
@@ -45,7 +45,7 @@ export default function ResumeImportance() {
       <div className="importance-section section-left">
         <div className="row align-items-center">
           <div className="col-md-5 importance-image">
-            <img src={img3} alt="Customization" className="img-fluid"/>
+            <img src={img3} alt="Customization" className="img-fluid" loading="lazy"/>
           </div>
           <div className="col-md-7 importance-content">
             <h2>Customization</h2>
@@ -72,7 +72,7 @@ export default function ResumeImportance() {
             </ul>
           </div>
           <div className="col-md-5 importance-image">
-            <img src={img4} alt="Consistency" className="img-fluid"/>
+            <img src={img4} alt="Consistency" className="img-fluid" loading="lazy"/>
           </div>
         </div>
       </div>

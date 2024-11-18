@@ -28,6 +28,7 @@ export default function ResumeIntro() {
               src={img2}
               alt="Resume Builder"
               className="img-fluid bg-black"
+              loading="lazy"
             />
           </div>
         </div>

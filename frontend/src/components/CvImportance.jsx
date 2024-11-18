@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThumbsUp, faStar, faLightbulb, faListUl, faCheckCircle, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import '../CvImportance.css'; // Ensure you have this CSS file in the same directory
 
 export default function CvImportance() {
