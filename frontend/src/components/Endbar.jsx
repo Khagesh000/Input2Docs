@@ -55,7 +55,7 @@ export default function Endbar() {
         {/* Bottom Section */}
         <div className="row mt-4 endbar-bottom-footer">
           <div className="col-12 text-center">
-            <p>&copy; 2024 Input2Docs. All rights reserved. Registered under XYZ Corp.</p>
+            <p>&copy; 2024 Input2Docs.</p>
           </div>
         </div>
       </div>
