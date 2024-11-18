@@ -25,7 +25,7 @@ function MainContent() {
       <Navbar />
       <HomeImageCarousel />
       <div>
-        <h1 className="responsive-heading">Welcome to Our Template Generator</h1>
+        <h1 className="responsive-heading">Welcome To Our Template Generator</h1>
       </div>
       <Websitemainmoto />
       <div className='CardSection'>
