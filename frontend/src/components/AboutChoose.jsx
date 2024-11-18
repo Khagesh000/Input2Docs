@@ -1,6 +1,6 @@
-import React from 'react';
-import '../AboutChoose.css'; // Ensure this path is correct
-import teamImage from '../assets/images/adsplace.jpg'; // Import your image
+import React, { Suspense } from 'react';
+import '../AboutChoose.css'; 
+import teamImage from '../assets/images/adsplace.webp';
 
 export default function AboutChoose() {
   return (
@@ -53,7 +53,7 @@ export default function AboutChoose() {
           </div>
         </div>
         <div className="col-md-4 d-flex align-items-center justify-content-center position-relative">
-          <img src={teamImage} alt="Team Overview" className="img-fluid" />
+          <img src={teamImage} alt="Team Overview" className="img-fluid" loading="lazy"/>
           <div className="bullet-line"></div>
         </div>
       </div>

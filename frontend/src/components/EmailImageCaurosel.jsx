@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import img from '../assets/images/EmailMaker.jpg';
-import img1 from '../assets/images/EmailMaker1.jpg';
-import img2 from '../assets/images/EmailMaker2.jpg';
+import img from '../assets/images/EmailMaker.webp';
+import img1 from '../assets/images/EmailMaker1.webp';
+import img2 from '../assets/images/EmailMaker2.webp';
 import '../App.css'; // Import the CSS file
 
 export default function EmailImageCaurosel() {

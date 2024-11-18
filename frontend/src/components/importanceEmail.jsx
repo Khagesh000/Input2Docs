@@ -1,6 +1,6 @@
 import React from 'react';
 import '../importanceEmail.css'; // Import custom CSS for styling
-import img3 from '../assets/images/Suggestions1.jpg';
+import img3 from '../assets/images/Suggestions1.webp';
 
 export default function ImportanceEmail() {
   return (

@@ -1,11 +1,11 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import img from '../assets/images/SchoolLetter.jpg';
-import img1 from '../assets/images/OfficeLetters.jpg';
-import img2 from '../assets/images/PoliceStationLetter.jpg';
-import img3 from '../assets/images/BankLetter.jpg';
-import img4 from '../assets/images/LegalLetter.jpg';
-import img5 from '../assets/images/GovernmentLetter.jpg';
+import img from '../assets/images/SchoolLetter.webp';
+import img1 from '../assets/images/OfficeLetters.webp';
+import img2 from '../assets/images/PoliceStationLetter.webp';
+import img3 from '../assets/images/BankLetter.webp';
+import img4 from '../assets/images/LegalLetter.webp';
+import img5 from '../assets/images/GovernmentLetter.webp';
 import '../App.css';
 import '../Cardarrange.css'
 

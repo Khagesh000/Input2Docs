@@ -1,9 +1,9 @@
 import React from 'react';
 import '../ResumeImportance.css'; // Ensure this path is correct
-import img1 from '../assets/images/Presentation1.jpg';
-import img2 from '../assets/images/Presentation2.jpg';
-import img3 from '../assets/images/Presentation3.jpg';
-import img4 from '../assets/images/Presentation4.jpg';
+import img1 from '../assets/images/Presentation1.webp';
+import img2 from '../assets/images/Presentation2.webp';
+import img3 from '../assets/images/Presentation3.webp';
+import img4 from '../assets/images/Presentation4.webp';
 
 export default function ResumeImportance() {
   return (

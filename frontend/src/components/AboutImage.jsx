@@ -1,6 +1,6 @@
 import React from 'react';
 import '../AboutImage.css'; // Ensure this path is correct
-import img2 from '../assets/images/adsplace2.jpg'; // Import your image
+import img2 from '../assets/images/adsplace2.webp'; // Import your image
 
 // Import icons from react-icons
 import { FaCheckCircle, FaUserCheck, FaHeart, FaRegLightbulb, FaStar, FaSyncAlt } from 'react-icons/fa';

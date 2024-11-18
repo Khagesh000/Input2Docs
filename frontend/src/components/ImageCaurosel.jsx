@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import img from '../assets/images/LetterMaker.jpg';
-import img1 from '../assets/images/LetterMaker1.jpg';
-import img2 from '../assets/images/LetterMaker2.jpg';
+import img from '../assets/images/LetterMaker.webp';
+import img1 from '../assets/images/LetterMaker1.webp';
+import img2 from '../assets/images/LetterMaker2.webp';
 import '../App.css'; // Import the CSS file
 
 export default function ImageCarousel() {

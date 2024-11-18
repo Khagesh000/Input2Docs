@@ -1,6 +1,6 @@
 import React from 'react'
 import '../AboutChoose.css'
-import img from '../assets/images/Coverletterimportance.jpg'
+import img from '../assets/images/Coverletterimportance.webp'
 
 
 export default function CoverLetterAbout() {

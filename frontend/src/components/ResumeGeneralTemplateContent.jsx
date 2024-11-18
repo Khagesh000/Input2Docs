@@ -1,8 +1,8 @@
 import educationIcon from '../assets/images/education-icon.png';
-import skillsIcon from '../assets/images/skills.png';
+import skillsIcon from '../assets/images/skills.webp';
 import summaryIcon from '../assets/images/summary-icon.png';
-import experienceIcon from '../assets/images/experience.png';
-import personalInfoIcon from '../assets/images/experience.png';
+import experienceIcon from '../assets/images/experience.webp';
+import personalInfoIcon from '../assets/images/experience.webp';
 import languagesIcon from '../assets/images/summary-icon.png';
 import hobbiesIcon from '../assets/images/hobbies-icon.png'; // Replace this with the actual path to your hobbies icon
 import toolsIcon from '../assets/images/tools-icon.png';

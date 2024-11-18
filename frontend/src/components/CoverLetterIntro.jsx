@@ -1,6 +1,6 @@
 import React from 'react';
 import '../CoverLetterIntro.css'; // Import the external CSS file
-import img2 from '../assets/images/COVERLETTER.jpg'; 
+import img2 from '../assets/images/COVERLETTER.webp'; 
 
 export default function CoverLetterIntro() {
   return (

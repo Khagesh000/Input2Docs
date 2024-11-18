@@ -17,7 +17,7 @@ import Cv from './Cv';
 import Contact from './Contact';
 import PrivacyPolicy from './PrivacyPolicy'
 import TermsAndConditions from './TermsAndConditions'
- // Import the Signup Modal
+
 
 function MainContent() {
   return (
@@ -44,7 +44,7 @@ function MainContent() {
 function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
-  const [showSignup, setShowSignup] = useState(false);
+ 
 
   const isSpecialPage = ['/letter', '/email', '/about-us', '/cover', '/resume', '/cv', '/contact-us', '/privacy-policy', '/terms-and-conditions' ].includes(location.pathname);
 

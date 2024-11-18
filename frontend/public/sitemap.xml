@@ -8,14 +8,6 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Resume Maker -->
-  <url>
-    <loc>https://input2docs.com/resume</loc>
-    <lastmod>2024-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- Letter Maker -->
   <url>
     <loc>https://input2docs.com/letter</loc>
@@ -24,13 +16,32 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Email Maker -->
+   <!-- Email Maker -->
   <url>
     <loc>https://input2docs.com/email</loc>
     <lastmod>2024-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+
+  <!-- Resume Maker -->
+  <url>
+    <loc>https://input2docs.com/resume</loc>
+    <lastmod>2024-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  
+  <!-- CV Templates -->
+  <url>
+    <loc>https://input2docs.com/cv</loc>
+    <lastmod>2024-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+ 
 
 
 
@@ -44,13 +55,17 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- CV Templates -->
+  <!-- Contact Us -->
   <url>
-    <loc>https://input2docs.com/cv</loc>
+    <loc>https://input2docs.com/contact-us</loc>
     <lastmod>2024-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+
+</urlset>
+
+  
 
   <!-- About Us -->
   <url>
@@ -76,12 +91,4 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Contact Us -->
-  <url>
-    <loc>https://input2docs.com/contact-us</loc>
-    <lastmod>2024-11-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-</urlset>
+  

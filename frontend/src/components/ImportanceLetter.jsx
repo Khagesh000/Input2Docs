@@ -1,6 +1,6 @@
 import React from 'react';
 import '../ImportanceLetter.css';
-import img3 from '../assets/images/Suggestions.jpg';
+import img3 from '../assets/images/Suggestions.webp';
 
 export default function ImportanceLetter() {
   return (

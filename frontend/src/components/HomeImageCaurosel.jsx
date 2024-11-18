@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import img from '../assets/images/adsplace.jpg';
-import img1 from '../assets/images/adsplace1.jpg';
-import img2 from '../assets/images/adsplace2.jpg';
+import img from '../assets/images/adsplace.webp';
+import img1 from '../assets/images/adsplace1.webp';
+import img2 from '../assets/images/adsplace2.webp';
 import '../App.css'; // Import the CSS file
 
 export default function HomeImageCaurosel() {

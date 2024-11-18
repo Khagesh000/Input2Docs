@@ -12,24 +12,24 @@ import '../Coverlettertemplate-new.css';
 import '../CoverLetterTemplates.css'; // Ensure this path is correct
 
 // Import images for templates
-import img from '../assets/images/CvTemplate1.png';
-import img1 from '../assets/images/CvTemplate2.png';
-import img2 from '../assets/images/CvTemplate3.png';
-import img3 from '../assets/images/CvTemplate4.png';
-import img4 from '../assets/images/CvTemplate5.png';
-import img5 from '../assets/images/CvTemplate6.png';
-import img6 from '../assets/images/CvTemplate7.png';
-import img7 from '../assets/images/CvTemplate8.png';
-import img8 from '../assets/images/CvTemplate9.png';
-import img9 from '../assets/images/CvTemplate10.png';
-import img10 from '../assets/images/CvTemplate11.png';
-import img11 from '../assets/images/CvTemplate12.png';
-import img12 from '../assets/images/CvTemplate13.png';
-import img13 from '../assets/images/CvTemplate14.png';
-import img14 from '../assets/images/CvTemplate15.png';
-import img15 from '../assets/images/CvTemplate16.png';
-import img16 from '../assets/images/CvTemplate17.png';
-import img17 from '../assets/images/CvTemplate18.png';
+import img from '../assets/images/CvTemplate1.webp';
+import img1 from '../assets/images/CvTemplate2.webp';
+import img2 from '../assets/images/CvTemplate3.webp';
+import img3 from '../assets/images/CvTemplate4.webp';
+import img4 from '../assets/images/CvTemplate5.webp';
+import img5 from '../assets/images/CvTemplate6.webp';
+import img6 from '../assets/images/CvTemplate7.webp';
+import img7 from '../assets/images/CvTemplate8.webp';
+import img8 from '../assets/images/CvTemplate9.webp';
+import img9 from '../assets/images/CvTemplate10.webp';
+import img10 from '../assets/images/CvTemplate11.webp';
+import img11 from '../assets/images/CvTemplate12.webp';
+import img12 from '../assets/images/CvTemplate13.webp';
+import img13 from '../assets/images/CvTemplate14.webp';
+import img14 from '../assets/images/CvTemplate15.webp';
+import img15 from '../assets/images/CvTemplate16.webp';
+import img16 from '../assets/images/CvTemplate17.webp';
+import img17 from '../assets/images/CvTemplate18.webp';
 
 
 

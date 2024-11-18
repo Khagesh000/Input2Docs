@@ -12,27 +12,27 @@ import '../ResumeTemplate.css'; // Ensure this path is correct
 import '../ResumeTemplate-new.css';
 
 // Import images for templates
-import img from '../assets/images/ResumeTemplate1.png';
-import img1 from '../assets/images/ResumeTemplate2.png';
-import img2 from '../assets/images/ResumeTemplate3.png';
-import img3 from '../assets/images/ResumeTemplate4.png';
-import img4 from '../assets/images/ResumeTemplate5.png';
-import img5 from '../assets/images/ResumeTemplate6.png';
-import img6 from '../assets/images/ResumeTemplate7.png';
-import img7 from '../assets/images/ResumeTemplate8.png';
-import img8 from '../assets/images/ResumeTemplate9.png';
-import img9 from '../assets/images/ResumeTemplate10.png';
-import img10 from '../assets/images/ResumeTemplate11.png';
-import img11 from '../assets/images/ResumeTemplate12.png';
-import img12 from '../assets/images/ResumeTemplate13.png';
-import img13 from '../assets/images/ResumeTemplate14.png';
-import img14 from '../assets/images/ResumeTemplate15.png';
-import img15 from '../assets/images/ResumeTemplate16.png';
-import img16 from '../assets/images/ResumeTemplate17.png';
-import img17 from '../assets/images/ResumeTemplate18.png';
-import img18 from '../assets/images/ResumeTemplate19.png';
-import img19 from '../assets/images/ResumeTemplate20.png';
-import img20 from '../assets/images/ResumeTemplate21.png';
+import img from '../assets/images/ResumeTemplate1.webp';
+import img1 from '../assets/images/ResumeTemplate2.webp';
+import img2 from '../assets/images/ResumeTemplate3.webp';
+import img3 from '../assets/images/ResumeTemplate4.webp';
+import img4 from '../assets/images/ResumeTemplate5.webp';
+import img5 from '../assets/images/ResumeTemplate6.webp';
+import img6 from '../assets/images/ResumeTemplate7.webp';
+import img7 from '../assets/images/ResumeTemplate8.webp';
+import img8 from '../assets/images/ResumeTemplate9.webp';
+import img9 from '../assets/images/ResumeTemplate10.webp';
+import img10 from '../assets/images/ResumeTemplate11.webp';
+import img11 from '../assets/images/ResumeTemplate12.webp';
+import img12 from '../assets/images/ResumeTemplate13.webp';
+import img13 from '../assets/images/ResumeTemplate14.webp';
+import img14 from '../assets/images/ResumeTemplate15.webp';
+import img15 from '../assets/images/ResumeTemplate16.webp';
+import img16 from '../assets/images/ResumeTemplate17.webp';
+import img17 from '../assets/images/ResumeTemplate18.webp';
+import img18 from '../assets/images/ResumeTemplate19.webp';
+import img19 from '../assets/images/ResumeTemplate20.webp';
+import img20 from '../assets/images/ResumeTemplate21.webp';
 
 
 
