@@ -143,7 +143,7 @@ const EmailMaker = ({ selectedTemplate }) => {
         controller.abort();
       }, 90000);
 
-      const response = await fetch('https://input2docs.com/api/send-email/', {
+      const response = await fetch('https://www.input2docs.com/api/send-email/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
