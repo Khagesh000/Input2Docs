@@ -130,39 +130,20 @@ const EmailMaker = ({ selectedTemplate }) => {
     }, 100);
   };
 
-  const getApiBaseUrl = () => {
-    const hostname = window.location.hostname;
-  
-    if (hostname.includes('vercel.app')) {
-      // If running on Vercel
-      return 'https://input2docs.vercel.app/api/send-email/';
-    } else if (hostname.includes('input2docs.com')) {
-      // If running on GoDaddy
-      return 'https://input2docs.com/api/send-email/';
-    } else {
-      // Local development
-      return 'http://localhost:8000/api/send-email/';
-    }
-  };
-  
-
-  
   const sendEmail = async () => {
     if (networkError) {
       alert('Cannot send email due to network issues.');
       return;
     }
-  
+
     try {
       setIsSendingEmail(true);
       const controller = new AbortController();
       const timeout = setTimeout(() => {
         controller.abort();
       }, 90000);
-  
-      const apiUrl = getApiBaseUrl(); // Get the dynamic API URL
-  
-      const response = await fetch(apiUrl, {
+
+      const response = await fetch('https://input2docs.com/api/send-email/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -170,28 +151,28 @@ const EmailMaker = ({ selectedTemplate }) => {
         body: JSON.stringify(formData),
         signal: controller.signal, 
       });
-  
+
       clearTimeout(timeout);
-  
+
       if (!response.ok) {
         const errorData = await response.json();
         console.error('Error sending email:', errorData);
-  
-        // Display an alert with the error message
-        alert(`Error: ${errorData.message || 'Failed to send email'}`);
-  
-        // If there are specific missing fields, display them in the alert as well
-        if (errorData.error) {
-          alert(`Missing required fields: ${errorData.error}`);
-        }
-  
-        throw new Error(errorData.message || 'Failed to send email');
+      
+      // Display an alert with the error message
+      alert(`Error: ${errorData.message || 'Failed to send email'}`);
+
+      // If there are specific missing fields, display them in the alert as well
+      if (errorData.error) {
+        alert(`Missing required fields: ${errorData.error}`);
       }
-  
+
+      throw new Error(errorData.message || 'Failed to send email');
+    }
+
       alert("Email Sent Successfully!!!");
       setShowSuccessMessage(true);
       localStorage.setItem('emailSent', 'true');
-  
+
       // Reset the form and states
       setFormData({});
       setGeneratedEmail('');
@@ -199,8 +180,8 @@ const EmailMaker = ({ selectedTemplate }) => {
       setIsSendingEmail(false);
       setTimeout(() => {
         setShowSuccessMessage(false);
-      }, 10000); // Message visible for 10 seconds
-  
+      }, 10000); // Message visible for 3 seconds
+
     } catch (error) {
       if (error.name === 'AbortError') {
         console.error('Fetch request was aborted');
@@ -212,7 +193,6 @@ const EmailMaker = ({ selectedTemplate }) => {
       setIsSendingEmail(false);
     }
   };
-  
 
   const handleEdit = () => {
     setFormSubmitted(false);
