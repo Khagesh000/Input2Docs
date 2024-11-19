@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '[::1]',
     'input2docs.onrender.com',
+    'www.input2docs.com'
 ]
 
 # Application definition
@@ -158,12 +159,12 @@ EMAIL_USE_SSL = False
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://www.input2docs.com",
+    "https://input2docs.com",
 ]
 
 
-CORS_ORIGIN_ALLOW_ALL = True 
-# If you want to allow all origins (not recommended for production)
-# CORS_ALLOW_ALL_ORIGINS = True
+
 
 
 
