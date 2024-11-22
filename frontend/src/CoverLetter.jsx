@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+import { Helmet } from 'react-helmet';
 
 
 import Navbar from './components/navbar'
@@ -15,6 +15,12 @@ import CoverLetterAbout from './components/CoverLetterAbout'
 export default function CoverLetter() {
   return (
     <div className='bg-black'>
+      <Helmet>
+  <title>Cover Letter Templates | Input2Docs</title>
+  <meta name="description" content="Browse our cover letter templates and craft the perfect first impression." />
+  <meta name="keywords" content="Cover Letter Templates, Professional Cover Letters, Input2Docs Templates" />
+</Helmet>
+
       <Navbar />
       <CoverLetterIntro />
       <h1 className="responsive-heading-black"> Cover Letter Templates</h1>

@@ -18,10 +18,17 @@ import Contact from './Contact';
 import PrivacyPolicy from './PrivacyPolicy'
 import TermsAndConditions from './TermsAndConditions'
 
+import { Helmet } from 'react-helmet';
 
 function MainContent() {
   return (
     <div style={{ backgroundColor: 'white' }}>
+      <Helmet>
+  <title>Welcome | Input2Docs Template Generator</title>
+  <meta name="description" content="Welcome to Input2Docs! Create professional email and letter templates with ease." />
+  <meta name="keywords" content="Input2Docs, Template Generator, Email Templates, Letter Templates" />
+</Helmet>
+
       <Navbar />
       <HomeImageCarousel />
       <div>

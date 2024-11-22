@@ -8,11 +8,17 @@ import Endbar from './components/Endbar'
 import CvAbout from './components/CvAbout'
 import CvMainMoto from './components/CvMainMoto'
 
-
+import { Helmet } from 'react-helmet';
 
 export default function Cv() {
   return (
     <div style={{ backgroundColor: 'black'}}>
+      <Helmet>
+  <title>CV Templates | Input2Docs</title>
+  <meta name="description" content="Discover our professional CV templates designed to make job applications stand out." />
+  <meta name="keywords" content="CV Templates, Professional CVs, Input2Docs Templates" />
+</Helmet>
+
     <div>
       <Navbar />
       

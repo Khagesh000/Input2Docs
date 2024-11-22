@@ -10,6 +10,7 @@ import EmailSearchCategory from './components/EmailSearchCategory'; // Importing
 import EmailMaker from './components/EmailMaker'; // Importing EmailMaker component
 
 import EmailMainMoto from './components/EmailMainMoto';
+import { Helmet } from 'react-helmet';
 
 const Email = () => {
   const [selectedSubcategory, setSelectedSubcategory] = useState('');
@@ -22,6 +23,13 @@ const Email = () => {
   return (
     
     <div style={{ backgroundColor: 'f3f4f6'}}>
+
+<Helmet>
+  <title>Email Templates | Input2Docs</title>
+  <meta name="description" content="Professional email templates for every occasion. Save time and create impact with Input2Docs." />
+  <meta name="keywords" content="Email Templates, Professional Emails, Input2Docs Templates" />
+</Helmet>
+
       
       {/* Navbar component */}
       <Navbar />

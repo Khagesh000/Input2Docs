@@ -10,11 +10,19 @@ import Process from './components/Process';
 import ImportanceLetter from './components/ImportanceLetter';
 import LetterMainMoto from './components/Lettermainmoto';
 
+import { Helmet } from 'react-helmet';
+
 export default function Letter() {
   const [selectedSubcategory, setSelectedSubcategory] = useState('');
 
   return (
     <div style={{ backgroundColor: '#f3f4f6'}}>
+      <Helmet>
+  <title>Letter Templates | Input2Docs</title>
+  <meta name="description" content="Comprehensive letter templates for all your personal and professional needs." />
+  <meta name="keywords" content="Letter Templates, Professional Letters, Input2Docs Templates" />
+</Helmet>
+
     <div>
       <Navbar />
 
