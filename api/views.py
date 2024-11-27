@@ -12,6 +12,8 @@ import re
 
 logger = logging.getLogger(__name__)
 
+from .models import EmailRecord
+
 def load_email_templates():
     # Path to your JSON file
     path = os.path.join(settings.BASE_DIR, 'api', 'data', 'templates.json')
@@ -66,13 +68,22 @@ class SendEmailView(APIView):
         if missing_fields:
             return Response({"error": f"Missing required fields: {', '.join(missing_fields)}"}, status=status.HTTP_400_BAD_REQUEST)
         
-        # Fill in the placeholders in the template
         try:
             subject = subject_template.format(**email_data)
             email_body = template.format(**email_data)
             email_body = html.unescape(email_body).replace("<p>", "").replace("</p>", "")
             email_body = remove_html_tags(email_body)  # Remove all HTML tags
-            
+
+            # Save email record to the database
+            email_record = EmailRecord(
+                sender_email=email_data.get("SenderEmail"),
+                recipient_email=email_data.get("RecipientEmail"),
+                subject=subject,
+                body=email_body,
+            )
+            email_record.save()
+
+            # Send the email
             try:
                 send_mail(
                     subject=subject,
