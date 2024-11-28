@@ -12,6 +12,8 @@ import LetterMainMoto from './components/Lettermainmoto';
 
 import { Helmet } from 'react-helmet';
 
+import InFeedAd from './components/InFeedAd';
+
 export default function Letter() {
   const [selectedSubcategory, setSelectedSubcategory] = useState('');
 
@@ -40,6 +42,8 @@ export default function Letter() {
       <div className='ProcessSection' style={{ backgroundColor: '#f3f4f6'}}>
         <Process />
       </div>
+      {/* Show InFeedAd component */}
+      <InFeedAd />
       
       <div className='ProcessSection' style={{ backgroundColor: '#f3f4f6'}}><ImportanceLetter /></div>
 

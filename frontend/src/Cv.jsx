@@ -10,6 +10,8 @@ import CvMainMoto from './components/CvMainMoto'
 
 import { Helmet } from 'react-helmet';
 
+import ArticalAd from './components/AriticalAd'
+
 export default function Cv() {
   return (
     <div style={{ backgroundColor: 'black'}}>
@@ -29,6 +31,7 @@ export default function Cv() {
       <div style={{ backgroundColor: 'black'}}>
       <CvTemplates />
       </div>
+      <ArticalAd />
       <h1 className="responsive-heading-black" style={{paddingTop: '10%', margin: '0'}}>Professional CV Templates</h1>
       <div style={{ backgroundColor: 'black'}}>
       <CvImportance />

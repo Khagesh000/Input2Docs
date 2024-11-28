@@ -1,0 +1,47 @@
+/* General ad container styling */
+.ad-container {
+  width: 100%;
+  max-width: 300px; /* Set a smaller max-width for all screens */
+  margin: 10px auto; /* Center the container and reduce margin */
+  padding: 0 5px; /* Minimal padding for small spaces */
+  display: flex;
+  justify-content: center; /* Center the ad horizontally */
+}
+
+/* General styling for the Google ad */
+.adsbygoogle {
+  width: 100%;
+  max-width: 100%;
+  height: auto; /* Ensure height adjusts naturally */
+  display: block;
+}
+
+/* Media Queries for different screen sizes */
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+  .ad-container {
+    max-width: 300px; /* Keep it small for large screens too */
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ad-container {
+    max-width: 280px; /* Slightly smaller for tablets */
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 767px) {
+  .ad-container {
+    max-width: 260px; /* Adjust for small screens */
+  }
+}
+
+/* Extra small screens (very small phones) */
+@media (max-width: 480px) {
+  .ad-container {
+    max-width: 240px; /* Keep it compact for extra small devices */
+  }
+}

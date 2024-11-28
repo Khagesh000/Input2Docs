@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from .models import EmailRecord
 
 class EmailSerializer(serializers.Serializer):
     subject = serializers.CharField(max_length=255, required=False)
@@ -867,7 +868,9 @@ class EmailSerializer(serializers.Serializer):
     FeedbackActions = serializers.CharField(max_length=1000, required=False)
 
 
-
+    class Meta:
+        model = EmailRecord
+        fields = ['sender_email', 'recipient_email', 'subject', 'body', 'email_type', 'category']
 
 
 

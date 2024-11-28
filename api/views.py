@@ -82,6 +82,7 @@ class SendEmailView(APIView):
                 body=email_body,
             )
             email_record.save()
+            logger.info(f"Email record saved: {email_record}")
 
             # Send the email
             try:

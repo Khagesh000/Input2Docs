@@ -12,6 +12,8 @@ import EmailMaker from './components/EmailMaker'; // Importing EmailMaker compon
 import EmailMainMoto from './components/EmailMainMoto';
 import { Helmet } from 'react-helmet';
 
+import InFeedAd from './components/InFeedAd';
+
 const Email = () => {
   const [selectedSubcategory, setSelectedSubcategory] = useState('');
 
@@ -62,7 +64,10 @@ const Email = () => {
       <div style={{ backgroundColor: '#f3f4f6'}}>
         
         <EmailProcess />
+        <InFeedAd />
       </div>
+
+    
 
       {/* ImportanceEmail component */}
       <div  style={{ backgroundColor: '#f3f4f6'}}><ImportanceEmail /></div>

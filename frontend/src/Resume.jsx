@@ -9,6 +9,8 @@ import Endbar from './components/Endbar'
 
 import { Helmet } from 'react-helmet';
 
+import ArticalAd from './components/AriticalAd'
+
 export default function Resume() {
   return (
     <div style={{ backgroundColor: 'black'}}>
@@ -26,6 +28,7 @@ export default function Resume() {
       <div style={{ backgroundColor: 'black'}}>
         <ResumeTemplate />
       </div>
+      <ArticalAd />
       <div style={{ backgroundColor: 'black'}}>
         <ResumeImportance />
       </div>

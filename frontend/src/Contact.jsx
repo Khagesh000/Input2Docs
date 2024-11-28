@@ -4,7 +4,7 @@ import Contactform from './components/Contactform'
 import ContactMainMoto from './components/ContactMainMoto'
 import Endbar from './components/Endbar'
 
-
+import MultiplyAd from './components/MultiplyAd'
 export default function Cv() {
   return (
   
@@ -15,6 +15,7 @@ export default function Cv() {
       </div>
 
       <Contactform />
+      <MultiplyAd />
       <ContactMainMoto />
       <Endbar />
       </div>

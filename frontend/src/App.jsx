@@ -20,6 +20,9 @@ import TermsAndConditions from './TermsAndConditions'
 
 import { Helmet } from 'react-helmet';
 
+import DisplayAd from "./components/DisplayAd";
+
+
 function MainContent() {
   return (
     <div style={{ backgroundColor: 'white' }}>
@@ -41,6 +44,7 @@ function MainContent() {
       <div>
         <Process />
       </div>
+      <DisplayAd />
       <ImageView />
       <Feedback />
       <Endbar />
@@ -81,6 +85,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       </Routes>
+      
     </div>
   );
 }

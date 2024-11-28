@@ -12,6 +12,8 @@ import CoverLetterImportance from './components/CoverLetterImportance'
 import CoverletterMainMoto from './components/CoverletterMainMoto'
 import CoverLetterAbout from './components/CoverLetterAbout'
 
+import MultiplyAd from './components/MultiplyAd';
+
 export default function CoverLetter() {
   return (
     <div className='bg-black'>
@@ -26,6 +28,7 @@ export default function CoverLetter() {
       <h1 className="responsive-heading-black"> Cover Letter Templates</h1>
       <CoverLetterImportance />
       <CoverLetterTemplates />
+      <MultiplyAd />
       <CoverLetterAbout />
       <div>
         <CoverletterMainMoto />
