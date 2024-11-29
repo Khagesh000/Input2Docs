@@ -19,7 +19,7 @@
     left: 0;
     width: 100%;
     height: 20%; /* Only show background image in the bottom 20% */
-    background-image: url('./assets/images/LetterMaker2.jpg'); /* Adjust the path accordingly */
+    background-image: url('./assets/images/LetterMaker2.webp'); /* Adjust the path accordingly */
     background-position: center bottom;
     background-size: cover;
     background-repeat: no-repeat;
