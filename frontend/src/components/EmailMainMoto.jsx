@@ -28,7 +28,9 @@ export default function EmailMainMoto() {
       </div>
       {/* Bottom content section */}
       <div className="emailmain-bottom-content">
-        <div className='ProcessHeading'><h2 className="bottom-heading">Why Choose Our <span>Email Templates?</span></h2></div>
+        <div className='ProcessHeading'><h2 className="bottom-heading">Why Choose Our <span><a href="/email" className="internal-link">
+                Email Templates?
+              </a></span></h2></div>
         <p className="bottom-intro">
           Save time and ensure professionalism with our expertly crafted email templates. Whether you’re connecting with a new client, following up with a customer, or sending an event invitation, we have a range of templates designed to meet your needs.
         </p>

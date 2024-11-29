@@ -47,6 +47,7 @@ export default function CvImportance() {
           <p className="importance-text">
             Regularly updating your CV reflects your professional growth and helps you track your career progress over time.
           </p>
+          
         </div>
       </div>
     </div>

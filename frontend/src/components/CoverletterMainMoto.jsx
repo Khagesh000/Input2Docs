@@ -7,7 +7,9 @@ export default function CoverletterMainMoto() {
       <div className='ProcessHeading'><h2 className="coverletter-heading">The Importance of a <span>Cover Letter</span></h2></div>
       <div className="coverletter-content">
         <div className="coverletter-section">
-          <h2 className="coverletter-subheading">What is a Cover Letter?</h2>
+          <h2 className="coverletter-subheading">What is a <a href="/cover" className="internal-link">
+                Cover Letter
+              </a>?</h2>
           <p className="coverletter-description">
             A cover letter is a personalized document that accompanies your resume, providing a more detailed introduction to your background, skills, and motivations. It serves as a direct line of communication with potential employers, enabling you to make a compelling case for why you're the right fit for the position.
           </p>

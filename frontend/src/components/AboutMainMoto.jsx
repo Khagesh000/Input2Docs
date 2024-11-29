@@ -11,7 +11,9 @@ export default function AboutMainMoto() {
           <div className="col-md-6 col-lg-4 fade-in">
             <div className="feature-box">
               <FaEnvelope className="icon" />
-              <h3>Letter Maker</h3>
+              <h3>
+                <a href="/letter" className="internal-link">Letter Maker</a>
+              </h3>
               <p>
                 Easily create professional letters with customizable templates designed for every occasion. Stand out with polished, high-quality letters tailored to your needs.
               </p>
@@ -20,7 +22,9 @@ export default function AboutMainMoto() {
           <div className="col-md-6 col-lg-4 fade-in">
             <div className="feature-box">
               <FaFileAlt className="icon" />
-              <h3>Email Maker</h3>
+              <h3>
+                <a href="/email" className="internal-link">Email Maker</a>
+              </h3>
               <p>
                 Craft impactful emails that capture attention. With our Email Maker, generate professional emails that are structured to enhance communication and engagement.
               </p>
@@ -29,7 +33,9 @@ export default function AboutMainMoto() {
           <div className="col-md-6 col-lg-4 fade-in">
             <div className="feature-box">
               <FaUser className="icon" />
-              <h3>Resume Maker</h3>
+              <h3>
+                <a href="/resume" className="internal-link">Resume Maker</a>
+              </h3>
               <p>
                 Build a standout resume effortlessly. Our Resume Maker offers easy-to-use templates that highlight your skills, experience, and achievements.
               </p>
@@ -38,7 +44,9 @@ export default function AboutMainMoto() {
           <div className="col-md-6 col-lg-4 fade-in">
             <div className="feature-box">
               <FaFileSignature className="icon" />
-              <h3>Cover Letter Maker</h3>
+              <h3>
+                <a href="/cover" className="internal-link">Cover Letter Maker</a>
+              </h3>
               <p>
                 Create a persuasive cover letter that complements your resume. Our Cover Letter Maker provides you with a professional format for a lasting impression.
               </p>
@@ -47,7 +55,9 @@ export default function AboutMainMoto() {
           <div className="col-md-6 col-lg-4 fade-in">
             <div className="feature-box">
               <FaAddressCard className="icon" />
-              <h3>CV Templates Maker</h3>
+              <h3>
+                <a href="/cv" className="internal-link">CV Templates Maker</a>
+              </h3>
               <p>
                 Design a comprehensive CV with ease. Choose from templates crafted to present your career highlights and qualifications effectively.
               </p>
@@ -57,7 +67,9 @@ export default function AboutMainMoto() {
           <div className="col-md-6 col-lg-4 fade-in coming-soon">
             <div className="feature-box">
               <FaRobot className="icon ai-icon" />
-              <h3>AI-Powered Tools</h3>
+              <h3>
+                <a href="/about-us" className="internal-link">AI-Powered Tools</a>
+              </h3>
               <p>
                 <em>Coming Soon</em>: Discover the next level of customization with AI-driven templates and smart recommendations. Experience personalized suggestions tailored to your career goals.
               </p>

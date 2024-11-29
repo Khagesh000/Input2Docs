@@ -47,6 +47,9 @@ export default function CvAbout() {
           A CV can facilitate networking opportunities by providing a clear picture of your career path. 
           It makes it easier for contacts to refer you to potential job openings.
         </p>
+        <a href="/cv" className="internal-link" style={{color:'red'}}>
+                Explore CV Templates Generator
+              </a>
       </div>
     </div>
     <div className="col-md-4 d-flex align-items-center justify-content-center position-relative">

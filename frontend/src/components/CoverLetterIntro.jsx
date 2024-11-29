@@ -22,6 +22,11 @@ export default function CoverLetterIntro() {
             <p>
               Follow our easy-to-use template, customize it with your details, and download your cover letter in PDF format, ready for submission. Get started now and make a great impression on your potential employers!
             </p>
+            <p>
+              <a href="/cover" className="internal-link">
+                Explore Cover Letter Generator
+              </a>
+            </p>
           </div>
           <div className="col-md-6 d-flex align-items-center justify-content-center fade-in">
             <img
