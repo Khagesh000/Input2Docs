@@ -5,7 +5,7 @@ import SearchCategory from './components/SearchCategory';
 import LetterMaker from './components/LetterMaker';
 import Process from './components/Process';
 import ImportanceLetter from './components/ImportanceLetter';
-import LetterMainMoto from './components/LetterMainMoto';
+import LetterMainMoto from './components/Lettermainmoto';
 import Endbar from './components/Endbar';
 import InFeedAd from './components/InFeedAd';
 import './Letter.css'; // Existing styles

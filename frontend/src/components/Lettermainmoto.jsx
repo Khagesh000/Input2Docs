@@ -1,7 +1,7 @@
 import React from 'react';
 import '../LetterMainMoto.css';
 
-export default function LetterMainMoto() {
+export default function Lettermainmoto() {
   return (
     <div className="letter-container">
       <div className="ProcessHeading">
