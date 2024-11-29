@@ -29,7 +29,8 @@ const Email = () => {
 <Helmet>
   <title>Email Templates | Input2Docs</title>
   <meta name="description" content="Professional email templates for every occasion. Save time and create impact with Input2Docs." />
-  <meta name="keywords" content="Email Templates, Professional Emails, Input2Docs Templates" />
+  <meta name="keywords" content="Email Generator, Fake Email Generator, Email Signature Generator, AI Email Generator, Random Email Generator" />
+
 </Helmet>
 
       
@@ -65,13 +66,36 @@ const Email = () => {
         
         <EmailProcess />
         <InFeedAd />
+
+        {/* ImportanceEmail component */}
+      <div  style={{ backgroundColor: '#f3f4f6'}}><ImportanceEmail /></div>
+      {/* Email Signature Maker Section for SEO */}
+      <div className="search-letterhead-section">
+      <h1 className="search-letterhead-heading">Create Professional Email Templates Online</h1>
+
+      <p className="search-letterhead-description" >
+  With Input2Docs, you can create stunning and professional **email templates** and **email signatures** in minutes. Choose from a variety of customizable templates to suit your business or personal needs. Start designing now and download your **email templates** and **email signatures** instantly.
+</p>
+
+
+        <h2>Why Use Our Email Maker?</h2>
+        <ul>
+          <li>Free and easy-to-use templates</li>
+          <li>Customizable designs to match your branding</li>
+          <li>Instant downloads in multiple formats</li>
+        </ul>
+        <a href="/email" className="search-cta-button">
+          Get Started with Email Design
+        </a>
+       
+      </div>
+
+
       </div>
 
     
 
-      {/* ImportanceEmail component */}
-      <div  style={{ backgroundColor: '#f3f4f6'}}><ImportanceEmail /></div>
-      <h1 className="responsive-heading">Professional Email Templates</h1>
+      
       <EmailMainMoto />
       
 

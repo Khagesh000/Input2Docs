@@ -2,39 +2,65 @@ import React from 'react'
 
 import { Helmet } from 'react-helmet';
 
-
 import Navbar from './components/navbar'
-
 import Endbar from './components/Endbar'
 import CoverLetterTemplates from './components/CoverLetterTemplates'
 import CoverLetterIntro from './components/CoverLetterIntro'
 import CoverLetterImportance from './components/CoverLetterImportance'
 import CoverletterMainMoto from './components/CoverletterMainMoto'
 import CoverLetterAbout from './components/CoverLetterAbout'
-
 import MultiplyAd from './components/MultiplyAd';
 
 export default function CoverLetter() {
   return (
     <div className='bg-black'>
       <Helmet>
-  <title>Cover Letter Templates | Input2Docs</title>
-  <meta name="description" content="Browse our cover letter templates and craft the perfect first impression." />
-  <meta name="keywords" content="Cover Letter Templates, Professional Cover Letters, Input2Docs Templates" />
-</Helmet>
+        <title>Cover Letter Templates | Input2Docs</title>
+        <meta name="description" content="Browse our cover letter templates and craft the perfect first impression. Choose from free and customizable templates to enhance your job application." />
+        <meta name="keywords" content="Cover Letter Templates, Professional Cover Letters, Free Cover Letter Template, Cover Letter Template Word, Google Docs Cover Letter Template, Input2Docs Templates" />
+      </Helmet>
 
       <Navbar />
+
+      {/* Cover Letter Intro Section */}
       <CoverLetterIntro />
-      <h1 className="responsive-heading-black"> Cover Letter Templates</h1>
+
+      {/* CV Design Section (For SEO and content) */}
+<div className="search-letterhead-section" style={{backgroundColor: 'black'}}>
+  <h1 className="search-letterhead-heading">Create Stunning Cover Letter Templates Online</h1>
+  <p className="search-letterhead-description">
+  With Input2Docs, you can create impressive and professional cover letters in minutes. Choose from a variety of customizable cover letter templates designed to make a strong first impression on recruiters. Start designing now and download your cover letter template instantly in multiple formats.
+  </p>
+
+  <h2 style={{ color: 'grey' }}>Why Use Our Online Cover Letter Maker?</h2>
+  <ul style={{ color: 'gray' }}>
+    <li>Free and easy-to-use templates</li>
+    <li>Customizable designs tailored to your career needs</li>
+    <li>Instant downloads in multiple formats (PDF, Word, etc.)</li>
+    <li>Professional layouts designed to impress recruiters</li>
+    <li>ATS-friendly CV templates to increase your chances of landing your job</li>
+  </ul>
+  <a href="/cover" className="search-cta-button">
+  Get Started with Cover Letter Template Design
+  </a>
+</div>
+
+      {/* Cover Letter Importance Section */}
       <CoverLetterImportance />
+
+      {/* Cover Letter Templates Section */}
       <CoverLetterTemplates />
+
+      {/* Advertisements Section */}
       <MultiplyAd />
+
+      {/* About Section */}
       <CoverLetterAbout />
-      <div>
-        <CoverletterMainMoto />
-      
-      </div>
-      
+
+      {/* Main Moto Section */}
+      <CoverletterMainMoto />
+
+      {/* Endbar Section */}
       <Endbar />
     </div>
   )

@@ -32,7 +32,26 @@ export default function Resume() {
       <div style={{ backgroundColor: 'black'}}>
         <ResumeImportance />
       </div>
-      <h1 className='responsive-heading-black' style={{margin: '0'}}> Our Easy-To-Use Templates</h1>
+      {/* Resume Design Section (For SEO and content) */}
+<div className="search-letterhead-section" style={{backgroundColor: 'black'}}>
+  <h1 className="search-letterhead-heading">Create Professional Resumes Online</h1>
+  <p className="search-letterhead-description">
+    With Input2Docs, you can create stunning and professional resumes in minutes. Choose from a variety of customizable resume templates to suit your job application or career needs. Start designing now and download your resume instantly.
+  </p>
+
+  <h2 style={{ color: 'grey' }}>Why Use Our Online Resume Maker?</h2>
+  <ul style={{ color: 'gray' }}>
+    <li>Free and easy-to-use templates</li>
+    <li>Customizable designs to highlight your skills and experience</li>
+    <li>Instant downloads in multiple formats (PDF, Word, etc.)</li>
+    <li>Professional-looking layouts designed to make you stand out</li>
+    <li>ATS-friendly templates to improve your chances of getting hired</li>
+  </ul>
+  <a href="/resume" className="search-cta-button">
+    Get Started with Resume Design
+  </a>
+</div>
+
 
       <ResumeMainMoto />
 

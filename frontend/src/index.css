@@ -19,6 +19,50 @@
     line-height: 1.4;
     margin-bottom: 0;
   }
+
+  /* LetterStyles.css */
+
+/* LetterStyles.css */
+
+/* Container for letterhead section */
+.search-letterhead-section {
+  text-align: center; /* Centers all the content inside */
+  padding: 20px;
+  max-width: 70%; /* Set width to 70% of the screen */
+  margin: 0 auto; /* Center the box horizontally */
+  background-color: #f3f4f6; /* White background to make it look like a box */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Heading styles */
+.search-letterhead-heading {
+  color: red; /* Red color for the heading */
+  font-size: 1.8rem; /* Increase font size for better visibility */
+  margin-bottom: 20px; /* Add space below the heading */
+}
+
+/* Description styles */
+.search-letterhead-description {
+  color: grey; /* Grey color for the description */
+  font-size: 1.2rem; /* Slightly larger text for better readability */
+  margin-bottom: 30px; /* Add space below the description */
+}
+
+/* Button styles */
+.search-cta-button {
+  padding: 12px 30px;
+  background-color: #4CAF50; /* Green background for button */
+  color: white; /* White text on the button */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.search-cta-button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
   
   @media (max-width: 768px) {
     .responsive-heading {
