@@ -1,6 +1,6 @@
 import React from 'react'
 import '../AboutChoose.css'
-import img from '../assets/images/importanceofcv.webp'
+import importanceofcv from '../assets/images/importanceofcv.webp'
 
 export default function CvAbout() {
   return (
@@ -50,7 +50,7 @@ export default function CvAbout() {
       </div>
     </div>
     <div className="col-md-4 d-flex align-items-center justify-content-center position-relative">
-      <img src={img} alt="CV Overview" className="img-fluid" loading="lazy" />
+      <img src={importanceofcv} alt="CV Overview" className="img-fluid" loading="lazy" />
       <div className="bullet-line"></div>
     </div>
   </div>

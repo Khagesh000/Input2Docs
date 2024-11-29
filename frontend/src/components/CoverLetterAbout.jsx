@@ -1,6 +1,6 @@
 import React from 'react'
 import '../AboutChoose.css'
-import img from '../assets/images/Coverletterimportance.webp'
+import Coverletterimportance from '../assets/images/Coverletterimportance.webp'
 
 
 export default function CoverLetterAbout() {
@@ -50,7 +50,7 @@ export default function CoverLetterAbout() {
             </div>
           </div>
           <div className="col-md-4 d-flex align-items-center justify-content-center position-relative">
-            <img src={img} alt="Cover Letter Overview" className="img-fluid" loading="lazy" />
+            <img src={Coverletterimportance} alt="Cover Letter Overview" className="img-fluid" loading="lazy" />
             <div className="bullet-line"></div>
           </div>
         </div>

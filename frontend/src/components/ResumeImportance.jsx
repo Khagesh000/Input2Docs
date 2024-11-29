@@ -1,9 +1,9 @@
 import React from 'react';
 import '../ResumeImportance.css'; // Ensure this path is correct
-import img1 from '../assets/images/Presentation1.webp';
-import img2 from '../assets/images/Presentation2.webp';
-import img3 from '../assets/images/Presentation3.webp';
-import img4 from '../assets/images/Presentation4.webp';
+import Presentation1 from '../assets/images/Presentation1.webp';
+import Presentation2 from '../assets/images/Presentation2.webp';
+import Presentation3 from '../assets/images/Presentation3.webp';
+import Presentation4 from '../assets/images/Presentation4.webp';
 
 export default function ResumeImportance() {
   return (
@@ -11,7 +11,7 @@ export default function ResumeImportance() {
       <div className="importance-section section-left">
         <div className="row align-items-center">
           <div className="col-md-5 importance-image">
-            <img src={img1} alt="Professional Presentation" className="img-fluid" loading="lazy"/>
+            <img src={Presentation1} alt="Professional Presentation" className="img-fluid" loading="lazy"/>
           </div>
           <div className="col-md-7 importance-content">
             <h2>Professional Presentation</h2>
@@ -38,14 +38,14 @@ export default function ResumeImportance() {
             </ul>
           </div>
           <div className="col-md-5 importance-image">
-            <img src={img2} alt="Time Efficiency" className="img-fluid"/>
+            <img src={Presentation2} alt="Time Efficiency" className="img-fluid"/>
           </div>
         </div>
       </div>
       <div className="importance-section section-left">
         <div className="row align-items-center">
           <div className="col-md-5 importance-image">
-            <img src={img3} alt="Customization" className="img-fluid" loading="lazy"/>
+            <img src={Presentation3} alt="Customization" className="img-fluid" loading="lazy"/>
           </div>
           <div className="col-md-7 importance-content">
             <h2>Customization</h2>
@@ -72,7 +72,7 @@ export default function ResumeImportance() {
             </ul>
           </div>
           <div className="col-md-5 importance-image">
-            <img src={img4} alt="Consistency" className="img-fluid" loading="lazy"/>
+            <img src={Presentation4} alt="Consistency" className="img-fluid" loading="lazy"/>
           </div>
         </div>
       </div>

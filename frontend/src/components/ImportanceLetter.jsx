@@ -1,6 +1,6 @@
 import React from 'react';
 import '../ImportanceLetter.css';
-import img3 from '../assets/images/Suggestions.webp';
+import Suggestions from '../assets/images/Suggestions.webp';
 
 export default function ImportanceLetter() {
   return (
@@ -46,7 +46,7 @@ export default function ImportanceLetter() {
           </div>
           <div className="col-lg-6 image-wrapper">
             <div className="image-overlay">
-              <img src={img3} alt="Illustration" className="img-fluid point-image" loading="lazy"/>
+              <img src={Suggestions} alt="Illustration" className="img-fluid point-image" loading="lazy"/>
             </div>
           </div>
         </div>

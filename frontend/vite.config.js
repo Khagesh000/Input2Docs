@@ -6,9 +6,6 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 2000, // You can adjust this based on your project size
     rollupOptions: {
-      external: [
-        'react-quill/dist/quill.snow.css',  // Make sure to externalize the CSS file if needed
-      ],
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {

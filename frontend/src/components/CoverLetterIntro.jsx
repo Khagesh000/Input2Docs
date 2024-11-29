@@ -1,6 +1,6 @@
 import React from 'react';
 import '../CoverLetterIntro.css'; // Import the external CSS file
-import img2 from '../assets/images/COVERLETTER.webp'; 
+import COVERLETTER from '../assets/images/COVERLETTER.webp'; 
 
 export default function CoverLetterIntro() {
   return (
@@ -25,7 +25,7 @@ export default function CoverLetterIntro() {
           </div>
           <div className="col-md-6 d-flex align-items-center justify-content-center fade-in">
             <img
-              src={img2}
+              src={COVERLETTER}
               alt="Cover Letter Generator"
               className="img-fluid bg-black cover-img"
               loading="lazy"

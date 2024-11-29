@@ -18,6 +18,16 @@ export default function CoverLetter() {
         <title>Cover Letter Templates | Input2Docs</title>
         <meta name="description" content="Browse our cover letter templates and craft the perfect first impression. Choose from free and customizable templates to enhance your job application." />
         <meta name="keywords" content="Cover Letter Templates, Professional Cover Letters, Free Cover Letter Template, Cover Letter Template Word, Google Docs Cover Letter Template, Input2Docs Templates" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Types of Letters",
+            "contentUrl": "https://input2docs.com/cover/CoverLetterImportance.webp",
+            "description": "A comprehensive list of Coverletter types provided by Input2Docs.",
+            
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

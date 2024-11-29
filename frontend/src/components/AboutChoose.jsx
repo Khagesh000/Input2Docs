@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import '../AboutChoose.css'; 
-import teamImage from '../assets/images/adsplace.webp';
+import teamImage from '../assets/images/innovative-team-working.webp';
 
 export default function AboutChoose() {
   return (
@@ -53,7 +53,12 @@ export default function AboutChoose() {
           </div>
         </div>
         <div className="col-md-4 d-flex align-items-center justify-content-center position-relative">
-          <img src={teamImage} alt="Team Overview" className="img-fluid" loading="lazy"/>
+        <img 
+            src={teamImage} 
+            alt="Innovative team working together on cutting-edge solutions" 
+            className="img-fluid" 
+            loading="lazy"
+          />
           <div className="bullet-line"></div>
         </div>
       </div>

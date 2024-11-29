@@ -17,6 +17,16 @@ export default function About() {
         <title>About Us | Learn About Input2Docs</title>
         <meta name="description" content="Discover Input2Docs' mission, vision, and how we help users with professional templates for emails, cover letters, resume, cv and more." />
         <meta name="keywords" content="About Input2Docs, Email Templates, Cover Letters, Template Generator, resume templates, cv templates and letter maker" />
+        {/* JSON-LD Metadata */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ImageObject",
+            "contentUrl": "https://input2docs.com/about-us/innovative-team-working.webp",
+            "description": "Innovative team working together on cutting-edge solutions",
+            "name": "Innovative Team Working",
+          })}
+        </script>
       </Helmet>
     <div>
       <Navbar />

@@ -1,11 +1,11 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import img from '../assets/images/SchoolLetter.webp';
-import img1 from '../assets/images/OfficeLetters.webp';
-import img2 from '../assets/images/PoliceStationLetter.webp';
-import img3 from '../assets/images/BankLetter.webp';
-import img4 from '../assets/images/LegalLetter.webp';
-import img5 from '../assets/images/GovernmentLetter.webp';
+import SchoolLetter from '../assets/images/SchoolLetter.webp';
+import OfficeLetters from '../assets/images/OfficeLetters.webp';
+import PoliceStationLetter from '../assets/images/PoliceStationLetter.webp';
+import BankLetter from '../assets/images/BankLetter.webp';
+import LegalLetter from '../assets/images/LegalLetter.webp';
+import GovernmentLetter from '../assets/images/GovernmentLetter.webp';
 import '../App.css';
 import '../Cardarrange.css'
 
@@ -62,7 +62,7 @@ const CardArrange = () => {
           <div className="col-md-4 col-sm-12 card-temp">
             <div className="card h-100">
               
-              <img src={img} className="card-img-top img-fluid" alt="Image 1" loading="lazy" style={{ height: '200px', objectFit: 'cover' }} />
+              <img src={SchoolLetter} className="card-img-top img-fluid" alt="School_Letter" loading="lazy" style={{ height: '200px', objectFit: 'cover' }} />
               <div className="card-body cardBody">
                 <h5 className="card-title">School Letters</h5>
                 <ul className="list-unstyled">
@@ -81,7 +81,7 @@ const CardArrange = () => {
           </div>
           <div className="col-md-4 col-sm-12 card-temp">
             <div className="card h-100">
-              <img src={img1} className="card-img-top img-fluid" alt="Image 2" loading="lazy" style={{ height: '200px', objectFit: 'cover' }} />
+              <img src={OfficeLetters} className="card-img-top img-fluid" alt="Office-letter" loading="lazy" style={{ height: '200px', objectFit: 'cover' }} />
               <div className="card-body cardBody">
                 <h5 className="card-title">Office Letters</h5>
                 <ul className="list-unstyled">
@@ -100,7 +100,7 @@ const CardArrange = () => {
           </div>
           <div className="col-md-4 col-sm-12 card-temp">
             <div className="card h-100">
-              <img src={img2} className="card-img-top img-fluid" alt="Image 3" loading="lazy" style={{ height: '200px', objectFit: 'cover' }} />
+              <img src={PoliceStationLetter} className="card-img-top img-fluid" alt="Police-station-letter" loading="lazy" style={{ height: '200px', objectFit: 'cover' }} />
               <div className="card-body cardBody">
                 <h5 className="card-title">Police Station Letters</h5>
                 <ul className="list-unstyled">
@@ -119,7 +119,7 @@ const CardArrange = () => {
           </div>
           <div className="col-md-4 col-sm-12 card-temp">
             <div className="card h-100">
-              <img src={img3} className="card-img-top img-fluid" alt="Image 4" loading="lazy" style={{ height: '200px', objectFit: 'cover' }} />
+              <img src={BankLetter} className="card-img-top img-fluid" alt="Bank-letter" loading="lazy" style={{ height: '200px', objectFit: 'cover' }} />
               <div className="card-body cardBody">
                 <h5 className="card-title">Bank Letters</h5>
                 <ul className="list-unstyled">
@@ -138,7 +138,7 @@ const CardArrange = () => {
           </div>
           <div className="col-md-4 col-sm-12 card-temp">
             <div className="card h-100">
-              <img src={img4} className="card-img-top img-fluid" alt="Image 5" loading="lazy" style={{ height: '200px', objectFit: 'cover' }} />
+              <img src={LegalLetter} className="card-img-top img-fluid" alt="Legal-letter" loading="lazy" style={{ height: '200px', objectFit: 'cover' }} />
               <div className="card-body cardBody">
                 <h5 className="card-title">Legal Letters</h5>
                 <ul className="list-unstyled">
@@ -157,7 +157,7 @@ const CardArrange = () => {
           </div>
           <div className="col-md-4 col-sm-12 card-temp">
             <div className="card h-100">
-              <img src={img5} className="card-img-top img-fluid" alt="Image 6" loading="lazy" style={{ height: '200px', objectFit: 'cover' }} />
+              <img src={GovernmentLetter} className="card-img-top img-fluid" alt="Government-letter" loading="lazy" style={{ height: '200px', objectFit: 'cover' }} />
               <div className="card-body cardBody">
                 <h5 className="card-title">Government Letters</h5>
                 <ul className="list-unstyled">

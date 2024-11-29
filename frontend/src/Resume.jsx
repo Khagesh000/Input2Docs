@@ -18,6 +18,26 @@ export default function Resume() {
   <title>Resume Templates | Input2Docs</title>
   <meta name="description" content="Create stunning resumes with Input2Docs' easy-to-use templates." />
   <meta name="keywords" content="Resume Templates, Professional Resumes, Input2Docs Templates" />
+   {/* JSON-LD Structured Data for SEO */}
+   <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Resume Templates | Input2Docs",
+            "description": "Create stunning resumes with Input2Docs' easy-to-use templates.",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://input2docs.com/assets/images/Resume.webp",
+              "height": 800,  // Replace with actual height
+              "width": 600,   // Replace with actual width
+              "caption": "Example of a professional resume template"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://input2docs.com/resume"
+            }
+          })}
+        </script>
 </Helmet>
 
     <div>

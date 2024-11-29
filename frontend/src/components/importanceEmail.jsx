@@ -1,6 +1,6 @@
 import React from 'react';
 import '../importanceEmail.css'; // Import custom CSS for styling
-import img3 from '../assets/images/Suggestions1.webp';
+import Suggestions1 from '../assets/images/Suggestions1.webp';
 
 export default function ImportanceEmail() {
   return (
@@ -19,7 +19,7 @@ export default function ImportanceEmail() {
       <section className="email-points-section mt-5">
         <div className="row align-items-center">
           <div className="col-lg-5 image-container">
-            <img src={img3} alt="Illustration" className="email-image" loading="lazy"/>
+            <img src={Suggestions1} alt="Illustration" className="email-image" loading="lazy"/>
           </div>
           <div className="col-lg-7 email-point-list">
             <div className="email-point-container email-point-1">

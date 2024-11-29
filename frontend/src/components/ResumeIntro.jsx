@@ -1,6 +1,6 @@
 import React from 'react';
 import '../ResumeIntro.css'; // Make sure you have a CSS file for ResumeIntro styling
-import img2 from '../assets/images/Resume.webp'; 
+import Resume from '../assets/images/Resume.webp'; 
 
 export default function ResumeIntro() {
   return (
@@ -25,7 +25,7 @@ export default function ResumeIntro() {
           </div>
           <div className="col-md-6 d-flex align-items-center justify-content-center"> {/* Center image vertically */}
             <img
-              src={img2}
+              src={Resume}
               alt="Resume Builder"
               className="img-fluid bg-black"
               loading="lazy"

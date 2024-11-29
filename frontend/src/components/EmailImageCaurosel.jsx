@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import img from '../assets/images/EmailMaker.webp';
-import img1 from '../assets/images/EmailMaker1.webp';
-import img2 from '../assets/images/EmailMaker2.webp';
+import EmailMaker from '../assets/images/EmailMaker.webp';
+import EmailMaker1 from '../assets/images/EmailMaker1.webp';
+import EmailMaker2 from '../assets/images/EmailMaker2.webp';
 import '../App.css'; // Import the CSS file
 
 export default function EmailImageCaurosel() {
@@ -19,21 +19,21 @@ export default function EmailImageCaurosel() {
     <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-inner">
         <div className={`carousel-item ${activeIndex === 0 ? 'active' : ''}`}>
-          <img src={img} className="d-block w-100" alt="First Slide" loading="lazy" />
+          <img src={EmailMaker} className="d-block w-100" alt="Email Interface" loading="lazy" />
           <div className="carousel-caption text-black">
             <h2>Email Interface</h2>
             <p>Streamlined Options</p>
           </div>
         </div>
         <div className={`carousel-item ${activeIndex === 1 ? 'active' : ''}`}>
-          <img src={img1} className="d-block w-100" alt="Second Slide" />
+          <img src={EmailMaker1} className="d-block w-100" alt="Real Time" />
           <div className="carousel-caption text-black text-center">
             <h2>Real Time</h2>
             <p>Dynamic Display</p>
           </div>
         </div>
         <div className={`carousel-item ${activeIndex === 2 ? 'active' : ''}`}>
-          <img src={img2} className="d-block w-100" alt="Third Slide" />
+          <img src={EmailMaker2} className="d-block w-100" alt="Customization Options" />
           <div className="carousel-caption text-black">
             <h2>Customization Options</h2>
             <p>Personalized Edit</p>
