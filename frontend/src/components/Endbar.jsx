@@ -46,8 +46,8 @@ export default function Endbar() {
           <div className="col-md-3 col-12 mb-3">
             <h5 className="endbar-section-title">Contact Us</h5>
             <ul className="endbar-contact-info">
-              <li><i className="fas fa-envelope"></i> input2docs@gmail.com</li>
-              <li><i className="fas fa-phone"></i> +91 800000000</li>
+              <li><i className="fas fa-envelope"></i> inputdocs1@gmail.com</li>
+              <li><i className="fas fa-phone"></i> +9180808080</li>
             </ul>
           </div>
         </div>
