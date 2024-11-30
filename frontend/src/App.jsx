@@ -17,7 +17,7 @@ import Cv from './Cv';
 import Contact from './Contact';
 import PrivacyPolicy from './PrivacyPolicy';
 import TermsAndConditions from './TermsAndConditions';
-
+import KeyMetrics from './components/KeyMetrics';
 import { Helmet } from 'react-helmet';
 import DisplayAd from "./components/DisplayAd";
 
@@ -111,6 +111,7 @@ function App() {
           <Process />
           <DisplayAd />
           <ImageView />
+          <KeyMetrics />
           <Feedback />
         </div>
       )}

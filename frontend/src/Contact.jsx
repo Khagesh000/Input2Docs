@@ -3,6 +3,7 @@ import Navbar from './components/navbar'
 import Contactform from './components/Contactform'
 import ContactMainMoto from './components/ContactMainMoto'
 import Endbar from './components/Endbar'
+import KeyMetrics from './components/KeyMetrics'
 
 import MultiplyAd from './components/MultiplyAd'
 export default function Cv() {
@@ -16,6 +17,7 @@ export default function Cv() {
 
       <Contactform />
       <MultiplyAd />
+      <KeyMetrics />
       <ContactMainMoto />
       <Endbar />
       </div>

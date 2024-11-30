@@ -1,0 +1,87 @@
+/* Container Styling */
+.keymetrics-container {
+    padding: 50px 20px;
+    background-color: #f3f4f6; /* Wheat color */
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto; /* Center-align the container */
+  }
+  
+  .keymetrics-heading {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: red; /* Firebrick red */
+    margin-bottom: 10px;
+  }
+  
+  .keymetrics-description {
+    font-size: 1.2em;
+    color: #8b0000; /* Dark red */
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin: 0 auto; /* Center-align the description */
+    margin-bottom: 3%;
+}
+  
+  /* Grid and Card Styling */
+  .keymetrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row on large screens */
+    gap: 20px;
+  }
+  
+  .keymetrics-card {
+    background: #fff8dc; /* Cornsilk background */
+    border: 2px solid #f4a460; /* Sandy brown */
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .keymetrics-visible {
+    opacity: 1; /* Visible when in the viewport */
+    transform: translateY(0);
+  }
+  
+  .keymetrics-card:hover {
+    transform: scale(1.05);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Icon Styling */
+  .keymetrics-icon {
+    font-size: 2.5em;
+    color: #b22222; /* Firebrick red */
+    margin-bottom: 15px;
+  }
+  
+  .keymetrics-count {
+    font-size: 2.2em;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .keymetrics-label {
+    font-size: 1.2em;
+    color: #8b0000; /* Dark red */
+    font-weight: 500;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1024px) {
+    .keymetrics-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 items per row on medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .keymetrics-grid {
+      grid-template-columns: 1fr; /* 1 item per row on small screens */
+    }
+  }
+  
