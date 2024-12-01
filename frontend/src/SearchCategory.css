@@ -123,6 +123,9 @@
     transform: scale(1.05); /* Slightly larger on hover */
     cursor: pointer; /* Pointer cursor on hover */
   }
+  .search-category-smallscreens {
+    display: none !important;
+  }
 }
 
 

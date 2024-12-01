@@ -493,7 +493,7 @@ const SearchCategory = ({ handleSubcategoryClick }) => {
 
 
       {/*  first one search category Dropdown */}
-      <div className="input-group">
+      <div className="input-group search-category-smallscreens">
         {/* Main Category Dropdown */}
         <div className="btn-group">
           <button

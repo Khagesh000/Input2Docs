@@ -458,7 +458,7 @@ const EmailSearchCategory = () => {
   return (
     <div className="container" style={{backgroundColor: '#f3f4f6', paddingTop: '3%', maxWidth: '100%'}}>
 
-<div className="input-group mb-3">
+<div className="input-group mb-3 search-category-smallscreens">
         {/* Main Category Dropdown */}
         <div className="btn-group " 
         >
