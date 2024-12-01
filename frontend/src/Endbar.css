@@ -121,6 +121,44 @@
   background-color: #d94343;
 }
 
+/* Social Media Icons */
+.endbar-social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+.endbar-social-icon {
+  font-size: 1.5rem;
+  color: #eaeaea;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.endbar-social-icon:hover {
+  transform: scale(1.2);
+}
+
+.endbar-instagram:hover {
+  color: #e1306c;
+}
+
+.endbar-facebook:hover {
+  color: #4267b2;
+}
+
+.endbar-github:hover {
+  color: #333;
+}
+
+.endbar-linkedin:hover {
+  color: #0077b5;
+}
+
+.endbar-twitter:hover {
+  color: #1da1f2;
+}
+
 /* Responsive Design for Small Screens */
 @media (max-width: 768px) {
   .row {
@@ -154,5 +192,15 @@
   .endbar-contact-us-btn {
     display: block;
     margin: 0 auto;
+  }
+
+  .endbar-social-icons {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .endbar-social-icon {
+    font-size: 1.2rem;
+    margin: 5px;
   }
 }

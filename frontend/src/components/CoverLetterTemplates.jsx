@@ -499,7 +499,7 @@ const handleDownloadPDF = () => {
             <div className="row template-gallery">
               {images.slice(0, visibleRows * 3).map((image, index) => (
                 <div className="col-lg-4 col-md-6 col-sm-12 template-column" key={index}>
-                  <div className="template-card second-template-card">
+                  <div className="template-card cover-template-card second-template-card">
                     <div className="template-image-container">
                       <img
                         src={image}

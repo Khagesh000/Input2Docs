@@ -50,6 +50,26 @@ export default function Endbar() {
               <li><i className="fas fa-phone"></i> +9180808080</li>
             </ul>
           </div>
+
+           {/* Social Media Icons */}
+  <div className="endbar-social-icons">
+    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="endbar-social-icon endbar-instagram">
+      <i className="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="endbar-social-icon endbar-facebook">
+      <i className="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="endbar-social-icon endbar-github">
+      <i className="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="endbar-social-icon endbar-linkedin">
+      <i className="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="endbar-social-icon endbar-twitter">
+      <i className="fab fa-twitter"></i>
+    </a>
+  </div>
+
         </div>
 
         {/* Bottom Section */}
