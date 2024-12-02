@@ -162,6 +162,8 @@ const { title, description, keywords } = getPageMeta(location.pathname.substring
           <ImageView />
           <KeyMetrics />
           <Feedback />
+            {/* End bar */}
+      <Endbar />
         </main>
       )}
 
@@ -205,8 +207,7 @@ const { title, description, keywords } = getPageMeta(location.pathname.substring
         />
       </Routes>
 
-      {/* End bar */}
-      <Endbar />
+    
     </div>
   );
 }

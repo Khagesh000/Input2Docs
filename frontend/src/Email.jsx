@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Navbar from './components/navbar'; // Importing Navbar component
-
+import Endbar from './components/Endbar'; // Importing Endbar component
 import ImportanceEmail from './components/importanceEmail'; // Importing ImportanceEmail component
 import EmailProcess from './components/EmailProcess'; // Importing EmailProcess component
 import EmailImageCaurosel from './components/EmailImageCaurosel'; // Importing EmailImageCaurosel component
@@ -97,7 +97,11 @@ const Email = () => {
 
       
       <EmailMainMoto />
+      
 
+      
+      {/* Endbar component */}
+      <Endbar />
       </div>
  
   );

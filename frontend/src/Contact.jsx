@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './components/navbar'
 import Contactform from './components/Contactform'
 import ContactMainMoto from './components/ContactMainMoto'
-
+import Endbar from './components/Endbar'
 import KeyMetrics from './components/KeyMetrics'
 import { Helmet } from 'react-helmet';
 
@@ -26,7 +26,7 @@ export default function Cv() {
       <MultiplyAd />
       <KeyMetrics />
       <ContactMainMoto />
-  
+      <Endbar />
       </div>
  
   )

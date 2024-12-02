@@ -6,7 +6,7 @@ import LetterMaker from './components/LetterMaker';
 import Process from './components/Process';
 import ImportanceLetter from './components/ImportanceLetter';
 import LetterMainMoto from './components/Lettermainmoto';
-
+import Endbar from './components/Endbar';
 import InFeedAd from './components/InFeedAd';
 import './Letter.css'; // Existing styles
  // New styles for letterhead section
@@ -84,7 +84,8 @@ export default function Letter() {
         <LetterMainMoto />
       </div>
 
-
+      {/* Endbar Component */}
+      <Endbar />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet';
 
 import Navbar from './components/navbar'
-
+import Endbar from './components/Endbar'
 import CoverLetterTemplates from './components/CoverLetterTemplates'
 import CoverLetterIntro from './components/CoverLetterIntro'
 import CoverLetterImportance from './components/CoverLetterImportance'
@@ -70,7 +70,8 @@ export default function CoverLetter() {
       {/* Main Moto Section */}
       <CoverletterMainMoto />
 
-      
+      {/* Endbar Section */}
+      <Endbar />
     </div>
   )
 }

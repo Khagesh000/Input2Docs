@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './components/navbar'
 import PrivacyPolicy from './components/PrivacyPolicy'
-
+import Endbar from './components/Endbar'
 
 import { Helmet } from 'react-helmet';
 
@@ -17,7 +17,7 @@ export default function Cv() {
       </Helmet>
       <Navbar />
       <PrivacyPolicy />
-
+      <Endbar />
       </div>
  
   )

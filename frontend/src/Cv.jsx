@@ -3,7 +3,7 @@ import Navbar from './components/navbar'
 import CvDescription from './components/CvDescription'
 import CvImportance from './components/CvImportance'
 import CvTemplates from './components/CvTemplates'
-
+import Endbar from './components/Endbar'
 
 import CvAbout from './components/CvAbout'
 import CvMainMoto from './components/CvMainMoto'
@@ -72,7 +72,7 @@ export default function Cv() {
       </div>
       <CvMainMoto />
       
-  
+      <Endbar />
       </div>
     </div>
   )

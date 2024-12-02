@@ -5,7 +5,7 @@ import ResumeTemplate from './components/ResumeTemplate'
 import ResumeImportance from './components/ResumeImportance'
 import ResumeMainMoto from './components/ResumeMainMoto'
 
-
+import Endbar from './components/Endbar'
 
 import { Helmet } from 'react-helmet';
 
@@ -75,7 +75,7 @@ export default function Resume() {
 
       <ResumeMainMoto />
 
-
+      <Endbar />
       </div>
     </div>
   )
