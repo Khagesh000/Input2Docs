@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Navbar from './components/navbar'; // Importing Navbar component
-import Endbar from './components/Endbar'; // Importing Endbar component
+
 import ImportanceEmail from './components/importanceEmail'; // Importing ImportanceEmail component
 import EmailProcess from './components/EmailProcess'; // Importing EmailProcess component
 import EmailImageCaurosel from './components/EmailImageCaurosel'; // Importing EmailImageCaurosel component
@@ -27,7 +27,7 @@ const Email = () => {
     <div style={{ backgroundColor: 'f3f4f6'}}>
 
 <Helmet>
-  <title>Email Templates | Input2Docs</title>
+  <title>Email Generator - Free Email Generator | Input2Docs</title>
   <meta name="description" content="Professional email templates for every occasion. Save time and create impact with Input2Docs." />
   <meta name="keywords" content="email templates, professional email designs, Input2Docs email generator" />
 
@@ -97,11 +97,7 @@ const Email = () => {
 
       
       <EmailMainMoto />
-      
 
-      
-      {/* Endbar component */}
-      <Endbar />
       </div>
  
   );

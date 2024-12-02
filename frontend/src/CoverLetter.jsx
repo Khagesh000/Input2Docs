@@ -3,7 +3,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet';
 
 import Navbar from './components/navbar'
-import Endbar from './components/Endbar'
+
 import CoverLetterTemplates from './components/CoverLetterTemplates'
 import CoverLetterIntro from './components/CoverLetterIntro'
 import CoverLetterImportance from './components/CoverLetterImportance'
@@ -15,7 +15,7 @@ export default function CoverLetter() {
   return (
     <div className='bg-black'>
       <Helmet>
-        <title>Cover Letter Templates | Input2Docs</title>
+        <title>Free Cover Letter Maker - Create a cover Letter Online | Input2Docs</title>
         <meta name="description" content="Browse our cover letter templates and craft the perfect first impression. Choose from free and customizable templates to enhance your job application." />
         <meta name="keywords" content="cover letter templates, ATS-friendly cover letters, customizable cover letters, job application letters" />
         <script type="application/ld+json">
@@ -37,7 +37,7 @@ export default function CoverLetter() {
 
       {/* CV Design Section (For SEO and content) */}
 <div className="search-letterhead-section" style={{backgroundColor: 'black'}}>
-  <h1 className="search-letterhead-heading">Create Stunning Cover Letter Templates Online</h1>
+  <h1 className="search-letterhead-heading">Free Cover Letter Maker</h1>
   <p className="search-letterhead-description">
   With Input2Docs, you can create impressive and professional cover letters in minutes. Choose from a variety of customizable cover letter templates designed to make a strong first impression on recruiters. Start designing now and download your cover letter template instantly in multiple formats.
   </p>
@@ -70,8 +70,7 @@ export default function CoverLetter() {
       {/* Main Moto Section */}
       <CoverletterMainMoto />
 
-      {/* Endbar Section */}
-      <Endbar />
+      
     </div>
   )
 }

@@ -28,46 +28,105 @@ import KeyMetrics from './components/KeyMetrics';
 function App() {
   const location = useLocation();
 
-  // List of special pages
-  const specialPages = [
-    '/letter',
-    '/email',
-    '/about-us',
-    '/cover',
-    '/resume',
-    '/cv',
-    '/contact-us',
-    '/privacy-policy',
-    '/terms-and-conditions',
-  ];
-  const isSpecialPage = specialPages.includes(location.pathname);
-
   // Metadata based on the current route
-  const getPageMeta = () => {
-    return isSpecialPage
-      ? {
-          title: 'Input2Docs - Templates & Tools',
+  const getPageMeta = (route) => {
+    switch (route) {
+      case 'letter':
+        return {
+          title: 'Letter Generator - Free Letter Generator | Input2Docs',
           description:
-            'Discover professional templates and tools for letters, resumes, cover letters, and more at Input2Docs.',
-        }
-      : {
-          title: 'Welcome | Input2Docs Template Generator',
-          description: 'Welcome to Input2Docs! Create professional email and letter templates with ease.',
+            'Comprehensive letter templates for all your personal and professional needs. Create letters, letterheads, resumes, and more with ease using Input2Docs.',
+          keywords: 'letterhead online design, official letter generator, letterhead maker, professional letter templates, Input2Docs templates, customizable letterhead design',
         };
+      case 'email':
+        return {
+          title: 'Email Generator - Free Email Generator | Input2Docs',
+          description:
+            'Professional email templates for every occasion. Save time and create impact with Input2Docs.',
+          keywords: 'email templates, professional email designs, Input2Docs email generator',
+        };
+      case 'resume':
+        return {
+          title: 'Free Resume Builder - Online Resume Maker | Input2Docs',
+          description:
+            'Create stunning resumes with Input2Docs\' easy-to-use templates.',
+          keywords: 'Resume Templates, Professional Resumes, Input2Docs resume generator',
+        };
+      case 'cv':
+        return {
+          title: 'Free CV Templates - CV Templates | Professional CV Designs | Input2Docs',
+          description:
+            'Create professional CV templates online with Input2Docs. Choose from a wide range of customizable CV designs to make your job application stand out.',
+          keywords:
+            'CV templates, professional CV templates, free CV template, ATS CV templates, customizable CV designs, create CV online, free CV templates, job application CV templates, best CV template',
+        };
+      case 'cover':
+        return {
+          title: 'Free Cover Letter Maker - Create a Cover Letter Online | Input2Docs',
+          description:
+            'Browse our cover letter templates and craft the perfect first impression. Choose from free and customizable templates to enhance your job application.',
+          keywords: 'cover letter templates, ATS-friendly cover letters, customizable cover letters, job application letters',
+        };
+      case 'contact':
+        return {
+          title: 'Contact Us | Contact Input2Docs',
+          description:
+            'Contact With Input2docs Team',
+          keywords: 'contact Input2Docs',
+        };
+      case 'about':
+        return {
+          title: 'About Us | Learn About Input2Docs',
+          description:
+            'Entire Details And Features Of Input2docs',
+          keywords: 'about Input2Docs, Features Of Input2docs',
+        };
+      case 'privacy-policy':
+        return {
+          title: 'Privacy Policy | Privacy Policy Input2Docs',
+          description:
+            'Privacy Policy Of Input2docs',
+          keywords: 'contact Input2Docs',
+        };
+      case 'terms-and-conditions':
+        return {
+          title: 'Terms and Conditions | Terms and Conditions Input2Docs',
+          description:
+            'Terms and Conditions of input2docs',
+          keywords: 'Terms and conditions Input2docs',
+        };
+      default:
+        return {
+          title: 'Input2Docs - Professional Letter, Resume, and Document Generator',
+          description:
+            'Create professional templates for letters, resumes, cover letters, and more at Input2Docs.',
+          keywords: 'document generator, templates, resume maker, email creator',
+        };
+    }
   };
 
-  const { title, description } = getPageMeta();
+   // Check if the current route is a special page
+   const isSpecialPage = location.pathname.startsWith('/letter') ||
+   location.pathname.startsWith('/email') ||
+   location.pathname.startsWith('/resume') ||
+   location.pathname.startsWith('/cv') ||
+   location.pathname.startsWith('/cover') ||
+   location.pathname.startsWith('/contact-us') ||
+   location.pathname.startsWith('/privacy-policy') ||
+   location.pathname.startsWith('/terms-and-conditions');
+
+// Get metadata for the page
+const { title, description, keywords } = getPageMeta(location.pathname.substring(1));
+
 
   return (
     <div className="App">
       {/* Global SEO settings */}
       <Helmet>
-        <title>{title}</title>
+      <meta name="robots" content="index, follow" />
+        <meta name="author" content="Input2Docs Team" />
         <meta name="description" content={description} />
-        <meta
-          name="keywords"
-          content="document generator, templates, resume maker, email creator, professional templates, Input2Docs"
-        />
+        <meta name="keywords" content={keywords} />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
@@ -75,42 +134,12 @@ function App() {
             name: 'Types of Letters',
             description: 'A comprehensive list of letter types provided by Input2Docs.',
             itemListElement: [
-              {
-                '@type': 'ListItem',
-                position: 1,
-                name: 'School Letters',
-                url: 'https://input2docs.com/school-letters',
-              },
-              {
-                '@type': 'ListItem',
-                position: 2,
-                name: 'Office Letters',
-                url: 'https://input2docs.com/office-letters',
-              },
-              {
-                '@type': 'ListItem',
-                position: 3,
-                name: 'Police Station Letters',
-                url: 'https://input2docs.com/police-station-letters',
-              },
-              {
-                '@type': 'ListItem',
-                position: 4,
-                name: 'Bank Letters',
-                url: 'https://input2docs.com/bank-letters',
-              },
-              {
-                '@type': 'ListItem',
-                position: 5,
-                name: 'Legal Letters',
-                url: 'https://input2docs.com/legal-letters',
-              },
-              {
-                '@type': 'ListItem',
-                position: 6,
-                name: 'Government Letters',
-                url: 'https://input2docs.com/government-letters',
-              },
+              { '@type': 'ListItem', position: 1, name: 'School Letters', url: 'https://input2docs.com/school-letters' },
+              { '@type': 'ListItem', position: 2, name: 'Office Letters', url: 'https://input2docs.com/office-letters' },
+              { '@type': 'ListItem', position: 3, name: 'Police Station Letters', url: 'https://input2docs.com/police-station-letters' },
+              { '@type': 'ListItem', position: 4, name: 'Bank Letters', url: 'https://input2docs.com/bank-letters' },
+              { '@type': 'ListItem', position: 5, name: 'Legal Letters', url: 'https://input2docs.com/legal-letters' },
+              { '@type': 'ListItem', position: 6, name: 'Government Letters', url: 'https://input2docs.com/government-letters' },
             ],
           })}
         </script>
@@ -138,31 +167,46 @@ function App() {
 
       {/* Routes for all pages */}
       <Routes>
-        {specialPages.map((path, index) => (
-          <Route
-            key={index}
-            path={path}
-            element={
-              <Suspense fallback={<div className="spinner">Loading...</div>}>
-                {{
-                  '/letter': <Letter />,
-                  '/email': <Email />,
-                  '/about-us': <About />,
-                  '/cover': <CoverLetter />,
-                  '/resume': <Resume />,
-                  '/cv': <Cv />,
-                  '/contact-us': <Contact />,
-                  '/privacy-policy': <PrivacyPolicy />,
-                  '/terms-and-conditions': <TermsAndConditions />,
-                }[path]}
-              </Suspense>
-            }
-          />
-        ))}
+        <Route
+          path="/letter"
+          element={<Suspense fallback={<div className="spinner">Loading...</div>}><Letter /></Suspense>}
+        />
+        <Route
+          path="/email"
+          element={<Suspense fallback={<div className="spinner">Loading...</div>}><Email /></Suspense>}
+        />
+        <Route
+          path="/about-us"
+          element={<Suspense fallback={<div className="spinner">Loading...</div>}><About /></Suspense>}
+        />
+        <Route
+          path="/cover"
+          element={<Suspense fallback={<div className="spinner">Loading...</div>}><CoverLetter /></Suspense>}
+        />
+        <Route
+          path="/resume"
+          element={<Suspense fallback={<div className="spinner">Loading...</div>}><Resume /></Suspense>}
+        />
+        <Route
+          path="/cv"
+          element={<Suspense fallback={<div className="spinner">Loading...</div>}><Cv /></Suspense>}
+        />
+        <Route
+          path="/contact-us"
+          element={<Suspense fallback={<div className="spinner">Loading...</div>}><Contact /></Suspense>}
+        />
+        <Route
+          path="/privacy-policy"
+          element={<Suspense fallback={<div className="spinner">Loading...</div>}><PrivacyPolicy /></Suspense>}
+        />
+        <Route
+          path="/terms-and-conditions"
+          element={<Suspense fallback={<div className="spinner">Loading...</div>}><TermsAndConditions /></Suspense>}
+        />
       </Routes>
 
-      {/* Footer for non-special pages */}
-      {!isSpecialPage && <Endbar />}
+      {/* End bar */}
+      <Endbar />
     </div>
   );
 }

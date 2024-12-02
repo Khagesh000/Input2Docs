@@ -5,7 +5,7 @@ import ResumeTemplate from './components/ResumeTemplate'
 import ResumeImportance from './components/ResumeImportance'
 import ResumeMainMoto from './components/ResumeMainMoto'
 
-import Endbar from './components/Endbar'
+
 
 import { Helmet } from 'react-helmet';
 
@@ -15,7 +15,7 @@ export default function Resume() {
   return (
     <div style={{ backgroundColor: 'black'}}>
       <Helmet>
-  <title>Resume Templates | Input2Docs</title>
+  <title>Free Resume Builder - Online Resume Maker | Input2Docs</title>
   <meta name="description" content="Create stunning resumes with Input2Docs' easy-to-use templates." />
   <meta name="keywords" content="Resume Templates, Professional Resumes, Input2Docs resume generator" />
    {/* JSON-LD Structured Data for SEO */}
@@ -75,7 +75,7 @@ export default function Resume() {
 
       <ResumeMainMoto />
 
-      <Endbar />
+
       </div>
     </div>
   )

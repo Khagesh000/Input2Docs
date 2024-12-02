@@ -3,7 +3,7 @@ import Navbar from './components/navbar'
 import CvDescription from './components/CvDescription'
 import CvImportance from './components/CvImportance'
 import CvTemplates from './components/CvTemplates'
-import Endbar from './components/Endbar'
+
 
 import CvAbout from './components/CvAbout'
 import CvMainMoto from './components/CvMainMoto'
@@ -16,7 +16,7 @@ export default function Cv() {
   return (
     <div style={{ backgroundColor: 'black'}}>
       <Helmet>
-  <title>CV Templates | Professional CV Designs | Input2Docs</title>
+  <title>Free CV Templates - Cv Templates | Professional CV Designs | Input2Docs</title>
   <meta 
     name="description" 
     content="Create professional CV templates online with Input2Docs. Choose from a wide range of customizable CV designs to make your job application stand out." 
@@ -72,7 +72,7 @@ export default function Cv() {
       </div>
       <CvMainMoto />
       
-      <Endbar />
+  
       </div>
     </div>
   )

@@ -16,7 +16,7 @@ export default function About() {
       <Helmet>
         <title>About Us | Learn About Input2Docs</title>
         <meta name="description" content="Discover Input2Docs' mission, vision, and how we help users with professional templates for emails, cover letters, resume, cv and more." />
-        <meta name="keywords" content="about Input2Docs, mission, professional document templates,  letter generator" />
+        <meta name="keywords" content="About-Us Input2docs" />
         {/* JSON-LD Metadata */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -37,7 +37,7 @@ export default function About() {
       <AboutChoose />
       <AboutMainMoto />
       <Feedback />
-      <Endbar />
+      
       </div>
     </div>
   );
