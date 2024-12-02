@@ -66,7 +66,7 @@ function App() {
         <meta name="description" content={description} />
         <meta
           name="keywords"
-          content="Input2Docs, Templates, Letter Templates, Resume Templates, Cover Letters, Email Templates"
+          content="document generator, templates, resume maker, email creator, professional templates, Input2Docs"
         />
         <script type="application/ld+json">
           {JSON.stringify({

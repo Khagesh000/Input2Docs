@@ -17,7 +17,7 @@ export default function Resume() {
       <Helmet>
   <title>Resume Templates | Input2Docs</title>
   <meta name="description" content="Create stunning resumes with Input2Docs' easy-to-use templates." />
-  <meta name="keywords" content="Resume Templates, Professional Resumes, Input2Docs Templates" />
+  <meta name="keywords" content="Resume Templates, Professional Resumes, Input2Docs resume generator" />
    {/* JSON-LD Structured Data for SEO */}
    <script type="application/ld+json">
           {JSON.stringify({

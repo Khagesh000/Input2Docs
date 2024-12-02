@@ -29,7 +29,7 @@ const Email = () => {
 <Helmet>
   <title>Email Templates | Input2Docs</title>
   <meta name="description" content="Professional email templates for every occasion. Save time and create impact with Input2Docs." />
-  <meta name="keywords" content="Email Generator, Fake Email Generator, Email Signature Generator, AI Email Generator, Random Email Generator" />
+  <meta name="keywords" content="email templates, professional email designs, Input2Docs email generator" />
 
 </Helmet>
 
