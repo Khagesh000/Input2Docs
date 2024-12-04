@@ -496,6 +496,9 @@ element.style {
 .bg-black{
     padding-top: 17px;
   }
+  .resume-input {
+    max-width: 100% !important; /* Full width on smaller screens */
+  }
 }
 
 @media (max-width: 576px) {
