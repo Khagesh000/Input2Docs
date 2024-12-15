@@ -366,76 +366,83 @@ export default function CoverLetterTemplates({ images: imgList }) {
 
 
   const handleDownloadPNG = () => {
-    const tempDiv = document.createElement('div');
+    const tempDiv = document.createElement("div");
     tempDiv.innerHTML = content;
   
     // Apply global styles to ensure consistent appearance
-    tempDiv.style.fontFamily = 'Arial, sans-serif';
-    tempDiv.style.color = '#000'; // Set default text color
-    tempDiv.style.backgroundColor = '#fff'; // Set background color if needed
-    tempDiv.style.width = '210mm'; // A4 size width
-    tempDiv.style.height = '297mm'; // A4 size height
-    tempDiv.style.boxSizing = 'border-box';
-    tempDiv.style.padding = '10px'; // Add some padding if necessary
+    Object.assign(tempDiv.style, {
+      fontFamily: "Arial, sans-serif",
+      color: "#000",
+      backgroundColor: "#fff",
+      width: "210mm", // A4 width
+      height: "297mm", // A4 height
+      boxSizing: "border-box",
+      padding: "10px",
+      margin: "0 auto",
+    });
   
-    // Append the temp div to the body
+    // Append the temporary div to the body
     document.body.appendChild(tempDiv);
   
     // Use html2canvas to capture the content
     html2canvas(tempDiv, {
       scale: 3, // Increase scale for better quality
-      useCORS: true, // To handle cross-origin issues with external resources
-      allowTaint: true,
+      useCORS: true, // Handle cross-origin issues
+      allowTaint: true, // Allow tainted images
     }).then((canvas) => {
-      const link = document.createElement('a');
-      link.href = canvas.toDataURL('image/png', 1.0); // Get PNG data URL
-      link.download = 'CoverLetterTemplate.png'; // Name of the downloaded file
+      const link = document.createElement("a");
+      link.href = canvas.toDataURL("image/png", 1.0); // Get PNG data URL
+      link.download = "CoverLetterTemplate.png"; // Name of the downloaded file
       link.click(); // Trigger the download
-      document.body.removeChild(tempDiv); // Clean up
+      document.body.removeChild(tempDiv); // Clean up the temporary div
     });
   };
-
-
-const handleDownloadPDF = () => {
-  const tempDiv = document.createElement('div');
-  tempDiv.innerHTML = content;
-  tempDiv.style.fontFamily = 'Arial, sans-serif';
-  tempDiv.style.boxSizing = 'border-box';
-  tempDiv.style.margin = 0;  // Ensuring no margin at the top or around content
-  tempDiv.style.padding = 0; // Ensuring no padding around content
-
-  // Add styles to avoid page breaks inside the elements
-  tempDiv.style.pageBreakInside = 'avoid'; // Prevent content from breaking within an element
-  const children = tempDiv.querySelectorAll('*');
-  children.forEach((child) => {
-    child.style.pageBreakInside = 'avoid'; // Apply this to every child element
-  });
-
-  document.body.appendChild(tempDiv);
-
-  // Add TinyMCE styles if necessary
-  const styleSheet = document.createElement('link');
-  styleSheet.rel = 'stylesheet';
-  styleSheet.href = '/styles/tinymce-custom-styles.css';  // Ensure the path is correct for your CSS
-  document.head.appendChild(styleSheet);
-
-  // Set up options for html2pdf
-  const options = {
-    margin: [10, 10, 10, 10], // Margins in mm
-    filename: 'ResumeTemplate.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 3, useCORS: true, allowTaint: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: 'css' } // Let html2pdf manage page breaks automatically based on CSS
+  
+  // Download PDF
+  const handleDownloadPDF = () => {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = content;
+  
+    // Apply global styles to avoid overflow and maintain A4 size
+    Object.assign(tempDiv.style, {
+      fontFamily: "Arial, sans-serif",
+      color: "#000",
+      backgroundColor: "#fff",
+      width: "210mm",
+      height: "auto", // Allow dynamic height for multiple pages
+      boxSizing: "border-box",
+      margin: "0 auto",
+      padding: "10px",
+      pageBreakInside: "avoid", // Prevent content breaks
+    });
+  
+    // Apply styles to child elements to prevent page breaks
+    const children = tempDiv.querySelectorAll("*");
+    children.forEach((child) => {
+      child.style.pageBreakInside = "avoid";
+    });
+  
+    document.body.appendChild(tempDiv);
+  
+    // PDF Options
+    const options = {
+      margin: [10, 10, 10, 10], // Margins in mm
+      filename: "CoverLetterTemplate.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 3, useCORS: true, allowTaint: true },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      pagebreak: { mode: ["css", "legacy"] }, // Enable CSS-based page breaks
+    };
+  
+    // Generate and save the PDF
+    html2pdf()
+      .from(tempDiv)
+      .set(options)
+      .save()
+      .finally(() => {
+        document.body.removeChild(tempDiv); // Clean up the temporary div
+      });
   };
-
-  // Let html2pdf handle the page splitting automatically
-  html2pdf().from(tempDiv).set(options).toPdf().get('pdf').then((pdf) => {
-    pdf.save('CoverLetterTemplate.pdf'); // Save the PDF file
-  }).finally(() => {
-    document.body.removeChild(tempDiv); // Clean up by removing the temporary div
-  });
-};
 
 
   return (
@@ -750,6 +757,18 @@ const handleDownloadPDF = () => {
       ],
       toolbar:
         'undo redo | formatselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+        content_style: `
+            body {
+              font-family: Arial, sans-serif;
+              color: #000;
+              background-color: #fff;
+              width: 210mm;
+              height: 297mm;
+              box-sizing: border-box;
+              margin: 0 auto;
+              padding: 10px;
+            }
+          `,
     }}
     value={content}
     onEditorChange={(newContent) => setContent(newContent)}

@@ -44,7 +44,7 @@ export default function Websitemainmoto() {
         </div>
 
         <div className="service-card">
-          <a href="/coverletter" className="service-link">
+          <a href="/cover" className="service-link">
             <div className="card-content">
               <h3>Cover Letter Maker</h3>
               <p>Design and customize your cover letter easily.</p>
