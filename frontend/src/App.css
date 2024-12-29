@@ -13,8 +13,8 @@
   }
 
   .carousel-caption {
-    top: 50%;
-    left: 50%;
+    top: 60%;
+    left: 20%;
     transform: translate(-50%, -50%);
     text-align: center;
     align-items: center;
@@ -22,6 +22,7 @@
  /* Add a semi-transparent background */
     padding-left: 50%;
   }
+  
 
   .carousel-caption h2{
     text-shadow: 4cm;

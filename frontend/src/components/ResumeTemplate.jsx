@@ -611,14 +611,17 @@ const handleDownloadPNG = () => {
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = content;
 
-  // Set up basic styling to control appearance and A4 dimensions
-  tempDiv.style.fontFamily = 'Arial, sans-serif';
-  tempDiv.style.color = '#000';
-  tempDiv.style.backgroundColor = '#fff';
-  tempDiv.style.width = '210mm'; // Set width for A4 page
-  tempDiv.style.height = '310mm'; // Set height for A4 page
-  tempDiv.style.padding = '10px';
-  tempDiv.style.boxSizing = 'border-box';
+   // Apply global styles to ensure consistent appearance
+   Object.assign(tempDiv.style, {
+    fontFamily: "Arial, sans-serif",
+    color: "#000",
+    backgroundColor: "#fff",
+    width: "210mm", // A4 width
+    height: "297mm", // A4 height
+    boxSizing: "border-box",
+    padding: "10px",
+    margin: "0 auto",
+  });
 
   // Temporarily append to body to calculate dimensions
   document.body.appendChild(tempDiv);
@@ -659,15 +662,18 @@ const handleDownloadPDF = () => {
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = content;
 
-  // Set styling for A4 dimensions and single-page layout
-  tempDiv.style.fontFamily = 'Arial, sans-serif';
-  tempDiv.style.color = '#000';
-  tempDiv.style.backgroundColor = '#fff';
-  tempDiv.style.width = '210mm'; // A4 width
-  tempDiv.style.height = '310mm'; // A4 height (strict)
-  tempDiv.style.padding = '10px';
-  tempDiv.style.boxSizing = 'border-box';
-  tempDiv.style.margin = '0';
+  // Apply global styles to avoid overflow and maintain A4 size
+  Object.assign(tempDiv.style, {
+    fontFamily: "Arial, sans-serif",
+    color: "#000",
+    backgroundColor: "#fff",
+    width: "210mm",
+    height: "auto", // Allow dynamic height for multiple pages
+    boxSizing: "border-box",
+    margin: "0 auto",
+    padding: "10px",
+    pageBreakInside: "avoid", // Prevent content breaks
+  });
 
   // Add styling to avoid page breaks within elements if possible
   const children = tempDiv.querySelectorAll('*');
@@ -1730,6 +1736,19 @@ const convertPNGToPDF = (pngDataURL) => {
       ],
       toolbar:
         'undo redo | formatselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat  | help',
+        content_style: `
+            body {
+              font-family: Arial, sans-serif;
+              color: #000;
+              background-color: #fff;
+              width: 210mm;
+              height: 297mm;
+              box-sizing: border-box;
+              margin: 0 auto;
+              padding: 10px;
+            }
+          `,
+      
     }}
     value={content}
     onEditorChange={(newContent) => setContent(newContent)}

@@ -74,7 +74,7 @@ function App() {
             'Contact With Input2docs Team',
           keywords: 'contact Input2Docs',
         };
-      case 'about':
+      case 'about-us':
         return {
           title: 'About Us | Learn About Input2Docs',
           description:
@@ -112,6 +112,7 @@ function App() {
    location.pathname.startsWith('/cv') ||
    location.pathname.startsWith('/cover') ||
    location.pathname.startsWith('/contact-us') ||
+   location.pathname.startsWith('/about-us') ||
    location.pathname.startsWith('/privacy-policy') ||
    location.pathname.startsWith('/terms-and-conditions');
 
