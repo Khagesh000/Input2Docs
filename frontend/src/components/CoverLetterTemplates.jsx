@@ -460,7 +460,6 @@ export default function CoverLetterTemplates({ images: imgList }) {
                 <img
                   src={image}
                   alt={`Cover Letter Template ${index + 1}`}
-                  loading="lazy"
                   className={`img-fluid sliding-image ${selectedImage === image ? 'selected' : ''}`}
                   ref={selectedImage === image ? selectedImageRef : null}
                 />
@@ -512,7 +511,6 @@ export default function CoverLetterTemplates({ images: imgList }) {
                         src={image}
                         alt={`Resume Template ${index + 1}`}
                         className={`img-fluid template-image second-temp-img ${selectedImage === image ? 'selected' : ''}`}
-                        loading="lazy"
                       />
                       <div className="template-overlay second-temp">
                         <button className="custom-use-template-button" onClick={() => handleUseTemplate(index)}>
